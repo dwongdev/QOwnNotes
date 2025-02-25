@@ -37,6 +37,7 @@
 #include <helpers/fakevimproxy.h>
 #include <helpers/flowlayout.h>
 #include <helpers/toolbarcontainer.h>
+#include <libraries/qtwaitingspinner/waitingspinnerwidget.h>
 #include <services/cryptoservice.h>
 #include <services/scriptingservice.h>
 #include <utils/git.h>
@@ -60,6 +61,7 @@
 #include <QDirIterator>
 #include <QDockWidget>
 #include <QFile>
+#include <QGraphicsView>
 #include <QInputDialog>
 #include <QJSEngine>
 #include <QKeyEvent>
@@ -125,6 +127,7 @@
 #include "utils/urlhandler.h"
 #include "version.h"
 #include "widgets/htmlpreviewwidget.h"
+#include "widgets/noterelationscene.h"
 #include "widgets/qownnotesmarkdowntextedit.h"
 
 static MainWindow *s_self = nullptr;
@@ -148,11 +151,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // static reference to us
     s_self = this;
     ui = new Ui::MainWindow;
-
-#ifdef Q_OS_MAC
-    // disable icons in the menu
-    QApplication::instance()->setAttribute(Qt::AA_DontShowIconsInMenus, true);
-#endif
 
     ui->setupUi(this);
 
@@ -194,10 +192,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     initWorkspaceComboBox();
 
 #ifdef Q_OS_MAC
-    // disable icons in the menu that weren't handled by
-    // Qt::AA_DontShowIconsInMenus
-    ui->actionShare_note->setIconVisibleInMenu(false);
-
     // set another shortcut for delete line under macOS
     ui->actionDelete_line->setShortcut(QKeySequence(QStringLiteral("Ctrl+Backspace")));
     ui->actionDelete_word->setShortcut(QKeySequence(QStringLiteral("Alt+Backspace")));
@@ -898,6 +892,16 @@ void MainWindow::initDockWidgets() {
     _notePreviewDockTitleBarWidget = _notePreviewDockWidget->titleBarWidget();
     addDockWidget(Qt::RightDockWidgetArea, _notePreviewDockWidget, Qt::Horizontal);
 
+    _noteGraphicsViewDockWidget = new QDockWidget(tr("Note relations"), this);
+    _noteGraphicsViewDockWidget->setObjectName(QStringLiteral("noteGraphicsViewDockWidget"));
+    _noteGraphicsViewDockWidget->setWidget(ui->noteGraphicsView);
+    _noteGraphicsViewDockTitleBarWidget = _noteGraphicsViewDockWidget->titleBarWidget();
+    addDockWidget(Qt::RightDockWidgetArea, _noteGraphicsViewDockWidget, Qt::Horizontal);
+    _noteGraphicsViewDockWidget->hide();
+    // Prevent that widget can't be seen when enabled
+    _noteGraphicsViewDockWidget->setMinimumHeight(20);
+    setupNoteRelationScene();
+
     _logDockWidget = new QDockWidget(tr("Log"), this);
     _logDockWidget->setObjectName(QStringLiteral("logDockWidget"));
     _logDockWidget->setWidget(_logWidget);
@@ -962,6 +966,12 @@ void MainWindow::initDockWidgets() {
 
     // initialize the panel menu
     initPanelMenu();
+}
+
+void MainWindow::setupNoteRelationScene() {
+    _noteRelationScene = new NoteRelationScene();
+    ui->noteGraphicsView->setScene(_noteRelationScene);
+    ui->noteGraphicsView->setRenderHint(QPainter::Antialiasing);
 }
 
 /**
@@ -1442,6 +1452,10 @@ void MainWindow::togglePanelVisibility(const QString &objectName) {
         if (newVisibility) {
             newVisibility =
                 NoteFolder::isCurrentShowSubfolders() && !Utils::Misc::isEnableNoteTree();
+        }
+    } else if (objectName == QStringLiteral("noteGraphicsViewDockWidget")) {
+        if (newVisibility) {
+            _noteRelationScene->drawForNote(currentNote);
         }
     }
 
@@ -3070,6 +3084,8 @@ void MainWindow::storeUpdatedNotesToDisk() {
             // reload the directory list if note name has changed
             loadNoteDirectoryList();
         }
+
+        updateNoteGraphicsView();
     }
 }
 
@@ -3110,6 +3126,9 @@ void MainWindow::setupStatusBarWidgets() {
     _noteFilePathLabel = new NoteFilePathLabel(this);
     ui->statusBar->addWidget(_noteFilePathLabel);
 
+    initializeOpenAiActivitySpinner();
+    ui->statusBar->addPermanentWidget(_openAiActivitySpinner);
+
     /*
      * setup of readonly button
      */
@@ -3149,6 +3168,19 @@ void MainWindow::setupStatusBarWidgets() {
             &MainWindow::on_actionCheck_for_updates_triggered);
 
     ui->statusBar->addPermanentWidget(_updateAvailableButton);
+}
+
+void MainWindow::initializeOpenAiActivitySpinner() {
+    _openAiActivitySpinner = new WaitingSpinnerWidget(0, false, false);
+    _openAiActivitySpinner->setNumberOfLines(12);
+    _openAiActivitySpinner->setLineLength(5);
+    _openAiActivitySpinner->setLineWidth(2);
+    _openAiActivitySpinner->setInnerRadius(3);
+    _openAiActivitySpinner->setRevolutionsPerSecond(1);
+    _openAiActivitySpinner->setToolTip(tr("Waiting for answer from AI"));
+
+    const bool darkMode = SettingsService().value(QStringLiteral("darkMode")).toBool();
+    _openAiActivitySpinner->setColor(darkMode ? Qt::white : Qt::black);
 }
 
 void MainWindow::showUpdateAvailableButton(const QString &version) {
@@ -3862,6 +3894,14 @@ void MainWindow::setCurrentNote(Note note, bool updateNoteText, bool updateSelec
     Note::externalImageHash()->clear();
 
     ui->actionToggle_distraction_free_mode->setEnabled(true);
+
+    updateNoteGraphicsView();
+}
+
+void MainWindow::updateNoteGraphicsView() {
+    if (_noteRelationScene && _noteGraphicsViewDockWidget->isVisible()) {
+        _noteRelationScene->drawForNote(currentNote);
+    }
 }
 
 void MainWindow::updateCurrentTabData(const Note &note) const {
@@ -8986,7 +9026,8 @@ void MainWindow::moveSelectedNotesToNoteSubFolder(const NoteSubFolder &noteSubFo
             // for some reason this only works with a small delay, otherwise
             // not all changes will be recognized
             QTimer::singleShot(150, this, [this, forceReload] {
-                // If the outgoing links to other notes were changed, we have to really reload the note folder
+                // If the outgoing links to other notes were changed, we have to really reload the
+                // note folder
                 if (forceReload) {
                     buildNotesIndexAndLoadNoteDirectoryList(true, true);
                 } else {
@@ -10298,7 +10339,7 @@ QString MainWindow::selectedNoteTextEditText() {
     const QString newLine = QString::fromUtf8(QByteArray::fromHex("e280a9"));
     selectedText.replace(newLine, QStringLiteral("\n"));
 
-    return selectedText;
+    return selectedText.isNull() ? QString() : selectedText;
 }
 
 /**
@@ -10323,13 +10364,7 @@ void MainWindow::on_actionUnlock_panels_toggled(bool arg1) {
                 continue;
             }
 
-            // remove the title bar widget
-            dockWidget->setTitleBarWidget(new QWidget());
-
-#ifndef Q_OS_MAC
-            // set 3px top margin for the enclosed widget
-            dockWidget->widget()->setContentsMargins(0, 3, 0, 0);
-#endif
+            handleDockWidgetLocking(dockWidget);
         }
     } else {
         // add the old title bar widgets to all dock widgets
@@ -10348,12 +10383,23 @@ void MainWindow::on_actionUnlock_panels_toggled(bool arg1) {
         _notePreviewDockWidget->setTitleBarWidget(_notePreviewDockTitleBarWidget);
         _logDockWidget->setTitleBarWidget(_logDockTitleBarWidget);
         _scriptingDockWidget->setTitleBarWidget(_scriptingDockTitleBarWidget);
+        _noteGraphicsViewDockWidget->setTitleBarWidget(_noteGraphicsViewDockTitleBarWidget);
 
         for (QDockWidget *dockWidget : dockWidgets) {
             // reset the top margin of the enclosed widget
             dockWidget->widget()->setContentsMargins(0, 0, 0, 0);
         }
     }
+}
+
+void MainWindow::handleDockWidgetLocking(QDockWidget *dockWidget) {
+    // Remove the title bar widget
+    dockWidget->setTitleBarWidget(new QWidget());
+
+#ifndef Q_OS_MAC
+    // Set 3px top margin for the enclosed widget
+    dockWidget->widget()->setContentsMargins(0, 3, 0, 0);
+#endif
 }
 
 /**
@@ -10605,6 +10651,7 @@ void MainWindow::restoreCurrentWorkspace() {
         _noteNavigationDockWidget->setVisible(false);
         _noteTagDockWidget->setVisible(false);
         _notePreviewDockWidget->setVisible(false);
+        _noteGraphicsViewDockWidget->setVisible(false);
         createNewWorkspace(tr("minimal", "minimal workspace"));
 
         // TODO: maybe still create those workspaces initially?
@@ -12125,4 +12172,36 @@ void MainWindow::on_navigationTabWidget_currentChanged(int index) {
     Q_UNUSED(index)
 
     startNavigationParser();
+}
+
+void MainWindow::enableOpenAiActivitySpinner(bool enable) {
+    if (_openAiActivitySpinner == nullptr) {
+        return;
+    }
+
+    if (enable) {
+        _openAiActivitySpinner->start();
+    } else {
+        _openAiActivitySpinner->stop();
+    }
+}
+
+/**
+ * Reattaches all floating panels in case they can't be reattached manually anymore
+ */
+void MainWindow::on_actionReattach_panels_triggered() {
+    const QList<QDockWidget *> dockWidgets = findChildren<QDockWidget *>();
+
+    for (QDockWidget *dockWidget : dockWidgets) {
+        if (!dockWidget->isFloating()) {
+            continue;
+        }
+
+        dockWidget->setFloating(false);
+
+        // Remove the title bar if panels are locked
+        if (!ui->actionUnlock_panels->isChecked()) {
+            handleDockWidgetLocking(dockWidget);
+        }
+    }
 }

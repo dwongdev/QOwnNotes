@@ -27,6 +27,9 @@ defaults:
   run:
     working-directory: src
 
+env:
+  QT_MODULES: "qtwebsockets"
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -34,9 +37,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # https://github.com/actions/runner-images?tab=readme-ov-file#available-images
-        # ubuntu-22.04 is needed, because of https://github.com/pbek/QOwnNotes/issues/3212
-        os: [ubuntu-22.04, macos-latest, windows-2019]
+        os: [ubuntu-latest, macos-latest, windows-2019]
         # Linux:   https://download.qt.io/online/qtsdkrepository/linux_x64/desktop/
         # macOS:   https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/
         # Windows: https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/
@@ -44,7 +45,7 @@ jobs:
         experimental: [false]
         exclude:
           # Failing SSL Tests
-          - os: ubuntu-22.04
+          - os: ubuntu-latest
             qt-version: '5.9.9'
           # tests.exe not found
           - os: windows-2019
@@ -61,9 +62,9 @@ jobs:
           - os: windows-2019
             qt-version: '6.5.3'
             experimental: false
-          - os: windows-2019
-            qt-version: '6.6.3'
-            experimental: false
+#          - os: windows-2019
+#            qt-version: '6.6.3'
+#            experimental: false
           # Qt6 builds of macOS are currently breaking because of the workaround for https://bugreports.qt.io/browse/QTBUG-117225
           # See https://github.com/pbek/QOwnNotes/issues/3018
           - os: macos-latest
@@ -89,25 +90,25 @@ jobs:
 #            qt-version: '5.15.1'
           # botan 32bit error
         include:
-#          - os: ubuntu-22.04
+#          - os: ubuntu-latest
 #            qt-version: '6.3.0'
 #            experimental: true
 #          - os: macos-latest
 #            qt-version: '6.3.0'
 #            experimental: true
           # Other 6.2 releases didn't work
-          - os: windows-2019
-            qt-version: '6.2.4'
-            experimental: true
-          - os: windows-2019
-            qt-version: '6.4.3'
-            experimental: true
-          - os: windows-2019
-            qt-version: '6.5.3'
-            experimental: true
-          - os: windows-2019
-            qt-version: '6.6.3'
-            experimental: true
+#          - os: windows-2019
+#            qt-version: '6.2.4'
+#            experimental: true
+#          - os: windows-2019
+#            qt-version: '6.4.3'
+#            experimental: true
+#          - os: windows-2019
+#            qt-version: '6.5.3'
+#            experimental: true
+#          - os: windows-2019
+#            qt-version: '6.6.3'
+#            experimental: true
           # Qt6 builds of macOS are currently breaking because of the workaround for https://bugreports.qt.io/browse/QTBUG-117225
           # See https://github.com/pbek/QOwnNotes/issues/3018
           - os: macos-latest
@@ -159,23 +160,13 @@ jobs:
         version: ${{ matrix.qt-version }}
         arch: win64_mingw81
         cache: true
-    - if: contains( matrix.os, 'windows') && matrix.qt-version == '6.2.4'
-      name: Install Qt Qt 6.2.4 on Windows
-      uses: jurplel/install-qt-action@v4
-      with:
-        aqtversion: '==2.0.0'
-        version: ${{ matrix.qt-version }}
-        arch: win64_mingw
-        modules: qtwebsockets
-        cache: true
-    - if: contains( matrix.os, 'windows') && startsWith( matrix.qt-version, '6.' ) && matrix.qt-version != '6.2.4'
+    - if: contains( matrix.os, 'windows') && startsWith( matrix.qt-version, '6.' )
       name: Install Qt 6 on Windows
       uses: jurplel/install-qt-action@v4
       with:
-        aqtversion: '==2.1.*'
+        aqtversion: '==2.0.*'
         version: ${{ matrix.qt-version }}
-        arch: win64_mingw
-        modules: qtwebsockets
+        modules: ${{env.QT_MODULES}}
         cache: true
     - if: false == contains( matrix.os, 'windows') && false == startsWith( matrix.qt-version, '6.' )
       name: Install Qt < 6 on Linux/macOS
@@ -190,14 +181,17 @@ jobs:
       with:
         aqtversion: '==2.0.0'
         version: ${{ matrix.qt-version }}
-        modules: qtwebsockets
+        modules: ${{env.QT_MODULES}}
         cache: true
+    - if: contains( matrix.os, 'windows') && startsWith( matrix.qt-version, '6.' )
+      name: Make sure MSVC is found on Windows for Qt 6
+      uses: ilammy/msvc-dev-cmd@v1
 
       #
       # Do tests
       #
 
-    - if: contains( matrix.os, 'ubuntu-22.04')
+    - if: contains( matrix.os, 'ubuntu-latest')
       name: Do Linux tests
       run: |
         cd ../tests && qmake CONFIG+=debug CONFIG+=DEV_MODE DEFINES+=INTEGRATION_TESTS && make -s -j 8
@@ -209,7 +203,8 @@ jobs:
       run: |
         cd ../tests && qmake CONFIG+=debug CONFIG+=DEV_MODE DEFINES+=INTEGRATION_TESTS -early QMAKE_DEFAULT_LIBDIRS=$(xcrun -show-sdk-path)/usr/lib && make -s -j 8
         ../bin/tests/tests.app/Contents/MacOS/tests -platform minimal -txt
-    - if: contains( matrix.os, 'windows') && (startsWith( matrix.qt-version, '5.' ) || matrix.qt-version == '6.2.4')
+#    - if: contains( matrix.os, 'windows') && (startsWith( matrix.qt-version, '5.' ) || matrix.qt-version == '6.2.4')
+    - if: contains( matrix.os, 'windows') && startsWith( matrix.qt-version, '5.' )
       name: Do Qt5 / Qt 6.2.4 Windows tests
       run: |
         cd ..\tests
@@ -217,6 +212,7 @@ jobs:
         make
         copy ..\build-systems\github\windows\libcrypto-1_1-x64.dll .
         copy ..\build-systems\github\windows\libssl-1_1-x64.dll .
+        Get-ChildItem -Recurse -Force ..
         copy ..\bin\tests\tests.exe .
         # echo set
         # gci env:* | sort-object name
@@ -229,23 +225,23 @@ jobs:
         windeployqt --debug tests.exe
         # echo test2
         .\tests.exe -txt
-    - if: contains( matrix.os, 'windows') && startsWith( matrix.qt-version, '6.' ) && matrix.qt-version != '6.2.4'
-      name: Do Qt 6.3+ Windows tests
-      run: |
-        cd ..\tests
-        qmake6 DEFINES+=INTEGRATION_TESTS
-        make
-        copy ..\build-systems\github\windows\libcrypto-1_1-x64.dll .
-        copy ..\build-systems\github\windows\libssl-1_1-x64.dll .
-        copy ..\bin\tests\tests.exe .
-        windeployqt --debug tests.exe
-        .\tests.exe -txt
+#    - if: contains( matrix.os, 'windows') && startsWith( matrix.qt-version, '6.' )
+#      name: Do Qt 6.3+ Windows tests
+#      run: |
+#        cd ..\tests
+#        qmake6 DEFINES+=INTEGRATION_TESTS
+#        nmake
+#        copy ..\build-systems\github\windows\libcrypto-1_1-x64.dll .
+#        copy ..\build-systems\github\windows\libssl-1_1-x64.dll .
+#        copy ..\bin\tests\tests.exe .
+#        windeployqt --debug tests.exe
+#        .\tests.exe -txt
 
       #
       # Build QOwnNotes
       #
 
-    - if: true && !(contains( matrix.os, 'windows') && ( matrix.qt-version == '5.15.2' )) && !contains( matrix.os, 'ubuntu-22') && !contains( matrix.os, 'macos')
+    - if: true && !(contains( matrix.os, 'windows') && (matrix.qt-version == '5.15.2' || startsWith( matrix.qt-version, '6.' ))) && !contains( matrix.os, 'ubuntu-22') && !contains( matrix.os, 'macos')
       name: Build QOwnNotes
       run: |
         lrelease QOwnNotes.pro && qmake CONFIG+=debug CONFIG+=DEV_MODE && make -j 8
@@ -256,13 +252,14 @@ jobs:
       run: |
         lrelease QOwnNotes.pro && qmake CONFIG+=debug CONFIG+=DEV_MODE -early QMAKE_DEFAULT_LIBDIRS=$(xcrun -show-sdk-path)/usr/lib && make -j 8
         ../build-systems/github/macos/create-dmg.sh
-#    - if: contains( matrix.os, 'ubuntu-22')
-#      name: Build QOwnNotes Ubuntu 20.04
-#      run: |
-#        lrelease QOwnNotes.pro && qmake CONFIG+=release && make -j 8
-    - if: contains( matrix.os, 'ubuntu-22')
+    - if: contains( matrix.os, 'ubuntu-22') && ( matrix.qt-version == '5.15.2' )
       name: Build for Snapcraft
       uses: snapcore/action-build@v1
+    - if: contains( matrix.os, 'windows') && startsWith( matrix.qt-version, '6.' )
+      name: Build QOwnNotes for Windows with Qt 6
+      run: |
+        qmake6 CONFIG+=debug QOwnNotes.pro CONFIG+=DEV_MODE
+        nmake
 
       #
       # Build QOwnNotes Windows Release and store it as artifact

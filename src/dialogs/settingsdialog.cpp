@@ -223,6 +223,7 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     connect(ui->systemIconThemeCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->darkModeTrayIconCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->darkModeIconThemeCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
+    connect(ui->hideIconsInMenusCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->darkModeColorsCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->darkModeCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->allowOnlyOneAppInstanceCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
@@ -758,6 +759,9 @@ void SettingsDialog::storeSettings() {
     settings.setValue(QStringLiteral("darkModeIconTheme"),
                       ui->darkModeIconThemeCheckBox->isChecked());
 
+    settings.setValue(QStringLiteral("hideIconsInMenus"),
+                      ui->hideIconsInMenusCheckBox->isChecked());
+
     settings.setValue(QStringLiteral("showStatusBarNotePath"),
                       ui->showStatusBarNotePathCheckBox->isChecked());
 
@@ -906,6 +910,8 @@ void SettingsDialog::storeSettings() {
 
     settings.setValue(QStringLiteral("ai/openai/apiKey"),
                       CryptoService::instance()->encryptToString(ui->openAiApiKeyLineEdit->text()));
+    settings.setValue(QStringLiteral("ai/responseTimeout"),
+                      ui->openAiResponseTimeoutSpinBox->value());
 }
 
 /**
@@ -1160,6 +1166,8 @@ void SettingsDialog::readSettings() {
 
     ui->darkModeIconThemeCheckBox->setChecked(Utils::Misc::isDarkModeIconTheme());
 
+    ui->hideIconsInMenusCheckBox->setChecked(Utils::Misc::areMenuIconsHidden());
+
     ui->internalIconThemeCheckBox->setChecked(
         settings.value(QStringLiteral("internalIconTheme")).toBool());
 
@@ -1372,6 +1380,8 @@ void SettingsDialog::readSettings() {
 
     ui->openAiApiKeyLineEdit->setText(CryptoService::instance()->decryptToString(
         settings.value(QStringLiteral("ai/openai/apiKey")).toString()));
+
+    ui->openAiResponseTimeoutSpinBox->setValue(OpenAiService::getResponseTimeout());
 }
 
 /**
@@ -1423,10 +1433,11 @@ void SettingsDialog::loadInterfaceStyleComboBox() const {
 
     if (!interfaceStyle.isEmpty()) {
         ui->interfaceStyleComboBox->setCurrentText(interfaceStyle);
-        QApplication::setStyle(interfaceStyle);
     } else {
         ui->interfaceStyleComboBox->setCurrentIndex(0);
     }
+
+    Utils::Gui::applyInterfaceStyle();
 }
 
 /**
@@ -3800,7 +3811,7 @@ void SettingsDialog::on_scriptListWidget_itemChanged(QListWidgetItem *item) {
 }
 
 void SettingsDialog::on_interfaceStyleComboBox_currentTextChanged(const QString &arg1) {
-    QApplication::setStyle(arg1);
+    Utils::Gui::applyInterfaceStyle(arg1);
 
     // if the interface style was set to automatic we need a restart
     if (ui->interfaceStyleComboBox->currentIndex() == 0) {

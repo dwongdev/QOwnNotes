@@ -60,6 +60,10 @@ OpenAiService* OpenAiService::instance() {
     return service;
 }
 
+int OpenAiService::getResponseTimeout() {
+    return SettingsService().value(QStringLiteral("ai/responseTimeout"), 15).toInt();
+}
+
 /**
  * Creates a global instance of the class
  */
@@ -76,11 +80,29 @@ void OpenAiService::deleteInstance() {
 
 void OpenAiService::initializeBackends() {
     _backendModels.clear();
-    _backendModels[QStringLiteral("openai")] =
-        QStringList{"gpt-4o", "gpt-4o-mini", "gpt-4-turbo", "gpt-3.5-turbo", "gpt-4"};
-    _backendModels[QStringLiteral("groq")] =
-        QStringList{"llama3-70b-8192", "llama3-8b-8192", "llama2-70b-4096", "mixtral-8x7b-32768",
-                    "gemma-7b-it"};
+    _backendModels[QStringLiteral("openai")] = QStringList{"gpt-4o",
+                                                           "chatgpt-4o-latest",
+                                                           "gpt-4o-mini",
+                                                           "o1-mini",
+                                                           "o1-preview",
+                                                           "gpt-4-turbo",
+                                                           "gpt-3.5-turbo",
+                                                           "gpt-4"};
+    _backendModels[QStringLiteral("groq")] = QStringList{"qwen-2.5-32b",
+                                                         "deepseek-r1-distill-qwen-32b",
+                                                         "deepseek-r1-distill-llama-70b",
+                                                         "llama-3.1-8b-instant",
+                                                         "llama-3.2-11b-vision-preview",
+                                                         "llama-3.2-1b-preview",
+                                                         "llama-3.2-3b-preview",
+                                                         "llama-3.2-90b-vision-preview",
+                                                         "llama-3.3-70b-specdec",
+                                                         "llama-3.3-70b-versatile",
+                                                         "llama3-70b-8192",
+                                                         "llama3-8b-8192",
+                                                         "llama-guard-3-8b",
+                                                         "mixtral-8x7b-32768",
+                                                         "gemma2-9b-it"};
 
     _backendApiBaseUrls.clear();
     _backendApiBaseUrls[QStringLiteral("openai")] =
@@ -225,7 +247,7 @@ QString OpenAiService::getModelId() {
     // If still not set get the first of the models
     if (this->_modelId.isEmpty()) {
         const QStringList& models = getModelsForCurrentBackend();
-        this->_modelId = models.isEmpty() ? QStringLiteral("") : models.first();
+        this->_modelId = models.isEmpty() ? QLatin1String("") : models.first();
     }
 
     return this->_modelId;
@@ -306,8 +328,8 @@ QString OpenAiCompleter::completeSync(const QString& prompt) {
     QObject::connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
     QObject::connect(manager, SIGNAL(finished(QNetworkReply*)), &loop, SLOT(quit()));
 
-    // 15 sec timeout for the request
-    timer.start(15000);
+    // 15 sec timeout for the response by default
+    timer.start(OpenAiService::getResponseTimeout() * 1000);
 
     QUrl url(apiBaseUrl);
     QNetworkRequest request(url);

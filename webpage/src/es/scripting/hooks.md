@@ -405,7 +405,7 @@ openAiBackendsHook
 
 Este gancho se llama cuando el servicio de OpenAI se vuelve a cargar. Por ejemplo, esto también sucede cuando el motor de scripts se vuelve a cargar.
 
-Puede usarlo para proveer una configuración para motores de OpenAI personalizados, como su propio LLMs compatible con OpenAI.
+Puede utilizarlo para proporcionar configuración para backends de OpenAI personalizados, como sus propios LLM compatibles con la API de OpenAI. Por ejemplo, ChatGPT, Claude o sistemas como Ollama.
 
 ### Llamada y parámetros del método
 ```js

@@ -3404,6 +3404,10 @@ Ako je kanta za smeće aktivirana na poslužitelju ownCloud trebali biste ju mo�
 <source>Click here to see what has changed and to be able to update to the latest version</source>
 <translation>Kliknite ovdje da biste vidjeli promjene te da ažurirate na najnoviju inačicu</translation>
 </message>
+<message>
+<source>Waiting for answer from AI</source>
+<translation type="unfinished">Waiting for answer from AI</translation>
+</message>
 <message numerus="yes">
 <source>Proceed with automatic deletion of &lt;strong&gt;%n&lt;/strong&gt; conflicted database copies that may block your ownCloud sync process?</source>
 <translation>
@@ -5522,6 +5526,14 @@ Samo se testirajte ako dobijete sukobe pri sinkronizaciji i postavite višu vrij
 <translation>Traži jezik</translation>
 </message>
 <message>
+<source>Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</source>
+<translation type="unfinished">Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</translation>
+</message>
+<message>
+<source>Hide menu icons</source>
+<translation type="unfinished">Hide menu icons</translation>
+</message>
+<message>
 <source>Status bar</source>
 <translation>Traka stanja</translation>
 </message>
@@ -5690,6 +5702,23 @@ Samo se testirajte ako dobijete sukobe pri sinkronizaciji i postavite višu vrij
 <source>Test connection</source>
 <comment>"Test" as verb</comment>
 <translation>Provjeri vezu</translation>
+</message>
+<message>
+<source>API settings</source>
+<translation type="unfinished">API settings</translation>
+</message>
+<message>
+<source>Response timeout:</source>
+<translation type="unfinished">Response timeout:</translation>
+</message>
+<message>
+<source>Time the application will wait for a response from the server before timing out and returning an error message.</source>
+<translation type="unfinished">Time the application will wait for a response from the server before timing out and returning an error message.</translation>
+</message>
+<message>
+<source>sec</source>
+<comment>seconds</comment>
+<translation>sekunda</translation>
 </message>
 <message>
 <source>AI backends added via the scripting engine</source>
@@ -6122,7 +6151,7 @@ Samo se testirajte ako dobijete sukobe pri sinkronizaciji i postavite višu vrij
 <message>
 <source>sec</source>
 <extracomment>seconds</extracomment>
-<translation>sekunda</translation>
+<translation type="unfinished">sec</translation>
 </message>
 <message>
 <source>git commit interval time [sec]</source>

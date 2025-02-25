@@ -1471,10 +1471,21 @@ QString ScriptingService::aiComplete(const QString &prompt) {
 #ifndef INTEGRATION_TESTS
     MetricsService::instance()->sendVisitIfEnabled(QStringLiteral("scripting/") %
                                                    QString(__func__));
+    MainWindow *mainWindow = MainWindow::instance();
+    if (mainWindow != nullptr) {
+        mainWindow->enableOpenAiActivitySpinner();
+    }
 
-    return OpenAiService::instance()->complete(prompt);
+    const auto result = OpenAiService::instance()->complete(prompt);
+
+    if (mainWindow != nullptr) {
+        mainWindow->enableOpenAiActivitySpinner(false);
+    }
+
+    return result;
 #else
     Q_UNUSED(prompt)
+    return {};
 #endif
 }
 
@@ -2086,7 +2097,7 @@ QString ScriptingService::inputDialogGetItem(const QString &title, const QString
     bool ok;
     QString result = QInputDialog::getItem(nullptr, title, label, items, current, editable, &ok);
 
-    return ok ? result : QStringLiteral("");
+    return ok ? result : QLatin1String("");
 #else
     Q_UNUSED(title)
     Q_UNUSED(label)
@@ -2114,7 +2125,7 @@ QString ScriptingService::inputDialogGetText(const QString &title, const QString
     bool ok;
     QString result = QInputDialog::getText(nullptr, title, label, QLineEdit::Normal, text, &ok);
 
-    return ok ? result : QStringLiteral("");
+    return ok ? result : QLatin1String("");
 #else
     Q_UNUSED(title)
     Q_UNUSED(label)
@@ -2140,7 +2151,7 @@ QString ScriptingService::inputDialogGetMultiLineText(const QString &title, cons
     bool ok;
     QString result = QInputDialog::getMultiLineText(nullptr, title, label, text, &ok);
 
-    return ok ? result : QStringLiteral("");
+    return ok ? result : QLatin1String("");
 #else
     Q_UNUSED(title)
     Q_UNUSED(label)
@@ -2158,10 +2169,18 @@ QString ScriptingService::inputDialogGetMultiLineText(const QString &title, cons
  * @param text2 {QString} second text
  * @return
  */
-QString ScriptingService::textDiffDialog(const QString &title, const QString &label,
-                                         const QString &text1, const QString &text2) {
+QString ScriptingService::textDiffDialog(const QString &title, const QString &label, QString text1,
+                                         QString text2) {
     MetricsService::instance()->sendVisitIfEnabled(QStringLiteral("scripting/") %
                                                    QString(__func__));
+
+    if (text1.isNull()) {
+        text1 = QLatin1String("");
+    }
+
+    if (text2.isNull()) {
+        text2 = QLatin1String("");
+    }
 
 #ifndef INTEGRATION_TESTS
     auto dialog = new TextDiffDialog(nullptr, title, label, text1, text2);
@@ -2173,8 +2192,6 @@ QString ScriptingService::textDiffDialog(const QString &title, const QString &la
 #else
     Q_UNUSED(title)
     Q_UNUSED(label)
-    Q_UNUSED(text1)
-    Q_UNUSED(text2)
     return QString();
 #endif
 }

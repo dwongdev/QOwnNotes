@@ -1,8 +1,84 @@
 # QOwnNotes Changelog
 
+## 25.2.9
+- There now is a new action in the *Window menu* to reattach all floating panels in case
+  they can't be reattached manually anymore (for [#3109](https://github.com/pbek/QOwnNotes/pull/3109))
+
+## 25.2.8
+- The latest available language models were added to the list of available OpenAI models
+- Added more Spanish, Korean, Dutch translation (thank you, alejandromoc, venusgirl, stephanp)
+
+## 25.2.7
+- The AI activity spinner will use white color in dark mode now
+  (for [#3231](https://github.com/pbek/QOwnNotes/pull/3231))
+- Added more Spanish translation (thank you, alejandromoc)
+
+## 25.2.6
+- There now is a setting to increase the API response timeout in the *AI settings*
+  (for [#3231](https://github.com/pbek/QOwnNotes/pull/3231))
+- Now a loading spinner is shown in the status bar during AI activity
+  (for [#3231](https://github.com/pbek/QOwnNotes/pull/3231))
+
+## 25.2.5
+- The main menu and command bar now has a cleaner user experience when icons are hidden
+  on GTK-based Linux desktops (for [#3230](https://github.com/pbek/QOwnNotes/pull/3230))
+- Added more Dutch, Korean, Spanish translation (thank you, stephanp, venusgirl, alejandromoc)
+
+## 25.2.4
+- There now is a setting to hide the icons in the main menu and command bar in the *Interface settings*
+  (for [#3230](https://github.com/pbek/QOwnNotes/pull/3230), thank you, @andrei-a-papou)
+- The AI models `qwen-2.5-32b` and `deepseek-r1-distill-qwen-32b` for Groq have
+  been added (for [#3233](https://github.com/pbek/QOwnNotes/pull/3233), thank you, @Weej1)
+
+## 25.2.3
+- The GDScript support in the note edit code block syntax highlighter was improved
+  to support `$NodePath` and `%UniqueNode` constructs highlighted as literals
+  (for [#216](https://github.com/pbek/qmarkdowntextedit/pull/216), thank you, @DarienMC)
+- Added TOML support to the note edit code block syntax highlighter
+  (for [#217](https://github.com/pbek/qmarkdowntextedit/pull/217), thank you, @LockeBirdsey)
+
+## 25.2.2
+- A regression was fixed where you get a dialog `A change of the note path was detected`
+  after renaming a note, regardless if there were backlinks to the note that needed
+  to be updated (for [#3228](https://github.com/pbek/QOwnNotes/issues/3228))
+- An issue with the `script.textDiffDialog()` scripting command was fixed, where a null string
+  could crash the application (for [#257](https://github.com/qownnotes/scripts/issues/257))
+- The [QOwnNotesAPI Nextcloud App](https://apps.nextcloud.com/apps/qownnotesapi)
+  was updated to version 25.2.0 for Nextcloud 31 (for [#51](https://github.com/pbek/qownnotesapi/issues/51))
+
+## 25.2.1
+- The heading detection in the link dialog and when jumping to the heading in a
+  note link was re-implemented and now uses the highlighting states of the note
+  editor component (for [#3181](https://github.com/pbek/QOwnNotes/issues/3181))
+  - Now also the "underline-ish style" headings are recognized and there are no
+    issues with comments in code blocks that are detected as headings anymore
+- Support was added SQL comments in code blocks for the SQL syntax highlighter
+  (for [#215](https://github.com/pbek/qmarkdowntextedit/pull/215), thank you, @LockeBirdsey)
+- Added more Dutch translation (thank you, stephanp)
+
+## 25.2.0
+- Added GDScript support to the note edit code block syntax highlighter
+  (for [#3222](https://github.com/pbek/QOwnNotes/issues/3222), thank you, @DarienMC)
+- Try to fix hypothetically leaking carriage return characters in the headings in
+  the note link dialog under Windows (for [#3221](https://github.com/pbek/QOwnNotes/issues/3221))
+
+## 25.1.7
+- When inserting an image or attachment file via their insert dialogs or via
+  drag and drop the filenames will now be urlencoded to prevent problems with
+  special characters in the filenames (for [#3215](https://github.com/pbek/QOwnNotes/issues/3215)) 
+  - The management dialogs for images and attachments can now also recognize
+    urlencoded filenames to show the files correctly
+
+## 25.1.6
+- The available AI models for Groq have been updated
+  (for [#3216](https://github.com/pbek/QOwnNotes/issues/3216), thank you, @Weej1)
+- An issue with combinations of strong and em tags preview was fixed
+  (for [#3218](https://github.com/pbek/QOwnNotes/issues/3218))
+- Added more Spanish translation (thank you, alejandromoc)
+
 ## 25.1.5
 - After moving a note to a new subfolder, outgoing links to other notes can now be
-  automatically adapted (for [#3200](https://github.com/pbek/QOwnNotes/issues/3200)) 
+  automatically adapted (for [#3200](https://github.com/pbek/QOwnNotes/issues/3200))
 - Added more Korean, Dutch, Spanish, French translation (thank you, venusgirl,
   stephanp, alejandromoc, jd-develop)
 

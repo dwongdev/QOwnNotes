@@ -115,6 +115,7 @@ lessThan(QT_MAJOR_VERSION, 6) {
 INCLUDEPATH += $$PWD/libraries $$PWD/libraries/diff_match_patch
 
 SOURCES += main.cpp\
+    helpers/nomenuiconstyle.cpp \
     dialogs/attachmentdialog.cpp \
     dialogs/nextclouddeckdialog.cpp \
     entities/cloudconnection.cpp \
@@ -128,6 +129,7 @@ SOURCES += main.cpp\
     libraries/md4c/src/md4c.c \
     libraries/md4c/src/md4c-html.c \
     libraries/md4c/src/entity.c \
+    libraries/qtwaitingspinner/waitingspinnerwidget.cpp \
     dialogs/aboutdialog.cpp \
     dialogs/linkdialog.cpp \
     dialogs/notediffdialog.cpp \
@@ -221,9 +223,11 @@ SOURCES += main.cpp\
     libraries/fuzzy/kfuzzymatcher.cpp \
     libraries/qr-code-generator/QrCode.cpp \
     widgets/notesubfoldertree.cpp \
+    widgets/noterelationscene.cpp \
     utils/urlhandler.cpp
 
 HEADERS  += mainwindow.h \
+    helpers/nomenuiconstyle.h \
     build_number.h \
     dialogs/attachmentdialog.h \
     dialogs/nextclouddeckdialog.h \
@@ -336,7 +340,9 @@ HEADERS  += mainwindow.h \
     models/commandmodel.h \
     libraries/fuzzy/kfuzzymatcher.h \
     libraries/qr-code-generator/QrCode.hpp \
+    libraries/qtwaitingspinner/waitingspinnerwidget.h \
     widgets/notesubfoldertree.h \
+    widgets/noterelationscene.h \
     utils/urlhandler.h \
 
 FORMS    += mainwindow.ui \

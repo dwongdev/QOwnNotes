@@ -3388,6 +3388,10 @@ Se a papeleira está habilitada no teu servidor ownCloud, deberías poder restau
 <source>Click here to see what has changed and to be able to update to the latest version</source>
 <translation>Fai clic aquí para ver o que cambiou e para poder actualizar á última versión</translation>
 </message>
+<message>
+<source>Waiting for answer from AI</source>
+<translation type="unfinished">Waiting for answer from AI</translation>
+</message>
 <message numerus="yes">
 <source>Proceed with automatic deletion of &lt;strong&gt;%n&lt;/strong&gt; conflicted database copies that may block your ownCloud sync process?</source>
 <translation>
@@ -5505,6 +5509,14 @@ Abre o asistente de emisión de temas &lt;/ span&gt; na parte inferior. &lt;/ P&
 <translation>Busca de idioma</translation>
 </message>
 <message>
+<source>Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</source>
+<translation type="unfinished">Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</translation>
+</message>
+<message>
+<source>Hide menu icons</source>
+<translation type="unfinished">Hide menu icons</translation>
+</message>
+<message>
 <source>Status bar</source>
 <translation type="unfinished">Status bar</translation>
 </message>
@@ -5673,6 +5685,23 @@ Abre o asistente de emisión de temas &lt;/ span&gt; na parte inferior. &lt;/ P&
 <source>Test connection</source>
 <comment>"Test" as verb</comment>
 <translation type="unfinished">Test connection</translation>
+</message>
+<message>
+<source>API settings</source>
+<translation type="unfinished">API settings</translation>
+</message>
+<message>
+<source>Response timeout:</source>
+<translation type="unfinished">Response timeout:</translation>
+</message>
+<message>
+<source>Time the application will wait for a response from the server before timing out and returning an error message.</source>
+<translation type="unfinished">Time the application will wait for a response from the server before timing out and returning an error message.</translation>
+</message>
+<message>
+<source>sec</source>
+<comment>seconds</comment>
+<translation>seg</translation>
 </message>
 <message>
 <source>AI backends added via the scripting engine</source>
@@ -6105,7 +6134,7 @@ Abre o asistente de emisión de temas &lt;/ span&gt; na parte inferior. &lt;/ P&
 <message>
 <source>sec</source>
 <extracomment>seconds</extracomment>
-<translation>seg</translation>
+<translation type="unfinished">sec</translation>
 </message>
 <message>
 <source>git commit interval time [sec]</source>

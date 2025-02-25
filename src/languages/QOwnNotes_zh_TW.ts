@@ -3347,6 +3347,10 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <source>Click here to see what has changed and to be able to update to the latest version</source>
 <translation>點此查看修改項目並更新至最新版本</translation>
 </message>
+<message>
+<source>Waiting for answer from AI</source>
+<translation type="unfinished">Waiting for answer from AI</translation>
+</message>
 <message numerus="yes">
 <source>Proceed with automatic deletion of &lt;strong&gt;%n&lt;/strong&gt; conflicted database copies that may block your ownCloud sync process?</source>
 <translation>
@@ -5450,6 +5454,14 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>搜索语言</translation>
 </message>
 <message>
+<source>Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</source>
+<translation type="unfinished">Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</translation>
+</message>
+<message>
+<source>Hide menu icons</source>
+<translation type="unfinished">Hide menu icons</translation>
+</message>
+<message>
 <source>Status bar</source>
 <translation type="unfinished">Status bar</translation>
 </message>
@@ -5618,6 +5630,23 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <source>Test connection</source>
 <comment>"Test" as verb</comment>
 <translation type="unfinished">Test connection</translation>
+</message>
+<message>
+<source>API settings</source>
+<translation type="unfinished">API settings</translation>
+</message>
+<message>
+<source>Response timeout:</source>
+<translation type="unfinished">Response timeout:</translation>
+</message>
+<message>
+<source>Time the application will wait for a response from the server before timing out and returning an error message.</source>
+<translation type="unfinished">Time the application will wait for a response from the server before timing out and returning an error message.</translation>
+</message>
+<message>
+<source>sec</source>
+<comment>seconds</comment>
+<translation>秒</translation>
 </message>
 <message>
 <source>AI backends added via the scripting engine</source>
@@ -6047,7 +6076,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <message>
 <source>sec</source>
 <extracomment>seconds</extracomment>
-<translation>秒</translation>
+<translation type="unfinished">sec</translation>
 </message>
 <message>
 <source>git commit interval time [sec]</source>

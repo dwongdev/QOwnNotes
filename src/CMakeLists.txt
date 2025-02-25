@@ -258,6 +258,8 @@ set(SOURCE_FILES
     helpers/qownspellchecker.h
     helpers/codetohtmlconverter.cpp
     helpers/codetohtmlconverter.h
+    helpers/nomenuiconstyle.cpp
+    helpers/nomenuiconstyle.h
     api/noteapi.cpp
     api/noteapi.h
     api/notesubfolderapi.cpp
@@ -293,6 +295,8 @@ set(SOURCE_FILES
     libraries/qtcsv/src/sources/reader.cpp
     libraries/qtcsv/src/sources/filechecker.h
     libraries/qtcsv/src/sources/symbols.h
+    libraries/qtwaitingspinner/waitingspinnerwidget.h
+    libraries/qtwaitingspinner/waitingspinnerwidget.cpp
     services/databaseservice.cpp
     services/databaseservice.h
     services/owncloudservice.cpp
@@ -397,6 +401,8 @@ set(SOURCE_FILES
     widgets/htmlpreviewwidget.cpp
     widgets/notesubfoldertree.cpp
     widgets/notesubfoldertree.h
+    widgets/noterelationscene.cpp
+    widgets/noterelationscene.h
     utils/misc.cpp
     utils/misc.h
     utils/git.cpp

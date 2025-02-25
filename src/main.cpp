@@ -16,6 +16,7 @@
 
 #include "dialogs/welcomedialog.h"
 #include "entities/notefolder.h"
+#include "helpers/nomenuiconstyle.h"
 #include "libraries/singleapplication/singleapplication.h"
 #include "mainwindow.h"
 #include "release.h"
@@ -184,13 +185,7 @@ int mainStartupMisc(const QStringList &arguments) {
         return 0;    // Exit after generating the completion script
     }
 
-    QSettings settings;
-    QString interfaceStyle = settings.value(QStringLiteral("interfaceStyle")).toString();
-
-    // restore the interface style
-    if (!interfaceStyle.isEmpty()) {
-        QApplication::setStyle(interfaceStyle);
-    }
+    Utils::Gui::applyInterfaceStyle();
 
 #ifdef Q_OS_WIN32
     Utils::Gui::doWindowsDarkModeCheck();
@@ -200,6 +195,7 @@ int mainStartupMisc(const QStringList &arguments) {
     Utils::Gui::doLinuxDarkModeCheck();
 #endif
 
+    QSettings settings;
     bool systemIconTheme = settings.value(QStringLiteral("systemIconTheme")).toBool();
 
     if (!systemIconTheme) {
