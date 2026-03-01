@@ -1,5 +1,10 @@
 # QOwnNotes Changelog
 
+## 26.3.1
+
+- Fixed text selection start positions in wrapped Markdown list items with
+  hanging indentation in the note text edit (for [#3477](https://github.com/pbek/QOwnNotes/issues/3477))
+
 ## 26.3.0
 
 - Fixed hanging indentation for wrapped Markdown list lines not matching the
