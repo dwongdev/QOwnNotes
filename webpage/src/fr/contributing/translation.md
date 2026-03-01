@@ -38,7 +38,7 @@ Veuillez prendre en compte quelques éléments lorsque vous travaillez sur le pr
 
 ### Exactitude
 
-Veuillez traduire avec une exactitude maximale tout en veillant à la maîtrise de votre langue cible.
+Veuillez traduire avec une exactitude maximale tout en veillant à la fluidité dans votre langue cible.
 
 ### Précision
 

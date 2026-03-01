@@ -1886,7 +1886,7 @@ void ScriptingService::addHighlightingRule(const QString &pattern,
 | H5        | 16 |
 | H6        | 17 |
 | 블럭 따옴표    | 18 |
-| 수평 눈금자    | 21 |
+| 수평 규칙     | 21 |
 | 표         | 22 |
 | 들여쓰기코드블록  | 23 |
 | 마스크된 구문   | 24 |

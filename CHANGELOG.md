@@ -5,6 +5,7 @@
 - Fixed hanging indentation for wrapped Markdown list lines not matching the
   indentation of non-wrapped list items in the note text edit
   (for [#3476](https://github.com/pbek/QOwnNotes/issues/3476))
+- Added more Russian, French, Korean translation (thank you, catmenmilota, jd-develop, venusgirl)
 
 ## 26.2.15
 

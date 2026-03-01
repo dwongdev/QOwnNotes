@@ -1264,28 +1264,28 @@
 <name>HtmlPreviewWidgetInternal</name>
 <message>
 <source>Copy</source>
-<translation type="unfinished">Copy</translation>
+<translation>Копировать</translation>
 </message>
 <message>
 <source>Copy link location</source>
-<translation type="unfinished">Copy link location</translation>
+<translation>Копировать местоположение ссылки</translation>
 </message>
 <message>
 <source>Export generated raw HTML</source>
-<translation type="unfinished">Export generated raw HTML</translation>
+<translation>Экспорт сгенерированного исходного HTML-кода</translation>
 </message>
 <message>
 <source>Reset zoom</source>
-<translation type="unfinished">Reset zoom</translation>
+<translation>Сбросить масштаб</translation>
 </message>
 <message>
 <source>HTML files</source>
-<translation type="unfinished">HTML files</translation>
+<translation>HTML-файлы</translation>
 </message>
 <message>
 <source>Export preview as raw HTML file</source>
 <comment>"Raw" means that actually the html that was fed to the preview will be stored (the QTextBrowser modifies the html that it is showing)</comment>
-<translation type="unfinished">Export preview as raw HTML file</translation>
+<translation>Экспорт предпросмотра в виде исходного HTML-файла</translation>
 </message>
 </context>
 <context>
@@ -1999,11 +1999,11 @@
 </message>
 <message>
 <source>Previous &amp;heading</source>
-<translation type="unfinished">Previous &amp;heading</translation>
+<translation>Предыдущий &amp;заголовок</translation>
 </message>
 <message>
 <source>Next heading</source>
-<translation type="unfinished">Next heading</translation>
+<translation>Следующий заголовок</translation>
 </message>
 <message>
 <source>Show shortcuts</source>
@@ -2432,7 +2432,7 @@
 </message>
 <message>
 <source>Ctrl+Alt+D</source>
-<translation type="unfinished">Ctrl+Alt+D</translation>
+<translation>Ctrl+Alt+D</translation>
 </message>
 <message>
 <source>Send clipboard</source>
@@ -2934,24 +2934,24 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Update backlinks</source>
-<translation type="unfinished">Update backlinks</translation>
+<translation>Обновить обратные ссылки</translation>
 </message>
 <message numerus="yes">
 <source>The heading "%1" is referenced in %n note(s). Do you want to update the link to use the new heading "%2"?</source>
-<translation type="unfinished">
-<numerusform>The heading "%1" is referenced in %n note(s). Do you want to update the link to use the new heading "%2"?</numerusform>
-<numerusform>The heading "%1" is referenced in %n note(s). Do you want to update the link to use the new heading "%2"?</numerusform>
-<numerusform>The heading "%1" is referenced in %n note(s). Do you want to update the link to use the new heading "%2"?</numerusform>
-<numerusform>The heading "%1" is referenced in %n note(s). Do you want to update the link to use the new heading "%2"?</numerusform>
+<translation>
+<numerusform>Заголовок "%1" указан в %n заметке. Вы хотите обновить ссылку, чтобы использовать новый заголовок "%2"?</numerusform>
+<numerusform>Заголовок "%1" указан в %n заметках. Вы хотите обновить ссылки, чтобы использовать новый заголовок "%2"?</numerusform>
+<numerusform>Заголовок "%1" указан в %n заметках. Вы хотите обновить ссылку, чтобы использовать новый заголовок "%2"?</numerusform>
+<numerusform>Заголовок "%1" указан в %n заметках. Вы хотите обновить ссылку, чтобы использовать новый заголовок "%2"?</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>Updated heading links in %n note(s)</source>
-<translation type="unfinished">
-<numerusform>Updated heading links in %n note(s)</numerusform>
-<numerusform>Updated heading links in %n note(s)</numerusform>
-<numerusform>Updated heading links in %n note(s)</numerusform>
-<numerusform>Updated heading links in %n note(s)</numerusform>
+<translation>
+<numerusform>Обновлены ссылки на заголовки в %n заметке</numerusform>
+<numerusform>Обновлены ссылки на заголовки в %n заметках</numerusform>
+<numerusform>Обновлены ссылки на заголовки в %n заметках</numerusform>
+<numerusform>Обновлены ссылки на заголовки в %n заметках</numerusform>
 </translation>
 </message>
 <message>
@@ -4872,27 +4872,27 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>Replace text</source>
-<translation type="unfinished">Replace text</translation>
+<translation>Заменить текст</translation>
 </message>
 <message>
 <source>Close search</source>
-<translation type="unfinished">Close search</translation>
+<translation>Закрыть поиск</translation>
 </message>
 <message>
 <source>Find in text</source>
-<translation type="unfinished">Find in text</translation>
+<translation>Найти в тексте</translation>
 </message>
 <message>
 <source>Search forward</source>
-<translation type="unfinished">Search forward</translation>
+<translation>Искать далее</translation>
 </message>
 <message>
 <source>Search backward</source>
-<translation type="unfinished">Search backward</translation>
+<translation>Искать в предыдущих</translation>
 </message>
 <message>
 <source>Replace with</source>
-<translation type="unfinished">Replace with</translation>
+<translation>Заменить на</translation>
 </message>
 <message>
 <source>Replace:</source>
@@ -6162,6 +6162,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
+<source>Search scripts</source>
+<translation type="unfinished">Search scripts</translation>
+</message>
+<message>
 <source>When inactive, enter read-only mode automatically after:</source>
 <translation>Когда отключено, автоматически входить в режим только для чтения после:</translation>
 </message>
@@ -6257,10 +6261,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <message>
 <source>Command:</source>
 <translation type="unfinished">Command:</translation>
-</message>
-<message>
-<source>marksman</source>
-<translation type="unfinished">marksman</translation>
 </message>
 <message>
 <source>Arguments:</source>

@@ -1830,7 +1830,7 @@ void ScriptingService::addHighlightingRule(const QString &pattern,
 | H5                     | 16    |
 | H6                     | 17    |
 | بلوک نقل قول           | 18    |
-| خط کش افقی             | 21    |
+| HorizontalRule         | 21    |
 | جدول                   | 22    |
 | کد بلوک درون خطی       | 23    |
 | چیدمان پوشیده          | 24    |

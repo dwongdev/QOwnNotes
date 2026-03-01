@@ -5068,7 +5068,7 @@ Voulez-vous quand même l'installer ?</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Merci d'enter l'URL de votre serveur ownCloud, par exemple : &lt;span style=" font-style:italic;"&gt;https://cloud.votre_serveur.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Merci d'entrer l'URL de votre serveur ownCloud, par exemple &lt;span style=" font-style:italic;"&gt;https://cloud.votre_serveur.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the username on your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -5811,7 +5811,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Use legacy way to link to notes, images and attachments</source>
-<translation>Utilisez l'ancienne méthode pour créer un lien vers des notes, des images et des pièces jointes</translation>
+<translation>Utiliser l’ancienne méthode pour créer des liens vers des notes, des images et des pièces jointes</translation>
 </message>
 <message>
 <source>When opening notes the cursor position inside the note will now be restored to the position when the note was last visited in the current session</source>
@@ -5907,11 +5907,11 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Browser extension / command snippets</source>
-<translation>Extension de navigateur / extraits de commandes</translation>
+<translation>Extension de navigateur / snippets de commandes</translation>
 </message>
 <message>
 <source>Web application</source>
-<translation>application Web</translation>
+<translation>Application Web</translation>
 </message>
 <message>
 <source>AI</source>
@@ -5927,7 +5927,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</source>
-<translation>Vous pouvez accéder à votre serveur ownCloud depuis l'application pour - par exemple - gérer les notes mises à la corbeille, les versions ou le partage de notes. Cette intégration ne prend pas en charge la synchronisation de fichiers ; vous devrez installer « ownCloud sync client » pour cela.</translation>
+<translation>Vous pouvez accéder à votre serveur ownCloud depuis l'application pour – par exemple – gérer les notes mises à la corbeille, les versions ou le partage de notes. Cette intégration ne prend pas en charge la synchronisation de fichiers ; vous devrez installer « ownCloud sync client » pour cela.</translation>
 </message>
 <message>
 <source>You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</source>
@@ -6058,6 +6058,10 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vous aurez toujours besoin du &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;client de synchronisation ownCloud&lt;/b&gt;&lt;/a&gt; (ou une autre application de bureau de synchronisation) pour synchroniser vos notes !&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
+<source>Search scripts</source>
+<translation>Rechercher dans les scripts</translation>
+</message>
+<message>
 <source>When inactive, enter read-only mode automatically after:</source>
 <translation>Quand inactif, entrer en mode lecture seule automatiquement après :</translation>
 </message>
@@ -6155,16 +6159,12 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 <translation>Commande :</translation>
 </message>
 <message>
-<source>marksman</source>
-<translation type="unfinished">marksman</translation>
-</message>
-<message>
 <source>Arguments:</source>
 <translation>Arguments :</translation>
 </message>
 <message>
 <source>Optional arguments separated by spaces.</source>
-<translation type="unfinished">Optional arguments separated by spaces.</translation>
+<translation>Arguments optionnels séparés par des espaces.</translation>
 </message>
 <message>
 <source>Optional arguments</source>
@@ -6278,7 +6278,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</source>
-<translation>Pour utiliser les back-ends d’IA, vous pouvez soit utiliser la commande de script &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, ou regarder le dépôt de scripts pour des scripts déjà écrits.</translation>
+<translation>Pour utiliser les back-ends d’IA, vous pouvez soit utiliser la commande de script &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, soit chercher des scripts déjà écrits dans le dépôt de scripts.</translation>
 </message>
 <message>
 <source>You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</source>
@@ -6358,15 +6358,15 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Command snippets</source>
-<translation>Extraits de commandes</translation>
+<translation>Snippets</translation>
 </message>
 <message>
 <source>Tag name for commands notes</source>
-<translation>Nom de balise pour les notes de commandes</translation>
+<translation>Nom de tag pour les notes de commandes</translation>
 </message>
 <message>
 <source>Commands tag:</source>
-<translation>Balise de commandes :</translation>
+<translation>Tag de commandes :</translation>
 </message>
 <message>
 <source>Commands note name:</source>
@@ -6406,11 +6406,11 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</source>
-<translation>Téléchargez le &lt;a href="%1"&gt;gestionnaire d'extraits de commandes en ligne de commande&lt;/a&gt; pour exécuter des extraits de commande stockés dans les notes dans QOwnNotes à partir de la ligne de commande.</translation>
+<translation>Téléchargez le &lt;a href="%1"&gt;gestionnaire de snippets en ligne de commande&lt;/a&gt; pour exécuter des snippets de commandes stockés dans les notes dans QOwnNotes à partir de la ligne de commande.</translation>
 </message>
 <message>
 <source>You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
-<translation>Vous pouvez utiliser des notes avec une balise spéciale pour stocker des extraits de commande, que vous pouvez exécuter à partir du gestionnaire d'extraits de commandes en ligne de commande. Pour plus d'informations sur la syntaxe de l'extrait de commande, cliquez &lt;a href="%1"&gt;ici&lt;/a&gt;.</translation>
+<translation>Vous pouvez utiliser des notes avec un tag spécial pour stocker des snippets de commandes, que vous pouvez exécuter à partir du gestionnaire de snippets en ligne de commande. Pour plus d'informations sur la syntaxe des snippets de commande, cliquez &lt;a href="%1"&gt;ici&lt;/a&gt;.</translation>
 </message>
 <message>
 <source>You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</source>
@@ -6434,7 +6434,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Enable web application support</source>
-<translation>Activer la prise en charge des applications Web</translation>
+<translation>Activer la prise en charge de l’application Web</translation>
 </message>
 <message>
 <source>Note list panel</source>
@@ -6470,19 +6470,19 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Notes with this tag will be used for fetching bookmarks</source>
-<translation>Les notes avec cette balise seront utilisées pour récupérer les signets</translation>
+<translation>Les notes avec ce tag seront utilisées pour récupérer les signets</translation>
 </message>
 <message>
 <source>Tag name for bookmarks notes</source>
-<translation>Nom de balise pour les notes des signets</translation>
+<translation>Nom de tag pour les notes des signets</translation>
 </message>
 <message>
 <source>Bookmarks tag:</source>
-<translation>Balise de signets:</translation>
+<translation>Tag de signets :</translation>
 </message>
 <message>
 <source>By default the browser extension will show all links of the current note. You can also make it show special bookmark links of notes with a certain tag. For more information about the bookmark link syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
-<translation>Par défaut, l'extension du navigateur affichera tous les liens de la note actuelle. Vous pouvez également lui faire afficher des liens de signets spéciaux de notes avec une certaine balise. Pour plus d'informations sur la syntaxe des liens de signet, cliquez &lt;a href="%1"&gt;ici&lt;/a&gt;.</translation>
+<translation>Par défaut, l'extension du navigateur affichera tous les liens de la note actuelle. Vous pouvez également lui faire afficher des liens de signets spéciaux de notes avec un certain tag. Pour plus d'informations sur la syntaxe des liens de signet, cliquez &lt;a href="%1"&gt;ici&lt;/a&gt;.</translation>
 </message>
 <message>
 <source>Bookmarks note name:</source>
@@ -6597,7 +6597,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Show all notes of a tag including the notes of their children-tags</source>
-<translation>Afficher toutes les notes d'une balise, y compris les notes de leurs balises-enfants</translation>
+<translation>Afficher toutes les notes ayant un tag, y compris les notes ayant un sous-tag</translation>
 </message>
 <message>
 <source>Show all notes in a folder including their subfolders (only works if subfolders are turned on)</source>
@@ -6678,7 +6678,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 <message>
 <source>You optionally can use "%notePath%" for the path of the note.</source>
 <extracomment>Please don't translate "%notePath%"</extracomment>
-<translation>Il est possible d'utiliser "%notePath%" pour le chemin de la note.</translation>
+<translation>Il est possible d'utiliser « %notePath% » pour le chemin de la note.</translation>
 </message>
 <message>
 <source>Git client</source>
@@ -6811,7 +6811,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Use UNIX newline instead of native newline characters</source>
-<translation>Utiliser les fins de ligne type UNIX plutôt que les fins de lignes natives</translation>
+<translation>Utiliser les retours-ligne type-UNIX plutôt que les retours-ligne natifs</translation>
 </message>
 <message>
 <source>Restore cursor position when opening a note</source>
@@ -6855,7 +6855,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Enter your custom time format, like "dd.MM.yyyy hh:mm"</source>
-<translation>Entrer votre format de date personnalisé, par exemple "dd.MM.yyyy hh:mm"</translation>
+<translation>Entrez votre format de date et d’heure personnalisé, par exemple « jj.MM.aaaa hh:mm »</translation>
 </message>
 <message>
 <source>Editor options</source>
@@ -6971,7 +6971,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>You can use this for example under Windows if you have troubles with newlines in the ownCloud / Nextcloud notes app</source>
-<translation>Vous pouvez utiliser cet exemple sous Windows si vous rencontrez des problèmes avec les fins de ligne dans ownCloud / Nextcloud</translation>
+<translation>Vous pouvez par exemple utiliser ce paramètre sous Windows si vous avez des problèmes avec les retours-ligne dans les applications de notes ownCloud / Nextcloud</translation>
 </message>
 <message>
 <source>App instance</source>
@@ -6987,7 +6987,7 @@ Vous pouvez tester vous-même. Si vous avez des conflits de synchronisation, vou
 </message>
 <message>
 <source>Don't show the update dialog automatically</source>
-<translation>Ne pas afficher automatiquement la boite de dialogue de nouvelle version</translation>
+<translation>Ne pas afficher automatiquement la boîte de dialogue de nouvelle version</translation>
 </message>
 <message>
 <source>Fonts</source>
@@ -7117,11 +7117,11 @@ Le message d'erreur de connexion est : </translation>
 </message>
 <message>
 <source>Take a look at the &lt;a href="%1"&gt;Scripting documentation&lt;/a&gt; to get started fast.</source>
-<translation>Pour un démarrage rapide, veuillez lire la &lt;a href="%1"&gt;documentation pour l'écriture de scripts&lt;/a&gt;.</translation>
+<translation>Pour commencer rapidement, lisez la &lt;a href="%1"&gt;documentation pour l'écriture de scripts&lt;/a&gt;.</translation>
 </message>
 <message>
 <source>If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</source>
-<translation>Si vous souhaitez l'accès à une certaine fonctionnalité dans QOwnNotes veuillez ouvrir un sujet sur la &lt;a href="%1"&gt;page QOwnNotes&lt;/a&gt;.</translation>
+<translation>Si vous souhaitez l'accès à une certaine fonctionnalité dans QOwnNotes, veuillez ouvrir un sujet sur la &lt;a href="%1"&gt;page QOwnNotes&lt;/a&gt;.</translation>
 </message>
 <message>
 <source>Check for script updates</source>
@@ -8285,7 +8285,7 @@ Cela ne peut être annuler !</translation>
 </message>
 <message>
 <source>Don't show this dialog automatically</source>
-<translation>Ne pas afficher automatiquement la boite de dialogue de nouvelle version</translation>
+<translation>Ne pas afficher automatiquement cette boîte de dialogue</translation>
 </message>
 <message>
 <source>&amp;Cancel</source>

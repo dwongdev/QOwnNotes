@@ -6030,6 +6030,10 @@ Chỉ cần tự kiểm tra nếu bạn nhận được xung đột đồng bộ
 <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
+<source>Search scripts</source>
+<translation type="unfinished">Search scripts</translation>
+</message>
+<message>
 <source>When inactive, enter read-only mode automatically after:</source>
 <translation type="unfinished">When inactive, enter read-only mode automatically after:</translation>
 </message>
@@ -6125,10 +6129,6 @@ Chỉ cần tự kiểm tra nếu bạn nhận được xung đột đồng bộ
 <message>
 <source>Command:</source>
 <translation type="unfinished">Command:</translation>
-</message>
-<message>
-<source>marksman</source>
-<translation type="unfinished">marksman</translation>
 </message>
 <message>
 <source>Arguments:</source>

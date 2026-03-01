@@ -6008,6 +6008,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;노트를 동기화하려면 &lt;a href="https://owncloud.org/ "&gt;&lt;b&gt;ownCloud 동기화 클라이언트&lt;/b&gt;&lt;/a&gt; (또는 다른 데스크톱 동기화 클라이언트)가 여전히 필요합니다!&lt;p&gt;&lt;/body&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
+<source>Search scripts</source>
+<translation>검색 스크립트</translation>
+</message>
+<message>
 <source>When inactive, enter read-only mode automatically after:</source>
 <translation>비활성화된 경우 다음 작업 후 자동으로 읽기 전용 모드로 들어갑니다:</translation>
 </message>
@@ -6103,10 +6107,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <message>
 <source>Command:</source>
 <translation>명령:</translation>
-</message>
-<message>
-<source>marksman</source>
-<translation>마크맨</translation>
 </message>
 <message>
 <source>Arguments:</source>
