@@ -4,6 +4,8 @@
 
 - Fixed text selection start positions in wrapped Markdown list items with
   hanging indentation in the note text edit (for [#3477](https://github.com/pbek/QOwnNotes/issues/3477))
+- Fixed wrapped list item continuation lines with hanging indentation sometimes
+  clipping the last characters of a line (for [#3478](https://github.com/pbek/QOwnNotes/issues/3478))
 
 ## 26.3.0
 
