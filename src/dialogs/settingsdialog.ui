@@ -5466,7 +5466,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <item row="1" column="1">
                   <widget class="QLineEdit" name="markdownLspCommandLineEdit">
                    <property name="placeholderText">
-                    <string>marksman</string>
+                    <string notr="true">marksman</string>
                    </property>
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
