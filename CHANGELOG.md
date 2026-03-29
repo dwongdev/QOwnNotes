@@ -2,6 +2,12 @@
 
 ## 26.3.24
 
+- Added **block selection** (rectangular selection) support in the note text
+  editor by holding the _Alt_ key and dragging the mouse cursor; the selected
+  rectangle of text can be copied or cut with the usual keyboard shortcuts,
+  and pressing _Escape_ or clicking without _Alt_ clears the selection;
+  the selection is only rendered as a true rectangle when using a monospaced font
+  (for [#2935](https://github.com/pbek/QOwnNotes/issues/2935))
 - Added a new **Manage workspaces** dialog (accessible via the toolbar button or
   the _Workspace_ menu) that allows adding, renaming, removing and reordering
   workspaces in one place; the individual _Add_, _Remove_ and _Rename_ toolbar
