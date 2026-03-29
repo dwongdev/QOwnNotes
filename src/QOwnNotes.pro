@@ -236,6 +236,7 @@ SOURCES += main.cpp\
     dialogs/websockettokendialog.cpp \
     dialogs/imagedialog.cpp \
     dialogs/commandbar.cpp \
+    dialogs/workspacedialog.cpp \
     models/commandmodel.cpp \
     libraries/fuzzy/kfuzzymatcher.cpp \
     libraries/qr-code-generator/QrCode.cpp \
@@ -377,6 +378,7 @@ HEADERS  += mainwindow.h \
     dialogs/websockettokendialog.h \
     dialogs/imagedialog.h \
     dialogs/commandbar.h \
+    dialogs/workspacedialog.h \
     models/commandmodel.h \
     libraries/fuzzy/kfuzzymatcher.h \
     libraries/qr-code-generator/QrCode.hpp \
@@ -436,7 +438,8 @@ FORMS    += mainwindow.ui \
     widgets/layoutwidget.ui \
     widgets/colormodesettingswidget.ui \
     dialogs/serverbookmarksimportdialog.ui \
-    dialogs/websockettokendialog.ui
+    dialogs/websockettokendialog.ui \
+    dialogs/workspacedialog.ui
 
 RESOURCES += \
     images.qrc \

@@ -2,6 +2,11 @@
 
 ## 26.3.24
 
+- Added a new **Manage workspaces** dialog (accessible via the toolbar button or
+  the _Workspace_ menu) that allows adding, renaming, removing and reordering
+  workspaces in one place; the individual _Add_, _Remove_ and _Rename_ toolbar
+  buttons have been removed from the toolbar in favour of this dialog
+  (for [#2957](https://github.com/pbek/QOwnNotes/issues/2957))
 - Updated **Copy note to** and **Move note to** (cross-note-folder operations)
   so that media images and attachment files are now also copied to the destination
   note folder's `media/` and `attachments/` directories respectively, and the

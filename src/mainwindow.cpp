@@ -115,6 +115,7 @@
 #include "dialogs/storedimagesdialog.h"
 #include "dialogs/tododialog.h"
 #include "dialogs/versiondialog.h"
+#include "dialogs/workspacedialog.h"
 #include "entities/calendaritem.h"
 #include "helpers/qownnotesmarkdownhighlighter.h"
 #include "libraries/fakevim/fakevim/fakevimactions.h"
@@ -1449,9 +1450,7 @@ void MainWindow::updateWindowToolbar() {
     widgetAction->setObjectName(QStringLiteral("actionWorkspaceComboBox"));
     widgetAction->setText(tr("Workspace selector"));
     _windowToolbar->addAction(widgetAction);
-    _windowToolbar->addAction(ui->actionStore_as_new_workspace);
-    _windowToolbar->addAction(ui->actionRemove_current_workspace);
-    _windowToolbar->addAction(ui->actionRename_current_workspace);
+    _windowToolbar->addAction(ui->actionManage_workspaces);
     _windowToolbar->addAction(ui->actionSwitch_to_previous_workspace);
     _windowToolbar->addAction(ui->actionUnlock_panels);
 
@@ -6702,6 +6701,18 @@ void MainWindow::on_actionRename_current_workspace_triggered() {
  */
 void MainWindow::on_actionSwitch_to_previous_workspace_triggered() {
     _workspaceManager->on_actionSwitch_to_previous_workspace_triggered();
+}
+
+/**
+ * Opens the workspace management dialog to add, rename, delete and reorder workspaces
+ */
+void MainWindow::on_actionManage_workspaces_triggered() {
+    auto *dialog = new WorkspaceDialog(this);
+    dialog->exec();
+    delete dialog;
+
+    // Reload workspace lists after the dialog was closed to reflect any changes
+    updateWorkspaceLists();
 }
 
 /**

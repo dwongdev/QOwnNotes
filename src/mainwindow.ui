@@ -1317,15 +1317,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <addaction name="actionShow_all_panels"/>
      <addaction name="actionShow_Hide_application"/>
     </widget>
-    <widget class="QMenu" name="menuWorkspace">
-     <property name="title">
-      <string>Workspace</string>
-     </property>
-     <addaction name="actionStore_as_new_workspace"/>
-     <addaction name="actionRemove_current_workspace"/>
-     <addaction name="actionRename_current_workspace"/>
-     <addaction name="actionSwitch_to_previous_workspace"/>
-    </widget>
+     <widget class="QMenu" name="menuWorkspace">
+      <property name="title">
+       <string>Workspace</string>
+      </property>
+      <addaction name="actionManage_workspaces"/>
+      <addaction name="separator"/>
+      <addaction name="actionStore_as_new_workspace"/>
+      <addaction name="actionRemove_current_workspace"/>
+      <addaction name="actionRename_current_workspace"/>
+      <addaction name="actionSwitch_to_previous_workspace"/>
+     </widget>
     <widget class="QMenu" name="menuJumpTo">
      <property name="title">
       <string>Jump to</string>
@@ -2455,19 +2457,28 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>Rename current workspace</string>
    </property>
   </action>
-  <action name="actionSwitch_to_previous_workspace">
-   <property name="icon">
-    <iconset theme="go-previous" resource="breeze-qownnotes.qrc">
-     <normaloff>:/icons/breeze-qownnotes/16x16/go-previous.svg</normaloff>:/icons/breeze-qownnotes/16x16/go-previous.svg</iconset>
-   </property>
-   <property name="text">
-    <string>Switch to previous workspace</string>
-   </property>
-   <property name="shortcut">
-    <string notr="true">Alt+Shift+P</string>
-   </property>
-  </action>
-  <action name="actionShow_all_panels">
+   <action name="actionSwitch_to_previous_workspace">
+    <property name="icon">
+     <iconset theme="go-previous" resource="breeze-qownnotes.qrc">
+      <normaloff>:/icons/breeze-qownnotes/16x16/go-previous.svg</normaloff>:/icons/breeze-qownnotes/16x16/go-previous.svg</iconset>
+    </property>
+    <property name="text">
+     <string>Switch to previous workspace</string>
+    </property>
+    <property name="shortcut">
+     <string notr="true">Alt+Shift+P</string>
+    </property>
+   </action>
+   <action name="actionManage_workspaces">
+    <property name="icon">
+     <iconset theme="configure" resource="breeze-qownnotes.qrc">
+      <normaloff>:/icons/breeze-qownnotes/16x16/configure.svg</normaloff>:/icons/breeze-qownnotes/16x16/configure.svg</iconset>
+    </property>
+    <property name="text">
+     <string>Manage workspaces</string>
+    </property>
+   </action>
+   <action name="actionShow_all_panels">
    <property name="text">
     <string>Show all panels</string>
    </property>

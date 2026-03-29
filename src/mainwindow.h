@@ -616,6 +616,8 @@ class MainWindow : public QMainWindow {
 
     void on_actionSwitch_to_previous_workspace_triggered();
 
+    void on_actionManage_workspaces_triggered();
+
     void on_actionShow_all_panels_triggered();
 
     Q_SLOT void restoreCurrentWorkspace();

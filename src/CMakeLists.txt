@@ -271,6 +271,9 @@ set(SOURCE_FILES
     dialogs/websockettokendialog.cpp
     dialogs/websockettokendialog.h
     dialogs/websockettokendialog.ui
+    dialogs/workspacedialog.cpp
+    dialogs/workspacedialog.h
+    dialogs/workspacedialog.ui
     dialogs/imagedialog.cpp
     dialogs/imagedialog.h
     dialogs/imagedialog.ui
