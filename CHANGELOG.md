@@ -2,6 +2,9 @@
 
 ## 26.4.0
 
+- The last selected **Nextcloud Deck** card is now re-selected after the card
+  list is reloaded when a card is stored or the archived cards view is toggled
+  (for [#3357](https://github.com/pbek/QOwnNotes/issues/3357))
 - Fixed **Nextcloud Deck** card updating that caused HTTP 400 errors: the PUT
   request now uses the correct API v1.1 endpoint with the card's actual
   `stackId` in the URL path; the request body includes the required `owner`

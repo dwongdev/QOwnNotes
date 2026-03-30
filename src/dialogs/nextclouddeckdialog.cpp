@@ -124,8 +124,9 @@ void NextcloudDeckDialog::on_saveButton_clicked() {
         }
 #endif
 
-        // Reload the card list to reflect the changes
+        // Reload the card list and re-select the stored card
         reloadCardList();
+        selectCardInList(cardId);
 
         ui->newItemEdit->clear();
         ui->newItemEdit->setFocus();
@@ -232,6 +233,18 @@ void NextcloudDeckDialog::reloadCardList() {
     // Auto-resize columns to content
     ui->cardItemTreeWidget->resizeColumnToContents(0);
     ui->cardItemTreeWidget->resizeColumnToContents(1);
+}
+
+void NextcloudDeckDialog::selectCardInList(int cardId) {
+    if (cardId < 1) {
+        return;
+    }
+
+    const auto item = Utils::Gui::getTreeWidgetItemWithUserData(ui->cardItemTreeWidget, cardId);
+
+    if (item != nullptr) {
+        ui->cardItemTreeWidget->setCurrentItem(item);
+    }
 }
 
 void NextcloudDeckDialog::resetEditFrameControls() {
@@ -412,7 +425,10 @@ void NextcloudDeckDialog::searchLinkInNotes(QTreeWidgetItem *item) {
 
 void NextcloudDeckDialog::on_showArchivedCardsCheckBox_toggled(bool checked) {
     Q_UNUSED(checked)
+    // Preserve the currently selected card when toggling archived cards view
+    int selectedCardId = _currentCard.id;
     reloadCardList();
+    selectCardInList(selectedCardId);
 }
 
 void NextcloudDeckDialog::addCardLinkToCurrentNote(const QTreeWidgetItem *item) {
