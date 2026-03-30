@@ -153,6 +153,14 @@ QUrl LanguageToolClient::buildCheckUrl(const QString &serverUrl) {
 
 QVector<LanguageToolMatch> LanguageToolClient::parseMatches(const QByteArray &responseData) {
     QVector<LanguageToolMatch> matches;
+    const auto shouldIgnoreMatch = [](const QJsonObject &object) {
+        // Ignore repeated-whitespace warnings because Markdown list indentation
+        // intentionally uses consecutive spaces.
+        return object.value(QStringLiteral("rule"))
+                   .toObject()
+                   .value(QStringLiteral("id"))
+                   .toString() == QStringLiteral("WHITESPACE_RULE");
+    };
 
     const QJsonDocument document = QJsonDocument::fromJson(responseData);
     if (!document.isObject()) {
@@ -164,6 +172,10 @@ QVector<LanguageToolMatch> LanguageToolClient::parseMatches(const QByteArray &re
 
     for (const QJsonValue &matchValue : matchArray) {
         const QJsonObject object = matchValue.toObject();
+        if (shouldIgnoreMatch(object)) {
+            continue;
+        }
+
         LanguageToolMatch match;
         match.offset = object.value(QStringLiteral("offset")).toInt();
         match.length = object.value(QStringLiteral("length")).toInt();

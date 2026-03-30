@@ -2,6 +2,11 @@
 
 ## 26.3.25
 
+- The **LanguageTool** integration now always ignores the typography warning
+  `Possible typo: you repeated a whitespace`, because Markdown lists
+  intentionally use repeated spaces for indentation; findings from that
+  specific rule are no longer underlined in the editor
+  (for [#3496](https://github.com/pbek/QOwnNotes/issues/3496))
 - Added support for **Markdown image dimensions** using curly-brace attribute
   syntax like `![alt text](image.png){ width=300 height=200 }`; the attributes
   are rendered with masked syntax in the editor and are applied to the preview,
