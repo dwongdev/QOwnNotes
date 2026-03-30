@@ -169,24 +169,21 @@ void QOwnNotesMarkdownHighlighter::updateCachedRegexes(const QString &newExt) {
 void QOwnNotesMarkdownHighlighter::clearWikiLinkCache() { _wikiLinkCache.clear(); }
 
 /**
- * Highlight broken note links
+ * Highlight internal note links (both valid and broken)
  *
  * @param text
  */
 void QOwnNotesMarkdownHighlighter::highlightBrokenNotesLink(const QString &text) {
     static const QRegularExpression regex(QStringLiteral(R"(note:\/\/[^\s\)>]+)"));
     QRegularExpressionMatch match = regex.match(text);
+    bool noteExists = false;
 
     if (match.hasMatch()) {    // check legacy note:// links
         const QString noteLink = match.captured(0);
 
         // try to fetch a note from the url string
         const Note note = Note::fetchByUrlString(noteLink);
-
-        // if the note exists we don't need to do anything
-        if (note.isFetched()) {
-            return;
-        }
+        noteExists = note.isFetched();
     } else {
         // don't make any further checks if no current note was set
         if (_currentNote == nullptr) {
@@ -206,11 +203,7 @@ void QOwnNotesMarkdownHighlighter::highlightBrokenNotesLink(const QString &text)
             }
 
             const Note note = _currentNote->fetchByRelativeFileName(fileName);
-
-            // if the note exists we don't need to do anything
-            if (note.isFetched()) {
-                return;
-            }
+            noteExists = note.isFetched();
         } else {    // check [note](note file.md) or [note](note file.md#heading) links
             // Example: R"(\[[^\[\]]+\]\((\S+\.md|.+?\.md)(#[^\)]+)?\)\B)")
             match = _regexBracketLink.match(text);
@@ -224,17 +217,15 @@ void QOwnNotesMarkdownHighlighter::highlightBrokenNotesLink(const QString &text)
                 }
 
                 const Note note = _currentNote->fetchByRelativeFileName(fileName);
-
-                // if the note exists we don't need to do anything
-                if (note.isFetched()) {
-                    return;
-                }
+                noteExists = note.isFetched();
+            } else {
+                // no note link was found
+                return;
             }
-            // no note link was found
         }
     }
 
-    auto state = HighlighterState(HighlighterState::BrokenLink);
+    auto state = noteExists ? HighlighterState::LinkInternal : HighlighterState::BrokenLink;
 
     setFormat(match.capturedStart(0), match.capturedLength(0), _formats[state]);
 }

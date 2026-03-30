@@ -381,6 +381,7 @@ void QOwnNotesMarkdownTextEdit::setStyles() {
     setFormatStyle(MarkdownHighlighter::HighlighterState::Image);
     setFormatStyle(MarkdownHighlighter::HighlighterState::InlineCodeBlock);
     setFormatStyle(MarkdownHighlighter::HighlighterState::Link);
+    setFormatStyle(MarkdownHighlighter::HighlighterState::LinkInternal);
     setFormatStyle(MarkdownHighlighter::HighlighterState::WikiLink);
     setFormatStyle(MarkdownHighlighter::HighlighterState::WikiLinkBroken);
     setFormatStyle(MarkdownHighlighter::HighlighterState::Table);

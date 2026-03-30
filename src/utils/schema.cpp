@@ -206,6 +206,10 @@ QColor Utils::Schema::Settings::getForegroundColor(int index) const {
         color = getForegroundColor(MarkdownHighlighter::BrokenLink);
     }
 
+    if (!color.isValid() && (index == MarkdownHighlighter::LinkInternal)) {
+        color = getForegroundColor(MarkdownHighlighter::Link);
+    }
+
     if (!color.isValid() && (index >= 0)) {
         color = getForegroundColor(TextPresetIndex);
     }
@@ -249,6 +253,10 @@ QColor Utils::Schema::Settings::getBackgroundColor(int index) const {
 
     if (!color.isValid() && (index == MarkdownHighlighter::WikiLinkBroken)) {
         color = getBackgroundColor(MarkdownHighlighter::BrokenLink);
+    }
+
+    if (!color.isValid() && (index == MarkdownHighlighter::LinkInternal)) {
+        color = getBackgroundColor(MarkdownHighlighter::Link);
     }
 
     if (!color.isValid() && (index >= 0)) {

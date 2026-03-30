@@ -2,6 +2,12 @@
 
 ## 26.3.25
 
+- Added a new highlighter state **Link (internal)** for internal note links
+  (like `[text](note.md)`, `<note.md>` and `note://` links) in the editor font
+  and color settings; this allows styling internal note links differently from
+  regular external links; the **Link** state is used as a fallback if the new
+  state is not configured in the color schema
+  (for [#2914](https://github.com/pbek/QOwnNotes/issues/2914))
 - The wiki link highlighter states **Wiki link** and **Wiki link (broken)** are
   now hidden in the editor font and color settings dialog when wiki link support
   is disabled (for [#3512](https://github.com/pbek/QOwnNotes/issues/3512))
