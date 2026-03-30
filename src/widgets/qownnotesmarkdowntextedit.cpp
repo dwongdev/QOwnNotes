@@ -1692,7 +1692,8 @@ void QOwnNotesMarkdownTextEdit::paintMarkdownImagePreviews() {
         }
     }
 
-    static const QRegularExpression imageRegex(QStringLiteral(R"(!\[[^\]]*\]\(([^\n\)]*)\))"));
+    static const QRegularExpression imageRegex(
+        QStringLiteral(R"(!\[[^\]]*\]\(([^\n\)]*)\)(?:\s*\{[^}]*\})?)"));
 
     struct PreviewDrawItem {
         QRect targetRect;

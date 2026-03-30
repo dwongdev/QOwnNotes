@@ -3588,6 +3588,45 @@ QString Note::textToMarkdownHtml(QString str, const QString &notesPath, int maxI
     unmaskTildeFences(str, maskedTildeFences);
     highlightCode(str, QStringLiteral("~~~"), cbTildeCount, QStringLiteral("```"));
 
+    // Parse and strip image dimension attributes like { width=300 height=200 }
+    // from Markdown image syntax before MD4C processing, since MD4C doesn't
+    // support curly-brace attribute extensions.
+    // We encode dimensions as a URL fragment (#qon-w=300&h=200) so that each
+    // specific image occurrence carries its own dimensions through MD4C, even
+    // when the same image URL appears multiple times with different attributes.
+    // See: https://github.com/pbek/QOwnNotes/issues/2898
+    {
+        static const QRegularExpression imgDimRE(QStringLiteral(
+            R"(!\[([^\]]*)\]\(([^\)]*)\)\s*\{\s*((?:width=\d+\s*)?(?:height=\d+\s*)?(?:width=\d+\s*)?)\})"));
+        static const QRegularExpression widthRE(QStringLiteral(R"(width=(\d+))"));
+        static const QRegularExpression heightRE(QStringLiteral(R"(height=(\d+))"));
+
+        QRegularExpressionMatchIterator dimIter = imgDimRE.globalMatch(str);
+        while (dimIter.hasNext()) {
+            const QRegularExpressionMatch dimMatch = dimIter.next();
+            const QString imgUrl = dimMatch.captured(2);
+            const QString attrs = dimMatch.captured(3);
+
+            int w = 0, h = 0;
+            QRegularExpressionMatch wMatch = widthRE.match(attrs);
+            if (wMatch.hasMatch()) w = wMatch.captured(1).toInt();
+            QRegularExpressionMatch hMatch = heightRE.match(attrs);
+            if (hMatch.hasMatch()) h = hMatch.captured(1).toInt();
+
+            if (w > 0 || h > 0) {
+                // Encode dimensions as a URL fragment that MD4C passes through
+                QString fragment = QStringLiteral("#qon-dim");
+                if (w > 0) fragment += QStringLiteral("&w=%1").arg(w);
+                if (h > 0) fragment += QStringLiteral("&h=%1").arg(h);
+
+                const QString original = dimMatch.captured(0);
+                const QString replacement =
+                    QStringLiteral("![%1](%2%3)").arg(dimMatch.captured(1), imgUrl, fragment);
+                str.replace(original, replacement);
+            }
+        }
+    }
+
     const auto data = str.toUtf8();
     if (data.size() == 0) {
         return QLatin1String("");
@@ -3603,6 +3642,29 @@ QString Note::textToMarkdownHtml(QString str, const QString &notesPath, int maxI
     } else {
         qWarning() << "MD4C Failure!";
         return QString();
+    }
+
+    // Inject width/height attributes from the #qon-dim URL fragment into
+    // the HTML <img> tags and remove the fragment from the src attribute.
+    // Only images that originally had { width=X height=Y } carry this marker.
+    // Note: MD4C escapes '&' as '&amp;' in URLs, so we match both forms.
+    {
+        static const QRegularExpression dimFragRE(QStringLiteral(
+            R"(<img src="([^"]*?)#qon-dim(?:(?:&amp;|&)w=(\d+))?(?:(?:&amp;|&)h=(\d+))?" )"));
+        QRegularExpressionMatch dimMatch = dimFragRE.match(result);
+        while (dimMatch.hasMatch()) {
+            const QString fullMatch = dimMatch.captured(0);
+            const QString cleanUrl = dimMatch.captured(1);
+            const QString wStr = dimMatch.captured(2);
+            const QString hStr = dimMatch.captured(3);
+
+            QString replacement = QStringLiteral("<img src=\"%1\" ").arg(cleanUrl);
+            if (!wStr.isEmpty()) replacement += QStringLiteral("width=\"%1\" ").arg(wStr);
+            if (!hStr.isEmpty()) replacement += QStringLiteral("height=\"%1\" ").arg(hStr);
+
+            result.replace(fullMatch, replacement);
+            dimMatch = dimFragRE.match(result);
+        }
     }
 
     if (isWikiLinkSupportEnabled()) {
@@ -3773,6 +3835,19 @@ QString Note::textToMarkdownHtml(QString str, const QString &notesPath, int maxI
         const QString fileUrl = match.captured(1);
         const QString fileName = QUrl(fileUrl).toLocalFile();
 
+        // Skip images that already have explicit width/height from Markdown
+        // dimension attributes like { width=300 height=200 }
+        // (for https://github.com/pbek/QOwnNotes/issues/2898)
+        {
+            const int matchEnd = match.capturedEnd(0);
+            const int lookAhead = qMin(50, result.length() - matchEnd);
+            const QString remainder = result.mid(matchEnd, lookAhead);
+            if (remainder.contains(QStringLiteral("width=\"")) ||
+                remainder.contains(QStringLiteral("height=\""))) {
+                continue;
+            }
+        }
+
         int imageWidth = 0;
 
         // If file is greater than 1MB just limit its width already
@@ -3808,10 +3883,19 @@ QString Note::textToMarkdownHtml(QString str, const QString &notesPath, int maxI
             const int originalWidth = imageWidth;
             const int displayWidth =
                 (originalWidth > maxImageWidth) ? maxImageWidth : originalWidth;
-            const QString filePattern = QStringLiteral(R"(<img src="file://)") + windowsSlash +
-                                        fileNameWithPercentSpaces + QChar('"');
 
-            result.replace(filePattern,
+            // Use a regex with a negative lookahead so that images which
+            // already carry explicit width/height attributes (from Markdown
+            // dimension syntax) are not touched by the auto-sizing replace.
+            // Without this, a plain `QString::replace` would globally replace
+            // ALL <img> tags sharing the same src, including those that already
+            // have user-specified dimensions.
+            const QRegularExpression autoSizeRE(
+                QStringLiteral(R"(<img src="file://)") +
+                QRegularExpression::escape(windowsSlash + fileNameWithPercentSpaces) +
+                QStringLiteral(R"("(?! width=| height=))"));
+
+            result.replace(autoSizeRE,
                            QStringLiteral(R"(<img width="%1" src="file://%2")")
                                .arg(QString::number(displayWidth), windowsSlash + fileName));
         }

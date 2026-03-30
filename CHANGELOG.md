@@ -1,5 +1,15 @@
 # QOwnNotes Changelog
 
+## 26.3.25
+
+- Added support for **Markdown image dimensions** using curly-brace attribute
+  syntax like `![alt text](image.png){ width=300 height=200 }`; the attributes
+  are rendered with masked syntax in the editor and are applied to the preview,
+  including the QLiteHtml preview, where they overrule the automatic image
+  width sizing; the small inline image preview in the editor is also shown
+  when the image tag with dimension attributes is the last item in the block
+  (for [#2898](https://github.com/pbek/QOwnNotes/issues/2898))
+
 ## 26.3.24
 
 - Added **block selection** (rectangular selection) support in the note text
