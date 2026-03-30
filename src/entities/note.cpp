@@ -248,6 +248,35 @@ static QString replaceWikiLinksForTarget(QString text, const Note &oldNote, cons
     return text;
 }
 
+/**
+ * Post-processes the HTML to add the "notelink" CSS class to anchor tags
+ * that link to internal notes (file:// links pointing to note files and
+ * legacy note:// links), so they can be styled independently from external
+ * links via the LinkInternal highlighter state color.
+ */
+static QString postProcessInternalNoteLinksHtml(QString html) {
+    // Build a regex alternative from all configured note file extensions
+    const QStringList extensions = Note::noteFileExtensionList();
+    const QString extAlternation = extensions.join(QChar('|'));
+
+    // Match <a href="file://..."> tags whose href ends with a note file
+    // extension (with an optional URL fragment), and <a href="note://...">
+    // legacy note links. We capture the href attribute so we can keep it
+    // while injecting the class attribute.
+    const QRegularExpression fileNoteRE(
+        QStringLiteral(R"(<a (href="file://[^"]+\.(?:%1)(?:#[^"]*)?"))").arg(extAlternation),
+        QRegularExpression::CaseInsensitiveOption);
+    static const QRegularExpression noteLinkRE(QStringLiteral(R"(<a (href="note://[^"]*"))"));
+
+    // Add "notelink" class to file:// note links
+    html.replace(fileNoteRE, QStringLiteral(R"(<a class="notelink" \1)"));
+
+    // Add "notelink" class to note:// links
+    html.replace(noteLinkRE, QStringLiteral(R"(<a class="notelink" \1)"));
+
+    return html;
+}
+
 static QString postProcessWikiLinksHtml(QString html, int currentNoteSubFolderId) {
     static const QRegularExpression regex(
         QStringLiteral(R"wiki(<x-wikilink data-target="([^"]*?)">(.*?)</x-wikilink>)wiki"),
@@ -3671,6 +3700,10 @@ QString Note::textToMarkdownHtml(QString str, const QString &notesPath, int maxI
         result = postProcessWikiLinksHtml(result, _noteSubFolderId);
     }
 
+    // Add the "notelink" CSS class to internal note links so the
+    // LinkInternal highlighter state color is applied in the preview
+    result = postProcessInternalNoteLinksHtml(result);
+
     // transform remote preview image tags
     Utils::Misc::transformRemotePreviewImages(result, maxImageWidth, externalImageHash());
 
@@ -3725,12 +3758,16 @@ QString Note::textToMarkdownHtml(QString str, const QString &notesPath, int maxI
         QStringLiteral(
             "a.wikilink { color: %1; text-decoration: underline; "
             "text-decoration-style: dotted; }"
-            "a.wikilink.broken { color: %2; text-decoration-style: dashed; }")
+            "a.wikilink.broken { color: %2; text-decoration-style: dashed; }"
+            "a.notelink { color: %3; text-decoration: underline; }")
             .arg(Utils::Schema::schemaSettings
                      ->getForegroundColor(MarkdownHighlighter::HighlighterState::Link)
                      .name(),
                  Utils::Schema::schemaSettings
                      ->getForegroundColor(MarkdownHighlighter::HighlighterState::BrokenLink)
+                     .name(),
+                 Utils::Schema::schemaSettings
+                     ->getForegroundColor(MarkdownHighlighter::HighlighterState::LinkInternal)
                      .name());
 
     // do some more code formatting
