@@ -104,7 +104,8 @@ void NextcloudDeckDialog::on_saveButton_clicked() {
 
     int cardId = nextcloudDeckService.storeCard(
         title, ui->descriptionTextEdit->toPlainText(),
-        ui->dueDateTimeCheckBox->isChecked() ? dateTime : nullptr, cardIdToUpdate);
+        ui->dueDateTimeCheckBox->isChecked() ? dateTime : nullptr, cardIdToUpdate,
+        _currentCard.stackId, _currentCard.order, _currentCard.owner);
 
     // Clean up allocated dateTime to prevent memory leak
     delete dateTime;

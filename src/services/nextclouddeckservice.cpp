@@ -39,7 +39,8 @@ bool NextcloudDeckService::isEnabled() {
 }
 
 int NextcloudDeckService::storeCard(const QString& title, const QString& description,
-                                    QDateTime* dueDateTime, int cardId) {
+                                    QDateTime* dueDateTime, int cardId, int cardStackId,
+                                    int cardOrder, const QString& cardOwner) {
     int resultCardId = -1;
     auto* manager = new QNetworkAccessManager();
     QEventLoop loop;
@@ -54,10 +55,14 @@ int NextcloudDeckService::storeCard(const QString& title, const QString& descrip
     timer.start(10000);
 
     bool isUpdate = (cardId > 0);
+    // For updates use the card's own stackId if provided, otherwise fall back to configured stack
+    int effectiveStackId = (isUpdate && cardStackId > 0) ? cardStackId : this->stackId;
     QUrl url;
 
     if (isUpdate) {
-        url = QUrl(serverUrl + "/index.php/apps/deck/cards/" + QString::number(cardId));
+        url = QUrl(serverUrl + "/index.php/apps/deck/api/v1.1/boards/" +
+                   QString::number(this->boardId) + "/stacks/" + QString::number(effectiveStackId) +
+                   "/cards/" + QString::number(cardId));
     } else {
         url = QUrl(serverUrl + "/index.php/apps/deck/api/v1.1/boards/" +
                    QString::number(this->boardId) + "/stacks/" + QString::number(this->stackId) +
@@ -70,25 +75,20 @@ int NextcloudDeckService::storeCard(const QString& title, const QString& descrip
     QJsonObject bodyJson;
     bodyJson["title"] = title;
     bodyJson["type"] = "plain";
-
-    if (isUpdate) {
-        bodyJson["id"] = cardId;
-        bodyJson["stackId"] = this->stackId;
-        bodyJson["boardId"] = this->boardId;
-        // TODO: What do we set the order to?
-        bodyJson["order"] = 0;
-    } else {
-        bodyJson["order"] = 0;
-    }
-
-    if (description != "") {
-        bodyJson["description"] = description;
-    }
+    // Use the card's actual order for updates to avoid reordering side-effects
+    bodyJson["order"] = isUpdate ? cardOrder : 0;
+    // Description is always required by the API; send an empty string if not provided
+    bodyJson["description"] = description;
+    // Owner is required by the Deck API for card updates
+    bodyJson["owner"] = !cardOwner.isEmpty() ? cardOwner : cloudConnection.getUsername();
 
     if (dueDateTime != nullptr) {
         // We need to convert the DateTime to UTC to get around Deck's/Nextcloud's timezone issue
         // see: https://github.com/nextcloud/deck/issues/4764
         bodyJson["duedate"] = dueDateTime->toTimeZone(QTimeZone::utc()).toString(Qt::ISODate);
+    } else {
+        // Explicitly send null to clear the due date on updates
+        bodyJson["duedate"] = QJsonValue::Null;
     }
 
     qDebug() << __func__ << " - 'bodyJson': " << bodyJson;
@@ -142,14 +142,14 @@ int NextcloudDeckService::storeCard(const QString& title, const QString& descrip
             qDebug() << __func__ << " - 'jsonDoc': " << jsonDoc;
         } else {
             QString errorString = reply->errorString();
-            QString operation = isUpdate ? tr("updating") : tr("creating");
+            QString responseBody = reply->readAll();
             if (isUpdate) {
-                Utils::Gui::warning(nullptr, tr("Error while updating card").arg(operation),
+                Utils::Gui::warning(nullptr, tr("Error while updating card"),
                                     tr("Updating card failed with status code %1 and message: %2")
                                         .arg(QString::number(returnStatusCode), errorString),
                                     "nextcloud-deck-update-failed");
             } else {
-                Utils::Gui::warning(nullptr, tr("Error while creating card").arg(operation),
+                Utils::Gui::warning(nullptr, tr("Error while creating card"),
                                     tr("Creating card failed with status code %1 and message: %2")
                                         .arg(QString::number(returnStatusCode), errorString),
                                     "nextcloud-deck-create-failed");
@@ -157,6 +157,7 @@ int NextcloudDeckService::storeCard(const QString& title, const QString& descrip
 
             qDebug() << __func__ << " - error: " << returnStatusCode;
             qDebug() << __func__ << " - 'errorString': " << errorString;
+            qDebug() << __func__ << " - 'responseBody': " << responseBody;
         }
     }
 
@@ -208,7 +209,7 @@ bool NextcloudDeckService::archiveCard(int cardId) {
         } else {
             QString errorString = reply->errorString();
             Utils::Gui::warning(nullptr, tr("Error while archiving card"),
-                                tr("Archiving the card failed with status code %2 and message: %3")
+                                tr("Archiving the card failed with status code %1 and message: %2")
                                     .arg(QString::number(returnStatusCode), errorString),
                                 "nextcloud-deck-archive-failed");
 
@@ -309,7 +310,7 @@ bool NextcloudDeckService::deleteCard(int cardId) {
         } else {
             QString errorString = reply->errorString();
             Utils::Gui::warning(nullptr, tr("Error while deleting card"),
-                                tr("Deleting the card failed with status code %2 and message: %3")
+                                tr("Deleting the card failed with status code %1 and message: %2")
                                     .arg(QString::number(returnStatusCode), errorString),
                                 "nextcloud-deck-delete-failed");
 
@@ -503,14 +504,18 @@ QHash<int, NextcloudDeckService::Card> NextcloudDeckService::getCards(bool inclu
                     // Only process cards from the configured stack
                     if (currentStackId == this->stackId) {
                         QJsonArray cardsArray = stackObject["cards"].toArray();
+                        int currentBoardId = stackObject["boardId"].toInt();
 
                         for (auto cardValue : cardsArray) {
                             QJsonObject object = cardValue.toObject();
 
                             NextcloudDeckService::Card card;
                             card.id = object["id"].toInt();
+                            card.stackId = currentStackId;
+                            card.boardId = currentBoardId > 0 ? currentBoardId : this->boardId;
                             card.title = object["title"].toString();
                             card.description = object["description"].toString();
+                            card.owner = object["owner"].toString();
                             card.order = object["order"].toInt();
                             card.type = object["type"].toString();
                             card.archived = object["archived"].toBool();
@@ -626,6 +631,8 @@ QHash<int, NextcloudDeckService::Card> NextcloudDeckService::getCards(bool inclu
 
                     for (auto stackValue : archivedStacksArray) {
                         QJsonObject stackObject = stackValue.toObject();
+                        int archivedStackId = stackObject["id"].toInt();
+                        int archivedBoardId = stackObject["boardId"].toInt();
                         QJsonArray archivedCardsArray = stackObject["cards"].toArray();
 
                         for (auto cardValue : archivedCardsArray) {
@@ -633,8 +640,11 @@ QHash<int, NextcloudDeckService::Card> NextcloudDeckService::getCards(bool inclu
 
                             NextcloudDeckService::Card card;
                             card.id = object["id"].toInt();
+                            card.stackId = archivedStackId > 0 ? archivedStackId : this->stackId;
+                            card.boardId = archivedBoardId > 0 ? archivedBoardId : this->boardId;
                             card.title = object["title"].toString();
                             card.description = object["description"].toString();
+                            card.owner = object["owner"].toString();
                             card.order = object["order"].toInt();
                             card.type = object["type"].toString();
                             card.archived = true;    // These are archived cards

@@ -1,5 +1,17 @@
 # QOwnNotes Changelog
 
+## 26.4.0
+
+- Fixed **Nextcloud Deck** card updating that caused HTTP 400 errors: the PUT
+  request now uses the correct API v1.1 endpoint with the card's actual
+  `stackId` in the URL path; the request body includes the required `owner`
+  field (which the Deck server validates as mandatory), sends the card's real
+  `order` value, always includes `description`, and explicitly sets `duedate`
+  to `null` when no due date is selected; also fixed spurious `QString::arg`
+  warnings in the error dialogs for card operations where placeholder indices
+  were wrong, and added response body logging on errors for better diagnostics
+  (for [#3357](https://github.com/pbek/QOwnNotes/issues/3357))
+
 ## 26.3.25
 
 - Improved **block selection** (rectangular selection) so that it can now extend
