@@ -8,6 +8,10 @@
 
 #include "tagapi.h"
 
+#ifndef INTEGRATION_TESTS
+#include "mainwindow.h"
+#endif
+
 NoteApi* NoteApi::fetch(int id) {
     _note = Note::fetch(id);
 
@@ -136,7 +140,22 @@ bool NoteApi::renameNoteFile(const QString& newName) {
     Note note = Note::fetch(_id);
 
     if (note.isFetched()) {
-        return note.renameNoteFile(newName);
+        const bool renamed = note.renameNoteFile(newName);
+
+#ifndef INTEGRATION_TESTS
+        // If the renamed note is the currently open note, update the main
+        // window so no phantom note with the old name is left open
+        // (see https://github.com/pbek/QOwnNotes/issues/3527)
+        if (renamed) {
+            MainWindow* mainWindow = MainWindow::instance();
+            if (mainWindow != nullptr && mainWindow->getCurrentNote().getId() == _id) {
+                note.refetch();
+                mainWindow->setCurrentNote(note);
+            }
+        }
+#endif
+
+        return renamed;
     }
 
     return false;

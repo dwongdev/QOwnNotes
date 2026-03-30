@@ -2,6 +2,11 @@
 
 ## 26.3.25
 
+- Scripting: `note.renameNoteFile()` now seamlessly switches the editor to
+  the renamed note when it is the currently open note, so scripts that
+  programmatically rename notes (e.g. to apply an ISO-date filename scheme)
+  keep the user in the right note without any manual navigation
+  (for [#3527](https://github.com/pbek/QOwnNotes/issues/3527))
 - Added a new highlighter state **Link (internal)** for internal note links
   (like `[text](note.md)`, `<note.md>` and `note://` links) in the editor font
   and color settings; this allows styling internal note links differently from
