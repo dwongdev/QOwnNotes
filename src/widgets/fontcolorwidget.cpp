@@ -269,6 +269,28 @@ void FontColorWidget::addTextTreeWidgetItem(const QString& text, int index) {
 }
 
 /**
+ * Shows or hides the wiki link highlighter state items in the text tree widget
+ */
+void FontColorWidget::setWikiLinkItemsVisible(bool visible) {
+    const int count = ui->textTreeWidget->topLevelItemCount();
+
+    for (int i = 0; i < count; i++) {
+        QTreeWidgetItem* item = ui->textTreeWidget->topLevelItem(i);
+
+        if (item == nullptr) {
+            continue;
+        }
+
+        const int index = item->data(0, Qt::UserRole).toInt();
+
+        if (index == MarkdownHighlighter::WikiLink ||
+            index == MarkdownHighlighter::WikiLinkBroken) {
+            item->setHidden(!visible);
+        }
+    }
+}
+
+/**
  * Updates the schema edit frame for the currently selected text item
  */
 void FontColorWidget::updateSchemeEditFrame() {

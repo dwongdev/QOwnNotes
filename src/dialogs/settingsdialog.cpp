@@ -1058,6 +1058,7 @@ void SettingsDialog::readSettings() {
         settings.value(QStringLiteral("Editor/hideFormattingSyntax"), false).toBool());
     ui->enableWikiLinkSupportCheckBox->setChecked(
         settings.value(QStringLiteral("Editor/wikiLinkSupport"), false).toBool());
+    on_enableWikiLinkSupportCheckBox_toggled(ui->enableWikiLinkSupportCheckBox->isChecked());
     ui->hangingIndentCheckBox->setChecked(
         settings.value(QStringLiteral("Editor/hangingIndent"), false).toBool());
     ui->showMarkdownImagePreviewsCheckBox->setChecked(
@@ -4409,6 +4410,10 @@ void SettingsDialog::on_markdownLspEnabledCheckBox_toggled(bool checked) {
     ui->markdownLspArgumentsLineEdit->setEnabled(checked);
     ui->markdownLspCommandLabel->setEnabled(checked);
     ui->markdownLspArgumentsLabel->setEnabled(checked);
+}
+
+void SettingsDialog::on_enableWikiLinkSupportCheckBox_toggled(bool checked) {
+    ui->editorFontColorWidget->setWikiLinkItemsVisible(checked);
 }
 
 void SettingsDialog::on_localTrashEnabledCheckBox_toggled(bool checked) {

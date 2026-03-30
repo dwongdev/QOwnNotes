@@ -39,6 +39,8 @@ class FontColorWidget : public QFrame {
 
     bool selectFirstDarkSchema();
 
+    void setWikiLinkItemsVisible(bool visible);
+
    private slots:
     void on_foregroundColorButton_clicked();
 

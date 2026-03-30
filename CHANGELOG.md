@@ -2,6 +2,9 @@
 
 ## 26.3.25
 
+- The wiki link highlighter states **Wiki link** and **Wiki link (broken)** are
+  now hidden in the editor font and color settings dialog when wiki link support
+  is disabled (for [#3512](https://github.com/pbek/QOwnNotes/issues/3512))
 - The **LanguageTool** integration now always ignores the typography warning
   `Possible typo: you repeated a whitespace`, because Markdown lists
   intentionally use repeated spaces for indentation; findings from that
