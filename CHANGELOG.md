@@ -6,7 +6,10 @@
   (like `[text](note.md)`, `<note.md>` and `note://` links) in the editor font
   and color settings; this allows styling internal note links differently from
   regular external links in the note text edit and the preview; the **Link**
-  state is used as a fallback if the new state is not configured in the color schema
+  state is used as a fallback if the new state is not configured in the color schema;
+  bare legacy `note://` links (e.g. `note://Note_2018_06_26T22_11_10`) that are
+  written without angle brackets are now also rendered as clickable links in the
+  preview and styled with the internal link color
   (for [#2914](https://github.com/pbek/QOwnNotes/issues/2914))
 - The wiki link highlighter states **Wiki link** and **Wiki link (broken)** are
   now hidden in the editor font and color settings dialog when wiki link support

@@ -3577,6 +3577,19 @@ QString Note::textToMarkdownHtml(QString str, const QString &notesPath, int maxI
                                            QStringLiteral(")"));
     }
 
+    // Wrap bare note:// URLs (legacy links not already inside angle brackets,
+    // parentheses or quotes) in <> so that MD4C renders them as clickable
+    // autolinks in the preview.  The lookbehind excludes URLs that are already
+    // part of <note://…> autolinks, [text](note://…) bracket links, or
+    // href="note://…" HTML attributes.
+    // Examples that are wrapped: note://MyNote  note://Note_2018_06_26T22_11_10
+    // Examples that are left alone: <note://MyNote>  [t](note://MyNote)
+    {
+        static const QRegularExpression bareNoteUrlRE(
+            QStringLiteral(R"((?<![<("'])(note:\/\/[^\s<>"')]+))"));
+        str.replace(bareNoteUrlRE, QStringLiteral("<\\1>"));
+    }
+
     // Restore masked code blocks after link transformations are done
     unmaskCodeBlocks(str, maskedBlocks);
 
