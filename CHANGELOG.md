@@ -2,6 +2,11 @@
 
 ## 26.3.25
 
+- Improve **block selection** (rectangular selection) so that it can now extend
+  wider than the first selected line; the selection rectangle is no longer
+  clamped to the width of the anchor line's text, allowing the right edge to
+  be dragged further right even when the starting line is short
+  (for [#2935](https://github.com/pbek/QOwnNotes/issues/2935))
 - Scripting: `note.renameNoteFile()` now seamlessly switches the editor to
   the renamed note when it is the currently open note, so scripts that
   programmatically rename notes (e.g. to apply an ISO-date filename scheme)
