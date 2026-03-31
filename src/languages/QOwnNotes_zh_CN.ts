@@ -19,23 +19,23 @@
 <name>AiToolbarManager</name>
 <message>
 <source>Waiting for answer from AI</source>
-<translation type="unfinished">Waiting for answer from AI</translation>
+<translation>正在等待 AI 的回答</translation>
 </message>
 <message>
 <source>AI backends</source>
-<translation type="unfinished">AI backends</translation>
+<translation>AI 后端</translation>
 </message>
 <message>
 <source>AI models</source>
-<translation type="unfinished">AI models</translation>
+<translation>AI 模型</translation>
 </message>
 <message>
 <source>AI backend selector</source>
-<translation type="unfinished">AI backend selector</translation>
+<translation>AI 后端选择器</translation>
 </message>
 <message>
 <source>AI model selector</source>
-<translation type="unfinished">AI model selector</translation>
+<translation>AI 模型选择器</translation>
 </message>
 </context>
 <context>
@@ -106,6 +106,109 @@
 <message>
 <source>Open note and find &lt;code&gt;%1&lt;/code&gt;</source>
 <translation>打开笔记与查找 &lt;code&gt;%1&lt;/code&gt;</translation>
+</message>
+</context>
+<context>
+<name>ColorModeSettingsWidget</name>
+<message>
+<source>Color modes</source>
+<translation type="unfinished">Color modes</translation>
+</message>
+<message>
+<source>&amp;Add color mode</source>
+<translation type="unfinished">&amp;Add color mode</translation>
+</message>
+<message>
+<source>&amp;Remove color mode</source>
+<translation type="unfinished">&amp;Remove color mode</translation>
+</message>
+<message>
+<source>Name:</source>
+<translation type="unfinished">Name:</translation>
+</message>
+<message>
+<source>Name of the color mode</source>
+<translation type="unfinished">Name of the color mode</translation>
+</message>
+<message>
+<source>Color mode name</source>
+<translation type="unfinished">Color mode name</translation>
+</message>
+<message>
+<source>Use as active color mode</source>
+<translation type="unfinished">Use as active color mode</translation>
+</message>
+<message>
+<source>Dark mode</source>
+<translation type="unfinished">Dark mode</translation>
+</message>
+<message>
+<source>This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</source>
+<translation type="unfinished">This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</translation>
+</message>
+<message>
+<source>Enable dark mode</source>
+<translation type="unfinished">Enable dark mode</translation>
+</message>
+<message>
+<source>Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</source>
+<translation type="unfinished">Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</translation>
+</message>
+<message>
+<source>Optimize preview colors for dark mode desktop themes</source>
+<translation type="unfinished">Optimize preview colors for dark mode desktop themes</translation>
+</message>
+<message>
+<source>You may need to restart the application to let these changes take effect</source>
+<translation type="unfinished">You may need to restart the application to let these changes take effect</translation>
+</message>
+<message>
+<source>Enable dark mode application icon and tray icon</source>
+<translation type="unfinished">Enable dark mode application icon and tray icon</translation>
+</message>
+<message>
+<source>Icons</source>
+<translation type="unfinished">Icons</translation>
+</message>
+<message>
+<source>You need to restart the application to let this setting take effect</source>
+<translation type="unfinished">You need to restart the application to let this setting take effect</translation>
+</message>
+<message>
+<source>Use internal icon theme instead of system icon theme</source>
+<translation type="unfinished">Use internal icon theme instead of system icon theme</translation>
+</message>
+<message>
+<source>Enforce system icon theme</source>
+<translation type="unfinished">Enforce system icon theme</translation>
+</message>
+<message>
+<source>Enable dark mode icon theme</source>
+<translation type="unfinished">Enable dark mode icon theme</translation>
+</message>
+<message>
+<source>Editor color schema</source>
+<translation type="unfinished">Editor color schema</translation>
+</message>
+<message>
+<source>Select the editor color schema for this color mode</source>
+<translation type="unfinished">Select the editor color schema for this color mode</translation>
+</message>
+<message>
+<source>New color mode</source>
+<translation type="unfinished">New color mode</translation>
+</message>
+<message>
+<source>Remove color mode</source>
+<translation type="unfinished">Remove color mode</translation>
+</message>
+<message>
+<source>Remove the color mode &lt;strong&gt;%1&lt;/strong&gt;?</source>
+<translation type="unfinished">Remove the color mode &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+</message>
+<message>
+<source>Color mode</source>
+<translation type="unfinished">Color mode</translation>
 </message>
 </context>
 <context>
@@ -601,23 +704,23 @@
 <name>DistractionFreeManager</name>
 <message>
 <source>leave</source>
-<translation type="unfinished">leave</translation>
+<translation>离开</translation>
 </message>
 <message>
 <source>Leave distraction free mode</source>
-<translation type="unfinished">Leave distraction free mode</translation>
+<translation>离开免打扰模式</translation>
 </message>
 <message>
 <source>Leave full-screen mode</source>
-<translation type="unfinished">Leave full-screen mode</translation>
+<translation>离开全屏模式</translation>
 </message>
 <message>
 <source>Custom editor width</source>
-<translation type="unfinished">Custom editor width</translation>
+<translation>自定义编辑器宽度</translation>
 </message>
 <message>
 <source>Characters:</source>
-<translation type="unfinished">Characters:</translation>
+<translation>字符数：</translation>
 </message>
 </context>
 <context>
@@ -763,51 +866,51 @@
 <name>ExportPrintManager</name>
 <message>
 <source>Print note</source>
-<translation type="unfinished">Print note</translation>
+<translation>打印笔记</translation>
 </message>
 <message>
 <source>Letter</source>
-<translation type="unfinished">Letter</translation>
+<translation>信纸</translation>
 </message>
 <message>
 <source>Page size</source>
-<translation type="unfinished">Page size</translation>
+<translation>页面大小</translation>
 </message>
 <message>
 <source>Page size:</source>
-<translation type="unfinished">Page size:</translation>
+<translation>页面大小：</translation>
 </message>
 <message>
 <source>Portrait</source>
-<translation type="unfinished">Portrait</translation>
+<translation>纵向</translation>
 </message>
 <message>
 <source>Landscape</source>
-<translation type="unfinished">Landscape</translation>
+<translation>横向</translation>
 </message>
 <message>
 <source>Orientation</source>
-<translation type="unfinished">Orientation</translation>
+<translation>方向</translation>
 </message>
 <message>
 <source>Orientation:</source>
-<translation type="unfinished">Orientation:</translation>
+<translation>方向：</translation>
 </message>
 <message>
 <source>PDF files</source>
-<translation type="unfinished">PDF files</translation>
+<translation>PDF 文件</translation>
 </message>
 <message>
 <source>Export current note as PDF</source>
-<translation type="unfinished">Export current note as PDF</translation>
+<translation>将当前笔记导出为 PDF</translation>
 </message>
 <message>
 <source>HTML files</source>
-<translation type="unfinished">HTML files</translation>
+<translation>HTML 文件</translation>
 </message>
 <message>
 <source>Export current note as HTML file</source>
-<translation type="unfinished">Export current note as HTML file</translation>
+<translation>将当前笔记导出为 HTML 文件</translation>
 </message>
 </context>
 <context>
@@ -1098,95 +1201,95 @@
 <name>FileNavigationWidget</name>
 <message>
 <source>Media files</source>
-<translation type="unfinished">Media files</translation>
+<translation>媒体文件</translation>
 </message>
 <message>
 <source>Attachments</source>
-<translation type="unfinished">Attachments</translation>
+<translation>附件</translation>
 </message>
 <message>
 <source>Invalid file name</source>
-<translation type="unfinished">Invalid file name</translation>
+<translation>无效的文件名</translation>
 </message>
 <message>
 <source>The file name &lt;strong&gt;%1&lt;/strong&gt; is invalid.</source>
-<translation type="unfinished">The file name &lt;strong&gt;%1&lt;/strong&gt; is invalid.</translation>
+<translation>文件名 &lt;strong&gt;%1&lt;/strong&gt; 无效。</translation>
 </message>
 <message>
 <source>Delete linked files</source>
-<translation type="unfinished">Delete linked files</translation>
+<translation>删除关联文件</translation>
 </message>
 <message numerus="yes">
 <source>Delete &lt;strong&gt;%n&lt;/strong&gt; selected linked file(s)? You can also remove their links from &lt;strong&gt;%1&lt;/strong&gt; note file(s) afterwards.</source>
-<translation type="unfinished">
-<numerusform>Delete &lt;strong&gt;%n&lt;/strong&gt; selected linked file(s)? You can also remove their links from &lt;strong&gt;%1&lt;/strong&gt; note file(s) afterwards.</numerusform>
+<translation>
+<numerusform>是否删除 &lt;strong&gt;%n&lt;/strong&gt; 个选中的关联文件？您也可以在之后从 &lt;strong&gt;%1&lt;/strong&gt; 个笔记文件中移除它们的链接。</numerusform>
 </translation>
 </message>
 <message>
 <source>Deleting the file &lt;strong&gt;%1&lt;/strong&gt; failed!</source>
-<translation type="unfinished">Deleting the file &lt;strong&gt;%1&lt;/strong&gt; failed!</translation>
+<translation>删除文件 &lt;strong&gt;%1&lt;/strong&gt; 失败！</translation>
 </message>
 <message numerus="yes">
 <source>Deleting &lt;strong&gt;%n&lt;/strong&gt; linked file(s) failed!</source>
-<translation type="unfinished">
-<numerusform>Deleting &lt;strong&gt;%n&lt;/strong&gt; linked file(s) failed!</numerusform>
+<translation>
+<numerusform>删除 &lt;strong&gt;%n&lt;/strong&gt; 个关联文件失败！</numerusform>
 </translation>
 </message>
 <message>
 <source>File deleting failed</source>
-<translation type="unfinished">File deleting failed</translation>
+<translation>文件删除失败</translation>
 </message>
 <message>
 <source>Remove linked file references</source>
-<translation type="unfinished">Remove linked file references</translation>
+<translation>移除关联文件引用</translation>
 </message>
 <message numerus="yes">
 <source>The deleted file(s) are used in &lt;strong&gt;%n&lt;/strong&gt; note file(s). Would you like to remove those media and attachment links everywhere? This will update &lt;strong&gt;%n&lt;/strong&gt; note file(s).</source>
-<translation type="unfinished">
-<numerusform>The deleted file(s) are used in &lt;strong&gt;%n&lt;/strong&gt; note file(s). Would you like to remove those media and attachment links everywhere? This will update &lt;strong&gt;%n&lt;/strong&gt; note file(s).</numerusform>
+<translation>
+<numerusform>已删除的文件在 &lt;strong&gt;%n&lt;/strong&gt; 个笔记文件中被使用。是否在所有位置移除这些媒体和附件链接？这将更新 &lt;strong&gt;%n&lt;/strong&gt; 个笔记文件。</numerusform>
 </translation>
 </message>
 <message>
 <source>File doesn't exist</source>
-<translation type="unfinished">File doesn't exist</translation>
+<translation>文件不存在</translation>
 </message>
 <message>
 <source>The file &lt;strong&gt;%1&lt;/strong&gt; doesn't exist, you cannot rename it!</source>
-<translation type="unfinished">The file &lt;strong&gt;%1&lt;/strong&gt; doesn't exist, you cannot rename it!</translation>
+<translation>文件 &lt;strong&gt;%1&lt;/strong&gt; 不存在，无法重命名！</translation>
 </message>
 <message>
 <source>File exists</source>
-<translation type="unfinished">File exists</translation>
+<translation>文件已存在</translation>
 </message>
 <message>
 <source>File &lt;strong&gt;%1&lt;/strong&gt; already exists, you need to remove it before choosing &lt;strong&gt;%2&lt;/strong&gt; as new filename!</source>
-<translation type="unfinished">File &lt;strong&gt;%1&lt;/strong&gt; already exists, you need to remove it before choosing &lt;strong&gt;%2&lt;/strong&gt; as new filename!</translation>
+<translation>文件 &lt;strong&gt;%1&lt;/strong&gt; 已存在，您需要先删除它才能选择 &lt;strong&gt;%2&lt;/strong&gt; 作为新文件名！</translation>
 </message>
 <message>
 <source>File renaming failed</source>
-<translation type="unfinished">File renaming failed</translation>
+<translation>文件重命名失败</translation>
 </message>
 <message>
 <source>Renaming of file &lt;strong&gt;%1&lt;/strong&gt; failed!</source>
-<translation type="unfinished">Renaming of file &lt;strong&gt;%1&lt;/strong&gt; failed!</translation>
+<translation>重命名文件 &lt;strong&gt;%1&lt;/strong&gt; 失败！</translation>
 </message>
 <message>
 <source>File name changed</source>
-<translation type="unfinished">File name changed</translation>
+<translation>文件名已更改</translation>
 </message>
 <message numerus="yes">
 <source>The %1 &lt;strong&gt;%2&lt;/strong&gt; is used in &lt;strong&gt;%n&lt;/strong&gt; note file(s). Would you like to refactor that filename everywhere? This will update &lt;strong&gt;%n&lt;/strong&gt; note file(s).</source>
-<translation type="unfinished">
-<numerusform>The %1 &lt;strong&gt;%2&lt;/strong&gt; is used in &lt;strong&gt;%n&lt;/strong&gt; note file(s). Would you like to refactor that filename everywhere? This will update &lt;strong&gt;%n&lt;/strong&gt; note file(s).</numerusform>
+<translation>
+<numerusform>%1 &lt;strong&gt;%2&lt;/strong&gt; 在 &lt;strong&gt;%n&lt;/strong&gt; 个笔记文件中被使用。是否在所有位置重构该文件名？这将更新 &lt;strong&gt;%n&lt;/strong&gt; 个笔记文件。</numerusform>
 </translation>
 </message>
 <message>
 <source>&amp;Open file externally</source>
-<translation type="unfinished">&amp;Open file externally</translation>
+<translation>用外部程序打开文件(&amp;O)</translation>
 </message>
 <message>
 <source>&amp;Delete file</source>
-<translation type="unfinished">&amp;Delete file</translation>
+<translation>删除文件(&amp;D)</translation>
 </message>
 </context>
 <context>
@@ -1302,6 +1405,18 @@
 <message>
 <source>Link</source>
 <translation>链接</translation>
+</message>
+<message>
+<source>Link (internal)</source>
+<translation type="unfinished">Link (internal)</translation>
+</message>
+<message>
+<source>Wiki link</source>
+<translation type="unfinished">Wiki link</translation>
+</message>
+<message>
+<source>Wiki link (broken)</source>
+<translation type="unfinished">Wiki link (broken)</translation>
 </message>
 <message>
 <source>Image</source>
@@ -1438,28 +1553,28 @@
 <name>HtmlPreviewWidgetInternal</name>
 <message>
 <source>Copy</source>
-<translation type="unfinished">Copy</translation>
+<translation>复制</translation>
 </message>
 <message>
 <source>Copy link location</source>
-<translation type="unfinished">Copy link location</translation>
+<translation>复制链接地址</translation>
 </message>
 <message>
 <source>Export generated raw HTML</source>
-<translation type="unfinished">Export generated raw HTML</translation>
+<translation>导出生成的原始 HTML</translation>
 </message>
 <message>
 <source>Reset zoom</source>
-<translation type="unfinished">Reset zoom</translation>
+<translation>重置缩放</translation>
 </message>
 <message>
 <source>HTML files</source>
-<translation type="unfinished">HTML files</translation>
+<translation>HTML 文件</translation>
 </message>
 <message>
 <source>Export preview as raw HTML file</source>
 <comment>"Raw" means that actually the html that was fed to the preview will be stored (the QTextBrowser modifies the html that it is showing)</comment>
-<translation type="unfinished">Export preview as raw HTML file</translation>
+<translation>将预览导出为原始 HTML 文件</translation>
 </message>
 </context>
 <context>
@@ -1591,14 +1706,14 @@
 <name>LanguageToolChecker</name>
 <message>
 <source>LanguageTool is unavailable: %1</source>
-<translation type="unfinished">LanguageTool is unavailable: %1</translation>
+<translation>LanguageTool 不可用：%1</translation>
 </message>
 </context>
 <context>
 <name>LanguageToolClient</name>
 <message>
 <source>Invalid LanguageTool server URL</source>
-<translation type="unfinished">Invalid LanguageTool server URL</translation>
+<translation>无效的 LanguageTool 服务器 URL</translation>
 </message>
 </context>
 <context>
@@ -1708,15 +1823,23 @@
 </message>
 <message>
 <source>Folder</source>
-<translation type="unfinished">Folder</translation>
+<translation>文件夹</translation>
 </message>
 <message>
 <source>Modified</source>
-<translation type="unfinished">Modified</translation>
+<translation>修改时间</translation>
 </message>
 <message>
 <source>Search for a heading to link to</source>
 <translation>搜索要链接到的标题</translation>
+</message>
+<message>
+<source>Insert the link as a wiki-style link ([[Note Name]]) instead of a Markdown link</source>
+<translation type="unfinished">Insert the link as a wiki-style link ([[Note Name]]) instead of a Markdown link</translation>
+</message>
+<message>
+<source>Create wiki-style link ([[...]])</source>
+<translation type="unfinished">Create wiki-style link ([[...]])</translation>
 </message>
 <message>
 <source>Enter the name of the link (optional)</source>
@@ -1905,7 +2028,7 @@
 </message>
 <message>
 <source>Files</source>
-<translation type="unfinished">Files</translation>
+<translation>文件</translation>
 </message>
 <message>
 <source>Backlinks</source>
@@ -2178,27 +2301,27 @@
 </message>
 <message>
 <source>Previous &amp;heading</source>
-<translation type="unfinished">Previous &amp;heading</translation>
+<translation>上一个标题(&amp;H)</translation>
 </message>
 <message>
 <source>Next heading</source>
-<translation type="unfinished">Next heading</translation>
+<translation>下一个标题</translation>
 </message>
 <message>
 <source>Fold all headings</source>
-<translation type="unfinished">Fold all headings</translation>
+<translation>折叠所有标题</translation>
 </message>
 <message>
 <source>Fold all headings in the current note</source>
-<translation type="unfinished">Fold all headings in the current note</translation>
+<translation>折叠当前笔记中的所有标题</translation>
 </message>
 <message>
 <source>Unfold all headings</source>
-<translation type="unfinished">Unfold all headings</translation>
+<translation>展开所有标题</translation>
 </message>
 <message>
 <source>Unfold all headings in the current note</source>
-<translation type="unfinished">Unfold all headings in the current note</translation>
+<translation>展开当前笔记中的所有标题</translation>
 </message>
 <message>
 <source>Show shortcuts</source>
@@ -2398,6 +2521,10 @@
 <translation>切换到以前的工作区</translation>
 </message>
 <message>
+<source>Manage workspaces</source>
+<translation type="unfinished">Manage workspaces</translation>
+</message>
+<message>
 <source>Show all panels</source>
 <translation>显示所有面板</translation>
 </message>
@@ -2535,7 +2662,7 @@
 </message>
 <message>
 <source>Check grammar with LanguageTool</source>
-<translation type="unfinished">Check grammar with LanguageTool</translation>
+<translation>使用 LanguageTool 检查语法</translation>
 </message>
 <message>
 <source>Custom</source>
@@ -2926,7 +3053,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Note filename '%1' was copied to the clipboard</source>
-<translation type="unfinished">Note filename '%1' was copied to the clipboard</translation>
+<translation>笔记文件名 '%1' 已复制到剪切板</translation>
 </message>
 <message>
 <source>Clipboard sent successfully</source>
@@ -3208,131 +3335,131 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <name>MarkdownLspClient</name>
 <message>
 <source>Markdown LSP server command is empty</source>
-<translation type="unfinished">Markdown LSP server command is empty</translation>
+<translation>Markdown LSP 服务器命令为空</translation>
 </message>
 <message>
 <source>Failed to start Markdown LSP server: %1</source>
-<translation type="unfinished">Failed to start Markdown LSP server: %1</translation>
+<translation>启动 Markdown LSP 服务器失败：%1</translation>
 </message>
 </context>
 <context>
 <name>MediaInsertionManager</name>
 <message>
 <source>File extension</source>
-<translation type="unfinished">File extension</translation>
+<translation>文件扩展名</translation>
 </message>
 <message>
 <source>Extension of file attachment:</source>
-<translation type="unfinished">Extension of file attachment:</translation>
+<translation>附件文件的扩展名：</translation>
 </message>
 <message>
 <source>File base name</source>
-<translation type="unfinished">File base name</translation>
+<translation>文件基本名称</translation>
 </message>
 <message>
 <source>Base name of file attachment:</source>
-<translation type="unfinished">Base name of file attachment:</translation>
+<translation>附件文件的基本名称：</translation>
 </message>
 <message>
 <source>Leave empty for automatic name</source>
 <comment>Leave the base name empty for automatic name</comment>
-<translation type="unfinished">Leave empty for automatic name</translation>
+<translation>留空以自动命名</translation>
 </message>
 <message>
 <source>Temporary file can't be opened</source>
-<translation type="unfinished">Temporary file can't be opened</translation>
+<translation>无法打开临时文件</translation>
 </message>
 <message>
 <source>Inserted text as text attachment file</source>
-<translation type="unfinished">Inserted text as text attachment file</translation>
+<translation>已将文本作为文本附件文件插入</translation>
 </message>
 <message>
 <source>Inserting image</source>
-<translation type="unfinished">Inserting image</translation>
+<translation>正在插入图片</translation>
 </message>
 <message>
 <source>Done inserting image</source>
-<translation type="unfinished">Done inserting image</translation>
+<translation>图片插入完成</translation>
 </message>
 <message>
 <source>Inserting attachment</source>
-<translation type="unfinished">Inserting attachment</translation>
+<translation>正在插入附件</translation>
 </message>
 <message>
 <source>Done inserting attachment</source>
-<translation type="unfinished">Done inserting attachment</translation>
+<translation>附件插入完成</translation>
 </message>
 <message numerus="yes">
 <source>Copied %n note(s) to %1</source>
-<translation type="unfinished">
-<numerusform>Copied %n note(s) to %1</numerusform>
+<translation>
+<numerusform>已复制 %n 个笔记到 %1</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>Failed to copy %n note(s) (most likely already existing)</source>
-<translation type="unfinished">
-<numerusform>Failed to copy %n note(s) (most likely already existing)</numerusform>
+<translation>
+<numerusform>复制 %n 个笔记失败（可能已存在）</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>Skipped copying of %n note(s) (no Markdown or text file or not readable)</source>
-<translation type="unfinished">
-<numerusform>Skipped copying of %n note(s) (no Markdown or text file or not readable)</numerusform>
+<translation>
+<numerusform>跳过复制 %n 个笔记（不是 Markdown 或文本文件，或不可读）</numerusform>
 </translation>
 </message>
 <message>
 <source>Saving temporary image</source>
-<translation type="unfinished">Saving temporary image</translation>
+<translation>正在保存临时图片</translation>
 </message>
 <message>
 <source>Paste &amp;HTML as Markdown</source>
-<translation type="unfinished">Paste &amp;HTML as Markdown</translation>
+<translation>粘贴 &amp;HTML 为 Markdown</translation>
 </message>
 <message>
 <source>Paste as &amp;text file attachment</source>
-<translation type="unfinished">Paste as &amp;text file attachment</translation>
+<translation>粘贴为文本文件附件(&amp;T)</translation>
 </message>
 <message>
 <source>Downloading %1</source>
-<translation type="unfinished">Downloading %1</translation>
+<translation>正在下载 %1</translation>
 </message>
 <message>
 <source>Downloading images finished</source>
-<translation type="unfinished">Downloading images finished</translation>
+<translation>图片下载完成</translation>
 </message>
 </context>
 <context>
 <name>NavigationManager</name>
 <message>
 <source>Update backlinks</source>
-<translation type="unfinished">Update backlinks</translation>
+<translation>更新反向链接</translation>
 </message>
 <message numerus="yes">
 <source>The heading "%1" is referenced in %n note(s). Do you want to update the link to use the new heading "%2"?</source>
-<translation type="unfinished">
-<numerusform>The heading "%1" is referenced in %n note(s). Do you want to update the link to use the new heading "%2"?</numerusform>
+<translation>
+<numerusform>标题"%1"在 %n 个笔记中被引用。是否更新链接以使用新标题"%2"？</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>Updated heading links in %n note(s)</source>
-<translation type="unfinished">
-<numerusform>Updated heading links in %n note(s)</numerusform>
+<translation>
+<numerusform>已在 %n 个笔记中更新标题链接</numerusform>
 </translation>
 </message>
 <message>
 <source>Ln %1, Col %2</source>
 <comment>Line / Column</comment>
-<translation type="unfinished">Ln %1, Col %2</translation>
+<translation>行 %1, 列 %2</translation>
 </message>
 <message>
 <source>Line %1, Column %2</source>
-<translation type="unfinished">Line %1, Column %2</translation>
+<translation>行 %1, 列 %2</translation>
 </message>
 <message numerus="yes">
 <source>%n selected</source>
 <comment>Characters selected</comment>
-<translation type="unfinished">
-<numerusform>%n selected</numerusform>
+<translation>
+<numerusform>已选择 %n 个字符</numerusform>
 </translation>
 </message>
 </context>
@@ -3344,7 +3471,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>&amp;Rename heading</source>
-<translation type="unfinished">&amp;Rename heading</translation>
+<translation>重命名标题(&amp;R)</translation>
 </message>
 </context>
 <context>
@@ -3383,7 +3510,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Show archived cards</source>
-<translation type="unfinished">Show archived cards</translation>
+<translation>显示已归档的卡片</translation>
 </message>
 <message>
 <source>This doesn't work for sub-items, because they may be hidden by the parent item!</source>
@@ -3485,14 +3612,6 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <context>
 <name>NextcloudDeckService</name>
 <message>
-<source>updating</source>
-<translation>更新中</translation>
-</message>
-<message>
-<source>creating</source>
-<translation>创建中</translation>
-</message>
-<message>
 <source>Error while updating card</source>
 <translation>更新卡片时出错</translation>
 </message>
@@ -3513,16 +3632,16 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <translation>存档卡片时出错</translation>
 </message>
 <message>
-<source>Archiving the card failed with status code %2 and message: %3</source>
-<translation>存档卡片失败，状态代码为 %2，错误信息为： %3</translation>
-</message>
-<message>
 <source>Error while deleting card</source>
 <translation>删除卡片时出错</translation>
 </message>
 <message>
-<source>Deleting the card failed with status code %2 and message: %3</source>
-<translation>删除卡片失败，状态代码为 %2，错误信息为： %3</translation>
+<source>Archiving the card failed with status code %1 and message: %2</source>
+<translation type="unfinished">Archiving the card failed with status code %1 and message: %2</translation>
+</message>
+<message>
+<source>Deleting the card failed with status code %1 and message: %2</source>
+<translation type="unfinished">Deleting the card failed with status code %1 and message: %2</translation>
 </message>
 <message>
 <source>Error while loading boards</source>
@@ -3542,11 +3661,11 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Error while loading archived cards</source>
-<translation type="unfinished">Error while loading archived cards</translation>
+<translation>加载已归档卡片时出错</translation>
 </message>
 <message>
 <source>Loading the archived cards failed with status code %1 and message: %2</source>
-<translation type="unfinished">Loading the archived cards failed with status code %1 and message: %2</translation>
+<translation>加载已归档卡片失败，状态代码为 %1，错误信息为：%2</translation>
 </message>
 </context>
 <context>
@@ -3619,55 +3738,55 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <name>NoteEncryptionManager</name>
 <message>
 <source>Please enter the &lt;strong&gt;password&lt;/strong&gt; of this encrypted note.</source>
-<translation type="unfinished">Please enter the &lt;strong&gt;password&lt;/strong&gt; of this encrypted note.</translation>
+<translation>请输入此加密笔记的&lt;strong&gt;密码&lt;/strong&gt;。</translation>
 </message>
 <message>
 <source>Note can't be decrypted!</source>
-<translation type="unfinished">Note can't be decrypted!</translation>
+<translation>笔记无法解密！</translation>
 </message>
 <message>
 <source>It seems that your password is not valid!</source>
-<translation type="unfinished">It seems that your password is not valid!</translation>
+<translation>您的密码似乎无效！</translation>
 </message>
 <message>
 <source>Please enter your &lt;strong&gt;password&lt;/strong&gt; to encrypt the note.&lt;br /&gt;Keep in mind that you have to &lt;strong&gt;remember&lt;/strong&gt; your password to read the content of the note&lt;br /&gt; and that you can &lt;strong&gt;only&lt;/strong&gt; do that &lt;strong&gt;in QOwnNotes&lt;/strong&gt;!</source>
-<translation type="unfinished">Please enter your &lt;strong&gt;password&lt;/strong&gt; to encrypt the note.&lt;br /&gt;Keep in mind that you have to &lt;strong&gt;remember&lt;/strong&gt; your password to read the content of the note&lt;br /&gt; and that you can &lt;strong&gt;only&lt;/strong&gt; do that &lt;strong&gt;in QOwnNotes&lt;/strong&gt;!</translation>
+<translation>请输入您的&lt;strong&gt;密码&lt;/strong&gt;以加密笔记。&lt;br /&gt;请注意，您必须&lt;strong&gt;记住&lt;/strong&gt;密码才能阅读笔记内容，&lt;br /&gt;而且您&lt;strong&gt;只能&lt;/strong&gt;在 &lt;strong&gt;QOwnNotes&lt;/strong&gt; 中进行此操作！</translation>
 </message>
 <message>
 <source>Decrypt note and store it as plain text</source>
-<translation type="unfinished">Decrypt note and store it as plain text</translation>
+<translation>解密笔记并以纯文本形式存储</translation>
 </message>
 <message>
 <source>Your note will be decrypted and stored as plain text again. Keep in mind that the unencrypted note will possibly be synced to your server and sensitive text may be exposed!&lt;br /&gt;Do you want to decrypt your note?</source>
-<translation type="unfinished">Your note will be decrypted and stored as plain text again. Keep in mind that the unencrypted note will possibly be synced to your server and sensitive text may be exposed!&lt;br /&gt;Do you want to decrypt your note?</translation>
+<translation>您的笔记将被解密并重新以纯文本形式存储。请注意，未加密的笔记可能会同步到您的服务器，敏感内容可能会被暴露！&lt;br /&gt;是否要解密您的笔记？</translation>
 </message>
 <message>
 <source>&amp;Decrypt</source>
-<translation type="unfinished">&amp;Decrypt</translation>
+<translation>解密(&amp;D)</translation>
 </message>
 <message>
 <source>&amp;Cancel</source>
-<translation type="unfinished">&amp;Cancel</translation>
+<translation>取消(&amp;C)</translation>
 </message>
 <message>
 <source>&lt;br /&gt;You will be able to edit your encrypted note.</source>
-<translation type="unfinished">&lt;br /&gt;You will be able to edit your encrypted note.</translation>
+<translation>&lt;br /&gt;您将可以编辑您的加密笔记。</translation>
 </message>
 <message>
 <source>Markdown files</source>
-<translation type="unfinished">Markdown files</translation>
+<translation>Markdown 文件</translation>
 </message>
 <message>
 <source>Export current note as Markdown file</source>
-<translation type="unfinished">Export current note as Markdown file</translation>
+<translation>将当前笔记导出为 Markdown 文件</translation>
 </message>
 <message>
 <source>Export attached files</source>
-<translation type="unfinished">Export attached files</translation>
+<translation>导出附件文件</translation>
 </message>
 <message>
 <source>Do you also want to export media files and attachments of the note? Files may be overwritten in the destination folder!</source>
-<translation type="unfinished">Do you also want to export media files and attachments of the note? Files may be overwritten in the destination folder!</translation>
+<translation>是否也要导出笔记的媒体文件和附件？目标文件夹中的文件可能会被覆盖！</translation>
 </message>
 </context>
 <context>
@@ -3686,7 +3805,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Copy note filename</source>
-<translation type="unfinished">Copy note filename</translation>
+<translation>复制笔记文件名</translation>
 </message>
 <message>
 <source>Copy absolute path of note subfolder</source>
@@ -3701,235 +3820,255 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <name>NoteIndexManager</name>
 <message>
 <source>Loading notes…</source>
-<translation type="unfinished">Loading notes…</translation>
+<translation>正在加载笔记…</translation>
 </message>
 <message>
 <source>Abort</source>
-<translation type="unfinished">Abort</translation>
+<translation>中止</translation>
 </message>
 <message>
 <source>Note folder</source>
-<translation type="unfinished">Note folder</translation>
+<translation>笔记文件夹</translation>
 </message>
 <message>
 <source>Removed duplicate conflicted database: %1</source>
-<translation type="unfinished">Removed duplicate conflicted database: %1</translation>
+<translation>已移除重复的冲突数据库：%1</translation>
 </message>
 <message>
 <source>Could not remove duplicate conflicted database: %1</source>
-<translation type="unfinished">Could not remove duplicate conflicted database: %1</translation>
+<translation>无法移除重复的冲突数据库：%1</translation>
 </message>
 <message>
 <source>Removed merged conflicted database: %1</source>
-<translation type="unfinished">Removed merged conflicted database: %1</translation>
+<translation>已移除合并的冲突数据库：%1</translation>
 </message>
 <message>
 <source>Could not remove merged conflicted database: %1</source>
-<translation type="unfinished">Could not remove merged conflicted database: %1</translation>
+<translation>无法移除合并的冲突数据库：%1</translation>
 </message>
 <message>
 <source>Delete conflicted database copies</source>
-<translation type="unfinished">Delete conflicted database copies</translation>
+<translation>删除冲突的数据库副本</translation>
 </message>
 <message numerus="yes">
 <source>Proceed with automatic deletion of &lt;strong&gt;%n&lt;/strong&gt; conflicted database copies that may block your ownCloud sync process?</source>
-<translation type="unfinished">
-<numerusform>Proceed with automatic deletion of &lt;strong&gt;%n&lt;/strong&gt; conflicted database copies that may block your ownCloud sync process?</numerusform>
+<translation>
+<numerusform>是否继续自动删除 &lt;strong&gt;%n&lt;/strong&gt; 个可能阻碍 ownCloud 同步进程的冲突数据库副本？</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>Removed %n conflicted database copies</source>
-<translation type="unfinished">
-<numerusform>Removed %n conflicted database copies</numerusform>
+<translation>
+<numerusform>已移除 %n 个冲突的数据库副本</numerusform>
 </translation>
 </message>
 <message>
 <source>Current note was modified externally</source>
-<translation type="unfinished">Current note was modified externally</translation>
+<translation>当前笔记已被外部修改</translation>
 </message>
 <message>
 <source>Overwriting external changes of: %1</source>
-<translation type="unfinished">Overwriting external changes of: %1</translation>
+<translation>正在覆盖外部更改：%1</translation>
 </message>
 <message>
 <source>Loading external changes from: %1</source>
-<translation type="unfinished">Loading external changes from: %1</translation>
+<translation>正在加载外部更改：%1</translation>
 </message>
 <message>
 <source>Note was removed externally!</source>
-<translation type="unfinished">Note was removed externally!</translation>
+<translation>笔记已被外部删除！</translation>
 </message>
 <message>
 <source>Current note was removed outside of this application!
 Restore current note?</source>
-<translation type="unfinished">Current note was removed outside of this application!
-Restore current note?</translation>
+<translation>当前笔记已在应用程序外部被删除！
+是否恢复当前笔记？</translation>
 </message>
 <message>
 <source>Stored current note to disk</source>
-<translation type="unfinished">Stored current note to disk</translation>
+<translation>已将当前笔记保存到磁盘</translation>
 </message>
 <message>
 <source>Current note could not be stored to disk</source>
-<translation type="unfinished">Current note could not be stored to disk</translation>
+<translation>无法将当前笔记保存到磁盘</translation>
 </message>
 <message>
 <source>Note was modified externally: %1</source>
-<translation type="unfinished">Note was modified externally: %1</translation>
+<translation>笔记已被外部修改：%1</translation>
 </message>
 <message>
 <source>Notes directory was modified externally</source>
-<translation type="unfinished">Notes directory was modified externally</translation>
+<translation>笔记目录已被外部修改</translation>
 </message>
 <message numerus="yes">
 <source>Stored %n note(s) to disk</source>
-<translation type="unfinished">
-<numerusform>Stored %n note(s) to disk</numerusform>
+<translation>
+<numerusform>已将 %n 个笔记保存到磁盘</numerusform>
 </translation>
 </message>
 </context>
 <context>
 <name>NoteOperationsManager</name>
 <message>
+<source>Note has backlinks</source>
+<translation type="unfinished">Note has backlinks</translation>
+</message>
+<message numerus="yes">
+<source>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</source>
+<translation type="unfinished">
+<numerusform>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</numerusform>
+</translation>
+</message>
+<message>
 <source>Remove current note</source>
-<translation type="unfinished">Remove current note</translation>
+<translation>移除当前笔记</translation>
 </message>
 <message>
 <source>Remove current note: &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation type="unfinished">Remove current note: &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+<translation>是否移除当前笔记：&lt;strong&gt;%1&lt;/strong&gt;？</translation>
+</message>
+<message>
+<source>Notes have backlinks</source>
+<translation type="unfinished">Notes have backlinks</translation>
+</message>
+<message numerus="yes">
+<source>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</source>
+<translation type="unfinished">
+<numerusform>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</numerusform>
+</translation>
 </message>
 <message>
 <source>Remove selected notes and folders</source>
-<translation type="unfinished">Remove selected notes and folders</translation>
+<translation>移除选中的笔记和文件夹</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected note(s) and &lt;strong&gt;%1&lt;/strong&gt; folder(s)?&lt;ul&gt;&lt;li&gt;%2&lt;/li&gt;&lt;/ul&gt;All files and folders in these folders will be removed as well!
 
 If the trash is enabled on your ownCloud server you should be able to restore the notes from there.</source>
-<translation type="unfinished">
-<numerusform>Remove &lt;strong&gt;%n&lt;/strong&gt; selected note(s) and &lt;strong&gt;%1&lt;/strong&gt; folder(s)?&lt;ul&gt;&lt;li&gt;%2&lt;/li&gt;&lt;/ul&gt;All files and folders in these folders will be removed as well!
+<translation>
+<numerusform>是否移除 &lt;strong&gt;%n&lt;/strong&gt; 个选中的笔记和 &lt;strong&gt;%1&lt;/strong&gt; 个文件夹？&lt;ul&gt;&lt;li&gt;%2&lt;/li&gt;&lt;/ul&gt;这些文件夹中的所有文件和文件夹也将被移除！
 
-If the trash is enabled on your ownCloud server you should be able to restore the notes from there.</numerusform>
+如果您的 ownCloud 服务器启用了回收站，您应该可以从那里恢复笔记。</numerusform>
 </translation>
 </message>
 <message>
 <source>Remove selected folders</source>
-<translation type="unfinished">Remove selected folders</translation>
+<translation>移除选中的文件夹</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected folder(s)?&lt;ul&gt;&lt;li&gt;%1&lt;/li&gt;&lt;/ul&gt;All files and folders in these folders will be removed as well!</source>
-<translation type="unfinished">
-<numerusform>Remove &lt;strong&gt;%n&lt;/strong&gt; selected folder(s)?&lt;ul&gt;&lt;li&gt;%1&lt;/li&gt;&lt;/ul&gt;All files and folders in these folders will be removed as well!</numerusform>
+<translation>
+<numerusform>是否移除 &lt;strong&gt;%n&lt;/strong&gt; 个选中的文件夹？&lt;ul&gt;&lt;li&gt;%1&lt;/li&gt;&lt;/ul&gt;这些文件夹中的所有文件和文件夹也将被移除！</numerusform>
 </translation>
 </message>
 <message>
 <source>Remove selected notes</source>
-<translation type="unfinished">Remove selected notes</translation>
+<translation>移除选中的笔记</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected note(s)?
 
 If the trash is enabled on your ownCloud server you should be able to restore them from there.</source>
-<translation type="unfinished">
-<numerusform>Remove &lt;strong&gt;%n&lt;/strong&gt; selected note(s)?
+<translation>
+<numerusform>是否移除 &lt;strong&gt;%n&lt;/strong&gt; 个选中的笔记？
 
-If the trash is enabled on your ownCloud server you should be able to restore them from there.</numerusform>
+如果您的 ownCloud 服务器启用了回收站，您应该可以从那里恢复它们。</numerusform>
 </translation>
 </message>
 <message>
 <source>Removed note subfolder: %1</source>
-<translation type="unfinished">Removed note subfolder: %1</translation>
+<translation>已移除笔记子文件夹：%1</translation>
 </message>
 <message>
 <source>Move selected notes</source>
-<translation type="unfinished">Move selected notes</translation>
+<translation>移动选中的笔记</translation>
 </message>
 <message numerus="yes">
 <source>Move %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</source>
-<translation type="unfinished">
-<numerusform>Move %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<translation>
+<numerusform>是否将 %n 个选中的笔记移动到 &lt;strong&gt;%2&lt;/strong&gt;？</numerusform>
 </translation>
 </message>
 <message>
 <source>Copy selected notes</source>
-<translation type="unfinished">Copy selected notes</translation>
+<translation>复制选中的笔记</translation>
 </message>
 <message numerus="yes">
 <source>Copy %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</source>
-<translation type="unfinished">
-<numerusform>Copy %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<translation>
+<numerusform>是否将 %n 个选中的笔记复制到 &lt;strong&gt;%2&lt;/strong&gt;？</numerusform>
 </translation>
 </message>
 <message>
 <source>Done</source>
-<translation type="unfinished">Done</translation>
+<translation>完成</translation>
 </message>
 <message numerus="yes">
 <source>%n note(s) were copied to &lt;strong&gt;%2&lt;/strong&gt;.</source>
-<translation type="unfinished">
-<numerusform>%n note(s) were copied to &lt;strong&gt;%2&lt;/strong&gt;.</numerusform>
+<translation>
+<numerusform>%n 个笔记已复制到 &lt;strong&gt;%2&lt;/strong&gt;。</numerusform>
 </translation>
 </message>
 <message>
 <source>Note</source>
 <comment>name for new note</comment>
-<translation type="unfinished">Note</translation>
+<translation>笔记</translation>
 </message>
 <message numerus="yes">
 <source>Move %n selected note(s) to note subfolder &lt;strong&gt;%2&lt;/strong&gt;?</source>
-<translation type="unfinished">
-<numerusform>Move %n selected note(s) to note subfolder &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<translation>
+<numerusform>是否将 %n 个选中的笔记移动到笔记子文件夹 &lt;strong&gt;%2&lt;/strong&gt;？</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>%n note(s) were moved to note subfolder "%2"</source>
-<translation type="unfinished">
-<numerusform>%n note(s) were moved to note subfolder "%2"</numerusform>
+<translation>
+<numerusform>%n 个笔记已移动到笔记子文件夹"%2"</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>Copy %n selected note(s) to note subfolder &lt;strong&gt;%2&lt;/strong&gt;?</source>
-<translation type="unfinished">
-<numerusform>Copy %n selected note(s) to note subfolder &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<translation>
+<numerusform>是否将 %n 个选中的笔记复制到笔记子文件夹 &lt;strong&gt;%2&lt;/strong&gt;？</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>%n note(s) were copied to note subfolder "%2"</source>
-<translation type="unfinished">
-<numerusform>%n note(s) were copied to note subfolder "%2"</numerusform>
+<translation>
+<numerusform>%n 个笔记已复制到笔记子文件夹"%2"</numerusform>
 </translation>
 </message>
 <message>
 <source>Copy to note folder</source>
-<translation type="unfinished">Copy to note folder</translation>
+<translation>复制到笔记文件夹</translation>
 </message>
 <message>
 <source>Move to note folder</source>
-<translation type="unfinished">Move to note folder</translation>
+<translation>移动到笔记文件夹</translation>
 </message>
 <message>
 <source>Copy to this subfolder</source>
-<translation type="unfinished">Copy to this subfolder</translation>
+<translation>复制到此子文件夹</translation>
 </message>
 <message>
 <source>Move to this subfolder</source>
-<translation type="unfinished">Move to this subfolder</translation>
+<translation>移动到此子文件夹</translation>
 </message>
 <message>
 <source>Split note</source>
-<translation type="unfinished">Split note</translation>
+<translation>拆分笔记</translation>
 </message>
 <message>
 <source>Split note at current cursor position? The text after the cursor will be moved to a new note. The new note will be linked to the old note.</source>
-<translation type="unfinished">Split note at current cursor position? The text after the cursor will be moved to a new note. The new note will be linked to the old note.</translation>
+<translation>是否在当前光标位置拆分笔记？光标之后的文本将被移动到新笔记中。新笔记将链接到旧笔记。</translation>
 </message>
 <message>
 <source>New note</source>
-<translation type="unfinished">New note</translation>
+<translation>新建笔记</translation>
 </message>
 <message>
 <source>Note headline</source>
-<translation type="unfinished">Note headline</translation>
+<translation>笔记标题</translation>
 </message>
 </context>
 <context>
@@ -3996,11 +4135,11 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Move selected folders to...</source>
-<translation type="unfinished">Move selected folders to...</translation>
+<translation>将选中的文件夹移动到...</translation>
 </message>
 <message>
 <source>Move to note folder</source>
-<translation type="unfinished">Move to note folder</translation>
+<translation>移动到笔记文件夹</translation>
 </message>
 <message>
 <source>Show folder in file manager</source>
@@ -4008,7 +4147,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Move to this subfolder</source>
-<translation type="unfinished">Move to this subfolder</translation>
+<translation>移动到此子文件夹</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected folder(s)?&lt;ul&gt;&lt;li&gt;%1&lt;/li&gt;&lt;/ul&gt;All files and folders in these folders will be removed as well!</source>
@@ -4022,30 +4161,30 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>note folder</source>
-<translation type="unfinished">note folder</translation>
+<translation>笔记文件夹</translation>
 </message>
 <message>
 <source>Move selected folders</source>
-<translation type="unfinished">Move selected folders</translation>
+<translation>移动选中的文件夹</translation>
 </message>
 <message numerus="yes">
 <source>Move &lt;strong&gt;%n&lt;/strong&gt; selected folder(s) to &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation type="unfinished">
-<numerusform>Move &lt;strong&gt;%n&lt;/strong&gt; selected folder(s) to &lt;strong&gt;%1&lt;/strong&gt;?</numerusform>
+<translation>
+<numerusform>是否将 &lt;strong&gt;%n&lt;/strong&gt; 个选中的文件夹移动到 &lt;strong&gt;%1&lt;/strong&gt;？</numerusform>
 </translation>
 </message>
 <message>
 <source>Migrate relative links</source>
-<translation type="unfinished">Migrate relative links</translation>
+<translation>迁移相对链接</translation>
 </message>
 <message>
 <source>Do you want to migrate relative note links, media file links and attachment links for moved notes?&lt;br /&gt;&lt;br /&gt;If you choose &lt;strong&gt;No&lt;/strong&gt;, those relative links may break after moving the folders.</source>
-<translation type="unfinished">Do you want to migrate relative note links, media file links and attachment links for moved notes?&lt;br /&gt;&lt;br /&gt;If you choose &lt;strong&gt;No&lt;/strong&gt;, those relative links may break after moving the folders.</translation>
+<translation>是否要为已移动的笔记迁移相对笔记链接、媒体文件链接和附件链接？&lt;br /&gt;&lt;br /&gt;如果选择&lt;strong&gt;否&lt;/strong&gt;，这些相对链接可能会在移动文件夹后失效。</translation>
 </message>
 <message numerus="yes">
 <source>Moved &lt;strong&gt;%n&lt;/strong&gt; note subfolder(s) to &lt;strong&gt;%1&lt;/strong&gt;</source>
-<translation type="unfinished">
-<numerusform>Moved &lt;strong&gt;%n&lt;/strong&gt; note subfolder(s) to &lt;strong&gt;%1&lt;/strong&gt;</numerusform>
+<translation>
+<numerusform>已将 &lt;strong&gt;%n&lt;/strong&gt; 个笔记子文件夹移动到 &lt;strong&gt;%1&lt;/strong&gt;</numerusform>
 </translation>
 </message>
 </context>
@@ -4053,138 +4192,138 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <name>NoteTabManager</name>
 <message>
 <source>Toggle note stickiness</source>
-<translation type="unfinished">Toggle note stickiness</translation>
+<translation>切换笔记置顶</translation>
 </message>
 <message>
 <source>Close other note tabs</source>
-<translation type="unfinished">Close other note tabs</translation>
+<translation>关闭其他笔记标签页</translation>
 </message>
 <message>
 <source>Close note tab</source>
-<translation type="unfinished">Close note tab</translation>
+<translation>关闭笔记标签页</translation>
 </message>
 </context>
 <context>
 <name>NoteTreeManager</name>
 <message>
 <source>New note</source>
-<translation type="unfinished">New note</translation>
+<translation>新建笔记</translation>
 </message>
 <message>
 <source>Rename note</source>
-<translation type="unfinished">Rename note</translation>
+<translation>重命名笔记</translation>
 </message>
 <message>
 <source>Allows you to rename the filename of the note</source>
-<translation type="unfinished">Allows you to rename the filename of the note</translation>
+<translation>允许您重命名笔记的文件名</translation>
 </message>
 <message>
 <source>&amp;Remove notes and folders</source>
-<translation type="unfinished">&amp;Remove notes and folders</translation>
+<translation>移除笔记和文件夹(&amp;R)</translation>
 </message>
 <message>
 <source>&amp;Remove folders</source>
-<translation type="unfinished">&amp;Remove folders</translation>
+<translation>移除文件夹(&amp;R)</translation>
 </message>
 <message>
 <source>&amp;Remove notes</source>
-<translation type="unfinished">&amp;Remove notes</translation>
+<translation>移除笔记(&amp;R)</translation>
 </message>
 <message>
 <source>&amp;Move notes to…</source>
-<translation type="unfinished">&amp;Move notes to…</translation>
+<translation>移动笔记到…(&amp;M)</translation>
 </message>
 <message>
 <source>&amp;Copy notes to…</source>
-<translation type="unfinished">&amp;Copy notes to…</translation>
+<translation>复制笔记到…(&amp;C)</translation>
 </message>
 <message>
 <source>Jump to the note's subfolder</source>
-<translation type="unfinished">Jump to the note's subfolder</translation>
+<translation>跳转到笔记所在的子文件夹</translation>
 </message>
 <message>
 <source>Move notes to subfolder…</source>
-<translation type="unfinished">Move notes to subfolder…</translation>
+<translation>移动笔记到子文件夹…</translation>
 </message>
 <message>
 <source>Copy notes to subfolder…</source>
-<translation type="unfinished">Copy notes to subfolder…</translation>
+<translation>复制笔记到子文件夹…</translation>
 </message>
 <message>
 <source>&amp;Tag selected notes with…</source>
-<translation type="unfinished">&amp;Tag selected notes with…</translation>
+<translation>为选中笔记添加标签…(&amp;T)</translation>
 </message>
 <message>
 <source>&amp;Remove tag from selected notes…</source>
-<translation type="unfinished">&amp;Remove tag from selected notes…</translation>
+<translation>从选中笔记中移除标签…(&amp;R)</translation>
 </message>
 <message>
 <source>Open selected notes in tabs</source>
-<translation type="unfinished">Open selected notes in tabs</translation>
+<translation>在标签页中打开选中的笔记</translation>
 </message>
 <message>
 <source>Open note in external editor</source>
-<translation type="unfinished">Open note in external editor</translation>
+<translation>在外部编辑器中打开笔记</translation>
 </message>
 <message>
 <source>Open note in different window</source>
-<translation type="unfinished">Open note in different window</translation>
+<translation>在新窗口中打开笔记</translation>
 </message>
 <message>
 <source>Open note in Nextcloud Files</source>
-<translation type="unfinished">Open note in Nextcloud Files</translation>
+<translation>在 Nextcloud Files 中打开笔记</translation>
 </message>
 <message>
 <source>Open note in Nextcloud Notes</source>
-<translation type="unfinished">Open note in Nextcloud Notes</translation>
+<translation>在 Nextcloud Notes 中打开笔记</translation>
 </message>
 <message>
 <source>Show note in file manager</source>
-<translation type="unfinished">Show note in file manager</translation>
+<translation>在文件管理器中显示笔记</translation>
 </message>
 <message>
 <source>Copy absolute path of note</source>
-<translation type="unfinished">Copy absolute path of note</translation>
+<translation>复制笔记的绝对路径</translation>
 </message>
 <message>
 <source>Copy note filename</source>
-<translation type="unfinished">Copy note filename</translation>
+<translation>复制笔记文件名</translation>
 </message>
 <message>
 <source>Show note git versions</source>
-<translation type="unfinished">Show note git versions</translation>
+<translation>显示笔记的 Git 版本</translation>
 </message>
 <message>
 <source>Unmark as favorite</source>
-<translation type="unfinished">Unmark as favorite</translation>
+<translation>取消收藏</translation>
 </message>
 <message>
 <source>Mark as favorite</source>
-<translation type="unfinished">Mark as favorite</translation>
+<translation>标记为收藏</translation>
 </message>
 <message>
 <source>Select &amp;all notes</source>
-<translation type="unfinished">Select &amp;all notes</translation>
+<translation>全选笔记(&amp;A)</translation>
 </message>
 <message>
 <source>Name:</source>
-<translation type="unfinished">Name:</translation>
+<translation>名称：</translation>
 </message>
 <message>
 <source>Note renaming not enabled!</source>
-<translation type="unfinished">Note renaming not enabled!</translation>
+<translation>笔记重命名未启用！</translation>
 </message>
 <message>
 <source>If you want to rename your note you have to enable the option to allow the note filename to be different from the headline.</source>
-<translation type="unfinished">If you want to rename your note you have to enable the option to allow the note filename to be different from the headline.</translation>
+<translation>如果您想重命名笔记，需要启用允许笔记文件名与标题不同的选项。</translation>
 </message>
 <message>
 <source>Open &amp;settings</source>
-<translation type="unfinished">Open &amp;settings</translation>
+<translation>打开设置(&amp;S)</translation>
 </message>
 <message>
 <source>&amp;Cancel</source>
-<translation type="unfinished">&amp;Cancel</translation>
+<translation>取消(&amp;C)</translation>
 </message>
 </context>
 <context>
@@ -4361,39 +4500,39 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <name>QLiteHtmlSearchWidget</name>
 <message>
 <source>Close search</source>
-<translation type="unfinished">Close search</translation>
+<translation>关闭搜索</translation>
 </message>
 <message>
 <source>Find:</source>
-<translation type="unfinished">Find:</translation>
+<translation>查找：</translation>
 </message>
 <message>
 <source>Find in text</source>
-<translation type="unfinished">Find in text</translation>
+<translation>在文本中查找</translation>
 </message>
 <message>
 <source>Search forward</source>
-<translation type="unfinished">Search forward</translation>
+<translation>向前搜索</translation>
 </message>
 <message>
 <source>Search backward</source>
-<translation type="unfinished">Search backward</translation>
+<translation>向后搜索</translation>
 </message>
 <message>
 <source>Plain text</source>
-<translation type="unfinished">Plain text</translation>
+<translation>纯文本</translation>
 </message>
 <message>
 <source>Whole words</source>
-<translation type="unfinished">Whole words</translation>
+<translation>全词匹配</translation>
 </message>
 <message>
 <source>Regular expression</source>
-<translation type="unfinished">Regular expression</translation>
+<translation>正则表达式</translation>
 </message>
 <message>
 <source>Match case sensitive</source>
-<translation type="unfinished">Match case sensitive</translation>
+<translation>区分大小写</translation>
 </message>
 </context>
 <context>
@@ -4457,6 +4596,16 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </translation>
 </message>
 <message>
+<source>Subfolder path changed</source>
+<translation type="unfinished">Subfolder path changed</translation>
+</message>
+<message numerus="yes">
+<source>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</source>
+<translation type="unfinished">
+<numerusform>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</numerusform>
+</translation>
+</message>
+<message>
 <source>Image file exists</source>
 <translation>图像文件已存在</translation>
 </message>
@@ -4496,7 +4645,7 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;last modified: %3&lt;br /&gt;created: %2&lt;br /&gt;file size: %4</source>
-<translation type="unfinished">&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;last modified: %3&lt;br /&gt;created: %2&lt;br /&gt;file size: %4</translation>
+<translation>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;最后修改：%3&lt;br /&gt;创建时间：%2&lt;br /&gt;文件大小：%4</translation>
 </message>
 <message>
 <source>&lt;br /&gt;path: %1</source>
@@ -4619,6 +4768,14 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <translation>你正在使用单实例模式，这阻止了应用再次启动。下次启动时单实例模式将会被禁用，此后可以在退出实例前重启应用。</translation>
 </message>
 <message>
+<source>Note '%1' does not exist. Create it?</source>
+<translation type="unfinished">Note '%1' does not exist. Create it?</translation>
+</message>
+<message>
+<source>Note '%1' does not exist in '%2'. Create it?</source>
+<translation type="unfinished">Note '%1' does not exist in '%2'. Create it?</translation>
+</message>
+<message>
 <source>Note was not found</source>
 <translation>未找到笔记</translation>
 </message>
@@ -4656,11 +4813,19 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>media file</source>
-<translation type="unfinished">media file</translation>
+<translation>媒体文件</translation>
 </message>
 <message>
 <source>attachment</source>
-<translation type="unfinished">attachment</translation>
+<translation>附件</translation>
+</message>
+<message>
+<source>Light</source>
+<translation type="unfinished">Light</translation>
+</message>
+<message>
+<source>Dark</source>
+<translation type="unfinished">Dark</translation>
 </message>
 </context>
 <context>
@@ -4703,6 +4868,38 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <translation>插入块引用(&amp;Q)</translation>
 </message>
 <message>
+<source>List operations</source>
+<translation type="unfinished">List operations</translation>
+</message>
+<message>
+<source>Toggle checkbox(es)</source>
+<translation type="unfinished">Toggle checkbox(es)</translation>
+</message>
+<message>
+<source>1. 2. 3. list</source>
+<translation type="unfinished">1. 2. 3. list</translation>
+</message>
+<message>
+<source>a. b. c. list</source>
+<translation type="unfinished">a. b. c. list</translation>
+</message>
+<message>
+<source>- list</source>
+<translation type="unfinished">- list</translation>
+</message>
+<message>
+<source>Create checkbox list</source>
+<translation type="unfinished">Create checkbox list</translation>
+</message>
+<message>
+<source>Clear list formatting</source>
+<translation type="unfinished">Clear list formatting</translation>
+</message>
+<message>
+<source>Order checkboxes</source>
+<translation type="unfinished">Order checkboxes</translation>
+</message>
+<message>
 <source>Copy code block</source>
 <translation>复制代码块</translation>
 </message>
@@ -4712,31 +4909,31 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>Format document</source>
-<translation type="unfinished">Format document</translation>
+<translation>格式化文档</translation>
 </message>
 <message>
 <source>Format selection</source>
-<translation type="unfinished">Format selection</translation>
+<translation>格式化选区</translation>
 </message>
 <message>
 <source>Code actions</source>
-<translation type="unfinished">Code actions</translation>
+<translation>代码操作</translation>
 </message>
 <message>
 <source>Add table column left</source>
-<translation type="unfinished">Add table column left</translation>
+<translation>在左侧添加表格列</translation>
 </message>
 <message>
 <source>Add table column right</source>
-<translation type="unfinished">Add table column right</translation>
+<translation>在右侧添加表格列</translation>
 </message>
 <message>
 <source>Add table row above</source>
-<translation type="unfinished">Add table row above</translation>
+<translation>在上方添加表格行</translation>
 </message>
 <message>
 <source>Add table row below</source>
-<translation type="unfinished">Add table row below</translation>
+<translation>在下方添加表格行</translation>
 </message>
 <message>
 <source>Print</source>
@@ -4788,23 +4985,27 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>No suggestions</source>
-<translation type="unfinished">No suggestions</translation>
+<translation>无建议</translation>
 </message>
 <message>
 <source>More info...</source>
-<translation type="unfinished">More info...</translation>
+<translation>更多信息...</translation>
 </message>
 <message>
 <source>Ignore this rule</source>
-<translation type="unfinished">Ignore this rule</translation>
+<translation>忽略此规则</translation>
+</message>
+<message>
+<source>Ignore word "%1"</source>
+<translation type="unfinished">Ignore word "%1"</translation>
 </message>
 <message>
 <source>Markdown LSP server connected</source>
-<translation type="unfinished">Markdown LSP server connected</translation>
+<translation>Markdown LSP 服务器已连接</translation>
 </message>
 <message>
 <source>Filter completions</source>
-<translation type="unfinished">Filter completions</translation>
+<translation>过滤补全</translation>
 </message>
 </context>
 <context>
@@ -4886,27 +5087,27 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>Replace text</source>
-<translation type="unfinished">Replace text</translation>
+<translation>替换文本</translation>
 </message>
 <message>
 <source>Close search</source>
-<translation type="unfinished">Close search</translation>
+<translation>关闭搜索</translation>
 </message>
 <message>
 <source>Find in text</source>
-<translation type="unfinished">Find in text</translation>
+<translation>在文本中查找</translation>
 </message>
 <message>
 <source>Search forward</source>
-<translation type="unfinished">Search forward</translation>
+<translation>向前搜索</translation>
 </message>
 <message>
 <source>Search backward</source>
-<translation type="unfinished">Search backward</translation>
+<translation>向后搜索</translation>
 </message>
 <message>
 <source>Replace with</source>
-<translation type="unfinished">Replace with</translation>
+<translation>替换为</translation>
 </message>
 <message>
 <source>Replace:</source>
@@ -5127,23 +5328,23 @@ Do you want to install it anyway?</source>
 <name>SearchFilterManager</name>
 <message numerus="yes">
 <source>Found &lt;strong&gt;%n&lt;/strong&gt; occurrence(s) of &lt;strong&gt;%1&lt;/strong&gt;</source>
-<translation type="unfinished">
-<numerusform>Found &lt;strong&gt;%n&lt;/strong&gt; occurrence(s) of &lt;strong&gt;%1&lt;/strong&gt;</numerusform>
+<translation>
+<numerusform>找到 &lt;strong&gt;%n&lt;/strong&gt; 个 &lt;strong&gt;%1&lt;/strong&gt; 的匹配项</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>Found &lt;strong&gt;%n&lt;/strong&gt; occurrence(s) of any term of &lt;strong&gt;%1&lt;/strong&gt;</source>
-<translation type="unfinished">
-<numerusform>Found &lt;strong&gt;%n&lt;/strong&gt; occurrence(s) of any term of &lt;strong&gt;%1&lt;/strong&gt;</numerusform>
+<translation>
+<numerusform>找到 &lt;strong&gt;%n&lt;/strong&gt; 个 &lt;strong&gt;%1&lt;/strong&gt; 中任意词语的匹配项</numerusform>
 </translation>
 </message>
 <message>
 <source>Stored current note to disk</source>
-<translation type="unfinished">Stored current note to disk</translation>
+<translation>已将当前笔记保存到磁盘</translation>
 </message>
 <message>
 <source>Current note could not be stored to disk</source>
-<translation type="unfinished">Current note could not be stored to disk</translation>
+<translation>无法将当前笔记保存到磁盘</translation>
 </message>
 </context>
 <context>
@@ -5330,22 +5531,6 @@ Do you want to install it anyway?</source>
 <translation>其他 CalDAV 服务器</translation>
 </message>
 <message>
-<source>Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</source>
-<translation>只有某些颜色可以调整，其余的都通过桌面主题进行管理，你需要重新启动应用程序以使这些更改生效。</translation>
-</message>
-<message>
-<source>Optimize preview colors for dark mode desktop themes</source>
-<translation>为深色桌面主题优化预览配色</translation>
-</message>
-<message>
-<source>This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</source>
-<translation>这使得深色模式、外观和图标被修改，你需要重新启动应用程序以使这些更改生效。</translation>
-</message>
-<message>
-<source>Enable dark mode</source>
-<translation>启用深色模式</translation>
-</message>
-<message>
 <source>You need to restart the application to let this setting take effect</source>
 <translation>您可能需要重新启动应用程序以使更改生效</translation>
 </message>
@@ -5428,10 +5613,6 @@ Do you want to install it anyway?</source>
 <message>
 <source>Spanish</source>
 <translation>西班牙语</translation>
-</message>
-<message>
-<source>Dark mode</source>
-<translation>深色模式</translation>
 </message>
 <message>
 <source>Disable tracking of usage data</source>
@@ -5700,6 +5881,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>连接名称：</translation>
 </message>
 <message>
+<source>Color modes</source>
+<translation type="unfinished">Color modes</translation>
+</message>
+<message>
 <source>Be aware that the ownCloud notes app doesn't support subfolders!</source>
 <translation>请注意，ownCloud notes 应用不支持子文件夹！</translation>
 </message>
@@ -5856,6 +6041,26 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>旁遮普语</translation>
 </message>
 <message>
+<source>Ignored:</source>
+<translation type="unfinished">Ignored:</translation>
+</message>
+<message>
+<source>Reset all ignored LanguageTool rules so they are checked again</source>
+<translation type="unfinished">Reset all ignored LanguageTool rules so they are checked again</translation>
+</message>
+<message>
+<source>Reset ignored rules</source>
+<translation type="unfinished">Reset ignored rules</translation>
+</message>
+<message>
+<source>Reset all ignored words so they are checked by LanguageTool again</source>
+<translation type="unfinished">Reset all ignored words so they are checked by LanguageTool again</translation>
+</message>
+<message>
+<source>Reset ignored words</source>
+<translation type="unfinished">Reset ignored words</translation>
+</message>
+<message>
 <source>Persian</source>
 <translation>波斯语</translation>
 </message>
@@ -5904,18 +6109,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>繁体中文</translation>
 </message>
 <message>
-<source>Enable dark mode application icon and tray icon</source>
-<translation>启用深色程序图标与托盘图标</translation>
-</message>
-<message>
-<source>You might also want to choose another editor color schema in the editor settings in dark mode.</source>
-<translation>在深色模式下，你可能想在编辑器设置中选择另一种编辑器配色方案。</translation>
-</message>
-<message>
-<source>Enable dark mode icon theme</source>
-<translation>启用深色模式图标主题</translation>
-</message>
-<message>
 <source>System tray</source>
 <translation>系统托盘</translation>
 </message>
@@ -5930,10 +6123,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <message>
 <source>Interface style</source>
 <translation>界面样式</translation>
-</message>
-<message>
-<source>Enforce system icon theme</source>
-<translation>强制使用系统图标主题</translation>
 </message>
 <message>
 <source>Override interface font size</source>
@@ -6181,24 +6370,36 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>在应用启动时打开上次访问的笔记</translation>
 </message>
 <message>
+<source>Read-only mode</source>
+<translation type="unfinished">Read-only mode</translation>
+</message>
+<message>
+<source>Enable or disable the read-only mode feature</source>
+<translation type="unfinished">Enable or disable the read-only mode feature</translation>
+</message>
+<message>
+<source>Enable read-only mode</source>
+<translation type="unfinished">Enable read-only mode</translation>
+</message>
+<message>
 <source>Start application in read-only mode</source>
 <translation>以只读模式启动应用</translation>
 </message>
 <message>
 <source>Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</source>
-<translation type="unfinished">Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</translation>
+<translation>如果您希望 QOwnNotes 能够访问笔记版本和已删除的笔记，请在您的 ownCloud 服务器上安装最新版本的 &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt;（至少版本 QOWNNOTESAPI_MIN_VERSION）。</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您还需要在 ownCloud 服务器上启用 &lt;b&gt;Versions&lt;/b&gt; 和 &lt;b&gt;Deleted files&lt;/b&gt; 这两个 ownCloud 核心应用（默认应已启用）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您仍然需要 &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud 同步客户端&lt;/b&gt;&lt;/a&gt;（或其他桌面同步客户端）来同步您的笔记！&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>Search scripts</source>
-<translation type="unfinished">Search scripts</translation>
+<translation>搜索脚本</translation>
 </message>
 <message>
 <source>When inactive, enter read-only mode automatically after:</source>
@@ -6287,27 +6488,27 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 </message>
 <message>
 <source>Markdown language server</source>
-<translation type="unfinished">Markdown language server</translation>
+<translation>Markdown 语言服务器</translation>
 </message>
 <message>
 <source>Enable Markdown language server (LSP)</source>
-<translation type="unfinished">Enable Markdown language server (LSP)</translation>
+<translation>启用 Markdown 语言服务器 (LSP)</translation>
 </message>
 <message>
 <source>Command:</source>
-<translation type="unfinished">Command:</translation>
+<translation>命令：</translation>
 </message>
 <message>
 <source>Arguments:</source>
-<translation type="unfinished">Arguments:</translation>
+<translation>参数：</translation>
 </message>
 <message>
 <source>Optional arguments separated by spaces.</source>
-<translation type="unfinished">Optional arguments separated by spaces.</translation>
+<translation>可选参数，以空格分隔。</translation>
 </message>
 <message>
 <source>Optional arguments</source>
-<translation type="unfinished">Optional arguments</translation>
+<translation>可选参数</translation>
 </message>
 <message>
 <source>LanguageTool</source>
@@ -6315,55 +6516,55 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 </message>
 <message>
 <source>Enable grammar and style checking with LanguageTool</source>
-<translation type="unfinished">Enable grammar and style checking with LanguageTool</translation>
+<translation>启用 LanguageTool 语法和风格检查</translation>
 </message>
 <message>
 <source>Test Connection</source>
-<translation type="unfinished">Test Connection</translation>
+<translation>测试连接</translation>
 </message>
 <message>
 <source>Language:</source>
-<translation type="unfinished">Language:</translation>
+<translation>语言：</translation>
 </message>
 <message>
 <source>API key:</source>
-<translation type="unfinished">API key:</translation>
+<translation>API 密钥：</translation>
 </message>
 <message>
 <source>Optional premium or cloud API key</source>
-<translation type="unfinished">Optional premium or cloud API key</translation>
+<translation>可选的高级版或云端 API 密钥</translation>
 </message>
 <message>
 <source>Check delay:</source>
-<translation type="unfinished">Check delay:</translation>
+<translation>检查延迟：</translation>
 </message>
 <message>
 <source> ms</source>
-<translation type="unfinished"> ms</translation>
+<translation> 毫秒</translation>
 </message>
 <message>
 <source>Categories:</source>
-<translation type="unfinished">Categories:</translation>
+<translation>类别：</translation>
 </message>
 <message>
 <source>Spelling</source>
-<translation type="unfinished">Spelling</translation>
+<translation>拼写</translation>
 </message>
 <message>
 <source>Grammar</source>
-<translation type="unfinished">Grammar</translation>
+<translation>语法</translation>
 </message>
 <message>
 <source>Style</source>
-<translation type="unfinished">Style</translation>
+<translation>风格</translation>
 </message>
 <message>
 <source>Punctuation</source>
-<translation type="unfinished">Punctuation</translation>
+<translation>标点</translation>
 </message>
 <message>
 <source>Typography</source>
-<translation type="unfinished">Typography</translation>
+<translation>排版</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -6375,31 +6576,31 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 </message>
 <message>
 <source>Show line numbers and bookmark markers (1-9)</source>
-<translation type="unfinished">Show line numbers and bookmark markers (1-9)</translation>
+<translation>显示行号和书签标记 (1-9)</translation>
 </message>
 <message>
 <source>Show small Markdown preview images in the editor, if there is no text after the image</source>
-<translation type="unfinished">Show small Markdown preview images in the editor, if there is no text after the image</translation>
+<translation>如果图片后无文本，在编辑器中显示小的 Markdown 预览图片</translation>
 </message>
 <message>
 <source>Shows fold buttons for Markdown headings and allows collapsing their contents</source>
-<translation type="unfinished">Shows fold buttons for Markdown headings and allows collapsing their contents</translation>
+<translation>为 Markdown 标题显示折叠按钮，允许折叠其内容</translation>
 </message>
 <message>
 <source>Enable heading folding in the editor</source>
-<translation type="unfinished">Enable heading folding in the editor</translation>
+<translation>在编辑器中启用标题折叠</translation>
 </message>
 <message>
 <source>Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</source>
-<translation type="unfinished">Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</translation>
+<translation>在未编辑的行上隐藏 Markdown 格式语法（如 **、*、#）</translation>
 </message>
 <message>
 <source>Hide markdown formatting syntax on inactive lines</source>
-<translation type="unfinished">Hide markdown formatting syntax on inactive lines</translation>
+<translation>在非活动行上隐藏 Markdown 格式语法</translation>
 </message>
 <message>
 <source>Enable hanging indentation for Markdown lists</source>
-<translation type="unfinished">Enable hanging indentation for Markdown lists</translation>
+<translation>启用 Markdown 列表的悬挂缩进</translation>
 </message>
 <message>
 <source>Disable cursor blinking</source>
@@ -6423,7 +6624,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 </message>
 <message>
 <source>Allow empty note files</source>
-<translation type="unfinished">Allow empty note files</translation>
+<translation>允许空笔记文件</translation>
 </message>
 <message>
 <source>Notes larger than this will not be shown in the note list</source>
@@ -6540,6 +6741,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>使用校验和检测未保存笔记的外部修改</translation>
 </message>
 <message>
+<source>Enable wiki-style link support [[note name]]</source>
+<translation type="unfinished">Enable wiki-style link support [[note name]]</translation>
+</message>
+<message>
 <source>Select the path of the git binary</source>
 <translation>选择 git 二进制文件的路径</translation>
 </message>
@@ -6597,23 +6802,23 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 </message>
 <message>
 <source>Bookmark suggestion API</source>
-<translation type="unfinished">Bookmark suggestion API</translation>
+<translation>书签建议 API</translation>
 </message>
 <message>
 <source>Enable Homepage-compatible bookmark suggestions API</source>
-<translation type="unfinished">Enable Homepage-compatible bookmark suggestions API</translation>
+<translation>启用兼容 Homepage 的书签建议 API</translation>
 </message>
 <message>
 <source>Suggestion API port:</source>
-<translation type="unfinished">Suggestion API port:</translation>
+<translation>建议 API 端口：</translation>
 </message>
 <message>
 <source>Reset the suggestion API port</source>
-<translation type="unfinished">Reset the suggestion API port</translation>
+<translation>重置建议 API 端口</translation>
 </message>
 <message>
 <source>If this is empty when saved, a new security token will be generated automatically.</source>
-<translation type="unfinished">If this is empty when saved, a new security token will be generated automatically.</translation>
+<translation>如果保存时此项为空，将自动生成新的安全令牌。</translation>
 </message>
 <message>
 <source>You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</source>
@@ -7145,10 +7350,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>重新加载日历列表(&amp;R)</translation>
 </message>
 <message>
-<source>You may need to restart the application to let these changes take effect</source>
-<translation>您可能需要重新启动应用程序以使更改生效</translation>
-</message>
-<message>
 <source>Toolbar icon size:</source>
 <translation>工具栏图标大小：</translation>
 </message>
@@ -7183,10 +7384,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <message>
 <source>Icons</source>
 <translation>图标</translation>
-</message>
-<message>
-<source>Use internal icon theme instead of system icon theme</source>
-<translation>使用内部图标主题替代系统图标主题</translation>
 </message>
 <message>
 <source>Script path:</source>
@@ -7308,11 +7505,39 @@ Connection error message: </source>
 </message>
 <message>
 <source>LanguageTool connection successful.</source>
-<translation type="unfinished">LanguageTool connection successful.</translation>
+<translation>LanguageTool 连接成功。</translation>
 </message>
 <message>
 <source>LanguageTool connection failed: %1</source>
-<translation type="unfinished">LanguageTool connection failed: %1</translation>
+<translation>LanguageTool 连接失败：%1</translation>
+</message>
+<message>
+<source>There are no ignored rules to reset.</source>
+<translation type="unfinished">There are no ignored rules to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored rule(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored rules have been reset.</source>
+<translation type="unfinished">All ignored rules have been reset.</translation>
+</message>
+<message>
+<source>There are no ignored words to reset.</source>
+<translation type="unfinished">There are no ignored words to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored word(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored word(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored words have been reset.</source>
+<translation type="unfinished">All ignored words have been reset.</translation>
 </message>
 <message>
 <source>The Database was reinitialized. Please restart the application now!</source>
@@ -7477,7 +7702,7 @@ Connection error message: </source>
 </message>
 <message>
 <source>Auto-detect</source>
-<translation type="unfinished">Auto-detect</translation>
+<translation>自动检测</translation>
 </message>
 <message>
 <source>Assign a new shortcut</source>
@@ -7792,7 +8017,7 @@ Your notes will stay intact!</source>
 <name>SpellCheckManager</name>
 <message>
 <source>Automatically detect</source>
-<translation type="unfinished">Automatically detect</translation>
+<translation>自动检测</translation>
 </message>
 </context>
 <context>
@@ -8065,31 +8290,31 @@ Your notes will stay intact!</source>
 <name>SystemTrayManager</name>
 <message>
 <source>Open QOwnNotes</source>
-<translation type="unfinished">Open QOwnNotes</translation>
+<translation>打开 QOwnNotes</translation>
 </message>
 <message>
 <source>Note folders</source>
-<translation type="unfinished">Note folders</translation>
+<translation>笔记文件夹</translation>
 </message>
 <message>
 <source>New note</source>
-<translation type="unfinished">New note</translation>
+<translation>新建笔记</translation>
 </message>
 <message>
 <source>Recent notes</source>
-<translation type="unfinished">Recent notes</translation>
+<translation>最近的笔记</translation>
 </message>
 <message>
 <source>Show todo lists</source>
-<translation type="unfinished">Show todo lists</translation>
+<translation>显示待办事项列表</translation>
 </message>
 <message>
 <source>Recent tasks</source>
-<translation type="unfinished">Recent tasks</translation>
+<translation>最近的任务</translation>
 </message>
 <message>
 <source>Quit</source>
-<translation type="unfinished">Quit</translation>
+<translation>退出</translation>
 </message>
 </context>
 <context>
@@ -8198,155 +8423,155 @@ Your notes will stay intact!</source>
 <name>TagManager</name>
 <message>
 <source>Show all notes (%1)</source>
-<translation type="unfinished">Show all notes (%1)</translation>
+<translation>显示所有笔记 (%1)</translation>
 </message>
 <message>
 <source>All notes</source>
-<translation type="unfinished">All notes</translation>
+<translation>所有笔记</translation>
 </message>
 <message>
 <source>show all untagged notes (%1)</source>
-<translation type="unfinished">show all untagged notes (%1)</translation>
+<translation>显示所有未标记的笔记 (%1)</translation>
 </message>
 <message>
 <source>Untagged notes</source>
-<translation type="unfinished">Untagged notes</translation>
+<translation>未标记的笔记</translation>
 </message>
 <message>
 <source>Show all notes tagged with '%1' (%2)</source>
-<translation type="unfinished">Show all notes tagged with '%1' (%2)</translation>
+<translation>显示所有标记为 '%1' 的笔记 (%2)</translation>
 </message>
 <message>
 <source>Add a tag to the current note</source>
-<translation type="unfinished">Add a tag to the current note</translation>
+<translation>为当前笔记添加标签</translation>
 </message>
 <message>
 <source>Add a tag to the selected notes</source>
-<translation type="unfinished">Add a tag to the selected notes</translation>
+<translation>为选中的笔记添加标签</translation>
 </message>
 <message>
 <source>%1 and %2</source>
-<translation type="unfinished">%1 and %2</translation>
+<translation>%1 和 %2</translation>
 </message>
 <message numerus="yes">
 <source>%n note(s) selected</source>
-<translation type="unfinished">
-<numerusform>%n note(s) selected</numerusform>
+<translation>
+<numerusform>已选择 %n 条笔记</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>%n folder(s) selected</source>
-<translation type="unfinished">
-<numerusform>%n folder(s) selected</numerusform>
+<translation>
+<numerusform>已选择 %n 个文件夹</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>%n notes selected</source>
-<translation type="unfinished">
-<numerusform>%n notes selected</numerusform>
+<translation>
+<numerusform>已选择 %n 条笔记</numerusform>
 </translation>
 </message>
 <message>
 <source>Remove tag '%1' from the current note</source>
-<translation type="unfinished">Remove tag '%1' from the current note</translation>
+<translation>从当前笔记移除标签 '%1'</translation>
 </message>
 <message>
 <source>Remove tag '%1' from the selected notes</source>
-<translation type="unfinished">Remove tag '%1' from the selected notes</translation>
+<translation>从选中的笔记移除标签 '%1'</translation>
 </message>
 <message>
 <source>&amp;Add tag</source>
-<translation type="unfinished">&amp;Add tag</translation>
+<translation>添加标签(&amp;A)</translation>
 </message>
 <message>
 <source>Rename tag</source>
-<translation type="unfinished">Rename tag</translation>
+<translation>重命名标签</translation>
 </message>
 <message>
 <source>Assign color</source>
-<translation type="unfinished">Assign color</translation>
+<translation>指定颜色</translation>
 </message>
 <message>
 <source>Disable color</source>
-<translation type="unfinished">Disable color</translation>
+<translation>禁用颜色</translation>
 </message>
 <message>
 <source>&amp;Remove tags</source>
-<translation type="unfinished">&amp;Remove tags</translation>
+<translation>移除标签(&amp;R)</translation>
 </message>
 <message>
 <source>&amp;Move tags to…</source>
-<translation type="unfinished">&amp;Move tags to…</translation>
+<translation>移动标签到…(&amp;M)</translation>
 </message>
 <message>
 <source>Tag could not be created!</source>
-<translation type="unfinished">Tag could not be created!</translation>
+<translation>无法创建标签！</translation>
 </message>
 <message>
 <source>Move to the root</source>
 <comment>to move a tag to the current tag in the tag context menu</comment>
-<translation type="unfinished">Move to the root</translation>
+<translation>移动到根级</translation>
 </message>
 <message>
 <source>Move to this tag</source>
-<translation type="unfinished">Move to this tag</translation>
+<translation>移动到此标签</translation>
 </message>
 <message>
 <source>Tag this</source>
-<translation type="unfinished">Tag this</translation>
+<translation>标记此项</translation>
 </message>
 <message>
 <source>Cannot move tag '%1' to this tag</source>
-<translation type="unfinished">Cannot move tag '%1' to this tag</translation>
+<translation>无法将标签 '%1' 移动到此标签</translation>
 </message>
 <message>
 <source>Moved tag '%1' to new tag</source>
-<translation type="unfinished">Moved tag '%1' to new tag</translation>
+<translation>已将标签 '%1' 移动到新标签</translation>
 </message>
 <message>
 <source>Tag selected notes</source>
-<translation type="unfinished">Tag selected notes</translation>
+<translation>标记选中的笔记</translation>
 </message>
 <message numerus="yes">
 <source>Tag %n selected note(s) with &lt;strong&gt;%2&lt;/strong&gt;?</source>
-<translation type="unfinished">
-<numerusform>Tag %n selected note(s) with &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<translation>
+<numerusform>将 %n 条选中的笔记标记为 &lt;strong&gt;%2&lt;/strong&gt;？</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>%n note(s) were tagged with "%2"</source>
-<translation type="unfinished">
-<numerusform>%n note(s) were tagged with "%2"</numerusform>
+<translation>
+<numerusform>%n 条笔记已标记为"%2"</numerusform>
 </translation>
 </message>
 <message>
 <source>Remove tag from selected notes</source>
-<translation type="unfinished">Remove tag from selected notes</translation>
+<translation>从选中的笔记移除标签</translation>
 </message>
 <message numerus="yes">
 <source>Remove tag &lt;strong&gt;%1&lt;/strong&gt; from %n selected note(s)?</source>
-<translation type="unfinished">
-<numerusform>Remove tag &lt;strong&gt;%1&lt;/strong&gt; from %n selected note(s)?</numerusform>
+<translation>
+<numerusform>从 %n 条选中的笔记中移除标签 &lt;strong&gt;%1&lt;/strong&gt;？</numerusform>
 </translation>
 </message>
 <message>
 <source>Done</source>
-<translation type="unfinished">Done</translation>
+<translation>完成</translation>
 </message>
 <message numerus="yes">
 <source>Tag &lt;strong&gt;%1&lt;/strong&gt; was removed from %n note(s)</source>
-<translation type="unfinished">
-<numerusform>Tag &lt;strong&gt;%1&lt;/strong&gt; was removed from %n note(s)</numerusform>
+<translation>
+<numerusform>已从 %n 条笔记中移除标签 &lt;strong&gt;%1&lt;/strong&gt;</numerusform>
 </translation>
 </message>
 <message>
 <source>Remove selected tags</source>
-<translation type="unfinished">Remove selected tags</translation>
+<translation>移除选中的标签</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected tag(s)? No notes will be removed in this process.</source>
-<translation type="unfinished">
-<numerusform>Remove &lt;strong&gt;%n&lt;/strong&gt; selected tag(s)? No notes will be removed in this process.</numerusform>
+<translation>
+<numerusform>移除 &lt;strong&gt;%n&lt;/strong&gt; 个选中的标签？此操作不会删除任何笔记。</numerusform>
 </translation>
 </message>
 </context>
@@ -8932,27 +9157,27 @@ This cannot be undone!</source>
 </message>
 <message>
 <source>Could not start bookmark suggestion API on port %1!</source>
-<translation type="unfinished">Could not start bookmark suggestion API on port %1!</translation>
+<translation>无法在端口 %1 上启动书签建议 API！</translation>
 </message>
 <message>
 <source>Please check if the port is already in use.</source>
-<translation type="unfinished">Please check if the port is already in use.</translation>
+<translation>请检查该端口是否已被占用。</translation>
 </message>
 <message>
 <source>Bookmark suggestion API listening on port %1</source>
-<translation type="unfinished">Bookmark suggestion API listening on port %1</translation>
+<translation>书签建议 API 正在端口 %1 上监听</translation>
 </message>
 <message>
 <source>Bookmark suggestion API received malformed HTTP request line.</source>
-<translation type="unfinished">Bookmark suggestion API received malformed HTTP request line.</translation>
+<translation>书签建议 API 收到格式错误的 HTTP 请求行。</translation>
 </message>
 <message>
 <source>Bookmark suggestion API request from %1:%2</source>
-<translation type="unfinished">Bookmark suggestion API request from %1:%2</translation>
+<translation>收到来自 %1:%2 的书签建议 API 请求</translation>
 </message>
 <message>
 <source>Bookmark suggestion API couldn't load suggestions because no main window instance is available.</source>
-<translation type="unfinished">Bookmark suggestion API couldn't load suggestions because no main window instance is available.</translation>
+<translation>书签建议 API 无法加载建议，因为没有可用的主窗口实例。</translation>
 </message>
 <message>
 <source>%1 connected to QOwnNotes server!</source>
@@ -9096,40 +9321,95 @@ This cannot be undone!</source>
 </message>
 </context>
 <context>
-<name>WorkspaceManager</name>
+<name>WorkspaceDialog</name>
 <message>
-<source>Workspaces</source>
-<translation type="unfinished">Workspaces</translation>
+<source>Manage workspaces</source>
+<translation type="unfinished">Manage workspaces</translation>
 </message>
 <message>
-<source>full</source>
-<comment>full workspace</comment>
-<translation type="unfinished">full</translation>
+<source>Add workspace</source>
+<translation type="unfinished">Add workspace</translation>
 </message>
 <message>
-<source>minimal</source>
-<comment>minimal workspace</comment>
-<translation type="unfinished">minimal</translation>
+<source>Add</source>
+<translation type="unfinished">Add</translation>
 </message>
 <message>
-<source>Create new workspace</source>
-<translation type="unfinished">Create new workspace</translation>
+<source>Remove workspace</source>
+<translation type="unfinished">Remove workspace</translation>
+</message>
+<message>
+<source>Remove</source>
+<translation type="unfinished">Remove</translation>
+</message>
+<message>
+<source>Rename workspace</source>
+<translation type="unfinished">Rename workspace</translation>
+</message>
+<message>
+<source>Rename</source>
+<translation type="unfinished">Rename</translation>
+</message>
+<message>
+<source>Move workspace up</source>
+<translation type="unfinished">Move workspace up</translation>
+</message>
+<message>
+<source>Move up</source>
+<translation type="unfinished">Move up</translation>
+</message>
+<message>
+<source>Move workspace down</source>
+<translation type="unfinished">Move workspace down</translation>
+</message>
+<message>
+<source>Move down</source>
+<translation type="unfinished">Move down</translation>
 </message>
 <message>
 <source>Workspace name:</source>
 <translation type="unfinished">Workspace name:</translation>
 </message>
 <message>
+<source>Remove the selected workspace?</source>
+<translation type="unfinished">Remove the selected workspace?</translation>
+</message>
+</context>
+<context>
+<name>WorkspaceManager</name>
+<message>
+<source>Workspaces</source>
+<translation>工作区</translation>
+</message>
+<message>
+<source>full</source>
+<comment>full workspace</comment>
+<translation>完整</translation>
+</message>
+<message>
+<source>minimal</source>
+<comment>minimal workspace</comment>
+<translation>精简</translation>
+</message>
+<message>
+<source>Create new workspace</source>
+<translation>创建新工作区</translation>
+</message>
+<message>
+<source>Workspace name:</source>
+<translation>工作区名称：</translation>
+</message>
+<message>
 <source>Remove current workspace</source>
-<translation type="unfinished">Remove current workspace</translation>
+<translation>移除当前工作区</translation>
 </message>
 <message>
 <source>Remove the current workspace?</source>
-<translation type="unfinished">Remove the current workspace?</translation>
+<translation>移除当前工作区？</translation>
 </message>
 <message>
 <source>Rename workspace</source>
-<translation type="unfinished">Rename workspace</translation>
+<translation>重命名工作区</translation>
 </message>
 </context>
 <context>

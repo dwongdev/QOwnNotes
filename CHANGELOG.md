@@ -25,6 +25,8 @@
   warnings in the error dialogs for card operations where placeholder indices
   were wrong, and added response body logging on errors for better diagnostics
   (for [#3357](https://github.com/pbek/QOwnNotes/issues/3357))
+- Added more Russian, German, Chinese Simplified, Korean, Spanish, French, Polish
+  translation (thank you, pbek, VenusGirl, AlejandroMoc, jd-develop, Fresta24)
 
 ## 26.3.25
 

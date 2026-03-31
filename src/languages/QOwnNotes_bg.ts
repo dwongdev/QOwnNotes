@@ -112,6 +112,109 @@
 </message>
 </context>
 <context>
+<name>ColorModeSettingsWidget</name>
+<message>
+<source>Color modes</source>
+<translation type="unfinished">Color modes</translation>
+</message>
+<message>
+<source>&amp;Add color mode</source>
+<translation type="unfinished">&amp;Add color mode</translation>
+</message>
+<message>
+<source>&amp;Remove color mode</source>
+<translation type="unfinished">&amp;Remove color mode</translation>
+</message>
+<message>
+<source>Name:</source>
+<translation type="unfinished">Name:</translation>
+</message>
+<message>
+<source>Name of the color mode</source>
+<translation type="unfinished">Name of the color mode</translation>
+</message>
+<message>
+<source>Color mode name</source>
+<translation type="unfinished">Color mode name</translation>
+</message>
+<message>
+<source>Use as active color mode</source>
+<translation type="unfinished">Use as active color mode</translation>
+</message>
+<message>
+<source>Dark mode</source>
+<translation type="unfinished">Dark mode</translation>
+</message>
+<message>
+<source>This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</source>
+<translation type="unfinished">This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</translation>
+</message>
+<message>
+<source>Enable dark mode</source>
+<translation type="unfinished">Enable dark mode</translation>
+</message>
+<message>
+<source>Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</source>
+<translation type="unfinished">Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</translation>
+</message>
+<message>
+<source>Optimize preview colors for dark mode desktop themes</source>
+<translation type="unfinished">Optimize preview colors for dark mode desktop themes</translation>
+</message>
+<message>
+<source>You may need to restart the application to let these changes take effect</source>
+<translation type="unfinished">You may need to restart the application to let these changes take effect</translation>
+</message>
+<message>
+<source>Enable dark mode application icon and tray icon</source>
+<translation type="unfinished">Enable dark mode application icon and tray icon</translation>
+</message>
+<message>
+<source>Icons</source>
+<translation type="unfinished">Icons</translation>
+</message>
+<message>
+<source>You need to restart the application to let this setting take effect</source>
+<translation type="unfinished">You need to restart the application to let this setting take effect</translation>
+</message>
+<message>
+<source>Use internal icon theme instead of system icon theme</source>
+<translation type="unfinished">Use internal icon theme instead of system icon theme</translation>
+</message>
+<message>
+<source>Enforce system icon theme</source>
+<translation type="unfinished">Enforce system icon theme</translation>
+</message>
+<message>
+<source>Enable dark mode icon theme</source>
+<translation type="unfinished">Enable dark mode icon theme</translation>
+</message>
+<message>
+<source>Editor color schema</source>
+<translation type="unfinished">Editor color schema</translation>
+</message>
+<message>
+<source>Select the editor color schema for this color mode</source>
+<translation type="unfinished">Select the editor color schema for this color mode</translation>
+</message>
+<message>
+<source>New color mode</source>
+<translation type="unfinished">New color mode</translation>
+</message>
+<message>
+<source>Remove color mode</source>
+<translation type="unfinished">Remove color mode</translation>
+</message>
+<message>
+<source>Remove the color mode &lt;strong&gt;%1&lt;/strong&gt;?</source>
+<translation type="unfinished">Remove the color mode &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+</message>
+<message>
+<source>Color mode</source>
+<translation type="unfinished">Color mode</translation>
+</message>
+</context>
+<context>
 <name>DictionaryManagerDialog</name>
 <message>
 <source>Dictionary manager</source>
@@ -1316,6 +1419,18 @@
 <translation>Връзка</translation>
 </message>
 <message>
+<source>Link (internal)</source>
+<translation type="unfinished">Link (internal)</translation>
+</message>
+<message>
+<source>Wiki link</source>
+<translation type="unfinished">Wiki link</translation>
+</message>
+<message>
+<source>Wiki link (broken)</source>
+<translation type="unfinished">Wiki link (broken)</translation>
+</message>
+<message>
 <source>Image</source>
 <translation>Образ</translation>
 </message>
@@ -1729,6 +1844,14 @@
 <message>
 <source>Search for a heading to link to</source>
 <translation type="unfinished">Search for a heading to link to</translation>
+</message>
+<message>
+<source>Insert the link as a wiki-style link ([[Note Name]]) instead of a Markdown link</source>
+<translation type="unfinished">Insert the link as a wiki-style link ([[Note Name]]) instead of a Markdown link</translation>
+</message>
+<message>
+<source>Create wiki-style link ([[...]])</source>
+<translation type="unfinished">Create wiki-style link ([[...]])</translation>
 </message>
 <message>
 <source>Enter the name of the link (optional)</source>
@@ -2412,6 +2535,10 @@
 <message>
 <source>Switch to previous workspace</source>
 <translation>Превключване към предишно работно пространство</translation>
+</message>
+<message>
+<source>Manage workspaces</source>
+<translation type="unfinished">Manage workspaces</translation>
 </message>
 <message>
 <source>Show all panels</source>
@@ -3523,14 +3650,6 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <context>
 <name>NextcloudDeckService</name>
 <message>
-<source>updating</source>
-<translation type="unfinished">updating</translation>
-</message>
-<message>
-<source>creating</source>
-<translation type="unfinished">creating</translation>
-</message>
-<message>
 <source>Error while updating card</source>
 <translation type="unfinished">Error while updating card</translation>
 </message>
@@ -3551,16 +3670,16 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <translation type="unfinished">Error while archiving card</translation>
 </message>
 <message>
-<source>Archiving the card failed with status code %2 and message: %3</source>
-<translation type="unfinished">Archiving the card failed with status code %2 and message: %3</translation>
-</message>
-<message>
 <source>Error while deleting card</source>
 <translation type="unfinished">Error while deleting card</translation>
 </message>
 <message>
-<source>Deleting the card failed with status code %2 and message: %3</source>
-<translation type="unfinished">Deleting the card failed with status code %2 and message: %3</translation>
+<source>Archiving the card failed with status code %1 and message: %2</source>
+<translation type="unfinished">Archiving the card failed with status code %1 and message: %2</translation>
+</message>
+<message>
+<source>Deleting the card failed with status code %1 and message: %2</source>
+<translation type="unfinished">Deleting the card failed with status code %1 and message: %2</translation>
 </message>
 <message>
 <source>Error while loading boards</source>
@@ -3833,12 +3952,34 @@ Restore current note?</translation>
 <context>
 <name>NoteOperationsManager</name>
 <message>
+<source>Note has backlinks</source>
+<translation type="unfinished">Note has backlinks</translation>
+</message>
+<message numerus="yes">
+<source>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</source>
+<translation type="unfinished">
+<numerusform>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</numerusform>
+<numerusform>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</numerusform>
+</translation>
+</message>
+<message>
 <source>Remove current note</source>
 <translation type="unfinished">Remove current note</translation>
 </message>
 <message>
 <source>Remove current note: &lt;strong&gt;%1&lt;/strong&gt;?</source>
 <translation type="unfinished">Remove current note: &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+</message>
+<message>
+<source>Notes have backlinks</source>
+<translation type="unfinished">Notes have backlinks</translation>
+</message>
+<message numerus="yes">
+<source>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</source>
+<translation type="unfinished">
+<numerusform>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</numerusform>
+<numerusform>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</numerusform>
+</translation>
 </message>
 <message>
 <source>Remove selected notes and folders</source>
@@ -4518,6 +4659,17 @@ Click 'Cancel' to discard your changes and keep the external version.</translati
 </translation>
 </message>
 <message>
+<source>Subfolder path changed</source>
+<translation type="unfinished">Subfolder path changed</translation>
+</message>
+<message numerus="yes">
+<source>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</source>
+<translation type="unfinished">
+<numerusform>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</numerusform>
+<numerusform>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</numerusform>
+</translation>
+</message>
+<message>
 <source>Image file exists</source>
 <translation>Файлът с изображение съществува</translation>
 </message>
@@ -4688,6 +4840,14 @@ Click 'Cancel' to discard your changes and keep the external version.</translati
 <translation>Използвате режима на единична инстанция на приложението, който не позволява то да бъде стартирано втори път. При следващото стартиране на приложението режимът на единична инстанция на приложението ще бъде деактивиран, така че приложението да може да се стартира отново, преди да се прекрати тази инстанция.</translation>
 </message>
 <message>
+<source>Note '%1' does not exist. Create it?</source>
+<translation type="unfinished">Note '%1' does not exist. Create it?</translation>
+</message>
+<message>
+<source>Note '%1' does not exist in '%2'. Create it?</source>
+<translation type="unfinished">Note '%1' does not exist in '%2'. Create it?</translation>
+</message>
+<message>
 <source>Note was not found</source>
 <translation>Бележката не е намерена</translation>
 </message>
@@ -4731,6 +4891,14 @@ Click 'Cancel' to discard your changes and keep the external version.</translati
 <source>attachment</source>
 <translation type="unfinished">attachment</translation>
 </message>
+<message>
+<source>Light</source>
+<translation type="unfinished">Light</translation>
+</message>
+<message>
+<source>Dark</source>
+<translation type="unfinished">Dark</translation>
+</message>
 </context>
 <context>
 <name>QOwnNotesMarkdownTextEdit</name>
@@ -4770,6 +4938,38 @@ Click 'Cancel' to discard your changes and keep the external version.</translati
 <message>
 <source>Insert block &amp;quote</source>
 <translation type="unfinished">Insert block &amp;quote</translation>
+</message>
+<message>
+<source>List operations</source>
+<translation type="unfinished">List operations</translation>
+</message>
+<message>
+<source>Toggle checkbox(es)</source>
+<translation type="unfinished">Toggle checkbox(es)</translation>
+</message>
+<message>
+<source>1. 2. 3. list</source>
+<translation type="unfinished">1. 2. 3. list</translation>
+</message>
+<message>
+<source>a. b. c. list</source>
+<translation type="unfinished">a. b. c. list</translation>
+</message>
+<message>
+<source>- list</source>
+<translation type="unfinished">- list</translation>
+</message>
+<message>
+<source>Create checkbox list</source>
+<translation type="unfinished">Create checkbox list</translation>
+</message>
+<message>
+<source>Clear list formatting</source>
+<translation type="unfinished">Clear list formatting</translation>
+</message>
+<message>
+<source>Order checkboxes</source>
+<translation type="unfinished">Order checkboxes</translation>
 </message>
 <message>
 <source>Copy code block</source>
@@ -4866,6 +5066,10 @@ Click 'Cancel' to discard your changes and keep the external version.</translati
 <message>
 <source>Ignore this rule</source>
 <translation type="unfinished">Ignore this rule</translation>
+</message>
+<message>
+<source>Ignore word "%1"</source>
+<translation type="unfinished">Ignore word "%1"</translation>
 </message>
 <message>
 <source>Markdown LSP server connected</source>
@@ -5402,22 +5606,6 @@ Do you want to install it anyway?</source>
 <translation>Други сървър на CalDAV</translation>
 </message>
 <message>
-<source>Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</source>
-<translation>Само някои цветове ще бъдат адаптирани, темата на вашия работен плот ще контролира останалите. Трябва да рестартирате приложението, за да оставите тези промени да предприемат действия.</translation>
-</message>
-<message>
-<source>Optimize preview colors for dark mode desktop themes</source>
-<translation>Оптимизирайте цветовете за предварителен преглед за темни теми на работния плот</translation>
-</message>
-<message>
-<source>This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</source>
-<translation>Това позволява тъмният режим, интерфейсът и иконите да бъдат променени. Трябва да рестартирате приложението, за да оставите тези промени да предприемат действия.</translation>
-</message>
-<message>
-<source>Enable dark mode</source>
-<translation>Активиране на тъмен режим</translation>
-</message>
-<message>
 <source>You need to restart the application to let this setting take effect</source>
 <translation>Трябва да рестартирате приложението, за да пуснете тази настройка в сила</translation>
 </message>
@@ -5500,10 +5688,6 @@ Do you want to install it anyway?</source>
 <message>
 <source>Spanish</source>
 <translation>Испански</translation>
-</message>
-<message>
-<source>Dark mode</source>
-<translation>Тъмната мода</translation>
 </message>
 <message>
 <source>Disable tracking of usage data</source>
@@ -5773,6 +5957,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>Име на връзката:</translation>
 </message>
 <message>
+<source>Color modes</source>
+<translation type="unfinished">Color modes</translation>
+</message>
+<message>
 <source>Be aware that the ownCloud notes app doesn't support subfolders!</source>
 <translation>Имайте предвид, че приложението ownCloud notes не поддържа подпапки!
 </translation>
@@ -5931,6 +6119,26 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>Пенджабски</translation>
 </message>
 <message>
+<source>Ignored:</source>
+<translation type="unfinished">Ignored:</translation>
+</message>
+<message>
+<source>Reset all ignored LanguageTool rules so they are checked again</source>
+<translation type="unfinished">Reset all ignored LanguageTool rules so they are checked again</translation>
+</message>
+<message>
+<source>Reset ignored rules</source>
+<translation type="unfinished">Reset ignored rules</translation>
+</message>
+<message>
+<source>Reset all ignored words so they are checked by LanguageTool again</source>
+<translation type="unfinished">Reset all ignored words so they are checked by LanguageTool again</translation>
+</message>
+<message>
+<source>Reset ignored words</source>
+<translation type="unfinished">Reset ignored words</translation>
+</message>
+<message>
 <source>Persian</source>
 <translation>Персийски</translation>
 </message>
@@ -5979,18 +6187,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>Традиционен китайски</translation>
 </message>
 <message>
-<source>Enable dark mode application icon and tray icon</source>
-<translation>Активирайте иконата на приложението в тъмен режим и иконата на тава</translation>
-</message>
-<message>
-<source>You might also want to choose another editor color schema in the editor settings in dark mode.</source>
-<translation>Можете също така да искате да изберете друга цветова схема на редактора в настройките на редактора в тъмен режим.</translation>
-</message>
-<message>
-<source>Enable dark mode icon theme</source>
-<translation>Активирайте темата на иконата в тъмен режим</translation>
-</message>
-<message>
 <source>System tray</source>
 <translation>Системна област</translation>
 </message>
@@ -6005,10 +6201,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <message>
 <source>Interface style</source>
 <translation>Интерфейс стил</translation>
-</message>
-<message>
-<source>Enforce system icon theme</source>
-<translation>Прилагане на темата на иконата на системата</translation>
 </message>
 <message>
 <source>Override interface font size</source>
@@ -6256,6 +6448,18 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <message>
 <source>Open last accessed note at application startup</source>
 <translation>Отворете последната достъпна бележка при стартиране на приложението</translation>
+</message>
+<message>
+<source>Read-only mode</source>
+<translation type="unfinished">Read-only mode</translation>
+</message>
+<message>
+<source>Enable or disable the read-only mode feature</source>
+<translation type="unfinished">Enable or disable the read-only mode feature</translation>
+</message>
+<message>
+<source>Enable read-only mode</source>
+<translation type="unfinished">Enable read-only mode</translation>
 </message>
 <message>
 <source>Start application in read-only mode</source>
@@ -6616,6 +6820,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <message>
 <source>Use checksums to detect external modifications to unsaved notes</source>
 <translation type="unfinished">Use checksums to detect external modifications to unsaved notes</translation>
+</message>
+<message>
+<source>Enable wiki-style link support [[note name]]</source>
+<translation type="unfinished">Enable wiki-style link support [[note name]]</translation>
 </message>
 <message>
 <source>Select the path of the git binary</source>
@@ -7226,10 +7434,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <translation>&amp;Презареждане на списъка с календари</translation>
 </message>
 <message>
-<source>You may need to restart the application to let these changes take effect</source>
-<translation>You may need to restart the application to let these changes take effect</translation>
-</message>
-<message>
 <source>Toolbar icon size:</source>
 <translation>Размер на иконата на лентата с инструменти:</translation>
 </message>
@@ -7264,10 +7468,6 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <message>
 <source>Icons</source>
 <translation>Икони</translation>
-</message>
-<message>
-<source>Use internal icon theme instead of system icon theme</source>
-<translation>Използвайте вътрешната тема на иконата вместо темата на иконата на системата</translation>
 </message>
 <message>
 <source>Script path:</source>
@@ -7394,6 +7594,36 @@ Connection error message: </source>
 <message>
 <source>LanguageTool connection failed: %1</source>
 <translation type="unfinished">LanguageTool connection failed: %1</translation>
+</message>
+<message>
+<source>There are no ignored rules to reset.</source>
+<translation type="unfinished">There are no ignored rules to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored rule(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored rules have been reset.</source>
+<translation type="unfinished">All ignored rules have been reset.</translation>
+</message>
+<message>
+<source>There are no ignored words to reset.</source>
+<translation type="unfinished">There are no ignored words to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored word(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored word(s)?</numerusform>
+<numerusform>Reset %n ignored word(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored words have been reset.</source>
+<translation type="unfinished">All ignored words have been reset.</translation>
 </message>
 <message>
 <source>The Database was reinitialized. Please restart the application now!</source>
@@ -9194,6 +9424,61 @@ This cannot be undone!</source>
 <message>
 <source>Keep in mind that the note folder will be stored relative to the directory where QOwnNotes resides in portable mode! So you need to stay on the same drive.</source>
 <translation>Имайте предвид, че папката с бележки ще се съхранява спрямо директорията, в която QOwnNotes пребивава в преносим режим! Така че трябва да останете на едно и също устройство.</translation>
+</message>
+</context>
+<context>
+<name>WorkspaceDialog</name>
+<message>
+<source>Manage workspaces</source>
+<translation type="unfinished">Manage workspaces</translation>
+</message>
+<message>
+<source>Add workspace</source>
+<translation type="unfinished">Add workspace</translation>
+</message>
+<message>
+<source>Add</source>
+<translation type="unfinished">Add</translation>
+</message>
+<message>
+<source>Remove workspace</source>
+<translation type="unfinished">Remove workspace</translation>
+</message>
+<message>
+<source>Remove</source>
+<translation type="unfinished">Remove</translation>
+</message>
+<message>
+<source>Rename workspace</source>
+<translation type="unfinished">Rename workspace</translation>
+</message>
+<message>
+<source>Rename</source>
+<translation type="unfinished">Rename</translation>
+</message>
+<message>
+<source>Move workspace up</source>
+<translation type="unfinished">Move workspace up</translation>
+</message>
+<message>
+<source>Move up</source>
+<translation type="unfinished">Move up</translation>
+</message>
+<message>
+<source>Move workspace down</source>
+<translation type="unfinished">Move workspace down</translation>
+</message>
+<message>
+<source>Move down</source>
+<translation type="unfinished">Move down</translation>
+</message>
+<message>
+<source>Workspace name:</source>
+<translation type="unfinished">Workspace name:</translation>
+</message>
+<message>
+<source>Remove the selected workspace?</source>
+<translation type="unfinished">Remove the selected workspace?</translation>
 </message>
 </context>
 <context>

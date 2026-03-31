@@ -160,6 +160,20 @@ Las imágenes se pueden incrustar en QOwnNotes. Estas se mostrarán en la vista 
 ![texto alternativo](media/mi-imagen.jpg)
 ```
 
+### Dimensiones de imagen
+
+You can optionally specify a `width` and/or `height` for an image using curly-brace attribute syntax right after the closing parenthesis:
+
+```markdown
+![texto alternativo](multimedia/mi-imagen.jpg){ width=300 }
+
+![texto alternativo](multimedia/mi-imagen.jpg){ height=200 }
+
+![texto alternativo](multimedia/mi-imagen.jpg){ width=300 height=200 }
+```
+
+The dimension attributes are displayed with masked (grayed-out) syntax in the editor and are applied in the preview, where they take precedence over the automatic image width sizing.
+
 ::: tip
 Puede usar el [atajo](./shortcuts.md) <kbd>Ctrl + Shift + I</kbd> para insertar una imagen en una nota. La imagen también puede estar en el portapapeles, el diálogo la detectará y mostrará una vista previa.
 

@@ -69,6 +69,6 @@ Los nuevos marcadores se almacenan en una nota llamada `Marcadores` (también mo
 
 Puede buscar nombres, etiquetas de URLs o descripciones en la extensión del navegador. En la nota actual, todos los otros enlaces dentro de texto son analizados, pero sin analizar las etiquetas o la descripción.
 
-## API de sugerencias para la página de inicio
+## API de sugerencias para Homepage
 
-Para la integración de la [página de inicio](https://github.com/gethomepage/homepage) con las sugerencias de marcadores de QOwnNotes, consulte la [API de sugerencias de página de inicio](./homepage-suggestion-api.md).
+Para la integración de [Homepage](https://github.com/gethomepage/homepage) con las sugerencias de marcadores de QOwnNotes, consulte la [API de sugerencias de página de inicio](./homepage-suggestion-api.md).

@@ -159,6 +159,20 @@ Le immagini possono essere incorporate in QOwnNotes. Verranno mostrate nell'ante
 ![testo alternativo](media/la-mia-immagine.jpg)
 ```
 
+### Image dimensions
+
+You can optionally specify a `width` and/or `height` for an image using curly-brace attribute syntax right after the closing parenthesis:
+
+```markdown
+![alt text](media/my-image.jpg){ width=300 }
+
+![alt text](media/my-image.jpg){ height=200 }
+
+![alt text](media/my-image.jpg){ width=300 height=200 }
+```
+
+The dimension attributes are displayed with masked (grayed-out) syntax in the editor and are applied in the preview, where they take precedence over the automatic image width sizing.
+
 ::: tip
 Puoi usare la [scorciatoia](./shortcuts.md) <kbd>Ctrl + Maiusc + I</kbd> per inserire un'immagine in una nota. L'immagine può anche essere negli appunti, la finestra di dialogo la rileverà e mostrerà un'anteprima.
 

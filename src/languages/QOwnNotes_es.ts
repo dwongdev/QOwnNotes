@@ -112,6 +112,109 @@
 </message>
 </context>
 <context>
+<name>ColorModeSettingsWidget</name>
+<message>
+<source>Color modes</source>
+<translation>Modos de colores</translation>
+</message>
+<message>
+<source>&amp;Add color mode</source>
+<translation>&amp;Añadir modo de colores</translation>
+</message>
+<message>
+<source>&amp;Remove color mode</source>
+<translation>Elimina&amp;r modo de colores</translation>
+</message>
+<message>
+<source>Name:</source>
+<translation>Nombre:</translation>
+</message>
+<message>
+<source>Name of the color mode</source>
+<translation>Nombre del modo de colores</translation>
+</message>
+<message>
+<source>Color mode name</source>
+<translation>Nombre del modo de colores</translation>
+</message>
+<message>
+<source>Use as active color mode</source>
+<translation>Utilizar como el modo de colores activo</translation>
+</message>
+<message>
+<source>Dark mode</source>
+<translation>Modo oscuro</translation>
+</message>
+<message>
+<source>This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</source>
+<translation>Esto activa el modo oscuro, se modificará la interfaz y los iconos. Tendrás que reiniciar la aplicación para activar los cambios.</translation>
+</message>
+<message>
+<source>Enable dark mode</source>
+<translation>Habilitar modo oscuro</translation>
+</message>
+<message>
+<source>Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</source>
+<translation>Solo se adaptarán algunos colores, su tema de escritorio controlará el resto. Tendrá que reiniciar la aplicación para dejar que estos cambios surtan efecto.</translation>
+</message>
+<message>
+<source>Optimize preview colors for dark mode desktop themes</source>
+<translation type="unfinished">Optimize preview colors for dark mode desktop themes</translation>
+</message>
+<message>
+<source>You may need to restart the application to let these changes take effect</source>
+<translation type="unfinished">You may need to restart the application to let these changes take effect</translation>
+</message>
+<message>
+<source>Enable dark mode application icon and tray icon</source>
+<translation>Habilita el modo oscuro para el icono de la aplicación y de la bandeja</translation>
+</message>
+<message>
+<source>Icons</source>
+<translation>Iconos</translation>
+</message>
+<message>
+<source>You need to restart the application to let this setting take effect</source>
+<translation type="unfinished">You need to restart the application to let this setting take effect</translation>
+</message>
+<message>
+<source>Use internal icon theme instead of system icon theme</source>
+<translation type="unfinished">Use internal icon theme instead of system icon theme</translation>
+</message>
+<message>
+<source>Enforce system icon theme</source>
+<translation>Forzar el tema de iconos de sistema</translation>
+</message>
+<message>
+<source>Enable dark mode icon theme</source>
+<translation>Habilitar tema de iconos en modo oscuro</translation>
+</message>
+<message>
+<source>Editor color schema</source>
+<translation>Esquema de colores del editor</translation>
+</message>
+<message>
+<source>Select the editor color schema for this color mode</source>
+<translation>Seleccione el esquema de colores del editor para este modo de colores</translation>
+</message>
+<message>
+<source>New color mode</source>
+<translation>Nuevo modo de colores</translation>
+</message>
+<message>
+<source>Remove color mode</source>
+<translation>Eliminar modo de colores</translation>
+</message>
+<message>
+<source>Remove the color mode &lt;strong&gt;%1&lt;/strong&gt;?</source>
+<translation>¿Eliminar el modo de colores &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+</message>
+<message>
+<source>Color mode</source>
+<translation>Modo de colores</translation>
+</message>
+</context>
+<context>
 <name>DictionaryManagerDialog</name>
 <message>
 <source>Dictionary manager</source>
@@ -1118,11 +1221,11 @@
 </message>
 <message>
 <source>The file name &lt;strong&gt;%1&lt;/strong&gt; is invalid.</source>
-<translation type="unfinished">The file name &lt;strong&gt;%1&lt;/strong&gt; is invalid.</translation>
+<translation>El nombre del archivo &lt;strong&gt;%1&lt;/strong&gt; es inválido.</translation>
 </message>
 <message>
 <source>Delete linked files</source>
-<translation type="unfinished">Delete linked files</translation>
+<translation>Eliminar archivos enlazados</translation>
 </message>
 <message numerus="yes">
 <source>Delete &lt;strong&gt;%n&lt;/strong&gt; selected linked file(s)? You can also remove their links from &lt;strong&gt;%1&lt;/strong&gt; note file(s) afterwards.</source>
@@ -1133,22 +1236,22 @@
 </message>
 <message>
 <source>Deleting the file &lt;strong&gt;%1&lt;/strong&gt; failed!</source>
-<translation type="unfinished">Deleting the file &lt;strong&gt;%1&lt;/strong&gt; failed!</translation>
+<translation>¡Error al eliminar el archivo &lt;strong&gt;%1&lt;/strong&gt;!</translation>
 </message>
 <message numerus="yes">
 <source>Deleting &lt;strong&gt;%n&lt;/strong&gt; linked file(s) failed!</source>
-<translation type="unfinished">
-<numerusform>Deleting &lt;strong&gt;%n&lt;/strong&gt; linked file(s) failed!</numerusform>
-<numerusform>Deleting &lt;strong&gt;%n&lt;/strong&gt; linked file(s) failed!</numerusform>
+<translation>
+<numerusform>¡Error al eliminar &lt;strong&gt;%n&lt;/strong&gt; archivo enlazado!</numerusform>
+<numerusform>¡Error al eliminar &lt;strong&gt;%n&lt;/strong&gt; archivos enlazados!</numerusform>
 </translation>
 </message>
 <message>
 <source>File deleting failed</source>
-<translation type="unfinished">File deleting failed</translation>
+<translation>Error al eliminar el archivo</translation>
 </message>
 <message>
 <source>Remove linked file references</source>
-<translation type="unfinished">Remove linked file references</translation>
+<translation>Eliminar referencias al archivo enlazado</translation>
 </message>
 <message numerus="yes">
 <source>The deleted file(s) are used in &lt;strong&gt;%n&lt;/strong&gt; note file(s). Would you like to remove those media and attachment links everywhere? This will update &lt;strong&gt;%n&lt;/strong&gt; note file(s).</source>
@@ -1159,7 +1262,7 @@
 </message>
 <message>
 <source>File doesn't exist</source>
-<translation type="unfinished">File doesn't exist</translation>
+<translation>El archivo no existe</translation>
 </message>
 <message>
 <source>The file &lt;strong&gt;%1&lt;/strong&gt; doesn't exist, you cannot rename it!</source>
@@ -1167,7 +1270,7 @@
 </message>
 <message>
 <source>File exists</source>
-<translation type="unfinished">File exists</translation>
+<translation>El archivo existe</translation>
 </message>
 <message>
 <source>File &lt;strong&gt;%1&lt;/strong&gt; already exists, you need to remove it before choosing &lt;strong&gt;%2&lt;/strong&gt; as new filename!</source>
@@ -1175,15 +1278,15 @@
 </message>
 <message>
 <source>File renaming failed</source>
-<translation type="unfinished">File renaming failed</translation>
+<translation>Error al renombrar el archivo</translation>
 </message>
 <message>
 <source>Renaming of file &lt;strong&gt;%1&lt;/strong&gt; failed!</source>
-<translation type="unfinished">Renaming of file &lt;strong&gt;%1&lt;/strong&gt; failed!</translation>
+<translation>¡Error al renombrar el archivo &lt;strong&gt;%1&lt;/strong&gt;!</translation>
 </message>
 <message>
 <source>File name changed</source>
-<translation type="unfinished">File name changed</translation>
+<translation>El nombre del archivo ha cambiado</translation>
 </message>
 <message numerus="yes">
 <source>The %1 &lt;strong&gt;%2&lt;/strong&gt; is used in &lt;strong&gt;%n&lt;/strong&gt; note file(s). Would you like to refactor that filename everywhere? This will update &lt;strong&gt;%n&lt;/strong&gt; note file(s).</source>
@@ -1194,7 +1297,7 @@
 </message>
 <message>
 <source>&amp;Open file externally</source>
-<translation type="unfinished">&amp;Open file externally</translation>
+<translation>Abrir archiv&amp;o externamente</translation>
 </message>
 <message>
 <source>&amp;Delete file</source>
@@ -1314,6 +1417,18 @@
 <message>
 <source>Link</source>
 <translation>Enlace</translation>
+</message>
+<message>
+<source>Link (internal)</source>
+<translation>Enlace (interno)</translation>
+</message>
+<message>
+<source>Wiki link</source>
+<translation>Enlace de la wiki</translation>
+</message>
+<message>
+<source>Wiki link (broken)</source>
+<translation>Enlace de la wiki (no funciona)</translation>
 </message>
 <message>
 <source>Image</source>
@@ -1603,7 +1718,7 @@
 <name>LanguageToolChecker</name>
 <message>
 <source>LanguageTool is unavailable: %1</source>
-<translation type="unfinished">LanguageTool is unavailable: %1</translation>
+<translation>LanguageTool no está disponible: %1</translation>
 </message>
 </context>
 <context>
@@ -1729,6 +1844,14 @@
 <message>
 <source>Search for a heading to link to</source>
 <translation>Busque un encabezado al que enlazar</translation>
+</message>
+<message>
+<source>Insert the link as a wiki-style link ([[Note Name]]) instead of a Markdown link</source>
+<translation type="unfinished">Insert the link as a wiki-style link ([[Note Name]]) instead of a Markdown link</translation>
+</message>
+<message>
+<source>Create wiki-style link ([[...]])</source>
+<translation type="unfinished">Create wiki-style link ([[...]])</translation>
 </message>
 <message>
 <source>Enter the name of the link (optional)</source>
@@ -2194,27 +2317,27 @@
 </message>
 <message>
 <source>Previous &amp;heading</source>
-<translation type="unfinished">Previous &amp;heading</translation>
+<translation>Encabezado anterior (&amp;H)</translation>
 </message>
 <message>
 <source>Next heading</source>
-<translation type="unfinished">Next heading</translation>
+<translation>Encabezado siguiente</translation>
 </message>
 <message>
 <source>Fold all headings</source>
-<translation type="unfinished">Fold all headings</translation>
+<translation>Plegar todos los encabezados</translation>
 </message>
 <message>
 <source>Fold all headings in the current note</source>
-<translation type="unfinished">Fold all headings in the current note</translation>
+<translation>Pliega todos los encabezados de la nota actual</translation>
 </message>
 <message>
 <source>Unfold all headings</source>
-<translation type="unfinished">Unfold all headings</translation>
+<translation>Desplegar todos los encabezados</translation>
 </message>
 <message>
 <source>Unfold all headings in the current note</source>
-<translation type="unfinished">Unfold all headings in the current note</translation>
+<translation>Despliega todos los encabezados de la nota actual</translation>
 </message>
 <message>
 <source>Show shortcuts</source>
@@ -2412,6 +2535,10 @@
 <message>
 <source>Switch to previous workspace</source>
 <translation>Cambiar al espacio de trabajo anterior</translation>
+</message>
+<message>
+<source>Manage workspaces</source>
+<translation>Administrar espacios de trabajo</translation>
 </message>
 <message>
 <source>Show all panels</source>
@@ -2826,8 +2953,8 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 <message numerus="yes">
 <source>%n note(s) were copied to &lt;strong&gt;%2&lt;/strong&gt;.</source>
 <translation>
-<numerusform>%n la Nota se ha copiado &lt;strong&gt;%2&lt;/strong&gt;.</numerusform>
-<numerusform>%n las Notas se han copiado &lt;strong&gt;%2&lt;/strong&gt;.</numerusform>
+<numerusform>%n nota copiada a &lt;strong&gt;%2&lt;/strong&gt;.</numerusform>
+<numerusform>%n notas copiadas a &lt;strong&gt;%2&lt;/strong&gt;.</numerusform>
 </translation>
 </message>
 <message>
@@ -3247,28 +3374,28 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 <name>MediaInsertionManager</name>
 <message>
 <source>File extension</source>
-<translation type="unfinished">File extension</translation>
+<translation>Extensión del archivo</translation>
 </message>
 <message>
 <source>Extension of file attachment:</source>
-<translation type="unfinished">Extension of file attachment:</translation>
+<translation>Extensión del archivo adjunto:</translation>
 </message>
 <message>
 <source>File base name</source>
-<translation type="unfinished">File base name</translation>
+<translation>Nombre base del archivo</translation>
 </message>
 <message>
 <source>Base name of file attachment:</source>
-<translation type="unfinished">Base name of file attachment:</translation>
+<translation>Nombre base del archivo adjunto:</translation>
 </message>
 <message>
 <source>Leave empty for automatic name</source>
 <comment>Leave the base name empty for automatic name</comment>
-<translation type="unfinished">Leave empty for automatic name</translation>
+<translation>Dejar en blanco para un nombre automático</translation>
 </message>
 <message>
 <source>Temporary file can't be opened</source>
-<translation type="unfinished">Temporary file can't be opened</translation>
+<translation>No se puede abrir el archivo temporal</translation>
 </message>
 <message>
 <source>Inserted text as text attachment file</source>
@@ -3288,13 +3415,13 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Done inserting attachment</source>
-<translation type="unfinished">Done inserting attachment</translation>
+<translation>Se insertó el archivo adjunto</translation>
 </message>
 <message numerus="yes">
 <source>Copied %n note(s) to %1</source>
-<translation type="unfinished">
-<numerusform>Copied %n note(s) to %1</numerusform>
-<numerusform>Copied %n note(s) to %1</numerusform>
+<translation>
+<numerusform>Se copió %n nota a %1</numerusform>
+<numerusform>Se copiaron %n notas a %1</numerusform>
 </translation>
 </message>
 <message numerus="yes">
@@ -3313,23 +3440,23 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Saving temporary image</source>
-<translation type="unfinished">Saving temporary image</translation>
+<translation>Guardando imagen temporal</translation>
 </message>
 <message>
 <source>Paste &amp;HTML as Markdown</source>
-<translation type="unfinished">Paste &amp;HTML as Markdown</translation>
+<translation>Pegar &amp;HTML como Markdown</translation>
 </message>
 <message>
 <source>Paste as &amp;text file attachment</source>
-<translation type="unfinished">Paste as &amp;text file attachment</translation>
+<translation>Pegar como archivo adjunto de &amp;texto</translation>
 </message>
 <message>
 <source>Downloading %1</source>
-<translation type="unfinished">Downloading %1</translation>
+<translation>Descargando %1</translation>
 </message>
 <message>
 <source>Downloading images finished</source>
-<translation type="unfinished">Downloading images finished</translation>
+<translation>Terminó la descarga de imágenes</translation>
 </message>
 </context>
 <context>
@@ -3355,18 +3482,18 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 <message>
 <source>Ln %1, Col %2</source>
 <comment>Line / Column</comment>
-<translation type="unfinished">Ln %1, Col %2</translation>
+<translation>Línea %1, col. %2</translation>
 </message>
 <message>
 <source>Line %1, Column %2</source>
-<translation type="unfinished">Line %1, Column %2</translation>
+<translation>Línea %1, columna %2</translation>
 </message>
 <message numerus="yes">
 <source>%n selected</source>
 <comment>Characters selected</comment>
-<translation type="unfinished">
-<numerusform>%n selected</numerusform>
-<numerusform>%n selected</numerusform>
+<translation>
+<numerusform>%n seleccionado</numerusform>
+<numerusform>%n seleccionados</numerusform>
 </translation>
 </message>
 </context>
@@ -3519,14 +3646,6 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 <context>
 <name>NextcloudDeckService</name>
 <message>
-<source>updating</source>
-<translation>actualizando</translation>
-</message>
-<message>
-<source>creating</source>
-<translation>creando</translation>
-</message>
-<message>
 <source>Error while updating card</source>
 <translation>Error al actualizar la tarjeta</translation>
 </message>
@@ -3547,16 +3666,16 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 <translation>Error al archivar la tarjeta</translation>
 </message>
 <message>
-<source>Archiving the card failed with status code %2 and message: %3</source>
-<translation>El archivado de la tarjeta falló con el código de estado %2 y el mensaje: %3</translation>
-</message>
-<message>
 <source>Error while deleting card</source>
 <translation>Error al eliminar la tarjeta</translation>
 </message>
 <message>
-<source>Deleting the card failed with status code %2 and message: %3</source>
-<translation>La eliminación de la tarjeta falló con el código de estado %2 y el mensaje: %3</translation>
+<source>Archiving the card failed with status code %1 and message: %2</source>
+<translation type="unfinished">Archiving the card failed with status code %1 and message: %2</translation>
+</message>
+<message>
+<source>Deleting the card failed with status code %1 and message: %2</source>
+<translation type="unfinished">Deleting the card failed with status code %1 and message: %2</translation>
 </message>
 <message>
 <source>Error while loading boards</source>
@@ -3653,7 +3772,7 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 <name>NoteEncryptionManager</name>
 <message>
 <source>Please enter the &lt;strong&gt;password&lt;/strong&gt; of this encrypted note.</source>
-<translation type="unfinished">Please enter the &lt;strong&gt;password&lt;/strong&gt; of this encrypted note.</translation>
+<translation>Por favor, introduzca la &lt;strong&gt;contraseña&lt;/strong&gt; de esta nota cifrada.</translation>
 </message>
 <message>
 <source>Note can't be decrypted!</source>
@@ -3803,30 +3922,41 @@ Restore current note?</translation>
 </message>
 <message>
 <source>Stored current note to disk</source>
-<translation type="unfinished">Stored current note to disk</translation>
+<translation>Se guardó la nota actual en el disco</translation>
 </message>
 <message>
 <source>Current note could not be stored to disk</source>
-<translation type="unfinished">Current note could not be stored to disk</translation>
+<translation>No se pudo almacenar la nota actual en el disco</translation>
 </message>
 <message>
 <source>Note was modified externally: %1</source>
-<translation type="unfinished">Note was modified externally: %1</translation>
+<translation>La nota fue modificada externamente: %1</translation>
 </message>
 <message>
 <source>Notes directory was modified externally</source>
-<translation type="unfinished">Notes directory was modified externally</translation>
+<translation>El directorio de notas fue modificado externamente</translation>
 </message>
 <message numerus="yes">
 <source>Stored %n note(s) to disk</source>
-<translation type="unfinished">
-<numerusform>Stored %n note(s) to disk</numerusform>
-<numerusform>Stored %n note(s) to disk</numerusform>
+<translation>
+<numerusform>%n nota almacenada en el disco</numerusform>
+<numerusform>%n notas almacenadas en el disco</numerusform>
 </translation>
 </message>
 </context>
 <context>
 <name>NoteOperationsManager</name>
+<message>
+<source>Note has backlinks</source>
+<translation type="unfinished">Note has backlinks</translation>
+</message>
+<message numerus="yes">
+<source>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</source>
+<translation type="unfinished">
+<numerusform>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</numerusform>
+<numerusform>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</numerusform>
+</translation>
+</message>
 <message>
 <source>Remove current note</source>
 <translation type="unfinished">Remove current note</translation>
@@ -3836,8 +3966,19 @@ Restore current note?</translation>
 <translation type="unfinished">Remove current note: &lt;strong&gt;%1&lt;/strong&gt;?</translation>
 </message>
 <message>
+<source>Notes have backlinks</source>
+<translation type="unfinished">Notes have backlinks</translation>
+</message>
+<message numerus="yes">
+<source>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</source>
+<translation type="unfinished">
+<numerusform>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</numerusform>
+<numerusform>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</numerusform>
+</translation>
+</message>
+<message>
 <source>Remove selected notes and folders</source>
-<translation type="unfinished">Remove selected notes and folders</translation>
+<translation>Eliminar notas y carpetas seleccionadas</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected note(s) and &lt;strong&gt;%1&lt;/strong&gt; folder(s)?&lt;ul&gt;&lt;li&gt;%2&lt;/li&gt;&lt;/ul&gt;All files and folders in these folders will be removed as well!
@@ -3854,7 +3995,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Remove selected folders</source>
-<translation type="unfinished">Remove selected folders</translation>
+<translation>Eliminar carpetas seleccionadas</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected folder(s)?&lt;ul&gt;&lt;li&gt;%1&lt;/li&gt;&lt;/ul&gt;All files and folders in these folders will be removed as well!</source>
@@ -3865,7 +4006,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Remove selected notes</source>
-<translation type="unfinished">Remove selected notes</translation>
+<translation>Eliminar notas seleccionadas</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected note(s)?
@@ -3882,58 +4023,58 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Removed note subfolder: %1</source>
-<translation type="unfinished">Removed note subfolder: %1</translation>
+<translation>Subcarpeta de notas eliminada: %1</translation>
 </message>
 <message>
 <source>Move selected notes</source>
-<translation type="unfinished">Move selected notes</translation>
+<translation>Mover notas seleccionadas</translation>
 </message>
 <message numerus="yes">
 <source>Move %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</source>
-<translation type="unfinished">
-<numerusform>Move %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
-<numerusform>Move %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<translation>
+<numerusform>¿Mover %n notas seleccionada a &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<numerusform>¿Mover %n notas seleccionadas a &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
 </translation>
 </message>
 <message>
 <source>Copy selected notes</source>
-<translation type="unfinished">Copy selected notes</translation>
+<translation>Copiar notas seleccionadas</translation>
 </message>
 <message numerus="yes">
 <source>Copy %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</source>
-<translation type="unfinished">
-<numerusform>Copy %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
-<numerusform>Copy %n selected note(s) to &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<translation>
+<numerusform>¿Copiar %n nota seleccionada a &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<numerusform>¿Copiar %n notas seleccionadas a &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
 </translation>
 </message>
 <message>
 <source>Done</source>
-<translation type="unfinished">Done</translation>
+<translation>Hecho</translation>
 </message>
 <message numerus="yes">
 <source>%n note(s) were copied to &lt;strong&gt;%2&lt;/strong&gt;.</source>
-<translation type="unfinished">
-<numerusform>%n note(s) were copied to &lt;strong&gt;%2&lt;/strong&gt;.</numerusform>
-<numerusform>%n note(s) were copied to &lt;strong&gt;%2&lt;/strong&gt;.</numerusform>
+<translation>
+<numerusform>%n nota copiada a &lt;strong&gt;%2&lt;/strong&gt;.</numerusform>
+<numerusform>%n notas copiadas a &lt;strong&gt;%2&lt;/strong&gt;.</numerusform>
 </translation>
 </message>
 <message>
 <source>Note</source>
 <comment>name for new note</comment>
-<translation type="unfinished">Note</translation>
+<translation>Nota</translation>
 </message>
 <message numerus="yes">
 <source>Move %n selected note(s) to note subfolder &lt;strong&gt;%2&lt;/strong&gt;?</source>
-<translation type="unfinished">
-<numerusform>Move %n selected note(s) to note subfolder &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
-<numerusform>Move %n selected note(s) to note subfolder &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<translation>
+<numerusform>¿Mover %n nota seleccionada a la subcarpeta de notas &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
+<numerusform>¿Mover %n notas seleccionadas a la subcarpeta de notas &lt;strong&gt;%2&lt;/strong&gt;?</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>%n note(s) were moved to note subfolder "%2"</source>
-<translation type="unfinished">
-<numerusform>%n note(s) were moved to note subfolder "%2"</numerusform>
-<numerusform>%n note(s) were moved to note subfolder "%2"</numerusform>
+<translation>
+<numerusform>%n nota movida a la subcarpeta de notas "%2"</numerusform>
+<numerusform>%n notas movidas a la subcarpeta de notas "%2"</numerusform>
 </translation>
 </message>
 <message numerus="yes">
@@ -3945,42 +4086,42 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message numerus="yes">
 <source>%n note(s) were copied to note subfolder "%2"</source>
-<translation type="unfinished">
-<numerusform>%n note(s) were copied to note subfolder "%2"</numerusform>
-<numerusform>%n note(s) were copied to note subfolder "%2"</numerusform>
+<translation>
+<numerusform>%n nota copiada a la subcarpeta de notas "%2"</numerusform>
+<numerusform>%n nota copiadas a la subcarpeta de notas "%2"</numerusform>
 </translation>
 </message>
 <message>
 <source>Copy to note folder</source>
-<translation type="unfinished">Copy to note folder</translation>
+<translation>Copiar a carpeta de notas</translation>
 </message>
 <message>
 <source>Move to note folder</source>
-<translation type="unfinished">Move to note folder</translation>
+<translation>Mover a carpeta de notas</translation>
 </message>
 <message>
 <source>Copy to this subfolder</source>
-<translation type="unfinished">Copy to this subfolder</translation>
+<translation>Copiar a esta subcarpeta</translation>
 </message>
 <message>
 <source>Move to this subfolder</source>
-<translation type="unfinished">Move to this subfolder</translation>
+<translation>Mover a esta subcarpeta</translation>
 </message>
 <message>
 <source>Split note</source>
-<translation type="unfinished">Split note</translation>
+<translation>Dividir nota</translation>
 </message>
 <message>
 <source>Split note at current cursor position? The text after the cursor will be moved to a new note. The new note will be linked to the old note.</source>
-<translation type="unfinished">Split note at current cursor position? The text after the cursor will be moved to a new note. The new note will be linked to the old note.</translation>
+<translation>¿Dividir la nota en la posición actual del cursor? El texto después del cursor se moverá a una nueva nota. Esta nueva nota se enlazará a la anterior.</translation>
 </message>
 <message>
 <source>New note</source>
-<translation type="unfinished">New note</translation>
+<translation>Nueva nota</translation>
 </message>
 <message>
 <source>Note headline</source>
-<translation type="unfinished">Note headline</translation>
+<translation>Título de la nota</translation>
 </message>
 </context>
 <context>
@@ -4047,11 +4188,11 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Move selected folders to...</source>
-<translation type="unfinished">Move selected folders to...</translation>
+<translation>Mover carpetas seleccionadas a...</translation>
 </message>
 <message>
 <source>Move to note folder</source>
-<translation type="unfinished">Move to note folder</translation>
+<translation>Mover a carpetas de notas</translation>
 </message>
 <message>
 <source>Show folder in file manager</source>
@@ -4059,7 +4200,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Move to this subfolder</source>
-<translation type="unfinished">Move to this subfolder</translation>
+<translation>Mover a esta subcarpeta</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected folder(s)?&lt;ul&gt;&lt;li&gt;%1&lt;/li&gt;&lt;/ul&gt;All files and folders in these folders will be removed as well!</source>
@@ -4074,11 +4215,11 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>note folder</source>
-<translation type="unfinished">note folder</translation>
+<translation>carpeta de notas</translation>
 </message>
 <message>
 <source>Move selected folders</source>
-<translation type="unfinished">Move selected folders</translation>
+<translation>Mover las carpetas seleccionadas</translation>
 </message>
 <message numerus="yes">
 <source>Move &lt;strong&gt;%n&lt;/strong&gt; selected folder(s) to &lt;strong&gt;%1&lt;/strong&gt;?</source>
@@ -4089,11 +4230,11 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Migrate relative links</source>
-<translation type="unfinished">Migrate relative links</translation>
+<translation>Migrar enlaces relativos</translation>
 </message>
 <message>
 <source>Do you want to migrate relative note links, media file links and attachment links for moved notes?&lt;br /&gt;&lt;br /&gt;If you choose &lt;strong&gt;No&lt;/strong&gt;, those relative links may break after moving the folders.</source>
-<translation type="unfinished">Do you want to migrate relative note links, media file links and attachment links for moved notes?&lt;br /&gt;&lt;br /&gt;If you choose &lt;strong&gt;No&lt;/strong&gt;, those relative links may break after moving the folders.</translation>
+<translation>¿Desea migrar los enlaces relativos a las notas, los enlaces a los archivos multimedia y los enlaces a los archivos adjuntos de las notas que se han movido?&lt;br /&gt;&lt;br/&gt;Si selecciona &lt;strong&gt;No&lt;/strong&gt;, es posible que esos enlaces relativos dejen de funcionar tras mover las carpetas.</translation>
 </message>
 <message numerus="yes">
 <source>Moved &lt;strong&gt;%n&lt;/strong&gt; note subfolder(s) to &lt;strong&gt;%1&lt;/strong&gt;</source>
@@ -4107,138 +4248,138 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <name>NoteTabManager</name>
 <message>
 <source>Toggle note stickiness</source>
-<translation type="unfinished">Toggle note stickiness</translation>
+<translation>Alternar adhesividad de notas</translation>
 </message>
 <message>
 <source>Close other note tabs</source>
-<translation type="unfinished">Close other note tabs</translation>
+<translation>Cerrar las otras pestañas de notas</translation>
 </message>
 <message>
 <source>Close note tab</source>
-<translation type="unfinished">Close note tab</translation>
+<translation>Cerrar pestaña de nota</translation>
 </message>
 </context>
 <context>
 <name>NoteTreeManager</name>
 <message>
 <source>New note</source>
-<translation type="unfinished">New note</translation>
+<translation>Nueva nota</translation>
 </message>
 <message>
 <source>Rename note</source>
-<translation type="unfinished">Rename note</translation>
+<translation>Renombrar nota</translation>
 </message>
 <message>
 <source>Allows you to rename the filename of the note</source>
-<translation type="unfinished">Allows you to rename the filename of the note</translation>
+<translation>Permite renombrar el nombre del archivo de la nota</translation>
 </message>
 <message>
 <source>&amp;Remove notes and folders</source>
-<translation type="unfinished">&amp;Remove notes and folders</translation>
+<translation>Elimina&amp;r notas y carpetas</translation>
 </message>
 <message>
 <source>&amp;Remove folders</source>
-<translation type="unfinished">&amp;Remove folders</translation>
+<translation>Elimina&amp;r ca&amp;rpetas</translation>
 </message>
 <message>
 <source>&amp;Remove notes</source>
-<translation type="unfinished">&amp;Remove notes</translation>
+<translation>Elimina&amp;r notas</translation>
 </message>
 <message>
 <source>&amp;Move notes to…</source>
-<translation type="unfinished">&amp;Move notes to…</translation>
+<translation>&amp;Mover notas a…</translation>
 </message>
 <message>
 <source>&amp;Copy notes to…</source>
-<translation type="unfinished">&amp;Copy notes to…</translation>
+<translation>&amp;Copiar notas a…</translation>
 </message>
 <message>
 <source>Jump to the note's subfolder</source>
-<translation type="unfinished">Jump to the note's subfolder</translation>
+<translation>Ir a la subcarpeta de la nota</translation>
 </message>
 <message>
 <source>Move notes to subfolder…</source>
-<translation type="unfinished">Move notes to subfolder…</translation>
+<translation>Mover notas a subcarpeta…</translation>
 </message>
 <message>
 <source>Copy notes to subfolder…</source>
-<translation type="unfinished">Copy notes to subfolder…</translation>
+<translation>Copiar notas a subcarpeta…</translation>
 </message>
 <message>
 <source>&amp;Tag selected notes with…</source>
-<translation type="unfinished">&amp;Tag selected notes with…</translation>
+<translation>E&amp;tiquetar notas seleccionadas con…</translation>
 </message>
 <message>
 <source>&amp;Remove tag from selected notes…</source>
-<translation type="unfinished">&amp;Remove tag from selected notes…</translation>
+<translation>Elimina&amp;r etiqueta de las notas seleccionadas…</translation>
 </message>
 <message>
 <source>Open selected notes in tabs</source>
-<translation type="unfinished">Open selected notes in tabs</translation>
+<translation>Abrir notas seleccionadas en pestañas</translation>
 </message>
 <message>
 <source>Open note in external editor</source>
-<translation type="unfinished">Open note in external editor</translation>
+<translation>Abrir nota en editor externo</translation>
 </message>
 <message>
 <source>Open note in different window</source>
-<translation type="unfinished">Open note in different window</translation>
+<translation>Abrir nota en una nueva ventana</translation>
 </message>
 <message>
 <source>Open note in Nextcloud Files</source>
-<translation type="unfinished">Open note in Nextcloud Files</translation>
+<translation>Abrir nota en Nextcloud Files</translation>
 </message>
 <message>
 <source>Open note in Nextcloud Notes</source>
-<translation type="unfinished">Open note in Nextcloud Notes</translation>
+<translation>Abrir nota en Nextcloud Notes</translation>
 </message>
 <message>
 <source>Show note in file manager</source>
-<translation type="unfinished">Show note in file manager</translation>
+<translation>Mostrar nota en administrador de archivos</translation>
 </message>
 <message>
 <source>Copy absolute path of note</source>
-<translation type="unfinished">Copy absolute path of note</translation>
+<translation>Copiar ruta absoluta de nota</translation>
 </message>
 <message>
 <source>Copy note filename</source>
-<translation type="unfinished">Copy note filename</translation>
+<translation>Copiar nombre de archivo de la nota</translation>
 </message>
 <message>
 <source>Show note git versions</source>
-<translation type="unfinished">Show note git versions</translation>
+<translation>Mostrar versiones git de las notas</translation>
 </message>
 <message>
 <source>Unmark as favorite</source>
-<translation type="unfinished">Unmark as favorite</translation>
+<translation>Desmarcar como favorita</translation>
 </message>
 <message>
 <source>Mark as favorite</source>
-<translation type="unfinished">Mark as favorite</translation>
+<translation>Marcar como favorita</translation>
 </message>
 <message>
 <source>Select &amp;all notes</source>
-<translation type="unfinished">Select &amp;all notes</translation>
+<translation>Seleccionar todas las notas</translation>
 </message>
 <message>
 <source>Name:</source>
-<translation type="unfinished">Name:</translation>
+<translation>Nombre:</translation>
 </message>
 <message>
 <source>Note renaming not enabled!</source>
-<translation type="unfinished">Note renaming not enabled!</translation>
+<translation>¡No se ha activado el renombrado de notas!</translation>
 </message>
 <message>
 <source>If you want to rename your note you have to enable the option to allow the note filename to be different from the headline.</source>
-<translation type="unfinished">If you want to rename your note you have to enable the option to allow the note filename to be different from the headline.</translation>
+<translation>Si desea renombrar su nota, debe activar la opción para permitir que el nombre de archivo de la nota sea diferente del título.</translation>
 </message>
 <message>
 <source>Open &amp;settings</source>
-<translation type="unfinished">Open &amp;settings</translation>
+<translation>Abrir configuración (&amp;S)</translation>
 </message>
 <message>
 <source>&amp;Cancel</source>
-<translation type="unfinished">&amp;Cancel</translation>
+<translation>&amp;Cancelar</translation>
 </message>
 </context>
 <context>
@@ -4513,6 +4654,17 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 </translation>
 </message>
 <message>
+<source>Subfolder path changed</source>
+<translation type="unfinished">Subfolder path changed</translation>
+</message>
+<message numerus="yes">
+<source>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</source>
+<translation type="unfinished">
+<numerusform>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</numerusform>
+<numerusform>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</numerusform>
+</translation>
+</message>
+<message>
 <source>Image file exists</source>
 <translation>El archivo de imagen existe</translation>
 </message>
@@ -4648,7 +4800,7 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <source>%n note(s) are using this attachment. Would you also like to rename those attachments in the note(s)?</source>
 <translation>
 <numerusform>%n nota está usando este adjunto. ¿Desea renombrar también esos adjuntos en la nota?</numerusform>
-<numerusform>%n notas están usando este adjunto. ¿Desea renombrar también esos adjuntos en las notas?</numerusform>
+<numerusform>%n notas están usando este archivo adjunto. ¿Desea renombrar también esos archivos adjuntos en las notas?</numerusform>
 </translation>
 </message>
 <message numerus="yes">
@@ -4677,6 +4829,14 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <message>
 <source>You are using the single app instance mode, that prevents the application be be started a second time. For the next launch of the application the single app instance mode will be disabled, so that the application can be restarted before quitting this instance.</source>
 <translation>Está utilizando el modo de instancia de aplicación única, que evita que la aplicación se inicie por segunda vez. Para el próximo lanzamiento de la aplicación, el modo de instancia de aplicación única estará deshabilitado, de modo que la aplicación pueda reiniciarse antes de salir de esta instancia.</translation>
+</message>
+<message>
+<source>Note '%1' does not exist. Create it?</source>
+<translation>La nota "%1" no existe. ¿Desea crearla?</translation>
+</message>
+<message>
+<source>Note '%1' does not exist in '%2'. Create it?</source>
+<translation>La nota "%1" no existe en "%2". ¿Desea crearla?</translation>
 </message>
 <message>
 <source>Note was not found</source>
@@ -4716,11 +4876,19 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 </message>
 <message>
 <source>media file</source>
-<translation type="unfinished">media file</translation>
+<translation>archivo multimedia</translation>
 </message>
 <message>
 <source>attachment</source>
-<translation type="unfinished">attachment</translation>
+<translation>archivo adjunto</translation>
+</message>
+<message>
+<source>Light</source>
+<translation>Claro</translation>
+</message>
+<message>
+<source>Dark</source>
+<translation>Oscuro</translation>
 </message>
 </context>
 <context>
@@ -4763,6 +4931,38 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <translation>Insertar cita en blo&amp;que</translation>
 </message>
 <message>
+<source>List operations</source>
+<translation>Operaciones de lista</translation>
+</message>
+<message>
+<source>Toggle checkbox(es)</source>
+<translation>Alternar casillas de verificación</translation>
+</message>
+<message>
+<source>1. 2. 3. list</source>
+<translation type="unfinished">1. 2. 3. list</translation>
+</message>
+<message>
+<source>a. b. c. list</source>
+<translation type="unfinished">a. b. c. list</translation>
+</message>
+<message>
+<source>- list</source>
+<translation type="unfinished">- list</translation>
+</message>
+<message>
+<source>Create checkbox list</source>
+<translation type="unfinished">Create checkbox list</translation>
+</message>
+<message>
+<source>Clear list formatting</source>
+<translation type="unfinished">Clear list formatting</translation>
+</message>
+<message>
+<source>Order checkboxes</source>
+<translation type="unfinished">Order checkboxes</translation>
+</message>
+<message>
 <source>Copy code block</source>
 <translation>Copiar bloque de código</translation>
 </message>
@@ -4780,7 +4980,7 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 </message>
 <message>
 <source>Code actions</source>
-<translation type="unfinished">Code actions</translation>
+<translation>Acciones de código</translation>
 </message>
 <message>
 <source>Add table column left</source>
@@ -4844,19 +5044,23 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 </message>
 <message>
 <source>LanguageTool</source>
-<translation type="unfinished">LanguageTool</translation>
+<translation>LanguageTool</translation>
 </message>
 <message>
 <source>No suggestions</source>
-<translation type="unfinished">No suggestions</translation>
+<translation>Sin sugerencias</translation>
 </message>
 <message>
 <source>More info...</source>
-<translation type="unfinished">More info...</translation>
+<translation>Más información...</translation>
 </message>
 <message>
 <source>Ignore this rule</source>
-<translation type="unfinished">Ignore this rule</translation>
+<translation>Ignorar esta regla</translation>
+</message>
+<message>
+<source>Ignore word "%1"</source>
+<translation type="unfinished">Ignore word "%1"</translation>
 </message>
 <message>
 <source>Markdown LSP server connected</source>
@@ -4954,7 +5158,7 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 </message>
 <message>
 <source>Find in text</source>
-<translation type="unfinished">Find in text</translation>
+<translation>Buscar en el texto</translation>
 </message>
 <message>
 <source>Search forward</source>
@@ -5200,11 +5404,11 @@ Do you want to install it anyway?</source>
 </message>
 <message>
 <source>Stored current note to disk</source>
-<translation type="unfinished">Stored current note to disk</translation>
+<translation>Se guardó la nota actual en el disco</translation>
 </message>
 <message>
 <source>Current note could not be stored to disk</source>
-<translation type="unfinished">Current note could not be stored to disk</translation>
+<translation>No se pudo almacenar la nota actual en el disco</translation>
 </message>
 </context>
 <context>
@@ -5392,22 +5596,6 @@ Do you want to install it anyway?</source>
 <translation>Otro servidor CalDAV</translation>
 </message>
 <message>
-<source>Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</source>
-<translation>Sólo algunos colores se adaptarán, su tema de escritorio controlará el resto. Tendrá que reiniciar la aplicación para dejar que estos cambios tomen acción.</translation>
-</message>
-<message>
-<source>Optimize preview colors for dark mode desktop themes</source>
-<translation>Optimizar los colores de la previsualización para temas de escritorio oscuros</translation>
-</message>
-<message>
-<source>This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</source>
-<translation>Esto activa el modo oscuro, se modificará la interfaz y los iconos. Tendrá que reiniciar la aplicación para activar los cambios.</translation>
-</message>
-<message>
-<source>Enable dark mode</source>
-<translation>Habilitar modo oscuro</translation>
-</message>
-<message>
 <source>You need to restart the application to let this setting take effect</source>
 <translation>Debe reiniciar la aplicación para que este cambio se aplique</translation>
 </message>
@@ -5490,10 +5678,6 @@ Do you want to install it anyway?</source>
 <message>
 <source>Spanish</source>
 <translation>Español</translation>
-</message>
-<message>
-<source>Dark mode</source>
-<translation>Modo oscuro</translation>
 </message>
 <message>
 <source>Disable tracking of usage data</source>
@@ -5763,6 +5947,10 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 <translation>Nombre de la conexión:</translation>
 </message>
 <message>
+<source>Color modes</source>
+<translation>Modos de colores</translation>
+</message>
+<message>
 <source>Be aware that the ownCloud notes app doesn't support subfolders!</source>
 <translation>¡Ten en cuenta que la aplicación de notas de ownCloud no admite subcarpetas!</translation>
 </message>
@@ -5919,6 +6107,26 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 <translation>Punjabi</translation>
 </message>
 <message>
+<source>Ignored:</source>
+<translation type="unfinished">Ignored:</translation>
+</message>
+<message>
+<source>Reset all ignored LanguageTool rules so they are checked again</source>
+<translation type="unfinished">Reset all ignored LanguageTool rules so they are checked again</translation>
+</message>
+<message>
+<source>Reset ignored rules</source>
+<translation type="unfinished">Reset ignored rules</translation>
+</message>
+<message>
+<source>Reset all ignored words so they are checked by LanguageTool again</source>
+<translation type="unfinished">Reset all ignored words so they are checked by LanguageTool again</translation>
+</message>
+<message>
+<source>Reset ignored words</source>
+<translation type="unfinished">Reset ignored words</translation>
+</message>
+<message>
 <source>Persian</source>
 <translation>Persa</translation>
 </message>
@@ -5967,18 +6175,6 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 <translation>Chino Tradicional</translation>
 </message>
 <message>
-<source>Enable dark mode application icon and tray icon</source>
-<translation>Habilitar modo oscuro para icono de la aplicación e icono de la bandeja</translation>
-</message>
-<message>
-<source>You might also want to choose another editor color schema in the editor settings in dark mode.</source>
-<translation>Puede que también desee elegir otro esquema de colores del editor en la configuración del editor para el modo oscuro.</translation>
-</message>
-<message>
-<source>Enable dark mode icon theme</source>
-<translation>Habilitar tema de iconos en modo oscuro</translation>
-</message>
-<message>
 <source>System tray</source>
 <translation>Bandeja del sistema</translation>
 </message>
@@ -5993,10 +6189,6 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 <message>
 <source>Interface style</source>
 <translation>Estilo de la interfaz</translation>
-</message>
-<message>
-<source>Enforce system icon theme</source>
-<translation>Forzar el tema de iconos de sistema</translation>
 </message>
 <message>
 <source>Override interface font size</source>
@@ -6243,6 +6435,18 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 <translation>Abrir la última nota visitada al inicio de la aplicación</translation>
 </message>
 <message>
+<source>Read-only mode</source>
+<translation>Modo de solo lectura</translation>
+</message>
+<message>
+<source>Enable or disable the read-only mode feature</source>
+<translation type="unfinished">Enable or disable the read-only mode feature</translation>
+</message>
+<message>
+<source>Enable read-only mode</source>
+<translation>Habilitar modo de solo lectura</translation>
+</message>
+<message>
 <source>Start application in read-only mode</source>
 <translation>Iniciar aplicación en modo de solo lectura</translation>
 </message>
@@ -6260,7 +6464,7 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 </message>
 <message>
 <source>Search scripts</source>
-<translation type="unfinished">Search scripts</translation>
+<translation>Buscar scripts</translation>
 </message>
 <message>
 <source>When inactive, enter read-only mode automatically after:</source>
@@ -6369,63 +6573,63 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 </message>
 <message>
 <source>Optional arguments</source>
-<translation type="unfinished">Optional arguments</translation>
+<translation>Argumentos opcionales</translation>
 </message>
 <message>
 <source>LanguageTool</source>
-<translation type="unfinished">LanguageTool</translation>
+<translation>LanguageTool</translation>
 </message>
 <message>
 <source>Enable grammar and style checking with LanguageTool</source>
-<translation type="unfinished">Enable grammar and style checking with LanguageTool</translation>
+<translation>Habilitar revisión gramatical y de estilo con LanguageTool</translation>
 </message>
 <message>
 <source>Test Connection</source>
-<translation type="unfinished">Test Connection</translation>
+<translation>Probar conexión</translation>
 </message>
 <message>
 <source>Language:</source>
-<translation type="unfinished">Language:</translation>
+<translation>Idioma:</translation>
 </message>
 <message>
 <source>API key:</source>
-<translation type="unfinished">API key:</translation>
+<translation>Clave de API:</translation>
 </message>
 <message>
 <source>Optional premium or cloud API key</source>
-<translation type="unfinished">Optional premium or cloud API key</translation>
+<translation>Clave de API prémium o de la nube (opcional)</translation>
 </message>
 <message>
 <source>Check delay:</source>
-<translation type="unfinished">Check delay:</translation>
+<translation>Verificar retardo:</translation>
 </message>
 <message>
 <source> ms</source>
-<translation type="unfinished"> ms</translation>
+<translation> ms</translation>
 </message>
 <message>
 <source>Categories:</source>
-<translation type="unfinished">Categories:</translation>
+<translation>Categorías:</translation>
 </message>
 <message>
 <source>Spelling</source>
-<translation type="unfinished">Spelling</translation>
+<translation>Ortografía</translation>
 </message>
 <message>
 <source>Grammar</source>
-<translation type="unfinished">Grammar</translation>
+<translation>Gramática</translation>
 </message>
 <message>
 <source>Style</source>
-<translation type="unfinished">Style</translation>
+<translation>Estilo</translation>
 </message>
 <message>
 <source>Punctuation</source>
-<translation type="unfinished">Punctuation</translation>
+<translation>Puntuación</translation>
 </message>
 <message>
 <source>Typography</source>
-<translation type="unfinished">Typography</translation>
+<translation>Tipografía</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -6602,6 +6806,10 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 <translation>Usar suma de verificación para detectar modificaciones externas en notas sin guardar</translation>
 </message>
 <message>
+<source>Enable wiki-style link support [[note name]]</source>
+<translation type="unfinished">Enable wiki-style link support [[note name]]</translation>
+</message>
+<message>
 <source>Select the path of the git binary</source>
 <translation>Seleccione la ruta al binario de Git</translation>
 </message>
@@ -6667,11 +6875,11 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 </message>
 <message>
 <source>Suggestion API port:</source>
-<translation type="unfinished">Suggestion API port:</translation>
+<translation>Puerto de API de sugerencias:</translation>
 </message>
 <message>
 <source>Reset the suggestion API port</source>
-<translation type="unfinished">Reset the suggestion API port</translation>
+<translation>Restablecer el puerto de la API de sugerencias</translation>
 </message>
 <message>
 <source>If this is empty when saved, a new security token will be generated automatically.</source>
@@ -7207,10 +7415,6 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 <translation>&amp;Recargar lista de calendario</translation>
 </message>
 <message>
-<source>You may need to restart the application to let these changes take effect</source>
-<translation>Puede que necesite reiniciar la aplicación para que estos cambios se apliquen</translation>
-</message>
-<message>
 <source>Toolbar icon size:</source>
 <translation>Tamaño de icono de la barra de herramientas:</translation>
 </message>
@@ -7245,10 +7449,6 @@ Se debe probar y si hay conflictos de sincronización establecer un valor más a
 <message>
 <source>Icons</source>
 <translation>Iconos</translation>
-</message>
-<message>
-<source>Use internal icon theme instead of system icon theme</source>
-<translation>Usar tema de iconos interno en lugar del de sistema</translation>
 </message>
 <message>
 <source>Script path:</source>
@@ -7372,6 +7572,36 @@ Mensaje de error de conexión: </translation>
 <message>
 <source>LanguageTool connection failed: %1</source>
 <translation type="unfinished">LanguageTool connection failed: %1</translation>
+</message>
+<message>
+<source>There are no ignored rules to reset.</source>
+<translation type="unfinished">There are no ignored rules to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored rule(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored rules have been reset.</source>
+<translation type="unfinished">All ignored rules have been reset.</translation>
+</message>
+<message>
+<source>There are no ignored words to reset.</source>
+<translation type="unfinished">There are no ignored words to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored word(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored word(s)?</numerusform>
+<numerusform>Reset %n ignored word(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored words have been reset.</source>
+<translation type="unfinished">All ignored words have been reset.</translation>
 </message>
 <message>
 <source>The Database was reinitialized. Please restart the application now!</source>
@@ -7536,7 +7766,7 @@ Mensaje de error de conexión: </translation>
 </message>
 <message>
 <source>Auto-detect</source>
-<translation type="unfinished">Auto-detect</translation>
+<translation>Detectar automáticamente</translation>
 </message>
 <message>
 <source>Assign a new shortcut</source>
@@ -7849,7 +8079,7 @@ Your notes will stay intact!</source>
 <name>SpellCheckManager</name>
 <message>
 <source>Automatically detect</source>
-<translation type="unfinished">Automatically detect</translation>
+<translation>Detectar automáticamente</translation>
 </message>
 </context>
 <context>
@@ -8124,31 +8354,31 @@ Your notes will stay intact!</source>
 <name>SystemTrayManager</name>
 <message>
 <source>Open QOwnNotes</source>
-<translation type="unfinished">Open QOwnNotes</translation>
+<translation>Abrir QOwnNotes</translation>
 </message>
 <message>
 <source>Note folders</source>
-<translation type="unfinished">Note folders</translation>
+<translation>Carpetas de notas</translation>
 </message>
 <message>
 <source>New note</source>
-<translation type="unfinished">New note</translation>
+<translation>Nueva nota</translation>
 </message>
 <message>
 <source>Recent notes</source>
-<translation type="unfinished">Recent notes</translation>
+<translation>Notas recientes</translation>
 </message>
 <message>
 <source>Show todo lists</source>
-<translation type="unfinished">Show todo lists</translation>
+<translation>Mostrar listas de tareas pendientes</translation>
 </message>
 <message>
 <source>Recent tasks</source>
-<translation type="unfinished">Recent tasks</translation>
+<translation>Tareas recientes</translation>
 </message>
 <message>
 <source>Quit</source>
-<translation type="unfinished">Quit</translation>
+<translation>Cerrar</translation>
 </message>
 </context>
 <context>
@@ -8257,15 +8487,15 @@ Your notes will stay intact!</source>
 <name>TagManager</name>
 <message>
 <source>Show all notes (%1)</source>
-<translation type="unfinished">Show all notes (%1)</translation>
+<translation>Mostrar todas las notas (%1)</translation>
 </message>
 <message>
 <source>All notes</source>
-<translation type="unfinished">All notes</translation>
+<translation>Todas las notas</translation>
 </message>
 <message>
 <source>show all untagged notes (%1)</source>
-<translation type="unfinished">show all untagged notes (%1)</translation>
+<translation>mostrar todas las notas sin etiquetar (%1)</translation>
 </message>
 <message>
 <source>Untagged notes</source>
@@ -8277,11 +8507,11 @@ Your notes will stay intact!</source>
 </message>
 <message>
 <source>Add a tag to the current note</source>
-<translation type="unfinished">Add a tag to the current note</translation>
+<translation>Agregar una etiqueta a la nota actual</translation>
 </message>
 <message>
 <source>Add a tag to the selected notes</source>
-<translation type="unfinished">Add a tag to the selected notes</translation>
+<translation>Agregar una etiqueta a las notas seleccionadas</translation>
 </message>
 <message>
 <source>%1 and %2</source>
@@ -8303,18 +8533,18 @@ Your notes will stay intact!</source>
 </message>
 <message numerus="yes">
 <source>%n notes selected</source>
-<translation type="unfinished">
-<numerusform>%n notes selected</numerusform>
-<numerusform>%n notes selected</numerusform>
+<translation>
+<numerusform>%n nota seleccionada</numerusform>
+<numerusform>%n notas seleccionadas</numerusform>
 </translation>
 </message>
 <message>
 <source>Remove tag '%1' from the current note</source>
-<translation type="unfinished">Remove tag '%1' from the current note</translation>
+<translation>Eliminar la etiqueta "%1" de la nota actual</translation>
 </message>
 <message>
 <source>Remove tag '%1' from the selected notes</source>
-<translation type="unfinished">Remove tag '%1' from the selected notes</translation>
+<translation>Eliminar la etiqueta "%1" de las notas seleccionadas</translation>
 </message>
 <message>
 <source>&amp;Add tag</source>
@@ -8378,14 +8608,14 @@ Your notes will stay intact!</source>
 </message>
 <message numerus="yes">
 <source>%n note(s) were tagged with "%2"</source>
-<translation type="unfinished">
-<numerusform>%n note(s) were tagged with "%2"</numerusform>
-<numerusform>%n note(s) were tagged with "%2"</numerusform>
+<translation>
+<numerusform>%n nota etiquetada con "%2"</numerusform>
+<numerusform>%n notas etiquetadas con "%2"</numerusform>
 </translation>
 </message>
 <message>
 <source>Remove tag from selected notes</source>
-<translation type="unfinished">Remove tag from selected notes</translation>
+<translation>Eliminar etiqueta de las notas seleccionadas</translation>
 </message>
 <message numerus="yes">
 <source>Remove tag &lt;strong&gt;%1&lt;/strong&gt; from %n selected note(s)?</source>
@@ -8407,7 +8637,7 @@ Your notes will stay intact!</source>
 </message>
 <message>
 <source>Remove selected tags</source>
-<translation type="unfinished">Remove selected tags</translation>
+<translation>Eliminar etiquetas seleccionadas</translation>
 </message>
 <message numerus="yes">
 <source>Remove &lt;strong&gt;%n&lt;/strong&gt; selected tag(s)? No notes will be removed in this process.</source>
@@ -9002,7 +9232,7 @@ This cannot be undone!</source>
 </message>
 <message>
 <source>Please check if the port is already in use.</source>
-<translation type="unfinished">Please check if the port is already in use.</translation>
+<translation>Por favor compruebe si el puerto ya está en uso.</translation>
 </message>
 <message>
 <source>Bookmark suggestion API listening on port %1</source>
@@ -9165,6 +9395,61 @@ This cannot be undone!</source>
 </message>
 </context>
 <context>
+<name>WorkspaceDialog</name>
+<message>
+<source>Manage workspaces</source>
+<translation>Administrar espacios de trabajo</translation>
+</message>
+<message>
+<source>Add workspace</source>
+<translation>Añadir espacio de trabajo</translation>
+</message>
+<message>
+<source>Add</source>
+<translation>Añadir</translation>
+</message>
+<message>
+<source>Remove workspace</source>
+<translation>Eliminar espacio de trabajo</translation>
+</message>
+<message>
+<source>Remove</source>
+<translation>Eliminar</translation>
+</message>
+<message>
+<source>Rename workspace</source>
+<translation>Renombrar espacio de trabajo</translation>
+</message>
+<message>
+<source>Rename</source>
+<translation>Renombrar</translation>
+</message>
+<message>
+<source>Move workspace up</source>
+<translation>Mover espacio de trabajo hacia arriba</translation>
+</message>
+<message>
+<source>Move up</source>
+<translation>Mover hacia arriba</translation>
+</message>
+<message>
+<source>Move workspace down</source>
+<translation>Mover espacio de trabajo hacia abajo</translation>
+</message>
+<message>
+<source>Move down</source>
+<translation>Mover hacia abajo</translation>
+</message>
+<message>
+<source>Workspace name:</source>
+<translation>Nombre del espacio de trabajo:</translation>
+</message>
+<message>
+<source>Remove the selected workspace?</source>
+<translation>¿Eliminar el espacio de trabajo seleccionado?</translation>
+</message>
+</context>
+<context>
 <name>WorkspaceManager</name>
 <message>
 <source>Workspaces</source>
@@ -9173,32 +9458,32 @@ This cannot be undone!</source>
 <message>
 <source>full</source>
 <comment>full workspace</comment>
-<translation type="unfinished">full</translation>
+<translation>completo</translation>
 </message>
 <message>
 <source>minimal</source>
 <comment>minimal workspace</comment>
-<translation type="unfinished">minimal</translation>
+<translation>mínimo</translation>
 </message>
 <message>
 <source>Create new workspace</source>
-<translation type="unfinished">Create new workspace</translation>
+<translation>Crear nuevo espacio de trabajo</translation>
 </message>
 <message>
 <source>Workspace name:</source>
-<translation type="unfinished">Workspace name:</translation>
+<translation>Nombre del espacio de trabajo:</translation>
 </message>
 <message>
 <source>Remove current workspace</source>
-<translation type="unfinished">Remove current workspace</translation>
+<translation>Eliminar espacio de trabajo actual</translation>
 </message>
 <message>
 <source>Remove the current workspace?</source>
-<translation type="unfinished">Remove the current workspace?</translation>
+<translation>¿Eliminar el espacio de trabajo actual?</translation>
 </message>
 <message>
 <source>Rename workspace</source>
-<translation type="unfinished">Rename workspace</translation>
+<translation>Renombrar espacio de trabajo</translation>
 </message>
 </context>
 <context>

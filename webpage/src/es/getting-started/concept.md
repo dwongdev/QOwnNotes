@@ -78,22 +78,22 @@ The same bookmark parsing and indexing can also power a local suggestion API for
 Las extensiones del navegador funcionan **fuera de línea**. No se requiere de una conexión a Internet. Por favor visite la [ extensión del navegador QOwnNotes Web Companion](browser-extension.md) para mayor información.
 :::
 
-## Homepage dashboard
+## Panel de control de Homepage
 
 QOwnNotes can expose a local HTTP endpoint for [Homepage](https://github.com/gethomepage/homepage) `suggestionUrl` support, backed by the same bookmark parsing and indexing used by the Web Companion data source.
 
 - Enable it in `Settings -> Browser extension / command snippets`
 - Turn on `Enable socket server`
 - In `Bookmark suggestion API`, enable `Enable Homepage-compatible bookmark suggestions API`
-- Set a port for the local endpoint
+- Establece un puerto para el endpoint local
 - Optionally set a security token if you want Homepage requests to authenticate
-- The service binds to `127.0.0.1` only
+- El servicio solo se conecta a `127.0.0.1`
 
-The endpoint is available as `GET /suggest?q=home` and supports an optional `limit` parameter (default `10`, maximum `50`) and an optional `token` parameter.
+El endpoint está disponible como `GET /suggest?q=home` y admite un parámetro opcional `limit` (valor predeterminado `10`, máximo `50`) y un parámetro opcional `token`.
 
 If you use the custom Homepage assets from `docs/homepage/custom.js`, set `QON_TOKEN` to the same security token configured in QOwnNotes.
 
-Example Homepage configuration:
+Configuración de ejemplo de Homepage:
 
 ```yaml
 search:
@@ -115,17 +115,17 @@ Puede administrar sus **fragmentos de órdenes** con QOwnNotes y ejecutarlos en 
 Por favor visite el [gestor de fragmentos de órdenes de terminal de QOwnNotes](command-line-snippet-manager.md) para mayor información.
 :::
 
-## LanguageTool service
+## Servicio de LanguageTool
 
 QOwnNotes can use a local or remote [LanguageTool](https://languagetool.org/) server for **grammar and style checking** in the editor.
 
 - It is **optional** and works alongside the existing spell checker support
 - Enable it in `Settings -> Editor`, then configure your **server URL**, **language**, optional **API key**, and the categories you want to check
 - You can also toggle it quickly from the **Spelling** menu with `Check grammar with LanguageTool`
-- Suggestions and actions are available from the editor context menu for detected issues
+- En el menú contextual del editor se ofrecen sugerencias y acciones para los problemas detectados
 
 ::: tip
-Please visit [LanguageTool](../editor/languagetool.md) for more information.
+Por favor visite [LanguageTool](../editor/languagetool.md) para más información.
 :::
 
 ## Cliente de sincronización de escritorio de Nextcloud

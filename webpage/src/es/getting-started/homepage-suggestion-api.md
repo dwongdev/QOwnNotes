@@ -1,15 +1,15 @@
-# Homepage suggestion API
+# API de sugerencias para Homepage
 
 QOwnNotes can expose a local HTTP endpoint for [Homepage](https://github.com/gethomepage/homepage) `suggestionUrl` support,
 backed by the same bookmark parsing/indexing used by the Web Companion data source.
 
-## Enable in QOwnNotes
+## Habilitar en QOwnNotes
 
 1. Open `Settings -> Browser extension / command snippets`.
 2. Enable `Enable socket server`.
 3. In `Bookmark suggestion API`, enable `Enable Homepage-compatible bookmark suggestions API` and set a port.
 
-The service binds to `127.0.0.1` only.
+El servicio solo se conecta a `127.0.0.1`.
 
 ## Endpoint
 
@@ -21,13 +21,13 @@ If you use the custom Homepage assets from `docs/homepage/custom.js`, set `QON_T
 security token you configured in QOwnNotes. The script will then append `&token=...` when requesting
 suggestions.
 
-Example response:
+Respuesta de ejemplo:
 
 ```json
 ["home", ["Homepage", "https://example.com/home", "Some Home Link"]]
 ```
 
-## Homepage config example
+## Ejemplo de configuración de Homepage
 
 ```yaml
 search:
@@ -40,9 +40,9 @@ search:
 If you protect the endpoint with a security token and use `custom.js`, keep `suggestionUrl` unchanged
 and set `QON_TOKEN` inside `custom.js` instead.
 
-## Which Homepage file to edit
+## Qué archivo de Homepage editar
 
-In a standard Homepage installation, add the `search` block in one of these files:
+En una instalación estándar de Homepage, añada el bloque «search» en uno de estos archivos:
 
 - `settings.yaml` (global Homepage settings)
 - `settings.yml` (same as above, depending on your setup)
@@ -50,7 +50,7 @@ In a standard Homepage installation, add the `search` block in one of these file
 
 If your Homepage deployment splits configuration across multiple files, edit the file that already contains your `search` provider settings.
 
-## Custom Homepage assets
+## Recursos para Homepage personalizado
 
 This repository also contains a ready-to-use Homepage customization example in:
 

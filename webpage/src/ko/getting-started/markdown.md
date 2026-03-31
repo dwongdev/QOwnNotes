@@ -179,6 +179,25 @@ http://www.example.com 또는 &lt;http://www.example.com&gt;
 <pre><code class="markdown">![alt text](media/my-image.jpg)
 </code></pre>
 
+<h3 spaces-before="0">
+  이미지 치수
+</h3>
+
+<p spaces-before="0">
+  닫힘 괄호 바로 뒤에 컬리 브레이스 속성 구문을 사용하여 이미지의 <code> 너비</code> 및/또는 <code> 높이</code>을 선택적으로 지정할 수 있습니다:
+</p>
+
+<pre><code class="markdown">![alt text](media/my-image.jpg){ width=300 }
+
+![alt text](media/my-image.jpg){ height=200 }
+
+![alt text](media/my-image.jpg){ width=300 height=200 }
+</code></pre>
+
+<p spaces-before="0">
+  치수 속성은 편집기에서 마스킹된 (회색 처리된) 구문으로 표시되며, 자동 이미지 너비 크기보다 우선시되는 미리보기에 적용됩니다.
+</p>
+
 <p spaces-before="0">
   ::: 팁 [단축키](./shortcuts.md) <kbd>Ctrl + Shift + I</kbd> 를 사용하여 노트에 이미지를 삽입할 수 있습니다. 이미지가 클립보드에 있을 수도 있으며 대화상자가 이미지를 감지하고 미리보기를 표시합니다.
 </p>
