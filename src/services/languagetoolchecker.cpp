@@ -8,6 +8,7 @@
 #include <QTextBlock>
 #include <QTimer>
 
+#include "helpers/qownspellchecker.h"
 #include "libraries/qmarkdowntextedit/markdownhighlighter.h"
 #include "mainwindow.h"
 #include "services/languagetoolclient.h"
@@ -215,6 +216,12 @@ LanguageToolChecker::BlockMatch LanguageToolChecker::matchAtPosition(const QText
     for (const BlockMatch &blockMatch : matches) {
         if (blockMatch.match.containsPosition(positionInBlock) &&
             !isRuleIgnored(blockMatch.match.ruleId)) {
+            // Also check if the matched word is in the ignored words list
+            const QString matchedText =
+                block.text().mid(blockMatch.match.offset, blockMatch.match.length);
+            if (isWordIgnored(matchedText)) {
+                continue;
+            }
             return blockMatch;
         }
     }
@@ -235,7 +242,11 @@ bool LanguageToolChecker::hasTypoMatchCovering(int blockNumber, int start, int l
         const int matchStart = blockMatch.match.offset;
         const int matchEnd = matchStart + blockMatch.match.length;
         if (matchStart < end && matchEnd > start && !isRuleIgnored(blockMatch.match.ruleId)) {
-            return true;
+            const QString matchedText =
+                blockText.mid(blockMatch.match.offset, blockMatch.match.length);
+            if (!isWordIgnored(matchedText)) {
+                return true;
+            }
         }
     }
 
@@ -248,12 +259,67 @@ void LanguageToolChecker::ignoreRule(const QString &ruleId) {
     }
 
     _ignoredRules.insert(ruleId);
-    Q_EMIT blockMatchesUpdated(QVector<int>::fromList(_cache.keys()));
+
+    // Persist ignored rules to settings
+    SettingsService settings;
+    settings.setValue(QStringLiteral("languageToolIgnoredRules"),
+                      QStringList(_ignoredRules.values()));
+
+    // Emit empty list to trigger a full rehighlight of the entire document
+    Q_EMIT blockMatchesUpdated(QVector<int>());
 }
 
 bool LanguageToolChecker::isRuleIgnored(const QString &ruleId) const {
     return _ignoredRules.contains(ruleId);
 }
+
+void LanguageToolChecker::clearIgnoredRules() {
+    _ignoredRules.clear();
+
+    SettingsService settings;
+    settings.setValue(QStringLiteral("languageToolIgnoredRules"), QStringList());
+
+    Q_EMIT blockMatchesUpdated(QVector<int>());
+}
+
+QSet<QString> LanguageToolChecker::ignoredRules() const { return _ignoredRules; }
+
+void LanguageToolChecker::ignoreWord(const QString &word) {
+    if (word.isEmpty()) {
+        return;
+    }
+
+    _ignoredWords.insert(word.toLower());
+
+    // Also tell the regular spell checker to ignore this word
+    auto *spellChecker = QOwnSpellChecker::instance();
+    if (spellChecker != nullptr) {
+        spellChecker->addWordToDictionary(word);
+    }
+
+    // Persist ignored words to settings
+    SettingsService settings;
+    settings.setValue(QStringLiteral("languageToolIgnoredWords"),
+                      QStringList(_ignoredWords.values()));
+
+    // Emit empty list to trigger a full rehighlight of the entire document
+    Q_EMIT blockMatchesUpdated(QVector<int>());
+}
+
+bool LanguageToolChecker::isWordIgnored(const QString &word) const {
+    return _ignoredWords.contains(word.toLower());
+}
+
+void LanguageToolChecker::clearIgnoredWords() {
+    _ignoredWords.clear();
+
+    SettingsService settings;
+    settings.setValue(QStringLiteral("languageToolIgnoredWords"), QStringList());
+
+    Q_EMIT blockMatchesUpdated(QVector<int>());
+}
+
+QSet<QString> LanguageToolChecker::ignoredWords() const { return _ignoredWords; }
 
 QStringList LanguageToolChecker::enabledCategories() const { return _enabledCategories; }
 
@@ -287,6 +353,32 @@ void LanguageToolChecker::readSettings() {
             _disabledCategories.append(category);
         }
     }
+
+    // Load persisted ignored rules
+    const QStringList ignoredRulesList =
+        settings.value(QStringLiteral("languageToolIgnoredRules")).toStringList();
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    _ignoredRules = QSet<QString>(ignoredRulesList.begin(), ignoredRulesList.end());
+#else
+    _ignoredRules.clear();
+    for (const QString &ignoredRule : ignoredRulesList) {
+        _ignoredRules.insert(ignoredRule);
+    }
+#endif
+    _ignoredRules.remove(QString());
+
+    // Load persisted ignored words
+    const QStringList ignoredWordsList =
+        settings.value(QStringLiteral("languageToolIgnoredWords")).toStringList();
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    _ignoredWords = QSet<QString>(ignoredWordsList.begin(), ignoredWordsList.end());
+#else
+    _ignoredWords.clear();
+    for (const QString &ignoredWord : ignoredWordsList) {
+        _ignoredWords.insert(ignoredWord);
+    }
+#endif
+    _ignoredWords.remove(QString());
 
     _debounceTimer->setInterval(_checkDelayMs);
 }

@@ -2370,6 +2370,18 @@ void QOwnNotesMarkdownTextEdit::addLanguageToolMenuSection(QMenu *menu,
         }
     });
 
+    // Add "Ignore this word" option for typo/spelling matches
+    const QString matchedWord = replacementCursor.selectedText();
+    if (!matchedWord.isEmpty()) {
+        menu->addAction(tr("Ignore word \"%1\"").arg(matchedWord), this,
+                        [this, checker, matchedWord]() {
+                            checker->ignoreWord(matchedWord);
+                            if (highlighter()) {
+                                highlighter()->rehighlight();
+                            }
+                        });
+    }
+
     hasEntries = true;
 }
 

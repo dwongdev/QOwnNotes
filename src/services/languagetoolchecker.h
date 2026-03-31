@@ -43,6 +43,12 @@ class LanguageToolChecker : public QObject {
                               const QString &blockText) const;
     void ignoreRule(const QString &ruleId);
     bool isRuleIgnored(const QString &ruleId) const;
+    void clearIgnoredRules();
+    QSet<QString> ignoredRules() const;
+    void ignoreWord(const QString &word);
+    bool isWordIgnored(const QString &word) const;
+    void clearIgnoredWords();
+    QSet<QString> ignoredWords() const;
     QStringList enabledCategories() const;
 
    signals:
@@ -99,6 +105,7 @@ class LanguageToolChecker : public QObject {
     int _checkDelayMs = 1500;
     int _timeoutMs = 5000;
     QSet<QString> _ignoredRules;
+    QSet<QString> _ignoredWords;
     QHash<int, CachedBlockResult> _cache;
     QHash<int, PendingRequestContext> _pendingRequests;
 };

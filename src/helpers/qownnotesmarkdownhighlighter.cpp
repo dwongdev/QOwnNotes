@@ -324,6 +324,12 @@ void QOwnNotesMarkdownHighlighter::highlightLanguageTool(const QString &text) {
             continue;
         }
 
+        // Skip matches where the matched word is in the ignored words list
+        const QString matchedText = text.mid(blockMatch.match.offset, blockMatch.match.length);
+        if (checker->isWordIgnored(matchedText)) {
+            continue;
+        }
+
         if (blockMatch.match.length <= 0) {
             continue;
         }

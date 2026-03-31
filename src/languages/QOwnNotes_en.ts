@@ -2130,7 +2130,7 @@
 <context>
     <name>LanguageToolChecker</name>
     <message>
-        <location filename="../services/languagetoolchecker.cpp" line="376"/>
+        <location filename="../services/languagetoolchecker.cpp" line="454"/>
         <source>LanguageTool is unavailable: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4395,7 +4395,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
     </message>
     <message>
         <location filename="../dialogs/nextclouddeckdialog.ui" line="139"/>
-        <location filename="../dialogs/nextclouddeckdialog.cpp" line="339"/>
+        <location filename="../dialogs/nextclouddeckdialog.cpp" line="353"/>
         <source>Archive card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4406,7 +4406,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
     </message>
     <message>
         <location filename="../dialogs/nextclouddeckdialog.ui" line="153"/>
-        <location filename="../dialogs/nextclouddeckdialog.cpp" line="324"/>
+        <location filename="../dialogs/nextclouddeckdialog.cpp" line="338"/>
         <source>Delete card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4512,48 +4512,38 @@ If the trash is enabled on your ownCloud server you should be able to restore th
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/nextclouddeckdialog.cpp" line="214"/>
+        <location filename="../dialogs/nextclouddeckdialog.cpp" line="216"/>
         <source>No due date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/nextclouddeckdialog.cpp" line="325"/>
+        <location filename="../dialogs/nextclouddeckdialog.cpp" line="339"/>
         <source>Do you want to delete the current Nextcloud Deck card?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/nextclouddeckdialog.cpp" line="340"/>
+        <location filename="../dialogs/nextclouddeckdialog.cpp" line="354"/>
         <source>Do you want to archive the current Nextcloud Deck card?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/nextclouddeckdialog.cpp" line="373"/>
+        <location filename="../dialogs/nextclouddeckdialog.cpp" line="387"/>
         <source>&amp;Open card in browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/nextclouddeckdialog.cpp" line="376"/>
+        <location filename="../dialogs/nextclouddeckdialog.cpp" line="390"/>
         <source>&amp;Add card link to note</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/nextclouddeckdialog.cpp" line="379"/>
+        <location filename="../dialogs/nextclouddeckdialog.cpp" line="393"/>
         <source>&amp;Search for card link in notes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>NextcloudDeckService</name>
-    <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="145"/>
-        <source>updating</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="145"/>
-        <source>creating</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../services/nextclouddeckservice.cpp" line="147"/>
         <source>Error while updating card</source>
@@ -4575,52 +4565,52 @@ If the trash is enabled on your ownCloud server you should be able to restore th
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="210"/>
+        <location filename="../services/nextclouddeckservice.cpp" line="211"/>
         <source>Error while archiving card</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="211"/>
-        <source>Archiving the card failed with status code %2 and message: %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="311"/>
+        <location filename="../services/nextclouddeckservice.cpp" line="312"/>
         <source>Error while deleting card</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="312"/>
-        <source>Deleting the card failed with status code %2 and message: %3</source>
+        <location filename="../services/nextclouddeckservice.cpp" line="212"/>
+        <source>Archiving the card failed with status code %1 and message: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="426"/>
-        <source>Error while loading boards</source>
+        <location filename="../services/nextclouddeckservice.cpp" line="313"/>
+        <source>Deleting the card failed with status code %1 and message: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../services/nextclouddeckservice.cpp" line="427"/>
+        <source>Error while loading boards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../services/nextclouddeckservice.cpp" line="428"/>
         <source>Loading the boards failed with status code %1 and message: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="557"/>
+        <location filename="../services/nextclouddeckservice.cpp" line="562"/>
         <source>Error while loading cards</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="558"/>
+        <location filename="../services/nextclouddeckservice.cpp" line="563"/>
         <source>Loading the cards failed with status code %1 and message: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="678"/>
+        <location filename="../services/nextclouddeckservice.cpp" line="688"/>
         <source>Error while loading archived cards</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/nextclouddeckservice.cpp" line="679"/>
+        <location filename="../services/nextclouddeckservice.cpp" line="689"/>
         <source>Loading the archived cards failed with status code %1 and message: %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5917,17 +5907,17 @@ Click &apos;Cancel&apos; to discard your changes and keep the external version.<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4692"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4735"/>
         <source>New connection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4884"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4927"/>
         <source>Login flow succeeded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4885"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4928"/>
         <source>Username and password were set successfully!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6304,12 +6294,17 @@ Click &apos;Cancel&apos; to discard your changes and keep the external version.<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2863"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2376"/>
+        <source>Ignore word &quot;%1&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2875"/>
         <source>Markdown LSP server connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2917"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2929"/>
         <source>Filter completions</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6850,7 +6845,7 @@ Do you want to install it anyway?</source>
         <location filename="../dialogs/settingsdialog.ui" line="1385"/>
         <location filename="../dialogs/settingsdialog.ui" line="1402"/>
         <location filename="../dialogs/settingsdialog.ui" line="1419"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="228"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="229"/>
         <source>unknown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7165,10 +7160,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     </message>
     <message>
         <location filename="../dialogs/settingsdialog.ui" line="4657"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="2279"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="2289"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="4758"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="4762"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2322"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2332"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4801"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4805"/>
         <source>Database</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7189,7 +7184,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     </message>
     <message>
         <location filename="../dialogs/settingsdialog.ui" line="4612"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="2352"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2395"/>
         <source>Clear app data and exit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7625,6 +7620,31 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../dialogs/settingsdialog.ui" line="7796"/>
+        <source>Ignored:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dialogs/settingsdialog.ui" line="7809"/>
+        <source>Reset all ignored LanguageTool rules so they are checked again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dialogs/settingsdialog.ui" line="7812"/>
+        <source>Reset ignored rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dialogs/settingsdialog.ui" line="7819"/>
+        <source>Reset all ignored words so they are checked by LanguageTool again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dialogs/settingsdialog.ui" line="7822"/>
+        <source>Reset ignored words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../dialogs/settingsdialog.ui" line="2778"/>
         <source>Persian</source>
         <translation type="unfinished"></translation>
@@ -7761,20 +7781,20 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     </message>
     <message>
         <location filename="../dialogs/settingsdialog.ui" line="4447"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="4392"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4435"/>
         <source>Reset message boxes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/settingsdialog.ui" line="4634"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="4469"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="4488"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4512"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4531"/>
         <source>Import settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialogs/settingsdialog.ui" line="4641"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="4435"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4478"/>
         <source>Export settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7965,7 +7985,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     </message>
     <message>
         <location filename="../dialogs/settingsdialog.ui" line="3315"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="5085"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="5128"/>
         <source>Override interface scaling factor</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8193,8 +8213,14 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     <message>
         <location filename="../dialogs/settingsdialog.ui" line="226"/>
         <location filename="../dialogs/settingsdialog.ui" line="7639"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="2158"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="2164"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2159"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2165"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2181"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2186"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2189"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2202"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2207"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2210"/>
         <source>LanguageTool</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8973,7 +8999,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     </message>
     <message>
         <location filename="../dialogs/settingsdialog.ui" line="7366"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="2869"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2912"/>
         <source>Search script repository</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9388,8 +9414,8 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     </message>
     <message>
         <location filename="../dialogs/settingsdialog.ui" line="4724"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="2299"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="4738"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2342"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4781"/>
         <source>Debug information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9404,54 +9430,54 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="382"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="383"/>
         <source>hostname of proxy server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="383"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="384"/>
         <source>username for proxy server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="384"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="385"/>
         <source>password for proxy server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="386"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="387"/>
         <source>HTTP(S) proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="387"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="388"/>
         <source>SOCKS5 proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="495"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="496"/>
         <source>notes path &lt;b&gt;%1&lt;/b&gt; found on server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="1448"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1449"/>
         <source>Automatic (needs restart)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="1739"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1740"/>
         <source>Shortcut already assigned</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="1932"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1933"/>
         <source>The connection was made successfully!
 Server version: %1
 QOwnNotesAPI version: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="1944"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1945"/>
         <source>There was an error connecting to the ownCloud Server!
 You also need to have the QOwnNotesAPI app installed and enabled!
 
@@ -9459,416 +9485,452 @@ Connection error message: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2159"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2160"/>
         <source>LanguageTool connection successful.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2165"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2166"/>
         <source>LanguageTool connection failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2290"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2182"/>
+        <source>There are no ignored rules to reset.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../dialogs/settingsdialog.cpp" line="2186"/>
+        <source>Reset %n ignored rule(s)?</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../dialogs/settingsdialog.cpp" line="2190"/>
+        <source>All ignored rules have been reset.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dialogs/settingsdialog.cpp" line="2203"/>
+        <source>There are no ignored words to reset.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../dialogs/settingsdialog.cpp" line="2207"/>
+        <source>Reset %n ignored word(s)?</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../dialogs/settingsdialog.cpp" line="2211"/>
+        <source>All ignored words have been reset.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dialogs/settingsdialog.cpp" line="2333"/>
         <source>The Database was reinitialized. Please restart the application now!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2300"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2343"/>
         <source>Please don&apos;t use this in the issue tracker, copy the debug information text directly into the issue.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2307"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2350"/>
         <source>Markdown files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2334"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2377"/>
         <source>Disable usage tracking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2335"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2378"/>
         <source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can&apos;t live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2561"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2604"/>
         <source>new folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2593"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2636"/>
         <source>Remove note folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2594"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2637"/>
         <source>Remove the current note folder &lt;strong&gt;%1&lt;/strong&gt;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2669"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2712"/>
         <source>Please select the folder where your notes will get stored to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2703"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2746"/>
         <source>Loading folders from server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2718"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2761"/>
         <source>No more folders were found in the current folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2786"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2829"/>
         <source>Loading folders in &apos;%1&apos; from server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2855"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2898"/>
         <source>Take a look at the &lt;a href=&quot;%1&quot;&gt;Scripting documentation&lt;/a&gt; to get started fast.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2859"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2902"/>
         <source>If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href=&quot;%1&quot;&gt; QOwnNotes issue page&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2877"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2920"/>
         <source>Check for script updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2882"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2925"/>
         <source>Add local script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2885"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2928"/>
         <source>Add an existing, local script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3281"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3324"/>
         <source>Please enter a new note file extension:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3313"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3356"/>
         <source>Markdown file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3315"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3358"/>
         <source>Plain text file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3333"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3376"/>
         <source>Remove note file extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4434"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="4487"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4477"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4530"/>
         <source>INI files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4470"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4513"/>
         <source>Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4476"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4519"/>
         <source>The application will be restarted after the import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4739"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4782"/>
         <source>The debug information was copied to the clipboard.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4759"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4802"/>
         <source>The integrity of the disk database is valid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4763"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4806"/>
         <source>The integrity of the disk database is not valid!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4938"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4981"/>
         <source>Board Id: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4950"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4993"/>
         <source>Stack Id: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="5012"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="5055"/>
         <source>API test result for %1 (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="5038"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="5081"/>
         <source>AI backend: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="5041"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="5084"/>
         <source>API base URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="5048"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="5091"/>
         <source>AI model: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="5054"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="5097"/>
         <source>Test</source>
         <comment>verb</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="5055"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="5098"/>
         <source>Test connection to %1 (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="5086"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="5129"/>
         <source>If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2873"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2916"/>
         <source>Find a script in the script repository</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3606"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3649"/>
         <source>Menu bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3607"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3650"/>
         <source>Show menu bar item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="1630"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="1670"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1631"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1671"/>
         <source>Undefined shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="123"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="124"/>
         <source>Auto-detect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="1633"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="1673"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1634"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1674"/>
         <source>Assign a new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="1633"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="1674"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1634"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1675"/>
         <source>Reset to default shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="1649"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1650"/>
         <source>Clear shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="1740"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="1741"/>
         <source>The shortcut &lt;strong&gt;%1&lt;/strong&gt; is already assigned to &lt;strong&gt;%2&lt;/strong&gt;! Do you want to jump to the shortcut?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3015"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3058"/>
         <source>Remove script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3016"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3059"/>
         <source>Remove the current script &lt;strong&gt;%1&lt;/strong&gt;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3066"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3109"/>
         <source>QML files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3067"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3110"/>
         <source>Please select your QML file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3156"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3199"/>
         <source>Open repository</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3212"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3255"/>
         <source>Your script seems to be valid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3213"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3256"/>
         <source>There were script errors:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3280"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3323"/>
         <source>File extension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3334"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3377"/>
         <source>Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3855"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3898"/>
         <source>Calendar cache emptied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3856"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3899"/>
         <source>Your calendar cache was emptied.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3938"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3981"/>
         <source>Reset toolbars and exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="3939"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="3982"/>
         <source>Do you really want to reset all toolbars? The application will be closed in the process, the default toolbars will be restored when you start it again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4226"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4269"/>
         <source>Log file cleared</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4227"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4270"/>
         <source>The log file &lt;strong&gt;%1&lt;/strong&gt; was cleared.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4283"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4326"/>
         <source>Executable files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4283"/>
-        <location filename="../dialogs/settingsdialog.cpp" line="4285"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4326"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4328"/>
         <source>All files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4293"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4336"/>
         <source>Please select the path of your git executable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="4393"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="4436"/>
         <source>Do you really want to reset the overrides of all message boxes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="120"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="121"/>
         <source>New script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="140"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="141"/>
         <source>You can download your git client here: &lt;a href=&quot;%url&quot;&gt;Git for Windows&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="339"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="340"/>
         <source>enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="339"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="340"/>
         <source>disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="342"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="343"/>
         <source>Portable mode is currently:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="344"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="345"/>
         <source>In portable mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="345"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="346"/>
         <source>the internal sqlite database and the settings will be stored inside a &lt;code&gt;Data&lt;/code&gt; folder at the binary&apos;s location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="348"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="349"/>
         <source>the settings will be stored in an ini file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="349"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="350"/>
         <source>the note folders, script paths and path to an external editor will be automatically stored relative to the &lt;code&gt;Data&lt;/code&gt; folder so that the correct note folders, scripts and external editor will be loaded regardless where your QOwnNotes installation is currently located</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="359"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="360"/>
         <source>It will be activated if you run QOwnNotes with the parameter &lt;code&gt;--portable&lt;/code&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2308"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2351"/>
         <source>Save debug information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2353"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2396"/>
         <source>Do you really want to clear all settings, remove the database and exit QOwnNotes?
 
 Your notes will stay intact!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="365"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="366"/>
         <source>You will find a &lt;code&gt;QOwnNotesPortable.bat&lt;/code&gt; in your release path to start QOwnNotes in portable mode.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2280"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2323"/>
         <source>Do you really want to clear the local database? This will also remove your configured note folders and your cached todo items!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/settingsdialog.cpp" line="2474"/>
+        <location filename="../dialogs/settingsdialog.cpp" line="2517"/>
         <source>Select editor application</source>
         <translation type="unfinished"></translation>
     </message>

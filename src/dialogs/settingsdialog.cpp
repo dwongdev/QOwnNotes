@@ -53,6 +53,7 @@
 #include "scriptrepositorydialog.h"
 #include "services/databaseservice.h"
 #ifdef LANGUAGETOOL_ENABLED
+#include "services/languagetoolchecker.h"
 #include "services/languagetoolclient.h"
 #endif
 #include "services/nextclouddeckservice.h"
@@ -2167,6 +2168,48 @@ void SettingsDialog::on_languageToolTestConnectionButton_clicked() {
             });
 
     client->checkText(options);
+}
+
+void SettingsDialog::on_languageToolResetIgnoredRulesButton_clicked() {
+    auto *checker = LanguageToolChecker::instance();
+    if (checker == nullptr) {
+        return;
+    }
+
+    const int count = checker->ignoredRules().size();
+    if (count == 0) {
+        QMessageBox::information(this, tr("LanguageTool"),
+                                 tr("There are no ignored rules to reset."));
+        return;
+    }
+
+    if (QMessageBox::question(this, tr("LanguageTool"), tr("Reset %n ignored rule(s)?", "", count),
+                              QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
+        checker->clearIgnoredRules();
+        QMessageBox::information(this, tr("LanguageTool"),
+                                 tr("All ignored rules have been reset."));
+    }
+}
+
+void SettingsDialog::on_languageToolResetIgnoredWordsButton_clicked() {
+    auto *checker = LanguageToolChecker::instance();
+    if (checker == nullptr) {
+        return;
+    }
+
+    const int count = checker->ignoredWords().size();
+    if (count == 0) {
+        QMessageBox::information(this, tr("LanguageTool"),
+                                 tr("There are no ignored words to reset."));
+        return;
+    }
+
+    if (QMessageBox::question(this, tr("LanguageTool"), tr("Reset %n ignored word(s)?", "", count),
+                              QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
+        checker->clearIgnoredWords();
+        QMessageBox::information(this, tr("LanguageTool"),
+                                 tr("All ignored words have been reset."));
+    }
 }
 #endif
 

@@ -363,6 +363,8 @@ class SettingsDialog : public MasterDialog {
 #ifdef LANGUAGETOOL_ENABLED
     void on_languageToolTestConnectionButton_clicked();
     void on_languageToolEnabledCheckBox_toggled(bool checked);
+    void on_languageToolResetIgnoredRulesButton_clicked();
+    void on_languageToolResetIgnoredWordsButton_clicked();
 #endif
 
    private:

@@ -2,6 +2,17 @@
 
 ## 26.4.0
 
+- **LanguageTool** ignored rules and ignored words are now **persisted** across
+  application restarts; previously, ignored rules were only stored in memory and
+  lost when the application was closed
+  (for [#3496](https://github.com/pbek/QOwnNotes/issues/3496))
+- Added a new **"Ignore word"** option to the LanguageTool context menu that
+  allows ignoring specific words (e.g. proper nouns, technical terms) without
+  disabling the entire rule; ignored words are persisted across restarts
+  (for [#3496](https://github.com/pbek/QOwnNotes/issues/3496))
+- Added **"Reset ignored rules"** and **"Reset ignored words"** buttons to the
+  LanguageTool settings page to clear all previously ignored rules and words
+  (for [#3496](https://github.com/pbek/QOwnNotes/issues/3496))
 - The last selected **Nextcloud Deck** card is now re-selected after the card
   list is reloaded when a card is stored or the archived cards view is toggled
   (for [#3357](https://github.com/pbek/QOwnNotes/issues/3357))
