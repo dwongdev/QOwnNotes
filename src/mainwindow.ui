@@ -2200,7 +2200,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Use softwrap in note editor and preview</string>
+    <string>Use softwrap in note editor</string>
    </property>
   </action>
   <action name="actionShow_status_bar">

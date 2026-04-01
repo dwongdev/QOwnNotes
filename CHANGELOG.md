@@ -2,6 +2,9 @@
 
 ## 26.4.1
 
+- Updated menu action text `Use softwrap in note editor and preview` to
+  ´Use softwrap in note editor`, since the QLiteHtml preview is always softwrapped
+  for [#2566](https://github.com/pbek/QOwnNotes/issues/2566))
 - Fixed the **main window and panel sizes** not being persisted when closing the
   application: resized dock panels, toolbar layout and the main window geometry
   are now stored during the actual close event and correctly restored on the
