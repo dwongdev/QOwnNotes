@@ -6736,7 +6736,8 @@ static void loadAllActions(QMenu *menu, QVector<QPair<QString, QAction *>> &outA
             loadAllActions(submenu, outActions);
         } else {
             if (!action->text().isEmpty() && !action->objectName().isEmpty() &&
-                action->isVisible()) {
+                action->isVisible() &&
+                action->objectName() != QStringLiteral("actionFind_action")) {
                 outActions.append({menu->title(), action});
             }
         }

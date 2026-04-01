@@ -1,5 +1,12 @@
 # QOwnNotes Changelog
 
+## 26.4.1
+
+- Fixed a crash in the **Find action** command bar by hiding the **Find action**
+  entry from the dialog itself, preventing recursive reopening of the command
+  bar and the follow-up crash when another action was selected afterward
+  (for [#3530](https://github.com/pbek/QOwnNotes/issues/3530))
+
 ## 26.4.0
 
 - **LanguageTool** ignored rules and ignored words are now **persisted** across
