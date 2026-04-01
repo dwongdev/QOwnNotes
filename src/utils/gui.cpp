@@ -951,16 +951,15 @@ void Utils::Gui::updateTabWidgetTabData(QTabWidget *tabWidget, int index, const 
     const bool isSticky = isTabWidgetTabSticky(tabWidget, index);
 
     if (isSticky) {
-        // https://unicode-table.com/en/search/?q=flag
-        text.prepend(QStringLiteral("\u2690 "));
+        text.prepend(QStringLiteral("\U0001F588 "));
     }
 
     // you need to use "&&" to show a "&" in the tab text
     // see https://github.com/pbek/QOwnNotes/issues/2135
     tabWidget->setTabText(index, text.replace("&", "&&"));
 
-    tabWidget->setTabToolTip(index, isSticky ? QObject::tr("Double-click to unstick note from tab")
-                                             : QObject::tr("Double-click to stick note to tab"));
+    tabWidget->setTabToolTip(index, isSticky ? QObject::tr("Double-click to unpin note from tab")
+                                             : QObject::tr("Double-click to pin note to tab"));
 }
 
 void Utils::Gui::setTabWidgetTabSticky(QTabWidget *tabWidget, int index, bool sticky) {

@@ -2,6 +2,10 @@
 
 ## 26.4.1
 
+- Changed the visual marker and wording for pinned note tabs: sticky tabs now use
+  a pushpin symbol instead of a flag, and the related action and tooltip text now
+  consistently refer to pinning and unpinning tabs
+  (for [#2595](https://github.com/pbek/QOwnNotes/issues/2595))
 - Fixed the **read-only status bar button** becoming visible even when note
   editing was allowed, which occurred when enabling the read-only mode feature
   for the first time in the settings and then closing the dialog; the toolbar

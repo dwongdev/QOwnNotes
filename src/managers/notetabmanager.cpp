@@ -257,7 +257,7 @@ void NoteTabManager::on_noteEditTabWidget_tabBarDoubleClicked(int index) {
         return;
     }
 
-    // Make the note tab "sticky"
+    // Toggle the note tab pin state
     Utils::Gui::setTabWidgetTabSticky(
         _ui->noteEditTabWidget, index,
         !Utils::Gui::isTabWidgetTabSticky(_ui->noteEditTabWidget, index));
@@ -293,8 +293,8 @@ void NoteTabManager::showNoteEditTabWidgetContextMenu(const QPoint &point) {
     int tabIndex = _ui->noteEditTabWidget->tabBar()->tabAt(point);
     auto *menu = new QMenu();
 
-    // Toggle note stickiness
-    auto *stickAction = menu->addAction(tr("Toggle note stickiness"));
+    // Toggle note pinning
+    auto *stickAction = menu->addAction(tr("Toggle note pinning"));
     connect(stickAction, &QAction::triggered, this,
             [this, tabIndex]() { on_noteEditTabWidget_tabBarDoubleClicked(tabIndex); });
 
