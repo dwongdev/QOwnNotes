@@ -2,6 +2,11 @@
 
 ## 26.4.1
 
+- Fixed the **read-only status bar button** becoming visible even when note
+  editing was allowed, which occurred when enabling the read-only mode feature
+  for the first time in the settings and then closing the dialog; the toolbar
+  action and the status bar button are now always kept in sync
+  (for [#3529](https://github.com/pbek/QOwnNotes/issues/3529))
 - Fixed a crash in the **Find action** command bar by hiding the **Find action**
   entry from the dialog itself, preventing recursive reopening of the command
   bar and the follow-up crash when another action was selected afterward

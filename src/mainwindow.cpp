@@ -2685,8 +2685,14 @@ void MainWindow::readSettingsFromSettingsDialog(const bool isAppLaunch) {
         // If read-only mode feature is disabled, force note editing to be allowed
         if (!isReadOnlyModeEnabled) {
             isAllowNoteEditing = true;
-            on_actionAllow_note_editing_triggered(isAllowNoteEditing);
         }
+
+        // Always sync the toolbar action checked state and the status bar
+        // read-only button so they are in sync with the current editing state
+        // (fixes the read-only button showing up even when editing is allowed
+        // after enabling the read-only mode feature for the first time)
+        ui->actionAllow_note_editing->setChecked(isAllowNoteEditing);
+        on_actionAllow_note_editing_triggered(isAllowNoteEditing);
     }
 
     // Enable/disable auto read-only mode timer based on current settings
