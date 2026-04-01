@@ -3487,8 +3487,12 @@ QString Note::textToMarkdownHtml(QString str, const QString &notesPath, int maxI
 #endif
 
     const SettingsService settings;
-    if (!settings.value(QStringLiteral("MainWindow/noteTextView.underline"), true).toBool()) {
-        flags &= ~MD_FLAG_UNDERLINE;
+    // Enable underline extension when the setting is on so that _text_ and
+    // __text__ are rendered as <u> tags instead of italic/bold.
+    // Note: MD_DIALECT_GITHUB does not include MD_FLAG_UNDERLINE, so we must
+    // add it explicitly when the feature is enabled.
+    if (settings.value(QStringLiteral("MainWindow/noteTextView.underline"), true).toBool()) {
+        flags |= MD_FLAG_UNDERLINE;
     }
     if (!isWikiLinkSupportEnabled()) {
         flags &= ~MD_FLAG_WIKILINKS;

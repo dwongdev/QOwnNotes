@@ -206,6 +206,9 @@ void HtmlPreviewWidget::setHtml(const QString &text) {
     // QLiteHtml's built-in master CSS has no rule for <del> or <s>, so without
     // this the strikethrough formatting from ~~text~~ would be lost in the preview.
     QString processed = text;
+    const QString underlineCss =
+        QStringLiteral("<style>u, u * { text-decoration: underline; }</style>");
+
     // Also target descendant elements (e.g. <a> links inside <del>) explicitly,
     // because CSS text-decoration is not an inherited property and the preview
     // stylesheet sets "a { text-decoration: none; }" which would otherwise win.
@@ -224,10 +227,10 @@ void HtmlPreviewWidget::setHtml(const QString &text) {
 
     const int headEnd = processed.indexOf(QStringLiteral("</head>"));
     if (headEnd != -1) {
-        processed.insert(headEnd, strikeoutCss + hrCss);
+        processed.insert(headEnd, underlineCss + strikeoutCss + hrCss);
     } else {
         // Fallback: prepend the style blocks if there is no <head> section
-        processed.prepend(strikeoutCss + hrCss);
+        processed.prepend(underlineCss + strikeoutCss + hrCss);
     }
     _htmlWidget->setHtml(Utils::Misc::parseTaskList(processed, true));
 }

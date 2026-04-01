@@ -2,6 +2,10 @@
 
 ## 26.4.1
 
+- Implemented QLiteHtml preview underline rendering so that when **Enable underline
+  rendering** is turned on, Markdown like `__underline__` and `_underline_`
+  is rendered as underlined text instead of bold or italic in the preview
+  (for [#3533](https://github.com/pbek/QOwnNotes/issues/3533))
 - Updated menu action text `Use softwrap in note editor and preview` to
   ´Use softwrap in note editor`, since the QLiteHtml preview is always softwrapped
   for [#2566](https://github.com/pbek/QOwnNotes/issues/2566))
