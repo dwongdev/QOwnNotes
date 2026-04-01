@@ -2,6 +2,10 @@
 
 ## 26.4.1
 
+- Fixed the **main window and panel sizes** not being persisted when closing the
+  application: resized dock panels, toolbar layout and the main window geometry
+  are now stored during the actual close event and correctly restored on the
+  next start (for [#3532](https://github.com/pbek/QOwnNotes/issues/3532))
 - Changed the visual marker and wording for pinned note tabs: sticky tabs now use
   a pushpin symbol instead of a flag, and the related action and tooltip text now
   consistently refer to pinning and unpinning tabs

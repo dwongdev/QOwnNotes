@@ -3366,7 +3366,6 @@ void MainWindow::storeSettings() {
  */
 
 void MainWindow::closeEvent(QCloseEvent *event) {
-    _closeEventWasFired = true;
     const bool forceQuit = qApp->property("clearAppDataAndExit").toBool();
     const bool isJustHide = showSystemTray;
 
@@ -3386,12 +3385,17 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 #endif
         event->ignore();
     } else {
+        // Store the current geometry before the close tears down widgets.
+        storeSettings();
+
         // we need to do this in the close event (and _not_ in the destructor),
         // because in the destructor the layout will be destroyed in dark mode
         // when the window was closed
         // https://github.com/pbek/QOwnNotes/issues/1015
         // Checks will be done in the method
         storeCurrentWorkspace();
+
+        _closeEventWasFired = true;
 
         QMainWindow::closeEvent(event);
     }
