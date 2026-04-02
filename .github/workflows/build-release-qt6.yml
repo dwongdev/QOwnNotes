@@ -410,6 +410,35 @@ jobs:
         with:
           path: build-systems/github/snap.qt6
 
+      - name: "🔎 Verify snap artifact"
+        shell: bash
+        run: |
+          SNAP_PATH="${{ steps.snapcraft.outputs.snap }}"
+
+          if [ -z "${SNAP_PATH}" ]; then
+            echo "::error::snapcore/action-build did not return a snap artifact path"
+            exit 1
+          fi
+
+          if [ ! -f "${SNAP_PATH}" ]; then
+            echo "::error::Built snap not found at ${SNAP_PATH}"
+            echo "::group::Available snap files"
+            find "$GITHUB_WORKSPACE" -name '*.snap' -print || true
+            echo "::endgroup::"
+            exit 1
+          fi
+
+          SNAP_NAME="$(basename "${SNAP_PATH}")"
+          SNAP_SHA256_PATH="${SNAP_PATH}.sha256sum"
+
+          echo "SNAP_PATH=${SNAP_PATH}" >> "$GITHUB_ENV"
+          echo "SNAP_NAME=${SNAP_NAME}" >> "$GITHUB_ENV"
+
+          sha256sum "${SNAP_PATH}" > "${SNAP_SHA256_PATH}"
+          echo "SNAP_SHA256_PATH=${SNAP_SHA256_PATH}" >> "$GITHUB_ENV"
+
+          ls -hal "${SNAP_PATH}" "${SNAP_SHA256_PATH}"
+
       #    - name: Release Snap for Linux
       #      uses: actions/upload-release-asset@v1
       #      env:
@@ -437,8 +466,16 @@ jobs:
       - name: "📤 Upload artifact: Snap"
         uses: actions/upload-artifact@v7
         with:
-          name: qownnotes_${{ env.VERSION }}_amd64.snap
-          path: /home/runner/work/QOwnNotes/QOwnNotes/build-systems/github/snap.qt6/qownnotes_${{ env.VERSION }}_amd64.snap
+          name: ${{ env.SNAP_NAME }}
+          path: ${{ env.SNAP_PATH }}
+          if-no-files-found: error
+
+      - name: "📤 Upload artifact: Snap sha256sum"
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ env.SNAP_NAME }}.sha256sum
+          path: ${{ env.SNAP_SHA256_PATH }}
+          if-no-files-found: error
 
   #
   # Windows build
