@@ -148,9 +148,11 @@ void FontColorWidget::on_foregroundColorButton_clicked() {
     QColor color = Utils::Schema::schemaSettings->getForegroundColor(index);
     QColor newColor = QColorDialog::getColor(color);
 
-    if (newColor.isValid()) {
-        color = newColor;
+    if (!newColor.isValid() || newColor == color) {
+        return;
     }
+
+    color = newColor;
 
     ui->foregroundColorButton->setStyleSheet(
         QStringLiteral("* {background: %1; border: none}").arg(color.name()));
@@ -172,9 +174,11 @@ void FontColorWidget::on_backgroundColorButton_clicked() {
     QColor color = Utils::Schema::schemaSettings->getBackgroundColor(index);
     QColor newColor = QColorDialog::getColor(color);
 
-    if (newColor.isValid()) {
-        color = newColor;
+    if (!newColor.isValid() || newColor == color) {
+        return;
     }
+
+    color = newColor;
 
     ui->backgroundColorButton->setStyleSheet(
         QStringLiteral("* {background: %1; border: none}").arg(color.name()));

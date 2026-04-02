@@ -2,6 +2,9 @@
 
 ## 26.4.2
 
+- Fixed the editor color schema color picker in the settings dialog so closing it
+  without changing the selected color no longer reapplies the schema and reloads
+  the note folder (for [#3506](https://github.com/pbek/QOwnNotes/issues/3506))
 - Changed the built-in `Light` editor color schema so internal note links now use
   `#fc8f00` as foreground color and `#fff8ef` as background color
   (for [#2914](https://github.com/pbek/QOwnNotes/issues/2914))
