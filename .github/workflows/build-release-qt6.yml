@@ -376,7 +376,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       QT_VERSION: 6.10.2
-    continue-on-error: true
+    # continue-on-error: true
     name: "🐧 Snap Ubuntu 24.04"
     steps:
       - name: "🧰 Checkout"
@@ -419,6 +419,11 @@ jobs:
             echo "::error::snapcore/action-build did not return a snap artifact path"
             exit 1
           fi
+
+          case "${SNAP_PATH}" in
+            /*) ;;
+            *) SNAP_PATH="${GITHUB_WORKSPACE}/${SNAP_PATH}" ;;
+          esac
 
           if [ ! -f "${SNAP_PATH}" ]; then
             echo "::error::Built snap not found at ${SNAP_PATH}"
