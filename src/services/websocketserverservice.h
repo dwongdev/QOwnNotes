@@ -24,6 +24,8 @@
 #include <QStringList>
 #include <QVector>
 
+#include "entities/note.h"
+
 class Bookmark;
 class QTcpServer;
 class QTcpSocket;
@@ -93,6 +95,10 @@ class WebSocketServerService : public QObject {
     QDateTime m_bookmarkCacheTimestamp;
 
     static QString getBookmarksJsonText(bool hideCurrent = false);
+
+    static Note findNoteByNameInNoteSubFolders(const QString &name);
+
+    static QVector<Note> findNotesByNameInNoteSubFolders(const QString &name);
 
     QVector<Bookmark> getBookmarksForSuggestions();
 

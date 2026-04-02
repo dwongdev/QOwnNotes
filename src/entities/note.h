@@ -82,6 +82,9 @@ class Note {
 
     static Note fetchByName(const QString &name, int noteSubFolderId = -1);
 
+    static QVector<Note> fetchAllByName(const QString &name,
+                                        const QString &connectionName = QStringLiteral("memory"));
+
     static bool isWikiLinkSupportEnabled();
 
     static Note resolveWikiLink(const QString &target, int currentNoteSubFolderId = -1);

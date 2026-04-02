@@ -2,6 +2,10 @@
 
 ## 26.4.2
 
+- Improved lookup of the `Bookmarks` and `Commands` notes so they are now found
+  in note subfolders too instead of only being effectively recognized in the
+  note folder root, addressing **Recognize the bookmarks file regardless of
+  where it is** (for [#2518](https://github.com/pbek/QOwnNotes/issues/2518))
 - Fixed command snippet parsing for `bash` and `sh` code blocks so `qc` now uses
   the nearest preceding heading as the snippet description instead of being
   misled by an earlier heading in the note (for [#2526](https://github.com/pbek/QOwnNotes/issues/2526))

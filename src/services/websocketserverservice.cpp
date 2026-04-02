@@ -48,6 +48,15 @@ static QString getIdentifier(QWebSocket *peer) {
                                        QString::number(peer->peerPort()));
 }
 
+Note WebSocketServerService::findNoteByNameInNoteSubFolders(const QString &name) {
+    const QVector<Note> noteList = Note::fetchAllByName(name);
+    return noteList.isEmpty() ? Note() : noteList.constFirst();
+}
+
+QVector<Note> WebSocketServerService::findNotesByNameInNoteSubFolders(const QString &name) {
+    return Note::fetchAllByName(name);
+}
+
 WebSocketServerService::WebSocketServerService(quint16 port, QObject *parent)
     : QObject(parent),
       m_pWebSocketServer(new QWebSocketServer(QStringLiteral("QOwnNotes Server"),
@@ -386,7 +395,15 @@ QVector<Bookmark> WebSocketServerService::getBookmarksForSuggestions() {
     }
 
     Tag tag = Tag::fetchByName(getBookmarksTag());
-    const QVector<Note> noteList = tag.fetchAllLinkedNotes();
+    QVector<Note> noteList = tag.fetchAllLinkedNotes();
+    const QVector<Note> bookmarkNamedNotes =
+        findNotesByNameInNoteSubFolders(getBookmarksNoteName());
+
+    for (const Note &note : bookmarkNamedNotes) {
+        if (!noteList.contains(note)) {
+            noteList.append(note);
+        }
+    }
 
     for (const Note &note : noteList) {
         QVector<Bookmark> noteBookmarks = note.getParsedBookmarks();
@@ -637,7 +654,7 @@ void WebSocketServerService::processMessage(const QString &message) {
 
 QJsonArray WebSocketServerService::createBookmarks(const QJsonObject &jsonObject) {
     const QString bookmarksNoteName = getBookmarksNoteName();
-    Note bookmarksNote = Note::fetchByName(bookmarksNoteName);
+    Note bookmarksNote = findNoteByNameInNoteSubFolders(bookmarksNoteName);
     bool applyTag = false;
 
     // create new bookmarks note if it doesn't exist
@@ -702,6 +719,14 @@ int WebSocketServerService::deleteBookmark(const QJsonObject &jsonObject) {
     // Search for the Markdown text in all notes with the "bookmarks" tag
     Tag tag = Tag::fetchByName(getBookmarksTag());
     QVector<Note> noteList = tag.fetchAllLinkedNotes();
+    const QVector<Note> bookmarkNamedNotes =
+        findNotesByNameInNoteSubFolders(getBookmarksNoteName());
+
+    for (const Note &note : bookmarkNamedNotes) {
+        if (!noteList.contains(note)) {
+            noteList.append(note);
+        }
+    }
     int noteCount = 0;
 
     for (Note &note : noteList) {
@@ -770,6 +795,14 @@ int WebSocketServerService::editBookmark(const QJsonObject &jsonObject) {
     // Search for the Markdown text in all notes with the "bookmarks" tag
     Tag tag = Tag::fetchByName(getBookmarksTag());
     QVector<Note> noteList = tag.fetchAllLinkedNotes();
+    const QVector<Note> bookmarkNamedNotes =
+        findNotesByNameInNoteSubFolders(getBookmarksNoteName());
+
+    for (const Note &note : bookmarkNamedNotes) {
+        if (!noteList.contains(note)) {
+            noteList.append(note);
+        }
+    }
     int noteCount = 0;
 
     for (Note &note : noteList) {
@@ -814,7 +847,15 @@ QString WebSocketServerService::getBookmarksJsonText(bool hideCurrent) {
     }
 
     Tag tag = Tag::fetchByName(getBookmarksTag());
-    const QVector<Note> noteList = tag.fetchAllLinkedNotes();
+    QVector<Note> noteList = tag.fetchAllLinkedNotes();
+    const QVector<Note> bookmarkNamedNotes =
+        findNotesByNameInNoteSubFolders(getBookmarksNoteName());
+
+    for (const Note &note : bookmarkNamedNotes) {
+        if (!noteList.contains(note)) {
+            noteList.append(note);
+        }
+    }
     QVector<Bookmark> bookmarks;
 
     // get all bookmark links from notes tagged with the bookmarks tag
@@ -869,7 +910,15 @@ QString WebSocketServerService::getCommandSnippetsJsonText() {
     }
 
     Tag tag = Tag::fetchByName(getCommandSnippetsTag());
-    const QVector<Note> noteList = tag.fetchAllLinkedNotes();
+    QVector<Note> noteList = tag.fetchAllLinkedNotes();
+    const QVector<Note> commandNamedNotes =
+        findNotesByNameInNoteSubFolders(getCommandSnippetsNoteName());
+
+    for (const Note &note : commandNamedNotes) {
+        if (!noteList.contains(note)) {
+            noteList.append(note);
+        }
+    }
     QVector<CommandSnippet> commandSnippets;
 
     // get all command snippet from notes tagged with the command snippets tag

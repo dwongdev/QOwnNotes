@@ -1230,6 +1230,28 @@ Note Note::fetchByName(const QString &name, int noteSubFolderId) {
     return Note();
 }
 
+QVector<Note> Note::fetchAllByName(const QString &name, const QString &connectionName) {
+    const QSqlDatabase db = QSqlDatabase::database(connectionName);
+    QSqlQuery query(db);
+    QVector<Note> noteList;
+
+    query.prepare(QStringLiteral(
+        "SELECT * FROM note WHERE name = :name "
+        "ORDER BY CASE WHEN note_sub_folder_id = 0 THEN 1 ELSE 0 END, modified DESC"));
+    query.bindValue(QStringLiteral(":name"), name);
+
+    if (!query.exec()) {
+        qWarning() << __func__ << ": " << query.lastError();
+        return noteList;
+    }
+
+    while (query.next()) {
+        noteList.append(noteFromQuery(query));
+    }
+
+    return noteList;
+}
+
 Note Note::noteFromQuery(const QSqlQuery &query) { return Note().fillFromQuery(query); }
 
 Note Note::fillFromQuery(const QSqlQuery &query) {
