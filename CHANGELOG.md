@@ -1,5 +1,11 @@
 # QOwnNotes Changelog
 
+## 26.4.2
+
+- Changed the built-in `Light` editor color schema so internal note links now use
+  `#fc8f00` as foreground color and `#fff8ef` as background color
+  (for [#2914](https://github.com/pbek/QOwnNotes/issues/2914))
+
 ## 26.4.1
 
 - Implemented QLiteHtml preview underline rendering so that when **Enable underline
