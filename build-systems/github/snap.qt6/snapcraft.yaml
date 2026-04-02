@@ -82,6 +82,7 @@ parts:
       - libqt6sql6-sqlite
       - libqt6widgets6t64
       - libqt6qml6
+      - libqt6quick6
       - libqt6network6t64
       - libqt6xml6t64
       - libqt6printsupport6t64
