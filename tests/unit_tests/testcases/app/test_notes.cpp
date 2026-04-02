@@ -14,6 +14,7 @@
 #include <QtTest>
 
 #include "entities/bookmark.h"
+#include "entities/commandsnippet.h"
 #include "entities/notesubfolder.h"
 #include "services/settingsservice.h"
 #include "utils/urlhandler.h"
@@ -1046,6 +1047,53 @@ void TestNotes::testBookmarkSuggestionsResponseShape() {
     QCOMPARE(suggestionArray.count(), 2);
     QCOMPARE(suggestionArray.at(0).toString(), QStringLiteral("suggestion 1"));
     QCOMPARE(suggestionArray.at(1).toString(), QStringLiteral("suggestion 2"));
+}
+
+void TestNotes::testCommandSnippetsKeepNearestHeadingForCodeBlocks() {
+    const QString text = QStringLiteral(
+        "Commands 2\n"
+        "========================\n"
+        "\n"
+        "- `date` aktuelles Datum\n"
+        " \n"
+        "## Test 1b\n"
+        "\n"
+        "- `who` Wer?\n"
+        "\n"
+        "## Test 2b\n"
+        "\n"
+        "```bash\n"
+        "ls\n"
+        "```\n");
+
+    const auto snippets = CommandSnippet::parseCommandSnippets(text);
+    const auto json = QJsonDocument::fromJson(
+        CommandSnippet::commandSnippetsWebServiceJsonText(snippets).toUtf8());
+    const auto data = json.object().value(QStringLiteral("data")).toArray();
+
+    QCOMPARE(data.size(), 3);
+
+    QJsonObject dateSnippet;
+    QJsonObject whoSnippet;
+    QJsonObject lsSnippet;
+
+    for (const auto &value : data) {
+        const QJsonObject snippet = value.toObject();
+        const QString command = snippet.value(QStringLiteral("command")).toString();
+
+        if (command == QStringLiteral("date")) {
+            dateSnippet = snippet;
+        } else if (command == QStringLiteral("who")) {
+            whoSnippet = snippet;
+        } else if (command == QStringLiteral("ls\n")) {
+            lsSnippet = snippet;
+        }
+    }
+
+    QCOMPARE(dateSnippet.value(QStringLiteral("description")).toString(),
+             QStringLiteral("aktuelles Datum"));
+    QCOMPARE(whoSnippet.value(QStringLiteral("description")).toString(), QStringLiteral("Wer?"));
+    QCOMPARE(lsSnippet.value(QStringLiteral("description")).toString(), QStringLiteral("Test 2b"));
 }
 
 // QTEST_MAIN(TestNotes)

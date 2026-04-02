@@ -73,6 +73,9 @@ class TestNotes : public QObject {
     void testBookmarkSuggestionsEmptyQuery();
     void testBookmarkSuggestionsLimitHandling();
     void testBookmarkSuggestionsResponseShape();
+
+    /* Command snippet parsing tests */
+    void testCommandSnippetsKeepNearestHeadingForCodeBlocks();
 };
 
 #endif    // TESTNOTES_H

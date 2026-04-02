@@ -2,6 +2,9 @@
 
 ## 26.4.2
 
+- Fixed command snippet parsing for `bash` and `sh` code blocks so `qc` now uses
+  the nearest preceding heading as the snippet description instead of being
+  misled by an earlier heading in the note (for [#2526](https://github.com/pbek/QOwnNotes/issues/2526))
 - Fixed the editor color schema color picker in the settings dialog so closing it
   without changing the selected color no longer reapplies the schema and reloads
   the note folder (for [#3506](https://github.com/pbek/QOwnNotes/issues/3506))
