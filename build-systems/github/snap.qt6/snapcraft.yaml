@@ -10,6 +10,14 @@ description: |
   notes application of Nextcloud/ownCloud.
   https://www.qownnotes.org/
 
+# Expose libraries installed into non-standard sub-directories so the
+# dynamic linker can find them at runtime.  libproxy on Noble puts its
+# backend plugin into /usr/lib/<triplet>/libproxy/ which is NOT on the
+# default LD_LIBRARY_PATH set by the desktop-launch wrapper.
+layout:
+  /usr/lib/x86_64-linux-gnu/libproxy:
+    bind: $SNAP/usr/lib/x86_64-linux-gnu/libproxy
+
 apps:
   qownnotes:
     command: bin/desktop-launch $SNAP/usr/bin/QOwnNotes --snap
@@ -73,21 +81,32 @@ parts:
       - qt6-l10n-tools
       - qt6-tools-dev-tools
     stage-packages:
+      # -- Qt6 core runtime libraries --
+      - libqt6core6t64
+      - libqt6gui6t64
+      - libqt6widgets6t64
+      - libqt6network6t64
+      - libqt6sql6t64
+      - libqt6sql6-sqlite
+      - libqt6xml6t64
+      - libqt6dbus6t64
+      - libqt6concurrent6t64
+      - libqt6printsupport6t64
       - libqt6svg6
       - libqt6svgwidgets6
       - libqt6websockets6
       - libqt6core5compat6
-      - libqt6gui6t64
-      - libqt6sql6t64
-      - libqt6sql6-sqlite
-      - libqt6widgets6t64
+      # -- Qt6 QML / Quick (needed for the scripting engine) --
       - libqt6qml6
+      - libqt6qmlmodels6
+      - libqt6qmlworkerscript6
       - libqt6quick6
-      - libqt6network6t64
-      - libqt6xml6t64
-      - libqt6printsupport6t64
-      - libqt6dbus6t64
-      - libqt6concurrent6t64
+      # -- Qt6 OpenGL (required by libqt6quick6) --
+      - libqt6opengl6t64
+      # -- Proxy support (libqt6network6t64 links to libproxy) --
+      # libproxy1v5 ships libpxbackend-1.0.so in a private sub-directory;
+      # the layout section above makes that path visible to the linker.
+      - libproxy1v5
     stage:
       - -usr/share/pkgconfig
     after: [desktop-qt6]
