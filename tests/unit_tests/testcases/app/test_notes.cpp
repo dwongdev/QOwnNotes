@@ -907,6 +907,73 @@ void TestNotes::testQualifiedWikiLinksAreUpdatedOnSubfolderRename() {
         QStringLiteral("[[%1/%2/%3]]").arg(parentFolder.getName(), oldChildName, targetName)));
 }
 
+void TestNotes::testWikiLinkBacklinksShowInBacklinkPanel() {
+    SettingsService().setValue(QStringLiteral("Editor/wikiLinkSupport"), true);
+
+    // Create a target note that will be linked to
+    const QString targetName = uniqueTestName(QStringLiteral("backlink-target"));
+    Note targetNote = createTestNote(targetName);
+
+    // Create source notes that link to the target via wiki links in various forms
+    const QString srcExactName = uniqueTestName(QStringLiteral("backlink-src-exact"));
+    Note srcExact = createTestNote(
+        srcExactName, 0,
+        QStringLiteral("# %1\nSee [[%2]] for details.").arg(srcExactName, targetName));
+
+    const QString srcAliasName = uniqueTestName(QStringLiteral("backlink-src-alias"));
+    Note srcAlias = createTestNote(
+        srcAliasName, 0,
+        QStringLiteral("# %1\nSee [[%2|my alias]] for details.").arg(srcAliasName, targetName));
+
+    const QString srcHeadingName = uniqueTestName(QStringLiteral("backlink-src-heading"));
+    Note srcHeading = createTestNote(
+        srcHeadingName, 0,
+        QStringLiteral("# %1\nSee [[%2#Section]] for details.").arg(srcHeadingName, targetName));
+
+    const QString srcHeadingAliasName =
+        uniqueTestName(QStringLiteral("backlink-src-heading-alias"));
+    Note srcHeadingAlias =
+        createTestNote(srcHeadingAliasName, 0,
+                       QStringLiteral("# %1\nSee [[%2#Section|label]] for details.")
+                           .arg(srcHeadingAliasName, targetName));
+
+    // Create a note that does NOT link to the target (negative control)
+    const QString unrelatedName = uniqueTestName(QStringLiteral("backlink-unrelated"));
+    createTestNote(unrelatedName);
+
+    // Find backlinks for the target note
+    const QVector<int> backlinkIds = targetNote.findBacklinkedNoteIds();
+
+    // Verify all source notes are found as backlinks
+    QVERIFY2(backlinkIds.contains(srcExact.getId()),
+             "Exact wiki link [[NoteName]] should appear as backlink");
+    QVERIFY2(backlinkIds.contains(srcAlias.getId()),
+             "Alias wiki link [[NoteName|alias]] should appear as backlink");
+    QVERIFY2(backlinkIds.contains(srcHeading.getId()),
+             "Heading wiki link [[NoteName#Heading]] should appear as backlink");
+    QVERIFY2(backlinkIds.contains(srcHeadingAlias.getId()),
+             "Heading+alias wiki link [[NoteName#H|alias]] should appear as backlink");
+
+    // Verify the reverse link notes hash contains the wiki link text
+    const QHash<Note, QSet<LinkHit>> reverseLinks = targetNote.findReverseLinkNotes();
+    QVERIFY(!reverseLinks.isEmpty());
+
+    // Check that each source note appears in the reverse links
+    bool foundExact = false, foundAlias = false, foundHeading = false, foundHeadingAlias = false;
+    for (auto it = reverseLinks.constBegin(); it != reverseLinks.constEnd(); ++it) {
+        if (it.key().getId() == srcExact.getId()) foundExact = true;
+        if (it.key().getId() == srcAlias.getId()) foundAlias = true;
+        if (it.key().getId() == srcHeading.getId()) foundHeading = true;
+        if (it.key().getId() == srcHeadingAlias.getId()) foundHeadingAlias = true;
+    }
+
+    QVERIFY2(foundExact, "findReverseLinkNotes should include exact wiki link source");
+    QVERIFY2(foundAlias, "findReverseLinkNotes should include alias wiki link source");
+    QVERIFY2(foundHeading, "findReverseLinkNotes should include heading wiki link source");
+    QVERIFY2(foundHeadingAlias,
+             "findReverseLinkNotes should include heading+alias wiki link source");
+}
+
 void TestNotes::testBookmarkSuggestionsPrefixSubstringAndExact() {
     QVector<Bookmark> bookmarks = {
         Bookmark(QStringLiteral("https://example.com/home"), QStringLiteral("Homepage")),

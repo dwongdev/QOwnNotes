@@ -87,7 +87,8 @@ class Note {
 
     static bool isWikiLinkSupportEnabled();
 
-    static Note resolveWikiLink(const QString &target, int currentNoteSubFolderId = -1);
+    static Note resolveWikiLink(const QString &target, int currentNoteSubFolderId = -1,
+                                const QString &connectionName = QStringLiteral("memory"));
 
     static Note fetchByName(const QString &name, const QString &noteSubFolderPathData,
                             const QString &pathDataSeparator = QStringLiteral("\n"));
@@ -248,7 +249,8 @@ class Note {
 
     void setNoteSubFolderId(int id);
 
-    static QVector<Note> fetchAllByNoteSubFolderId(int noteSubFolderId);
+    static QVector<Note> fetchAllByNoteSubFolderId(
+        int noteSubFolderId, const QString &connectionName = QStringLiteral("memory"));
 
     static QVector<int> fetchAllIdsByNoteSubFolderId(int noteSubFolderId);
 

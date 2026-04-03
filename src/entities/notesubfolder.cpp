@@ -60,8 +60,9 @@ NoteSubFolder NoteSubFolder::fetch(int id, const QString& connectionName) {
     return noteSubFolder;
 }
 
-NoteSubFolder NoteSubFolder::fetchByNameAndParentId(const QString& name, int parentId) {
-    const QSqlDatabase db = QSqlDatabase::database(QStringLiteral("memory"));
+NoteSubFolder NoteSubFolder::fetchByNameAndParentId(const QString& name, int parentId,
+                                                    const QString& connectionName) {
+    const QSqlDatabase db = QSqlDatabase::database(connectionName);
     QSqlQuery query(db);
 
     query.prepare(
@@ -113,15 +114,17 @@ QString NoteSubFolder::pathData() const {
 /**
  * Fetches a note sub folder by its path data
  */
-NoteSubFolder NoteSubFolder::fetchByPathData(QString pathData, const QString& separator) {
+NoteSubFolder NoteSubFolder::fetchByPathData(QString pathData, const QString& separator,
+                                             const QString& connectionName) {
     if (pathData.isEmpty()) return NoteSubFolder();
 
     pathData = Utils::Misc::removeIfStartsWith(std::move(pathData), separator);
     const QStringList pathList = pathData.split(separator);
     NoteSubFolder noteSubFolder;
-    // loop through all names to fetch the deepest note sub folder
+    // Loop through all names to fetch the deepest note sub folder
     for (const auto& name : pathList) {
-        noteSubFolder = NoteSubFolder::fetchByNameAndParentId(name, noteSubFolder.getId());
+        noteSubFolder =
+            NoteSubFolder::fetchByNameAndParentId(name, noteSubFolder.getId(), connectionName);
         if (!noteSubFolder.isFetched()) return NoteSubFolder();
     }
     return noteSubFolder;
@@ -255,8 +258,9 @@ QVector<int> NoteSubFolder::fetchAllIds() {
     return idList;
 }
 
-QVector<NoteSubFolder> NoteSubFolder::fetchAllByParentId(int parentId, const QString& sortBy) {
-    const QSqlDatabase db = QSqlDatabase::database(QStringLiteral("memory"));
+QVector<NoteSubFolder> NoteSubFolder::fetchAllByParentId(int parentId, const QString& sortBy,
+                                                         const QString& connectionName) {
+    const QSqlDatabase db = QSqlDatabase::database(connectionName);
     QSqlQuery query(db);
 
     QVector<NoteSubFolder> noteSubFolderList;

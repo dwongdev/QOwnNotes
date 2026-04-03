@@ -64,6 +64,9 @@ class TestNotes : public QObject {
     void testWikiLinkHtmlRenderingMarksResolvedAndBrokenLinks();
     void testQualifiedWikiLinksAreUpdatedOnSubfolderRename();
 
+    /* Wiki-link backlink tests (issue #3535) */
+    void testWikiLinkBacklinksShowInBacklinkPanel();
+
     /* Homepage suggestion API helper tests */
     void testBookmarkSuggestionsPrefixSubstringAndExact();
     void testBookmarkSuggestionsDeduplication();

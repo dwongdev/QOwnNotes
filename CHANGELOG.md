@@ -2,6 +2,11 @@
 
 ## 26.4.3
 
+- Improved **wiki-style link backlink detection** so that all wiki link variants
+  — including links with heading anchors like `[[Note#Heading]]`, links with
+  display-text aliases like `[[Note|label]]`, and subfolder-qualified links with
+  aliases or headings like `[[sub/Note#H|label]]` — are now correctly found and
+  shown in the **Backlinks** navigation panel (for [#3535](https://github.com/pbek/QOwnNotes/issues/3535))
 - Updated the system Botan integration to avoid Botan 3 deprecation warnings in
   the note encryption wrapper, improving compatibility with downstream builds
   such as [NixOS/nixpkgs#505517](https://github.com/NixOS/nixpkgs/pull/505517)
