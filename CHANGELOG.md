@@ -1,5 +1,12 @@
 # QOwnNotes Changelog
 
+## 26.4.3
+
+- Updated the system Botan integration to avoid Botan 3 deprecation warnings in
+  the note encryption wrapper, improving compatibility with downstream builds
+  such as [NixOS/nixpkgs#505517](https://github.com/NixOS/nixpkgs/pull/505517)
+  (for [#3501](https://github.com/pbek/QOwnNotes/issues/3501))
+
 ## 26.4.2
 
 - Improved lookup of the `Bookmarks` and `Commands` notes so they are now found
