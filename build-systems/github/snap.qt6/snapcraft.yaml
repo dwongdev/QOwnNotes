@@ -121,7 +121,23 @@ parts:
       - qt6-base-dev
       - dpkg-dev
     stage-packages:
+      # Qt's xcb platform plugin depends on a set of xcb helper libraries that
+      # are not reliably pulled in by the desktop helper on core24.
+      - libxcb-cursor0
+      - libxcb-icccm4
+      - libxcb-image0
+      - libxcb-keysyms1
+      - libxcb-randr0
+      - libxcb-render-util0
+      - libxcb-shape0
+      - libxcb-shm0
+      - libxcb-sync1
+      - libxcb-util1
+      - libxcb-xfixes0
+      - libxcb-xinerama0
+      - libxcb-xkb1
       - libxkbcommon0
+      - libxkbcommon-x11-0
       - fonts-ubuntu
       - dmz-cursor-theme
       - light-themes
