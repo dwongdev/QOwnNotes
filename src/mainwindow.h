@@ -75,6 +75,7 @@ class NoteDiffDialog;
 class UpdateService;
 class FakeVimHandler;
 class WebSocketServerService;
+class McpService;
 class QOwnNotesMarkdownTextEdit;
 class CommandBar;
 class WaitingSpinnerWidget;
@@ -706,6 +707,8 @@ class MainWindow : public QMainWindow {
 
     void initWebAppClientService();
 
+    void initMcpService();
+
     void on_actionJump_to_note_list_panel_triggered();
 
     void on_actionJump_to_tags_panel_triggered();
@@ -976,6 +979,7 @@ class MainWindow : public QMainWindow {
     bool _lastNoteSelectionWasMultiple;
     WebSocketServerService *_webSocketServerService;
     WebAppClientService *_webAppClientService;
+    McpService *_mcpService;
     bool _brokenTagNoteLinksRemoved = false;
 
 #ifdef USE_QLITEHTML

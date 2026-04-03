@@ -63,7 +63,8 @@ class SettingsDialog : public MasterDialog {
         ExperimentalPage,
         AiPage,
         LanguageToolPage,
-        ColorModesPage
+        ColorModesPage,
+        McpServerPage
     };
 
     explicit SettingsDialog(int page = 0, QWidget *parent = 0);
@@ -278,6 +279,16 @@ class SettingsDialog : public MasterDialog {
     void on_bookmarkSuggestionApiCopyTokenButton_clicked();
 
     void on_bookmarkSuggestionApiGenerateTokenButton_clicked();
+
+    void on_mcpServerEnabledCheckBox_toggled(bool checked);
+
+    void on_mcpServerPortResetButton_clicked();
+
+    void on_mcpServerShowTokenButton_clicked();
+
+    void on_mcpServerCopyTokenButton_clicked();
+
+    void on_mcpServerGenerateTokenButton_clicked();
 
     void on_webSocketTokenButton_clicked();
 

@@ -126,6 +126,7 @@
 #ifdef LANGUAGETOOL_ENABLED
 #include "services/languagetoolchecker.h"
 #endif
+#include "services/mcpservice.h"
 #include "services/metricsservice.h"
 #include "services/nextclouddeckservice.h"
 #include "services/openaiservice.h"
@@ -257,6 +258,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     _readOnlyButton = new QPushButton(this);
     _lastNoteSelectionWasMultiple = false;
     _webSocketServerService = nullptr;
+    _mcpService = nullptr;
     _closeEventWasFired = false;
     _useNoteFolderButtons = settings.value("useNoteFolderButtons").toBool();
 
@@ -869,6 +871,11 @@ void MainWindow::initWebSocketServerService() {
 }
 
 void MainWindow::initWebAppClientService() { _webAppClientService = new WebAppClientService(); }
+
+void MainWindow::initMcpService() {
+    _mcpService = new McpService(this);
+    _mcpService->start();
+}
 
 void MainWindow::initFakeVim(QOwnNotesMarkdownTextEdit *noteTextEdit) {
     auto handler = new FakeVim::Internal::FakeVimHandler(noteTextEdit, this);
@@ -2500,6 +2507,9 @@ void MainWindow::restoreToolbars() {
 
     // initialize web app websocket connection
     QTimer::singleShot(250, this, SLOT(initWebAppClientService()));
+
+    // Initialize MCP server
+    QTimer::singleShot(300, this, SLOT(initMcpService()));
 }
 
 /**
@@ -2642,6 +2652,17 @@ void MainWindow::readSettingsFromSettingsDialog(const bool isAppLaunch) {
         QTimer::singleShot(250, this, SLOT(initWebSocketServerService()));
     } else {
         _webSocketServerService->refreshServers();
+    }
+
+    // Refresh MCP server (start/stop based on settings)
+    if (_mcpService == nullptr) {
+        QTimer::singleShot(300, this, SLOT(initMcpService()));
+    } else {
+        if (McpService::isEnabled()) {
+            _mcpService->start();
+        } else {
+            _mcpService->stop();
+        }
     }
 
     if (settings.value(QStringLiteral("Editor/disableCursorBlinking")).toBool()) {

@@ -8,6 +8,7 @@
 #include <helpers/toolbarcontainer.h>
 #include <libraries/qkeysequencewidget/qkeysequencewidget/src/qkeysequencewidget.h>
 #include <services/cryptoservice.h>
+#include <services/mcpservice.h>
 #include <services/metricsservice.h>
 #include <services/scriptingservice.h>
 #include <services/webappclientservice.h>
@@ -198,6 +199,8 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
             SLOT(needRestart()));
     connect(ui->bookmarkSuggestionApiTokenLineEdit, SIGNAL(textChanged(QString)), this,
             SLOT(needRestart()));
+    connect(ui->mcpServerEnabledCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
+    connect(ui->mcpServerTokenLineEdit, SIGNAL(textChanged(QString)), this, SLOT(needRestart()));
     connect(ui->enableWebApplicationCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->enableNoteTreeCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->aiAutocompleteCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
@@ -839,6 +842,16 @@ void SettingsDialog::storeSettings() {
     }
     settings.setValue(QStringLiteral("webSocketServerService/bookmarkSuggestionApiToken"),
                       CryptoService::instance()->encryptToString(bookmarkSuggestionApiToken));
+    settings.setValue(QStringLiteral("ai/mcpServerEnabled"),
+                      ui->mcpServerEnabledCheckBox->isChecked());
+    settings.setValue(QStringLiteral("ai/mcpServerPort"), ui->mcpServerPortSpinBox->value());
+    QString mcpServerToken = ui->mcpServerTokenLineEdit->text().trimmed();
+    if (mcpServerToken.isEmpty()) {
+        mcpServerToken = Utils::Misc::generateRandomString(32);
+        ui->mcpServerTokenLineEdit->setText(mcpServerToken);
+    }
+    settings.setValue(QStringLiteral("ai/mcpServerToken"),
+                      CryptoService::instance()->encryptToString(mcpServerToken));
     settings.setValue(QStringLiteral("webSocketServerService/bookmarksTag"),
                       ui->bookmarksTagLineEdit->text());
     settings.setValue(QStringLiteral("webSocketServerService/bookmarksNoteName"),
@@ -1388,6 +1401,11 @@ void SettingsDialog::readSettings() {
         WebSocketServerService::getOrGenerateBookmarkSuggestionApiToken());
     on_bookmarkSuggestionApiEnabledCheckBox_toggled(
         ui->bookmarkSuggestionApiEnabledCheckBox->isChecked());
+
+    ui->mcpServerEnabledCheckBox->setChecked(McpService::isEnabled());
+    ui->mcpServerPortSpinBox->setValue(McpService::getPort());
+    ui->mcpServerTokenLineEdit->setText(McpService::getOrGenerateToken());
+    on_mcpServerEnabledCheckBox_toggled(ui->mcpServerEnabledCheckBox->isChecked());
     ui->bookmarksTagLineEdit->setText(WebSocketServerService::getBookmarksTag());
     ui->bookmarksNoteNameLineEdit->setText(WebSocketServerService::getBookmarksNoteName());
     ui->commandSnippetsTagLineEdit->setText(WebSocketServerService::getCommandSnippetsTag());
@@ -3733,6 +3751,8 @@ bool SettingsDialog::initializePage(int index) {
         case SettingsPages::ColorModesPage: {
             ui->colorModeSettingsWidget->initialize();
         } break;
+        case SettingsPages::McpServerPage:
+            break;
         default:
             break;
     }
@@ -4650,6 +4670,37 @@ void SettingsDialog::on_bookmarkSuggestionApiCopyTokenButton_clicked() {
 void SettingsDialog::on_bookmarkSuggestionApiGenerateTokenButton_clicked() {
     ui->bookmarkSuggestionApiTokenLineEdit->setText(Utils::Misc::generateRandomString(32));
     ui->bookmarkSuggestionApiTokenLineEdit->setEchoMode(QLineEdit::EchoMode::Normal);
+}
+
+void SettingsDialog::on_mcpServerEnabledCheckBox_toggled(bool checked) {
+    ui->mcpServerPortLabel->setEnabled(checked);
+    ui->mcpServerPortSpinBox->setEnabled(checked);
+    ui->mcpServerPortResetButton->setEnabled(checked);
+    ui->mcpServerTokenLabel->setEnabled(checked);
+    ui->mcpServerTokenLineEdit->setEnabled(checked);
+    ui->mcpServerShowTokenButton->setEnabled(checked);
+    ui->mcpServerCopyTokenButton->setEnabled(checked);
+    ui->mcpServerGenerateTokenButton->setEnabled(checked);
+}
+
+void SettingsDialog::on_mcpServerPortResetButton_clicked() {
+    ui->mcpServerPortSpinBox->setValue(McpService::getDefaultPort());
+}
+
+void SettingsDialog::on_mcpServerShowTokenButton_clicked() {
+    ui->mcpServerTokenLineEdit->setEchoMode(ui->mcpServerTokenLineEdit->echoMode() ==
+                                                    QLineEdit::EchoMode::Password
+                                                ? QLineEdit::EchoMode::Normal
+                                                : QLineEdit::EchoMode::Password);
+}
+
+void SettingsDialog::on_mcpServerCopyTokenButton_clicked() {
+    QApplication::clipboard()->setText(ui->mcpServerTokenLineEdit->text());
+}
+
+void SettingsDialog::on_mcpServerGenerateTokenButton_clicked() {
+    ui->mcpServerTokenLineEdit->setText(Utils::Misc::generateRandomString(32));
+    ui->mcpServerTokenLineEdit->setEchoMode(QLineEdit::EchoMode::Normal);
 }
 
 void SettingsDialog::on_webSocketTokenButton_clicked() {

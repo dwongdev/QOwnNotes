@@ -533,6 +533,8 @@ set(SOURCE_FILES
     services/websocketserverservice.h
     services/webappclientservice.cpp
     services/webappclientservice.h
+    services/mcpservice.cpp
+    services/mcpservice.h
     entities/bookmark.h
     entities/bookmark.cpp
     entities/commandsnippet.h

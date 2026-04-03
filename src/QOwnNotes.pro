@@ -182,8 +182,9 @@ SOURCES += main.cpp\
     services/scriptingservice.cpp \
     services/websocketserverservice.cpp \
     services/webappclientservice.cpp \
-    services/openaiservice.cpp \
+     services/openaiservice.cpp \
     services/markdownlspclient.cpp \
+    services/mcpservice.cpp \
     services/settingsservice.cpp \
     dialogs/masterdialog.cpp \
     utils/misc.cpp \
@@ -320,8 +321,9 @@ HEADERS  += mainwindow.h \
     dialogs/passworddialog.h \
     services/metricsservice.h \
     services/cryptoservice.h \
-    services/openaiservice.h \
+     services/openaiservice.h \
     services/markdownlspclient.h \
+    services/mcpservice.h \
     services/settingsservice.h \
     dialogs/masterdialog.h \
     utils/misc.h \
