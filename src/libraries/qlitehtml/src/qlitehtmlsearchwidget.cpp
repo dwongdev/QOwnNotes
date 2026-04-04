@@ -60,7 +60,9 @@ void QLiteHtmlSearchWidget::activate()
     show();
 
     QString selectedText = _liteHtmlWidget->selectedText();
-    if (!selectedText.isEmpty() && ui->searchLineEdit->text().isEmpty()) {
+    // Preset the selected text as search text if there is any, replacing any
+    // existing search text
+    if (!selectedText.isEmpty()) {
         ui->searchLineEdit->setText(selectedText);
     }
 

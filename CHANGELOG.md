@@ -2,6 +2,11 @@
 
 ## 26.4.3
 
+- When pressing **Ctrl+F** to open the search bar in the **note text edit**,
+  the **preview**, or the **QLiteHTML preview**, any currently selected text
+  will now always be placed into the search field (replacing any existing search
+  text) and selected, making it easy to search for the highlighted word or phrase
+  (for [#3538](https://github.com/pbek/QOwnNotes/issues/3538))
 - Added a built-in **MCP (Model Context Protocol) server** that allows external AI
   agents to access notes via HTTP+SSE transport with Bearer token authentication,
   providing `search_notes` and `fetch_note` tools for AI-powered note retrieval
