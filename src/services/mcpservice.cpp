@@ -229,7 +229,13 @@ void McpService::sendCorsHeaders(QTcpSocket *socket) {
 // SSE helpers
 
 void McpService::openSseStream(QTcpSocket *socket) {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
     const QString sessionId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+#else
+    QString sessionId = QUuid::createUuid().toString();
+    sessionId.remove(QLatin1Char('{'));
+    sessionId.remove(QLatin1Char('}'));
+#endif
     m_sseClients.insert(sessionId, socket);
 
     // Send SSE headers, connection stays open
