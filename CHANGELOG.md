@@ -6,6 +6,8 @@
   agents to access notes via HTTP+SSE transport with Bearer token authentication,
   providing `search_notes` and `fetch_note` tools for AI-powered note retrieval
   (for [#3536](https://github.com/pbek/QOwnNotes/issues/3536))
+  - See [MCP Server](https://www.qownnotes.org/editor/ai.html#mcp-server) for
+    documentation and usage instructions
 - Improved **wiki-style link backlink detection** so that all wiki link variants
   — including links with heading anchors like `[[Note#Heading]]`, links with
   display-text aliases like `[[Note|label]]`, and subfolder-qualified links with
