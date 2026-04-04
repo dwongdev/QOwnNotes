@@ -63,3 +63,127 @@ All requests must include the header:
 ```
 Authorization: Bearer <your-security-token>
 ```
+
+### Example `curl` Requests
+
+Set the token and port first:
+
+```bash
+export TOKEN="your-mcp-token"
+export PORT=22226
+```
+
+Open the SSE stream in one terminal:
+
+```bash
+curl -N \
+  -H "Accept: text/event-stream" \
+  -H "Authorization: Bearer $TOKEN" \
+  "http://localhost:$PORT/sse"
+```
+
+The server will send an `endpoint` event containing a URL like:
+
+```text
+event: endpoint
+data: http://localhost:22226/message?sessionId=3d8c7b0e-...
+```
+
+Use the `sessionId` from that event in the following requests. The `POST` request itself returns
+`202 Accepted`; the JSON-RPC response is delivered over the SSE stream.
+
+Initialize the MCP session:
+
+```bash
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  --data '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {}
+  }' \
+  "http://localhost:$PORT/message?sessionId=3d8c7b0e-..."
+```
+
+List the available MCP tools:
+
+```bash
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  --data '{
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/list",
+    "params": {}
+  }' \
+  "http://localhost:$PORT/message?sessionId=3d8c7b0e-..."
+```
+
+Search notes:
+
+```bash
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  --data '{
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "name": "search_notes",
+      "arguments": {
+        "query": "meeting notes",
+        "limit": 5
+      }
+    }
+  }' \
+  "http://localhost:$PORT/message?sessionId=3d8c7b0e-..."
+```
+
+Fetch a note by name:
+
+```bash
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  --data '{
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "name": "fetch_note",
+      "arguments": {
+        "name": "Daily Journal"
+      }
+    }
+  }' \
+  "http://localhost:$PORT/message?sessionId=3d8c7b0e-..."
+```
+
+Fetch a note by ID:
+
+```bash
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  --data '{
+    "jsonrpc": "2.0",
+    "id": 5,
+    "method": "tools/call",
+    "params": {
+      "name": "fetch_note",
+      "arguments": {
+        "id": 123
+      }
+    }
+  }' \
+  "http://localhost:$PORT/message?sessionId=3d8c7b0e-..."
+```
