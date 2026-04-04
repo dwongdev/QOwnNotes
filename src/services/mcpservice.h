@@ -61,8 +61,8 @@ class McpService : public QObject {
 
     // HTTP helpers
     static void sendHttpResponse(QTcpSocket *socket, int statusCode, const QByteArray &body,
-                                 const QString &contentType = QStringLiteral("application/json"),
-                                 const QString &statusText = QStringLiteral("OK"));
+                                 const QString &contentType = QLatin1String("application/json"),
+                                 const QString &statusText = QLatin1String("OK"));
     static void sendCorsHeaders(QTcpSocket *socket);
 
     // SSE helpers

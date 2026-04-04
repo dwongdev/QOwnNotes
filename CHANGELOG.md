@@ -1,5 +1,12 @@
 # QOwnNotes Changelog
 
+## 26.4.4
+
+- Fixed a **duplicate symbol assembler error** in `mcpservice.h` when building
+  with GCC 9 (Ubuntu Focal / Debian 11) caused by `QStringLiteral` being used
+  in default function parameter values in a header file; replaced with
+  `QLatin1String` to avoid the issue (for [#3536](https://github.com/pbek/QOwnNotes/issues/3536))
+
 ## 26.4.3
 
 - When pressing **Ctrl+F** to open the search bar in the **note text edit**,
