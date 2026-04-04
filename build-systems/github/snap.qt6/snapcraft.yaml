@@ -20,7 +20,9 @@ layout:
 
 apps:
   qownnotes:
-    command: bin/desktop-launch $SNAP/usr/bin/QOwnNotes --snap
+    # The desktop helper still configures Qt4/Qt5 plugin locations, so run a
+    # small wrapper after it to point Qt6 at the staged plugin and QML paths.
+    command: bin/desktop-launch $SNAP/wrapper.sh
     environment:
       DISABLE_WAYLAND: 1
       QT_QPA_PLATFORMTHEME: gtk3
@@ -107,8 +109,18 @@ parts:
       # libproxy1v5 ships libpxbackend-1.0.so in a private sub-directory;
       # the layout section above makes that path visible to the linker.
       - libproxy1v5
+      # Bundle the Wayland QPA plugins explicitly; libqt6gui6t64 ships xcb,
+      # but the Wayland backend lives in a separate package on Ubuntu 24.04.
+      - qt6-wayland
     stage:
       - -usr/share/pkgconfig
+    override-prime: |
+      craftctl default
+      arch_triplet="$(dpkg-architecture -q DEB_HOST_MULTIARCH)"
+      platform_dir="${CRAFT_PRIME}/usr/lib/${arch_triplet}/qt6/plugins/platforms"
+      test -f "${platform_dir}/libqxcb.so"
+      test -f "${platform_dir}/libqwayland-egl.so"
+      test -f "${platform_dir}/libqwayland-generic.so"
     after: [desktop-qt6]
 
   desktop-qt6:
@@ -165,3 +177,9 @@ parts:
     plugin: nil
     stage-packages:
       - qt6-gtk-platformtheme
+
+  scripts:
+    plugin: dump
+    source: snap/local
+    stage:
+      - wrapper.sh
