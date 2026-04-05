@@ -1,5 +1,14 @@
 # QOwnNotes Changelog
 
+## 26.4.5
+
+- Fixed a possible **crash (SIGSEGV)** caused by inline markdown image previews for
+  remote HTTP/HTTPS URLs performing a synchronous network download inside a paint
+  event, which triggered a nested `QEventLoop` and caused Qt's widget repaint manager
+  to re-enter itself recursively until the stack overflowed; remote images are now
+  fetched asynchronously and the viewport is refreshed automatically once the
+  download completes (for [#1254](https://github.com/pbek/QOwnNotes/issues/1254))
+
 ## 26.4.4
 
 - Fixed a **duplicate symbol assembler error** in `mcpservice.h` when building

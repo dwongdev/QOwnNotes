@@ -22,6 +22,9 @@
 #include <QLineEdit>
 #include <QMenu>
 #include <QMimeData>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
 #include <QPainter>
 #include <QPixmap>
 #include <QRegularExpression>
@@ -1660,8 +1663,65 @@ static QPixmap loadMarkdownImagePixmap(const QString &resolvedSource) {
         const QString base64 = dataUrl.mid(markerPos + 8);
         image = QImage::fromData(QByteArray::fromBase64(base64.toLatin1()));
     } else {
-        const QByteArray data = Utils::Misc::downloadUrl(QUrl(resolvedSource));
-        image = QImage::fromData(data);
+        // Remote URL: do not block the paint event with a synchronous download.
+        // Start an async fetch; the result will be stored in the cache and the
+        // viewport will be refreshed once the download completes.
+        static QSet<QString> pendingDownloadCache;
+        if (!pendingDownloadCache.contains(resolvedSource)) {
+            pendingDownloadCache.insert(resolvedSource);
+
+            // Use a shared network manager to avoid spawning one per request.
+            static QNetworkAccessManager *netManager = nullptr;
+            if (!netManager) {
+                netManager = new QNetworkAccessManager();
+            }
+
+            QNetworkRequest request((QUrl(resolvedSource)));
+            request.setAttribute(QNetworkRequest::RedirectPolicyAttribute,
+                                 QNetworkRequest::NoLessSafeRedirectPolicy);
+            request.setHeader(QNetworkRequest::UserAgentHeader,
+                              Utils::Misc::friendlyUserAgentString());
+
+            QNetworkReply *reply = netManager->get(request);
+            QObject::connect(reply, &QNetworkReply::finished, reply, [reply, resolvedSource]() {
+                reply->deleteLater();
+                pendingDownloadCache.remove(resolvedSource);
+
+                if (reply->error() != QNetworkReply::NoError) {
+                    failedImageCache.insert(resolvedSource);
+                    return;
+                }
+
+                const QByteArray data = reply->readAll();
+                const QImage img = QImage::fromData(data);
+                if (img.isNull()) {
+                    failedImageCache.insert(resolvedSource);
+                    return;
+                }
+
+                const QPixmap pix = QPixmap::fromImage(img);
+                if (pix.isNull()) {
+                    failedImageCache.insert(resolvedSource);
+                    return;
+                }
+
+                imageCache.insert(resolvedSource, pix);
+
+                // Trigger a repaint on all markdown text edit widgets so the
+                // newly downloaded image is shown without the user having to
+                // interact with the editor.
+                const auto widgets = QApplication::allWidgets();
+                for (QWidget *w : widgets) {
+                    if (auto *edit = qobject_cast<QOwnNotesMarkdownTextEdit *>(w)) {
+                        if (edit->viewport()) {
+                            edit->viewport()->update();
+                        }
+                    }
+                }
+            });
+        }
+        // Return null for now; the next paint will pick up the cached pixmap.
+        return QPixmap();
     }
 
     if (image.isNull()) {
