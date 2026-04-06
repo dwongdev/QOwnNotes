@@ -5,7 +5,7 @@ Par défaut, le logiciel vient avec un support pour **[Groq](https://groq.com)**
 mais l’API interne est conçue pour être facilement extensible à d’autres modèles d’IA via des scripts.
 Plusieurs de ces scripts d’intégration de back-ends d’IA sont disponibles dans le dépôt de scripts pour vous aider à démarrer.
 
-:::tip
+::: tip
 L’**API de complétion OpenAI** a été implémentée pour être utilisée dans les **scripts**.
 De cette façon, vous pouvez faire ce que bon vous semble et expérimenter.
 :::

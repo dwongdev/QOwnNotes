@@ -1,7 +1,10 @@
-# Telepítse Void Linuxra
+# Install on Void Linux
 
-Van egy közösség által létrehozott csomag a **Void Linux** számára a [qownnotes srcpkg](https://github.com/void-linux/void-packages/tree/master/srcpkgs/qownnotes)-ban, amely a következő módon telepíthető:
+There is a community-created package for **Void Linux** in
+[qownnotes srcpkg](https://github.com/void-linux/void-packages/tree/master/srcpkgs/qownnotes)
+that can be installed in the following way:
 
 ```bash
-Van egy közösség által létrehozott csomag a <0>Void Linux</0> számára a <1>qownnotes srcpkg</1>-ban, amely a következő módon telepíthető:
+# Synchronize remote repository index files and install QOwnNotes
+xbps-install -S qownnotes
 ```

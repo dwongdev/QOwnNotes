@@ -108,6 +108,8 @@ find webpage/src -type d -regextype posix-egrep -regex ".+src\/(am|be|bg|bn|bs|c
 #
 
 fixCrowdinTranslationProblems() {
+  # Fix missing space between ::: and container type (e.g. :::tip -> ::: tip)
+  sed -i -E -e 's/^:::([a-zA-Z])/\:\:\: \1/g' "$1"
   sed -i -e 's/::: Tip/::: tip/g' "$1"
   sed -i -e 's/::: tipp/::: tip/g' "$1"
   sed -i -e 's/::: suggerimento/::: tip/g' "$1"

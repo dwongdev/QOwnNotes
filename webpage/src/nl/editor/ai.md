@@ -4,7 +4,7 @@ Je kunt ervoor kiezen om je favoriete AI-model (LLM) te gebruiken om je te helpe
 Er is ingebouwde ondersteuning voor **[Groq](https://groq.com/)** (omdat je gratis API-sleutels kunt krijgen) en **[OpenAI](https://openai.com/)**, maar de interne API is ontworpen om gemakkelijk uit te breiden naar andere AI-modellen met scripts.
 Er zijn verschillende scripts voor AI-backend-integraties beschikbaar in de script-opslagplaats om je op weg te helpen.
 
-:::tip
+::: tip
 De **OpenAI-voltooiings-API** is geïmplementeerd om te worden gebruikt in **scripts**.
 Zo kun je doen wat je wilt en ermee experimenteren.
 :::

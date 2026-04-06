@@ -5,7 +5,7 @@ Hay soporte integrado para **[Groq](https://groq.com/)** (porque puede obtener c
 pero la API interna está diseñada para poder extenderse fácilmente a otros modelos de IA con scripts.
 Hay varios scripts de integración de backend de IA disponibles en el repositorio de scripts para que pueda comenzar.
 
-:::tip
+::: tip
 La **API de finalización de OpenAI** se implementó para utilizarse en **scripts**.
 De esta manera puede hacer lo que quiera y experimentar con ella.
 :::

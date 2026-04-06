@@ -5,7 +5,7 @@
 하지만 내부 API는 스크립트를 사용하는 다른 AI 모델로 쉽게 확장할 수 있도록 설계되었습니다.
 스크립트 저장소에는 시작할 수 있도록 여러 AI 백엔드 통합 스크립트가 있습니다.
 
-:::tip
+::: tip
 \*OpenAI completion API\*\*는 **scripts**에서 사용하도록 구현되었습니다.
 이렇게 하면 원하는 것을 무엇이든 할 수 있고 실험할 수 있습니다.
 :::
@@ -52,7 +52,7 @@ AI 에이전트는 HTTP+SSE 전송을 사용하여 MCP 서버에 연결합니다
 
 1. **SSE 엔드포인트**: 'http://localhost:22226/sse 가져오기'  
    서버에서 보낸 이벤트 스트림을 엽니다. 서버는 JSON-RPC 메시지를 보내기 위한 URL을 포함하는 '엔드포인트' 이벤트를 전송합니다.
-2. **메시지 엔드포인트**: 'POST http://localhost:22226/message?sessionId=<id>'
+2. **메시지 엔드포인트**: `POST http://localhost:22226/message?sessionId=<id>`
    여기로 MCP JSON-RPC 요청을 보냅니다. 응답은 SSE 스트림을 통해 전달됩니다.
 
 모든 요청에는 헤더가 포함되어야 합니다:

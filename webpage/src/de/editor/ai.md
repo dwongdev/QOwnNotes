@@ -5,7 +5,7 @@ There is built-in support for **[Groq](https://groq.com/)** (because you can get
 but the internal API is designed to be easily extendable to other AI models with scripts.
 There are several AI backend integrations scripts available in the script repository to get you started.
 
-:::tip
+::: tip
 The **OpenAI completion API** was implemented to be used in **scripts**.
 This way you can do whatever you want and experiment with it.
 :::

@@ -60,6 +60,13 @@ find src -name "*.md" -type f 2>/dev/null | grep -E 'src/[a-z]{2}(-[A-Z]{2})?/' 
     error_details="${error_details}mismatched kbd tags (open: $opening_kbd, close: $closing_kbd); "
   fi
 
+  # Pattern 8: Unescaped angle-bracket placeholders outside code spans (e.g. '<id>')
+  # These break Vue template compilation; they should appear inside backtick code spans
+  if grep -qE "^[^'\`]*'[^'\`]*<[a-z][a-zA-Z0-9_-]*>[^'\`]*'" "$file" 2>/dev/null; then
+    has_error=true
+    error_details="${error_details}unescaped angle-bracket placeholder outside code span (e.g. '<id>'); "
+  fi
+
   if [ "$has_error" = true ]; then
     corrupted_files="$corrupted_files$file
 "
