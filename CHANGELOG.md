@@ -2,6 +2,10 @@
 
 ## 26.4.6
 
+- Trailing unbalanced brackets `()`, `{}`, `[]`, and `<>` are now stripped from
+  bare URLs during both syntax highlighting and Ctrl+Click link opening in the
+  note text editor, so that URLs wrapped in parentheses or other bracket types
+  are detected correctly (for [#2510](https://github.com/pbek/QOwnNotes/issues/2510))
 - Fixed a build failure on Debian 9.0 (Qt 5.7.1) caused by the use of
   `QNetworkRequest::RedirectPolicyAttribute` and
   `QNetworkRequest::NoLessSafeRedirectPolicy` which were only introduced in
