@@ -538,9 +538,11 @@ void Utils::Misc::waitMsecs(int msecs) {
 /**
  * Returns (and creates) the portable data path
  *
+ * @param earlyArgv0Path Optional: path of argv[0] to use as fallback when
+ *        QApplication has not been instantiated yet (for non-AppImage portables)
  * @return the path
  */
-QString Utils::Misc::portableDataPath() {
+QString Utils::Misc::portableDataPath(const QString &earlyArgv0Path) {
     QString path = QString();
 
     if (qApp != nullptr) {
@@ -553,9 +555,30 @@ QString Utils::Misc::portableDataPath() {
         } else {
             path = QCoreApplication::applicationDirPath();
         }
+    } else {
+        // QApplication has not been instantiated yet (called early in main())
+        // For AppImages, the $APPIMAGE env var always points to the actual AppImage
+        // file path, so we can use it directly without needing qApp
+        // (see https://github.com/pbek/QOwnNotes/issues/3542)
+        // qEnvironmentVariable() (returns QString) was introduced in Qt 5.10
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+        const QString appImagePath = qEnvironmentVariable("APPIMAGE");
+#else
+        const QString appImagePath = QString::fromLocal8Bit(qgetenv("APPIMAGE"));
+#endif
+        if (!appImagePath.isEmpty()) {
+            const QFileInfo fileInfo(appImagePath);
+            path = fileInfo.absolutePath();
+        } else if (!earlyArgv0Path.isEmpty()) {
+            // For non-AppImage portables launched before QApplication is created,
+            // use the directory of argv[0] as the base path
+            const QFileInfo fileInfo(earlyArgv0Path);
+            path = fileInfo.absolutePath();
+        }
     }
 
-    // use a fallback if the QApplication object wasn't instantiated yet
+    // Use a fallback if the QApplication object wasn't instantiated yet and
+    // we are not running as an AppImage
     if (path.isEmpty()) {
         path = QStringLiteral(".");
     }

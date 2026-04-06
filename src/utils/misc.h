@@ -80,7 +80,7 @@ QString toStartCase(const QString &text);
 QString defaultNotesPath();
 char dirSeparator();
 void waitMsecs(int msecs);
-QString portableDataPath();
+QString portableDataPath(const QString &earlyArgv0Path = QString());
 bool isInPortableMode();
 bool isAppImage();
 QString applicationPath();

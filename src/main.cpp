@@ -566,10 +566,12 @@ int main(int argc, char *argv[]) {
 
     // set the settings format to ini format and the settings path inside the
     // path of the application in portable mode
+    // Note: QApplication is not yet constructed here, so portableDataPath() needs
+    // argv[0] as a fallback for non-AppImage portables (see issue #3542)
     if (portable) {
         QSettings::setDefaultFormat(QSettings::IniFormat);
         QSettings::setPath(QSettings::IniFormat, QSettings::UserScope,
-                           Utils::Misc::portableDataPath());
+                           Utils::Misc::portableDataPath(arguments.value(0)));
         QSettings settings;
         qDebug() << "settings fileName: " << settings.fileName();
     }

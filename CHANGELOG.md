@@ -2,6 +2,15 @@
 
 ## 26.4.6
 
+- Fixed a wrong **settings path in portable mode** when running as an **AppImage
+  launched from a desktop file** (or any context where the working directory differs
+  from the AppImage's directory): `portableDataPath()` was called before the
+  `QApplication` object was constructed, so `qApp` was `nullptr` and the path fell
+  back to `"."` (the current working directory) instead of the AppImage's directory;
+  the function now directly reads the `$APPIMAGE` environment variable (always set by
+  the AppImage runtime) when `qApp` is not yet available, and also accepts the
+  `argv[0]` path as a fallback for non-AppImage portable builds to ensure the
+  correct base directory is used in all cases (for [#3542](https://github.com/pbek/QOwnNotes/issues/3542))
 - Trailing unbalanced brackets `()`, `{}`, `[]`, and `<>` are now stripped from
   bare URLs during both syntax highlighting and Ctrl+Click link opening in the
   note text editor, so that URLs wrapped in parentheses or other bracket types
