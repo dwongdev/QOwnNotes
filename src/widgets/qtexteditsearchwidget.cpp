@@ -65,10 +65,24 @@ void QTextEditSearchWidget::activate() {
     show();
 
     // Preset the selected text as search text if there is any, replacing any
-    // existing search text
-    QString selectedText = _textEdit->textCursor().selectedText();
+    // existing search text. Position the cursor one character before the
+    // selection start so that doSearchDown() (which searches strictly after the
+    // cursor) lands on the originally selected occurrence rather than the next
+    // one, keeping the view at the user's current position (for #3541).
+    const QTextCursor originalCursor = _textEdit->textCursor();
+    const QString selectedText = originalCursor.selectedText();
     if (!selectedText.isEmpty()) {
         ui->searchLineEdit->setText(selectedText);
+
+        // QTextEdit::find() starts searching strictly after the cursor position,
+        // so place the cursor one character before the selection start to ensure
+        // the first hit is the originally selected word itself.
+        // (setText above may have already triggered an intermediate search via
+        // the textChanged signal, so we always reset the position here.)
+        QTextCursor cursor = originalCursor;
+        const int pos = originalCursor.selectionStart();
+        cursor.setPosition(pos > 0 ? pos - 1 : 0);
+        _textEdit->setTextCursor(cursor);
     }
 
     ui->searchLineEdit->setFocus();

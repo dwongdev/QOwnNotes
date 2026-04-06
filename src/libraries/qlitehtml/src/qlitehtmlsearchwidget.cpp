@@ -61,14 +61,31 @@ void QLiteHtmlSearchWidget::activate()
 
     QString selectedText = _liteHtmlWidget->selectedText();
     // Preset the selected text as search text if there is any, replacing any
-    // existing search text
+    // existing search text. Set _searchFromSelection BEFORE calling setText()
+    // so the textChanged signal triggers doSearch() with incremental=true,
+    // which makes the litehtml engine start from the beginning of the current
+    // selection instead of after it — keeping the first result on the
+    // originally selected word (for #3538).
+    bool searchAlreadyDone = false;
     if (!selectedText.isEmpty()) {
+        _searchFromSelection = true;
         ui->searchLineEdit->setText(selectedText);
+        // If the text actually changed, textChanged fired synchronously:
+        // searchLineEditTextChanged -> doSearch() already ran with incremental=true
+        // and found the correct occurrence. _searchFromSelection was consumed
+        // (set to false) inside doSearch(). Skip the doSearchDown() below to
+        // avoid advancing to the next occurrence.
+        // If the text did NOT change (same search term as before), _searchFromSelection
+        // is still true; we fall through so doSearchDown() uses it.
+        searchAlreadyDone = !_searchFromSelection;
     }
 
     ui->searchLineEdit->setFocus();
     ui->searchLineEdit->selectAll();
-    doSearchDown();
+
+    if (!searchAlreadyDone) {
+        doSearchDown();
+    }
 }
 
 void QLiteHtmlSearchWidget::deactivate()
@@ -146,7 +163,12 @@ bool QLiteHtmlSearchWidget::doSearch(bool searchDown, bool allowRestartAtTop)
     }
 
     bool wrapped = false;
-    bool found = _liteHtmlWidget->findText(text, options, false, &wrapped);
+    // Use incremental=true when searching from a preset selection so that the
+    // search starts at the beginning of the selection, keeping the first result
+    // at the originally selected word (for #3541)
+    const bool incremental = _searchFromSelection;
+    _searchFromSelection = false;
+    bool found = _liteHtmlWidget->findText(text, options, incremental, &wrapped);
 
     if (!found && allowRestartAtTop) {
         _liteHtmlWidget->findText(text, options, false, &wrapped);

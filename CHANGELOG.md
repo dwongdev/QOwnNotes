@@ -8,6 +8,11 @@
   to re-enter itself recursively until the stack overflowed; remote images are now
   fetched asynchronously and the viewport is refreshed automatically once the
   download completes (for [#1254](https://github.com/pbek/QOwnNotes/issues/1254))
+- When searching with selected text via **Ctrl+F** in the **note text edit**,
+  the **preview**, or the **QLiteHTML preview**, the first result now highlights
+  the originally selected occurrence instead of jumping to the next one, so the
+  editor/view no longer scrolls away from the user's current position
+  (for [#3541](https://github.com/pbek/QOwnNotes/issues/3541))
 
 ## 26.4.4
 

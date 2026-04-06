@@ -41,6 +41,9 @@ private:
 protected:
     QLiteHtmlWidget *_liteHtmlWidget;
     bool _darkMode;
+    // When true, the next doSearch() will use incremental=true so that the
+    // search starts at the beginning of the current selection (for #3541)
+    bool _searchFromSelection = false;
     bool eventFilter(QObject *obj, QEvent *event);
 
 public slots:
