@@ -2,6 +2,12 @@
 
 ## 26.4.5
 
+- Fixed a **preview font size mismatch** when using **editor highlighting styles in the
+  preview** on high-DPI displays (particularly on Windows with desktop scaling): the
+  pixel-to-point conversion formula in the QLiteHtml container was inverted, causing
+  fonts stored with a pixel size to be rendered at a massively inflated point size
+  (e.g. a 9pt font appearing as ~100pt at 250% scaling); the formula is now `pt = px * 72 / DPI`
+  instead of `pt = DPI * px / 72` (for [#3539](https://github.com/pbek/QOwnNotes/issues/3539))
 - Fixed a possible **crash (SIGSEGV)** caused by inline markdown image previews for
   remote HTTP/HTTPS URLs performing a synchronous network download inside a paint
   event, which triggered a nested `QEventLoop` and caused Qt's widget repaint manager

@@ -763,7 +763,9 @@ int DocumentContainerPrivate::get_default_font_size() const
     if (pointSize <= 0) {
         int pixelSize = m_defaultFont.pixelSize();
         if (pixelSize > 0 && m_paintDevice) {
-            pointSize = qRound(m_paintDevice->logicalDpiY() * pixelSize / 72.0);
+            // Convert pixel size back to point size: pt = px * 72 / DPI
+            // (for [#3539](https://github.com/pbek/QOwnNotes/issues/3539))
+            pointSize = qRound(pixelSize * 72.0 / m_paintDevice->logicalDpiY());
         }
     }
     if (pointSize <= 0) {
