@@ -1677,8 +1677,11 @@ static QPixmap loadMarkdownImagePixmap(const QString &resolvedSource) {
             }
 
             QNetworkRequest request((QUrl(resolvedSource)));
+#if QT_VERSION >= QT_VERSION_CHECK(5, 9, 0)
+            // RedirectPolicyAttribute was introduced in Qt 5.9
             request.setAttribute(QNetworkRequest::RedirectPolicyAttribute,
                                  QNetworkRequest::NoLessSafeRedirectPolicy);
+#endif
             request.setHeader(QNetworkRequest::UserAgentHeader,
                               Utils::Misc::friendlyUserAgentString());
 

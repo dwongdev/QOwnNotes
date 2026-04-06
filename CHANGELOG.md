@@ -1,5 +1,13 @@
 # QOwnNotes Changelog
 
+## 26.4.6
+
+- Fixed a build failure on Debian 9.0 (Qt 5.7.1) caused by the use of
+  `QNetworkRequest::RedirectPolicyAttribute` and
+  `QNetworkRequest::NoLessSafeRedirectPolicy` which were only introduced in
+  Qt 5.9; the call is now guarded with `#if QT_VERSION >= QT_VERSION_CHECK(5, 9, 0)`
+  (for [#1254](https://github.com/pbek/QOwnNotes/issues/1254))
+
 ## 26.4.5
 
 - Fixed a **preview font size mismatch** when using **editor highlighting styles in the
