@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "1.54.1",
+    "@playwright/test": "1.57.0",
     "@vuepress/bundler-vite": "next",
     "@vuepress/plugin-docsearch": "next",
     "@vuepress/plugin-feed": "next",
@@ -35,7 +35,7 @@
     "@vuepress/plugin-seo": "next",
     "@vuepress/plugin-sitemap": "next",
     "@vuepress/theme-default": "next",
-    "playwright-core": "1.54.1",
+    "playwright-core": "1.57.0",
     "glob": "^10.3.10",
     "lodash-es": "^4.18.1",
     "markdown-it": "^14.1.0",
