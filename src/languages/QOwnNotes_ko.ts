@@ -2699,8 +2699,8 @@ File: QOwnNotes_en.ts</translation>
 <translation>새 탭의 새 노트</translation>
 </message>
 <message>
-<source>Toggle note stickiness of current tab</source>
-<translation>현재 탭의 노트 고정 기능 전환</translation>
+<source>Toggle note pinning of current tab</source>
+<translation>현재 탭의 노트 고정 전환</translation>
 </message>
 <message>
 <source>Format text underline</source>
@@ -4197,7 +4197,7 @@ ownCloud 서버에서 휴지통이 활성화되어 있다면, 그곳에서 그�
 <context>
 <name>NoteTabManager</name>
 <message>
-<source>Toggle note stickiness</source>
+<source>Toggle note pinning</source>
 <translation>노트 고정 전환</translation>
 </message>
 <message>
@@ -4642,14 +4642,6 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <translation>다시 표시하지 않음!</translation>
 </message>
 <message>
-<source>Double-click to unstick note from tab</source>
-<translation>탭에서 노트를 분리하려면 두 번 클릭</translation>
-</message>
-<message>
-<source>Double-click to stick note to tab</source>
-<translation>노트를 탭에 고정하려면 두 번 클릭</translation>
-</message>
-<message>
 <source>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;last modified: %3&lt;br /&gt;created: %2&lt;br /&gt;file size: %4</source>
 <translation>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;마지막 수정 날짜: %3&lt;br /&gt;만든 날짜: %2&lt;br /&gt;파일 크기: %4</translation>
 </message>
@@ -4672,6 +4664,14 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <message>
 <source>Light mode detected</source>
 <translation>밝은 모드가 감지됨</translation>
+</message>
+<message>
+<source>Double-click to unpin note from tab</source>
+<translation>탭에서 노트를 두 번 클릭하여 고정 해제</translation>
+</message>
+<message>
+<source>Double-click to pin note to tab</source>
+<translation>탭에서 노트를 두 번 클릭하여 고정</translation>
 </message>
 <message>
 <source>Your Linux system seems to use the dark mode. Do you also want to turn on dark mode in QOwnNotes?</source>

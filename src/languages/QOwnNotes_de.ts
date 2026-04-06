@@ -2710,8 +2710,8 @@
 <translation>Neue Notiz in neuem Tab</translation>
 </message>
 <message>
-<source>Toggle note stickiness of current tab</source>
-<translation>Anhaftung der Notiz der aktuellen Registerkarte umschalten</translation>
+<source>Toggle note pinning of current tab</source>
+<translation type="unfinished">Toggle note pinning of current tab</translation>
 </message>
 <message>
 <source>Format text underline</source>
@@ -4248,8 +4248,8 @@ Wenn der Papierkorb auf Ihrem ownCloud-Server aktiviert ist, sollten Sie sie von
 <context>
 <name>NoteTabManager</name>
 <message>
-<source>Toggle note stickiness</source>
-<translation>Notiz-Anheftung umschalten</translation>
+<source>Toggle note pinning</source>
+<translation type="unfinished">Toggle note pinning</translation>
 </message>
 <message>
 <source>Close other note tabs</source>
@@ -4697,14 +4697,6 @@ Klicken Sie auf 'Abbrechen', um Ihre Änderungen zu verwerfen und die externe Ve
 <translation>Nicht erneut anzeigen!</translation>
 </message>
 <message>
-<source>Double-click to unstick note from tab</source>
-<translation>Auf Registerkarte doppelklicken um Notiz zu lösen</translation>
-</message>
-<message>
-<source>Double-click to stick note to tab</source>
-<translation>Auf Registerkarte doppelklicken um Notiz anzuheften</translation>
-</message>
-<message>
 <source>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;last modified: %3&lt;br /&gt;created: %2&lt;br /&gt;file size: %4</source>
 <translation>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;Zuletzt geändert: %3&lt;br /&gt;Erstellt: %2&lt;br /&gt;Dateigröße: %4</translation>
 </message>
@@ -4727,6 +4719,14 @@ Klicken Sie auf 'Abbrechen', um Ihre Änderungen zu verwerfen und die externe Ve
 <message>
 <source>Light mode detected</source>
 <translation>Heller Modus erkannt</translation>
+</message>
+<message>
+<source>Double-click to unpin note from tab</source>
+<translation type="unfinished">Double-click to unpin note from tab</translation>
+</message>
+<message>
+<source>Double-click to pin note to tab</source>
+<translation type="unfinished">Double-click to pin note to tab</translation>
 </message>
 <message>
 <source>Your Linux system seems to use the dark mode. Do you also want to turn on dark mode in QOwnNotes?</source>

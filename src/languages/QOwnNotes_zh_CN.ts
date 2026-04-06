@@ -2693,8 +2693,8 @@
 <translation>在新标签页中新建笔记</translation>
 </message>
 <message>
-<source>Toggle note stickiness of current tab</source>
-<translation>切换笔记在当前标签页中的附着性</translation>
+<source>Toggle note pinning of current tab</source>
+<translation type="unfinished">Toggle note pinning of current tab</translation>
 </message>
 <message>
 <source>Format text underline</source>
@@ -4191,8 +4191,8 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <context>
 <name>NoteTabManager</name>
 <message>
-<source>Toggle note stickiness</source>
-<translation>切换笔记置顶</translation>
+<source>Toggle note pinning</source>
+<translation type="unfinished">Toggle note pinning</translation>
 </message>
 <message>
 <source>Close other note tabs</source>
@@ -4636,14 +4636,6 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <translation>不再显示！</translation>
 </message>
 <message>
-<source>Double-click to unstick note from tab</source>
-<translation>双击取消固定笔记标签页</translation>
-</message>
-<message>
-<source>Double-click to stick note to tab</source>
-<translation>双击固定笔记到标签页</translation>
-</message>
-<message>
 <source>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;last modified: %3&lt;br /&gt;created: %2&lt;br /&gt;file size: %4</source>
 <translation>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;最后修改：%3&lt;br /&gt;创建时间：%2&lt;br /&gt;文件大小：%4</translation>
 </message>
@@ -4666,6 +4658,14 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <message>
 <source>Light mode detected</source>
 <translation>检测到浅色模式</translation>
+</message>
+<message>
+<source>Double-click to unpin note from tab</source>
+<translation type="unfinished">Double-click to unpin note from tab</translation>
+</message>
+<message>
+<source>Double-click to pin note to tab</source>
+<translation type="unfinished">Double-click to pin note to tab</translation>
 </message>
 <message>
 <source>Your Linux system seems to use the dark mode. Do you also want to turn on dark mode in QOwnNotes?</source>

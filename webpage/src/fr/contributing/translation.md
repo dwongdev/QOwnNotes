@@ -5,7 +5,7 @@ Merci de votre aide!
 Comment puis-je aider à traduire QOwnNotes?
 
 ::: warning
-Please don't attempt to edit the translation files in `src/languages` directly. They are all generated automatically via [Crowdin](https://crowdin.com/project/qownnotes).
+Merci de ne pas essayer de modifier les fichiers de traductions dans `src/languages` directement. Ils sont tous générés automatiquement via [Crowdin](https://crowdin.com/project/qownnotes).
 :::
 
 ## Rejoignez-nous sur Crowdin pour traduire QOwnNotes
@@ -14,7 +14,7 @@ Please don't attempt to edit the translation files in `src/languages` directly. 
 
 **Crowdin** est une plate-forme de gestion de traductions populaire pour les applications mobiles, le Web, les logiciels de bureau et les ressources associées.
 
-Vous pouvez vous inscrire sur [Crowdin](https://crowdin.com/project/qownnotes) et **traduire** **QOwnNotes** en votre langue avec des outils faciles à prendre en main.
+Vous pouvez vous inscrire sur [Crowdin](https://crowdin.com/project/qownnotes) et **traduire** **QOwnNotes** dans votre langue avec des outils faciles à prendre en main.
 
 **[QOwnNotes sur Crowdin](https://crowdin.com/project/qownnotes)**
 
@@ -50,9 +50,9 @@ Si vous avez besoin de plus de contexte ou d'aide avec une certaine chaîne et q
 
 ### Termes clés fréquemment utilisés
 
-Il est nécessaire de vérifier et d'utiliser les mêmes traductions pour les termes clés fréquemment utilisés, par exemple, "note" doit être traduit toujours de la même manière.
+Il est nécessaire de vérifier et d'utiliser les mêmes traductions pour les termes clés fréquemment utilisés, par exemple, « note » doit toujours être traduit de la même manière.
 
-Si `notes trashed` est `fichiers supprimés` en français, vous le traduisez toujours en utilisant cette expression. L'exception serait lorsque vous êtes grammaticalement obligé d'utiliser une alternative, mais restez simple.
+Si `trashed notes` est traduit par `notes supprimées` en français, il faudra toujours le traduire en utilisant cette expression. L'exception serait lorsque vous êtes grammaticalement obligé d'utiliser une alternative, mais restez simple.
 
 ![copie d'écran](/img/crowdin/screenshot-7.png)
 
@@ -70,7 +70,7 @@ Pour le pluriel, veuillez ajouter la traduction appropriée dans le bloc corresp
 
 ### Variables
 
-Les variables `%1` doivent être écrites sans espace. Dans les langages RTL il est possible d'insérer les variables depuis l'original ou de les écrire dans votre traduction.
+Les variables `%1` doivent être écrites sans espace. Dans les langages s’écrivant de droite à gauche, il est possible d'insérer les variables depuis l’original ou de les écrire dans votre traduction.
 
 ![copie d'écran](/img/crowdin/screenshot-1.png)
 
@@ -80,7 +80,7 @@ Les variables `%1` doivent être écrites sans espace. Dans les langages RTL il 
 
 ### Clés d'accès
 
-Utilisez `&` devant toute lettre qui devrait être utilisées dans un raccourci. Peut être identique à l'original mais ce n'est pas une obligation.
+Utilisez `&` devant toute lettre qui devrait être utilisée dans un raccourci. Elle peut être identique à l'originale mais ce n'est pas une obligation.
 
 ![copie d'écran](/img/crowdin/screenshot-4.png)
 

@@ -159,11 +159,11 @@
 </message>
 <message>
 <source>Optimize preview colors for dark mode desktop themes</source>
-<translation type="unfinished">Optimize preview colors for dark mode desktop themes</translation>
+<translation>Optimizar los colores de la previsualización para temas de escritorio oscuros</translation>
 </message>
 <message>
 <source>You may need to restart the application to let these changes take effect</source>
-<translation type="unfinished">You may need to restart the application to let these changes take effect</translation>
+<translation>Puede que necesite reiniciar la aplicación para que estos cambios se apliquen</translation>
 </message>
 <message>
 <source>Enable dark mode application icon and tray icon</source>
@@ -175,11 +175,11 @@
 </message>
 <message>
 <source>You need to restart the application to let this setting take effect</source>
-<translation type="unfinished">You need to restart the application to let this setting take effect</translation>
+<translation>Debe reiniciar la aplicación para que este cambio se aplique</translation>
 </message>
 <message>
 <source>Use internal icon theme instead of system icon theme</source>
-<translation type="unfinished">Use internal icon theme instead of system icon theme</translation>
+<translation>Usar tema de iconos interno en lugar de los del sistema</translation>
 </message>
 <message>
 <source>Enforce system icon theme</source>
@@ -2709,8 +2709,8 @@
 <translation>Nueva nota en una pestaña nueva</translation>
 </message>
 <message>
-<source>Toggle note stickiness of current tab</source>
-<translation>Alternar nota adhesiva de la pestaña actual</translation>
+<source>Toggle note pinning of current tab</source>
+<translation type="unfinished">Toggle note pinning of current tab</translation>
 </message>
 <message>
 <source>Format text underline</source>
@@ -3474,9 +3474,9 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message numerus="yes">
 <source>Updated heading links in %n note(s)</source>
-<translation type="unfinished">
-<numerusform>Updated heading links in %n note(s)</numerusform>
-<numerusform>Updated heading links in %n note(s)</numerusform>
+<translation>
+<numerusform>Enlaces de encabezado actualizados en %n nota</numerusform>
+<numerusform>Enlaces de encabezado actualizados en %n notas</numerusform>
 </translation>
 </message>
 <message>
@@ -3671,11 +3671,11 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Archiving the card failed with status code %1 and message: %2</source>
-<translation type="unfinished">Archiving the card failed with status code %1 and message: %2</translation>
+<translation>El archivado de la tarjeta falló con el código de estado %1 y el mensaje: %2</translation>
 </message>
 <message>
 <source>Deleting the card failed with status code %1 and message: %2</source>
-<translation type="unfinished">Deleting the card failed with status code %1 and message: %2</translation>
+<translation>La eliminación de la tarjeta falló con el código de estado %1 y el mensaje: %2</translation>
 </message>
 <message>
 <source>Error while loading boards</source>
@@ -3900,25 +3900,25 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Current note was modified externally</source>
-<translation type="unfinished">Current note was modified externally</translation>
+<translation>La nota actual fue modificada externamente</translation>
 </message>
 <message>
 <source>Overwriting external changes of: %1</source>
-<translation type="unfinished">Overwriting external changes of: %1</translation>
+<translation>Sobrescribiendo los cambios externos de: %1</translation>
 </message>
 <message>
 <source>Loading external changes from: %1</source>
-<translation type="unfinished">Loading external changes from: %1</translation>
+<translation>Cargando los cambios externos de: %1</translation>
 </message>
 <message>
 <source>Note was removed externally!</source>
-<translation type="unfinished">Note was removed externally!</translation>
+<translation>¡La nota fue modificada externamente!</translation>
 </message>
 <message>
 <source>Current note was removed outside of this application!
 Restore current note?</source>
-<translation type="unfinished">Current note was removed outside of this application!
-Restore current note?</translation>
+<translation>¡La nota actual fue eliminada fuera de esta aplicación!
+¿Desea restaurarla?</translation>
 </message>
 <message>
 <source>Stored current note to disk</source>
@@ -3959,11 +3959,11 @@ Restore current note?</translation>
 </message>
 <message>
 <source>Remove current note</source>
-<translation type="unfinished">Remove current note</translation>
+<translation>Elimina nota actual</translation>
 </message>
 <message>
 <source>Remove current note: &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation type="unfinished">Remove current note: &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+<translation>¿Elimina la nota actual: &lt;strong&gt;%1&lt;/strong&gt;?</translation>
 </message>
 <message>
 <source>Notes have backlinks</source>
@@ -4247,8 +4247,8 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <context>
 <name>NoteTabManager</name>
 <message>
-<source>Toggle note stickiness</source>
-<translation>Alternar adhesividad de notas</translation>
+<source>Toggle note pinning</source>
+<translation type="unfinished">Toggle note pinning</translation>
 </message>
 <message>
 <source>Close other note tabs</source>
@@ -4696,15 +4696,6 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <translation>¡No volver a mostrar!</translation>
 </message>
 <message>
-<source>Double-click to unstick note from tab</source>
-<translation>Haga doble clic para despegar la nota de la pestaña
-</translation>
-</message>
-<message>
-<source>Double-click to stick note to tab</source>
-<translation>Haga doble clic para pegar la nota a la pestaña</translation>
-</message>
-<message>
 <source>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;last modified: %3&lt;br /&gt;created: %2&lt;br /&gt;file size: %4</source>
 <translation type="unfinished">&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;last modified: %3&lt;br /&gt;created: %2&lt;br /&gt;file size: %4</translation>
 </message>
@@ -4727,6 +4718,14 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <message>
 <source>Light mode detected</source>
 <translation>Se detectó el modo claro</translation>
+</message>
+<message>
+<source>Double-click to unpin note from tab</source>
+<translation>Haga doble clic para desprender la nota de la pestaña</translation>
+</message>
+<message>
+<source>Double-click to pin note to tab</source>
+<translation>Haga doble clic para fijar la nota a la pestaña</translation>
 </message>
 <message>
 <source>Your Linux system seems to use the dark mode. Do you also want to turn on dark mode in QOwnNotes?</source>

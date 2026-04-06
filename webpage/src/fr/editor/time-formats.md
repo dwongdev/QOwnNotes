@@ -1,4 +1,4 @@
-# Formats d'heure
+# Formats d’horodatage
 
 Vous pouvez utiliser votre propre format d'heure lors de l'insertion de l'heure actuelle dans une note.
 

@@ -19,6 +19,7 @@
   the originally selected occurrence instead of jumping to the next one, so the
   editor/view no longer scrolls away from the user's current position
   (for [#3541](https://github.com/pbek/QOwnNotes/issues/3541))
+- Added more French, Korean, Spanish translation (thank you, jd-develop, VenusGirl, AlejandroMoc)
 
 ## 26.4.4
 

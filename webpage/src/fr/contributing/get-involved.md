@@ -1,8 +1,8 @@
 # Contribuer
 
-Les différentes façons de s'impliquer avec QOwnNotes
+Différentes façons de s'impliquer sur QOwnNotes :
 
-- Mettez QOwnNotes en favori [sur **GitHub**](https://github.com/pbek/QOwnNotes)
+- Mettez une étoile à QOwnNotes [sur **GitHub**](https://github.com/pbek/QOwnNotes)
 - Rejoignez le [groupe **QOwnNotes Telegram**](https://t.me/QOwnNotes)
 - Rejoignez le [groupe **QOwnNotes Matrx**](https://matrix.to/#/#qownnotes:matrix.org)
 - Rejoignez le canal IRC [**#qownnotes**](https://web.libera.chat/#qownnotes) sur Libera.Chat

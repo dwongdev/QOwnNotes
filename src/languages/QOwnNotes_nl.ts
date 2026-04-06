@@ -2708,8 +2708,8 @@
 <translation>Nieuwe notitie in nieuw tabblad</translation>
 </message>
 <message>
-<source>Toggle note stickiness of current tab</source>
-<translation>Schakel de plakkerigheid van het huidige tabblad</translation>
+<source>Toggle note pinning of current tab</source>
+<translation type="unfinished">Toggle note pinning of current tab</translation>
 </message>
 <message>
 <source>Format text underline</source>
@@ -4247,8 +4247,8 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <context>
 <name>NoteTabManager</name>
 <message>
-<source>Toggle note stickiness</source>
-<translation type="unfinished">Toggle note stickiness</translation>
+<source>Toggle note pinning</source>
+<translation type="unfinished">Toggle note pinning</translation>
 </message>
 <message>
 <source>Close other note tabs</source>
@@ -4698,14 +4698,6 @@ Click 'Cancel' to discard your changes and keep the external version.</translati
 <translation>Niet opnieuw weergeven!</translation>
 </message>
 <message>
-<source>Double-click to unstick note from tab</source>
-<translation>Dubbelklik om de notitie van het tabblad los te maken</translation>
-</message>
-<message>
-<source>Double-click to stick note to tab</source>
-<translation>Dubbelklik om de notitie op het tabblad te plakken</translation>
-</message>
-<message>
 <source>&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;last modified: %3&lt;br /&gt;created: %2&lt;br /&gt;file size: %4</source>
 <translation type="unfinished">&lt;strong&gt;%1&lt;/strong&gt;&lt;br /&gt;last modified: %3&lt;br /&gt;created: %2&lt;br /&gt;file size: %4</translation>
 </message>
@@ -4728,6 +4720,14 @@ Click 'Cancel' to discard your changes and keep the external version.</translati
 <message>
 <source>Light mode detected</source>
 <translation>Lichtmodus gedetecteerd</translation>
+</message>
+<message>
+<source>Double-click to unpin note from tab</source>
+<translation type="unfinished">Double-click to unpin note from tab</translation>
+</message>
+<message>
+<source>Double-click to pin note to tab</source>
+<translation type="unfinished">Double-click to pin note to tab</translation>
 </message>
 <message>
 <source>Your Linux system seems to use the dark mode. Do you also want to turn on dark mode in QOwnNotes?</source>
