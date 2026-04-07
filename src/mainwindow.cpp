@@ -2853,6 +2853,7 @@ void MainWindow::setupStatusBarWidgets() {
     _noteEditLineNumberLabel = new QLabel(this);
     _noteEditLineNumberLabel->setText(QStringLiteral("0:0"));
     _noteEditLineNumberLabel->setToolTip(tr("Line numbers"));
+    _noteEditLineNumberLabel->setContentsMargins(5, 0, 5, 0);
 
     ui->statusBar->addPermanentWidget(_noteEditLineNumberLabel);
 

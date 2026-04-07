@@ -1,5 +1,13 @@
 # QOwnNotes Changelog
 
+## 26.4.7
+
+- Fixed the **line and column status bar label** being rendered too close to the
+  window edge when the main window is **maximized or fullscreen** on some platforms/styles:
+  the label had no internal horizontal padding, so it could appear cramped against
+  the status bar border; it now uses left and right content margins like the other
+  status bar controls (for [#3543](https://github.com/pbek/QOwnNotes/issues/3543))
+
 ## 26.4.6
 
 - Fixed a wrong **settings path in portable mode** when running as an **AppImage
