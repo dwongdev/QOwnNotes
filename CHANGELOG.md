@@ -2,6 +2,10 @@
 
 ## 26.4.7
 
+- Updated the **release workflow** to build and publish the **Qt6 Snap** from
+  `build-systems/github/snap.qt6`, so Snap Store installs now deliver the Qt6
+  package again, while the legacy Qt5 snap is still attached to releases under a
+  separate asset name (for [#3470](https://github.com/pbek/QOwnNotes/issues/3470))
 - Fixed the **line and column status bar label** being rendered too close to the
   window edge when the main window is **maximized or fullscreen** on some platforms/styles:
   the label had no internal horizontal padding, so it could appear cramped against
