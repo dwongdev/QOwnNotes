@@ -17,6 +17,7 @@
 #include <QDebug>
 #include <QEvent>
 #include <QKeyEvent>
+#include <QScrollBar>
 
 #include "ui_qtexteditsearchwidget.h"
 
@@ -64,6 +65,9 @@ void QTextEditSearchWidget::activate() {
     setReplaceMode(false);
     show();
 
+    const int verticalScrollBarValue = _textEdit->verticalScrollBar()->value();
+    const int horizontalScrollBarValue = _textEdit->horizontalScrollBar()->value();
+
     // Preset the selected text as search text if there is any, replacing any
     // existing search text. Position the cursor one character before the
     // selection start so that doSearchDown() (which searches strictly after the
@@ -88,6 +92,9 @@ void QTextEditSearchWidget::activate() {
     ui->searchLineEdit->setFocus();
     ui->searchLineEdit->selectAll();
     doSearchDown();
+
+    _textEdit->verticalScrollBar()->setValue(verticalScrollBarValue);
+    _textEdit->horizontalScrollBar()->setValue(horizontalScrollBarValue);
 }
 
 void QTextEditSearchWidget::activateReplace() {

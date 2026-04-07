@@ -17,6 +17,7 @@
 #include <QDebug>
 #include <QEvent>
 #include <QKeyEvent>
+#include <QScrollBar>
 
 #include "qlitehtmlwidget.h"
 #include "ui_qlitehtmlsearchwidget.h"
@@ -59,6 +60,9 @@ void QLiteHtmlSearchWidget::activate()
 {
     show();
 
+    const int verticalScrollBarValue = _liteHtmlWidget->verticalScrollBar()->value();
+    const int horizontalScrollBarValue = _liteHtmlWidget->horizontalScrollBar()->value();
+
     QString selectedText = _liteHtmlWidget->selectedText();
     // Preset the selected text as search text if there is any, replacing any
     // existing search text. Set _searchFromSelection BEFORE calling setText()
@@ -86,6 +90,9 @@ void QLiteHtmlSearchWidget::activate()
     if (!searchAlreadyDone) {
         doSearchDown();
     }
+
+    _liteHtmlWidget->verticalScrollBar()->setValue(verticalScrollBarValue);
+    _liteHtmlWidget->horizontalScrollBar()->setValue(horizontalScrollBarValue);
 }
 
 void QLiteHtmlSearchWidget::deactivate()
