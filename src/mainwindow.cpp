@@ -553,8 +553,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // attempt to check the api app version
     startAppVersionTest();
 
+#ifndef Q_OS_MAC
     // attempt to quit the application when a logout is initiated
     connect(qApp, &QApplication::commitDataRequest, this, &MainWindow::on_action_Quit_triggered);
+#else
+    // Avoid re-entering the Cocoa quit flow on macOS during session shutdown, see #3546.
+#endif
 
     // Register the LogWidget::LogType type so showStatusBarMessage there doesn't throw a warning,
     // like this: `QMetaMethod::invoke: Unable to handle unregistered datatype 'LogWidget::LogType'`
@@ -4251,11 +4255,15 @@ void MainWindow::handleNoteTextChanged() {
 }
 
 void MainWindow::on_action_Quit_triggered() {
+    qApp->setProperty("appIsShuttingDown", true);
     storeSettings();
     QApplication::quit();
 }
 
-void MainWindow::quitApp() { QApplication::quit(); }
+void MainWindow::quitApp() {
+    qApp->setProperty("appIsShuttingDown", true);
+    QApplication::quit();
+}
 
 void MainWindow::on_actionSet_ownCloud_Folder_triggered() {
     // store updated notes to disk

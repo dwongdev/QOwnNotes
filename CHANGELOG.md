@@ -2,6 +2,11 @@
 
 ## 26.4.8
 
+- Fixed two possible **shutdown crashes** while quitting the application: on **macOS**
+  the app no longer re-enters Qt's `commitDataRequest` quit path during the Cocoa
+  termination flow, and on all platforms the **log panel** now stops appending rich
+  text once application teardown has started, avoiding late UI updates from Qt log
+  messages during shutdown (for [#3546](https://github.com/pbek/QOwnNotes/issues/3546))
 - Updated the **Launchpad snapcraft configuration** in `build-systems/snap/` to
   build the **Ubuntu Snap with Qt6 on core24**, aligned with the working GitHub
   Qt6 snap packaging so the Launchpad snap can ship the Qt6 build path as well

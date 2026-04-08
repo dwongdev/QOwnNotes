@@ -2,6 +2,8 @@
 
 #include <utils/misc.h>
 
+#include <QApplication>
+#include <QCoreApplication>
 #include <QDateTime>
 #include <QDebug>
 #include <QFile>
@@ -18,6 +20,13 @@
 #endif
 
 static QPointer<LogWidget> s_logWidget = nullptr;
+static bool s_appIsShuttingDown = false;
+
+static bool shouldSkipWidgetLogging() {
+    // Avoid updating the log widget while the application is tearing down, see #3546.
+    return s_appIsShuttingDown || QCoreApplication::closingDown() ||
+           (qApp && qApp->property("appIsShuttingDown").toBool());
+}
 
 LogWidget::LogWidget(QWidget *parent)
     : QFrame(parent)
@@ -30,6 +39,11 @@ LogWidget::LogWidget(QWidget *parent)
 
     // static reference to us for use in the message handler
     s_logWidget = this;
+
+    connect(qApp, &QCoreApplication::aboutToQuit, this, [] {
+        s_appIsShuttingDown = true;
+        qApp->setProperty("appIsShuttingDown", true);
+    });
 
     ui->setupUi(this);
 
@@ -93,6 +107,11 @@ LogWidget::LogWidget(QWidget *parent)
 
 LogWidget::~LogWidget() {
 #ifndef INTEGRATION_TESTS
+    s_appIsShuttingDown = true;
+    if (qApp) {
+        qApp->setProperty("appIsShuttingDown", true);
+    }
+    s_logWidget = nullptr;
     delete ui;
 #endif
 }
@@ -159,6 +178,10 @@ void LogWidget::log(LogWidget::LogType logType, const QString &text) {
     }
 
 #ifndef INTEGRATION_TESTS
+    if (shouldSkipWidgetLogging()) {
+        return;
+    }
+
     // log to the log file
     logToFileIfAllowed(logType, text);
 
@@ -359,6 +382,9 @@ void LogWidget::logMessageOutput(QtMsgType type, const QMessageLogContext &conte
     }
 
 #ifndef INTEGRATION_TESTS
+    if (shouldSkipWidgetLogging()) {
+        return;
+    }
 
     if (s_logWidget) {
         // Use auto connection to handle the case if a message is coming in from a different thread.
