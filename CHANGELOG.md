@@ -1,5 +1,12 @@
 # QOwnNotes Changelog
 
+## 26.4.8
+
+- Updated the **Launchpad snapcraft configuration** in `build-systems/snap/` to
+  build the **Ubuntu Snap with Qt6 on core24**, aligned with the working GitHub
+  Qt6 snap packaging so the Launchpad snap can ship the Qt6 build path as well
+  (for [#3470](https://github.com/pbek/QOwnNotes/issues/3470))
+
 ## 26.4.7
 
 - Opening the search bar in the **note text edit**, the **preview**, or the
