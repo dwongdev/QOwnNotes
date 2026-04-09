@@ -13,6 +13,7 @@ declare global {
 
 // Import custom components
 import Poll from './components/Poll.vue'
+import RssBlock from './components/RssBlock.vue'
 import BlogDate from './components/BlogDate.vue'
 import BlogIndex from './components/BlogIndex.vue'
 import ProfileCard from './components/ProfileCard.vue'
@@ -34,6 +35,7 @@ export default defineClientConfig({
 
     // Register custom components globally
     app.component('Poll', Poll)
+    app.component('RssBlock', RssBlock)
     app.component('BlogDate', BlogDate)
     app.component('BlogIndex', BlogIndex)
     app.component('ProfileCard', ProfileCard)
@@ -81,4 +83,3 @@ export default defineClientConfig({
   setup() {},
   rootComponents: [Poll],
 })
-

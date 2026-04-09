@@ -22,13 +22,6 @@ features:
 footer: ارائه شده توسط پاتریزیو بکرله همراه با ❤️
 ---
 
-<div class="rss-block">
-    <v-chip outlined><v-icon left>mdi-rss</v-icon> [وبلاگ RSS](https://feeds.feedburner.com/QOwnNotesBlog)</v-chip>
-    <v-chip outlined><v-icon left>mdi-rss</v-icon> [RSS انتشارها](https://feeds.feedburner.com/QOwnNotesReleases)</v-chip>
-</div>
+<RssBlock />
 
 <Poll />
-
-<style>
-    .rss-block { text-align: center; margin-bottom: 20px; }
-</style>

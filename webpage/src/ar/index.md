@@ -22,13 +22,6 @@ features:
 footer: صنعه Patrizio Bekerle بكل حب ❤️
 ---
 
-<div class="rss-block">
-    <v-chip outlined><v-icon left>mdi-rss</v-icon> [موجز RSS للمدونة](https://feeds.feedburner.com/QOwnNotesBlog)</v-chip>
-    <v-chip outlined><v-icon left>mdi-rss</v-icon> [موجز RSS للإصدارات](https://feeds.feedburner.com/QOwnNotesReleases)</v-chip>
-</div>
+<RssBlock />
 
 <Poll />
-
-<style>
-    .rss-block { text-align: center; margin-bottom: 20px; }
-</style>

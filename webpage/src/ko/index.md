@@ -22,13 +22,6 @@ features:
 footer: Patrizio Bekerle이 ❤️으로 제작했으며, 비너스걸이 한국어 번역을 했습니다.
 ---
 
-<div class="rss-block">
-    <v-chip outlined><v-icon left>mdi-rss</v-icon> [RSS 블로그](https://feeds.feedburner.com/QOwnNotesBlog)</v-chip>
-    <v-chip outlined><v-icon left>mdi-rss</v-icon> [RSS 릴리스](https://feeds.feedburner.com/QOwnNotesReleases)</v-chip>
-</div>
+<RssBlock />
 
 <Poll />
-
-<style>
-    .rss-block { text-align: center; margin-bottom: 20px; }
-</style>

@@ -22,13 +22,6 @@ features:
 footer: Fabriqué par Patrizio Bekerle avec ❤️
 ---
 
-<div class="rss-block">
-    <v-chip outlined><v-icon left>mdi-rss</v-icon> [Flux RSS du blog](https://feeds.feedburner.com/QOwnNotesBlog)</v-chip>
-    <v-chip outlined><v-icon left>mdi-rss</v-icon> [Flux RSS des versions](https://feeds.feedburner.com/QOwnNotesReleases)</v-chip>
-</div>
+<RssBlock />
 
 <Poll />
-
-<style>
-    .rss-block { text-align: center; margin-bottom: 20px; }
-</style>
