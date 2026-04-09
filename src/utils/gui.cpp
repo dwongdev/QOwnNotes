@@ -1629,18 +1629,27 @@ void Utils::Gui::applyInterfaceStyle(QString interfaceStyle) {
         interfaceStyle = SettingsService().value(QStringLiteral("interfaceStyle")).toString();
     }
 
-    // Apply custom style to hide menu icons
-    if (Utils::Misc::areMenuIconsHidden()) {
-        if (!interfaceStyle.isEmpty()) {
-            // Apply the selected interface style and the custom style
-            QStyle *interfaceStyleClass = QStyleFactory::create(interfaceStyle);
-            QApplication::setStyle(new NoMenuIconStyle(interfaceStyleClass));
-        } else {
-            // Apply the custom style only
-            QApplication::setStyle(new NoMenuIconStyle);
-        }
+    const bool hideMenuIcons = Utils::Misc::areMenuIconsHidden();
+    const bool fixDarkModeDisabledIcons =
+        SettingsService().value(QStringLiteral("darkMode")).toBool();
+    const QString currentStyleName = QApplication::style()->objectName();
+    QStyle *baseStyle = nullptr;
+
+    if (!interfaceStyle.isEmpty()) {
+        baseStyle = QStyleFactory::create(interfaceStyle);
+    } else if (!currentStyleName.isEmpty()) {
+        baseStyle = QStyleFactory::create(currentStyleName);
+    }
+
+    if (hideMenuIcons || fixDarkModeDisabledIcons) {
+        QApplication::setStyle(
+            new NoMenuIconStyle(baseStyle, hideMenuIcons, fixDarkModeDisabledIcons));
+        return;
+    }
+
+    if (baseStyle != nullptr) {
+        QApplication::setStyle(baseStyle);
     } else if (!interfaceStyle.isEmpty()) {
-        // Restore the interface style
         QApplication::setStyle(interfaceStyle);
     }
 }

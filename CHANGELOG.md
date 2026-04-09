@@ -1,5 +1,13 @@
 # QOwnNotes Changelog
 
+## 26.4.9
+
+- Fixed disabled **toolbar and action icons** in **dark mode** not being grayed out
+  consistently, including actions like **Edit encrypted note** and **Decrypt note**:
+  disabled icons are now recolored through the interface proxy style using the
+  palette's disabled icon/text color, so the fix applies consistently across the UI
+  (for [#2489](https://github.com/pbek/QOwnNotes/issues/2489))
+
 ## 26.4.8
 
 - Fixed two possible **shutdown crashes** while quitting the application: on **macOS**
