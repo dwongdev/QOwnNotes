@@ -15,6 +15,7 @@
 #include <QEventLoop>
 #include <QFile>
 #include <QFileInfo>
+#include <QImage>
 #include <QMenu>
 #include <QMimeData>
 #include <QNetworkReply>
@@ -63,7 +64,8 @@ QByteArray HtmlPreviewWidgetInternal::resourceLoadCallBack(const QUrl &url) {
     return data;
 }
 
-void HtmlPreviewWidgetInternal::onContextMenuRequested(QPoint pos, const QUrl &linkUrl) {
+void HtmlPreviewWidgetInternal::onContextMenuRequested(QPoint pos, const QUrl &linkUrl,
+                                                       const QUrl &imageUrl) {
     QMenu menu;
 
     QAction *act = new QAction(tr("Copy"), this);
@@ -79,6 +81,16 @@ void HtmlPreviewWidgetInternal::onContextMenuRequested(QPoint pos, const QUrl &l
     });
     menu.addAction(act);
 
+    QAction *copyImagePathAction = nullptr;
+    QAction *copyImageClipboardAction = nullptr;
+
+    if (!imageUrl.isEmpty() && imageUrl.isValid()) {
+        copyImagePathAction = new QAction(tr("Copy image file path"), this);
+        copyImageClipboardAction = new QAction(tr("Copy image to clipboard"), this);
+        menu.addAction(copyImagePathAction);
+        menu.addAction(copyImageClipboardAction);
+    }
+
     if (!linkUrl.isEmpty() && linkUrl.isValid()) {
         QAction *copyLinkAction = new QAction(tr("Copy link location"), this);
         copyLinkAction->setEnabled(selectedText().isEmpty());
@@ -93,8 +105,37 @@ void HtmlPreviewWidgetInternal::onContextMenuRequested(QPoint pos, const QUrl &l
     menu.addAction(tr("Reset zoom"), this, [this] { setZoomFactor(1.0); });
 
     QAction *selectedItem = menu.exec(mapToGlobal(pos));
-    if (selectedItem == htmlFileExportAction) {
+    if (selectedItem == copyImagePathAction) {
+        qApp->clipboard()->setText(imageUrl.isLocalFile() ? imageUrl.toLocalFile()
+                                                          : imageUrl.toString());
+    } else if (selectedItem == copyImageClipboardAction) {
+        copyImageToClipboard(imageUrl);
+    } else if (selectedItem == htmlFileExportAction) {
         exportAsHTMLFile();
+    }
+}
+
+void HtmlPreviewWidgetInternal::copyImageToClipboard(const QUrl &imageUrl) {
+    QImage image;
+
+    if (imageUrl.isLocalFile()) {
+        image = QImage(imageUrl.toLocalFile());
+    } else {
+        const QString imageUrlString = imageUrl.toString();
+
+        if (imageUrlString.startsWith(QLatin1String("data:image/"), Qt::CaseInsensitive)) {
+            const QStringList parts = imageUrlString.split(QStringLiteral(";base64,"));
+
+            if (parts.count() == 2) {
+                image = QImage::fromData(QByteArray::fromBase64(parts[1].toLatin1()));
+            }
+        } else {
+            image = QImage::fromData(resourceLoadCallBack(imageUrl));
+        }
+    }
+
+    if (!image.isNull()) {
+        qApp->clipboard()->setImage(image);
     }
 }
 

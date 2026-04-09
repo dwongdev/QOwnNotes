@@ -623,7 +623,9 @@ void QLiteHtmlWidget::contextMenuEvent(QContextMenuEvent *event)
     QPoint viewportPos;
     QPoint pos;
     htmlPos(event->pos(), &viewportPos, &pos);
-    emit contextMenuRequested(event->pos(), d->documentContainer.linkAt(pos, viewportPos));
+    emit contextMenuRequested(event->pos(),
+                              d->documentContainer.linkAt(pos, viewportPos),
+                              d->documentContainer.imageAt(pos, viewportPos));
 }
 
 static QAbstractSlider::SliderAction getSliderAction(int key)

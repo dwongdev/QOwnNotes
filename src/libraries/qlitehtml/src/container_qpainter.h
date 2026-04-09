@@ -95,6 +95,7 @@ public: // outside API
     QVector<QRect> leaveEvent();
 
     QUrl linkAt(const QPoint &documentPos, const QPoint &viewportPos);
+    QUrl imageAt(const QPoint &documentPos, const QPoint &viewportPos);
 
     QString caption() const;
     QString selectedText() const;

@@ -21,7 +21,8 @@ class HtmlPreviewWidgetInternal final : public QLiteHtmlWidget {
 
    private:
     QByteArray resourceLoadCallBack(const QUrl &);
-    void onContextMenuRequested(QPoint pos, const QUrl &url);
+    void onContextMenuRequested(QPoint pos, const QUrl &linkUrl, const QUrl &imageUrl);
+    void copyImageToClipboard(const QUrl &imageUrl);
 
     void wheelEvent(QWheelEvent *) override;
     bool eventFilter(QObject *src, QEvent *e) override;

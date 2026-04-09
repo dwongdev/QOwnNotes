@@ -2,6 +2,10 @@
 
 ## 26.4.9
 
+- Added **Copy image to clipboard** and **Copy image file path** actions to the
+  **QLiteHtml preview** context menu when right-clicking preview images, so image
+  content and the resolved local image path can be copied directly from the preview
+  (for [#1741](https://github.com/pbek/QOwnNotes/issues/1741))
 - Fixed disabled **toolbar and action icons** in **dark mode** not being grayed out
   consistently, including actions like **Edit encrypted note** and **Decrypt note**:
   disabled icons are now recolored through the interface proxy style using the

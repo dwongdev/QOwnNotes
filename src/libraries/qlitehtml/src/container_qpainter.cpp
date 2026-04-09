@@ -739,6 +739,34 @@ void DocumentContainerPrivate::draw_text(litehtml::uint_ptr hdc,
     }
 }
 
+static litehtml::element::ptr elementAtPoint(const litehtml::document::ptr &document,
+                                             const QPoint &documentPos,
+                                             const QPoint &viewportPos)
+{
+    if (!document || !document->root()) {
+        return {};
+    }
+
+    return document->root()->get_element_by_point(documentPos.x(),
+                                                  documentPos.y(),
+                                                  viewportPos.x(),
+                                                  viewportPos.y());
+}
+
+static litehtml::element::ptr firstMatchingAncestor(
+    litehtml::element::ptr element, const std::function<bool(const litehtml::element::ptr &)> &match)
+{
+    while (element) {
+        if (match(element)) {
+            return element;
+        }
+
+        element = element->parent();
+    }
+
+    return {};
+}
+
 int DocumentContainerPrivate::pt_to_px(int pt) const
 {
 #ifdef Q_OS_WIN
@@ -1407,18 +1435,41 @@ QVector<QRect> DocumentContainer::leaveEvent()
 
 QUrl DocumentContainer::linkAt(const QPoint &documentPos, const QPoint &viewportPos)
 {
-    if (!d->m_document)
-        return {};
-    const litehtml::element::ptr element = d->m_document->root()
-                                               ->get_element_by_point(documentPos.x(),
-                                                                      documentPos.y(),
-                                                                      viewportPos.x(),
-                                                                      viewportPos.y());
+    const litehtml::element::ptr element
+        = firstMatchingAncestor(elementAtPoint(d->m_document, documentPos, viewportPos),
+                                [](const litehtml::element::ptr &candidate) {
+                                    const char *href = candidate->get_attr("href");
+                                    return href && href[0] != '\0';
+                                });
     if (!element)
         return {};
     const char *href = element->get_attr("href");
     if (href)
         return d->resolveUrl(QString::fromUtf8(href), d->m_baseUrl);
+    return {};
+}
+
+QUrl DocumentContainer::imageAt(const QPoint &documentPos, const QPoint &viewportPos)
+{
+    const litehtml::element::ptr element
+        = firstMatchingAncestor(elementAtPoint(d->m_document, documentPos, viewportPos),
+                                [](const litehtml::element::ptr &candidate) {
+                                    const char *tagName = candidate->get_tagName();
+                                    if (!tagName || strcmp(tagName, "img") != 0) {
+                                        return false;
+                                    }
+
+                                    const char *src = candidate->get_attr("src");
+                                    return src && src[0] != '\0';
+                                });
+    if (!element)
+        return {};
+
+    const char *src = element->get_attr("src");
+    if (src) {
+        return d->resolveUrl(QString::fromUtf8(src), d->m_baseUrl);
+    }
+
     return {};
 }
 

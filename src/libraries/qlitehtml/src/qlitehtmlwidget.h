@@ -75,7 +75,7 @@ signals:
     void linkClicked(const QUrl &url);
     void linkHighlighted(const QUrl &url);
     void copyAvailable(bool available);
-    void contextMenuRequested(const QPoint &pos, const QUrl &url);
+    void contextMenuRequested(const QPoint &pos, const QUrl &linkUrl, const QUrl &imageUrl);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
