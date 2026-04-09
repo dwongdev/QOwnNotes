@@ -2,6 +2,12 @@
 
 ## 26.4.9
 
+- Fixed a possible **startup crash** when restoring the last opened note from
+  **note history** while the **note tree** was enabled: history restoration
+  searched the tree by note name and could match a folder item with the same label
+  before the actual note, then dereferenced an item's missing parent; note-history
+  restore now only considers note items and safely handles root notes
+  (for [#3547](https://github.com/pbek/QOwnNotes/issues/3547))
 - Added a **Note search panel** option to open notes in a **new tab** instead of
   replacing the active tab, for users who want note creation from the search panel
   to preserve their current tab context (for [#2385](https://github.com/pbek/QOwnNotes/issues/2385))

@@ -2950,14 +2950,20 @@ bool MainWindow::jumpToNoteHistoryItem(const NoteHistoryItem &historyItem) {
     const QList<QTreeWidgetItem *> items = ui->noteTreeWidget->findItems(
         historyItem.getNoteName(), Qt::MatchExactly | Qt::MatchRecursive, 0);
     const bool isCurrentNoteTreeEnabled = NoteFolder::isCurrentNoteTreeEnabled();
+    const int noteSubFolderId =
+        NoteSubFolder::fetchByPathData(historyItem.getNoteSubFolderPathData()).getId();
 
     for (QTreeWidgetItem *item : items) {
-        if (isCurrentNoteTreeEnabled) {
-            QString pathData = historyItem.getNoteSubFolderPathData();
-            auto noteSubFolder = NoteSubFolder::fetchByPathData(std::move(pathData));
-            int parentId = item->parent()->data(0, Qt::UserRole).toInt();
+        if (item->data(0, Qt::UserRole + 1).toInt() != NoteType) {
+            continue;
+        }
 
-            if (parentId != noteSubFolder.getId()) {
+        if (isCurrentNoteTreeEnabled) {
+            const auto *parentItem = item->parent();
+            const int parentId =
+                parentItem == nullptr ? 0 : parentItem->data(0, Qt::UserRole).toInt();
+
+            if (parentId != noteSubFolderId) {
                 continue;
             }
         }
