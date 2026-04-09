@@ -510,7 +510,10 @@ void SearchFilterManager::jumpToNoteOrCreateNew(bool disableLoadNoteDirectoryLis
     Note note = Note::fetchByName(text);
 
     // if we can't find a note we create a new one
+    bool createdNewNote = false;
     if (note.getId() == 0) {
+        createdNewNote = true;
+
         // Allow note editing if it was disabled
         _mainWindow->allowNoteEditing();
 
@@ -593,7 +596,13 @@ void SearchFilterManager::jumpToNoteOrCreateNew(bool disableLoadNoteDirectoryLis
     }
 
     // jump to the found or created note
-    _mainWindow->setCurrentNote(std::move(note));
+    const bool openCreatedNotesInNewTab =
+        SettingsService().value(QStringLiteral("noteSearchPanelOpenCreatedNotesInNewTab")).toBool();
+    if (createdNewNote && openCreatedNotesInNewTab) {
+        _mainWindow->openNoteInTab(note, true);
+    } else {
+        _mainWindow->setCurrentNote(std::move(note));
+    }
 
     // hide the search widget after creating a new note
     _mainWindow->activeNoteTextEdit()->hideSearchWidget(true);

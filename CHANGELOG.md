@@ -2,6 +2,9 @@
 
 ## 26.4.9
 
+- Added a **Note search panel** option to open notes in a **new tab** instead of
+  replacing the active tab, for users who want note creation from the search panel
+  to preserve their current tab context (for [#2385](https://github.com/pbek/QOwnNotes/issues/2385))
 - Added **Copy image to clipboard** and **Copy image file path** actions to the
   **QLiteHtml preview** context menu when right-clicking preview images, so image
   content and the resolved local image path can be copied directly from the preview

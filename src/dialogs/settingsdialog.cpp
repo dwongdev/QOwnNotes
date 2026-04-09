@@ -907,6 +907,9 @@ void SettingsDialog::storePanelSettings() {
 
     settings.setValue(QStringLiteral("showMatches"), ui->showMatchesCheckBox->isChecked());
 
+    settings.setValue(QStringLiteral("noteSearchPanelOpenCreatedNotesInNewTab"),
+                      ui->noteSearchPanelOpenCreatedNotesInNewTabCheckBox->isChecked());
+
     settings.setValue(QStringLiteral("noteSubfoldersPanelShowFullPath"),
                       ui->noteSubfoldersPanelShowFullPathCheckBox->isChecked());
 
@@ -1515,6 +1518,9 @@ void SettingsDialog::readPanelSettings() {
 
     ui->showMatchesCheckBox->setChecked(
         settings.value(QStringLiteral("showMatches"), true).toBool());
+
+    ui->noteSearchPanelOpenCreatedNotesInNewTabCheckBox->setChecked(
+        settings.value(QStringLiteral("noteSearchPanelOpenCreatedNotesInNewTab")).toBool());
 
     if (settings.value(QStringLiteral("noteSubfoldersPanelShowRootFolderName"), true).toBool()) {
         ui->noteSubfoldersPanelShowRootFolderNameCheckBox->setChecked(true);

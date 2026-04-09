@@ -6421,16 +6421,23 @@ git config --global user.name &quot;Your name&quot;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="1">
-                 <widget class="QCheckBox" name="showMatchesCheckBox">
-                  <property name="text">
-                   <string>Show the number of matches in each note</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
+                 <item row="1" column="1">
+                  <widget class="QCheckBox" name="showMatchesCheckBox">
+                   <property name="text">
+                    <string>Show the number of matches in each note</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QCheckBox" name="noteSearchPanelOpenCreatedNotesInNewTabCheckBox">
+                   <property name="text">
+                    <string>Open newly created notes in a new tab</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
              <item row="1" column="0">
               <widget class="QGroupBox" name="noteFolderPanelGroupBox">
                <property name="title">
