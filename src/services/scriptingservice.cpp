@@ -333,6 +333,7 @@ void ScriptingService::initComponents() {
     _scriptComponents.clear();
     _settingsVariables.clear();
     _highlightingRules.clear();
+    _highlightingHookExists = false;
 
     // fetch enabled only
     const QList<Script> scripts = Script::fetchAll(true);
@@ -340,6 +341,10 @@ void ScriptingService::initComponents() {
     for (const Script &script : scripts) {
         initComponent(script);
     }
+
+    // Cache whether any script provides a highlightingHook to avoid
+    // per-block QML invocations when no script uses it
+    _highlightingHookExists = methodExists(QStringLiteral("highlightingHook(QVariant,QVariant)"));
 }
 
 /**
@@ -2561,3 +2566,91 @@ QVector<QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule>
 ScriptingService::getHighlightingRules() {
     return _highlightingRules;
 }
+
+/**
+ * Adds a highlighting rule with custom format styling to the syntax highlighter
+ *
+ * @param pattern {QString} the regular expression pattern to highlight
+ * @param shouldContain {QString} a string that must be contained in the highlighted text for the
+ * pattern to be parsed
+ * @param state {int} the state of the syntax highlighter to use (use -1 / NoState for custom
+ * format only)
+ * @param capturingGroup {int} the capturing group for the pattern to use for highlighting
+ * @param maskedGroup {int} the capturing group for the pattern to use for masking
+ * @param formatStyle {QVariantMap} a map with custom format properties:
+ *   - foregroundColor {QString} foreground color name or hex value (e.g. "#ff0000" or "red")
+ *   - backgroundColor {QString} background color name or hex value
+ *   - bold {bool} whether to use bold font weight
+ *   - italic {bool} whether to use italic font style
+ *   - underline {bool} whether to underline the text
+ *   - fontSize {int} the font point size
+ */
+void ScriptingService::addHighlightingRule(const QString &pattern, const QString &shouldContain,
+                                           int state, int capturingGroup, int maskedGroup,
+                                           const QVariantMap &formatStyle) {
+    QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule rule(
+        static_cast<MarkdownHighlighter::HighlighterState>(state));
+    rule.pattern = QRegularExpression(pattern);
+    rule.shouldContain = shouldContain;
+    rule.capturingGroup = capturingGroup;
+    rule.maskedGroup = maskedGroup;
+
+    // Apply custom format properties if provided
+    if (!formatStyle.isEmpty()) {
+        rule.hasCustomFormat = true;
+        rule.foregroundColor = formatStyle.value(QStringLiteral("foregroundColor")).toString();
+        rule.backgroundColor = formatStyle.value(QStringLiteral("backgroundColor")).toString();
+        rule.bold = formatStyle.value(QStringLiteral("bold")).toBool();
+        rule.italic = formatStyle.value(QStringLiteral("italic")).toBool();
+        rule.underline = formatStyle.value(QStringLiteral("underline")).toBool();
+        rule.fontSize = formatStyle.value(QStringLiteral("fontSize")).toReal();
+    }
+
+    _highlightingRules.append(rule);
+}
+
+/**
+ * Calls the highlightingHook function for all script components
+ * This function is called for each text block during syntax highlighting
+ *
+ * @param text the text of the current block being highlighted
+ * @return QVariantList of highlight range objects, each with:
+ *   - start {int} start position in the text
+ *   - length {int} number of characters to highlight
+ *   - state {int} the HighlighterState to use (optional, default -1)
+ *   - foregroundColor {QString} foreground color (optional)
+ *   - backgroundColor {QString} background color (optional)
+ *   - bold {bool} bold (optional)
+ *   - italic {bool} italic (optional)
+ *   - underline {bool} underline (optional)
+ *   - fontSize {int} font point size (optional)
+ */
+QVariantList ScriptingService::callHighlightingHook(const QString &text,
+                                                    int previousBlockState) const {
+    QMapIterator<int, ScriptComponent> i(_scriptComponents);
+    QVariantList results;
+
+    while (i.hasNext()) {
+        i.next();
+        ScriptComponent scriptComponent = i.value();
+        QVariant result;
+
+        if (methodExistsForObject(scriptComponent.object,
+                                  QStringLiteral("highlightingHook(QVariant,QVariant)"))) {
+            QMetaObject::invokeMethod(scriptComponent.object, "highlightingHook",
+                                      Q_RETURN_ARG(QVariant, result), Q_ARG(QVariant, text),
+                                      Q_ARG(QVariant, previousBlockState));
+
+            if (!result.isNull()) {
+                results.append(result.toList());
+            }
+        }
+    }
+
+    return results;
+}
+
+/**
+ * Returns whether any script has a highlightingHook function
+ */
+bool ScriptingService::highlightingHookExists() const { return _highlightingHookExists; }

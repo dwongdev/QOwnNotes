@@ -21,6 +21,7 @@
 #include <QApplication>
 #include <QColor>
 #include <QDebug>
+#include <QFont>
 #include <QObject>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
@@ -109,6 +110,10 @@ void QOwnNotesMarkdownHighlighter::highlightBlock(const QString &text) {
 #endif
 
         highlightScriptingRules(ScriptingService::instance()->getHighlightingRules(), text);
+
+        // Call the per-block highlightingHook in scripts (only invoked if at
+        // least one script provides the hook, checked via cached flag)
+        highlightScriptingHook(text);
     }
 
     // Only check for encryption end marker if we're highlighting encrypted text
@@ -134,18 +139,49 @@ void QOwnNotesMarkdownHighlighter::highlightScriptingRules(
         auto iterator = rule.pattern.globalMatch(text);
         const uint8_t capturingGroup = rule.capturingGroup;
         const uint8_t maskedGroup = rule.maskedGroup;
-        const QTextCharFormat &format = _formats[rule.state];
 
-        // find and format all occurrences
+        // Build the format: use custom format if provided, otherwise use the
+        // predefined format for the given state
+        QTextCharFormat format;
+        if (rule.hasCustomFormat) {
+            // Start from the state format if a valid state was specified
+            if (rule.state != NoState) {
+                format = _formats[rule.state];
+            }
+
+            // Override with custom properties
+            if (!rule.foregroundColor.isEmpty()) {
+                format.setForeground(QColor(rule.foregroundColor));
+            }
+            if (!rule.backgroundColor.isEmpty()) {
+                format.setBackground(QColor(rule.backgroundColor));
+            }
+            if (rule.bold) {
+                format.setFontWeight(QFont::Bold);
+            }
+            if (rule.italic) {
+                format.setFontItalic(true);
+            }
+            if (rule.underline) {
+                format.setFontUnderline(true);
+            }
+            if (rule.fontSize > 0) {
+                format.setFontPointSize(rule.fontSize);
+            }
+        } else {
+            format = _formats[rule.state];
+        }
+
+        // Find and format all occurrences
         while (iterator.hasNext()) {
             QRegularExpressionMatch match = iterator.next();
 
-            // if there is a capturingGroup set then first highlight
+            // If there is a capturingGroup set then first highlight
             // everything as MaskedSyntax and highlight capturingGroup
             // with the real format
             if (capturingGroup > 0) {
                 QTextCharFormat currentMaskedFormat = maskedFormat;
-                // set the font size from the current rule's font format
+                // Set the font size from the current rule's font format
                 if (format.fontPointSize() > 0) {
                     currentMaskedFormat.setFontPointSize(format.fontPointSize());
                 }
@@ -157,6 +193,69 @@ void QOwnNotesMarkdownHighlighter::highlightScriptingRules(
             setFormat(match.capturedStart(capturingGroup), match.capturedLength(capturingGroup),
                       format);
         }
+    }
+}
+
+/**
+ * Calls the highlightingHook in all script components for the current text
+ * block and applies the returned highlight ranges
+ */
+void QOwnNotesMarkdownHighlighter::highlightScriptingHook(const QString &text) {
+    ScriptingService *scriptingService = ScriptingService::instance();
+
+    if (!scriptingService->highlightingHookExists()) {
+        return;
+    }
+
+    const QVariantList highlights =
+        scriptingService->callHighlightingHook(text, previousBlockState());
+
+    for (const QVariant &item : highlights) {
+        const QVariantMap m = item.toMap();
+        const int start = m.value(QStringLiteral("start")).toInt();
+        const int length = m.value(QStringLiteral("length")).toInt();
+
+        if (length <= 0) {
+            continue;
+        }
+
+        // Determine the format from the state or custom properties
+        const int state = m.value(QStringLiteral("state"), -1).toInt();
+        QTextCharFormat format;
+
+        if (state >= 0) {
+            format = _formats[static_cast<HighlighterState>(state)];
+        }
+
+        // Apply custom format overrides
+        const QString fg = m.value(QStringLiteral("foregroundColor")).toString();
+        if (!fg.isEmpty()) {
+            format.setForeground(QColor(fg));
+        }
+
+        const QString bg = m.value(QStringLiteral("backgroundColor")).toString();
+        if (!bg.isEmpty()) {
+            format.setBackground(QColor(bg));
+        }
+
+        if (m.value(QStringLiteral("bold")).toBool()) {
+            format.setFontWeight(QFont::Bold);
+        }
+
+        if (m.value(QStringLiteral("italic")).toBool()) {
+            format.setFontItalic(true);
+        }
+
+        if (m.value(QStringLiteral("underline")).toBool()) {
+            format.setFontUnderline(true);
+        }
+
+        const qreal fontSize = m.value(QStringLiteral("fontSize")).toReal();
+        if (fontSize > 0) {
+            format.setFontPointSize(fontSize);
+        }
+
+        setFormat(start, length, format);
     }
 }
 

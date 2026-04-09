@@ -50,6 +50,15 @@ class QOwnNotesMarkdownHighlighter : public MarkdownHighlighter {
         HighlighterState state = NoState;
         uint8_t capturingGroup = 0;
         uint8_t maskedGroup = 0;
+
+        // Custom format fields for script-defined colors and styles
+        bool hasCustomFormat = false;
+        QString foregroundColor;
+        QString backgroundColor;
+        bool bold = false;
+        bool italic = false;
+        bool underline = false;
+        qreal fontSize = 0;
     };
 
    protected:
@@ -82,4 +91,5 @@ class QOwnNotesMarkdownHighlighter : public MarkdownHighlighter {
     QHash<QString, bool> _wikiLinkCache;
     void highlightScriptingRules(const QVector<ScriptingHighlightingRule> &rules,
                                  const QString &text);
+    void highlightScriptingHook(const QString &text);
 };

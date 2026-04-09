@@ -2,6 +2,16 @@
 
 ## 26.4.9
 
+- Extended the **scripting engine's syntax highlighting** support with **custom
+  colors and styles**: `addHighlightingRule` now accepts an optional format map
+  with `foregroundColor`, `backgroundColor`, `bold`, `italic`, `underline`, and
+  `fontSize` properties, so scripts can define their own highlight colors instead
+  of being limited to the predefined highlighting states
+  (for [#3549](https://github.com/pbek/QOwnNotes/issues/3549))
+- Added a new **`highlightingHook`** scripting hook that is called for each text
+  block during syntax highlighting, allowing scripts to perform dynamic,
+  context-aware highlighting with custom colors and styles
+  (for [#3549](https://github.com/pbek/QOwnNotes/issues/3549))
 - Fixed a possible **startup crash** when restoring the last opened note from
   **note history** while the **note tree** was enabled: history restoration
   searched the tree by note name and could match a folder item with the same label
