@@ -7,6 +7,12 @@ on:
       - main
     tags-ignore:
       - "*"
+    paths:
+      - "src/**"
+      - "snap/**"
+      - "tests/**"
+      - "build-systems/github/**"
+      - ".github/workflows/build-continuous-release.yml"
 
 concurrency:
   group: continuous-release
