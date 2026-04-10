@@ -50,17 +50,17 @@ jobs:
 
           ## Released files
 
-          - `QOwnNotes-x86_64.AppImage`: Portable Linux AppImage build with Qt 6
-          - `QOwnNotes-x86_64.AppImage.sha256sum`: SHA-256 checksum for the AppImage
-          - `QOwnNotes-amd64.snap`: Linux Snap build with Qt 6
-          - `QOwnNotes-amd64.snap.sha256sum`: SHA-256 checksum for the Qt 6 Snap package
-          - `QOwnNotes-Qt5-amd64.snap`: Linux Snap build with Qt 5 for older environments
-          - `QOwnNotes-Qt5-amd64.snap.sha256sum`: SHA-256 checksum for the Qt 5 Snap package
-          - `QOwnNotes.zip`: Windows ZIP package built with Qt 6
-          - `QOwnNotes.zip.sha256`: SHA-256 checksum for the Qt 6 Windows ZIP package
-          - `QOwnNotes.zip.sha256sum`: Alternative SHA-256 checksum file for the Qt 6 Windows ZIP package
-          - `QOwnNotes.dmg`: macOS disk image built with Qt 6
-          - `QOwnNotesQt5.dmg`: macOS disk image built with Qt 5 for older systems
+          - QOwnNotes-x86_64.AppImage: Portable Linux AppImage build with Qt 6
+          - QOwnNotes-x86_64.AppImage.sha256sum: SHA-256 checksum for the AppImage
+          - QOwnNotes-amd64.snap: Linux Snap build with Qt 6
+          - QOwnNotes-amd64.snap.sha256sum: SHA-256 checksum for the Qt 6 Snap package
+          - QOwnNotes-Qt5-amd64.snap: Linux Snap build with Qt 5 for older environments
+          - QOwnNotes-Qt5-amd64.snap.sha256sum: SHA-256 checksum for the Qt 5 Snap package
+          - QOwnNotes.zip: Windows ZIP package built with Qt 6
+          - QOwnNotes.zip.sha256: SHA-256 checksum for the Qt 6 Windows ZIP package
+          - QOwnNotes.zip.sha256sum: Alternative SHA-256 checksum file for the Qt 6 Windows ZIP package
+          - QOwnNotes.dmg: macOS disk image built with Qt 6
+          - QOwnNotesQt5.dmg: macOS disk image built with Qt 5 for older systems
           EOF
           )
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
