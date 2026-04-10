@@ -12,6 +12,7 @@
   (for [#3540](https://github.com/pbek/QOwnNotes/issues/3540))
   - The old **Nextcloud settings** board/stack picker was removed so Deck
     selection is now handled directly in the dialog where the cards are managed
+- Added more French, Korean, Spanish translation (thank you, jd-develop, VenusGirl, AlejandroMoc)
 
 ## 26.4.9
 
