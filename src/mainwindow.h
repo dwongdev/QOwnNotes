@@ -266,7 +266,7 @@ class MainWindow : public QMainWindow {
 
     void openTodoDialog(const QString &taskUid = QString());
 
-    void openNextcloudDeckDialog(int cardId = -1);
+    void openNextcloudDeckDialog(int cardId = -1, int boardId = -1);
 
     class QOwnNotesMarkdownTextEdit *noteTextEdit();
 

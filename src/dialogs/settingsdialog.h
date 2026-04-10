@@ -348,9 +348,6 @@ class SettingsDialog : public MasterDialog {
 
     void on_appNextcloudDeckCheckBox_toggled(bool checked);
 
-    void on_nextcloudDeckStackTreeWidget_currentItemChanged(QTreeWidgetItem *current,
-                                                            QTreeWidgetItem *previous);
-
     void on_groqApiKeyWebButton_clicked();
 
     void on_openAiApiKeyWebButton_clicked();
@@ -504,8 +501,6 @@ class SettingsDialog : public MasterDialog {
     void handleDarkModeCheckBoxToggled(bool updateCheckBoxes = false, bool updateSchema = false);
 
     void resetOKLabelData();
-
-    void loadNextcloudDeckStackTreeWidget();
 
     void buildAiScriptingTreeWidget();
 

@@ -7767,7 +7767,7 @@ bool MainWindow::nextCloudDeckCheck() {
 
 void MainWindow::on_actionInsert_Nextcloud_Deck_card_triggered() { openNextcloudDeckDialog(); }
 
-void MainWindow::openNextcloudDeckDialog(int cardId) {
+void MainWindow::openNextcloudDeckDialog(int cardId, int boardId) {
     if (!nextCloudDeckCheck()) {
         return;
     }
@@ -7779,7 +7779,7 @@ void MainWindow::openNextcloudDeckDialog(int cardId) {
     qDebug() << __func__ << "cardId: " << cardId;
 
     if (cardId > 0) {
-        dialog->setCardId(cardId);
+        dialog->setCardId(cardId, boardId);
     } else {
         QOwnNotesMarkdownTextEdit *textEdit = activeNoteTextEdit();
         QString selectedText = textEdit->textCursor().selectedText();

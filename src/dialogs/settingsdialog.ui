@@ -1532,37 +1532,6 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="12" column="1">
-                   <widget class="QFrame" name="nextcloudDeckFrame">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_83">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="nextcloudDeckStackLabel">
-                       <property name="text">
-                        <string>Stack:</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0" colspan="2">
-                      <widget class="QTreeWidget" name="nextcloudDeckStackTreeWidget">
-                       <attribute name="headerVisible">
-                        <bool>false</bool>
-                       </attribute>
-                       <column>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </column>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
                  </layout>
                 </item>
                </layout>
