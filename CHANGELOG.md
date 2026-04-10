@@ -1,5 +1,13 @@
 # QOwnNotes Changelog
 
+## 26.4.11
+
+- Changed the **Find in current note** search bar and the search bars in both the
+  **QLiteHtml** and **legacy preview** to wait until at least **two characters**
+  are entered before searching, while still searching immediately for a single
+  **emoji** so emoji-only note content remains easy to find
+  (for [#3550](https://github.com/pbek/QOwnNotes/issues/3550))
+
 ## 26.4.10
 
 - When a note is **deleted**, the application now checks for **images and attachments**
