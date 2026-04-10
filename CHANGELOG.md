@@ -2,6 +2,10 @@
 
 ## 26.4.10
 
+- When a note is **deleted**, the application now checks for **images and attachments**
+  referenced by the note that are not used in any other note and offers to **delete
+  those orphaned files** after a confirmation dialog, also when **multiple notes** are
+  deleted at once in the note tree (for [#2121](https://github.com/pbek/QOwnNotes/issues/2121))
 - Added a **board / stack selector** to the **Nextcloud Deck card dialog** below
   **Search or create card**, so cards can be listed and created in any available
   Deck stack without first changing the default Deck stack in the settings
