@@ -100,6 +100,12 @@ QLiteHtmlSearchWidget::QLiteHtmlSearchWidget(QLiteHtmlWidget *parent)
     QObject::connect(ui->searchDownButton, SIGNAL(clicked()), this, SLOT(doSearchDown()));
     QObject::connect(ui->searchUpButton, SIGNAL(clicked()), this, SLOT(doSearchUp()));
 
+    // Set up debounce timer so the search is delayed while the user is still
+    // typing
+    _debounceTimer.setSingleShot(true);
+    _debounceTimer.setInterval(300);
+    QObject::connect(&_debounceTimer, &QTimer::timeout, this, &QLiteHtmlSearchWidget::doSearchDown);
+
     installEventFilter(this);
     ui->searchLineEdit->installEventFilter(this);
 
@@ -192,8 +198,16 @@ bool QLiteHtmlSearchWidget::eventFilter(QObject *obj, QEvent *event)
 
 void QLiteHtmlSearchWidget::searchLineEditTextChanged(const QString &arg1)
 {
-    Q_UNUSED(arg1);
-    doSearchDown();
+    // If the search term is too short, just clear the style without jumping to
+    // the top of the document
+    if (!shouldStartSearch(arg1)) {
+        _debounceTimer.stop();
+        ui->searchLineEdit->setStyleSheet(QString());
+        return;
+    }
+
+    // Debounce: delay the search while the user is still typing
+    _debounceTimer.start();
 }
 
 void QLiteHtmlSearchWidget::doSearchUp()

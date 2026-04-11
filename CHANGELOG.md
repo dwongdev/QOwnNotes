@@ -10,9 +10,12 @@
   bar to be hidden when entering distraction free mode and automatically
   restored when leaving it (for [#3553](https://github.com/pbek/QOwnNotes/issues/3553))
 - Changed the **Find in current note** search bar and the search bars in both the
-  **QLiteHtml** and **legacy preview** to wait until at least **two characters**
-  are entered before searching, while still searching immediately for a single
-  **emoji** so emoji-only note content remains easy to find
+  **QLiteHtml** and **legacy preview** to wait until at least **two characters** are
+  entered before searching, while still searching immediately for a single **emoji**
+  so emoji-only note content remains easy to find; the search bars no longer jump to
+  the top of the document when the search term is deleted; the **QLiteHtml** and
+  **legacy preview** search bars now have a **300ms debounce delay**, and the note
+  editor search debounce delay applies to notes longer than **20,000 characters**
   (for [#3550](https://github.com/pbek/QOwnNotes/issues/3550))
 - Added a new **Automatically show note filename selection when [[ is typed**
   checkbox to the **Editor settings**, which is only available when

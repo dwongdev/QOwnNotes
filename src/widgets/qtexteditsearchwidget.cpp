@@ -95,6 +95,12 @@ QTextEditSearchWidget::QTextEditSearchWidget(QTextEdit *parent)
     QObject::connect(ui->replaceButton, SIGNAL(clicked()), this, SLOT(doReplace()));
     QObject::connect(ui->replaceAllButton, SIGNAL(clicked()), this, SLOT(doReplaceAll()));
 
+    // Set up debounce timer so the search is delayed while the user is still
+    // typing
+    _debounceTimer.setSingleShot(true);
+    _debounceTimer.setInterval(300);
+    QObject::connect(&_debounceTimer, &QTimer::timeout, this, &QTextEditSearchWidget::doSearchDown);
+
     installEventFilter(this);
     ui->searchLineEdit->installEventFilter(this);
     ui->replaceLineEdit->installEventFilter(this);
@@ -215,8 +221,16 @@ bool QTextEditSearchWidget::eventFilter(QObject *obj, QEvent *event) {
 }
 
 void QTextEditSearchWidget::searchLineEditTextChanged(const QString &arg1) {
-    Q_UNUSED(arg1);
-    doSearchDown();
+    // If the search term is too short, just clear the style without jumping to
+    // the top of the document
+    if (!shouldStartSearch(arg1)) {
+        _debounceTimer.stop();
+        ui->searchLineEdit->setStyleSheet(QString());
+        return;
+    }
+
+    // Debounce: delay the search while the user is still typing
+    _debounceTimer.start();
 }
 
 void QTextEditSearchWidget::doSearchUp() { doSearch(false); }
