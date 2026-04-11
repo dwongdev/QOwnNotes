@@ -644,6 +644,8 @@ void SettingsDialog::storeSettings() {
                       ui->hideFormattingSyntaxCheckBox->isChecked());
     settings.setValue(QStringLiteral("Editor/wikiLinkSupport"),
                       ui->enableWikiLinkSupportCheckBox->isChecked());
+    settings.setValue(QStringLiteral("Editor/wikiLinkFileNameAutoSelect"),
+                      ui->wikiLinkFileNameAutoSelectCheckBox->isChecked());
     settings.setValue(QStringLiteral("Editor/hangingIndent"),
                       ui->hangingIndentCheckBox->isChecked());
     settings.setValue(QStringLiteral("Editor/showMarkdownImagePreviews"),
@@ -1076,6 +1078,8 @@ void SettingsDialog::readSettings() {
     ui->enableWikiLinkSupportCheckBox->setChecked(
         settings.value(QStringLiteral("Editor/wikiLinkSupport"), false).toBool());
     on_enableWikiLinkSupportCheckBox_toggled(ui->enableWikiLinkSupportCheckBox->isChecked());
+    ui->wikiLinkFileNameAutoSelectCheckBox->setChecked(
+        settings.value(QStringLiteral("Editor/wikiLinkFileNameAutoSelect"), false).toBool());
     ui->hangingIndentCheckBox->setChecked(
         settings.value(QStringLiteral("Editor/hangingIndent"), false).toBool());
     ui->showMarkdownImagePreviewsCheckBox->setChecked(
@@ -4486,6 +4490,7 @@ void SettingsDialog::on_markdownLspEnabledCheckBox_toggled(bool checked) {
 
 void SettingsDialog::on_enableWikiLinkSupportCheckBox_toggled(bool checked) {
     ui->editorFontColorWidget->setWikiLinkItemsVisible(checked);
+    ui->wikiLinkFileNameAutoSelectCheckBox->setEnabled(checked);
 }
 
 void SettingsDialog::on_localTrashEnabledCheckBox_toggled(bool checked) {

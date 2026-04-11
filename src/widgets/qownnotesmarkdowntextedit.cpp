@@ -2795,6 +2795,15 @@ void QOwnNotesMarkdownTextEdit::keyPressEvent(QKeyEvent *e) {
 
     if (e->text() == QStringLiteral("[") &&
         (e->modifiers() == Qt::NoModifier || e->modifiers() == Qt::ShiftModifier)) {
+        // Only trigger automatic note filename selection if the setting is enabled
+        const bool autoSelect =
+            SettingsService()
+                .value(QStringLiteral("Editor/wikiLinkFileNameAutoSelect"), false)
+                .toBool();
+        if (!autoSelect) {
+            return;
+        }
+
         WikiLinkCompletionContext context;
         if (currentWikiLinkCompletionContext(this, context)) {
             QTimer::singleShot(0, this, &QOwnNotesMarkdownTextEdit::onAutoCompleteRequested);

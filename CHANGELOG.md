@@ -14,6 +14,10 @@
   are entered before searching, while still searching immediately for a single
   **emoji** so emoji-only note content remains easy to find
   (for [#3550](https://github.com/pbek/QOwnNotes/issues/3550))
+- Added a new **Automatically show note filename selection when [[ is typed**
+  checkbox to the **Editor settings**, which is only available when
+  **wiki-style link support** is enabled and is turned **off by default**
+  (for [#3552](https://github.com/pbek/QOwnNotes/issues/3552))
 
 ## 26.4.10
 
