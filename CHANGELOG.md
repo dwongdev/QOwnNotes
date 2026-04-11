@@ -2,6 +2,13 @@
 
 ## 26.4.11
 
+- The **Leave distraction free mode** and **Leave full-screen mode** status bar
+  buttons now use descriptive labels instead of a generic "leave" label, making
+  it clear which mode each button exits (for [#3553](https://github.com/pbek/QOwnNotes/issues/3553))
+- Added a **Hide status bar in distraction free mode** checkbox to the
+  **Interface settings** under the **Status bar** section, allowing the status
+  bar to be hidden when entering distraction free mode and automatically
+  restored when leaving it (for [#3553](https://github.com/pbek/QOwnNotes/issues/3553))
 - Changed the **Find in current note** search bar and the search bars in both the
   **QLiteHtml** and **legacy preview** to wait until at least **two characters**
   are entered before searching, while still searching immediately for a single

@@ -139,7 +139,16 @@ void DistractionFreeManager::setDistractionFreeMode(const bool enabled) {
         // hide the status bar
         //        ui->statusBar->hide();
 
-        _leaveDistractionFreeModeButton = new QPushButton(tr("leave"));
+        // Hide the status bar in distraction free mode if the setting is enabled
+        const bool hideStatusBarInDFM =
+            settings.value(QStringLiteral("DistractionFreeMode/hideStatusBar")).toBool();
+        settings.setValue(QStringLiteral("DistractionFreeMode/statusBarWasVisible"),
+                          _mainWindow->statusBar()->isVisible());
+        if (hideStatusBarInDFM) {
+            _mainWindow->statusBar()->hide();
+        }
+
+        _leaveDistractionFreeModeButton = new QPushButton(tr("Leave distraction free mode"));
         _leaveDistractionFreeModeButton->setFlat(true);
         _leaveDistractionFreeModeButton->setToolTip(tr("Leave distraction free mode"));
         _leaveDistractionFreeModeButton->setStyleSheet(
@@ -162,6 +171,12 @@ void DistractionFreeManager::setDistractionFreeMode(const bool enabled) {
 
         _mainWindow->statusBar()->removeWidget(_leaveDistractionFreeModeButton);
         disconnect(_leaveDistractionFreeModeButton, nullptr, nullptr, nullptr);
+
+        // Restore the status bar visibility if it was hidden in distraction free mode
+        const bool statusBarWasVisible =
+            settings.value(QStringLiteral("DistractionFreeMode/statusBarWasVisible"), true)
+                .toBool();
+        _mainWindow->statusBar()->setVisible(statusBarWasVisible);
 
         // restore states and sizes
         _mainWindow->restoreState(
@@ -218,7 +233,7 @@ void DistractionFreeManager::on_actionToggle_fullscreen_triggered() {
     // #1302: we need to init the button in any case if the app was already in
     //        fullscreen mode or "disconnect" will crash the app
     if (_leaveFullScreenModeButton == nullptr) {
-        _leaveFullScreenModeButton = new QPushButton(tr("leave"));
+        _leaveFullScreenModeButton = new QPushButton(tr("Leave full-screen mode"));
     }
 
     if (_mainWindow->isFullScreen()) {

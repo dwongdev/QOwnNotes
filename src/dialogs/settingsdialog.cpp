@@ -709,6 +709,9 @@ void SettingsDialog::storeSettings() {
     settings.setValue(QStringLiteral("showStatusBarRelativeNotePath"),
                       ui->showStatusBarRelativeNotePathCheckBox->isChecked());
 
+    settings.setValue(QStringLiteral("DistractionFreeMode/hideStatusBar"),
+                      ui->hideStatusBarInDistractionFreeModeCheckBox->isChecked());
+
     QStringList todoCalendarUrlList;
     QStringList todoCalendarDisplayNameList;
     QStringList todoCalendarEnabledList;
@@ -1205,6 +1208,9 @@ void SettingsDialog::readSettings() {
         settings.value(QStringLiteral("showStatusBarRelativeNotePath")).toBool());
     ui->showStatusBarRelativeNotePathCheckBox->setEnabled(
         ui->showStatusBarNotePathCheckBox->isChecked());
+
+    ui->hideStatusBarInDistractionFreeModeCheckBox->setChecked(
+        settings.value(QStringLiteral("DistractionFreeMode/hideStatusBar")).toBool());
 
     noteTextEditFont.fromString(
         settings.value(QStringLiteral("MainWindow/noteTextEdit.font")).toString());
