@@ -2,6 +2,10 @@
 
 ## 26.4.12
 
+- Fixed following note links from the **note editor** or **preview** while the
+  **note tree** is enabled, so the active note is now also selected in the
+  **note tree panel**, even for notes inside subfolders (for
+  [#3560](https://github.com/pbek/QOwnNotes/issues/3560))
 - In the **Heading** tab of the **Navigation panel**, **Shift + Click** on a heading
   now recursively expands or collapses all nested topics below that heading
   (for [#1912](https://github.com/pbek/QOwnNotes/issues/1912))

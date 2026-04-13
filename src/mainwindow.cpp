@@ -3129,7 +3129,6 @@ void MainWindow::setCurrentNote(Note note, bool updateNoteText, bool updateSelec
     // highlighter
     qApp->setProperty("currentNoteId", noteId);
 
-    const QString name = note.getName();
     updateWindowTitle();
 
     // update current tab
@@ -3142,15 +3141,21 @@ void MainWindow::setCurrentNote(Note note, bool updateNoteText, bool updateSelec
 
     // find and set the current item
     if (updateSelectedNote) {
-        QList<QTreeWidgetItem *> items = ui->noteTreeWidget->findItems(name, Qt::MatchExactly);
-        if (items.count() > 0) {
+        QTreeWidgetItem *item = findNoteInNoteTreeWidget(note);
+        if (item != nullptr) {
             const QSignalBlocker blocker(ui->noteTreeWidget);
             Q_UNUSED(blocker)
 
             // to avoid that multiple notes will be selected
             ui->noteTreeWidget->clearSelection();
 
-            ui->noteTreeWidget->setCurrentItem(items[0]);
+            for (QTreeWidgetItem *parent = item->parent(); parent != nullptr;
+                 parent = parent->parent()) {
+                parent->setExpanded(true);
+            }
+
+            ui->noteTreeWidget->setCurrentItem(item);
+            ui->noteTreeWidget->scrollToItem(item);
         }
     }
 
