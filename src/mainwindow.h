@@ -1053,6 +1053,7 @@ class MainWindow : public QMainWindow {
     void makeCurrentNoteFirstInNoteList();
 
     void readSettingsFromSettingsDialog(const bool isAppLaunch = false);
+    void checkAiToolbarConfiguration(bool askToShowToolbar = true);
 
     void setCurrentNoteFromHistoryItem(const NoteHistoryItem &item);
 

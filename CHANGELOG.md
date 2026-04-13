@@ -2,6 +2,11 @@
 
 ## 26.4.12
 
+- Turned the **AI toolbar** off by default when no AI backend is configured, so
+  fresh installs without AI setup start with a less cluttered interface; if an
+  AI backend is configured later while the toolbar is hidden, the application
+  now asks whether it should be turned on (for
+  [#3561](https://github.com/pbek/QOwnNotes/issues/3561))
 - Fixed the **Search engine** setting being reset to **Google** when the
   **Settings** dialog was applied without opening the **General** page first
   (for [#3562](https://github.com/pbek/QOwnNotes/issues/3562))

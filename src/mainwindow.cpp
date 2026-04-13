@@ -352,6 +352,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // used in toolbars
     restoreToolbars();
 
+    QTimer::singleShot(isMaximized() || isFullScreen() ? 600 : 0, this,
+                       [this]() { checkAiToolbarConfiguration(false); });
+
     // update the workspace menu and combobox entries again after
     // restoreToolbars() to fill the workspace combo box again
     _workspaceManager->updateWorkspaceLists();
@@ -3912,6 +3915,7 @@ void MainWindow::openSettingsDialog(int page, bool openScriptRepository) {
     // read all relevant settings, that can be set in the settings dialog,
     // even if the dialog was canceled
     readSettingsFromSettingsDialog();
+    checkAiToolbarConfiguration();
 
     // update the panels sort and order
     updatePanelsSortOrder();
@@ -3939,6 +3943,33 @@ void MainWindow::openSettingsDialog(int page, bool openScriptRepository) {
 
     // force that the preview is regenerated
     forceRegenerateNotePreview();
+}
+
+void MainWindow::checkAiToolbarConfiguration(bool askToShowToolbar) {
+    QToolBar *aiToolbar = _aiToolbarManager->aiToolbar();
+    const bool hasConfiguredAiBackend = OpenAiService::instance()->hasConfiguredBackend();
+    const bool aiToolbarWasHidden = aiToolbar->isHidden();
+
+    if (!hasConfiguredAiBackend) {
+        aiToolbar->hide();
+
+        if (!aiToolbarWasHidden) {
+            storeCurrentWorkspace();
+        }
+
+        return;
+    }
+
+    if (askToShowToolbar && aiToolbarWasHidden &&
+        Utils::Gui::question(this, tr("AI toolbar disabled"),
+                             tr("An AI backend is configured, but the AI toolbar is currently "
+                                "disabled. Do you want to turn it on?"),
+                             QStringLiteral("enable-ai-toolbar-question"),
+                             QMessageBox::Yes | QMessageBox::No,
+                             QMessageBox::Yes) == QMessageBox::Yes) {
+        aiToolbar->show();
+        storeCurrentWorkspace();
+    }
 }
 
 void MainWindow::forceRegenerateNotePreview() {
