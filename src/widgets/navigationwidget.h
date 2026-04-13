@@ -19,6 +19,7 @@
 class QTextDocument;
 class QTextCursor;
 class QTextBlock;
+class QMouseEvent;
 class QTreeWidgetItem;
 
 struct Node {
@@ -59,6 +60,7 @@ class NavigationWidget : public QTreeWidget {
     static bool isSetextUnderlineBlock(const QString &text);
     static bool isAtxHeadingBlock(const QString &text);
     static bool isNavigationHeadingBlock(const QTextBlock &block);
+    void mousePressEvent(QMouseEvent *event) override;
 
    signals:
     void positionClicked(int position);

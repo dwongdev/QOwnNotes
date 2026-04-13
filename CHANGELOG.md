@@ -2,6 +2,9 @@
 
 ## 26.4.12
 
+- In the **Heading** tab of the **Navigation panel**, **Shift + Click** on a heading
+  now recursively expands or collapses all nested topics below that heading
+  (for [#1912](https://github.com/pbek/QOwnNotes/issues/1912))
 - The **Connect to server** button in the **Nextcloud settings** is now disabled while a
   connection test is running to prevent starting overlapping requests; changing any
   Nextcloud setting or switching to another cloud connection now aborts the in-flight

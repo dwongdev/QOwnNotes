@@ -17,11 +17,34 @@
 
 #include <QDebug>
 #include <QMenu>
+#include <QMouseEvent>
 #include <QRegularExpression>
 #include <QTextBlock>
 #include <QTextCursor>
 #include <QTextDocument>
 #include <QTreeWidgetItem>
+
+namespace {
+void setExpandedRecursively(QTreeWidgetItem *item, bool expanded) {
+    if (item == nullptr) {
+        return;
+    }
+
+    if (!expanded) {
+        for (int i = 0; i < item->childCount(); ++i) {
+            setExpandedRecursively(item->child(i), false);
+        }
+    }
+
+    item->setExpanded(expanded);
+
+    if (expanded) {
+        for (int i = 0; i < item->childCount(); ++i) {
+            setExpandedRecursively(item->child(i), true);
+        }
+    }
+}
+}    // namespace
 
 bool NavigationWidget::isSetextUnderlineBlock(const QString &text) {
     int offset = 0;
@@ -97,6 +120,22 @@ NavigationWidget::NavigationWidget(QWidget *parent) : QTreeWidget(parent) {
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this, &QTreeWidget::customContextMenuRequested, this,
             &NavigationWidget::showContextMenu);
+}
+
+void NavigationWidget::mousePressEvent(QMouseEvent *event) {
+    if ((event != nullptr) && (event->button() == Qt::LeftButton) &&
+        event->modifiers().testFlag(Qt::ShiftModifier)) {
+        QTreeWidgetItem *item = itemAt(event->pos());
+
+        if ((item != nullptr) && (item->childCount() > 0)) {
+            setExpandedRecursively(item, !item->isExpanded());
+            setCurrentItem(item);
+            event->accept();
+            return;
+        }
+    }
+
+    QTreeWidget::mousePressEvent(event);
 }
 
 /**
