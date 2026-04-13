@@ -2,6 +2,9 @@
 
 ## 26.4.12
 
+- Fixed the **Search engine** setting being reset to **Google** when the
+  **Settings** dialog was applied without opening the **General** page first
+  (for [#3562](https://github.com/pbek/QOwnNotes/issues/3562))
 - Fixed following note links from the **note editor** or **preview** while the
   **note tree** is enabled, so the active note is now also selected in the
   **note tree panel**, even for notes inside subfolders (for

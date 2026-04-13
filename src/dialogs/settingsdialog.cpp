@@ -1020,6 +1020,8 @@ void SettingsDialog::storeFontSettings() {
 void SettingsDialog::readSettings() {
     SettingsService settings;
 
+    initSearchEngineComboBox();
+
     // set current note folder list item
     QListWidgetItem *noteFolderListItem = Utils::Gui::getListWidgetItemWithUserData(
         ui->noteFolderListWidget, NoteFolder::currentNoteFolderId());
