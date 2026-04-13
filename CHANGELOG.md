@@ -5,6 +5,9 @@
 - In the **Heading** tab of the **Navigation panel**, **Shift + Click** on a heading
   now recursively expands or collapses all nested topics below that heading
   (for [#1912](https://github.com/pbek/QOwnNotes/issues/1912))
+- The expand/collapse state of headings in the **Navigation panel** is now remembered
+  per note while the application is running, so switching between notes preserves the
+  user's chosen heading tree layout (for [#1912](https://github.com/pbek/QOwnNotes/issues/1912))
 - The **Connect to server** button in the **Nextcloud settings** is now disabled while a
   connection test is running to prevent starting overlapping requests; changing any
   Nextcloud setting or switching to another cloud connection now aborts the in-flight

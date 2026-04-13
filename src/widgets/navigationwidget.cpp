@@ -116,6 +116,12 @@ NavigationWidget::NavigationWidget(QWidget *parent) : QTreeWidget(parent) {
     // We want to handle itemChanged to allow renaming headings
     QObject::connect(this, &NavigationWidget::itemChanged, this, &NavigationWidget::onItemChanged);
 
+    // Track expand/collapse changes to remember the state per note
+    QObject::connect(this, &QTreeWidget::itemExpanded, this,
+                     &NavigationWidget::onItemExpandedOrCollapsed);
+    QObject::connect(this, &QTreeWidget::itemCollapsed, this,
+                     &NavigationWidget::onItemExpandedOrCollapsed);
+
     // Enable context menu
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this, &QTreeWidget::customContextMenuRequested, this,
@@ -198,12 +204,19 @@ void NavigationWidget::onItemChanged(QTreeWidgetItem *item, int column) {
 /**
  * Parses a text document and builds the navigation tree for it
  */
-void NavigationWidget::parse(const QTextDocument *document, int textCursorPosition) {
+void NavigationWidget::parse(const QTextDocument *document, int textCursorPosition, int noteId) {
     const QSignalBlocker blocker(this);
     Q_UNUSED(blocker)
 
+    // Save expand state for the previous note before switching
+    if (_currentNoteId >= 0 && _currentNoteId != noteId &&
+        _collapsedHeadingsPerNote.contains(_currentNoteId)) {
+        saveExpandState();
+    }
+
     _doc = document;
     _cursorPosition = textCursorPosition;
+    _currentNoteId = noteId;
     doParse();
 }
 
@@ -341,6 +354,7 @@ void NavigationWidget::buildNavTree(const QVector<Node> &nodes) {
         }
     }
     expandAll();
+    restoreExpandState();
     selectItemForCursorPosition(_cursorPosition);
 }
 
@@ -422,4 +436,84 @@ int NavigationWidget::getPreviousHeadingPosition(int currentPosition) const {
     }
 
     return previousPos;
+}
+
+/**
+ * Returns a unique key for a tree widget item based on its heading level and display text
+ */
+QString NavigationWidget::itemKey(const QTreeWidgetItem *item) {
+    const QString text = item->text(0);
+    const QString tooltip = item->toolTip(0);
+
+    // Extract the heading level from the tooltip (e.g. "headline 2")
+    return tooltip + QStringLiteral(":") + text;
+}
+
+/**
+ * Saves the current expand/collapse state for the active note.
+ * Only items with children are tracked (leaf items have no expand state).
+ */
+void NavigationWidget::saveExpandState() {
+    if (_currentNoteId < 0) {
+        return;
+    }
+
+    QSet<QString> collapsed;
+    QTreeWidgetItemIterator it(this);
+
+    while (*it) {
+        QTreeWidgetItem *item = *it;
+        if (item->childCount() > 0 && !item->isExpanded()) {
+            collapsed.insert(itemKey(item));
+        }
+        ++it;
+    }
+
+    _collapsedHeadingsPerNote[_currentNoteId] = collapsed;
+}
+
+/**
+ * Restores the saved expand/collapse state for the current note.
+ * If the user never changed the state, all items stay expanded (default).
+ */
+void NavigationWidget::restoreExpandState() {
+    if (_currentNoteId < 0 || !_collapsedHeadingsPerNote.contains(_currentNoteId)) {
+        return;
+    }
+
+    const QSet<QString> &collapsed = _collapsedHeadingsPerNote[_currentNoteId];
+
+    _restoringExpandState = true;
+    QTreeWidgetItemIterator it(this);
+
+    while (*it) {
+        QTreeWidgetItem *item = *it;
+        if (item->childCount() > 0 && collapsed.contains(itemKey(item))) {
+            item->setExpanded(false);
+        }
+        ++it;
+    }
+    _restoringExpandState = false;
+}
+
+/**
+ * Tracks user-initiated expand/collapse changes and saves the state for the current note.
+ * Ignored during programmatic expand/collapse (tree rebuild).
+ */
+void NavigationWidget::onItemExpandedOrCollapsed(QTreeWidgetItem *item) {
+    Q_UNUSED(item)
+
+    // Ignore changes triggered by buildNavTree / restoreExpandState
+    if (_restoringExpandState || _currentNoteId < 0) {
+        return;
+    }
+
+    saveExpandState();
+}
+
+/**
+ * Removes any stored collapsed state for the given note
+ */
+void NavigationWidget::clearCollapsedStateForNote(int noteId) {
+    _collapsedHeadingsPerNote.remove(noteId);
 }
