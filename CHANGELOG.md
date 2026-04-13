@@ -2,6 +2,9 @@
 
 ## 26.4.12
 
+- Renamed the **Automatically show note filename selection when [[ is typed**
+  checkbox in the **Editor settings** to **Show note filename selection when
+  [[ is typed** (for [#3552](https://github.com/pbek/QOwnNotes/issues/3552))
 - Reworked the **Distraction free mode** interface settings into their own area,
   moved **Hide status bar in distraction free mode** there, and added a new
   **Open distraction free mode in full-screen** option that is **enabled by

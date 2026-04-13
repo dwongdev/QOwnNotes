@@ -5698,12 +5698,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </item>
                    <item row="14" column="0" colspan="4">
                     <widget class="QCheckBox" name="wikiLinkFileNameAutoSelectCheckBox">
-                     <property name="toolTip">
-                      <string>Automatically show the note filename selection when [[ is typed</string>
-                     </property>
-                     <property name="text">
-                      <string>Automatically show note filename selection when [[ is typed</string>
-                     </property>
+                      <property name="toolTip">
+                       <string>Show the note filename selection when [[ is typed</string>
+                      </property>
+                      <property name="text">
+                       <string>Show note filename selection when [[ is typed</string>
+                      </property>
                     </widget>
                    </item>
                  </layout>
