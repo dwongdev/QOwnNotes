@@ -1,5 +1,16 @@
 # QOwnNotes Changelog
 
+## 26.4.12
+
+- Reworked the **Distraction free mode** interface settings into their own area,
+  moved **Hide status bar in distraction free mode** there, and added a new
+  **Open distraction free mode in full-screen** option that is **enabled by
+  default**; entering distraction free mode now only switches to full-screen
+  when that setting is enabled, the status bar now shows just one **Leave**
+  button while distraction free mode is active, the standalone full-screen leave
+  button is also now labeled **Leave**, and it is no longer shown on **macOS**
+  (for [#3553](https://github.com/pbek/QOwnNotes/issues/3553))
+
 ## 26.4.11
 
 - The **Leave distraction free mode** and **Leave full-screen mode** status bar

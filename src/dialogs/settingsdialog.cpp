@@ -713,6 +713,8 @@ void SettingsDialog::storeSettings() {
 
     settings.setValue(QStringLiteral("DistractionFreeMode/hideStatusBar"),
                       ui->hideStatusBarInDistractionFreeModeCheckBox->isChecked());
+    settings.setValue(QStringLiteral("DistractionFreeMode/openInFullScreen"),
+                      ui->openDistractionFreeModeInFullScreenCheckBox->isChecked());
 
     QStringList todoCalendarUrlList;
     QStringList todoCalendarDisplayNameList;
@@ -1215,6 +1217,8 @@ void SettingsDialog::readSettings() {
 
     ui->hideStatusBarInDistractionFreeModeCheckBox->setChecked(
         settings.value(QStringLiteral("DistractionFreeMode/hideStatusBar")).toBool());
+    ui->openDistractionFreeModeInFullScreenCheckBox->setChecked(
+        settings.value(QStringLiteral("DistractionFreeMode/openInFullScreen"), true).toBool());
 
     noteTextEditFont.fromString(
         settings.value(QStringLiteral("MainWindow/noteTextEdit.font")).toString());

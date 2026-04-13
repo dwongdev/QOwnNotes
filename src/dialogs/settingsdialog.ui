@@ -3346,14 +3346,14 @@
                     <property name="title">
                      <string>Status bar</string>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_86">
-                     <item row="0" column="0">
-                      <widget class="QCheckBox" name="showStatusBarNotePathCheckBox">
-                       <property name="text">
-                        <string>Show note path</string>
-                       </property>
-                      </widget>
-                     </item>
+                     <layout class="QGridLayout" name="gridLayout_86">
+                      <item row="0" column="0">
+                       <widget class="QCheckBox" name="showStatusBarNotePathCheckBox">
+                        <property name="text">
+                         <string>Show note path</string>
+                        </property>
+                       </widget>
+                      </item>
                       <item row="1" column="0">
                        <widget class="QCheckBox" name="showStatusBarRelativeNotePathCheckBox">
                         <property name="text">
@@ -3361,7 +3361,23 @@
                         </property>
                        </widget>
                       </item>
-                      <item row="2" column="0">
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QGroupBox" name="distractionFreeModeGroupBox">
+                     <property name="title">
+                      <string>Distraction free mode</string>
+                     </property>
+                     <layout class="QGridLayout" name="gridLayout_147">
+                      <item row="0" column="0">
+                       <widget class="QCheckBox" name="openDistractionFreeModeInFullScreenCheckBox">
+                        <property name="text">
+                         <string>Open distraction free mode in full-screen</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
                        <widget class="QCheckBox" name="hideStatusBarInDistractionFreeModeCheckBox">
                         <property name="text">
                          <string>Hide status bar in distraction free mode</string>
@@ -3370,11 +3386,11 @@
                       </item>
                      </layout>
                     </widget>
-                  </item>
-                  <item>
-                   <spacer name="verticalSpacer_6">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_6">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
                     </property>
                     <property name="sizeHint" stdset="0">
                      <size>
