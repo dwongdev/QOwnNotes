@@ -2,6 +2,10 @@
 
 ## 26.4.12
 
+- The **Connect to server** button in the **Nextcloud settings** is now disabled while a
+  connection test is running to prevent starting overlapping requests; changing any
+  Nextcloud setting or switching to another cloud connection now aborts the in-flight
+  test and immediately re-enables the button (for [#3557](https://github.com/pbek/QOwnNotes/issues/3557))
 - Renamed the **Automatically show note filename selection when [[ is typed**
   checkbox in the **Editor settings** to **Show note filename selection when
   [[ is typed** (for [#3552](https://github.com/pbek/QOwnNotes/issues/3552))

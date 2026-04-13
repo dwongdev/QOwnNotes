@@ -206,6 +206,16 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     connect(ui->webAppServerUrlLineEdit, SIGNAL(textChanged(QString)), this, SLOT(needRestart()));
     connect(ui->webAppTokenLineEdit, SIGNAL(textChanged(QString)), this, SLOT(needRestart()));
 
+    connect(ui->cloudServerConnectionNameLineEdit, &QLineEdit::textChanged, this,
+            [this] { cancelConnectionTest(); });
+    connect(ui->serverUrlEdit, &QLineEdit::textChanged, this, [this] { cancelConnectionTest(); });
+    connect(ui->userNameEdit, &QLineEdit::textChanged, this, [this] { cancelConnectionTest(); });
+    connect(ui->passwordEdit, &QLineEdit::textChanged, this, [this] { cancelConnectionTest(); });
+    connect(ui->appQOwnNotesAPICheckBox, &QCheckBox::toggled, this,
+            [this] { cancelConnectionTest(); });
+    connect(ui->appNextcloudDeckCheckBox, &QCheckBox::toggled, this,
+            [this] { cancelConnectionTest(); });
+
 #ifdef LANGUAGETOOL_ENABLED
     connect(ui->languageToolEnabledCheckBox, SIGNAL(toggled(bool)), this,
             SLOT(on_languageToolEnabledCheckBox_toggled(bool)));
@@ -493,15 +503,41 @@ void SettingsDialog::storeProxySettings() {
 void SettingsDialog::startConnectionTest() {
     ui->connectionTestLabel->hide();
     OwnCloudService *ownCloud = OwnCloudService::instance(true, _selectedCloudConnection.getId());
+    connect(ownCloud, &OwnCloudService::settingsConnectionTestFinished, this,
+            &SettingsDialog::onSettingsConnectionTestFinished, Qt::UniqueConnection);
     ownCloud->settingsConnectionTest(this);
     ui->check8Label->setText(
         tr("notes path <b>%1</b> found on server").arg(NoteFolder::currentRemotePath(false)));
+}
+
+void SettingsDialog::setConnectionTestInProgress(bool inProgress) {
+    _connectionTestInProgress = inProgress;
+    ui->connectButton->setEnabled(!inProgress);
+}
+
+void SettingsDialog::cancelConnectionTest() {
+    if (!_connectionTestInProgress) {
+        return;
+    }
+
+    OwnCloudService *ownCloud = OwnCloudService::currentInstance();
+    if (ownCloud != nullptr) {
+        ownCloud->abortSettingsConnectionTest();
+    }
+
+    setConnectionTestInProgress(false);
+    resetOKLabelData();
+    ui->connectionTestLabel->hide();
 }
 
 /**
  * @brief SettingsDialog::on_connectButton_clicked
  */
 void SettingsDialog::on_connectButton_clicked() {
+    setConnectionTestInProgress(true);
+    ui->connectButton->repaint();
+    qApp->processEvents();
+
     storeSettings();
     resetOKLabelData();
 
@@ -1954,6 +1990,10 @@ void SettingsDialog::outputSettings() {
 void SettingsDialog::connectTestCallback(bool appIsValid, QString appVersion, QString serverVersion,
                                          QString notesPathExistsText,
                                          QString connectionErrorMessage) {
+    if (!_connectionTestInProgress) {
+        return;
+    }
+
     this->appIsValid = appIsValid;
     this->appVersion = appVersion;
     this->serverVersion = serverVersion;
@@ -1986,6 +2026,8 @@ void SettingsDialog::connectTestCallback(bool appIsValid, QString appVersion, QS
     ui->connectionTestLabel->adjustSize();
     ui->connectionTestLabel->show();
 }
+
+void SettingsDialog::onSettingsConnectionTestFinished() { setConnectionTestInProgress(false); }
 
 /**
  * @brief set text and color of an ok-label
@@ -3863,6 +3905,8 @@ void SettingsDialog::initMainSplitter() {
 void SettingsDialog::closeEvent(QCloseEvent *event) {
     Q_UNUSED(event)
 
+    cancelConnectionTest();
+
     // make sure no settings get written after we got the
     // clearAppDataAndExit call
     if (qApp->property("clearAppDataAndExit").toBool()) {
@@ -4316,6 +4360,8 @@ void SettingsDialog::on_clearLogFileButton_clicked() {
 void SettingsDialog::needRestart() { Utils::Misc::needRestart(); }
 
 void SettingsDialog::on_ownCloudSupportCheckBox_toggled() {
+    cancelConnectionTest();
+
     bool checked = ui->ownCloudSupportCheckBox->isChecked();
     ui->ownCloudGroupBox->setEnabled(checked);
 
@@ -4770,6 +4816,8 @@ void SettingsDialog::initCloudConnectionComboBox(int selectedId) {
 
 void SettingsDialog::on_cloudConnectionComboBox_currentIndexChanged(int index) {
     Q_UNUSED(index)
+    cancelConnectionTest();
+
     const int id = ui->cloudConnectionComboBox->currentData().toInt();
     _selectedCloudConnection = CloudConnection::fetch(id);
 
@@ -4797,6 +4845,8 @@ void SettingsDialog::on_cloudConnectionComboBox_currentIndexChanged(int index) {
 }
 
 void SettingsDialog::on_cloudConnectionAddButton_clicked() {
+    cancelConnectionTest();
+
     // create a new cloud connection
     CloudConnection cloudConnection;
     cloudConnection.setName(QObject::tr("New connection"));
@@ -4809,6 +4859,8 @@ void SettingsDialog::on_cloudConnectionAddButton_clicked() {
 }
 
 void SettingsDialog::on_cloudConnectionRemoveButton_clicked() {
+    cancelConnectionTest();
+
     if (CloudConnection::countAll() <= 1) {
         return;
     }

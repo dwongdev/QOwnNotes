@@ -348,6 +348,8 @@ class SettingsDialog : public MasterDialog {
 
     void on_appNextcloudDeckCheckBox_toggled(bool checked);
 
+    void onSettingsConnectionTestFinished();
+
     void on_groqApiKeyWebButton_clicked();
 
     void on_openAiApiKeyWebButton_clicked();
@@ -407,12 +409,17 @@ class SettingsDialog : public MasterDialog {
     bool _initialDarkModeTrayIcon = false;
     bool _initialDarkModeIconTheme = false;
     QString _initialSchemaKey;
+    bool _connectionTestInProgress = false;
     QList<QWidget *> _searchMatchedWidgets;
     QHash<QWidget *, QString> _searchMatchedWidgetOriginalTexts;
 
     void storeSettings();
 
     void startConnectionTest();
+
+    void setConnectionTestInProgress(bool inProgress);
+
+    void cancelConnectionTest();
 
     void setFontLabel(QLineEdit *label, const QFont &font);
 
