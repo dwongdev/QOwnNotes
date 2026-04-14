@@ -87,8 +87,8 @@ void DistractionFreeManager::setDistractionFreeMode(const bool enabled) {
         _ui->noteTextEdit->setLineNumberEnabled(false);
         _ui->encryptedNoteTextEdit->setLineNumberEnabled(false);
 
-        // store the current workspace in case we changed something
-        _mainWindow->storeCurrentWorkspace();
+        // Store the current layout in case we changed something.
+        _mainWindow->storeCurrentLayout();
 
         const bool menuBarWasVisible =
             settings.value(QStringLiteral("showMenuBar"), !_ui->menuBar->isHidden()).toBool();

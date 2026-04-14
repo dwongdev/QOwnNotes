@@ -1,5 +1,16 @@
 # QOwnNotes Changelog
 
+## 26.4.13
+
+- Renamed saved **Workspaces** to **Layouts** across the interface, settings,
+  scripting and documentation, renamed the old **Layout** settings page to
+  **Layout presets**, and added a migration for existing saved layout settings,
+  selector shortcuts, and related message box overrides so current setups keep
+  working after the rename (for [#3564](https://github.com/pbek/QOwnNotes/issues/3564))
+  - For scripting, the new hook name is `layoutSwitchedHook(oldUuid, newUuid)`
+  - Older scripts using `workspaceSwitchedHook(oldUuid, newUuid)` will still
+    work for now, but they are deprecated and should be updated
+
 ## 26.4.12
 
 - Turned the **AI toolbar** off by default when no AI backend is configured, so

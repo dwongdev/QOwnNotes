@@ -57,7 +57,7 @@ class SettingsDialog : public MasterDialog {
         GitPage,
         PanelsPage,
         LocalTrashPage,
-        LayoutPage,
+        LayoutPresetsPage,
         WebCompanionPage,
         WebApplicationPage,
         ExperimentalPage,
@@ -246,7 +246,7 @@ class SettingsDialog : public MasterDialog {
 
     void on_enableWikiLinkSupportCheckBox_toggled(bool checked);
 
-    void onLayoutSettingsStored(const QString &workspaceIdentifier);
+    void onLayoutStored(const QString &layoutUuid);
 
     void on_localTrashEnabledCheckBox_toggled(bool checked);
 

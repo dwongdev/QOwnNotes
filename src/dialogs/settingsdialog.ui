@@ -176,7 +176,7 @@
             </property>
              <item>
               <property name="text">
-               <string>Layout</string>
+                <string>Layout presets</string>
               </property>
               <property name="whatsThis">
                <string notr="true">18</string>
@@ -6572,13 +6572,13 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
              <item>
               <widget class="QGroupBox" name="groupBox_31">
                <property name="title">
-                <string>Layout selector</string>
+                 <string>Layout preset selector</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_24">
                 <item>
                  <widget class="QLabel" name="label_17">
                   <property name="text">
-                   <string>You can set a new layout here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</string>
+                    <string>You can create a new layout from a preset here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</string>
                   </property>
                   <property name="wordWrap">
                    <bool>true</bool>
@@ -6591,7 +6591,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
                    <bool>true</bool>
                   </property>
                   <property name="text">
-                   <string>Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Workspaces&lt;/i&gt; for different panel configurations.</string>
+                   <string>Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Layouts&lt;/i&gt; for different panel configurations.</string>
                   </property>
                   <property name="wordWrap">
                    <bool>true</bool>
@@ -6599,7 +6599,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
                  </widget>
                 </item>
                 <item>
-                 <widget class="LayoutWidget" name="layoutWidget" native="true">
+                  <widget class="LayoutPresetWidget" name="layoutPresetWidget" native="true">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -8117,9 +8117,9 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
    <header>widgets/scriptlistwidget.h</header>
   </customwidget>
   <customwidget>
-   <class>LayoutWidget</class>
+   <class>LayoutPresetWidget</class>
    <extends>QWidget</extends>
-   <header location="global">widgets/layoutwidget.h</header>
+   <header location="global">widgets/layoutpresetwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

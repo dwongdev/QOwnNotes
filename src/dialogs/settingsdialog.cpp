@@ -225,10 +225,10 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     connect(ui->editorFontColorWidget, &FontColorWidget::schemaChanged, this,
             &SettingsDialog::applyEditorSchemaSettings);
 
-    //    connect(ui->layoutWidget, SIGNAL(settingsStored()),
+    //    connect(ui->layoutPresetWidget, SIGNAL(layoutStored(QString)),
     //            this, SLOT(needRestart()));
-    connect(ui->layoutWidget, &LayoutWidget::settingsStored, this,
-            &SettingsDialog::onLayoutSettingsStored);
+    connect(ui->layoutPresetWidget, &LayoutPresetWidget::layoutStored, this,
+            &SettingsDialog::onLayoutStored);
 
     if (fromWelcomeDialog) {
         // hide the whole left side frame with the settings menu tree
@@ -2292,14 +2292,14 @@ void SettingsDialog::on_languageToolResetIgnoredWordsButton_clicked() {
 }
 #endif
 
-void SettingsDialog::onLayoutSettingsStored(const QString &workspaceIdentifier) {
+void SettingsDialog::onLayoutStored(const QString &layoutUuid) {
     auto *mainWindow = MainWindow::instance();
-    if ((mainWindow == nullptr) || workspaceIdentifier.isEmpty()) {
+    if ((mainWindow == nullptr) || layoutUuid.isEmpty()) {
         return;
     }
 
-    // Switch to the new workspace (stores the current workspace first, then restores the new one)
-    mainWindow->setCurrentWorkspace(workspaceIdentifier);
+    // Switch to the new layout after creating it from the preset.
+    mainWindow->setCurrentLayout(layoutUuid);
 }
 
 void SettingsDialog::on_ownCloudServerAppPageButton_clicked() {
@@ -3632,8 +3632,8 @@ void SettingsDialog::on_settingsTreeWidget_currentItemChanged(QTreeWidgetItem *c
     ui->settingsStackedWidget->setCurrentIndex(currentIndex);
 
     switch (currentIndex) {
-        case SettingsPages::LayoutPage:
-            ui->layoutWidget->resizeLayoutImage();
+        case SettingsPages::LayoutPresetsPage:
+            ui->layoutPresetWidget->resizeLayoutPresetImage();
             break;
         case SettingsPages::ShortcutPage:
             ui->shortcutTreeWidget->resizeColumnToContents(0);
