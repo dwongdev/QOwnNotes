@@ -38,7 +38,7 @@ cd QOwnNotes || exit 1
 git submodule update --init
 
 # build binary translation files
-lrelease src/QOwnNotes.pro
+lrelease-pro src/QOwnNotes.pro
 
 # remove huge .git folder
 rm -Rf .git

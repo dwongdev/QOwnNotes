@@ -1,7 +1,10 @@
 #!/usr/bin/bash
 #
-# Runs all build scripts in tmux panes
+# Runs all build scripts in zellij panes
 #
+
+# Exit on error
+set -e
 
 # This is used inside the release docker container
 if [ "$1" = "--docker" ]; then

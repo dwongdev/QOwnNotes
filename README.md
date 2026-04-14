@@ -164,7 +164,7 @@ Or you can build it directly in your terminal:
 cd src
 
 # build binary translation files if you want another language than English
-lrelease QOwnNotes.pro
+lrelease-pro QOwnNotes.pro
 
 # prepare build process and build the application
 qmake

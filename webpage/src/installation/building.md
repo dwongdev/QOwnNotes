@@ -26,7 +26,7 @@ If you know what you are doing, you can also build QOwnNotes directly in your te
 cd src
 
 # build binary translation files if you want another language than English
-lrelease QOwnNotes.pro
+lrelease-pro QOwnNotes.pro
 
 # prepare build process and build the application
 qmake

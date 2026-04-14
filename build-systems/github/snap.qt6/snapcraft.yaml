@@ -67,7 +67,7 @@ parts:
       # Remove the default desktop file
       rm ../src/src/PBE.QOwnNotes.desktop
       echo "#define RELEASE \"Snapcraft.io\"" > release.h
-      /usr/lib/qt6/bin/lrelease ../src/src/languages/*.ts
+      /usr/lib/qt6/bin/lrelease-pro ../src/src/languages/*.ts
       qmake6 CONFIG+=release CONFIG+=snapcraft ../src/src/QOwnNotes.pro
       craftctl set version="$(cat ../src/src/version.h | sed 's/[^0-9,.]//g')"
       craftctl default

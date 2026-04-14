@@ -65,7 +65,7 @@ git clone --recurse-submodules --depth=1 https://github.com/pbek/QOwnNotes.git "
 cd "$PROJECT_PATH" || exit 1
 
 # build binary translation files
-lrelease src/QOwnNotes.pro
+lrelease-pro src/QOwnNotes.pro
 
 if [ -z "$QOWNNOTES_VERSION" ]; then
   # get version from version.h
