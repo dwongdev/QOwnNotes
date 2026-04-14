@@ -62,15 +62,12 @@ parts:
     plugin: make
     override-build: |
       export QT_SELECT=qt6
-      lrelease_bin="$(command -v lrelease-pro || command -v lrelease || true)"
-      if [ -z "${lrelease_bin}" ]; then
-        echo "Neither lrelease-pro nor lrelease is available in the build environment" >&2
-        exit 127
-      fi
+      >&2 pwd
+      >&2 find
       # Remove the default desktop file
       rm ../src/src/PBE.QOwnNotes.desktop
       echo "#define RELEASE \"Snapcraft.io\"" > release.h
-      "${lrelease_bin}" ../src/src/QOwnNotes.pro
+      /usr/lib/qt6/bin/lrelease ../src/src/languages/*.ts
       qmake6 CONFIG+=release CONFIG+=snapcraft ../src/src/QOwnNotes.pro
       craftctl set version="$(cat ../src/src/version.h | sed 's/[^0-9,.]//g')"
       craftctl default

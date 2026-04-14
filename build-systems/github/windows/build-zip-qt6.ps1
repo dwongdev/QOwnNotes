@@ -12,7 +12,7 @@ dir -s $Env:QT_ROOT_DIR
 
 Write-Output "#define RELEASE ""GitHub Actions""" > release.h
 qmake6 CONFIG+=release QOwnNotes.pro -r
-lrelease-pro QOwnNotes.pro
+lrelease QOwnNotes.pro
 set CL=/MP
 nmake
 # Create release directory and languages subdirectory
