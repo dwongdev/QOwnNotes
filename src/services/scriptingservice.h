@@ -36,6 +36,7 @@ class ScriptingService : public QObject {
    public:
     explicit ScriptingService(QObject *parent = 0);
     static ScriptingService *instance();
+    static ScriptingService *instanceOrNull();
     static ScriptingService *createInstance(QObject *parent);
     QQmlEngine *engine() const;
     void initComponents();
@@ -176,7 +177,8 @@ class ScriptingService : public QObject {
                                          int state, int capturingGroup, int maskedGroup,
                                          const QVariantMap &formatStyle);
 
-    QVector<QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule> getHighlightingRules();
+    QVector<QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule> getHighlightingRules() const;
+    bool hasHighlightingRules() const;
     QVariantList callHighlightingHook(const QString &text, int previousBlockState) const;
     bool highlightingHookExists() const;
 

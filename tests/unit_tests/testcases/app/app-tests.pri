@@ -7,6 +7,7 @@ HEADERS  += \
     $$PWD/test_htmlentities.h \
     $$PWD/test_metricsservice.h \
     $$PWD/test_network.h \
+    $$PWD/test_navigationwidget.h \
     $$PWD/test_notes.h \
     $$PWD/test_settingsservice.h \
     $$PWD/test_utilsmisc.h \
@@ -27,6 +28,7 @@ HEADERS  += \
     $$APP_SRC_DIR/services/settingsservice.h \
     $$APP_SRC_DIR/services/owncloudservice.h \
     $$APP_SRC_DIR/dialogs/masterdialog.h \
+    $$APP_SRC_DIR/widgets/navigationwidget.h \
     $$APP_SRC_DIR/widgets/logwidget.h \
     $$APP_SRC_DIR/entities/notefolder.h \
     $$APP_SRC_DIR/entities/cloudconnection.h \
@@ -59,6 +61,7 @@ SOURCES += \
     $$PWD/test_htmlentities.cpp \
     $$PWD/test_metricsservice.cpp \
     $$PWD/test_network.cpp \
+    $$PWD/test_navigationwidget.cpp \
     $$PWD/test_notes.cpp \
     $$PWD/test_settingsservice.cpp \
     $$PWD/test_utilsmisc.cpp \
@@ -77,6 +80,7 @@ SOURCES += \
     $$APP_SRC_DIR/services/settingsservice.cpp \
     $$APP_SRC_DIR/services/owncloudservice.cpp \
     $$APP_SRC_DIR/dialogs/masterdialog.cpp \
+    $$APP_SRC_DIR/widgets/navigationwidget.cpp \
     $$APP_SRC_DIR/widgets/logwidget.cpp \
     $$APP_SRC_DIR/entities/notefolder.cpp \
     $$APP_SRC_DIR/entities/cloudconnection.cpp \

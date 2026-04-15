@@ -1,5 +1,14 @@
 # QOwnNotes Changelog
 
+## 26.4.14
+
+- Extended the **Headings** tab in the **Navigation panel** to also recognize
+  custom heading syntaxes introduced through scripting `addHighlightingRule`
+  calls that use heading states like `H1`, `H2`, and `H3`, so scripted headings
+  such as `@ Introduction @`, `@@ Background @@`, and `@@@ Details @@@` now
+  appear in the heading tree with the correct nesting and title text (for
+  [#3549](https://github.com/pbek/QOwnNotes/issues/3549))
+
 ## 26.4.13
 
 - Renamed saved **Workspaces** to **Layouts** across the interface, settings,

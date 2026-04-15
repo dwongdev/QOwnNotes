@@ -5,6 +5,7 @@
 #include "release.h"
 #include "testcases/app/test_htmlentities.h"
 #include "testcases/app/test_metricsservice.h"
+#include "testcases/app/test_navigationwidget.h"
 #include "testcases/app/test_network.h"
 #include "testcases/app/test_notes.h"
 #include "testcases/app/test_settingsservice.h"
@@ -26,6 +27,7 @@ int main(int argc, char *argv[]) {
     int allTestsResult = 0 + QTest::qExec(new TestNotes(), argc, argv) +
                          QTest::qExec(new TestHTMLEntities(), argc, argv) +
                          QTest::qExec(new TestMetricsService(), argc, argv) +
+                         QTest::qExec(new TestNavigationWidget(), argc, argv) +
                          QTest::qExec(new TestSettingsService(), argc, argv) +
                          QTest::qExec(new TestNetwork(), argc, argv) +
                          QTest::qExec(new TestUtilsMisc(), argc, argv);

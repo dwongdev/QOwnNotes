@@ -14,6 +14,7 @@
 #include "navigationwidget.h"
 
 #include <libraries/qmarkdowntextedit/markdownhighlighter.h>
+#include <services/scriptingservice.h>
 
 #include <QDebug>
 #include <QMenu>
@@ -23,8 +24,167 @@
 #include <QTextCursor>
 #include <QTextDocument>
 #include <QTreeWidgetItem>
+#include <utility>
 
 namespace {
+struct HeadingMatch {
+    HeadingMatch() = default;
+    HeadingMatch(QString text, int elementType) : text(std::move(text)), elementType(elementType) {}
+
+    QString text;
+    int elementType = MarkdownHighlighter::NoState;
+
+    bool isValid() const { return MarkdownHighlighter::isHeading(elementType) && !text.isEmpty(); }
+};
+
+int atxHeadingLevel(const QString &text) {
+    int offset = 0;
+    while (offset < text.length() && text.at(offset) == QLatin1Char(' ') && offset < 4) {
+        ++offset;
+    }
+
+    if (offset >= text.length() || offset == 4 || text.at(offset) != QLatin1Char('#')) {
+        return 0;
+    }
+
+    int headingLevel = 0;
+    int i = offset;
+    while (i < text.length() && text.at(i) == QLatin1Char('#') && headingLevel < 6) {
+        ++i;
+        ++headingLevel;
+    }
+
+    return (headingLevel > 0 && i < text.length() && text.at(i) == QLatin1Char(' ')) ? headingLevel
+                                                                                     : 0;
+}
+
+bool isSetextUnderlineText(const QString &text) {
+    int offset = 0;
+    while (offset < text.length() && text.at(offset) == QLatin1Char(' ') && offset < 4) {
+        ++offset;
+    }
+
+    if (offset >= text.length() || offset == 4) {
+        return false;
+    }
+
+    const QChar marker = text.at(offset);
+    if (marker != QLatin1Char('=') && marker != QLatin1Char('-')) {
+        return false;
+    }
+
+    for (int i = offset; i < text.length(); ++i) {
+        if (text.at(i) != marker) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+QString extractScriptingHeadingText(
+    const QString &text, const QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule &rule,
+    const QRegularExpressionMatch &match) {
+    if (rule.capturingGroup > 0) {
+        const QString capturedText = match.captured(rule.capturingGroup).trimmed();
+        if (!capturedText.isEmpty()) {
+            return capturedText;
+        }
+    }
+
+    for (int group = 1; group <= match.lastCapturedIndex(); ++group) {
+        const QString capturedText = match.captured(group).trimmed();
+        if (!capturedText.isEmpty()) {
+            return capturedText;
+        }
+    }
+
+    QString headingText = text.trimmed();
+    const QString marker = rule.shouldContain.trimmed();
+
+    if (!marker.isEmpty() && headingText.startsWith(marker) && headingText.endsWith(marker) &&
+        headingText.length() >= marker.length() * 2) {
+        headingText = headingText.mid(marker.length(), headingText.length() - (marker.length() * 2))
+                          .trimmed();
+    }
+
+    return headingText;
+}
+
+HeadingMatch parseScriptingHeadingBlock(
+    const QTextBlock &block,
+    const QVector<QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule> &rules) {
+    const QString text = block.text();
+    if (text.trimmed().isEmpty()) {
+        return {};
+    }
+
+    for (const auto &rule : rules) {
+        if (!MarkdownHighlighter::isHeading(rule.state) || !text.contains(rule.shouldContain)) {
+            continue;
+        }
+
+        auto iterator = rule.pattern.globalMatch(text);
+        while (iterator.hasNext()) {
+            const QRegularExpressionMatch match = iterator.next();
+            if (match.capturedStart(0) != 0 || match.capturedLength(0) != text.length()) {
+                continue;
+            }
+
+            const QString headingText = extractScriptingHeadingText(text, rule, match);
+            if (headingText.isEmpty()) {
+                continue;
+            }
+
+            return {headingText, rule.state};
+        }
+    }
+
+    return {};
+}
+
+HeadingMatch parseHeadingBlock(
+    const QTextBlock &block,
+    const QVector<QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule> &rules) {
+    if (!block.isValid()) {
+        return {};
+    }
+
+    const QString text = block.text();
+    const int atxLevel = atxHeadingLevel(text);
+    if (atxLevel > 0) {
+        return {text, MarkdownHighlighter::H1 + atxLevel - 1};
+    }
+
+    if (!text.trimmed().isEmpty() && isSetextUnderlineText(block.next().text())) {
+        const QString nextText = block.next().text().trimmed();
+        if (!nextText.isEmpty()) {
+            const auto state = nextText.at(0) == QLatin1Char('=') ? MarkdownHighlighter::H1
+                                                                  : MarkdownHighlighter::H2;
+            return {text.trimmed(), state};
+        }
+    }
+
+    HeadingMatch heading = parseScriptingHeadingBlock(block, rules);
+    if (heading.isValid()) {
+        return heading;
+    }
+
+    const int elementType = block.userState();
+    return MarkdownHighlighter::isHeading(elementType)
+               ? HeadingMatch{block.text().trimmed(), elementType}
+               : HeadingMatch{};
+}
+
+QVector<QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule> navigationScriptingRules() {
+    const ScriptingService *scriptingService = ScriptingService::instanceOrNull();
+    if (scriptingService == nullptr || !scriptingService->hasHighlightingRules()) {
+        return {};
+    }
+
+    return scriptingService->getHighlightingRules();
+}
+
 void setExpandedRecursively(QTreeWidgetItem *item, bool expanded) {
     if (item == nullptr) {
         return;
@@ -70,41 +230,11 @@ bool NavigationWidget::isSetextUnderlineBlock(const QString &text) {
     return true;
 }
 
-bool NavigationWidget::isAtxHeadingBlock(const QString &text) {
-    int offset = 0;
-    while (offset < text.length() && text.at(offset) == QLatin1Char(' ') && offset < 4) {
-        ++offset;
-    }
-
-    if (offset >= text.length() || offset == 4 || text.at(offset) != QLatin1Char('#')) {
-        return false;
-    }
-
-    int headingLevel = 0;
-    int i = offset;
-    while (i < text.length() && text.at(i) == QLatin1Char('#') && headingLevel < 6) {
-        ++i;
-        ++headingLevel;
-    }
-
-    return headingLevel > 0 && i < text.length() && text.at(i) == QLatin1Char(' ');
-}
+bool NavigationWidget::isAtxHeadingBlock(const QString &text) { return atxHeadingLevel(text) > 0; }
 
 bool NavigationWidget::isNavigationHeadingBlock(const QTextBlock &block) {
-    if (!block.isValid()) {
-        return false;
-    }
-
-    const QString text = block.text();
-    if (isAtxHeadingBlock(text)) {
-        return true;
-    }
-
-    if (text.trimmed().isEmpty()) {
-        return false;
-    }
-
-    return isSetextUnderlineBlock(block.next().text());
+    const auto rules = navigationScriptingRules();
+    return parseHeadingBlock(block, rules).isValid();
 }
 
 NavigationWidget::NavigationWidget(QWidget *parent) : QTreeWidget(parent) {
@@ -227,36 +357,34 @@ void NavigationWidget::doParse() {
 
 QVector<Node> NavigationWidget::parseDocument(const QTextDocument *const document) {
     QVector<Node> nodes;
+    const auto rules = navigationScriptingRules();
+
     for (int i = 0; i < document->blockCount(); ++i) {
         const QTextBlock block = document->findBlockByNumber(i);
-        if (!block.isValid()) {
-            continue;
-        }
-        const int elementType = block.userState();
-
-        // ignore all non headline types
-        if ((elementType < MarkdownHighlighter::H1) || (elementType > MarkdownHighlighter::H6)) {
+        const HeadingMatch heading = parseHeadingBlock(block, rules);
+        if (!heading.isValid()) {
             continue;
         }
         static const QRegularExpression re(QStringLiteral("^#+\\s+"));
-        // Trim the heading text, in case there are trailing carriage return characters leaking in
-        // Windows
-        QString text = block.text().remove(re).trimmed();
+        QString text = heading.text;
+        text.remove(re);
+        text = text.trimmed();
 
         if (text.isEmpty()) {
             continue;
         }
 
-        nodes.append({std::move(text), block.position(), elementType});
+        nodes.append({std::move(text), block.position(), heading.elementType});
     }
     return nodes;
 }
 
 int NavigationWidget::headingPositionForCursor(const QTextCursor &cursor) {
     QTextBlock block = cursor.block();
+    const auto rules = navigationScriptingRules();
 
     while (block.isValid()) {
-        if (isNavigationHeadingBlock(block)) {
+        if (parseHeadingBlock(block, rules).isValid()) {
             return block.position();
         }
 

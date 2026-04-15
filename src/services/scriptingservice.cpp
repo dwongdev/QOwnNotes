@@ -97,14 +97,17 @@ ScriptingService::ScriptingService(QObject *parent) : QObject(parent) {
  * The instance will be created if it doesn't exist.
  */
 ScriptingService *ScriptingService::instance() {
-    ScriptingService *scriptingService =
-        qApp->property("scriptingService").value<ScriptingService *>();
+    ScriptingService *scriptingService = instanceOrNull();
 
     if (scriptingService == nullptr) {
         scriptingService = createInstance(nullptr);
     }
 
     return scriptingService;
+}
+
+ScriptingService *ScriptingService::instanceOrNull() {
+    return qApp->property("scriptingService").value<ScriptingService *>();
 }
 
 /**
@@ -2588,9 +2591,11 @@ void ScriptingService::addHighlightingRule(const QString &pattern, const QString
 }
 
 QVector<QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule>
-ScriptingService::getHighlightingRules() {
+ScriptingService::getHighlightingRules() const {
     return _highlightingRules;
 }
+
+bool ScriptingService::hasHighlightingRules() const { return !_highlightingRules.isEmpty(); }
 
 /**
  * Adds a highlighting rule with custom format styling to the syntax highlighter

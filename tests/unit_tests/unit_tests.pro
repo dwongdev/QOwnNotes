@@ -1,5 +1,5 @@
 
-QT       += core gui testlib sql widgets xml network qml printsupport
+QT       += core gui testlib sql widgets xml network qml printsupport concurrent
 
 #QT       -= gui
 
