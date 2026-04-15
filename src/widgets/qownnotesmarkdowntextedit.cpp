@@ -10,6 +10,9 @@
 #include <QDebug>
 #include <QDesktopServices>
 #include <QDir>
+#include <QDragEnterEvent>
+#include <QDragMoveEvent>
+#include <QDropEvent>
 #include <QEvent>
 #include <QFileInfo>
 #include <QFont>
@@ -1873,6 +1876,36 @@ void QOwnNotesMarkdownTextEdit::paintMarkdownImagePreviews() {
 
 bool QOwnNotesMarkdownTextEdit::canInsertFromMimeData(const QMimeData *source) const {
     return (!source->hasUrls());
+}
+
+void QOwnNotesMarkdownTextEdit::dragEnterEvent(QDragEnterEvent *event) {
+    if (event->mimeData()->hasUrls()) {
+        event->acceptProposedAction();
+        return;
+    }
+
+    QMarkdownTextEdit::dragEnterEvent(event);
+}
+
+void QOwnNotesMarkdownTextEdit::dragMoveEvent(QDragMoveEvent *event) {
+    if (event->mimeData()->hasUrls()) {
+        event->acceptProposedAction();
+        return;
+    }
+
+    QMarkdownTextEdit::dragMoveEvent(event);
+}
+
+void QOwnNotesMarkdownTextEdit::dropEvent(QDropEvent *event) {
+    if (event->mimeData()->hasUrls()) {
+        if (auto mainWindow = MainWindow::instance()) {
+            event->acceptProposedAction();
+            mainWindow->handleInsertingFromMimeData(event->mimeData());
+            return;
+        }
+    }
+
+    QMarkdownTextEdit::dropEvent(event);
 }
 
 /**

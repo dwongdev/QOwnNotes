@@ -8,6 +8,9 @@
 #include "libraries/qmarkdowntextedit/qmarkdowntextedit.h"
 #include "services/markdownlspclient.h"
 class MainWindow;
+class QDragEnterEvent;
+class QDragMoveEvent;
+class QDropEvent;
 class QOwnSpellChecker;
 
 #ifdef LANGUAGETOOL_ENABLED
@@ -137,6 +140,9 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     //    QOwnNotesMarkdownHighlighter *_highlighter;
     bool canInsertFromMimeData(const QMimeData *source) const override;
     void insertFromMimeData(const QMimeData *source) override;
+    void dragEnterEvent(QDragEnterEvent *event) override;
+    void dragMoveEvent(QDragMoveEvent *event) override;
+    void dropEvent(QDropEvent *event) override;
     void resizeEvent(QResizeEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
     bool eventFilter(QObject *obj, QEvent *event) override;

@@ -5205,13 +5205,10 @@ void MainWindow::handleInsertingFromMimeData(const QMimeData *mimeData) {
     //    qDebug() << __func__ << " - 'mimeData->hasImage()': " << mimeData->hasImage();
     //    qDebug() << __func__ << " - 'mimeData->hasUrls()': " << mimeData->hasUrls();
 
-    // prevent pasting if note editor is in read-only mode
-    if (ui->noteTextEdit->isReadOnly()) {
-        return;
-    }
+    const bool noteEditorReadOnly = ui->noteTextEdit->isReadOnly();
 
     // check if a QML wants to set the inserted text
-    if (mimeData->hasText() || mimeData->hasHtml()) {
+    if (!noteEditorReadOnly && (mimeData->hasText() || mimeData->hasHtml())) {
         ScriptingService *scriptingService = ScriptingService::instance();
         QString text = scriptingService->callInsertingFromMimeDataHook(mimeData);
 
@@ -5230,6 +5227,7 @@ void MainWindow::handleInsertingFromMimeData(const QMimeData *mimeData) {
         int successCount = 0;
         int failureCount = 0;
         int skipCount = 0;
+        int readOnlySkipCount = 0;
 
         const auto urls = mimeData->urls();
         for (const QUrl &url : urls) {
@@ -5254,6 +5252,8 @@ void MainWindow::handleInsertingFromMimeData(const QMimeData *mimeData) {
                     } else {
                         failureCount++;
                     }
+                } else if (noteEditorReadOnly) {
+                    readOnlySkipCount++;
                     // only allow image files to be inserted as image
                 } else if (isValidMediaFile(file)) {
                     showStatusBarMessage(tr("Inserting image"), QStringLiteral("🖼️"), 0);
@@ -5304,9 +5304,20 @@ void MainWindow::handleInsertingFromMimeData(const QMimeData *mimeData) {
                    "", skipCount);
         }
 
+        if (readOnlySkipCount > 0) {
+            if (!message.isEmpty()) {
+                message += QStringLiteral(", ");
+            }
+
+            message += tr("Skipped inserting %n file(s) because the current note is read-only", "",
+                          readOnlySkipCount);
+        }
+
         if (!message.isEmpty()) {
             showStatusBarMessage(message, QStringLiteral("⤵️️"), 5000);
         }
+    } else if (noteEditorReadOnly) {
+        return;
     } else if (mimeData->hasImage()) {
         // get the image from mime data
         QImage image = mimeData->imageData().value<QImage>();

@@ -2,6 +2,9 @@
 
 ## 26.4.14
 
+- Allow dragging a Markdown or text note file into the **note editor**, so it is
+  imported as a note into the active **note subfolder**
+  (for [#3568](https://github.com/pbek/QOwnNotes/issues/3568))
 - Extended the **Headings** tab in the **Navigation panel** to also recognize
   custom heading syntaxes introduced through scripting `addHighlightingRule`
   calls that use heading states like `H1`, `H2`, and `H3`, so scripted headings
