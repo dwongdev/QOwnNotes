@@ -54,6 +54,7 @@
 #include <QtGui/QIcon>
 #include <utility>
 
+#include "gui.h"
 #include "services/settingsservice.h"
 #if (QT_VERSION < QT_VERSION_CHECK(5, 6, 0))
 #include <QHostInfo>
@@ -110,7 +111,19 @@ void Utils::Misc::openPath(const QString &absolutePath) {
  * (if possible) the item at the given path
  * (thank you to qBittorrent for the inspiration)
  */
-void Utils::Misc::openFolderSelect(const QString &absolutePath) {
+void Utils::Misc::openFolderSelect(const QString &absolutePath,
+                                   const QString &questionDialogIdentifier) {
+    if (!questionDialogIdentifier.isEmpty() &&
+        Utils::Gui::questionNoSkipOverride(
+            QApplication::activeWindow(),
+            QCoreApplication::translate("Utils::Misc", "Open folder in file manager"),
+            QCoreApplication::translate("Utils::Misc",
+                                        "Do you want to show this item in your file manager?"),
+            questionDialogIdentifier, QMessageBox::Yes | QMessageBox::No,
+            QMessageBox::Yes) != QMessageBox::Yes) {
+        return;
+    }
+
     const QString path = QDir::fromNativeSeparators(absolutePath);
 #ifdef Q_OS_WIN
     if (QFileInfo(path).exists()) {

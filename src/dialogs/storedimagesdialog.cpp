@@ -499,7 +499,7 @@ void StoredImagesDialog::on_openFolderButton_clicked() {
     }
 
     QString filePath = getFilePath(item);
-    Utils::Misc::openFolderSelect(filePath);
+    Utils::Misc::openFolderSelect(filePath, QStringLiteral("show-stored-image-in-file-manager"));
 }
 
 void StoredImagesDialog::on_orphanedCheckBox_toggled(bool checked) {

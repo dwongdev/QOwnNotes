@@ -301,7 +301,8 @@ void StoredAttachmentsDialog::on_openFolderButton_clicked() {
     }
 
     QString filePath = getFilePath(item);
-    Utils::Misc::openFolderSelect(filePath);
+    Utils::Misc::openFolderSelect(filePath,
+                                  QStringLiteral("show-stored-attachment-in-file-manager"));
 }
 
 void StoredAttachmentsDialog::on_fileTreeWidget_customContextMenuRequested(const QPoint &pos) {

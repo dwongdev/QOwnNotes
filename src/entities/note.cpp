@@ -969,7 +969,8 @@ bool Note::exportToPath(const QString &destinationPath, bool withAttachedFiles) 
 
     file.flush();
     file.close();
-    Utils::Misc::openFolderSelect(destinationPath);
+    Utils::Misc::openFolderSelect(destinationPath,
+                                  QStringLiteral("show-exported-note-in-file-manager"));
 
     return true;
 }

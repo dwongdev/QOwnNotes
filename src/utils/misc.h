@@ -62,7 +62,8 @@ struct SearchEngine {
 };
 
 void openPath(const QString &absolutePath);
-void openFolderSelect(const QString &absolutePath);
+void openFolderSelect(const QString &absolutePath,
+                      const QString &questionDialogIdentifier = QString());
 QString removeIfStartsWith(QString text, const QString &removeString);
 QString removeIfEndsWith(QString text, const QString &removeString);
 QString prependIfDoesNotStartWith(QString text, const QString &startString);

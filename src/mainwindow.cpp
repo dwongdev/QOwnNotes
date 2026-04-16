@@ -5469,7 +5469,8 @@ void MainWindow::pasteMediaIntoNote() {
 }
 
 void MainWindow::on_actionShow_note_in_file_manager_triggered() {
-    Utils::Misc::openFolderSelect(currentNote.fullNoteFilePath());
+    Utils::Misc::openFolderSelect(currentNote.fullNoteFilePath(),
+                                  QStringLiteral("show-note-in-file-manager"));
 }
 
 /**

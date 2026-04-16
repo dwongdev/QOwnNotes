@@ -356,7 +356,8 @@ void NotePreviewWidget::exportAsHTMLFile() {
             out << _html;
             file.flush();
             file.close();
-            Utils::Misc::openFolderSelect(fileName);
+            Utils::Misc::openFolderSelect(
+                fileName, QStringLiteral("show-exported-preview-html-in-file-manager"));
         }
     }
 }

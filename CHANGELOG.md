@@ -1,5 +1,12 @@
 # QOwnNotes Changelog
 
+## 26.4.15
+
+- Added a rememberable confirmation dialog before opening items in the file
+  manager from note reveal and export actions, so accidental folder windows can
+  be suppressed per action after choosing **No** once with **Don't ask again!**
+  (for [#1789](https://github.com/pbek/QOwnNotes/issues/1789))
+
 ## 26.4.14
 
 - Allow dragging a Markdown or text note file into the **note editor**, so it is

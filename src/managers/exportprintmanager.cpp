@@ -195,7 +195,8 @@ void ExportPrintManager::exportNoteAsPDF(QTextDocument *doc) {
 
     if (prepareExportNoteAsPDFPrinter(printer)) {
         doc->print(printer);
-        Utils::Misc::openFolderSelect(printer->outputFileName());
+        Utils::Misc::openFolderSelect(printer->outputFileName(),
+                                      QStringLiteral("show-exported-pdf-in-file-manager"));
     }
 
     delete printer;
@@ -283,7 +284,8 @@ void ExportPrintManager::on_actionExport_preview_HTML_triggered() {
                 NoteFolder::currentLocalPath(), _mainWindow->getMaxImageWidth(), true, true, true);
             file.flush();
             file.close();
-            Utils::Misc::openFolderSelect(fileName);
+            Utils::Misc::openFolderSelect(
+                fileName, QStringLiteral("show-exported-note-html-in-file-manager"));
         }
     }
 }

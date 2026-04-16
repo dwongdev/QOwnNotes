@@ -790,7 +790,8 @@ void FontColorWidget::on_exportSchemeButton_clicked() {
                 exportSettings.setValue(key, value);
             }
 
-            Utils::Misc::openFolderSelect(fileName);
+            Utils::Misc::openFolderSelect(
+                fileName, QStringLiteral("show-exported-color-schema-in-file-manager"));
         }
     }
 }
