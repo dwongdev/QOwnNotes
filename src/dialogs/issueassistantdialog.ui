@@ -420,6 +420,16 @@
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="debugInfoAnonymizeCheckBox">
+            <property name="toolTip">
+             <string notr="true">Hide usernames in paths and anonymize other personal identifiers in the generated debug information</string>
+            </property>
+            <property name="text">
+             <string notr="true">Anonymize personal information</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QOwnNotesMarkdownTextEdit" name="debugOutputPlainTextEdit"/>
           </item>
          </layout>
@@ -529,6 +539,7 @@
   <tabstop>refreshLogButton</tabstop>
   <tabstop>submitTitleLineEdit</tabstop>
   <tabstop>logOutputPlainTextEdit</tabstop>
+  <tabstop>debugInfoAnonymizeCheckBox</tabstop>
   <tabstop>debugOutputPlainTextEdit</tabstop>
   <tabstop>bodyPlainTextEdit</tabstop>
   <tabstop>postButton</tabstop>

@@ -52,6 +52,7 @@
 #include <QUuid>
 #include <QXmlStreamReader>
 #include <QtGui/QIcon>
+#include <algorithm>
 #include <utility>
 
 #include "gui.h"
@@ -92,6 +93,131 @@ enum SearchEngines {
     Qwant = 7,
     Startpage = 8
 };
+
+namespace {
+QString environmentVariableValue(const char *name) {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+    return qEnvironmentVariable(name);
+#else
+    return QString::fromLocal8Bit(qgetenv(name));
+#endif
+}
+
+class DebugInformationAnonymizer {
+   public:
+    void addReplacement(const QString &text, const QString &placeholder) {
+        if (text.isEmpty() || (text == placeholder)) {
+            return;
+        }
+
+        _replacements.append(qMakePair(text, placeholder));
+    }
+
+    void addPath(const QString &path, const QString &placeholder) {
+        if (path.isEmpty()) {
+            return;
+        }
+
+        const QString normalizedPath = QDir::cleanPath(QDir::fromNativeSeparators(path));
+        const QString normalizedPlaceholder = QDir::fromNativeSeparators(placeholder);
+        const QString nativePlaceholder = QDir::toNativeSeparators(placeholder);
+
+        addReplacement(normalizedPath, normalizedPlaceholder);
+        addReplacement(QDir::toNativeSeparators(normalizedPath), nativePlaceholder);
+        addReplacement(QDir::fromNativeSeparators(path), normalizedPlaceholder);
+        addReplacement(QDir::toNativeSeparators(path), nativePlaceholder);
+    }
+
+    QString anonymize(QString text) const {
+        auto replacements = _replacements;
+        std::sort(replacements.begin(), replacements.end(),
+                  [](const QPair<QString, QString> &first, const QPair<QString, QString> &second) {
+                      return first.first.size() > second.first.size();
+                  });
+
+        for (const auto &replacement : replacements) {
+            text.replace(replacement.first, replacement.second);
+        }
+
+        return text;
+    }
+
+   private:
+    QList<QPair<QString, QString>> _replacements;
+};
+
+QString anonymizedUserPath(QString path) {
+    path = QDir::cleanPath(QDir::fromNativeSeparators(path));
+    const int separatorPosition = path.lastIndexOf(QLatin1Char('/'));
+
+    if (separatorPosition < 0) {
+        return QStringLiteral("<user>");
+    }
+
+    return path.left(separatorPosition + 1) + QStringLiteral("<user>");
+}
+
+QString anonymizedDebugInformationValue(const QVariant &value) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    switch (value.typeId()) {
+#else
+    switch (value.type()) {
+#endif
+        case QMetaType::QStringList:
+            return QStringLiteral("<anonymized string list with %1 item(s)>")
+                .arg(value.toStringList().count());
+        case QMetaType::QVariantList:
+            return QStringLiteral("<anonymized variant list with %1 item(s)>")
+                .arg(value.toList().count());
+        case QMetaType::QByteArray:
+        case QMetaType::User:
+            return QStringLiteral("<binary data>");
+        default:
+            return QStringLiteral("<anonymized>");
+    }
+}
+
+bool isAnonymizedDebugInformationKey(const QString &key) {
+    return key.startsWith(QStringLiteral("savedSearches/")) ||
+           (key == QStringLiteral("recentNoteFolders"));
+}
+
+bool isHiddenDebugEnvironmentKey(const QString &key) {
+    static const QRegularExpression secretKeyRegex(
+        QStringLiteral(
+            R"((^|_)(TOKEN|SECRET|PASSWORD|PASS|API_KEY|AUTH|COOKIE|CREDENTIALS?)(_|$))"),
+        QRegularExpression::CaseInsensitiveOption);
+
+    return secretKeyRegex.match(key).hasMatch();
+}
+
+QString anonymizedDebugEnvironmentValue(const QString &key, const QString &value,
+                                        const DebugInformationAnonymizer &anonymizer) {
+    const QString upperKey = key.toUpper();
+
+    if (isHiddenDebugEnvironmentKey(key)) {
+        return QStringLiteral("<hidden>");
+    }
+
+    if ((upperKey == QStringLiteral("USER")) || (upperKey == QStringLiteral("USERNAME")) ||
+        (upperKey == QStringLiteral("LOGNAME")) || (upperKey == QStringLiteral("HOSTNAME")) ||
+        (upperKey == QStringLiteral("COMPUTERNAME"))) {
+        return QStringLiteral("<anonymized>");
+    }
+
+    if ((upperKey == QStringLiteral("HOME")) || (upperKey == QStringLiteral("USERPROFILE")) ||
+        (upperKey == QStringLiteral("HOMEPATH"))) {
+        return anonymizer.anonymize(value);
+    }
+
+    if ((upperKey == QStringLiteral("TMP")) || (upperKey == QStringLiteral("TEMP")) ||
+        (upperKey == QStringLiteral("TMPDIR"))) {
+        return anonymizer.anonymize(value);
+    }
+
+    return anonymizer.anonymize(value);
+}
+}    // namespace
 
 /**
  * Open the given path with an appropriate application
@@ -573,12 +699,7 @@ QString Utils::Misc::portableDataPath(const QString &earlyArgv0Path) {
         // For AppImages, the $APPIMAGE env var always points to the actual AppImage
         // file path, so we can use it directly without needing qApp
         // (see https://github.com/pbek/QOwnNotes/issues/3542)
-        // qEnvironmentVariable() (returns QString) was introduced in Qt 5.10
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-        const QString appImagePath = qEnvironmentVariable("APPIMAGE");
-#else
-        const QString appImagePath = QString::fromLocal8Bit(qgetenv("APPIMAGE"));
-#endif
+        const QString appImagePath = environmentVariableValue("APPIMAGE");
         if (!appImagePath.isEmpty()) {
             const QFileInfo fileInfo(appImagePath);
             path = fileInfo.absolutePath();
@@ -1891,9 +2012,34 @@ QString Utils::Misc::prepareDebugInformationLine(const QString &headline, QStrin
     return resultText;
 }
 
-QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks) {
+QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks, bool anonymize) {
     const SettingsService settings;
+    const QList<NoteFolder> noteFolders = NoteFolder::fetchAll();
+    QList<CloudConnection> cloudConnections = CloudConnection::fetchAll();
+    const QList<Script> scripts = Script::fetchAll(true);
+    DebugInformationAnonymizer anonymizer;
     QString output;
+
+    if (anonymize) {
+        const QStringList homePaths = {QDir::homePath(), environmentVariableValue("HOME"),
+                                       environmentVariableValue("USERPROFILE"),
+                                       environmentVariableValue("HOMEPATH")};
+        for (const QString &homePath : homePaths) {
+            if (!homePath.isEmpty()) {
+                anonymizer.addPath(homePath, anonymizedUserPath(homePath));
+            }
+        }
+
+        for (CloudConnection cloudConnection : cloudConnections) {
+            const QString cloudConnectionId = QString::number(cloudConnection.getId());
+            anonymizer.addReplacement(
+                cloudConnection.getUsername(),
+                QStringLiteral("<cloud-connection-%1-user>").arg(cloudConnectionId));
+            anonymizer.addReplacement(
+                cloudConnection.getAccountId(),
+                QStringLiteral("<cloud-connection-%1-account>").arg(cloudConnectionId));
+        }
+    }
 
     output += QStringLiteral("QOwnNotes Debug Information\n");
     output += QStringLiteral("===========================\n");
@@ -2082,11 +2228,17 @@ QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks) {
                                           QString::number(NoteFolder::currentNoteFolderId()),
                                           withGitHubLineBreaks);
 
-    const QList<NoteFolder> &noteFolders = NoteFolder::fetchAll();
     if (noteFolders.count() > 0) {
         Q_FOREACH (const NoteFolder &noteFolder, noteFolders) {
-            output += QStringLiteral("\n### Note folder `") % noteFolder.getName() +
-                      QStringLiteral("`\n\n");
+            const QString noteFolderId = QString::number(noteFolder.getId());
+            const NoteSubFolder activeNoteSubFolder = noteFolder.getActiveNoteSubFolder();
+
+            const QString noteFolderName = anonymize
+                                               ? QStringLiteral("note-folder-%1").arg(noteFolderId)
+                                               : noteFolder.getName();
+
+            output +=
+                QStringLiteral("\n### Note folder `") % noteFolderName + QStringLiteral("`\n\n");
             output += prepareDebugInformationLine(
                 QStringLiteral("id"), QString::number(noteFolder.getId()), withGitHubLineBreaks);
             output += prepareDebugInformationLine(
@@ -2099,8 +2251,13 @@ QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks) {
             output += prepareDebugInformationLine(
                 QStringLiteral("localPath"), QDir::toNativeSeparators(noteFolder.getLocalPath()),
                 withGitHubLineBreaks);
-            output += prepareDebugInformationLine(QStringLiteral("remotePath"),
-                                                  noteFolder.getRemotePath(), withGitHubLineBreaks);
+            output += prepareDebugInformationLine(
+                QStringLiteral("remotePath"),
+                noteFolder.getRemotePath().isEmpty()
+                    ? QString()
+                    : (anonymize ? QStringLiteral("/note-folder-%1").arg(noteFolderId)
+                                 : noteFolder.getRemotePath()),
+                withGitHubLineBreaks);
             output += prepareDebugInformationLine(
                 QStringLiteral("cloudConnectionId"),
                 QString::number(noteFolder.getCloudConnectionId()), withGitHubLineBreaks);
@@ -2118,9 +2275,13 @@ QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks) {
                     ? QStringLiteral("yes")
                     : QStringLiteral("no"),
                 withGitHubLineBreaks);
-            output += prepareDebugInformationLine(QStringLiteral("activeNoteSubFolder name"),
-                                                  noteFolder.getActiveNoteSubFolder().getName(),
-                                                  withGitHubLineBreaks);
+            output +=
+                prepareDebugInformationLine(QStringLiteral("activeNoteSubFolder name"),
+                                            activeNoteSubFolder.getName().isEmpty()
+                                                ? QString()
+                                                : (anonymize ? QStringLiteral("note-subfolder")
+                                                             : activeNoteSubFolder.getName()),
+                                            withGitHubLineBreaks);
             output += prepareDebugInformationLine(
                 QStringLiteral("database file"),
                 QDir::toNativeSeparators(noteFolder.getLocalPath() +
@@ -2132,8 +2293,13 @@ QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks) {
     // add cloud connection information
     output += QStringLiteral("\n## Cloud connections\n");
 
-    Q_FOREACH (CloudConnection cloudConnection, CloudConnection::fetchAll()) {
-        output += QStringLiteral("\n### Cloud connection `") % cloudConnection.getName() +
+    Q_FOREACH (CloudConnection cloudConnection, cloudConnections) {
+        const QString cloudConnectionId = QString::number(cloudConnection.getId());
+        const QString cloudConnectionName =
+            anonymize ? QStringLiteral("cloud-connection-%1").arg(cloudConnectionId)
+                      : cloudConnection.getName();
+
+        output += QStringLiteral("\n### Cloud connection `") % cloudConnectionName +
                   QStringLiteral("`\n\n");
         output += prepareDebugInformationLine(
             QStringLiteral("id"), QString::number(cloudConnection.getId()), withGitHubLineBreaks);
@@ -2143,10 +2309,16 @@ QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks) {
             withGitHubLineBreaks);
         output += prepareDebugInformationLine(QStringLiteral("serverUrl"),
                                               cloudConnection.getServerUrl(), withGitHubLineBreaks);
-        output += prepareDebugInformationLine(QStringLiteral("username"),
-                                              cloudConnection.getUsername(), withGitHubLineBreaks);
-        output += prepareDebugInformationLine(QStringLiteral("accountId"),
-                                              cloudConnection.getAccountId(), withGitHubLineBreaks);
+        output += prepareDebugInformationLine(
+            QStringLiteral("username"),
+            anonymize ? QStringLiteral("<cloud-connection-%1-user>").arg(cloudConnectionId)
+                      : cloudConnection.getUsername(),
+            withGitHubLineBreaks);
+        output += prepareDebugInformationLine(
+            QStringLiteral("accountId"),
+            anonymize ? QStringLiteral("<cloud-connection-%1-account>").arg(cloudConnectionId)
+                      : cloudConnection.getAccountId(),
+            withGitHubLineBreaks);
 
         if (cloudConnection.getNextcloudDeckEnabled()) {
             output += prepareDebugInformationLine(
@@ -2161,10 +2333,13 @@ QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks) {
     // add script information
     output += QStringLiteral("\n## Enabled scripts\n");
 
-    QList<Script> scripts = Script::fetchAll(true);
     if (noteFolders.count() > 0) {
-        Q_FOREACH (Script script, scripts) {
-            output += QStringLiteral("\n### Script `") % script.getName() + QStringLiteral("`\n\n");
+        Q_FOREACH (const Script &script, scripts) {
+            const QString scriptId = QString::number(script.getId());
+            const QString scriptName =
+                anonymize ? QStringLiteral("script-%1").arg(scriptId) : script.getName();
+
+            output += QStringLiteral("\n### Script `") % scriptName + QStringLiteral("`\n\n");
             output += prepareDebugInformationLine(
                 QStringLiteral("id"), QString::number(script.getId()), withGitHubLineBreaks);
             output += prepareDebugInformationLine(QStringLiteral("path"),
@@ -2241,6 +2416,9 @@ QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks) {
         if (keyHiddenList.contains(key)) {
             output += prepareDebugInformationLine(key, QStringLiteral("<hidden>"),
                                                   withGitHubLineBreaks, value.typeName());
+        } else if (anonymize && isAnonymizedDebugInformationKey(key)) {
+            output += prepareDebugInformationLine(key, anonymizedDebugInformationValue(value),
+                                                  withGitHubLineBreaks, value.typeName());
         } else {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
             switch (value.typeId()) {
@@ -2280,10 +2458,12 @@ QString Utils::Misc::generateDebugInformation(bool withGitHubLineBreaks) {
         QString key = textList.first();
         textList.removeFirst();
         QString value = textList.join(QStringLiteral("="));
-        output += prepareDebugInformationLine(key, value, withGitHubLineBreaks);
+        output += prepareDebugInformationLine(
+            key, anonymize ? anonymizedDebugEnvironmentValue(key, value, anonymizer) : value,
+            withGitHubLineBreaks);
     }
 
-    return output;
+    return anonymize ? anonymizer.anonymize(output) : output;
 }
 
 /**

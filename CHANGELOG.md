@@ -1,7 +1,12 @@
 # QOwnNotes Changelog
 
-## 26.4.15
+## 26.4.16
 
+- Added an optional **Anonymize personal information** toggle to the
+  **Debug information** settings page and the **issue assistant**, which can
+  hide usernames in paths and anonymize note names, cloud account identifiers,
+  saved searches, and sensitive environment values in generated debug
+  information before it is shared (for [#1765](https://github.com/pbek/QOwnNotes/issues/1765))
 - Added a rememberable confirmation dialog before opening items in the file
   manager from note reveal and export actions, so accidental folder windows can
   be suppressed per action after choosing **No** once with **Don't ask again!**

@@ -179,6 +179,8 @@ class SettingsDialog : public MasterDialog {
 
     void on_gitHubLineBreaksCheckBox_toggled(bool checked);
 
+    void on_debugInfoAnonymizeCheckBox_toggled(bool checked);
+
     void on_shortcutSearchLineEdit_textChanged(const QString &arg1);
 
     void on_settingsTreeWidget_currentItemChanged(QTreeWidgetItem *current,

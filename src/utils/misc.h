@@ -133,7 +133,7 @@ QString toHumanReadableByteSize(qint64 size);
 QString prepareDebugInformationLine(const QString &headline, QString data,
                                     bool withGitHubLineBreaks = true,
                                     const QString &typeText = QString());
-QString generateDebugInformation(bool withGitHubLineBreaks = true);
+QString generateDebugInformation(bool withGitHubLineBreaks = true, bool anonymize = false);
 bool regExpInListMatches(const QString &text, const QStringList &regExpList);
 bool isDarkModeIconTheme();
 void transformNextcloudPreviewImages(QString &html, int maxImageWidth,

@@ -1975,8 +1975,8 @@ void SettingsDialog::outputSettings() {
     // store some data for Utils::Misc::generateDebugInformation
     storeOwncloudDebugData();
 
-    QString output =
-        Utils::Misc::generateDebugInformation(ui->gitHubLineBreaksCheckBox->isChecked());
+    QString output = Utils::Misc::generateDebugInformation(
+        ui->gitHubLineBreaksCheckBox->isChecked(), ui->debugInfoAnonymizeCheckBox->isChecked());
 
     ui->debugInfoTextEdit->setPlainText(output);
 }
@@ -3565,6 +3565,12 @@ void SettingsDialog::on_gitHubLineBreaksCheckBox_toggled(bool checked) {
     outputSettings();
 }
 
+void SettingsDialog::on_debugInfoAnonymizeCheckBox_toggled(bool checked) {
+    SettingsService settings;
+    settings.setValue(QStringLiteral("debugInfoAnonymize"), checked);
+    outputSettings();
+}
+
 /**
  * Searches in the description and in the shortcut for a entered text
  *
@@ -3759,6 +3765,10 @@ bool SettingsDialog::initializePage(int index) {
         case SettingsPages::DebugPage: {
             // init the debug info search frame
             ui->debugInfoTextEdit->initSearchFrame(ui->debugInfoTextEditSearchFrame);
+
+            SettingsService settings;
+            ui->debugInfoAnonymizeCheckBox->setChecked(
+                settings.value(QStringLiteral("debugInfoAnonymize")).toBool());
 
             // show the log file path
             ui->logFileLabel->setText(QDir::toNativeSeparators(Utils::Misc::logFilePath()));

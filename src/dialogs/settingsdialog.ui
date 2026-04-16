@@ -4774,6 +4774,16 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
                   </property>
                  </widget>
                 </item>
+                <item row="6" column="0" colspan="7">
+                 <widget class="QCheckBox" name="debugInfoAnonymizeCheckBox">
+                  <property name="toolTip">
+                   <string>Hide usernames in paths and anonymize other personal identifiers in the generated debug information</string>
+                  </property>
+                  <property name="text">
+                   <string>Anonymize personal information</string>
+                  </property>
+                 </widget>
+                </item>
                 <item row="4" column="0" colspan="7">
                  <widget class="QFrame" name="debugInfoTextEditSearchFrame">
                   <property name="frameShape">
@@ -4784,7 +4794,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="0">
+                <item row="7" column="0">
                  <widget class="QPushButton" name="issueAssistantPushButton">
                   <property name="toolTip">
                    <string>This is the best way to open an issue</string>
@@ -4798,7 +4808,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="1">
+                <item row="7" column="1">
                  <widget class="QPushButton" name="copyDebugInfoButton">
                   <property name="toolTip">
                    <string>Please use this in the issue tracker</string>
@@ -4812,7 +4822,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="2">
+                <item row="7" column="2">
                  <widget class="QPushButton" name="saveDebugInfoButton">
                   <property name="toolTip">
                    <string>Please don't use this in the issue tracker</string>
@@ -4826,7 +4836,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="3" colspan="4">
+                <item row="7" column="3" colspan="4">
                  <spacer name="horizontalSpacer_14">
                   <property name="orientation">
                    <enum>Qt::Orientation::Horizontal</enum>
@@ -8241,6 +8251,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
   <tabstop>exportSettingsButton</tabstop>
   <tabstop>reinitializeDatabaseButton</tabstop>
   <tabstop>gitHubLineBreaksCheckBox</tabstop>
+  <tabstop>debugInfoAnonymizeCheckBox</tabstop>
   <tabstop>debugInfoTextEdit</tabstop>
   <tabstop>noteTextEditFontLabel</tabstop>
   <tabstop>noteTextEditButton</tabstop>
