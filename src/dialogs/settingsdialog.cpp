@@ -65,6 +65,7 @@
 #include "widgets/settings/editorfontcolorsettingswidget.h"
 #include "widgets/settings/languagetoolsettingswidget.h"
 #include "widgets/settings/networksettingswidget.h"
+#include "widgets/settings/todosettingswidget.h"
 #include "widgets/settings/webapplicationsettingswidget.h"
 
 SettingsDialog::SettingsDialog(int page, QWidget *parent)
@@ -118,7 +119,6 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     ui->connectButton->setDefault(true);
     ui->noteSaveIntervalTime->setToolTip(ui->noteSaveIntervalTimeLabel->toolTip());
     ui->removeCustomNoteFileExtensionButton->setDisabled(true);
-    ui->calDavCalendarGroupBox->hide();
     _newScriptName = tr("New script");
 
     ui->languageToolSettingsWidget->initialize();
@@ -210,6 +210,15 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
         close();
     });
 
+    // Connect todo settings widget signals
+    connect(ui->todoSettingsWidget, &TodoSettingsWidget::storeSettingsRequested, this,
+            &SettingsDialog::storeSettings);
+    connect(ui->todoSettingsWidget, &TodoSettingsWidget::reloadCalendarListRequested, this,
+            [this]() {
+                OwnCloudService *ownCloud = OwnCloudService::instance(true);
+                ownCloud->settingsGetCalendarList(this);
+            });
+
     //    connect(ui->layoutPresetWidget, SIGNAL(layoutStored(QString)),
     //            this, SLOT(needRestart()));
     connect(ui->layoutPresetWidget, &LayoutPresetWidget::layoutStored, this,
@@ -272,7 +281,9 @@ void SettingsDialog::replaceOwnCloudText() const {
     ui->installInfoTextLabel3->setText(
         Utils::Misc::replaceOwnCloudText(ui->installInfoTextLabel3->text()));
     ui->cloudInfoLabel->setText(Utils::Misc::replaceOwnCloudText(ui->cloudInfoLabel->text()));
-    ui->todoInfoLabel->setText(Utils::Misc::replaceOwnCloudText(ui->todoInfoLabel->text()));
+
+    // Todo widget handles its own replaceOwnCloudText
+    ui->todoSettingsWidget->replaceOwnCloudText();
 
     QTreeWidgetItem *item = ui->settingsTreeWidget->topLevelItem(OwnCloudPage);
     item->setText(0, Utils::Misc::replaceOwnCloudText(item->text(0)));
@@ -288,10 +299,6 @@ void SettingsDialog::replaceOwnCloudText() const {
         Utils::Misc::replaceOwnCloudText(ui->noteFolderRemotePathButton->toolTip()));
     ui->noteFolderRemotePathLineEdit->setToolTip(
         Utils::Misc::replaceOwnCloudText(ui->noteFolderRemotePathLineEdit->toolTip()));
-
-    // task settings
-    ui->defaultOwnCloudCalendarRadioButton->setText(
-        Utils::Misc::replaceOwnCloudText(ui->defaultOwnCloudCalendarRadioButton->text()));
 }
 
 /**
@@ -456,8 +463,7 @@ void SettingsDialog::storeSettings() {
 
     settings.setValue(QStringLiteral("ownCloud/supportEnabled"),
                       ui->ownCloudSupportCheckBox->isChecked());
-    settings.setValue(QStringLiteral("todoCalendarSupport"),
-                      ui->todoCalendarSupportCheckBox->isChecked());
+    ui->todoSettingsWidget->storeSettings();
     settings.setValue(QStringLiteral("insertTimeFormat"), ui->timeFormatLineEdit->text());
     settings.setValue(QStringLiteral("disableAutomaticUpdateDialog"),
                       ui->disableAutomaticUpdateDialogCheckBox->isChecked());
@@ -504,8 +510,6 @@ void SettingsDialog::storeSettings() {
                       ui->toolbarIconSizeSpinBox->value());
     settings.setValue(QStringLiteral("allowOnlyOneAppInstance"),
                       ui->allowOnlyOneAppInstanceCheckBox->isChecked());
-    settings.setValue(QStringLiteral("closeTodoListAfterSave"),
-                      ui->closeTodoListAfterSaveCheckBox->isChecked());
     settings.setValue(QStringLiteral("interfaceLanguage"),
                       getSelectedListWidgetValue(ui->languageListWidget));
     settings.setValue(QStringLiteral("markdownHighlightingEnabled"),
@@ -579,50 +583,6 @@ void SettingsDialog::storeSettings() {
                       ui->hideStatusBarInDistractionFreeModeCheckBox->isChecked());
     settings.setValue(QStringLiteral("DistractionFreeMode/openInFullScreen"),
                       ui->openDistractionFreeModeInFullScreenCheckBox->isChecked());
-
-    QStringList todoCalendarUrlList;
-    QStringList todoCalendarDisplayNameList;
-    QStringList todoCalendarEnabledList;
-    QStringList todoCalendarEnabledUrlList;
-    for (int i = 0; i < ui->todoCalendarListWidget->count(); i++) {
-        QListWidgetItem *item = ui->todoCalendarListWidget->item(i);
-
-        todoCalendarUrlList.append(item->toolTip());
-        todoCalendarDisplayNameList.append(item->text());
-
-        if (item->checkState() == Qt::Checked) {
-            todoCalendarEnabledList.append(item->text());
-            todoCalendarEnabledUrlList.append(item->toolTip());
-        }
-    }
-
-    // store the tasks calendar data to the settings
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarUrlList"), todoCalendarUrlList);
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarDisplayNameList"),
-                      todoCalendarDisplayNameList);
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarEnabledList"), todoCalendarEnabledList);
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarEnabledUrlList"),
-                      todoCalendarEnabledUrlList);
-
-    int todoCalendarBackend = OwnCloudService::DefaultOwnCloudCalendar;
-
-    if (ui->calendarPlusRadioButton->isChecked()) {
-        todoCalendarBackend = OwnCloudService::CalendarPlus;
-    } else if (ui->calDavCalendarRadioButton->isChecked()) {
-        todoCalendarBackend = OwnCloudService::CalDAVCalendar;
-    } else if (ui->legacyOwnCloudCalendarRadioButton->isChecked()) {
-        todoCalendarBackend = OwnCloudService::LegacyOwnCloudCalendar;
-    }
-
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarBackend"), todoCalendarBackend);
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarCloudConnectionId"),
-                      ui->calendarCloudConnectionComboBox->currentData().toInt());
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarCalDAVServerUrl"),
-                      ui->calDavServerUrlEdit->text());
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarCalDAVUsername"),
-                      ui->calDavUsernameEdit->text());
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarCalDAVPassword"),
-                      CryptoService::instance()->encryptToString(ui->calDavPasswordEdit->text()));
 
     // store the custom note file extensions
     QStringList noteFileExtensionList;
@@ -834,8 +794,7 @@ void SettingsDialog::readSettings() {
 
     ui->ownCloudSupportCheckBox->setChecked(OwnCloudService::isOwnCloudSupportEnabled());
     on_ownCloudSupportCheckBox_toggled();
-    ui->todoCalendarSupportCheckBox->setChecked(OwnCloudService::isTodoCalendarSupportEnabled());
-    on_todoCalendarSupportCheckBox_toggled();
+    ui->todoSettingsWidget->readSettings();
     ui->serverUrlEdit->setText(_selectedCloudConnection.getServerUrl());
     ui->userNameEdit->setText(_selectedCloudConnection.getUsername());
     ui->passwordEdit->setText(_selectedCloudConnection.getPassword());
@@ -939,8 +898,6 @@ void SettingsDialog::readSettings() {
         settings.value(QStringLiteral("useNoteFolderButtons")).toBool());
     ui->allowOnlyOneAppInstanceCheckBox->setChecked(
         settings.value(QStringLiteral("allowOnlyOneAppInstance")).toBool());
-    ui->closeTodoListAfterSaveCheckBox->setChecked(
-        settings.value(QStringLiteral("closeTodoListAfterSave")).toBool());
     ui->toolbarIconSizeSpinBox->setValue(
         settings.value(QStringLiteral("MainWindow/mainToolBar.iconSize")).toInt());
 
@@ -992,76 +949,6 @@ void SettingsDialog::readSettings() {
         settings.value(QStringLiteral("DistractionFreeMode/openInFullScreen"), true).toBool());
 
     ui->editorFontColorSettingsWidget->readSettings();
-
-    const QSignalBlocker blocker2(ui->defaultOwnCloudCalendarRadioButton);
-    Q_UNUSED(blocker2)
-
-    const QSignalBlocker blocker7(ui->legacyOwnCloudCalendarRadioButton);
-    Q_UNUSED(blocker7)
-
-    const QSignalBlocker blocker4(ui->calendarPlusRadioButton);
-    Q_UNUSED(blocker4)
-
-    const QSignalBlocker blocker5(ui->calDavCalendarRadioButton);
-    Q_UNUSED(blocker5)
-
-    switch (settings
-                .value(QStringLiteral("ownCloud/todoCalendarBackend"),
-                       OwnCloudService::DefaultOwnCloudCalendar)
-                .toInt()) {
-        case OwnCloudService::CalendarPlus:
-            ui->calendarPlusRadioButton->setChecked(true);
-            break;
-        case OwnCloudService::CalDAVCalendar:
-            ui->calDavCalendarRadioButton->setChecked(true);
-            ui->calDavCalendarGroupBox->setVisible(true);
-            break;
-        case OwnCloudService::DefaultOwnCloudCalendar:
-            ui->defaultOwnCloudCalendarRadioButton->setChecked(true);
-            break;
-        default:
-            ui->legacyOwnCloudCalendarRadioButton->setChecked(true);
-            break;
-    }
-
-    const QSignalBlocker blocker6(this->ui->ignoreNonTodoCalendarsCheckBox);
-    Q_UNUSED(blocker6)
-
-    ui->ignoreNonTodoCalendarsCheckBox->setChecked(
-        settings.value(QStringLiteral("ownCloud/ignoreNonTodoCalendars"), true).toBool());
-
-    ui->calDavServerUrlEdit->setText(
-        settings.value(QStringLiteral("ownCloud/todoCalendarCalDAVServerUrl")).toString());
-    ui->calDavUsernameEdit->setText(
-        settings.value(QStringLiteral("ownCloud/todoCalendarCalDAVUsername")).toString());
-    ui->calDavPasswordEdit->setText(CryptoService::instance()->decryptToString(
-        settings.value(QStringLiteral("ownCloud/todoCalendarCalDAVPassword")).toString()));
-
-    QStringList todoCalendarUrlList =
-        settings.value(QStringLiteral("ownCloud/todoCalendarUrlList")).toStringList();
-    QStringList todoCalendarDisplayNameList =
-        settings.value(QStringLiteral("ownCloud/todoCalendarDisplayNameList")).toStringList();
-    int todoCalendarUrlListCount = todoCalendarUrlList.count();
-    int todoCalendarDisplayNameListCount = todoCalendarDisplayNameList.count();
-
-    QList<CalDAVCalendarData> calendarDataList;
-    for (int i = 0; i < todoCalendarUrlListCount; i++) {
-        CalDAVCalendarData data;
-        data.url = todoCalendarUrlList.at(i);
-
-        if (todoCalendarUrlListCount == todoCalendarDisplayNameListCount) {
-            data.displayName = todoCalendarDisplayNameList.at(i);
-        }
-
-        calendarDataList << data;
-    }
-    // load the tasks calendar list and set the checked state
-    refreshTodoCalendarList(calendarDataList, true);
-
-    // reload the calendar list if it was empty
-    if (todoCalendarUrlListCount == 0) {
-        reloadCalendarList();
-    }
 
     // loads the custom note file extensions
     QListIterator<QString> itr(Note::noteFileExtensionList());
@@ -1759,86 +1646,8 @@ void SettingsDialog::setOKLabelData(int number, const QString &text, OKLabelStat
 
 void SettingsDialog::refreshTodoCalendarList(const QList<CalDAVCalendarData> &items,
                                              bool forceReadCheckedState) {
-    // we want to read the checked state from the settings if the
-    // tasks calendar list was not empty
-    bool readCheckedState = forceReadCheckedState ? true : ui->todoCalendarListWidget->count() > 0;
-
-    // clear the tasks calendar list
-    ui->todoCalendarListWidget->clear();
-
-    if (!OwnCloudService::isTodoCalendarSupportEnabled()) {
-        return;
-    }
-
-    SettingsService settings;
-    QStringList todoCalendarEnabledList =
-        settings.value(QStringLiteral("ownCloud/todoCalendarEnabledList")).toStringList();
-
-    QUrl serverUrl(ui->calDavCalendarRadioButton->isChecked() ? ui->calDavServerUrlEdit->text()
-                                                              : ui->serverUrlEdit->text());
-
-    // return if server url isn't valid
-    if (!serverUrl.isValid()) {
-        return;
-    }
-
-    QString serverUrlText(serverUrl.toString());
-    QString serverUrlPath = serverUrl.path();
-    if (!serverUrlPath.isEmpty()) {
-        // remove the path from the end because we already got it in the url
-        serverUrlText.replace(QRegularExpression(QRegularExpression::escape(serverUrlPath) + "$"),
-                              QLatin1String(""));
-    }
-
-    QListIterator<CalDAVCalendarData> itr(items);
-    while (itr.hasNext()) {
-        CalDAVCalendarData data = itr.next();
-        QString url = data.url;
-        QString name = data.displayName;
-
-        // only add the server url if it wasn't already added
-        if (!url.startsWith(serverUrlText)) {
-            url = serverUrlText + url;
-        }
-
-        // get the hash out of the url part
-        QRegularExpression regex(QStringLiteral(R"(\/([^\/]*)\/$)"));
-        QRegularExpressionMatch match = regex.match(url);
-        QString hash = match.captured(1);
-
-        // remove percent encoding
-        hash = QUrl::fromPercentEncoding(hash.toUtf8());
-
-        // skip the contact birthdays calendar
-        if (hash == QLatin1String("contact_birthdays")) {
-            continue;
-        }
-
-        // skip the Calendar Plus birthday calendar
-        if (hash.startsWith(QLatin1String("bdaycpltocal_"))) {
-            continue;
-        }
-
-        if (name.isEmpty()) {
-            name = hash;
-        }
-
-        // create the list widget item and add it to the
-        // tasks calendar list widget
-        auto *item = new QListWidgetItem(name);
-
-        // eventually check if item was checked
-        Qt::CheckState checkedState =
-            readCheckedState
-                ? (todoCalendarEnabledList.contains(name) ? Qt::Checked : Qt::Unchecked)
-                : Qt::Checked;
-        item->setCheckState(checkedState);
-
-        item->setFlags(Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled |
-                       Qt::ItemIsUserCheckable);
-        item->setToolTip(url);
-        ui->todoCalendarListWidget->addItem(item);
-    }
+    ui->todoSettingsWidget->refreshTodoCalendarList(items, ui->serverUrlEdit->text(),
+                                                    forceReadCheckedState);
 }
 
 /* * * * * * * * * * * * * * * *
@@ -1870,38 +1679,6 @@ void SettingsDialog::onLayoutStored(const QString &layoutUuid) {
 
 void SettingsDialog::on_ownCloudServerAppPageButton_clicked() {
     QDesktopServices::openUrl(QUrl(ui->serverUrlEdit->text() + "/index.php/settings/apps"));
-}
-
-void SettingsDialog::on_reloadCalendarListButton_clicked() {
-    // we need to store the calendar backend
-    storeSettings();
-
-    // reload the calendar list
-    reloadCalendarList();
-}
-
-/**
- * Reloads the calendar list
- */
-void SettingsDialog::reloadCalendarList() {
-    if (!OwnCloudService::isTodoCalendarSupportEnabled()) {
-        return;
-    }
-
-    OwnCloudService *ownCloud = OwnCloudService::instance(true);
-    ownCloud->settingsGetCalendarList(this);
-}
-
-void SettingsDialog::on_defaultOwnCloudCalendarRadioButton_toggled(bool checked) {
-    if (checked) {
-        on_reloadCalendarListButton_clicked();
-    }
-}
-
-void SettingsDialog::on_legacyOwnCloudCalendarRadioButton_toggled(bool checked) {
-    if (checked) {
-        on_reloadCalendarListButton_clicked();
-    }
 }
 
 void SettingsDialog::on_reinitializeDatabaseButton_clicked() {
@@ -3501,32 +3278,6 @@ void SettingsDialog::storeSplitterSettings() {
                       _mainSplitter->saveState());
 }
 
-void SettingsDialog::on_calDavCalendarRadioButton_toggled(bool checked) {
-    if (checked) {
-        on_reloadCalendarListButton_clicked();
-    }
-
-    ui->calDavCalendarGroupBox->setVisible(checked);
-    ui->calendarCloudConnectionGroupBox->setHidden(checked);
-}
-
-void SettingsDialog::on_calendarPlusRadioButton_toggled(bool checked) {
-    if (checked) {
-        on_reloadCalendarListButton_clicked();
-    }
-}
-
-/**
- * Removes all calendar items
- */
-void SettingsDialog::on_emptyCalendarCachePushButton_clicked() {
-    CalendarItem::removeAll();
-
-    Utils::Gui::information(this, tr("Calendar cache emptied"),
-                            tr("Your calendar cache was emptied."),
-                            QStringLiteral("calendar-cache-emptied"));
-}
-
 /**
  * Resets the item height
  */
@@ -3544,11 +3295,6 @@ void SettingsDialog::on_itemHeightResetButton_clicked() {
 void SettingsDialog::on_toolbarIconSizeResetButton_clicked() {
     QToolBar toolbar(this);
     ui->toolbarIconSizeSpinBox->setValue(toolbar.iconSize().height());
-}
-
-void SettingsDialog::on_ignoreNonTodoCalendarsCheckBox_toggled(bool checked) {
-    SettingsService settings;
-    settings.setValue(QStringLiteral("ownCloud/ignoreNonTodoCalendars"), checked);
 }
 
 void SettingsDialog::on_applyToolbarButton_clicked() {
@@ -4240,24 +3986,21 @@ void SettingsDialog::initCloudConnectionComboBox(int selectedId) {
     Q_UNUSED(blocker)
     const QSignalBlocker blocker2(ui->noteFolderCloudConnectionComboBox);
     Q_UNUSED(blocker2)
-    const QSignalBlocker blocker3(ui->calendarCloudConnectionComboBox);
-    Q_UNUSED(blocker3)
 
     ui->cloudConnectionComboBox->clear();
     ui->noteFolderCloudConnectionComboBox->clear();
-    ui->calendarCloudConnectionComboBox->clear();
     int index = 0;
     int currentIndex = 0;
     if (selectedId == -1) {
         selectedId = NoteFolder::currentNoteFolder().getCloudConnectionId();
     }
 
-    Q_FOREACH (CloudConnection cloudConnection, CloudConnection::fetchAll()) {
+    const auto connections = CloudConnection::fetchAll();
+
+    Q_FOREACH (CloudConnection cloudConnection, connections) {
         ui->cloudConnectionComboBox->addItem(cloudConnection.getName(), cloudConnection.getId());
         ui->noteFolderCloudConnectionComboBox->addItem(cloudConnection.getName(),
                                                        cloudConnection.getId());
-        ui->calendarCloudConnectionComboBox->addItem(cloudConnection.getName(),
-                                                     cloudConnection.getId());
 
         if (cloudConnection.getId() == selectedId) {
             currentIndex = index;
@@ -4271,9 +4014,10 @@ void SettingsDialog::initCloudConnectionComboBox(int selectedId) {
 
     Utils::Gui::setComboBoxIndexByUserData(ui->noteFolderCloudConnectionComboBox,
                                            _selectedNoteFolder.getCloudConnectionId());
-    Utils::Gui::setComboBoxIndexByUserData(
-        ui->calendarCloudConnectionComboBox,
-        CloudConnection::currentTodoCalendarCloudConnection().getId());
+
+    // Populate the todo calendar cloud connection combo box via the widget
+    ui->todoSettingsWidget->populateCloudConnectionComboBox(
+        connections, CloudConnection::currentTodoCalendarCloudConnection().getId());
 }
 
 void SettingsDialog::on_cloudConnectionComboBox_currentIndexChanged(int index) {
@@ -4336,23 +4080,6 @@ void SettingsDialog::on_cloudConnectionRemoveButton_clicked() {
 
     _selectedCloudConnection.remove();
     initCloudConnectionComboBox();
-}
-
-void SettingsDialog::on_calendarCloudConnectionComboBox_currentIndexChanged(int index) {
-    Q_UNUSED(index)
-    SettingsService settings;
-    settings.setValue(QStringLiteral("ownCloud/todoCalendarCloudConnectionId"),
-                      ui->calendarCloudConnectionComboBox->currentData().toInt());
-    on_reloadCalendarListButton_clicked();
-}
-
-void SettingsDialog::on_todoCalendarSupportCheckBox_toggled() {
-    bool checked = ui->todoCalendarSupportCheckBox->isChecked();
-    ui->calendarBackendGroupBox->setEnabled(checked);
-    ui->calDavCalendarGroupBox->setEnabled(checked);
-    ui->calendarCloudConnectionGroupBox->setEnabled(checked);
-    ui->todoCalendarGroupBox->setEnabled(checked);
-    ui->todoListSettingsGroupBox->setEnabled(checked);
 }
 
 void SettingsDialog::on_ownCloudServerAppPasswordPageButton_clicked() {

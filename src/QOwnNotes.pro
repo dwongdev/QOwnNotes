@@ -241,6 +241,7 @@ SOURCES += main.cpp\
     widgets/settings/debugsettingswidget.cpp \
     widgets/settings/languagetoolsettingswidget.cpp \
     widgets/settings/networksettingswidget.cpp \
+    widgets/settings/todosettingswidget.cpp \
     widgets/settings/webapplicationsettingswidget.cpp \
     dialogs/serverbookmarksimportdialog.cpp \
     dialogs/websockettokendialog.cpp \
@@ -393,6 +394,7 @@ HEADERS  += mainwindow.h \
     widgets/settings/debugsettingswidget.h \
     widgets/settings/languagetoolsettingswidget.h \
     widgets/settings/networksettingswidget.h \
+    widgets/settings/todosettingswidget.h \
     widgets/settings/webapplicationsettingswidget.h \
     dialogs/serverbookmarksimportdialog.h \
     dialogs/websockettokendialog.h \
@@ -465,6 +467,7 @@ FORMS    += mainwindow.ui \
     widgets/settings/debugsettingswidget.ui \
     widgets/settings/languagetoolsettingswidget.ui \
     widgets/settings/networksettingswidget.ui \
+    widgets/settings/todosettingswidget.ui \
     widgets/settings/webapplicationsettingswidget.ui \
     dialogs/serverbookmarksimportdialog.ui \
     dialogs/websockettokendialog.ui \

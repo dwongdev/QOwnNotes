@@ -492,6 +492,9 @@ set(SOURCE_FILES
     widgets/settings/networksettingswidget.cpp
     widgets/settings/networksettingswidget.h
     widgets/settings/networksettingswidget.ui
+    widgets/settings/todosettingswidget.cpp
+    widgets/settings/todosettingswidget.h
+    widgets/settings/todosettingswidget.ui
     widgets/settings/webapplicationsettingswidget.cpp
     widgets/settings/webapplicationsettingswidget.h
     widgets/settings/webapplicationsettingswidget.ui

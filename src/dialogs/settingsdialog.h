@@ -97,10 +97,6 @@ class SettingsDialog : public MasterDialog {
 
     void on_ownCloudServerAppPageButton_clicked();
 
-    void on_reloadCalendarListButton_clicked();
-
-    void on_defaultOwnCloudCalendarRadioButton_toggled(bool checked);
-
     void on_reinitializeDatabaseButton_clicked();
 
     void on_clearAppDataAndExitButton_clicked();
@@ -163,17 +159,9 @@ class SettingsDialog : public MasterDialog {
 
     void on_settingsStackedWidget_currentChanged(int index);
 
-    void on_calDavCalendarRadioButton_toggled(bool checked);
-
-    void on_calendarPlusRadioButton_toggled(bool checked);
-
-    void on_emptyCalendarCachePushButton_clicked();
-
-    void on_itemHeightResetButton_clicked();
-
     void on_toolbarIconSizeResetButton_clicked();
 
-    void on_ignoreNonTodoCalendarsCheckBox_toggled(bool checked);
+    void on_itemHeightResetButton_clicked();
 
     void on_applyToolbarButton_clicked();
 
@@ -190,8 +178,6 @@ class SettingsDialog : public MasterDialog {
     void noteNotificationNoneCheckBoxCheck();
 
     void needRestart();
-
-    void on_legacyOwnCloudCalendarRadioButton_toggled(bool checked);
 
     void on_ownCloudSupportCheckBox_toggled();
 
@@ -265,11 +251,7 @@ class SettingsDialog : public MasterDialog {
 
     void on_noteFolderCloudConnectionComboBox_currentIndexChanged(int index);
 
-    void on_calendarCloudConnectionComboBox_currentIndexChanged(int index);
-
     void storeSelectedCloudConnection();
-
-    void on_todoCalendarSupportCheckBox_toggled();
 
     void on_ownCloudServerAppPasswordPageButton_clicked();
 
@@ -391,8 +373,6 @@ class SettingsDialog : public MasterDialog {
     void initMainSplitter();
 
     void storeSplitterSettings();
-
-    void reloadCalendarList();
 
     void initPortableModePage();
 
