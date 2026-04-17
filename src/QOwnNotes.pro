@@ -232,7 +232,16 @@ SOURCES += main.cpp\
     widgets/todoitemtreewidget.cpp \
     widgets/layoutpresetwidget.cpp \
     widgets/htmlpreviewwidget.cpp \
-    widgets/colormodesettingswidget.cpp \
+    widgets/settings/colormodesettingswidget.cpp \
+    widgets/settings/gitsettingswidget.cpp \
+    widgets/settings/localtrashsettingswidget.cpp \
+    widgets/settings/debugoptionsettingswidget.cpp \
+    widgets/settings/editorfontcolorsettingswidget.cpp \
+    widgets/settings/previewfontsettingswidget.cpp \
+    widgets/settings/debugsettingswidget.cpp \
+    widgets/settings/languagetoolsettingswidget.cpp \
+    widgets/settings/networksettingswidget.cpp \
+    widgets/settings/webapplicationsettingswidget.cpp \
     dialogs/serverbookmarksimportdialog.cpp \
     dialogs/websockettokendialog.cpp \
     dialogs/imagedialog.cpp \
@@ -375,7 +384,16 @@ HEADERS  += mainwindow.h \
     widgets/todoitemtreewidget.h \
     widgets/layoutpresetwidget.h \
     widgets/htmlpreviewwidget.h \
-    widgets/colormodesettingswidget.h \
+    widgets/settings/colormodesettingswidget.h \
+    widgets/settings/gitsettingswidget.h \
+    widgets/settings/localtrashsettingswidget.h \
+    widgets/settings/debugoptionsettingswidget.h \
+    widgets/settings/editorfontcolorsettingswidget.h \
+    widgets/settings/previewfontsettingswidget.h \
+    widgets/settings/debugsettingswidget.h \
+    widgets/settings/languagetoolsettingswidget.h \
+    widgets/settings/networksettingswidget.h \
+    widgets/settings/webapplicationsettingswidget.h \
     dialogs/serverbookmarksimportdialog.h \
     dialogs/websockettokendialog.h \
     dialogs/imagedialog.h \
@@ -438,7 +456,16 @@ FORMS    += mainwindow.ui \
     widgets/scriptsettingwidget.ui \
     widgets/notetreewidgetitem.ui \
     widgets/layoutpresetwidget.ui \
-    widgets/colormodesettingswidget.ui \
+    widgets/settings/colormodesettingswidget.ui \
+    widgets/settings/gitsettingswidget.ui \
+    widgets/settings/localtrashsettingswidget.ui \
+    widgets/settings/debugoptionsettingswidget.ui \
+    widgets/settings/editorfontcolorsettingswidget.ui \
+    widgets/settings/previewfontsettingswidget.ui \
+    widgets/settings/debugsettingswidget.ui \
+    widgets/settings/languagetoolsettingswidget.ui \
+    widgets/settings/networksettingswidget.ui \
+    widgets/settings/webapplicationsettingswidget.ui \
     dialogs/serverbookmarksimportdialog.ui \
     dialogs/websockettokendialog.ui \
     dialogs/layoutdialog.ui

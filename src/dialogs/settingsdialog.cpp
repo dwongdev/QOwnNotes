@@ -53,10 +53,6 @@
 #include "release.h"
 #include "scriptrepositorydialog.h"
 #include "services/databaseservice.h"
-#ifdef LANGUAGETOOL_ENABLED
-#include "services/languagetoolchecker.h"
-#include "services/languagetoolclient.h"
-#endif
 #include "services/openaiservice.h"
 #include "services/owncloudservice.h"
 #include "services/settingsservice.h"
@@ -64,6 +60,12 @@
 #include "ui_settingsdialog.h"
 #include "version.h"
 #include "widgets/fontcolorwidget.h"
+#include "widgets/settings/debugoptionsettingswidget.h"
+#include "widgets/settings/debugsettingswidget.h"
+#include "widgets/settings/editorfontcolorsettingswidget.h"
+#include "widgets/settings/languagetoolsettingswidget.h"
+#include "widgets/settings/networksettingswidget.h"
+#include "widgets/settings/webapplicationsettingswidget.h"
 
 SettingsDialog::SettingsDialog(int page, QWidget *parent)
     : MasterDialog(parent), ui(new Ui::SettingsDialog) {
@@ -112,7 +114,6 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     }
 
     ui->loginFlowCancelButton->hide();
-    ui->qrCodeWidget->hide();
     ui->connectionTestLabel->hide();
     ui->connectButton->setDefault(true);
     ui->noteSaveIntervalTime->setToolTip(ui->noteSaveIntervalTimeLabel->toolTip());
@@ -120,37 +121,14 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     ui->calDavCalendarGroupBox->hide();
     _newScriptName = tr("New script");
 
-#ifdef LANGUAGETOOL_ENABLED
-    ui->languageToolLanguageComboBox->addItem(tr("Auto-detect"), QStringLiteral("auto"));
-    ui->languageToolLanguageComboBox->addItem(QStringLiteral("English (US)"),
-                                              QStringLiteral("en-US"));
-    ui->languageToolLanguageComboBox->addItem(QStringLiteral("English (GB)"),
-                                              QStringLiteral("en-GB"));
-    ui->languageToolLanguageComboBox->addItem(QStringLiteral("German"), QStringLiteral("de-DE"));
-    ui->languageToolLanguageComboBox->addItem(QStringLiteral("French"), QStringLiteral("fr"));
-    ui->languageToolLanguageComboBox->addItem(QStringLiteral("Spanish"), QStringLiteral("es"));
-    ui->languageToolLanguageComboBox->addItem(QStringLiteral("Italian"), QStringLiteral("it"));
-    ui->languageToolLanguageComboBox->addItem(QStringLiteral("Dutch"), QStringLiteral("nl"));
-    setLanguageToolOptionsEnabled(false);
-#endif
+    ui->languageToolSettingsWidget->initialize();
 
     updateSearchLineEditIcons();
 
-#ifdef Q_OS_WIN32
-    QString downloadText =
-        tr("You can download your git client here: <a "
-           "href=\"%url\">Git for Windows</a>");
-    downloadText.replace("%url", "https://git-scm.com/download/win");
-    ui->gitDownloadLabel->setText(downloadText);
-#else
-    ui->gitDownloadLabel->hide();
-    ui->automaticNoteFolderDatabaseClosingCheckBox->hide();
-#endif
+    ui->gitSettingsWidget->initialize();
 
-#ifdef USE_LIBGIT2
-    ui->gitClientGroupBox->hide();
-#else
-    ui->gitLibraryGroupBox->hide();
+#ifndef Q_OS_WIN32
+    ui->automaticNoteFolderDatabaseClosingCheckBox->hide();
 #endif
 
     readSettings();
@@ -200,11 +178,10 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
             SLOT(needRestart()));
     connect(ui->mcpServerEnabledCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->mcpServerTokenLineEdit, SIGNAL(textChanged(QString)), this, SLOT(needRestart()));
-    connect(ui->enableWebApplicationCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
+    connect(ui->webApplicationSettingsWidget, &WebApplicationSettingsWidget::needRestart, this,
+            &SettingsDialog::needRestart);
     connect(ui->enableNoteTreeCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->aiAutocompleteCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
-    connect(ui->webAppServerUrlLineEdit, SIGNAL(textChanged(QString)), this, SLOT(needRestart()));
-    connect(ui->webAppTokenLineEdit, SIGNAL(textChanged(QString)), this, SLOT(needRestart()));
 
     connect(ui->cloudServerConnectionNameLineEdit, &QLineEdit::textChanged, this,
             [this] { cancelConnectionTest(); });
@@ -216,14 +193,22 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     connect(ui->appNextcloudDeckCheckBox, &QCheckBox::toggled, this,
             [this] { cancelConnectionTest(); });
 
-#ifdef LANGUAGETOOL_ENABLED
-    connect(ui->languageToolEnabledCheckBox, SIGNAL(toggled(bool)), this,
-            SLOT(on_languageToolEnabledCheckBox_toggled(bool)));
-#endif
+    // Connect the needRestart signal from the editor font color settings widget
+    connect(ui->editorFontColorSettingsWidget, &EditorFontColorSettingsWidget::needRestart, this,
+            &SettingsDialog::needRestart);
 
-    // Apply editor schema changes live while the settings dialog is open
-    connect(ui->editorFontColorWidget, &FontColorWidget::schemaChanged, this,
-            &SettingsDialog::applyEditorSchemaSettings);
+    // Connect debug settings widget signals
+    connect(ui->debugSettingsWidget, &DebugSettingsWidget::aboutToOutputSettings, this,
+            &SettingsDialog::storeOwncloudDebugData);
+    connect(ui->debugSettingsWidget, &DebugSettingsWidget::issueAssistantRequested, this, [this]() {
+        MainWindow *mainWindow = MainWindow::instance();
+        if (mainWindow == nullptr) {
+            return;
+        }
+        storeSettings();
+        mainWindow->openIssueAssistantDialog();
+        close();
+    });
 
     //    connect(ui->layoutPresetWidget, SIGNAL(layoutStored(QString)),
     //            this, SLOT(needRestart()));
@@ -389,115 +374,6 @@ void SettingsDialog::initPortableModePage() {
 }
 
 /**
- * Does the network proxy page setup
- */
-void SettingsDialog::setupProxyPage() {
-    ui->hostLineEdit->setPlaceholderText(tr("hostname of proxy server"));
-    ui->userLineEdit->setPlaceholderText(tr("username for proxy server"));
-    ui->passwordLineEdit->setPlaceholderText(tr("password for proxy server"));
-
-    ui->typeComboBox->addItem(tr("HTTP(S) proxy"), QNetworkProxy::HttpProxy);
-    ui->typeComboBox->addItem(tr("SOCKS5 proxy"), QNetworkProxy::Socks5Proxy);
-
-    ui->authRequiredcheckBox->setEnabled(true);
-
-    // Explicitly set up the enabled status of the proxy auth widgets to ensure
-    // toggling the parent enables/disables the children
-    ui->userLineEdit->setEnabled(true);
-    ui->passwordLineEdit->setEnabled(true);
-    ui->authWidgets->setEnabled(ui->authRequiredcheckBox->isChecked());
-    connect(ui->authRequiredcheckBox, SIGNAL(toggled(bool)), ui->authWidgets,
-            SLOT(setEnabled(bool)));
-
-    connect(ui->manualProxyRadioButton, SIGNAL(toggled(bool)), ui->manualSettings,
-            SLOT(setEnabled(bool)));
-    connect(ui->manualProxyRadioButton, SIGNAL(toggled(bool)), ui->typeComboBox,
-            SLOT(setEnabled(bool)));
-
-    // proxy
-    //    connect(ui->typeComboBox, SIGNAL(currentIndexChanged(int)),
-    //            SLOT(storeProxySettings()));
-    //    connect(ui->proxyButtonGroup, SIGNAL(buttonClicked(int)),
-    //            SLOT(storeProxySettings()));
-    //    connect(ui->hostLineEdit, SIGNAL(editingFinished()),
-    //            SLOT(storeProxySettings()));
-    //    connect(ui->userLineEdit, SIGNAL(editingFinished()),
-    //            SLOT(storeProxySettings()));
-    //    connect(ui->passwordLineEdit, SIGNAL(editingFinished()),
-    //            SLOT(storeProxySettings()));
-    //    connect(ui->portSpinBox, SIGNAL(editingFinished()),
-    //            SLOT(storeProxySettings()));
-    //    connect(ui->authRequiredcheckBox, SIGNAL(toggled(bool)),
-    //            SLOT(storeProxySettings()));
-}
-
-/**
- * Loads the proxy settings
- */
-void SettingsDialog::loadProxySettings() {
-    SettingsService settings;
-
-    // load current proxy settings
-    int type =
-        settings.value(QStringLiteral("networking/proxyType"), QNetworkProxy::NoProxy).toInt();
-    switch (type) {
-        case QNetworkProxy::NoProxy:
-            ui->noProxyRadioButton->setChecked(true);
-            break;
-        case QNetworkProxy::DefaultProxy:
-            ui->systemProxyRadioButton->setChecked(true);
-            break;
-        case QNetworkProxy::Socks5Proxy:
-        case QNetworkProxy::HttpProxy:
-            ui->typeComboBox->setCurrentIndex(ui->typeComboBox->findData(type));
-            ui->manualProxyRadioButton->setChecked(true);
-            break;
-        default:
-            break;
-    }
-
-    ui->hostLineEdit->setText(
-        settings.value(QStringLiteral("networking/proxyHostName")).toString());
-    ui->portSpinBox->setValue(settings.value(QStringLiteral("networking/proxyPort"), 8080).toInt());
-    ui->authRequiredcheckBox->setChecked(
-        settings.value(QStringLiteral("networking/proxyNeedsAuth")).toBool());
-    ui->userLineEdit->setText(settings.value(QStringLiteral("networking/proxyUser")).toString());
-    ui->passwordLineEdit->setText(CryptoService::instance()->decryptToString(
-        settings.value(QStringLiteral("networking/proxyPassword")).toString()));
-}
-
-/**
- * Stores the proxy settings
- */
-void SettingsDialog::storeProxySettings() {
-    SettingsService settings;
-    int proxyType = QNetworkProxy::DefaultProxy;
-
-    if (ui->noProxyRadioButton->isChecked()) {
-        proxyType = QNetworkProxy::NoProxy;
-    } else if (ui->systemProxyRadioButton->isChecked()) {
-        proxyType = QNetworkProxy::DefaultProxy;
-    } else if (ui->manualProxyRadioButton->isChecked()) {
-        proxyType = ui->typeComboBox->itemData(ui->typeComboBox->currentIndex()).toInt();
-
-        settings.setValue(QStringLiteral("networking/proxyNeedsAuth"),
-                          ui->authRequiredcheckBox->isChecked());
-        settings.setValue(QStringLiteral("networking/proxyUser"), ui->userLineEdit->text());
-        settings.setValue(QStringLiteral("networking/proxyPassword"),
-                          CryptoService::instance()->encryptToString(ui->passwordLineEdit->text()));
-        settings.setValue(QStringLiteral("networking/proxyHostName"), ui->hostLineEdit->text());
-        settings.setValue(QStringLiteral("networking/proxyPort"), ui->portSpinBox->value());
-    }
-
-    settings.setValue(QStringLiteral("networking/proxyType"), proxyType);
-
-    ClientProxy proxy;
-
-    // refresh the Qt proxy settings
-    proxy.setupQtProxyFromSettings();
-}
-
-/**
  * @brief Starts a connection test
  */
 void SettingsDialog::startConnectionTest() {
@@ -605,16 +481,10 @@ void SettingsDialog::storeSettings() {
     settings.setValue(QStringLiteral("noteSaveIntervalTime"), ui->noteSaveIntervalTime->value());
     settings.setValue(QStringLiteral("defaultNoteFileExtension"),
                       ui->defaultNoteFileExtensionListWidget->currentItem()->text());
-    settings.setValue(QStringLiteral("localTrash/supportEnabled"),
-                      ui->localTrashEnabledCheckBox->isChecked());
-    settings.setValue(QStringLiteral("localTrash/autoCleanupEnabled"),
-                      ui->localTrashClearCheckBox->isChecked());
-    settings.setValue(QStringLiteral("localTrash/autoCleanupDays"),
-                      ui->localTrashClearTimeSpinBox->value());
+    ui->localTrashSettingsWidget->storeSettings();
     settings.setValue(QStringLiteral("enableSocketServer"),
                       ui->enableSocketServerCheckBox->isChecked());
-    settings.setValue(QStringLiteral("enableWebAppSupport"),
-                      ui->enableWebApplicationCheckBox->isChecked());
+    ui->webApplicationSettingsWidget->storeSettings();
 
     // make the path relative to the portable data path if we are in
     // portable mode
@@ -649,21 +519,8 @@ void SettingsDialog::storeSettings() {
                       ui->hideTabCloseButtonCheckBox->isChecked());
     settings.setValue(QStringLiteral("useNoteFolderButtons"),
                       ui->noteFolderButtonsCheckBox->isChecked());
-    settings.setValue(QStringLiteral("MainWindow/noteTextView.rtl"),
-                      ui->noteTextViewRTLCheckBox->isChecked());
-    settings.setValue(QStringLiteral("MainWindow/noteTextView.ignoreCodeFontSize"),
-                      ui->noteTextViewIgnoreCodeFontSizeCheckBox->isChecked());
-    settings.setValue(QStringLiteral("MainWindow/noteTextView.underline"),
-                      ui->noteTextViewUnderlineCheckBox->isChecked());
-    settings.setValue(QStringLiteral("MainWindow/noteTextView.useEditorStyles"),
-                      ui->noteTextViewUseEditorStylesCheckBox->isChecked());
-    settings.setValue(QStringLiteral("MainWindow/noteTextView.useInternalExportStyling"),
-                      ui->useInternalExportStylingCheckBox->isChecked());
-    settings.setValue(QStringLiteral("MainWindow/noteTextView.refreshDebounceTime"),
-                      ui->noteTextViewRefreshDebounceTimeSpinBox->value());
-    settings.setValue(QStringLiteral("Debug/fakeOldVersionNumber"),
-                      ui->oldVersionNumberCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Debug/fileLogging"), ui->fileLoggingCheckBox->isChecked());
+    ui->previewFontSettingsWidget->storeSettings();
+    ui->debugOptionSettingsWidget->storeSettings();
     settings.setValue(QStringLiteral("Editor/autoBracketClosing"),
                       ui->autoBracketClosingCheckBox->isChecked());
     settings.setValue(QStringLiteral("Editor/autoBracketRemoval"),
@@ -705,38 +562,9 @@ void SettingsDialog::storeSettings() {
                           QRegularExpression(QStringLiteral("\\s+")), Qt::SkipEmptyParts));
 #endif
 
-#ifdef LANGUAGETOOL_ENABLED
-    settings.setValue(QStringLiteral("languageToolEnabled"),
-                      ui->languageToolEnabledCheckBox->isChecked());
-    settings.setValue(QStringLiteral("languageToolServerUrl"),
-                      ui->languageToolServerUrlLineEdit->text().trimmed());
-    settings.setValue(QStringLiteral("languageToolLanguage"),
-                      ui->languageToolLanguageComboBox->currentData().toString().isEmpty()
-                          ? ui->languageToolLanguageComboBox->currentText().trimmed()
-                          : ui->languageToolLanguageComboBox->currentData().toString());
-    settings.setValue(QStringLiteral("languageToolApiKey"),
-                      ui->languageToolApiKeyLineEdit->text().trimmed());
-    settings.setValue(QStringLiteral("languageToolCheckDelay"),
-                      ui->languageToolCheckDelaySpinBox->value());
-    settings.setValue(QStringLiteral("languageToolEnabledCategories"),
-                      languageToolEnabledCategoriesFromUi());
-#endif
+    ui->languageToolSettingsWidget->storeSettings();
 
-    if (!settings.value(QStringLiteral("appMetrics/disableTracking")).toBool() &&
-        ui->appMetricsCheckBox->isChecked()) {
-        MetricsService::instance()->sendVisit(QStringLiteral("settings/app-metrics-disabled"));
-    }
-
-    settings.setValue(QStringLiteral("appMetrics/disableTracking"),
-                      ui->appMetricsCheckBox->isChecked());
-
-    if (!settings.value(QStringLiteral("appMetrics/disableAppHeartbeat")).toBool() &&
-        ui->appHeartbeatCheckBox->isChecked()) {
-        MetricsService::instance()->sendVisit(QStringLiteral("settings/app-heartbeat-disabled"));
-    }
-
-    settings.setValue(QStringLiteral("appMetrics/disableAppHeartbeat"),
-                      ui->appHeartbeatCheckBox->isChecked());
+    ui->networkSettingsWidget->storeSettings();
 
     settings.setValue(QStringLiteral("hideIconsInMenus"),
                       ui->hideIconsInMenusCheckBox->isChecked());
@@ -796,9 +624,6 @@ void SettingsDialog::storeSettings() {
     settings.setValue(QStringLiteral("ownCloud/todoCalendarCalDAVPassword"),
                       CryptoService::instance()->encryptToString(ui->calDavPasswordEdit->text()));
 
-    settings.setValue(QStringLiteral("networking/ignoreSSLErrors"),
-                      ui->ignoreSSLErrorsCheckBox->isChecked());
-
     // store the custom note file extensions
     QStringList noteFileExtensionList;
     for (int i = 0; i < ui->defaultNoteFileExtensionListWidget->count(); i++) {
@@ -808,11 +633,8 @@ void SettingsDialog::storeSettings() {
     noteFileExtensionList.removeDuplicates();
     settings.setValue(QStringLiteral("noteFileExtensionList"), noteFileExtensionList);
 
-    // store the font settings
-    storeFontSettings();
-
-    // store the proxy settings
-    storeProxySettings();
+    // Preview font settings are stored in previewFontSettingsWidget->storeSettings()
+    ui->editorFontColorSettingsWidget->storeSettings();
 
     // store the shortcut settings
     storeShortcutSettings();
@@ -834,11 +656,7 @@ void SettingsDialog::storeSettings() {
                       ui->maximumImageWidthSpinBox->value());
 
     // store git settings
-    settings.setValue(
-        QStringLiteral("gitExecutablePath"),
-        Utils::Misc::makePathRelativeToPortableDataPathIfNeeded(ui->gitPathLineEdit->text()));
-    settings.setValue(QStringLiteral("gitCommitInterval"), ui->gitCommitIntervalTime->value());
-    settings.setValue(QStringLiteral("gitLogCommand"), ui->gitLogCommandLineEdit->text());
+    ui->gitSettingsWidget->storeSettings();
 
     // store Panels settings
     storePanelSettings();
@@ -903,9 +721,7 @@ void SettingsDialog::storeSettings() {
     settings.setValue(QStringLiteral("webSocketServerService/commandSnippetsNoteName"),
                       ui->commandSnippetsNoteNameLineEdit->text());
 
-    settings.setValue(QStringLiteral("webAppClientService/serverUrl"),
-                      ui->webAppServerUrlLineEdit->text());
-    settings.setValue(QStringLiteral("webAppClientService/token"), ui->webAppTokenLineEdit->text());
+    // Web application settings are stored in webApplicationSettingsWidget->storeSettings()
 
     settings.setValue(QStringLiteral("ai/groq/apiKey"),
                       CryptoService::instance()->encryptToString(ui->groqApiKeyLineEdit->text()));
@@ -1004,19 +820,6 @@ void SettingsDialog::storePanelSettings() {
     settings.setValue(QStringLiteral("enableNoteTree"), ui->enableNoteTreeCheckBox->isChecked());
 }
 
-/**
- * Stores the font settings
- */
-void SettingsDialog::storeFontSettings() {
-    SettingsService settings;
-    settings.setValue(QStringLiteral("MainWindow/noteTextEdit.font"), noteTextEditFont.toString());
-    settings.setValue(QStringLiteral("MainWindow/noteTextEdit.code.font"),
-                      noteTextEditCodeFont.toString());
-    settings.setValue(QStringLiteral("MainWindow/noteTextView.font"), noteTextViewFont.toString());
-    settings.setValue(QStringLiteral("MainWindow/noteTextView.code.font"),
-                      noteTextViewCodeFont.toString());
-}
-
 void SettingsDialog::readSettings() {
     SettingsService settings;
 
@@ -1060,16 +863,10 @@ void SettingsDialog::readSettings() {
         settings.value(QStringLiteral("newNoteAskHeadline")).toBool());
     ui->useUNIXNewlineCheckBox->setChecked(
         settings.value(QStringLiteral("useUNIXNewline")).toBool());
-    ui->localTrashEnabledCheckBox->setChecked(
-        settings.value(QStringLiteral("localTrash/supportEnabled"), true).toBool());
-    ui->localTrashClearCheckBox->setChecked(
-        settings.value(QStringLiteral("localTrash/autoCleanupEnabled"), true).toBool());
-    ui->localTrashClearTimeSpinBox->setValue(
-        settings.value(QStringLiteral("localTrash/autoCleanupDays"), 30).toInt());
+    ui->localTrashSettingsWidget->readSettings();
     ui->enableSocketServerCheckBox->setChecked(Utils::Misc::isSocketServerEnabled());
     on_enableSocketServerCheckBox_toggled();
-    ui->enableWebApplicationCheckBox->setChecked(Utils::Misc::isWebAppSupportEnabled());
-    on_enableWebApplicationCheckBox_toggled();
+    ui->webApplicationSettingsWidget->readSettings();
 
 #ifdef Q_OS_MAC
     bool restoreCursorPositionDefault = false;
@@ -1084,23 +881,8 @@ void SettingsDialog::readSettings() {
         settings.value(QStringLiteral("restoreLastNoteAtStartup"), true).toBool());
     ui->noteSaveIntervalTime->setValue(
         settings.value(QStringLiteral("noteSaveIntervalTime"), 10).toInt());
-    ui->noteTextViewRTLCheckBox->setChecked(
-        settings.value(QStringLiteral("MainWindow/noteTextView.rtl")).toBool());
-    ui->noteTextViewIgnoreCodeFontSizeCheckBox->setChecked(
-        settings.value(QStringLiteral("MainWindow/noteTextView.ignoreCodeFontSize"), true)
-            .toBool());
-    ui->noteTextViewUnderlineCheckBox->setChecked(
-        settings.value(QStringLiteral("MainWindow/noteTextView.underline"), true).toBool());
-    ui->noteTextViewUseEditorStylesCheckBox->setChecked(Utils::Misc::isPreviewUseEditorStyles());
-    ui->noteTextViewRefreshDebounceTimeSpinBox->setValue(
-        Utils::Misc::getPreviewRefreshDebounceTime());
-    ui->useInternalExportStylingCheckBox->setChecked(
-        Utils::Misc::useInternalExportStylingForPreview());
-    ui->oldVersionNumberCheckBox->setChecked(
-        settings.value(QStringLiteral("Debug/fakeOldVersionNumber")).toBool());
-    ui->fileLoggingCheckBox->setChecked(
-        settings.value(QStringLiteral("Debug/fileLogging")).toBool());
-    on_fileLoggingCheckBox_toggled(ui->fileLoggingCheckBox->isChecked());
+    ui->previewFontSettingsWidget->readSettings();
+    ui->debugOptionSettingsWidget->readSettings();
     ui->autoBracketClosingCheckBox->setChecked(
         settings.value(QStringLiteral("Editor/autoBracketClosing"), true).toBool());
     ui->autoBracketRemovalCheckBox->setChecked(
@@ -1141,50 +923,7 @@ void SettingsDialog::readSettings() {
         settings.value(QStringLiteral("Editor/markdownLspArguments"))
             .toStringList()
             .join(QLatin1Char(' ')));
-#ifdef LANGUAGETOOL_ENABLED
-    ui->languageToolEnabledCheckBox->setChecked(
-        settings.value(QStringLiteral("languageToolEnabled"), false).toBool());
-    ui->languageToolServerUrlLineEdit->setText(
-        settings
-            .value(QStringLiteral("languageToolServerUrl"), QStringLiteral("http://localhost:8081"))
-            .toString());
-    ui->languageToolApiKeyLineEdit->setText(
-        settings.value(QStringLiteral("languageToolApiKey")).toString());
-    ui->languageToolCheckDelaySpinBox->setValue(
-        settings.value(QStringLiteral("languageToolCheckDelay"), 1500).toInt());
-
-    const QString languageToolLanguage =
-        settings.value(QStringLiteral("languageToolLanguage"), QStringLiteral("auto")).toString();
-    int languageIndex = ui->languageToolLanguageComboBox->findData(languageToolLanguage);
-    if (languageIndex < 0) {
-        languageIndex = ui->languageToolLanguageComboBox->findText(languageToolLanguage);
-    }
-    if (languageIndex < 0) {
-        ui->languageToolLanguageComboBox->setEditText(languageToolLanguage);
-    } else {
-        ui->languageToolLanguageComboBox->setCurrentIndex(languageIndex);
-    }
-
-    const QStringList enabledCategories =
-        settings
-            .value(QStringLiteral("languageToolEnabledCategories"),
-                   QStringList() << QStringLiteral("TYPOS") << QStringLiteral("GRAMMAR")
-                                 << QStringLiteral("STYLE") << QStringLiteral("REDUNDANCY")
-                                 << QStringLiteral("PUNCTUATION") << QStringLiteral("TYPOGRAPHY"))
-            .toStringList();
-    ui->languageToolSpellingCheckBox->setChecked(
-        enabledCategories.contains(QStringLiteral("TYPOS")));
-    ui->languageToolGrammarCheckBox->setChecked(
-        enabledCategories.contains(QStringLiteral("GRAMMAR")));
-    ui->languageToolStyleCheckBox->setChecked(
-        enabledCategories.contains(QStringLiteral("STYLE")) ||
-        enabledCategories.contains(QStringLiteral("REDUNDANCY")));
-    ui->languageToolPunctuationCheckBox->setChecked(
-        enabledCategories.contains(QStringLiteral("PUNCTUATION")));
-    ui->languageToolTypographyCheckBox->setChecked(
-        enabledCategories.contains(QStringLiteral("TYPOGRAPHY")));
-    setLanguageToolOptionsEnabled(ui->languageToolEnabledCheckBox->isChecked());
-#endif
+    ui->languageToolSettingsWidget->readSettings();
     ui->markdownHighlightingCheckBox->setChecked(
         settings.value(QStringLiteral("markdownHighlightingEnabled"), true).toBool());
     ui->fullyHighlightedBlockquotesCheckBox->setChecked(
@@ -1235,13 +974,7 @@ void SettingsDialog::readSettings() {
     selectListWidgetValue(ui->languageListWidget,
                           settings.value(QStringLiteral("interfaceLanguage")).toString());
 
-    const QSignalBlocker blocker(ui->appMetricsCheckBox);
-    Q_UNUSED(blocker)
-    ui->appMetricsCheckBox->setChecked(
-        settings.value(QStringLiteral("appMetrics/disableTracking")).toBool());
-
-    ui->appHeartbeatCheckBox->setChecked(
-        settings.value(QStringLiteral("appMetrics/disableAppHeartbeat")).toBool());
+    ui->networkSettingsWidget->readSettings();
 
     ui->hideIconsInMenusCheckBox->setChecked(Utils::Misc::areMenuIconsHidden());
 
@@ -1258,43 +991,7 @@ void SettingsDialog::readSettings() {
     ui->openDistractionFreeModeInFullScreenCheckBox->setChecked(
         settings.value(QStringLiteral("DistractionFreeMode/openInFullScreen"), true).toBool());
 
-    noteTextEditFont.fromString(
-        settings.value(QStringLiteral("MainWindow/noteTextEdit.font")).toString());
-    setFontLabel(ui->noteTextEditFontLabel, noteTextEditFont);
-
-    noteTextEditCodeFont.fromString(
-        settings.value(QStringLiteral("MainWindow/noteTextEdit.code.font")).toString());
-    setFontLabel(ui->noteTextEditCodeFontLabel, noteTextEditCodeFont);
-
-    // load note text view font
-    QString fontString = settings.value(QStringLiteral("MainWindow/noteTextView.font")).toString();
-
-    // store the current font if there isn't any set yet
-    if (fontString.isEmpty()) {
-        auto *textEdit = new QTextEdit();
-        fontString = textEdit->font().toString();
-        settings.setValue(QStringLiteral("MainWindow/noteTextView.font"), fontString);
-        delete textEdit;
-    }
-
-    noteTextViewFont.fromString(fontString);
-    setFontLabel(ui->noteTextViewFontLabel, noteTextViewFont);
-
-    // load note text view code font
-    fontString = settings.value(QStringLiteral("MainWindow/noteTextView.code.font")).toString();
-
-    // set a default note text view code font
-    if (fontString.isEmpty()) {
-        // reset the note text view code font
-        on_noteTextViewCodeResetButton_clicked();
-
-        fontString = noteTextViewCodeFont.toString();
-        settings.setValue(QStringLiteral("MainWindow/noteTextView.code.font"), fontString);
-    } else {
-        noteTextViewCodeFont.fromString(fontString);
-    }
-
-    setFontLabel(ui->noteTextViewCodeFontLabel, noteTextViewCodeFont);
+    ui->editorFontColorSettingsWidget->readSettings();
 
     const QSignalBlocker blocker2(ui->defaultOwnCloudCalendarRadioButton);
     Q_UNUSED(blocker2)
@@ -1380,14 +1077,6 @@ void SettingsDialog::readSettings() {
         ui->defaultNoteFileExtensionListWidget->setCurrentItem(noteFileExtensionItems.at(0));
     }
 
-    bool ignoreSSLErrors =
-        settings.value(QStringLiteral("networking/ignoreSSLErrors"), true).toBool();
-    ui->ignoreSSLErrorsCheckBox->setChecked(ignoreSSLErrors);
-    ui->letsEncryptInfoLabel->setVisible(ignoreSSLErrors);
-
-    // load the proxy settings
-    loadProxySettings();
-
     // load the shortcut settings
     loadShortcutSettings();
 
@@ -1401,11 +1090,7 @@ void SettingsDialog::readSettings() {
     ui->imageScalingFrame->setVisible(scaleImageDown);
 
     // load git settings
-    ui->gitPathLineEdit->setText(Utils::Misc::prependPortableDataPathIfNeeded(
-        settings.value(QStringLiteral("gitExecutablePath")).toString(), true));
-    ui->gitCommitIntervalTime->setValue(
-        settings.value(QStringLiteral("gitCommitInterval"), 30).toInt());
-    ui->gitLogCommandLineEdit->setText(settings.value(QStringLiteral("gitLogCommand")).toString());
+    ui->gitSettingsWidget->readSettings();
 
     // read panel settings
     readPanelSettings();
@@ -1464,8 +1149,7 @@ void SettingsDialog::readSettings() {
     ui->commandSnippetsNoteNameLineEdit->setText(
         WebSocketServerService::getCommandSnippetsNoteName());
 
-    ui->webAppServerUrlLineEdit->setText(WebAppClientService::getServerUrl());
-    ui->webAppTokenLineEdit->setText(WebAppClientService::getOrGenerateToken());
+    // Web application settings are read in webApplicationSettingsWidget->readSettings()
 
     ui->groqApiKeyLineEdit->setText(CryptoService::instance()->decryptToString(
         settings.value(QStringLiteral("ai/groq/apiKey")).toString()));
@@ -1966,21 +1650,6 @@ QString SettingsDialog::getSelectedListWidgetValue(QListWidget *listWidget) {
     return QString();
 }
 
-void SettingsDialog::setFontLabel(QLineEdit *label, const QFont &font) {
-    label->setText(font.family() + " (" + QString::number(font.pointSize()) + ")");
-    label->setFont(font);
-}
-
-void SettingsDialog::outputSettings() {
-    // store some data for Utils::Misc::generateDebugInformation
-    storeOwncloudDebugData();
-
-    QString output = Utils::Misc::generateDebugInformation(
-        ui->gitHubLineBreaksCheckBox->isChecked(), ui->debugInfoAnonymizeCheckBox->isChecked());
-
-    ui->debugInfoTextEdit->setPlainText(output);
-}
-
 /**
  * Callback function from OwnCloudService to output a success or error message
  *
@@ -2189,109 +1858,6 @@ void SettingsDialog::on_buttonBox_clicked(QAbstractButton *button) {
     }
 }
 
-#ifdef LANGUAGETOOL_ENABLED
-QStringList SettingsDialog::languageToolEnabledCategoriesFromUi() const {
-    QStringList categories;
-    if (ui->languageToolSpellingCheckBox->isChecked()) {
-        categories.append(QStringLiteral("TYPOS"));
-    }
-    if (ui->languageToolGrammarCheckBox->isChecked()) {
-        categories.append(QStringLiteral("GRAMMAR"));
-    }
-    if (ui->languageToolStyleCheckBox->isChecked()) {
-        categories.append(QStringLiteral("STYLE"));
-        categories.append(QStringLiteral("REDUNDANCY"));
-    }
-    if (ui->languageToolPunctuationCheckBox->isChecked()) {
-        categories.append(QStringLiteral("PUNCTUATION"));
-    }
-    if (ui->languageToolTypographyCheckBox->isChecked()) {
-        categories.append(QStringLiteral("TYPOGRAPHY"));
-    }
-
-    return categories;
-}
-
-void SettingsDialog::setLanguageToolOptionsEnabled(bool enabled) {
-    ui->languageToolOptionsWidget->setEnabled(enabled);
-}
-
-void SettingsDialog::on_languageToolEnabledCheckBox_toggled(bool checked) {
-    setLanguageToolOptionsEnabled(checked);
-}
-
-void SettingsDialog::on_languageToolTestConnectionButton_clicked() {
-    auto *client = new LanguageToolClient(this);
-    LanguageToolClient::RequestOptions options;
-    options.requestId = 1;
-    options.serverUrl = ui->languageToolServerUrlLineEdit->text().trimmed();
-    options.language = ui->languageToolLanguageComboBox->currentData().toString().isEmpty()
-                           ? ui->languageToolLanguageComboBox->currentText().trimmed()
-                           : ui->languageToolLanguageComboBox->currentData().toString();
-    options.apiKey = ui->languageToolApiKeyLineEdit->text().trimmed();
-    options.timeoutMs = 5000;
-    options.text = QStringLiteral("This are a test sentence.");
-    options.enabledCategories = languageToolEnabledCategoriesFromUi();
-
-    connect(client, &LanguageToolClient::checkFinished, this,
-            [this, client](int, const QVector<LanguageToolMatch> &) {
-                QMessageBox::information(this, tr("LanguageTool"),
-                                         tr("LanguageTool connection successful."));
-                client->deleteLater();
-            });
-    connect(client, &LanguageToolClient::checkError, this,
-            [this, client](int, const QString &errorMessage) {
-                QMessageBox::warning(this, tr("LanguageTool"),
-                                     tr("LanguageTool connection failed: %1").arg(errorMessage));
-                client->deleteLater();
-            });
-
-    client->checkText(options);
-}
-
-void SettingsDialog::on_languageToolResetIgnoredRulesButton_clicked() {
-    auto *checker = LanguageToolChecker::instance();
-    if (checker == nullptr) {
-        return;
-    }
-
-    const int count = checker->ignoredRules().size();
-    if (count == 0) {
-        QMessageBox::information(this, tr("LanguageTool"),
-                                 tr("There are no ignored rules to reset."));
-        return;
-    }
-
-    if (QMessageBox::question(this, tr("LanguageTool"), tr("Reset %n ignored rule(s)?", "", count),
-                              QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
-        checker->clearIgnoredRules();
-        QMessageBox::information(this, tr("LanguageTool"),
-                                 tr("All ignored rules have been reset."));
-    }
-}
-
-void SettingsDialog::on_languageToolResetIgnoredWordsButton_clicked() {
-    auto *checker = LanguageToolChecker::instance();
-    if (checker == nullptr) {
-        return;
-    }
-
-    const int count = checker->ignoredWords().size();
-    if (count == 0) {
-        QMessageBox::information(this, tr("LanguageTool"),
-                                 tr("There are no ignored words to reset."));
-        return;
-    }
-
-    if (QMessageBox::question(this, tr("LanguageTool"), tr("Reset %n ignored word(s)?", "", count),
-                              QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
-        checker->clearIgnoredWords();
-        QMessageBox::information(this, tr("LanguageTool"),
-                                 tr("All ignored words have been reset."));
-    }
-}
-#endif
-
 void SettingsDialog::onLayoutStored(const QString &layoutUuid) {
     auto *mainWindow = MainWindow::instance();
     if ((mainWindow == nullptr) || layoutUuid.isEmpty()) {
@@ -2304,65 +1870,6 @@ void SettingsDialog::onLayoutStored(const QString &layoutUuid) {
 
 void SettingsDialog::on_ownCloudServerAppPageButton_clicked() {
     QDesktopServices::openUrl(QUrl(ui->serverUrlEdit->text() + "/index.php/settings/apps"));
-}
-
-void SettingsDialog::on_noteTextEditButton_clicked() {
-    bool ok;
-    QFont font = Utils::Gui::fontDialogGetFont(&ok, noteTextEditFont, this);
-
-    qDebug() << __func__ << " - 'font': " << font;
-
-    if (ok) {
-        noteTextEditFont = font;
-        setFontLabel(ui->noteTextEditFontLabel, noteTextEditFont);
-
-        // store the font settings
-        storeFontSettings();
-
-        // we will need a restart after changing the font
-        needRestart();
-
-        // update the text items after the font was changed
-        ui->editorFontColorWidget->updateAllTextItems();
-    }
-}
-
-void SettingsDialog::on_noteTextEditCodeButton_clicked() {
-    bool ok;
-    QFont font = Utils::Gui::fontDialogGetFont(&ok, noteTextEditCodeFont, this, QString(),
-                                               QFontDialog::MonospacedFonts);
-    if (ok) {
-        noteTextEditCodeFont = font;
-        setFontLabel(ui->noteTextEditCodeFontLabel, noteTextEditCodeFont);
-
-        // store the font settings
-        storeFontSettings();
-
-        // we will need a restart after changing the font
-        needRestart();
-
-        // update the text items after the font was changed
-        ui->editorFontColorWidget->updateAllTextItems();
-    }
-}
-
-void SettingsDialog::on_noteTextViewButton_clicked() {
-    bool ok;
-    QFont font = Utils::Gui::fontDialogGetFont(&ok, noteTextViewFont, this);
-    if (ok) {
-        noteTextViewFont = font;
-        setFontLabel(ui->noteTextViewFontLabel, noteTextViewFont);
-    }
-}
-
-void SettingsDialog::on_noteTextViewCodeButton_clicked() {
-    bool ok;
-    QFont font = Utils::Gui::fontDialogGetFont(&ok, noteTextViewCodeFont, this, QString(),
-                                               QFontDialog::MonospacedFonts);
-    if (ok) {
-        noteTextViewCodeFont = font;
-        setFontLabel(ui->noteTextViewCodeFontLabel, noteTextViewCodeFont);
-    }
 }
 
 void SettingsDialog::on_reloadCalendarListButton_clicked() {
@@ -2415,59 +1922,6 @@ void SettingsDialog::on_reinitializeDatabaseButton_clicked() {
 }
 
 /**
- * @brief Stores the debug information to a Markdown file
- */
-void SettingsDialog::on_saveDebugInfoButton_clicked() {
-    Utils::Gui::information(this, tr("Debug information"),
-                            tr("Please don't use this in the issue tracker, "
-                               "copy the debug information text directly into the issue."),
-                            QStringLiteral("debug-save"));
-
-    FileDialog dialog(QStringLiteral("SaveDebugInfo"));
-    dialog.setFileMode(QFileDialog::AnyFile);
-    dialog.setAcceptMode(QFileDialog::AcceptSave);
-    dialog.setNameFilter(tr("Markdown files") + " (*.md)");
-    dialog.setWindowTitle(tr("Save debug information"));
-    dialog.selectFile(QStringLiteral("QOwnNotes Debug Information.md"));
-    int ret = dialog.exec();
-
-    if (ret == QDialog::Accepted) {
-        QString fileName = dialog.selectedFile();
-        QFile file(fileName);
-
-        if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            qWarning() << file.errorString();
-            return;
-        }
-
-        QTextStream out(&file);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        out.setCodec("UTF-8");
-#endif
-        out << ui->debugInfoTextEdit->toPlainText();
-        file.flush();
-        file.close();
-    }
-}
-
-void SettingsDialog::on_appMetricsCheckBox_toggled(bool checked) {
-    if (checked) {
-        int reply;
-        reply = QMessageBox::question(this, tr("Disable usage tracking"),
-                                      tr("Anonymous usage data helps to decide what parts of "
-                                         "QOwnNotes to improve next and to find and fix bugs."
-                                         "<br />Please disable it only if you really can't live"
-                                         " with it.<br /><br />Really disable usage tracking?"),
-                                      QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-        if (reply == QMessageBox::No) {
-            const QSignalBlocker blocker(ui->appMetricsCheckBox);
-            Q_UNUSED(blocker)
-            ui->appMetricsCheckBox->setChecked(0);
-        }
-    }
-}
-
-/**
  * Allows the user to clear all settings and the database and exit the app
  */
 void SettingsDialog::on_clearAppDataAndExitButton_clicked() {
@@ -2482,7 +1936,7 @@ void SettingsDialog::on_clearAppDataAndExitButton_clicked() {
         DatabaseService::removeDiskDatabase();
 
         // remove the log file
-        removeLogFile();
+        DebugOptionSettingsWidget::removeLogFile();
 
         // make sure no settings get written after are quitting
         qApp->setProperty("clearAppDataAndExit", true);
@@ -2493,72 +1947,6 @@ void SettingsDialog::on_clearAppDataAndExitButton_clicked() {
 /**
  * Removes the log file
  */
-void SettingsDialog::removeLogFile() const {
-    // remove log file if exists
-    QFile file(Utils::Misc::logFilePath());
-    if (file.exists()) {
-        // remove the file
-        bool result = file.remove();
-        QString text = result ? "Removed" : "Could not remove";
-
-        // in case that the settings are cleared logging to log file is
-        // disabled by default and it will not be created again
-        qWarning() << text + " log file: " << file.fileName();
-    }
-}
-
-/**
- * Resets the font for the note text edit
- */
-void SettingsDialog::on_noteTextEditResetButton_clicked() {
-    QTextEdit textEdit;
-    noteTextEditFont = textEdit.font();
-    setFontLabel(ui->noteTextEditFontLabel, noteTextEditFont);
-
-    // store the font settings
-    storeFontSettings();
-
-    // we will need a restart after changing the font
-    needRestart();
-
-    // update the text items after the font was changed
-    ui->editorFontColorWidget->updateAllTextItems();
-}
-
-/**
- * Resets the font for the note text code edit
- */
-void SettingsDialog::on_noteTextEditCodeResetButton_clicked() {
-    noteTextEditCodeFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
-    setFontLabel(ui->noteTextEditCodeFontLabel, noteTextEditCodeFont);
-
-    // store the font settings
-    storeFontSettings();
-
-    // we will need a restart after changing the font
-    needRestart();
-
-    // update the text items after the font was changed
-    ui->editorFontColorWidget->updateAllTextItems();
-}
-
-/**
- * Resets the font for the note Markdown view
- */
-void SettingsDialog::on_noteTextViewResetButton_clicked() {
-    QTextBrowser textView;
-    noteTextViewFont = textView.font();
-    setFontLabel(ui->noteTextViewFontLabel, noteTextViewFont);
-}
-
-/**
- * Resets the font for the note Markdown code view
- */
-void SettingsDialog::on_noteTextViewCodeResetButton_clicked() {
-    noteTextViewCodeFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
-    setFontLabel(ui->noteTextViewCodeFontLabel, noteTextViewCodeFont);
-}
-
 /**
  * Sets a path to an external editor
  */
@@ -2605,10 +1993,6 @@ void SettingsDialog::on_setExternalEditorPathToolButton_clicked() {
         const QString &filePath(fileNames.at(0));
         ui->externalEditorPathLineEdit->setText(filePath);
     }
-}
-
-void SettingsDialog::on_ignoreSSLErrorsCheckBox_toggled(bool checked) {
-    ui->letsEncryptInfoLabel->setVisible(checked);
 }
 
 /**
@@ -3539,12 +2923,6 @@ void SettingsDialog::applyDarkModeSettings() {
     Utils::Gui::applyDarkModeSettings();
 }
 
-/**
- * Applies the current editor schema settings live to the running editor
- * and preview without requiring a restart or dialog close
- */
-void SettingsDialog::applyEditorSchemaSettings() { Utils::Gui::applyDarkModeSettings(); }
-
 void SettingsDialog::on_noteFolderShowSubfoldersCheckBox_toggled(bool checked) {
     _selectedNoteFolder.setShowSubfolders(checked);
 
@@ -3734,20 +3112,6 @@ void SettingsDialog::on_allowDifferentNoteFileNameCheckBox_toggled(bool checked)
 }
 
 /**
- * Toggles the line breaks in the debug output
- */
-void SettingsDialog::on_gitHubLineBreaksCheckBox_toggled(bool checked) {
-    Q_UNUSED(checked)
-    outputSettings();
-}
-
-void SettingsDialog::on_debugInfoAnonymizeCheckBox_toggled(bool checked) {
-    SettingsService settings;
-    settings.setValue(QStringLiteral("debugInfoAnonymize"), checked);
-    outputSettings();
-}
-
-/**
  * Searches in the description and in the shortcut for a entered text
  *
  * @param arg1
@@ -3836,11 +3200,10 @@ bool SettingsDialog::initializePage(int index) {
             setupNoteFolderPage();
         } break;
         case SettingsPages::NetworkPage: {
-            // do the network proxy tab setup
-            setupProxyPage();
+            ui->networkSettingsWidget->initialize();
         } break;
         case SettingsPages::WebApplicationPage: {
-            ui->webAppLabel->setText(ui->webAppLabel->text().arg("https://app.qownnotes.org/"));
+            ui->webApplicationSettingsWidget->initialize();
         } break;
         case SettingsPages::WebCompanionPage: {
             ui->webCompannionLabel->setText(ui->webCompannionLabel->text().arg(
@@ -3939,15 +3302,10 @@ bool SettingsDialog::initializePage(int index) {
 #endif
         } break;
         case SettingsPages::DebugPage: {
-            // init the debug info search frame
-            ui->debugInfoTextEdit->initSearchFrame(ui->debugInfoTextEditSearchFrame);
+            ui->debugSettingsWidget->initialize();
 
-            SettingsService settings;
-            ui->debugInfoAnonymizeCheckBox->setChecked(
-                settings.value(QStringLiteral("debugInfoAnonymize")).toBool());
-
-            // show the log file path
-            ui->logFileLabel->setText(QDir::toNativeSeparators(Utils::Misc::logFilePath()));
+            // Show the log file path
+            ui->debugOptionSettingsWidget->initialize();
         } break;
         case SettingsPages::ScriptingPage: {
             // set up the scripting tab
@@ -4023,7 +3381,7 @@ void SettingsDialog::on_settingsStackedWidget_currentChanged(int index) {
     this->initializePage(index);
 
     if (index == DebugPage) {
-        outputSettings();
+        ui->debugSettingsWidget->outputSettings();
     } else if (index == OwnCloudPage) {
         resetOKLabelData();
     } else if (index == AiPage) {
@@ -4520,29 +3878,6 @@ int SettingsDialog::findSettingsPageIndexOfWidget(QWidget *widget) {
 }
 
 /**
- * Toggles the log file frame
- *
- * @param checked
- */
-void SettingsDialog::on_fileLoggingCheckBox_toggled(bool checked) {
-    ui->logFileFrame->setVisible(checked);
-}
-
-/**
- * Removes the log file
- */
-void SettingsDialog::on_clearLogFileButton_clicked() {
-    // remove the log file
-    removeLogFile();
-
-    Utils::Gui::information(this, tr("Log file cleared"),
-                            tr("The log file <strong>%1</strong> was cleared"
-                               ".")
-                                .arg(Utils::Misc::logFilePath()),
-                            QStringLiteral("log-file-cleared"));
-}
-
-/**
  * Declares that we need a restart
  */
 void SettingsDialog::needRestart() { Utils::Misc::needRestart(); }
@@ -4573,47 +3908,9 @@ void SettingsDialog::on_ownCloudSupportCheckBox_toggled() {
     }
 }
 
-/**
- * Toggles whether to use git to store a local history or not
- * @param checked
- */
 void SettingsDialog::on_noteFolderGitCommitCheckBox_toggled(bool checked) {
     _selectedNoteFolder.setUseGit(checked);
     _selectedNoteFolder.store();
-}
-
-void SettingsDialog::on_setGitPathToolButton_clicked() {
-    QString path = ui->gitPathLineEdit->text();
-    if (path.isEmpty()) {
-#ifdef Q_OS_WIN
-        path = "git.exe";
-#else
-        path = QLatin1String("/usr/bin/git");
-#endif
-    }
-
-#ifdef Q_OS_WIN
-    QStringList filters = QStringList()
-                          << tr("Executable files") + " (*.exe)" << tr("All files") + " (*)";
-#else
-    QStringList filters = QStringList() << tr("All files") + " (*)";
-#endif
-
-    FileDialog dialog(QStringLiteral("GitExecutable"));
-    dialog.setFileMode(QFileDialog::ExistingFile);
-    dialog.setAcceptMode(QFileDialog::AcceptOpen);
-    dialog.setNameFilters(filters);
-    dialog.selectFile(path);
-    dialog.setWindowTitle(tr("Please select the path of your git executable"));
-    int ret = dialog.exec();
-
-    if (ret == QDialog::Accepted) {
-        path = dialog.selectedFile();
-
-        if (!path.isEmpty()) {
-            ui->gitPathLineEdit->setText(path);
-        }
-    }
 }
 
 /**
@@ -4727,16 +4024,8 @@ void SettingsDialog::on_markdownLspEnabledCheckBox_toggled(bool checked) {
 }
 
 void SettingsDialog::on_enableWikiLinkSupportCheckBox_toggled(bool checked) {
-    ui->editorFontColorWidget->setWikiLinkItemsVisible(checked);
+    ui->editorFontColorSettingsWidget->setWikiLinkItemsVisible(checked);
     ui->wikiLinkFileNameAutoSelectCheckBox->setEnabled(checked);
-}
-
-void SettingsDialog::on_localTrashEnabledCheckBox_toggled(bool checked) {
-    ui->localTrashGroupBox->setEnabled(checked);
-}
-
-void SettingsDialog::on_localTrashClearCheckBox_toggled(bool checked) {
-    ui->localTrashClearFrame->setEnabled(checked);
 }
 
 /**
@@ -4824,21 +4113,6 @@ void SettingsDialog::on_importSettingsButton_clicked() {
     qApp->setProperty("clearAppDataAndExit", true);
 
     Utils::Misc::restartApplication();
-}
-
-void SettingsDialog::on_issueAssistantPushButton_clicked() {
-    MainWindow *mainWindow = MainWindow::instance();
-
-    if (mainWindow == nullptr) {
-        return;
-    }
-
-    storeSettings();
-    mainWindow->openIssueAssistantDialog();
-
-    // we need to close the modal settings dialog so the issue assistant
-    // dialog can be shown on the front
-    close();
 }
 
 void SettingsDialog::on_ignoreNoteSubFoldersResetButton_clicked() {
@@ -5081,15 +4355,6 @@ void SettingsDialog::on_todoCalendarSupportCheckBox_toggled() {
     ui->todoListSettingsGroupBox->setEnabled(checked);
 }
 
-void SettingsDialog::on_copyDebugInfoButton_clicked() {
-    QClipboard *clipboard = QApplication::clipboard();
-    clipboard->setText(ui->debugInfoTextEdit->toPlainText());
-
-    Utils::Gui::information(this, tr("Debug information"),
-                            tr("The debug information was copied to the clipboard."),
-                            QStringLiteral("debug-clipboard"));
-}
-
 void SettingsDialog::on_ownCloudServerAppPasswordPageButton_clicked() {
     QDesktopServices::openUrl(
         QUrl(ui->serverUrlEdit->text() + "/index.php/settings/user/security"));
@@ -5097,10 +4362,6 @@ void SettingsDialog::on_ownCloudServerAppPasswordPageButton_clicked() {
 
 void SettingsDialog::on_languageSearchLineEdit_textChanged(const QString &arg1) {
     Utils::Gui::searchForTextInListWidget(ui->languageListWidget, arg1, true);
-}
-
-void SettingsDialog::on_noteTextViewUseEditorStylesCheckBox_toggled(bool checked) {
-    ui->previewFontsGroupBox->setDisabled(checked);
 }
 
 void SettingsDialog::on_databaseIntegrityCheckButton_clicked() {
@@ -5115,31 +4376,6 @@ void SettingsDialog::on_databaseIntegrityCheckButton_clicked() {
     }
 }
 
-void SettingsDialog::on_webAppServerUrlResetButton_clicked() {
-    ui->webAppServerUrlLineEdit->setText(WebAppClientService::getDefaultServerUrl());
-}
-
-void SettingsDialog::on_webAppShowTokenButton_clicked() {
-    ui->webAppTokenLineEdit->setEchoMode(ui->webAppTokenLineEdit->echoMode() ==
-                                                 QLineEdit::EchoMode::Password
-                                             ? QLineEdit::EchoMode::Normal
-                                             : QLineEdit::EchoMode::Password);
-}
-
-void SettingsDialog::on_webAppCopyTokenButton_clicked() {
-    QApplication::clipboard()->setText(ui->webAppTokenLineEdit->text());
-}
-
-void SettingsDialog::on_webAppGenerateTokenButton_clicked() {
-    ui->webAppTokenLineEdit->setText(Utils::Misc::generateRandomString(32));
-    ui->webAppTokenLineEdit->setEchoMode(QLineEdit::EchoMode::Normal);
-}
-
-void SettingsDialog::on_enableWebApplicationCheckBox_toggled() {
-    bool checked = ui->enableWebApplicationCheckBox->isChecked();
-    ui->webAppFrame->setEnabled(checked);
-}
-
 void SettingsDialog::on_showLineNumbersInEditorCheckBox_toggled(bool checked) {
     if (checked && !ui->editorWidthInDFMOnlyCheckBox->isChecked()) {
         const QSignalBlocker blocker(ui->editorWidthInDFMOnlyCheckBox);
@@ -5152,15 +4388,6 @@ void SettingsDialog::on_editorWidthInDFMOnlyCheckBox_toggled(bool checked) {
         const QSignalBlocker blocker(ui->showLineNumbersInEditorCheckBox);
         ui->showLineNumbersInEditorCheckBox->setChecked(false);
     }
-}
-
-void SettingsDialog::on_webAppTokenLineEdit_textChanged(const QString &arg1) {
-    ui->qrCodeWidget->setText(QStringLiteral("qontoken://") + arg1);
-}
-
-void SettingsDialog::on_showQRCodeButton_clicked() {
-    ui->showQRCodeButton->hide();
-    ui->qrCodeWidget->show();
 }
 
 void SettingsDialog::on_scriptReloadEngineButton2_clicked() {
@@ -5258,10 +4485,6 @@ void SettingsDialog::on_loginFlowCancelButton_clicked() {
 void SettingsDialog::on_defaultNoteFileExtensionListWidget_itemSelectionChanged() {
     ui->removeCustomNoteFileExtensionButton->setEnabled(
         ui->defaultNoteFileExtensionListWidget->count() > 1);
-}
-
-void SettingsDialog::on_noteTextViewRefreshDebounceTimeResetButton_clicked() {
-    ui->noteTextViewRefreshDebounceTimeSpinBox->setValue(600);
 }
 
 void SettingsDialog::on_appNextcloudDeckCheckBox_toggled(bool checked) {

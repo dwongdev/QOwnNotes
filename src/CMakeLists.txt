@@ -465,9 +465,36 @@ set(SOURCE_FILES
     widgets/layoutpresetwidget.cpp
     widgets/layoutpresetwidget.h
     widgets/layoutpresetwidget.ui
-    widgets/colormodesettingswidget.cpp
-    widgets/colormodesettingswidget.h
-    widgets/colormodesettingswidget.ui
+    widgets/settings/colormodesettingswidget.cpp
+    widgets/settings/colormodesettingswidget.h
+    widgets/settings/colormodesettingswidget.ui
+    widgets/settings/gitsettingswidget.cpp
+    widgets/settings/gitsettingswidget.h
+    widgets/settings/gitsettingswidget.ui
+    widgets/settings/localtrashsettingswidget.cpp
+    widgets/settings/localtrashsettingswidget.h
+    widgets/settings/localtrashsettingswidget.ui
+    widgets/settings/debugoptionsettingswidget.cpp
+    widgets/settings/debugoptionsettingswidget.h
+    widgets/settings/debugoptionsettingswidget.ui
+    widgets/settings/editorfontcolorsettingswidget.cpp
+    widgets/settings/editorfontcolorsettingswidget.h
+    widgets/settings/editorfontcolorsettingswidget.ui
+    widgets/settings/previewfontsettingswidget.cpp
+    widgets/settings/previewfontsettingswidget.h
+    widgets/settings/previewfontsettingswidget.ui
+    widgets/settings/debugsettingswidget.cpp
+    widgets/settings/debugsettingswidget.h
+    widgets/settings/debugsettingswidget.ui
+    widgets/settings/languagetoolsettingswidget.cpp
+    widgets/settings/languagetoolsettingswidget.h
+    widgets/settings/languagetoolsettingswidget.ui
+    widgets/settings/networksettingswidget.cpp
+    widgets/settings/networksettingswidget.h
+    widgets/settings/networksettingswidget.ui
+    widgets/settings/webapplicationsettingswidget.cpp
+    widgets/settings/webapplicationsettingswidget.h
+    widgets/settings/webapplicationsettingswidget.ui
     widgets/todoitemtreewidget.cpp
     widgets/todoitemtreewidget.h
     widgets/htmlpreviewwidget.h

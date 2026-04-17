@@ -2,6 +2,9 @@
 
 ## 26.4.16
 
+- Refactored the **Settings dialog** by extracting individual settings pages
+  into separate widget classes and moved them to a dedicated `widgets/settings`
+  directory for better code organization (for [#3570](https://github.com/pbek/QOwnNotes/issues/3570))
 - Added the ability to select which **note subfolders** to show in the
   **Note folders** settings when **Use note subfolders** is enabled, with an
   **All subfolders** checkbox that shows all subfolders by default, and a

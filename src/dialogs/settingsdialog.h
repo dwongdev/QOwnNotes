@@ -97,39 +97,15 @@ class SettingsDialog : public MasterDialog {
 
     void on_ownCloudServerAppPageButton_clicked();
 
-    void on_noteTextEditButton_clicked();
-
-    void on_noteTextViewButton_clicked();
-
     void on_reloadCalendarListButton_clicked();
 
     void on_defaultOwnCloudCalendarRadioButton_toggled(bool checked);
 
     void on_reinitializeDatabaseButton_clicked();
 
-    void on_saveDebugInfoButton_clicked();
-
-    void on_appMetricsCheckBox_toggled(bool checked);
-
     void on_clearAppDataAndExitButton_clicked();
 
-    void on_noteTextEditCodeButton_clicked();
-
-    void on_noteTextEditResetButton_clicked();
-
-    void on_noteTextEditCodeResetButton_clicked();
-
-    void on_noteTextViewResetButton_clicked();
-
-    void on_noteTextViewCodeButton_clicked();
-
-    void on_noteTextViewCodeResetButton_clicked();
-
     void on_setExternalEditorPathToolButton_clicked();
-
-    void storeProxySettings();
-
-    void on_ignoreSSLErrorsCheckBox_toggled(bool checked);
 
     void on_noteFolderListWidget_currentItemChanged(QListWidgetItem *current,
                                                     QListWidgetItem *previous);
@@ -180,10 +156,6 @@ class SettingsDialog : public MasterDialog {
 
     void on_noteFolderAllSubfoldersCheckBox_toggled(bool checked);
 
-    void on_gitHubLineBreaksCheckBox_toggled(bool checked);
-
-    void on_debugInfoAnonymizeCheckBox_toggled(bool checked);
-
     void on_shortcutSearchLineEdit_textChanged(const QString &arg1);
 
     void on_settingsTreeWidget_currentItemChanged(QTreeWidgetItem *current,
@@ -213,10 +185,6 @@ class SettingsDialog : public MasterDialog {
 
     void on_searchLineEdit_textChanged(const QString &arg1);
 
-    void on_fileLoggingCheckBox_toggled(bool checked);
-
-    void on_clearLogFileButton_clicked();
-
     void noteNotificationButtonGroupPressed(QAbstractButton *button);
 
     void noteNotificationNoneCheckBoxCheck();
@@ -228,8 +196,6 @@ class SettingsDialog : public MasterDialog {
     void on_ownCloudSupportCheckBox_toggled();
 
     void on_noteFolderGitCommitCheckBox_toggled(bool checked);
-
-    void on_setGitPathToolButton_clicked();
 
     void searchScriptInRepository(bool checkForUpdates = false);
 
@@ -253,17 +219,11 @@ class SettingsDialog : public MasterDialog {
 
     void onLayoutStored(const QString &layoutUuid);
 
-    void on_localTrashEnabledCheckBox_toggled(bool checked);
-
-    void on_localTrashClearCheckBox_toggled(bool checked);
-
     void keySequenceEvent(const QString &objectName);
 
     void on_exportSettingsButton_clicked();
 
     void on_importSettingsButton_clicked();
-
-    void on_issueAssistantPushButton_clicked();
 
     void on_ignoreNoteSubFoldersResetButton_clicked();
 
@@ -311,35 +271,17 @@ class SettingsDialog : public MasterDialog {
 
     void on_todoCalendarSupportCheckBox_toggled();
 
-    void on_copyDebugInfoButton_clicked();
-
     void on_ownCloudServerAppPasswordPageButton_clicked();
 
     void on_allowDifferentNoteFileNameCheckBox_toggled(bool checked);
 
     void on_languageSearchLineEdit_textChanged(const QString &arg1);
 
-    void on_noteTextViewUseEditorStylesCheckBox_toggled(bool checked);
-
     void on_databaseIntegrityCheckButton_clicked();
-
-    void on_webAppServerUrlResetButton_clicked();
-
-    void on_webAppShowTokenButton_clicked();
-
-    void on_webAppCopyTokenButton_clicked();
-
-    void on_webAppGenerateTokenButton_clicked();
-
-    void on_enableWebApplicationCheckBox_toggled();
 
     void on_showLineNumbersInEditorCheckBox_toggled(bool checked);
 
     void on_editorWidthInDFMOnlyCheckBox_toggled(bool checked);
-
-    void on_webAppTokenLineEdit_textChanged(const QString &arg1);
-
-    void on_showQRCodeButton_clicked();
 
     void on_scriptReloadEngineButton2_clicked();
 
@@ -348,8 +290,6 @@ class SettingsDialog : public MasterDialog {
     void on_loginFlowCancelButton_clicked();
 
     void on_defaultNoteFileExtensionListWidget_itemSelectionChanged();
-
-    void on_noteTextViewRefreshDebounceTimeResetButton_clicked();
 
     void on_appNextcloudDeckCheckBox_toggled(bool checked);
 
@@ -375,20 +315,9 @@ class SettingsDialog : public MasterDialog {
 
     void on_interfaceScalingFactorSpinBox_valueChanged(int arg1);
 
-#ifdef LANGUAGETOOL_ENABLED
-    void on_languageToolTestConnectionButton_clicked();
-    void on_languageToolEnabledCheckBox_toggled(bool checked);
-    void on_languageToolResetIgnoredRulesButton_clicked();
-    void on_languageToolResetIgnoredWordsButton_clicked();
-#endif
-
    private:
     Ui::SettingsDialog *ui;
     QStatusBar *noteFolderRemotePathTreeStatusBar;
-    QFont noteTextEditFont;
-    QFont noteTextEditCodeFont;
-    QFont noteTextViewFont;
-    QFont noteTextViewCodeFont;
     bool appIsValid;
     QString appVersion;
     QString serverVersion;
@@ -426,19 +355,11 @@ class SettingsDialog : public MasterDialog {
 
     void cancelConnectionTest();
 
-    void setFontLabel(QLineEdit *label, const QFont &font);
-
-    void outputSettings();
-
     static void selectListWidgetValue(QListWidget *listWidget, const QString &value);
 
     static bool listWidgetValueExists(QListWidget *listWidget, const QString &value);
 
     static QString getSelectedListWidgetValue(QListWidget *listWidget);
-
-    void setupProxyPage();
-
-    void loadProxySettings();
 
     void setupNoteFolderPage();
 
@@ -471,8 +392,6 @@ class SettingsDialog : public MasterDialog {
 
     void storeSplitterSettings();
 
-    void storeFontSettings();
-
     void reloadCalendarList();
 
     void initPortableModePage();
@@ -485,8 +404,6 @@ class SettingsDialog : public MasterDialog {
     void highlightSearchMatchedWidget(QWidget *widget, const QString &searchText);
 
     void clearSearchHighlights();
-
-    void removeLogFile() const;
 
     void replaceOwnCloudText() const;
 
@@ -522,8 +439,6 @@ class SettingsDialog : public MasterDialog {
 
     void applyDarkModeSettings();
 
-    void applyEditorSchemaSettings();
-
     void populateSubfolderTree();
 
     void populateSubfolderTreeFromDir(QTreeWidgetItem *parentItem, const QString &path,
@@ -538,11 +453,6 @@ class SettingsDialog : public MasterDialog {
     void saveSubfolderTreeSelection();
 
     void runAiApiTest(QString backend, QString model, QString apiKey = QString());
-
-#ifdef LANGUAGETOOL_ENABLED
-    QStringList languageToolEnabledCategoriesFromUi() const;
-    void setLanguageToolOptionsEnabled(bool enabled);
-#endif
 
     bool initializePage(int index);
 };
