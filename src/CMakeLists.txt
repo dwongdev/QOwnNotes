@@ -501,6 +501,9 @@ set(SOURCE_FILES
     widgets/settings/webcompanionsettingswidget.cpp
     widgets/settings/webcompanionsettingswidget.h
     widgets/settings/webcompanionsettingswidget.ui
+    widgets/settings/editorsettingswidget.cpp
+    widgets/settings/editorsettingswidget.h
+    widgets/settings/editorsettingswidget.ui
     widgets/settings/webapplicationsettingswidget.cpp
     widgets/settings/webapplicationsettingswidget.h
     widgets/settings/webapplicationsettingswidget.ui

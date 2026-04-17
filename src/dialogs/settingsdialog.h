@@ -191,17 +191,9 @@ class SettingsDialog : public MasterDialog {
 
     void on_interfaceStyleComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cursorWidthResetButton_clicked();
-
     void on_showSystemTrayCheckBox_toggled(bool checked);
 
     void on_resetMessageBoxesButton_clicked();
-
-    void on_markdownHighlightingCheckBox_toggled(bool checked);
-
-    void on_markdownLspEnabledCheckBox_toggled(bool checked);
-
-    void on_enableWikiLinkSupportCheckBox_toggled(bool checked);
 
     void onLayoutStored(const QString &layoutUuid);
 
@@ -244,10 +236,6 @@ class SettingsDialog : public MasterDialog {
     void on_languageSearchLineEdit_textChanged(const QString &arg1);
 
     void on_databaseIntegrityCheckButton_clicked();
-
-    void on_showLineNumbersInEditorCheckBox_toggled(bool checked);
-
-    void on_editorWidthInDFMOnlyCheckBox_toggled(bool checked);
 
     void on_scriptReloadEngineButton2_clicked();
 

@@ -64,6 +64,7 @@
 #include "widgets/settings/debugoptionsettingswidget.h"
 #include "widgets/settings/debugsettingswidget.h"
 #include "widgets/settings/editorfontcolorsettingswidget.h"
+#include "widgets/settings/editorsettingswidget.h"
 #include "widgets/settings/languagetoolsettingswidget.h"
 #include "widgets/settings/networksettingswidget.h"
 #include "widgets/settings/todosettingswidget.h"
@@ -164,17 +165,18 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     connect(ui->allowOnlyOneAppInstanceCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->showSystemTrayCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->startHiddenCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
-    connect(ui->fullyHighlightedBlockquotesCheckBox, SIGNAL(toggled(bool)), this,
-            SLOT(needRestart()));
     connect(ui->noteFolderButtonsCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->noteListPreviewCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->maxNoteFileSizeSpinBox, SIGNAL(valueChanged(int)), this, SLOT(needRestart()));
-    connect(ui->vimModeCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
-    connect(ui->disableCursorBlinkingCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->ignoreNoteSubFoldersLineEdit, SIGNAL(textChanged(QString)), this,
             SLOT(needRestart()));
     connect(ui->webCompanionSettingsWidget, &WebCompanionSettingsWidget::needRestart, this,
             &SettingsDialog::needRestart);
+    connect(ui->editorSettingsWidget, &EditorSettingsWidget::needRestart, this,
+            &SettingsDialog::needRestart);
+    connect(ui->editorSettingsWidget, &EditorSettingsWidget::wikiLinkSupportToggled,
+            ui->editorFontColorSettingsWidget,
+            &EditorFontColorSettingsWidget::setWikiLinkItemsVisible);
     connect(ui->mcpServerEnabledCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->mcpServerTokenLineEdit, SIGNAL(textChanged(QString)), this, SLOT(needRestart()));
     connect(ui->webApplicationSettingsWidget, &WebApplicationSettingsWidget::needRestart, this,
@@ -466,7 +468,6 @@ void SettingsDialog::storeSettings() {
     settings.setValue(QStringLiteral("ownCloud/supportEnabled"),
                       ui->ownCloudSupportCheckBox->isChecked());
     ui->todoSettingsWidget->storeSettings();
-    settings.setValue(QStringLiteral("insertTimeFormat"), ui->timeFormatLineEdit->text());
     settings.setValue(QStringLiteral("disableAutomaticUpdateDialog"),
                       ui->disableAutomaticUpdateDialogCheckBox->isChecked());
     settings.setValue(QStringLiteral("notifyAllExternalModifications"),
@@ -513,10 +514,6 @@ void SettingsDialog::storeSettings() {
                       ui->allowOnlyOneAppInstanceCheckBox->isChecked());
     settings.setValue(QStringLiteral("interfaceLanguage"),
                       getSelectedListWidgetValue(ui->languageListWidget));
-    settings.setValue(QStringLiteral("markdownHighlightingEnabled"),
-                      ui->markdownHighlightingCheckBox->isChecked());
-    settings.setValue(QStringLiteral("fullyHighlightedBlockquotes"),
-                      ui->fullyHighlightedBlockquotesCheckBox->isChecked());
     settings.setValue(QStringLiteral("noteEditIsCentralWidget"),
                       ui->noteEditCentralWidgetCheckBox->isChecked());
     settings.setValue(QStringLiteral("restoreNoteTabs"), ui->restoreNoteTabsCheckBox->isChecked());
@@ -526,47 +523,7 @@ void SettingsDialog::storeSettings() {
                       ui->noteFolderButtonsCheckBox->isChecked());
     ui->previewFontSettingsWidget->storeSettings();
     ui->debugOptionSettingsWidget->storeSettings();
-    settings.setValue(QStringLiteral("Editor/autoBracketClosing"),
-                      ui->autoBracketClosingCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/autoBracketRemoval"),
-                      ui->autoBracketRemovalCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/removeTrailingSpaces"),
-                      ui->removeTrailingSpacesCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/showLineNumbers"),
-                      ui->showLineNumbersInEditorCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/highlightCurrentLine"),
-                      ui->highlightCurrentLineCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/headingFolding"),
-                      ui->headingFoldingCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/hideFormattingSyntax"),
-                      ui->hideFormattingSyntaxCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/wikiLinkSupport"),
-                      ui->enableWikiLinkSupportCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/wikiLinkFileNameAutoSelect"),
-                      ui->wikiLinkFileNameAutoSelectCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/hangingIndent"),
-                      ui->hangingIndentCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/showMarkdownImagePreviews"),
-                      ui->showMarkdownImagePreviewsCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/editorWidthInDFMOnly"),
-                      ui->editorWidthInDFMOnlyCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/vimMode"), ui->vimModeCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/disableCursorBlinking"),
-                      ui->disableCursorBlinkingCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/useTabIndent"), ui->useTabIndentCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/indentSize"), ui->indentSizeSpinBox->value());
-    settings.setValue(QStringLiteral("Editor/markdownLspEnabled"),
-                      ui->markdownLspEnabledCheckBox->isChecked());
-    settings.setValue(QStringLiteral("Editor/markdownLspCommand"),
-                      ui->markdownLspCommandLineEdit->text().trimmed());
-    settings.setValue(QStringLiteral("Editor/markdownLspArguments"),
-                      ui->markdownLspArgumentsLineEdit->text().split(
-#if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-                          QRegularExpression(QStringLiteral("\\s+")), QString::SkipEmptyParts));
-#else
-                          QRegularExpression(QStringLiteral("\\s+")), Qt::SkipEmptyParts));
-#endif
-
+    ui->editorSettingsWidget->storeSettings();
     ui->languageToolSettingsWidget->storeSettings();
 
     ui->networkSettingsWidget->storeSettings();
@@ -630,8 +587,7 @@ void SettingsDialog::storeSettings() {
         settings.remove(QStringLiteral("interfaceStyle"));
     }
 
-    // store the cursor width
-    settings.setValue(QStringLiteral("cursorWidth"), ui->cursorWidthSpinBox->value());
+    // store the cursor width - now handled by editorSettingsWidget->storeSettings()
 
     settings.setValue(QStringLiteral("SearchEngineId"),
                       ui->searchEngineSelectionComboBox->currentData().toInt());
@@ -778,7 +734,6 @@ void SettingsDialog::readSettings() {
     ui->passwordEdit->setText(_selectedCloudConnection.getPassword());
     ui->appQOwnNotesAPICheckBox->setChecked(_selectedCloudConnection.getAppQOwnNotesAPIEnabled());
     ui->appNextcloudDeckCheckBox->setChecked(_selectedCloudConnection.getNextcloudDeckEnabled());
-    ui->timeFormatLineEdit->setText(settings.value(QStringLiteral("insertTimeFormat")).toString());
 
     // prepend the portable data path if we are in portable mode
     ui->externalEditorPathLineEdit->setText(Utils::Misc::prependPortableDataPathIfNeeded(
@@ -819,52 +774,8 @@ void SettingsDialog::readSettings() {
         settings.value(QStringLiteral("noteSaveIntervalTime"), 10).toInt());
     ui->previewFontSettingsWidget->readSettings();
     ui->debugOptionSettingsWidget->readSettings();
-    ui->autoBracketClosingCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/autoBracketClosing"), true).toBool());
-    ui->autoBracketRemovalCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/autoBracketRemoval"), true).toBool());
-    ui->removeTrailingSpacesCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/removeTrailingSpaces")).toBool());
-    ui->showLineNumbersInEditorCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/showLineNumbers")).toBool());
-    ui->highlightCurrentLineCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/highlightCurrentLine"), true).toBool());
-    ui->headingFoldingCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/headingFolding"), false).toBool());
-    ui->hideFormattingSyntaxCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/hideFormattingSyntax"), false).toBool());
-    ui->enableWikiLinkSupportCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/wikiLinkSupport"), false).toBool());
-    on_enableWikiLinkSupportCheckBox_toggled(ui->enableWikiLinkSupportCheckBox->isChecked());
-    ui->wikiLinkFileNameAutoSelectCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/wikiLinkFileNameAutoSelect"), false).toBool());
-    ui->hangingIndentCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/hangingIndent"), false).toBool());
-    ui->showMarkdownImagePreviewsCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/showMarkdownImagePreviews"), true).toBool());
-    ui->editorWidthInDFMOnlyCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/editorWidthInDFMOnly"), true).toBool());
-    ui->vimModeCheckBox->setChecked(settings.value(QStringLiteral("Editor/vimMode")).toBool());
-    ui->disableCursorBlinkingCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/disableCursorBlinking")).toBool());
-    ui->useTabIndentCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/useTabIndent")).toBool());
-    ui->indentSizeSpinBox->setValue(Utils::Misc::indentSize());
-    ui->markdownLspEnabledCheckBox->setChecked(
-        settings.value(QStringLiteral("Editor/markdownLspEnabled"), false).toBool());
-    ui->markdownLspCommandLineEdit->setText(
-        settings.value(QStringLiteral("Editor/markdownLspCommand"), QStringLiteral("marksman"))
-            .toString());
-    ui->markdownLspArgumentsLineEdit->setText(
-        settings.value(QStringLiteral("Editor/markdownLspArguments"))
-            .toStringList()
-            .join(QLatin1Char(' ')));
+    ui->editorSettingsWidget->readSettings();
     ui->languageToolSettingsWidget->readSettings();
-    ui->markdownHighlightingCheckBox->setChecked(
-        settings.value(QStringLiteral("markdownHighlightingEnabled"), true).toBool());
-    ui->fullyHighlightedBlockquotesCheckBox->setChecked(
-        settings.value(QStringLiteral("fullyHighlightedBlockquotes")).toBool());
-    on_markdownLspEnabledCheckBox_toggled(ui->markdownLspEnabledCheckBox->isChecked());
     ui->noteEditCentralWidgetCheckBox->setChecked(
         settings.value(QStringLiteral("noteEditIsCentralWidget"), true).toBool());
     ui->restoreNoteTabsCheckBox->setChecked(
@@ -963,9 +874,6 @@ void SettingsDialog::readSettings() {
     loadInterfaceStyleComboBox();
 
     initCloudConnectionComboBox();
-
-    // set the cursor width spinbox value
-    ui->cursorWidthSpinBox->setValue(settings.value(QStringLiteral("cursorWidth"), 1).toInt());
 
     const QSignalBlocker blocker8(this->ui->showSystemTrayCheckBox);
     Q_UNUSED(blocker8)
@@ -2939,6 +2847,9 @@ bool SettingsDialog::initializePage(int index) {
         case SettingsPages::NetworkPage: {
             ui->networkSettingsWidget->initialize();
         } break;
+        case SettingsPages::EditorPage: {
+            ui->editorSettingsWidget->initialize();
+        } break;
         case SettingsPages::WebApplicationPage: {
             ui->webApplicationSettingsWidget->initialize();
         } break;
@@ -3652,9 +3563,8 @@ void SettingsDialog::on_interfaceStyleComboBox_currentTextChanged(const QString 
 }
 
 /**
- * Reset the cursor width spin box value
+ * Reset the cursor width spin box value - now handled by EditorSettingsWidget
  */
-void SettingsDialog::on_cursorWidthResetButton_clicked() { ui->cursorWidthSpinBox->setValue(1); }
 
 /**
  * Also enable the single instance feature if the system tray icon is turned on
@@ -3688,22 +3598,6 @@ void SettingsDialog::on_resetMessageBoxesButton_clicked() {
         settings.remove(QLatin1String(""));
         settings.endGroup();
     }
-}
-
-void SettingsDialog::on_markdownHighlightingCheckBox_toggled(bool checked) {
-    ui->fullyHighlightedBlockquotesCheckBox->setEnabled(checked);
-}
-
-void SettingsDialog::on_markdownLspEnabledCheckBox_toggled(bool checked) {
-    ui->markdownLspCommandLineEdit->setEnabled(checked);
-    ui->markdownLspArgumentsLineEdit->setEnabled(checked);
-    ui->markdownLspCommandLabel->setEnabled(checked);
-    ui->markdownLspArgumentsLabel->setEnabled(checked);
-}
-
-void SettingsDialog::on_enableWikiLinkSupportCheckBox_toggled(bool checked) {
-    ui->editorFontColorSettingsWidget->setWikiLinkItemsVisible(checked);
-    ui->wikiLinkFileNameAutoSelectCheckBox->setEnabled(checked);
 }
 
 /**
@@ -3959,20 +3853,6 @@ void SettingsDialog::on_databaseIntegrityCheckButton_clicked() {
         Utils::Gui::warning(this, tr("Database"),
                             tr("The integrity of the disk database is not valid!"),
                             QStringLiteral("database-integrity-check-not-valid"));
-    }
-}
-
-void SettingsDialog::on_showLineNumbersInEditorCheckBox_toggled(bool checked) {
-    if (checked && !ui->editorWidthInDFMOnlyCheckBox->isChecked()) {
-        const QSignalBlocker blocker(ui->editorWidthInDFMOnlyCheckBox);
-        ui->editorWidthInDFMOnlyCheckBox->setChecked(true);
-    }
-}
-
-void SettingsDialog::on_editorWidthInDFMOnlyCheckBox_toggled(bool checked) {
-    if (!checked && ui->showLineNumbersInEditorCheckBox->isChecked()) {
-        const QSignalBlocker blocker(ui->showLineNumbersInEditorCheckBox);
-        ui->showLineNumbersInEditorCheckBox->setChecked(false);
     }
 }
 
