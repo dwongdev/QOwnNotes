@@ -95,6 +95,7 @@ const scriptingNavItems = [
 
 const contributingNavItems = [
   "contributing/get-involved",
+  "contributing/code-contributions",
   "contributing/code-of-conduct",
   "contributing/maintainers",
   "contributing/translation",

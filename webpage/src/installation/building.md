@@ -40,7 +40,8 @@ Visit [QOwnNotes on GitHub](https://github.com/pbek/QOwnNotes).
 
 ::: tip
 If you want to contribute source code to the project please make your pull requests
-to the `main` branch.
+to the `main` branch. But please make sure to read the
+[code contribution guidelines](../contributing/code-contributions.md) first.
 :::
 
 ## Source archive
