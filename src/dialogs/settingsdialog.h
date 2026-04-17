@@ -3,9 +3,12 @@
 
 #include <entities/cloudconnection.h>
 #include <entities/notefolder.h>
-#include <entities/script.h>
 
 #include "masterdialog.h"
+#include "widgets/settings/mcpserversettingswidget.h"
+#include "widgets/settings/notefoldersettingswidget.h"
+#include "widgets/settings/panelssettingswidget.h"
+#include "widgets/settings/scriptingsettingswidget.h"
 
 namespace Ui {
 class SettingsDialog;
@@ -20,7 +23,6 @@ class QTreeWidget;
 class QLineEdit;
 class QStatusBar;
 class QButtonGroup;
-class Script;
 class QCheckBox;
 class NoteFolder;
 class QSplitter;
@@ -103,54 +105,11 @@ class SettingsDialog : public MasterDialog {
 
     void on_setExternalEditorPathToolButton_clicked();
 
-    void on_noteFolderListWidget_currentItemChanged(QListWidgetItem *current,
-                                                    QListWidgetItem *previous);
-
-    void on_noteFolderAddButton_clicked();
-
-    void on_noteFolderRemoveButton_clicked();
-
-    void on_noteFolderNameLineEdit_editingFinished();
-
-    void on_noteFolderRemotePathLineEdit_editingFinished();
-
-    void on_noteFolderLocalPathButton_clicked();
-
-    void on_noteFolderActiveCheckBox_stateChanged(int arg1);
-
-    void on_noteFolderRemotePathButton_clicked();
-
-    void on_noteFolderRemotePathTreeWidget_currentItemChanged(QTreeWidgetItem *current,
-                                                              QTreeWidgetItem *previous);
-
-    void on_useOwnCloudPathButton_clicked();
-
-    void addLocalScript();
-
-    void on_scriptRemoveButton_clicked();
-
-    void on_scriptPathButton_clicked();
-
-    void on_scriptListWidget_currentItemChanged(QListWidgetItem *current,
-                                                QListWidgetItem *previous);
-
-    void on_scriptNameLineEdit_editingFinished();
-
-    void on_scriptSearchLineEdit_textChanged(const QString &arg1);
-
-    void on_scriptValidationButton_clicked();
-
-    void on_scriptReloadEngineButton_clicked();
-
     void on_addCustomNoteFileExtensionButton_clicked();
 
     void on_removeCustomNoteFileExtensionButton_clicked();
 
     void on_defaultNoteFileExtensionListWidget_itemChanged(QListWidgetItem *item);
-
-    void on_noteFolderShowSubfoldersCheckBox_toggled(bool checked);
-
-    void on_noteFolderAllSubfoldersCheckBox_toggled(bool checked);
 
     void on_shortcutSearchLineEdit_textChanged(const QString &arg1);
 
@@ -181,14 +140,6 @@ class SettingsDialog : public MasterDialog {
 
     void on_ownCloudSupportCheckBox_toggled();
 
-    void on_noteFolderGitCommitCheckBox_toggled(bool checked);
-
-    void searchScriptInRepository(bool checkForUpdates = false);
-
-    void checkForScriptUpdates();
-
-    void on_scriptListWidget_itemChanged(QListWidgetItem *item);
-
     void on_interfaceStyleComboBox_currentTextChanged(const QString &arg1);
 
     void on_showSystemTrayCheckBox_toggled(bool checked);
@@ -203,21 +154,9 @@ class SettingsDialog : public MasterDialog {
 
     void on_importSettingsButton_clicked();
 
-    void on_ignoreNoteSubFoldersResetButton_clicked();
-
     void on_interfaceFontSizeSpinBox_valueChanged(int arg1);
 
     void on_overrideInterfaceFontSizeGroupBox_toggled(bool arg1);
-
-    void on_mcpServerEnabledCheckBox_toggled(bool checked);
-
-    void on_mcpServerPortResetButton_clicked();
-
-    void on_mcpServerShowTokenButton_clicked();
-
-    void on_mcpServerCopyTokenButton_clicked();
-
-    void on_mcpServerGenerateTokenButton_clicked();
 
     void on_cloudConnectionComboBox_currentIndexChanged(int index);
 
@@ -225,19 +164,13 @@ class SettingsDialog : public MasterDialog {
 
     void on_cloudConnectionRemoveButton_clicked();
 
-    void on_noteFolderCloudConnectionComboBox_currentIndexChanged(int index);
-
     void storeSelectedCloudConnection();
 
     void on_ownCloudServerAppPasswordPageButton_clicked();
 
-    void on_allowDifferentNoteFileNameCheckBox_toggled(bool checked);
-
     void on_languageSearchLineEdit_textChanged(const QString &arg1);
 
     void on_databaseIntegrityCheckButton_clicked();
-
-    void on_scriptReloadEngineButton2_clicked();
 
     void on_loginFlowButton_clicked();
 
@@ -257,19 +190,15 @@ class SettingsDialog : public MasterDialog {
 
    private:
     Ui::SettingsDialog *ui;
-    QStatusBar *noteFolderRemotePathTreeStatusBar;
     bool appIsValid;
     QString appVersion;
     QString serverVersion;
     QString notesPathExistsText;
     QString connectionErrorMessage;
-    NoteFolder _selectedNoteFolder;
-    Script _selectedScript;
     static const int _defaultMarkdownHighlightingInterval = 200;
     QSplitter *_mainSplitter;
     QButtonGroup *_noteNotificationButtonGroup;
     QCheckBox *_noteNotificationNoneCheckBox;
-    QString _newScriptName;
     CloudConnection _selectedCloudConnection;
     int _loginFlowPollCount = 0;
     QHash<int, bool> _pageInitialized;
@@ -299,25 +228,6 @@ class SettingsDialog : public MasterDialog {
 
     static QString getSelectedListWidgetValue(QListWidget *listWidget);
 
-    void setupNoteFolderPage();
-
-    static bool scriptMatchesSearchFilter(const Script &script, const QString &searchText);
-
-    QTreeWidgetItem *findNoteFolderRemotePathTreeWidgetItem(QTreeWidgetItem *parent,
-                                                            const QString &text);
-
-    void addPathToNoteFolderRemotePathTreeWidget(QTreeWidgetItem *parent, const QString &path);
-
-    QString generatePathFromCurrentNoteFolderRemotePathItem(QTreeWidgetItem *item);
-
-    void setNoteFolderRemotePathTreeWidgetFrameVisibility(bool visi);
-
-    void setupScriptingPage();
-
-    void storeScriptListEnabledState();
-
-    void validateCurrentScript();
-
     QListWidgetItem *addCustomNoteFileExtension(QString fileExtension);
 
     void loadShortcutSettings();
@@ -345,14 +255,6 @@ class SettingsDialog : public MasterDialog {
 
     bool connectionTestCanBeStarted() const;
 
-    void reloadScriptList() const;
-
-    void reloadCurrentScriptPage();
-
-    void readPanelSettings();
-
-    void storePanelSettings();
-
     void loadInterfaceStyleComboBox() const;
 
     void initSearchEngineComboBox() const;
@@ -372,19 +274,6 @@ class SettingsDialog : public MasterDialog {
     bool hasDarkModeSettingChanges() const;
 
     void applyDarkModeSettings();
-
-    void populateSubfolderTree();
-
-    void populateSubfolderTreeFromDir(QTreeWidgetItem *parentItem, const QString &path,
-                                      const QString &relativePath);
-    void applySubfolderTreeCheckStates(QTreeWidget *tree, const QStringList &excludedPaths);
-    void applyCheckStateToItem(QTreeWidgetItem *item, const QStringList &excludedPaths);
-
-    void updateSubfolderVisibility();
-
-    void collectExcludedSubfolderPaths(QTreeWidgetItem *item, QStringList &excludedPaths);
-
-    void saveSubfolderTreeSelection();
 
     bool initializePage(int index);
 };

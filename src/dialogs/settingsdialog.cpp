@@ -33,8 +33,10 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QPointer>
+#include <QRadioButton>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
+#include <QScrollArea>
 #include <QSplitter>
 #include <QStatusBar>
 #include <QStyleFactory>
@@ -122,7 +124,6 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     ui->connectButton->setDefault(true);
     ui->noteSaveIntervalTime->setToolTip(ui->noteSaveIntervalTimeLabel->toolTip());
     ui->removeCustomNoteFileExtensionButton->setDisabled(true);
-    _newScriptName = tr("New script");
 
     ui->languageToolSettingsWidget->initialize();
 
@@ -165,23 +166,10 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     connect(ui->allowOnlyOneAppInstanceCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->showSystemTrayCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->startHiddenCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
-    connect(ui->noteFolderButtonsCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
-    connect(ui->noteListPreviewCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
-    connect(ui->maxNoteFileSizeSpinBox, SIGNAL(valueChanged(int)), this, SLOT(needRestart()));
-    connect(ui->ignoreNoteSubFoldersLineEdit, SIGNAL(textChanged(QString)), this,
-            SLOT(needRestart()));
-    connect(ui->webCompanionSettingsWidget, &WebCompanionSettingsWidget::needRestart, this,
+    connect(ui->panelsSettingsWidget, &PanelsSettingsWidget::needRestart, this,
             &SettingsDialog::needRestart);
-    connect(ui->editorSettingsWidget, &EditorSettingsWidget::needRestart, this,
-            &SettingsDialog::needRestart);
-    connect(ui->editorSettingsWidget, &EditorSettingsWidget::wikiLinkSupportToggled,
-            ui->editorFontColorSettingsWidget,
-            &EditorFontColorSettingsWidget::setWikiLinkItemsVisible);
-    connect(ui->mcpServerEnabledCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
-    connect(ui->mcpServerTokenLineEdit, SIGNAL(textChanged(QString)), this, SLOT(needRestart()));
     connect(ui->webApplicationSettingsWidget, &WebApplicationSettingsWidget::needRestart, this,
             &SettingsDialog::needRestart);
-    connect(ui->enableNoteTreeCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->aiAutocompleteCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
 
     connect(ui->cloudServerConnectionNameLineEdit, &QLineEdit::textChanged, this,
@@ -211,6 +199,10 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
         close();
     });
 
+    // Connect note folder settings widget signals
+    connect(ui->noteFolderSettingsWidget, &NoteFolderSettingsWidget::storeSettingsRequested, this,
+            &SettingsDialog::storeSettings);
+
     // Connect todo settings widget signals
     connect(ui->todoSettingsWidget, &TodoSettingsWidget::storeSettingsRequested, this,
             &SettingsDialog::storeSettings);
@@ -221,7 +213,7 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
             });
 
     connect(ui->aiSettingsWidget, &AiSettingsWidget::searchScriptRepositoryRequested, this,
-            [this]() { searchScriptInRepository(); });
+            [this]() { ui->scriptingSettingsWidget->searchScriptInRepository(); });
 
     //    connect(ui->layoutPresetWidget, SIGNAL(layoutStored(QString)),
     //            this, SLOT(needRestart()));
@@ -292,17 +284,8 @@ void SettingsDialog::replaceOwnCloudText() const {
     QTreeWidgetItem *item = ui->settingsTreeWidget->topLevelItem(OwnCloudPage);
     item->setText(0, Utils::Misc::replaceOwnCloudText(item->text(0)));
 
-    // note folder settings
-    ui->noteFolderRemotePathLabel->setText(
-        Utils::Misc::replaceOwnCloudText(ui->noteFolderRemotePathLabel->text()));
-    ui->noteFolderRemotePathListLabel->setText(
-        Utils::Misc::replaceOwnCloudText(ui->noteFolderRemotePathListLabel->text()));
-    ui->useOwnCloudPathButton->setText(
-        Utils::Misc::replaceOwnCloudText(ui->useOwnCloudPathButton->text()));
-    ui->noteFolderRemotePathButton->setToolTip(
-        Utils::Misc::replaceOwnCloudText(ui->noteFolderRemotePathButton->toolTip()));
-    ui->noteFolderRemotePathLineEdit->setToolTip(
-        Utils::Misc::replaceOwnCloudText(ui->noteFolderRemotePathLineEdit->toolTip()));
+    // Note folder settings
+    ui->noteFolderSettingsWidget->replaceOwnCloudText();
 }
 
 /**
@@ -514,13 +497,6 @@ void SettingsDialog::storeSettings() {
                       ui->allowOnlyOneAppInstanceCheckBox->isChecked());
     settings.setValue(QStringLiteral("interfaceLanguage"),
                       getSelectedListWidgetValue(ui->languageListWidget));
-    settings.setValue(QStringLiteral("noteEditIsCentralWidget"),
-                      ui->noteEditCentralWidgetCheckBox->isChecked());
-    settings.setValue(QStringLiteral("restoreNoteTabs"), ui->restoreNoteTabsCheckBox->isChecked());
-    settings.setValue(QStringLiteral("hideTabCloseButton"),
-                      ui->hideTabCloseButtonCheckBox->isChecked());
-    settings.setValue(QStringLiteral("useNoteFolderButtons"),
-                      ui->noteFolderButtonsCheckBox->isChecked());
     ui->previewFontSettingsWidget->storeSettings();
     ui->debugOptionSettingsWidget->storeSettings();
     ui->editorSettingsWidget->storeSettings();
@@ -563,8 +539,8 @@ void SettingsDialog::storeSettings() {
     // apply and store the toolbar configuration
     on_applyToolbarButton_clicked();
 
-    // store the enabled state of the scripts
-    storeScriptListEnabledState();
+    // Store the enabled state of the scripts
+    ui->scriptingSettingsWidget->storeSettings();
 
     // store image scaling settings
     settings.setValue(QStringLiteral("imageScaleDown"), ui->imageScaleDownCheckBox->isChecked());
@@ -576,8 +552,8 @@ void SettingsDialog::storeSettings() {
     // store git settings
     ui->gitSettingsWidget->storeSettings();
 
-    // store Panels settings
-    storePanelSettings();
+    // Panels settings are stored in panelsSettingsWidget->storeSettings()
+    ui->panelsSettingsWidget->storeSettings();
 
     // store the interface style settings
     if (ui->interfaceStyleComboBox->currentIndex() > 0) {
@@ -608,16 +584,8 @@ void SettingsDialog::storeSettings() {
 
     // Web companion settings are stored in webCompanionSettingsWidget->storeSettings()
 
-    settings.setValue(QStringLiteral("ai/mcpServerEnabled"),
-                      ui->mcpServerEnabledCheckBox->isChecked());
-    settings.setValue(QStringLiteral("ai/mcpServerPort"), ui->mcpServerPortSpinBox->value());
-    QString mcpServerToken = ui->mcpServerTokenLineEdit->text().trimmed();
-    if (mcpServerToken.isEmpty()) {
-        mcpServerToken = Utils::Misc::generateRandomString(32);
-        ui->mcpServerTokenLineEdit->setText(mcpServerToken);
-    }
-    settings.setValue(QStringLiteral("ai/mcpServerToken"),
-                      CryptoService::instance()->encryptToString(mcpServerToken));
+    // MCP server settings are stored in mcpServerSettingsWidget->storeSettings()
+    ui->mcpServerSettingsWidget->storeSettings();
 
     // Web application settings are stored in webApplicationSettingsWidget->storeSettings()
 
@@ -628,103 +596,13 @@ void SettingsDialog::storeSettings() {
                       ui->aiAutocompleteCheckBox->isChecked());
 }
 
-/**
- * @brief Stores the Panel settings
- */
-void SettingsDialog::storePanelSettings() {
-    SettingsService settings;
-    // Notes Panel Options
-    ui->notesPanelSortAlphabeticalRadioButton->isChecked()
-        ? settings.setValue(QStringLiteral("notesPanelSort"), SORT_ALPHABETICAL)
-        : settings.setValue(QStringLiteral("notesPanelSort"), SORT_BY_LAST_CHANGE);
-    ui->notesPanelOrderDescendingRadioButton->isChecked()
-        ? settings.setValue(QStringLiteral("notesPanelOrder"), ORDER_DESCENDING)
-        : settings.setValue(QStringLiteral("notesPanelOrder"), ORDER_ASCENDING);
-
-    // Note Subfolders Panel Options
-    settings.setValue(QStringLiteral("noteSubfoldersPanelHideSearch"),
-                      ui->noteSubfoldersPanelHideSearchCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("noteSubfoldersPanelDisplayAsFullTree"),
-                      ui->noteSubfoldersPanelDisplayAsFullTreeCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("noteSubfoldersPanelShowRootFolderName"),
-                      ui->noteSubfoldersPanelShowRootFolderNameCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("noteSubfoldersPanelShowNotesRecursively"),
-                      ui->noteSubfoldersPanelShowNotesRecursivelyCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("disableSavedSearchesAutoCompletion"),
-                      ui->disableSavedSearchesAutoCompletionCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("showMatches"), ui->showMatchesCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("noteSearchPanelOpenCreatedNotesInNewTab"),
-                      ui->noteSearchPanelOpenCreatedNotesInNewTabCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("noteSubfoldersPanelShowFullPath"),
-                      ui->noteSubfoldersPanelShowFullPathCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("noteSubfoldersPanelTabsUnsetAllNotesSelection"),
-                      ui->noteSubfoldersPanelTabsUnsetAllNotesSelectionCheckBox->isChecked());
-
-    ui->noteSubfoldersPanelSortAlphabeticalRadioButton->isChecked()
-        ? settings.setValue(QStringLiteral("noteSubfoldersPanelSort"), SORT_ALPHABETICAL)
-        : settings.setValue(QStringLiteral("noteSubfoldersPanelSort"), SORT_BY_LAST_CHANGE);
-
-    ui->noteSubfoldersPanelOrderDescendingRadioButton->isChecked()
-        ? settings.setValue(QStringLiteral("noteSubfoldersPanelOrder"), ORDER_DESCENDING)
-        : settings.setValue(QStringLiteral("noteSubfoldersPanelOrder"), ORDER_ASCENDING);
-
-    const QSignalBlocker blocker(ui->ignoreNoteSubFoldersLineEdit);
-    settings.setValue(QStringLiteral("ignoreNoteSubFolders"),
-                      ui->ignoreNoteSubFoldersLineEdit->text());
-
-    const QSignalBlocker blocker2(ui->ignoredNoteFilesLineEdit);
-    settings.setValue(QStringLiteral("ignoredNoteFiles"), ui->ignoredNoteFilesLineEdit->text());
-
-    // Tags Panel Options
-    settings.setValue(QStringLiteral("tagsPanelHideSearch"),
-                      ui->tagsPanelHideSearchCheckBox->isChecked());
-    settings.setValue(QStringLiteral("tagsPanelHideNoteCount"),
-                      ui->tagsPanelHideNoteCountCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("taggingShowNotesRecursively"),
-                      ui->taggingShowNotesRecursivelyCheckBox->isChecked());
-    settings.setValue(QStringLiteral("noteListPreview"), ui->noteListPreviewCheckBox->isChecked());
-    settings.setValue(QStringLiteral("allowEmptyNotes"), ui->allowEmptyNotesCheckBox->isChecked());
-    settings.setValue(QStringLiteral("maxNoteFileSize"),
-                      ui->maxNoteFileSizeSpinBox->value() * 1024);
-
-    ui->tagsPanelSortAlphabeticalRadioButton->isChecked()
-        ? settings.setValue(QStringLiteral("tagsPanelSort"), SORT_ALPHABETICAL)
-        : settings.setValue(QStringLiteral("tagsPanelSort"), SORT_BY_LAST_CHANGE);
-
-    ui->tagsPanelOrderDescendingRadioButton->isChecked()
-        ? settings.setValue(QStringLiteral("tagsPanelOrder"), ORDER_DESCENDING)
-        : settings.setValue(QStringLiteral("tagsPanelOrder"), ORDER_ASCENDING);
-
-    // Navigation Panel Options
-    settings.setValue(QStringLiteral("navigationPanelHideSearch"),
-                      ui->navigationPanelHideSearchCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("navigationPanelAutoSelect"),
-                      ui->navigationPanelAutoSelectCheckBox->isChecked());
-
-    settings.setValue(QStringLiteral("enableNoteTree"), ui->enableNoteTreeCheckBox->isChecked());
-}
-
 void SettingsDialog::readSettings() {
     SettingsService settings;
 
     initSearchEngineComboBox();
 
-    // set current note folder list item
-    QListWidgetItem *noteFolderListItem = Utils::Gui::getListWidgetItemWithUserData(
-        ui->noteFolderListWidget, NoteFolder::currentNoteFolderId());
-    if (noteFolderListItem != nullptr) {
-        ui->noteFolderListWidget->setCurrentItem(noteFolderListItem);
-    }
+    // Set current note folder list item via the widget
+    ui->noteFolderSettingsWidget->readSettings();
 
     ui->ownCloudSupportCheckBox->setChecked(OwnCloudService::isOwnCloudSupportEnabled());
     on_ownCloudSupportCheckBox_toggled();
@@ -776,14 +654,6 @@ void SettingsDialog::readSettings() {
     ui->debugOptionSettingsWidget->readSettings();
     ui->editorSettingsWidget->readSettings();
     ui->languageToolSettingsWidget->readSettings();
-    ui->noteEditCentralWidgetCheckBox->setChecked(
-        settings.value(QStringLiteral("noteEditIsCentralWidget"), true).toBool());
-    ui->restoreNoteTabsCheckBox->setChecked(
-        settings.value(QStringLiteral("restoreNoteTabs"), true).toBool());
-    ui->hideTabCloseButtonCheckBox->setChecked(
-        settings.value(QStringLiteral("hideTabCloseButton")).toBool());
-    ui->noteFolderButtonsCheckBox->setChecked(
-        settings.value(QStringLiteral("useNoteFolderButtons")).toBool());
     ui->allowOnlyOneAppInstanceCheckBox->setChecked(
         settings.value(QStringLiteral("allowOnlyOneAppInstance")).toBool());
     ui->toolbarIconSizeSpinBox->setValue(
@@ -867,8 +737,8 @@ void SettingsDialog::readSettings() {
     // load git settings
     ui->gitSettingsWidget->readSettings();
 
-    // read panel settings
-    readPanelSettings();
+    // Panels settings are read in panelsSettingsWidget->readSettings()
+    ui->panelsSettingsWidget->readSettings();
 
     // load the settings for the interface style combo box
     loadInterfaceStyleComboBox();
@@ -903,10 +773,8 @@ void SettingsDialog::readSettings() {
 
     // Web companion settings are read in webCompanionSettingsWidget->readSettings()
 
-    ui->mcpServerEnabledCheckBox->setChecked(McpService::isEnabled());
-    ui->mcpServerPortSpinBox->setValue(McpService::getPort());
-    ui->mcpServerTokenLineEdit->setText(McpService::getOrGenerateToken());
-    on_mcpServerEnabledCheckBox_toggled(ui->mcpServerEnabledCheckBox->isChecked());
+    // MCP server settings are read in mcpServerSettingsWidget->readSettings()
+    ui->mcpServerSettingsWidget->readSettings();
 
     // Web application settings are read in webApplicationSettingsWidget->readSettings()
 
@@ -971,111 +839,6 @@ void SettingsDialog::loadInterfaceStyleComboBox() const {
     }
 
     Utils::Gui::applyInterfaceStyle();
-}
-
-/**
- * @brief Read the Panel Settings
- */
-void SettingsDialog::readPanelSettings() {
-    SettingsService settings;
-    // Notes Panel Options
-    if (settings.value(QStringLiteral("notesPanelSort"), SORT_BY_LAST_CHANGE).toInt() ==
-        SORT_ALPHABETICAL) {
-        ui->notesPanelSortAlphabeticalRadioButton->setChecked(true);
-        ui->notesPanelOrderGroupBox->setEnabled(true);
-    } else {
-        ui->notesPanelSortByLastChangeRadioButton->setChecked(true);
-        ui->notesPanelOrderGroupBox->setEnabled(false);
-    }
-    settings.value(QStringLiteral("notesPanelOrder")).toInt() == ORDER_DESCENDING
-        ? ui->notesPanelOrderDescendingRadioButton->setChecked(true)
-        : ui->notesPanelOrderAscendingRadioButton->setChecked(true);
-
-    // Note Subfoldes Panel Options
-    ui->noteSubfoldersPanelHideSearchCheckBox->setChecked(
-        settings.value(QStringLiteral("noteSubfoldersPanelHideSearch")).toBool());
-
-    ui->noteSubfoldersPanelDisplayAsFullTreeCheckBox->setChecked(
-        settings.value(QStringLiteral("noteSubfoldersPanelDisplayAsFullTree"), true).toBool());
-
-    ui->noteSubfoldersPanelShowNotesRecursivelyCheckBox->setChecked(
-        settings.value(QStringLiteral("noteSubfoldersPanelShowNotesRecursively")).toBool());
-
-    ui->disableSavedSearchesAutoCompletionCheckBox->setChecked(
-        settings.value(QStringLiteral("disableSavedSearchesAutoCompletion")).toBool());
-
-    ui->showMatchesCheckBox->setChecked(
-        settings.value(QStringLiteral("showMatches"), true).toBool());
-
-    ui->noteSearchPanelOpenCreatedNotesInNewTabCheckBox->setChecked(
-        settings.value(QStringLiteral("noteSearchPanelOpenCreatedNotesInNewTab")).toBool());
-
-    if (settings.value(QStringLiteral("noteSubfoldersPanelShowRootFolderName"), true).toBool()) {
-        ui->noteSubfoldersPanelShowRootFolderNameCheckBox->setChecked(true);
-        ui->noteSubfoldersPanelShowFullPathCheckBox->setEnabled(true);
-    } else {
-        ui->noteSubfoldersPanelShowRootFolderNameCheckBox->setChecked(false);
-        ui->noteSubfoldersPanelShowFullPathCheckBox->setEnabled(false);
-    }
-
-    ui->noteSubfoldersPanelTabsUnsetAllNotesSelectionCheckBox->setChecked(
-        settings.value(QStringLiteral("noteSubfoldersPanelTabsUnsetAllNotesSelection")).toBool());
-
-    ui->noteSubfoldersPanelShowFullPathCheckBox->setChecked(
-        settings.value(QStringLiteral("noteSubfoldersPanelShowFullPath")).toBool());
-
-    if (settings.value(QStringLiteral("noteSubfoldersPanelSort")).toInt() == SORT_ALPHABETICAL) {
-        ui->noteSubfoldersPanelSortAlphabeticalRadioButton->setChecked(true);
-        ui->noteSubfoldersPanelOrderGroupBox->setEnabled(true);
-    } else {
-        ui->noteSubfoldersPanelSortByLastChangeRadioButton->setChecked(true);
-        ui->noteSubfoldersPanelOrderGroupBox->setEnabled(false);
-    }
-
-    settings.value(QStringLiteral("noteSubfoldersPanelOrder")).toInt() == ORDER_DESCENDING
-        ? ui->noteSubfoldersPanelOrderDescendingRadioButton->setChecked(true)
-        : ui->noteSubfoldersPanelOrderAscendingRadioButton->setChecked(true);
-
-    // Tags Panel Options
-    ui->tagsPanelHideSearchCheckBox->setChecked(
-        settings.value(QStringLiteral("tagsPanelHideSearch")).toBool());
-    ui->tagsPanelHideNoteCountCheckBox->setChecked(
-        settings.value(QStringLiteral("tagsPanelHideNoteCount"), false).toBool());
-
-    ui->taggingShowNotesRecursivelyCheckBox->setChecked(
-        settings.value(QStringLiteral("taggingShowNotesRecursively")).toBool());
-    ui->noteListPreviewCheckBox->setChecked(Utils::Misc::isNoteListPreview());
-    ui->allowEmptyNotesCheckBox->setChecked(
-        settings.value(QStringLiteral("allowEmptyNotes"), true).toBool());
-    ui->maxNoteFileSizeSpinBox->setValue(Utils::Misc::getMaximumNoteFileSize() / 1024);
-
-    if (settings.value(QStringLiteral("tagsPanelSort")).toInt() == SORT_ALPHABETICAL) {
-        ui->tagsPanelSortAlphabeticalRadioButton->setChecked(true);
-        ui->tagsPanelOrderGroupBox->setEnabled(true);
-    } else {
-        ui->tagsPanelSortByLastChangeRadioButton->setChecked(true);
-        ui->tagsPanelOrderGroupBox->setEnabled(false);
-    }
-
-    settings.value(QStringLiteral("tagsPanelOrder")).toInt() == ORDER_DESCENDING
-        ? ui->tagsPanelOrderDescendingRadioButton->setChecked(true)
-        : ui->tagsPanelOrderAscendingRadioButton->setChecked(true);
-
-    ui->ignoreNoteSubFoldersLineEdit->setText(
-        settings.value(QStringLiteral("ignoreNoteSubFolders"), IGNORED_NOTE_SUBFOLDERS_DEFAULT)
-            .toString());
-
-    ui->ignoredNoteFilesLineEdit->setText(
-        settings.value(QStringLiteral("ignoredNoteFiles")).toString());
-
-    // Navigation Panel Options
-    ui->navigationPanelHideSearchCheckBox->setChecked(
-        settings.value(QStringLiteral("navigationPanelHideSearch")).toBool());
-
-    ui->navigationPanelAutoSelectCheckBox->setChecked(
-        settings.value(QStringLiteral("navigationPanelAutoSelect"), true).toBool());
-
-    ui->enableNoteTreeCheckBox->setChecked(Utils::Misc::isEnableNoteTree());
 }
 
 /**
@@ -1643,786 +1406,12 @@ void SettingsDialog::on_setExternalEditorPathToolButton_clicked() {
 /**
  * Does the note folder page setup
  */
-void SettingsDialog::setupNoteFolderPage() {
-    //    const QSignalBlocker blocker(ui->noteFolderListWidget);
-    // Q_UNUSED(blocker)
-
-    // hide the owncloud server settings
-    ui->noteFolderEditFrame->setEnabled(NoteFolder::countAll() > 0);
-    setNoteFolderRemotePathTreeWidgetFrameVisibility(false);
-
-    QList<NoteFolder> noteFolders = NoteFolder::fetchAll();
-    int noteFoldersCount = noteFolders.count();
-
-    // populate the note folder list
-    if (noteFoldersCount > 0) {
-        Q_FOREACH (NoteFolder noteFolder, noteFolders) {
-            auto *item = new QListWidgetItem(noteFolder.getName());
-            item->setData(Qt::UserRole, noteFolder.getId());
-            ui->noteFolderListWidget->addItem(item);
-
-            // set the current row
-            if (noteFolder.getId() == NoteFolder::currentNoteFolderId()) {
-                ui->noteFolderListWidget->setCurrentItem(item);
-            }
-        }
-    }
-
-    // disable the remove button if there is only one item
-    ui->noteFolderRemoveButton->setEnabled(noteFoldersCount > 1);
-
-    // set local path placeholder text
-    ui->noteFolderLocalPathLineEdit->setPlaceholderText(Utils::Misc::defaultNotesPath());
-
-    noteFolderRemotePathTreeStatusBar = new QStatusBar(this);
-    ui->noteFolderRemotePathTreeWidgetFrame->layout()->addWidget(noteFolderRemotePathTreeStatusBar);
-}
-
-void SettingsDialog::on_noteFolderListWidget_currentItemChanged(QListWidgetItem *current,
-                                                                QListWidgetItem *previous) {
-    Q_UNUSED(previous)
-
-    setNoteFolderRemotePathTreeWidgetFrameVisibility(false);
-
-    int noteFolderId = current->data(Qt::UserRole).toInt();
-    _selectedNoteFolder = NoteFolder::fetch(noteFolderId);
-    if (_selectedNoteFolder.isFetched()) {
-        ui->noteFolderNameLineEdit->setText(_selectedNoteFolder.getName());
-        ui->noteFolderLocalPathLineEdit->setText(_selectedNoteFolder.getLocalPath());
-        ui->noteFolderRemotePathLineEdit->setText(_selectedNoteFolder.getRemotePath());
-        ui->noteFolderShowSubfoldersCheckBox->setChecked(_selectedNoteFolder.isShowSubfolders());
-        ui->noteFolderAllSubfoldersCheckBox->setChecked(_selectedNoteFolder.isAllSubfolders());
-        ui->allowDifferentNoteFileNameCheckBox->setChecked(
-            _selectedNoteFolder.settingsValue(QStringLiteral("allowDifferentNoteFileName"))
-                .toBool());
-        ui->noteFolderGitCommitCheckBox->setChecked(_selectedNoteFolder.isUseGit());
-        Utils::Gui::setComboBoxIndexByUserData(ui->noteFolderCloudConnectionComboBox,
-                                               _selectedNoteFolder.getCloudConnectionId());
-
-        const QSignalBlocker blocker(ui->noteFolderActiveCheckBox);
-        Q_UNUSED(blocker)
-        ui->noteFolderActiveCheckBox->setChecked(_selectedNoteFolder.isCurrent());
-    }
-
-    updateSubfolderVisibility();
-}
-
-void SettingsDialog::on_noteFolderAddButton_clicked() {
-    const int cloudConnectionId = _selectedNoteFolder.getCloudConnectionId();
-    const QString currentPath = _selectedNoteFolder.getLocalPath();
-
-    _selectedNoteFolder = NoteFolder();
-    _selectedNoteFolder.setName(tr("new folder"));
-    _selectedNoteFolder.setLocalPath(currentPath);
-    _selectedNoteFolder.setPriority(ui->noteFolderListWidget->count());
-    _selectedNoteFolder.setCloudConnectionId(cloudConnectionId);
-    _selectedNoteFolder.suggestRemotePath();
-    _selectedNoteFolder.store();
-
-    if (_selectedNoteFolder.isFetched()) {
-        auto *item = new QListWidgetItem(_selectedNoteFolder.getName());
-        item->setData(Qt::UserRole, _selectedNoteFolder.getId());
-        ui->noteFolderListWidget->addItem(item);
-
-        // set the current row
-        ui->noteFolderListWidget->setCurrentRow(ui->noteFolderListWidget->count() - 1);
-
-        // enable the remove button
-        ui->noteFolderRemoveButton->setEnabled(true);
-
-        // focus the folder name edit and select the text
-        ui->noteFolderNameLineEdit->setFocus();
-        ui->noteFolderNameLineEdit->selectAll();
-    }
-}
-
 /**
- * Removes the current note folder
- */
-void SettingsDialog::on_noteFolderRemoveButton_clicked() {
-    if (ui->noteFolderListWidget->count() < 2) {
-        return;
-    }
-
-    if (Utils::Gui::question(this, tr("Remove note folder"),
-                             tr("Remove the current note folder <strong>%1</strong>?")
-                                 .arg(_selectedNoteFolder.getName()),
-                             QStringLiteral("remove-note-folder")) == QMessageBox::Yes) {
-        bool wasCurrent = _selectedNoteFolder.isCurrent();
-
-        SettingsService settings;
-
-        // remove saved searches
-        QString settingsKey =
-            "savedSearches/noteFolder-" + QString::number(_selectedNoteFolder.getId());
-        settings.remove(settingsKey);
-
-        // remove tree widget expand state setting
-        settingsKey = NoteSubFolder::treeWidgetExpandStateSettingsKey(_selectedNoteFolder.getId());
-        settings.remove(settingsKey);
-
-        // remove the note folder from the database
-        _selectedNoteFolder.remove();
-
-        // remove the list item
-        ui->noteFolderListWidget->takeItem(ui->noteFolderListWidget->currentRow());
-
-        // disable the remove button if there is only one item left
-        ui->noteFolderRemoveButton->setEnabled(ui->noteFolderListWidget->count() > 1);
-
-        // if the removed note folder was the current folder we set the first
-        // note folder as new current one
-        if (wasCurrent) {
-            QList<NoteFolder> noteFolders = NoteFolder::fetchAll();
-            if (noteFolders.count() > 0) {
-                noteFolders[0].setAsCurrent();
-            }
-        }
-    }
-}
-
-/**
- * Updates the name of the current note folder edit
- */
-void SettingsDialog::on_noteFolderNameLineEdit_editingFinished() {
-    QString text = ui->noteFolderNameLineEdit->text().remove(QStringLiteral("\n")).trimmed();
-    text.truncate(50);
-
-    // fallback to directory name in case name edit is empty
-    if (text.isEmpty()) {
-        const QString localPath = ui->noteFolderLocalPathLineEdit->text();
-        text = QDir(localPath).dirName();
-    }
-
-    _selectedNoteFolder.setName(text);
-    _selectedNoteFolder.store();
-
-    ui->noteFolderListWidget->currentItem()->setText(text);
-}
-
-/**
- * Updates the remote path of the current note folder edit
- */
-void SettingsDialog::on_noteFolderRemotePathLineEdit_editingFinished() {
-    QString text = ui->noteFolderRemotePathLineEdit->text();
-    _selectedNoteFolder.setRemotePath(text);
-    QString remotePath = _selectedNoteFolder.fixRemotePath();
-    _selectedNoteFolder.store();
-
-    // set new path if fixed path differs
-    if (text != remotePath) {
-        const QSignalBlocker blocker(ui->noteFolderRemotePathLineEdit);
-        Q_UNUSED(blocker)
-
-        ui->noteFolderRemotePathLineEdit->setText(remotePath);
-    }
-}
-
-void SettingsDialog::on_noteFolderLocalPathButton_clicked() {
-    QString dir = QFileDialog::getExistingDirectory(
-        this, tr("Please select the folder where your notes will get stored to"),
-        _selectedNoteFolder.getLocalPath(), QFileDialog::ShowDirsOnly);
-
-    QDir d = QDir(dir);
-
-    if (d.exists() && (!dir.isEmpty())) {
-        ui->noteFolderLocalPathLineEdit->setText(dir);
-        _selectedNoteFolder.setLocalPath(dir);
-        _selectedNoteFolder.store();
-    }
-}
-
-/**
- * Sets the current note folder as active note folder
- */
-void SettingsDialog::on_noteFolderActiveCheckBox_stateChanged(int arg1) {
-    Q_UNUSED(arg1)
-
-    if (!ui->noteFolderActiveCheckBox->isChecked()) {
-        const QSignalBlocker blocker(ui->noteFolderActiveCheckBox);
-        Q_UNUSED(blocker)
-        ui->noteFolderActiveCheckBox->setChecked(true);
-    } else {
-        _selectedNoteFolder.setAsCurrent();
-        MainWindow::instance()->resetBrokenTagNotesLinkFlag();
-    }
-}
-
-void SettingsDialog::on_noteFolderRemotePathButton_clicked() {
-    // store ownCloud settings
-    storeSettings();
-
-    setNoteFolderRemotePathTreeWidgetFrameVisibility(true);
-
-    noteFolderRemotePathTreeStatusBar->showMessage(tr("Loading folders from server"));
-
-    OwnCloudService *ownCloud =
-        OwnCloudService::instance(true, _selectedNoteFolder.getCloudConnectionId());
-    ownCloud->settingsGetFileList(this, QLatin1String(""));
-}
-
-/**
- * Populates the note folder remote path tree with items
- *
- * Callback function from OwnCloudService::loadDirectory()
+ * Delegates the remote path list callback to the NoteFolderSettingsWidget.
+ * Called by OwnCloudService::loadDirectory().
  */
 void SettingsDialog::setNoteFolderRemotePathList(QStringList pathList) {
-    if (pathList.count() <= 1) {
-        noteFolderRemotePathTreeStatusBar->showMessage(
-            tr("No more folders were found in the current folder"), 1000);
-    } else {
-        noteFolderRemotePathTreeStatusBar->clearMessage();
-    }
-
-    Q_FOREACH (QString path, pathList) {
-        if (!path.isEmpty()) {
-            addPathToNoteFolderRemotePathTreeWidget(nullptr, path);
-        }
-    }
-}
-
-void SettingsDialog::addPathToNoteFolderRemotePathTreeWidget(QTreeWidgetItem *parent,
-                                                             const QString &path) {
-    if (path.isEmpty()) {
-        return;
-    }
-
-    QStringList pathPartList = path.split(QStringLiteral("/"));
-    QString pathPart = pathPartList.takeFirst();
-    QTreeWidgetItem *item = findNoteFolderRemotePathTreeWidgetItem(parent, pathPart);
-
-    const QSignalBlocker blocker(ui->noteFolderRemotePathTreeWidget);
-    Q_UNUSED(blocker)
-
-    if (item == nullptr) {
-        item = new QTreeWidgetItem();
-        item->setText(0, pathPart);
-        if (parent == nullptr) {
-            ui->noteFolderRemotePathTreeWidget->addTopLevelItem(item);
-        } else {
-            parent->addChild(item);
-            parent->setExpanded(true);
-        }
-    }
-
-    if (pathPartList.count() > 0) {
-        addPathToNoteFolderRemotePathTreeWidget(item, pathPartList.join(QStringLiteral("/")));
-    }
-}
-
-QTreeWidgetItem *SettingsDialog::findNoteFolderRemotePathTreeWidgetItem(QTreeWidgetItem *parent,
-                                                                        const QString &text) {
-    if (parent == nullptr) {
-        for (int i = 0; i < ui->noteFolderRemotePathTreeWidget->topLevelItemCount(); i++) {
-            QTreeWidgetItem *item = ui->noteFolderRemotePathTreeWidget->topLevelItem(i);
-            if (item->text(0) == text) {
-                return item;
-            }
-        }
-    } else {
-        for (int i = 0; i < parent->childCount(); i++) {
-            QTreeWidgetItem *item = parent->child(i);
-            if (item->text(0) == text) {
-                return item;
-            }
-        }
-    }
-
-    return nullptr;
-}
-
-void SettingsDialog::on_noteFolderRemotePathTreeWidget_currentItemChanged(
-    QTreeWidgetItem *current, QTreeWidgetItem *previous) {
-    Q_UNUSED(previous)
-
-    QString folderName = generatePathFromCurrentNoteFolderRemotePathItem(current);
-    noteFolderRemotePathTreeStatusBar->showMessage(
-        tr("Loading folders in '%1' from server").arg(current->text(0)));
-
-    OwnCloudService *ownCloud =
-        OwnCloudService::instance(true, _selectedNoteFolder.getCloudConnectionId());
-    ownCloud->settingsGetFileList(this, folderName);
-}
-
-void SettingsDialog::on_noteFolderCloudConnectionComboBox_currentIndexChanged(int index) {
-    Q_UNUSED(index)
-    _selectedNoteFolder.setCloudConnectionId(
-        ui->noteFolderCloudConnectionComboBox->currentData().toInt());
-    _selectedNoteFolder.store();
-
-    // if there already were fetched remote folders then fetch them again
-    if (ui->noteFolderRemotePathTreeWidgetFrame->isVisible()) {
-        on_noteFolderRemotePathButton_clicked();
-    }
-}
-
-void SettingsDialog::on_useOwnCloudPathButton_clicked() {
-    QTreeWidgetItem *item = ui->noteFolderRemotePathTreeWidget->currentItem();
-    if (item == nullptr) {
-        return;
-    }
-
-    ui->noteFolderRemotePathLineEdit->clear();
-    ui->noteFolderRemotePathLineEdit->setText(
-        generatePathFromCurrentNoteFolderRemotePathItem(item));
-    setNoteFolderRemotePathTreeWidgetFrameVisibility(false);
-    on_noteFolderRemotePathLineEdit_editingFinished();
-}
-
-/**
- * Recursively generates the path string from the tree widget items
- */
-QString SettingsDialog::generatePathFromCurrentNoteFolderRemotePathItem(QTreeWidgetItem *item) {
-    if (item == nullptr) {
-        return QString();
-    }
-
-    QTreeWidgetItem *parent = item->parent();
-    if (parent != nullptr) {
-        return generatePathFromCurrentNoteFolderRemotePathItem(parent) + QStringLiteral("/") +
-               item->text(0);
-    }
-
-    return item->text(0);
-}
-
-void SettingsDialog::setNoteFolderRemotePathTreeWidgetFrameVisibility(bool visible) {
-    ui->noteFolderRemotePathTreeWidgetFrame->setVisible(visible);
-    ui->noteFolderVerticalSpacerFrame->setVisible(!visible);
-
-    const QSignalBlocker blocker(ui->noteFolderRemotePathTreeWidget);
-    Q_UNUSED(blocker)
-    ui->noteFolderRemotePathTreeWidget->clear();
-}
-
-/**
- * Does the scripting page setup
- */
-void SettingsDialog::setupScriptingPage() {
-    ui->scriptSearchLineEdit->clear();
-
-    // reload the script list
-    reloadScriptList();
-
-    QString issueUrl = QStringLiteral("https://github.com/pbek/QOwnNotes/issues");
-    QString documentationUrl = QStringLiteral("https://www.qownnotes.org/scripting/");
-    ui->scriptInfoLabel->setText(tr("Take a look at the <a href=\"%1\">Scripting documentation</a> "
-                                    "to get started fast.")
-                                     .arg(documentationUrl) +
-                                 "<br>" +
-                                 tr("If you need access to a certain functionality in "
-                                    "QOwnNotes please open an issue on the "
-                                    "<a href=\"%1\"> QOwnNotes issue page</a>.")
-                                     .arg(issueUrl));
-
-    /*
-     * Setup the "add script" button menu
-     */
-    auto *addScriptMenu = new QMenu(this);
-
-    QAction *searchScriptAction = addScriptMenu->addAction(tr("Search script repository"));
-    searchScriptAction->setIcon(QIcon::fromTheme(
-        QStringLiteral("edit-find"), QIcon(":icons/breeze-qownnotes/16x16/edit-find.svg")));
-    searchScriptAction->setToolTip(
-        tr("Find a script in the script "
-           "repository"));
-    connect(searchScriptAction, SIGNAL(triggered()), this, SLOT(searchScriptInRepository()));
-
-    QAction *updateScriptAction = addScriptMenu->addAction(tr("Check for script updates"));
-    updateScriptAction->setIcon(QIcon::fromTheme(
-        QStringLiteral("svn-update"), QIcon(":icons/breeze-qownnotes/16x16/svn-update.svg")));
-    connect(updateScriptAction, SIGNAL(triggered()), this, SLOT(checkForScriptUpdates()));
-
-    QAction *addAction = addScriptMenu->addAction(tr("Add local script"));
-    addAction->setIcon(QIcon::fromTheme(QStringLiteral("document-new"),
-                                        QIcon(":icons/breeze-qownnotes/16x16/document-new.svg")));
-    addAction->setToolTip(tr("Add an existing, local script"));
-    connect(addAction, SIGNAL(triggered()), this, SLOT(addLocalScript()));
-
-    ui->scriptAddButton->setMenu(addScriptMenu);
-}
-
-/**
- * Reloads the script list
- */
-void SettingsDialog::reloadScriptList() const {
-    QList<Script> scripts = Script::fetchAll();
-    int scriptsCount = scripts.count();
-    ui->scriptListWidget->clear();
-
-    const QString searchText = ui->scriptSearchLineEdit->text();
-
-    // populate the script list
-    if (scriptsCount > 0) {
-        Q_FOREACH (Script script, scripts) {
-            if (!searchText.isEmpty() && !scriptMatchesSearchFilter(script, searchText)) {
-                continue;
-            }
-            auto *item = new QListWidgetItem(script.getName());
-            item->setData(Qt::UserRole, script.getId());
-            item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
-            item->setCheckState(script.getEnabled() ? Qt::Checked : Qt::Unchecked);
-            ui->scriptListWidget->addItem(item);
-        }
-
-        // set the current row
-        if (ui->scriptListWidget->count() > 0) {
-            ui->scriptListWidget->setCurrentRow(0);
-        }
-    }
-
-    // disable the edit frame if there is no item
-    const bool hasVisibleScripts = ui->scriptListWidget->count() > 0;
-    ui->scriptEditFrame->setEnabled(hasVisibleScripts);
-    if (hasVisibleScripts) {
-        ui->scriptEditFrame->setVisible(true);
-    }
-
-    // disable the remove button if there is no item
-    ui->scriptRemoveButton->setEnabled(hasVisibleScripts);
-}
-
-bool SettingsDialog::scriptMatchesSearchFilter(const Script &script, const QString &searchText) {
-    const QString trimmedSearchText = searchText.trimmed();
-
-    if (trimmedSearchText.isEmpty()) {
-        return true;
-    }
-
-    const QString searchTextLower = trimmedSearchText.toLower();
-
-    if (script.getName().toLower().contains(searchTextLower)) {
-        return true;
-    }
-
-    if (!script.isScriptFromRepository()) {
-        return false;
-    }
-
-    const ScriptInfoJson infoJson = script.getScriptInfoJson();
-
-    const QString plainDescription = Utils::Misc::unescapeHtml(infoJson.description);
-    if (plainDescription.toLower().contains(searchTextLower)) {
-        return true;
-    }
-
-    if (infoJson.richAuthorText.toLower().contains(searchTextLower)) {
-        return true;
-    }
-
-    if (infoJson.version.toLower().contains(searchTextLower)) {
-        return true;
-    }
-
-    if (infoJson.identifier.toLower().contains(searchTextLower)) {
-        return true;
-    }
-
-    return infoJson.name.toLower().contains(searchTextLower);
-}
-
-void SettingsDialog::on_scriptSearchLineEdit_textChanged(const QString &arg1) {
-    Q_UNUSED(arg1)
-    reloadScriptList();
-}
-
-/**
- * Adds a new script
- */
-void SettingsDialog::addLocalScript() {
-    _selectedScript = Script();
-    _selectedScript.setName(_newScriptName);
-    _selectedScript.setPriority(ui->scriptListWidget->count());
-    _selectedScript.store();
-
-    if (_selectedScript.isFetched()) {
-        auto *item = new QListWidgetItem(_selectedScript.getName());
-        item->setData(Qt::UserRole, _selectedScript.getId());
-        item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
-        item->setCheckState(Qt::Checked);
-        ui->scriptListWidget->addItem(item);
-
-        // set the current row
-        ui->scriptListWidget->setCurrentRow(ui->scriptListWidget->count() - 1);
-
-        // enable the remove button
-        ui->scriptRemoveButton->setEnabled(true);
-
-        // focus the script name edit and select the text
-        ui->scriptNameLineEdit->setFocus();
-        ui->scriptNameLineEdit->selectAll();
-
-        // open the dialog to select the script
-        on_scriptPathButton_clicked();
-    }
-}
-
-/**
- * Removes the current script
- */
-void SettingsDialog::on_scriptRemoveButton_clicked() {
-    if (ui->scriptListWidget->count() < 1) {
-        return;
-    }
-
-    if (Utils::Gui::question(
-            this, tr("Remove script"),
-            tr("Remove the current script <strong>%1</strong>?").arg(_selectedScript.getName()),
-            QStringLiteral("remove-script")) == QMessageBox::Yes) {
-        // remove the script from the database
-        _selectedScript.remove();
-
-        // remove the list item
-        ui->scriptListWidget->takeItem(ui->scriptListWidget->currentRow());
-
-        bool scriptsAvailable = ui->scriptListWidget->count() > 0;
-        // disable the remove button if there is only no item left
-        ui->scriptRemoveButton->setEnabled(scriptsAvailable);
-
-        // disable the edit frame if there is no item
-        ui->scriptEditFrame->setEnabled(scriptsAvailable);
-        ui->scriptEditFrame->setVisible(scriptsAvailable);
-
-        // reload the scripting engine
-        ScriptingService::instance()->reloadEngine();
-    }
-}
-
-/**
- * Allows to choose the script path
- */
-void SettingsDialog::on_scriptPathButton_clicked() {
-    QString path = ui->scriptPathLineEdit->text();
-    QString dirPath = path;
-
-    // get the path of the script if a script was set
-    if (!path.isEmpty()) {
-        dirPath = QFileInfo(path).dir().path();
-    }
-
-    // in portable mode the data path will be opened if path was empty
-    if (path.isEmpty() && Utils::Misc::isInPortableMode()) {
-        dirPath = Utils::Misc::portableDataPath();
-    }
-
-    FileDialog dialog(QStringLiteral("ScriptPath"));
-
-    if (!dirPath.isEmpty()) {
-        dialog.setDirectory(dirPath);
-    }
-
-    if (!path.isEmpty()) {
-        dialog.selectFile(path);
-    }
-
-    dialog.setFileMode(QFileDialog::ExistingFile);
-    dialog.setAcceptMode(QFileDialog::AcceptOpen);
-    dialog.setNameFilter(tr("QML files") + " (*.qml)");
-    dialog.setWindowTitle(tr("Please select your QML file"));
-    int ret = dialog.exec();
-
-    if (ret == QDialog::Accepted) {
-        path = dialog.selectedFile();
-
-        QFile file(path);
-
-        if (file.exists() && (!path.isEmpty())) {
-            QString scriptName = _selectedScript.getName();
-
-            // set the script name from the file name if none was set yet
-            if (scriptName.isEmpty() || (scriptName == _newScriptName)) {
-                scriptName = QFileInfo(file).baseName();
-                ui->scriptNameLineEdit->setText(scriptName);
-                ui->scriptNameLabel->setText(scriptName);
-                _selectedScript.setName(scriptName);
-
-                const QSignalBlocker blocker(ui->scriptListWidget);
-                Q_UNUSED(blocker)
-                ui->scriptListWidget->currentItem()->setText(scriptName);
-            }
-
-            ui->scriptPathLineEdit->setText(path);
-            _selectedScript.setScriptPath(path);
-            _selectedScript.store();
-
-            // validate the script
-            validateCurrentScript();
-
-            // reload the scripting engine
-            ScriptingService::instance()->reloadEngine();
-
-            // trigger the item change so that the page is reloaded for
-            // script variables
-            reloadCurrentScriptPage();
-        }
-    }
-}
-
-/**
- * Loads the current script in the UI when the current item changed
- */
-void SettingsDialog::on_scriptListWidget_currentItemChanged(QListWidgetItem *current,
-                                                            QListWidgetItem *previous) {
-    Q_UNUSED(current)
-    Q_UNUSED(previous)
-
-    reloadCurrentScriptPage();
-}
-
-/**
- * Loads the current script in the UI
- */
-void SettingsDialog::reloadCurrentScriptPage() {
-    QListWidgetItem *item = ui->scriptListWidget->currentItem();
-
-    if (item == nullptr) {
-        return;
-    }
-
-    ui->scriptValidationLabel->clear();
-
-    int scriptId = item->data(Qt::UserRole).toInt();
-    _selectedScript = Script::fetch(scriptId);
-    if (_selectedScript.isFetched()) {
-        ui->scriptNameLabel->setText("<b>" + _selectedScript.getName() + "</b>");
-        ui->scriptPathLineEdit->setText(_selectedScript.getScriptPath());
-        ui->scriptEditFrame->setEnabled(true);
-
-        bool isScriptFromRepository = _selectedScript.isScriptFromRepository();
-        ui->scriptNameLineEdit->setReadOnly(isScriptFromRepository);
-        ui->scriptPathButton->setDisabled(isScriptFromRepository);
-        ui->scriptRepositoryItemFrame->setVisible(isScriptFromRepository);
-        ui->localScriptItemFrame->setHidden(isScriptFromRepository);
-        ui->repositoryScriptItemFrame->setHidden(!isScriptFromRepository);
-        ui->scriptNameLineEdit->setHidden(isScriptFromRepository);
-        ui->scriptNameLineEditLabel->setHidden(isScriptFromRepository);
-
-        // add additional information if script was from the script repository
-        if (isScriptFromRepository) {
-            ScriptInfoJson infoJson = _selectedScript.getScriptInfoJson();
-
-            ui->scriptVersionLabel->setText(infoJson.version);
-            ui->scriptDescriptionLabel->setText(infoJson.description);
-            ui->scriptAuthorsLabel->setText(infoJson.richAuthorText);
-            ui->scriptRepositoryLinkLabel->setText(
-                "<a href=\"https://github.com/qownnotes/scripts/tree/"
-                "master/" +
-                infoJson.identifier + "\">" + tr("Open repository") + "</a>");
-        } else {
-            ui->scriptNameLineEdit->setText(_selectedScript.getName());
-        }
-
-        // get the registered script settings variables
-        QList<QVariant> variables =
-            ScriptingService::instance()->getSettingsVariables(_selectedScript.getId());
-
-        bool hasScriptSettings = variables.count() > 0;
-        ui->scriptSettingsFrame->setVisible(hasScriptSettings);
-
-        if (hasScriptSettings) {
-            // remove the current ScriptSettingWidget widgets in the
-            // scriptSettingsFrame
-            QList<ScriptSettingWidget *> widgets =
-                ui->scriptSettingsFrame->findChildren<ScriptSettingWidget *>();
-            Q_FOREACH (ScriptSettingWidget *widget, widgets) {
-                delete widget;
-            }
-
-            foreach (QVariant variable, variables) {
-                QMap<QString, QVariant> varMap = variable.toMap();
-
-                // populate the variable UI
-                ScriptSettingWidget *scriptSettingWidget =
-                    new ScriptSettingWidget(this, _selectedScript, varMap);
-
-                //                    QString name = varMap["name"].toString();
-
-                ui->scriptSettingsFrame->layout()->addWidget(scriptSettingWidget);
-            }
-        }
-
-        // validate the script
-        validateCurrentScript();
-    } else {
-        ui->scriptEditFrame->setEnabled(false);
-        ui->scriptNameLineEdit->clear();
-        ui->scriptPathLineEdit->clear();
-    }
-}
-
-/**
- * Validates the current script
- */
-void SettingsDialog::validateCurrentScript() {
-    ui->scriptValidationLabel->clear();
-
-    if (_selectedScript.isFetched()) {
-        QString path = _selectedScript.getScriptPath();
-
-        // check the script validity if the path is not empty
-        if (!path.isEmpty()) {
-            QString errorMessage;
-            bool result = ScriptingService::validateScript(_selectedScript, errorMessage);
-            QString validationText = result ? tr("Your script seems to be valid")
-                                            : tr("There were script errors:\n%1").arg(errorMessage);
-            ui->scriptValidationLabel->setText(validationText);
-            ui->scriptValidationLabel->setStyleSheet(
-                QStringLiteral("color: %1;").arg(result ? "green" : "red"));
-        }
-    }
-}
-
-/**
- * Stores a script name after it was edited
- */
-void SettingsDialog::on_scriptNameLineEdit_editingFinished() {
-    QString text = ui->scriptNameLineEdit->text();
-    _selectedScript.setName(text);
-    _selectedScript.store();
-
-    ui->scriptListWidget->currentItem()->setText(text);
-}
-
-/**
- * Stores the enabled states of the scripts
- */
-void SettingsDialog::storeScriptListEnabledState() {
-    for (int i = 0; i < ui->scriptListWidget->count(); i++) {
-        QListWidgetItem *item = ui->scriptListWidget->item(i);
-        bool enabled = item->checkState() == Qt::Checked;
-        int scriptId = item->data(Qt::UserRole).toInt();
-
-        Script script = Script::fetch(scriptId);
-        if (script.isFetched()) {
-            if (script.getEnabled() != enabled) {
-                script.setEnabled(enabled);
-                script.store();
-            }
-        }
-    }
-
-    // reload the scripting engine
-    ScriptingService::instance()->reloadEngine();
-}
-
-/**
- * Validates the current script
- */
-void SettingsDialog::on_scriptValidationButton_clicked() {
-    // validate the script
-    validateCurrentScript();
-}
-
-/**
- * Reloads the scripting engine
- */
-void SettingsDialog::on_scriptReloadEngineButton_clicked() {
-    // store the enabled states and reload the scripting engine
-    storeScriptListEnabledState();
-
-    // trigger the item change so that the page is reloaded for
-    // script variables
-    reloadCurrentScriptPage();
+    ui->noteFolderSettingsWidget->setNoteFolderRemotePathList(pathList);
 }
 
 /**
@@ -2542,9 +1531,13 @@ void SettingsDialog::updateSearchLineEditIcons() {
     styleSheet.replace(searchIconRegex, searchIconStyle);
     ui->shortcutSearchLineEdit->setStyleSheet(styleSheet);
 
-    styleSheet = ui->scriptSearchLineEdit->styleSheet();
-    styleSheet.replace(searchIconRegex, searchIconStyle);
-    ui->scriptSearchLineEdit->setStyleSheet(styleSheet);
+    auto *scriptSearchLineEdit =
+        ui->scriptingSettingsWidget->findChild<QLineEdit *>(QStringLiteral("scriptSearchLineEdit"));
+    if (scriptSearchLineEdit) {
+        styleSheet = scriptSearchLineEdit->styleSheet();
+        styleSheet.replace(searchIconRegex, searchIconStyle);
+        scriptSearchLineEdit->setStyleSheet(styleSheet);
+    }
 }
 
 /**
@@ -2566,194 +1559,6 @@ void SettingsDialog::applyDarkModeSettings() {
     updateSearchLineEditIcons();
     Utils::Gui::fixDarkModeIcons(this);
     Utils::Gui::applyDarkModeSettings();
-}
-
-void SettingsDialog::on_noteFolderShowSubfoldersCheckBox_toggled(bool checked) {
-    _selectedNoteFolder.setShowSubfolders(checked);
-
-    // reset the active note subfolder if showing subfolders was turned off
-    if (!checked) {
-        _selectedNoteFolder.resetActiveNoteSubFolder();
-    }
-
-    _selectedNoteFolder.store();
-
-    updateSubfolderVisibility();
-}
-
-void SettingsDialog::on_noteFolderAllSubfoldersCheckBox_toggled(bool checked) {
-    _selectedNoteFolder.setAllSubfolders(checked);
-
-    updateSubfolderVisibility();
-}
-
-/**
- * Updates the visibility of the "All subfolders" checkbox and subfolder tree
- * based on the current "Use note subfolders" and "All subfolders" settings
- */
-void SettingsDialog::updateSubfolderVisibility() {
-    const bool showSubfolders = ui->noteFolderShowSubfoldersCheckBox->isChecked();
-    const bool allSubfolders = ui->noteFolderAllSubfoldersCheckBox->isChecked();
-
-    // Show the entire subfolder settings frame only when subfolders are enabled
-    ui->noteFolderSubfolderSettingsFrame->setVisible(showSubfolders);
-    ui->noteFolderSubfolderTreeWidget->setVisible(showSubfolders && !allSubfolders);
-
-    if (showSubfolders && !allSubfolders) {
-        populateSubfolderTree();
-    }
-}
-
-/**
- * Populates the subfolder tree widget from the file system
- */
-void SettingsDialog::populateSubfolderTree() {
-    ui->noteFolderSubfolderTreeWidget->clear();
-
-    const QString localPath = _selectedNoteFolder.getLocalPath();
-    if (localPath.isEmpty() || !QDir(localPath).exists()) {
-        return;
-    }
-
-    // Disconnect to avoid saving while populating
-    disconnect(ui->noteFolderSubfolderTreeWidget, &QTreeWidget::itemChanged, this,
-               &SettingsDialog::saveSubfolderTreeSelection);
-
-    const QStringList excludedPaths = _selectedNoteFolder.excludedSubfolderPaths();
-
-    // First pass: build the tree without check states (avoid auto-tristate interference)
-    populateSubfolderTreeFromDir(nullptr, localPath, QString());
-
-    // Second pass: apply check states bottom-up so auto-tristate works correctly
-    applySubfolderTreeCheckStates(ui->noteFolderSubfolderTreeWidget, excludedPaths);
-
-    ui->noteFolderSubfolderTreeWidget->expandAll();
-
-    // Reconnect
-    connect(ui->noteFolderSubfolderTreeWidget, &QTreeWidget::itemChanged, this,
-            &SettingsDialog::saveSubfolderTreeSelection);
-}
-
-/**
- * Recursively populates subfolder tree items from a directory (without setting check states)
- */
-void SettingsDialog::populateSubfolderTreeFromDir(QTreeWidgetItem *parentItem, const QString &path,
-                                                  const QString &relativePath) {
-    QDir dir(path);
-    const QStringList folders =
-        dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::Hidden, QDir::Name);
-
-    for (const QString &folder : folders) {
-        if (NoteSubFolder::willFolderBeIgnored(folder)) {
-            continue;
-        }
-
-        const QString childRelPath =
-            relativePath.isEmpty() ? folder : relativePath + QLatin1Char('/') + folder;
-        const QString childFullPath = path + QDir::separator() + folder;
-
-        auto *item = new QTreeWidgetItem();
-        item->setText(0, folder);
-        item->setData(0, Qt::UserRole, childRelPath);
-        item->setFlags(item->flags() | Qt::ItemIsUserCheckable | Qt::ItemIsAutoTristate);
-
-        if (parentItem) {
-            parentItem->addChild(item);
-        } else {
-            ui->noteFolderSubfolderTreeWidget->addTopLevelItem(item);
-        }
-
-        // Recurse into subdirectories
-        populateSubfolderTreeFromDir(item, childFullPath, childRelPath);
-    }
-}
-
-/**
- * Applies check states to subfolder tree items bottom-up.
- * Items whose path (or an ancestor path) is in excludedPaths are unchecked.
- * Processing bottom-up ensures auto-tristate computes parent states correctly.
- */
-void SettingsDialog::applySubfolderTreeCheckStates(QTreeWidget *tree,
-                                                   const QStringList &excludedPaths) {
-    for (int i = 0; i < tree->topLevelItemCount(); ++i) {
-        applyCheckStateToItem(tree->topLevelItem(i), excludedPaths);
-    }
-}
-
-/**
- * Recursively applies check states to a tree item and its children (bottom-up).
- * Children are processed first so auto-tristate computes parent states correctly.
- */
-void SettingsDialog::applyCheckStateToItem(QTreeWidgetItem *item,
-                                           const QStringList &excludedPaths) {
-    const QString path = item->data(0, Qt::UserRole).toString();
-
-    // Check if this path or any ancestor is in the excluded list
-    bool excluded = false;
-    for (const QString &excludedPath : excludedPaths) {
-        if (path == excludedPath || path.startsWith(excludedPath + QLatin1Char('/'))) {
-            excluded = true;
-            break;
-        }
-    }
-
-    if (excluded) {
-        // Mark excluded branches recursively so every visible item gets a checkbox.
-        for (int i = 0; i < item->childCount(); ++i) {
-            applyCheckStateToItem(item->child(i), excludedPaths);
-        }
-
-        item->setCheckState(0, Qt::Unchecked);
-        return;
-    }
-
-    // Process children first (bottom-up)
-    for (int i = 0; i < item->childCount(); ++i) {
-        applyCheckStateToItem(item->child(i), excludedPaths);
-    }
-
-    // Leaf nodes: set checked explicitly; non-leaf: auto-tristate computes from children
-    if (item->childCount() == 0) {
-        item->setCheckState(0, Qt::Checked);
-    }
-}
-
-/**
- * Saves the subfolder tree selection when an item check state changes
- */
-void SettingsDialog::saveSubfolderTreeSelection() {
-    QStringList excludedPaths;
-
-    for (int i = 0; i < ui->noteFolderSubfolderTreeWidget->topLevelItemCount(); ++i) {
-        collectExcludedSubfolderPaths(ui->noteFolderSubfolderTreeWidget->topLevelItem(i),
-                                      excludedPaths);
-    }
-
-    _selectedNoteFolder.setExcludedSubfolderPaths(excludedPaths);
-}
-
-/**
- * Recursively collects paths of unchecked subfolder tree items.
- * Only stores the topmost unchecked parent (children are excluded implicitly).
- */
-void SettingsDialog::collectExcludedSubfolderPaths(QTreeWidgetItem *item,
-                                                   QStringList &excludedPaths) {
-    const QString relativePath = item->data(0, Qt::UserRole).toString();
-
-    if (item->checkState(0) == Qt::Unchecked) {
-        // This folder and all children are excluded - only store this path
-        excludedPaths.append(relativePath);
-        return;
-    }
-
-    // If partially or fully checked, recurse into children
-    for (int i = 0; i < item->childCount(); ++i) {
-        collectExcludedSubfolderPaths(item->child(i), excludedPaths);
-    }
-}
-
-void SettingsDialog::on_allowDifferentNoteFileNameCheckBox_toggled(bool checked) {
-    _selectedNoteFolder.setSettingsValue(QStringLiteral("allowDifferentNoteFileName"), checked);
 }
 
 /**
@@ -2842,7 +1647,7 @@ bool SettingsDialog::initializePage(int index) {
     switch (index) {
         case SettingsPages::NoteFolderPage: {
             // set up the note folder tab
-            setupNoteFolderPage();
+            ui->noteFolderSettingsWidget->initialize();
         } break;
         case SettingsPages::NetworkPage: {
             ui->networkSettingsWidget->initialize();
@@ -2857,20 +1662,7 @@ bool SettingsDialog::initializePage(int index) {
             ui->webCompanionSettingsWidget->initialize();
         } break;
         case SettingsPages::PanelsPage: {
-            // connect the panel sort radio buttons
-            connect(ui->notesPanelSortAlphabeticalRadioButton, SIGNAL(toggled(bool)),
-                    ui->notesPanelOrderGroupBox, SLOT(setEnabled(bool)));
-            connect(ui->noteSubfoldersPanelShowRootFolderNameCheckBox, SIGNAL(toggled(bool)),
-                    ui->noteSubfoldersPanelShowFullPathCheckBox, SLOT(setEnabled(bool)));
-            connect(ui->noteSubfoldersPanelSortAlphabeticalRadioButton, SIGNAL(toggled(bool)),
-                    ui->noteSubfoldersPanelOrderGroupBox, SLOT(setEnabled(bool)));
-            connect(ui->tagsPanelSortAlphabeticalRadioButton, SIGNAL(toggled(bool)),
-                    ui->tagsPanelOrderGroupBox, SLOT(setEnabled(bool)));
-
-            if (!ui->noteListPreviewCheckBox->text().contains(QLatin1String("(experimental)"))) {
-                ui->noteListPreviewCheckBox->setText(ui->noteListPreviewCheckBox->text() +
-                                                     " (experimental)");
-            }
+            ui->panelsSettingsWidget->initialize();
         } break;
         case SettingsPages::ToolbarPage: {
             // init the toolbar editor
@@ -2926,8 +1718,12 @@ bool SettingsDialog::initializePage(int index) {
 
             // Qt::TargetMoveAction seems to be broken on macOS, the item vanishes after
             // dropping Qt::CopyAction seens to be the only action that works
-            ui->noteFolderListWidget->setDefaultDropAction(Qt::CopyAction);
-            ui->scriptListWidget->setDefaultDropAction(Qt::CopyAction);
+            ui->noteFolderSettingsWidget
+                ->findChild<QListWidget *>(QStringLiteral("noteFolderListWidget"))
+                ->setDefaultDropAction(Qt::CopyAction);
+            ui->scriptingSettingsWidget
+                ->findChild<QListWidget *>(QStringLiteral("scriptListWidget"))
+                ->setDefaultDropAction(Qt::CopyAction);
 #endif
         } break;
         case SettingsPages::DebugPage: {
@@ -2937,8 +1733,7 @@ bool SettingsDialog::initializePage(int index) {
             ui->debugOptionSettingsWidget->initialize();
         } break;
         case SettingsPages::ScriptingPage: {
-            // set up the scripting tab
-            setupScriptingPage();
+            ui->scriptingSettingsWidget->initialize();
         } break;
         case SettingsPages::OwnCloudPage: {
             resetOKLabelData();
@@ -2976,8 +1771,9 @@ bool SettingsDialog::initializePage(int index) {
         case SettingsPages::ColorModesPage: {
             ui->colorModeSettingsWidget->initialize();
         } break;
-        case SettingsPages::McpServerPage:
-            break;
+        case SettingsPages::McpServerPage: {
+            ui->mcpServerSettingsWidget->initialize();
+        } break;
         default:
             break;
     }
@@ -3497,62 +2293,6 @@ void SettingsDialog::on_ownCloudSupportCheckBox_toggled() {
     }
 }
 
-void SettingsDialog::on_noteFolderGitCommitCheckBox_toggled(bool checked) {
-    _selectedNoteFolder.setUseGit(checked);
-    _selectedNoteFolder.store();
-}
-
-/**
- * Opens a dialog to search for scripts in the script repository
- */
-void SettingsDialog::searchScriptInRepository(bool checkForUpdates) {
-    QPointer<ScriptRepositoryDialog> dialog = new ScriptRepositoryDialog(this, checkForUpdates);
-    dialog->exec();
-
-    if (!dialog) {
-        return;
-    }
-
-    Script lastInstalledScript = dialog->getLastInstalledScript();
-    delete dialog;
-
-    // reload the script list
-    reloadScriptList();
-
-    // select the last installed script
-    if (lastInstalledScript.isFetched()) {
-        auto item = Utils::Gui::getListWidgetItemWithUserData(ui->scriptListWidget,
-                                                              lastInstalledScript.getId());
-        ui->scriptListWidget->setCurrentItem(item);
-    }
-
-    // reload the scripting engine
-    ScriptingService::instance()->reloadEngine();
-
-    // reload page so the script settings will be viewed
-    reloadCurrentScriptPage();
-}
-
-/**
- * Opens a dialog to check for script updates
- */
-void SettingsDialog::checkForScriptUpdates() {
-    ScriptRepositoryDialog::checkForScriptUpdates(this);
-}
-
-/**
- * Saves the enabled state of all items and reload the current script page to
- * make the script settings available when a script was enabled or disabled
- *
- * @param item
- */
-void SettingsDialog::on_scriptListWidget_itemChanged(QListWidgetItem *item) {
-    Q_UNUSED(item)
-
-    storeScriptListEnabledState();
-    reloadCurrentScriptPage();
-}
-
 void SettingsDialog::on_interfaceStyleComboBox_currentTextChanged(const QString &arg1) {
     Utils::Gui::applyInterfaceStyle(arg1);
 
@@ -3687,10 +2427,6 @@ void SettingsDialog::on_importSettingsButton_clicked() {
     Utils::Misc::restartApplication();
 }
 
-void SettingsDialog::on_ignoreNoteSubFoldersResetButton_clicked() {
-    ui->ignoreNoteSubFoldersLineEdit->setText(IGNORED_NOTE_SUBFOLDERS_DEFAULT);
-}
-
 void SettingsDialog::on_interfaceFontSizeSpinBox_valueChanged(int arg1) {
     SettingsService settings;
     settings.setValue(QStringLiteral("interfaceFontSize"), arg1);
@@ -3703,45 +2439,10 @@ void SettingsDialog::on_overrideInterfaceFontSizeGroupBox_toggled(bool arg1) {
     Utils::Gui::updateInterfaceFontSize();
 }
 
-void SettingsDialog::on_mcpServerEnabledCheckBox_toggled(bool checked) {
-    ui->mcpServerPortLabel->setEnabled(checked);
-    ui->mcpServerPortSpinBox->setEnabled(checked);
-    ui->mcpServerPortResetButton->setEnabled(checked);
-    ui->mcpServerTokenLabel->setEnabled(checked);
-    ui->mcpServerTokenLineEdit->setEnabled(checked);
-    ui->mcpServerShowTokenButton->setEnabled(checked);
-    ui->mcpServerCopyTokenButton->setEnabled(checked);
-    ui->mcpServerGenerateTokenButton->setEnabled(checked);
-}
-
-void SettingsDialog::on_mcpServerPortResetButton_clicked() {
-    ui->mcpServerPortSpinBox->setValue(McpService::getDefaultPort());
-}
-
-void SettingsDialog::on_mcpServerShowTokenButton_clicked() {
-    ui->mcpServerTokenLineEdit->setEchoMode(ui->mcpServerTokenLineEdit->echoMode() ==
-                                                    QLineEdit::EchoMode::Password
-                                                ? QLineEdit::EchoMode::Normal
-                                                : QLineEdit::EchoMode::Password);
-}
-
-void SettingsDialog::on_mcpServerCopyTokenButton_clicked() {
-    QApplication::clipboard()->setText(ui->mcpServerTokenLineEdit->text());
-}
-
-void SettingsDialog::on_mcpServerGenerateTokenButton_clicked() {
-    ui->mcpServerTokenLineEdit->setText(Utils::Misc::generateRandomString(32));
-    ui->mcpServerTokenLineEdit->setEchoMode(QLineEdit::EchoMode::Normal);
-}
-
 void SettingsDialog::initCloudConnectionComboBox(int selectedId) {
     const QSignalBlocker blocker(ui->cloudConnectionComboBox);
     Q_UNUSED(blocker)
-    const QSignalBlocker blocker2(ui->noteFolderCloudConnectionComboBox);
-    Q_UNUSED(blocker2)
-
     ui->cloudConnectionComboBox->clear();
-    ui->noteFolderCloudConnectionComboBox->clear();
     int index = 0;
     int currentIndex = 0;
     if (selectedId == -1) {
@@ -3752,8 +2453,6 @@ void SettingsDialog::initCloudConnectionComboBox(int selectedId) {
 
     Q_FOREACH (CloudConnection cloudConnection, connections) {
         ui->cloudConnectionComboBox->addItem(cloudConnection.getName(), cloudConnection.getId());
-        ui->noteFolderCloudConnectionComboBox->addItem(cloudConnection.getName(),
-                                                       cloudConnection.getId());
 
         if (cloudConnection.getId() == selectedId) {
             currentIndex = index;
@@ -3765,8 +2464,9 @@ void SettingsDialog::initCloudConnectionComboBox(int selectedId) {
     ui->cloudConnectionComboBox->setCurrentIndex(currentIndex);
     on_cloudConnectionComboBox_currentIndexChanged(currentIndex);
 
-    Utils::Gui::setComboBoxIndexByUserData(ui->noteFolderCloudConnectionComboBox,
-                                           _selectedNoteFolder.getCloudConnectionId());
+    // Populate the note folder cloud connection combo box via the widget
+    ui->noteFolderSettingsWidget->populateCloudConnectionComboBox(
+        connections, NoteFolder::currentNoteFolder().getCloudConnectionId());
 
     // Populate the todo calendar cloud connection combo box via the widget
     ui->todoSettingsWidget->populateCloudConnectionComboBox(
@@ -3855,11 +2555,6 @@ void SettingsDialog::on_databaseIntegrityCheckButton_clicked() {
                             QStringLiteral("database-integrity-check-not-valid"));
     }
 }
-
-void SettingsDialog::on_scriptReloadEngineButton2_clicked() {
-    on_scriptReloadEngineButton_clicked();
-}
-
 void SettingsDialog::on_loginFlowButton_clicked() {
     QJsonObject pollData;
 

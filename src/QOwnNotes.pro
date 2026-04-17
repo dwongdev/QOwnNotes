@@ -246,6 +246,10 @@ SOURCES += main.cpp\
     widgets/settings/webcompanionsettingswidget.cpp \
     widgets/settings/editorsettingswidget.cpp \
     widgets/settings/webapplicationsettingswidget.cpp \
+    widgets/settings/mcpserversettingswidget.cpp \
+    widgets/settings/notefoldersettingswidget.cpp \
+    widgets/settings/panelssettingswidget.cpp \
+    widgets/settings/scriptingsettingswidget.cpp \
     dialogs/serverbookmarksimportdialog.cpp \
     dialogs/websockettokendialog.cpp \
     dialogs/imagedialog.cpp \
@@ -402,6 +406,10 @@ HEADERS  += mainwindow.h \
     widgets/settings/webcompanionsettingswidget.h \
     widgets/settings/editorsettingswidget.h \
     widgets/settings/webapplicationsettingswidget.h \
+    widgets/settings/mcpserversettingswidget.h \
+    widgets/settings/notefoldersettingswidget.h \
+    widgets/settings/panelssettingswidget.h \
+    widgets/settings/scriptingsettingswidget.h \
     dialogs/serverbookmarksimportdialog.h \
     dialogs/websockettokendialog.h \
     dialogs/imagedialog.h \
@@ -478,6 +486,10 @@ FORMS    += mainwindow.ui \
     widgets/settings/webcompanionsettingswidget.ui \
     widgets/settings/editorsettingswidget.ui \
     widgets/settings/webapplicationsettingswidget.ui \
+    widgets/settings/mcpserversettingswidget.ui \
+    widgets/settings/notefoldersettingswidget.ui \
+    widgets/settings/panelssettingswidget.ui \
+    widgets/settings/scriptingsettingswidget.ui \
     dialogs/serverbookmarksimportdialog.ui \
     dialogs/websockettokendialog.ui \
     dialogs/layoutdialog.ui

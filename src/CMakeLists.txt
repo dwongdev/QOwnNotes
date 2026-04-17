@@ -507,6 +507,18 @@ set(SOURCE_FILES
     widgets/settings/webapplicationsettingswidget.cpp
     widgets/settings/webapplicationsettingswidget.h
     widgets/settings/webapplicationsettingswidget.ui
+    widgets/settings/mcpserversettingswidget.cpp
+    widgets/settings/mcpserversettingswidget.h
+    widgets/settings/mcpserversettingswidget.ui
+    widgets/settings/notefoldersettingswidget.cpp
+    widgets/settings/notefoldersettingswidget.h
+    widgets/settings/notefoldersettingswidget.ui
+    widgets/settings/panelssettingswidget.cpp
+    widgets/settings/panelssettingswidget.h
+    widgets/settings/panelssettingswidget.ui
+    widgets/settings/scriptingsettingswidget.cpp
+    widgets/settings/scriptingsettingswidget.h
+    widgets/settings/scriptingsettingswidget.ui
     widgets/todoitemtreewidget.cpp
     widgets/todoitemtreewidget.h
     widgets/htmlpreviewwidget.h
