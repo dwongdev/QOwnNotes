@@ -495,6 +495,9 @@ set(SOURCE_FILES
     widgets/settings/todosettingswidget.cpp
     widgets/settings/todosettingswidget.h
     widgets/settings/todosettingswidget.ui
+    widgets/settings/aisettingswidget.cpp
+    widgets/settings/aisettingswidget.h
+    widgets/settings/aisettingswidget.ui
     widgets/settings/webapplicationsettingswidget.cpp
     widgets/settings/webapplicationsettingswidget.h
     widgets/settings/webapplicationsettingswidget.ui

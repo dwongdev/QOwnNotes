@@ -277,21 +277,7 @@ class SettingsDialog : public MasterDialog {
 
     void onSettingsConnectionTestFinished();
 
-    void on_groqApiKeyWebButton_clicked();
-
-    void on_openAiApiKeyWebButton_clicked();
-
     void on_showStatusBarNotePathCheckBox_toggled(bool checked);
-
-    void on_groqApiTestButton_clicked();
-
-    void on_openAiApiTestButton_clicked();
-
-    void on_groqApiKeyLineEdit_textChanged(const QString &arg1);
-
-    void on_openAiApiKeyLineEdit_textChanged(const QString &arg1);
-
-    void on_searchScriptRepositoryButton_clicked();
 
     void on_overrideInterfaceScalingFactorGroupBox_toggled(bool arg1);
 
@@ -411,8 +397,6 @@ class SettingsDialog : public MasterDialog {
 
     void resetOKLabelData();
 
-    void buildAiScriptingTreeWidget();
-
     void updateSearchLineEditIcons();
 
     bool hasDarkModeSettingChanges() const;
@@ -431,8 +415,6 @@ class SettingsDialog : public MasterDialog {
     void collectExcludedSubfolderPaths(QTreeWidgetItem *item, QStringList &excludedPaths);
 
     void saveSubfolderTreeSelection();
-
-    void runAiApiTest(QString backend, QString model, QString apiKey = QString());
 
     bool initializePage(int index);
 };
