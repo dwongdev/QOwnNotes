@@ -498,6 +498,9 @@ set(SOURCE_FILES
     widgets/settings/aisettingswidget.cpp
     widgets/settings/aisettingswidget.h
     widgets/settings/aisettingswidget.ui
+    widgets/settings/webcompanionsettingswidget.cpp
+    widgets/settings/webcompanionsettingswidget.h
+    widgets/settings/webcompanionsettingswidget.ui
     widgets/settings/webapplicationsettingswidget.cpp
     widgets/settings/webapplicationsettingswidget.h
     widgets/settings/webapplicationsettingswidget.ui

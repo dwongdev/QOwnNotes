@@ -68,6 +68,7 @@
 #include "widgets/settings/networksettingswidget.h"
 #include "widgets/settings/todosettingswidget.h"
 #include "widgets/settings/webapplicationsettingswidget.h"
+#include "widgets/settings/webcompanionsettingswidget.h"
 
 SettingsDialog::SettingsDialog(int page, QWidget *parent)
     : MasterDialog(parent), ui(new Ui::SettingsDialog) {
@@ -172,11 +173,8 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     connect(ui->disableCursorBlinkingCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->ignoreNoteSubFoldersLineEdit, SIGNAL(textChanged(QString)), this,
             SLOT(needRestart()));
-    connect(ui->enableSocketServerCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
-    connect(ui->bookmarkSuggestionApiEnabledCheckBox, SIGNAL(toggled(bool)), this,
-            SLOT(needRestart()));
-    connect(ui->bookmarkSuggestionApiTokenLineEdit, SIGNAL(textChanged(QString)), this,
-            SLOT(needRestart()));
+    connect(ui->webCompanionSettingsWidget, &WebCompanionSettingsWidget::needRestart, this,
+            &SettingsDialog::needRestart);
     connect(ui->mcpServerEnabledCheckBox, SIGNAL(toggled(bool)), this, SLOT(needRestart()));
     connect(ui->mcpServerTokenLineEdit, SIGNAL(textChanged(QString)), this, SLOT(needRestart()));
     connect(ui->webApplicationSettingsWidget, &WebApplicationSettingsWidget::needRestart, this,
@@ -492,8 +490,7 @@ void SettingsDialog::storeSettings() {
     settings.setValue(QStringLiteral("defaultNoteFileExtension"),
                       ui->defaultNoteFileExtensionListWidget->currentItem()->text());
     ui->localTrashSettingsWidget->storeSettings();
-    settings.setValue(QStringLiteral("enableSocketServer"),
-                      ui->enableSocketServerCheckBox->isChecked());
+    ui->webCompanionSettingsWidget->storeSettings();
     ui->webApplicationSettingsWidget->storeSettings();
 
     // make the path relative to the portable data path if we are in
@@ -653,19 +650,8 @@ void SettingsDialog::storeSettings() {
     settings.setValue(QStringLiteral("autoReadOnlyModeTimeout"),
                       ui->autoReadOnlyModeTimeoutSpinBox->value());
 
-    settings.setValue(QStringLiteral("webSocketServerService/port"),
-                      ui->webSocketServerServicePortSpinBox->value());
-    settings.setValue(QStringLiteral("webSocketServerService/bookmarkSuggestionApiEnabled"),
-                      ui->bookmarkSuggestionApiEnabledCheckBox->isChecked());
-    settings.setValue(QStringLiteral("webSocketServerService/bookmarkSuggestionApiPort"),
-                      ui->bookmarkSuggestionApiPortSpinBox->value());
-    QString bookmarkSuggestionApiToken = ui->bookmarkSuggestionApiTokenLineEdit->text().trimmed();
-    if (bookmarkSuggestionApiToken.isEmpty()) {
-        bookmarkSuggestionApiToken = Utils::Misc::generateRandomString(32);
-        ui->bookmarkSuggestionApiTokenLineEdit->setText(bookmarkSuggestionApiToken);
-    }
-    settings.setValue(QStringLiteral("webSocketServerService/bookmarkSuggestionApiToken"),
-                      CryptoService::instance()->encryptToString(bookmarkSuggestionApiToken));
+    // Web companion settings are stored in webCompanionSettingsWidget->storeSettings()
+
     settings.setValue(QStringLiteral("ai/mcpServerEnabled"),
                       ui->mcpServerEnabledCheckBox->isChecked());
     settings.setValue(QStringLiteral("ai/mcpServerPort"), ui->mcpServerPortSpinBox->value());
@@ -676,14 +662,6 @@ void SettingsDialog::storeSettings() {
     }
     settings.setValue(QStringLiteral("ai/mcpServerToken"),
                       CryptoService::instance()->encryptToString(mcpServerToken));
-    settings.setValue(QStringLiteral("webSocketServerService/bookmarksTag"),
-                      ui->bookmarksTagLineEdit->text());
-    settings.setValue(QStringLiteral("webSocketServerService/bookmarksNoteName"),
-                      ui->bookmarksNoteNameLineEdit->text());
-    settings.setValue(QStringLiteral("webSocketServerService/commandSnippetsTag"),
-                      ui->commandSnippetsTagLineEdit->text());
-    settings.setValue(QStringLiteral("webSocketServerService/commandSnippetsNoteName"),
-                      ui->commandSnippetsNoteNameLineEdit->text());
 
     // Web application settings are stored in webApplicationSettingsWidget->storeSettings()
 
@@ -823,8 +801,7 @@ void SettingsDialog::readSettings() {
     ui->useUNIXNewlineCheckBox->setChecked(
         settings.value(QStringLiteral("useUNIXNewline")).toBool());
     ui->localTrashSettingsWidget->readSettings();
-    ui->enableSocketServerCheckBox->setChecked(Utils::Misc::isSocketServerEnabled());
-    on_enableSocketServerCheckBox_toggled();
+    ui->webCompanionSettingsWidget->readSettings();
     ui->webApplicationSettingsWidget->readSettings();
 
 #ifdef Q_OS_MAC
@@ -1016,25 +993,12 @@ void SettingsDialog::readSettings() {
     ui->autoReadOnlyModeTimeoutSpinBox->setValue(
         settings.value(QStringLiteral("autoReadOnlyModeTimeout"), 30).toInt());
 
-    ui->webSocketServerServicePortSpinBox->setValue(WebSocketServerService::getSettingsPort());
-    ui->bookmarkSuggestionApiEnabledCheckBox->setChecked(
-        WebSocketServerService::isBookmarkSuggestionApiEnabled());
-    ui->bookmarkSuggestionApiPortSpinBox->setValue(
-        WebSocketServerService::getBookmarkSuggestionApiPort());
-    ui->bookmarkSuggestionApiTokenLineEdit->setText(
-        WebSocketServerService::getOrGenerateBookmarkSuggestionApiToken());
-    on_bookmarkSuggestionApiEnabledCheckBox_toggled(
-        ui->bookmarkSuggestionApiEnabledCheckBox->isChecked());
+    // Web companion settings are read in webCompanionSettingsWidget->readSettings()
 
     ui->mcpServerEnabledCheckBox->setChecked(McpService::isEnabled());
     ui->mcpServerPortSpinBox->setValue(McpService::getPort());
     ui->mcpServerTokenLineEdit->setText(McpService::getOrGenerateToken());
     on_mcpServerEnabledCheckBox_toggled(ui->mcpServerEnabledCheckBox->isChecked());
-    ui->bookmarksTagLineEdit->setText(WebSocketServerService::getBookmarksTag());
-    ui->bookmarksNoteNameLineEdit->setText(WebSocketServerService::getBookmarksNoteName());
-    ui->commandSnippetsTagLineEdit->setText(WebSocketServerService::getCommandSnippetsTag());
-    ui->commandSnippetsNoteNameLineEdit->setText(
-        WebSocketServerService::getCommandSnippetsNoteName());
 
     // Web application settings are read in webApplicationSettingsWidget->readSettings()
 
@@ -2979,26 +2943,7 @@ bool SettingsDialog::initializePage(int index) {
             ui->webApplicationSettingsWidget->initialize();
         } break;
         case SettingsPages::WebCompanionPage: {
-            ui->webCompannionLabel->setText(ui->webCompannionLabel->text().arg(
-                "https://github.com/qownnotes/web-companion",
-                "https://chrome.google.com/webstore/detail/qownnotes-web-companion/"
-                "pkgkfnampapjbopomdpnkckbjdnpkbkp",
-                "https://addons.mozilla.org/firefox/addon/qownnotes-web-companion"));
-
-            ui->commandLineSnippetManagerLabel->setText(
-                ui->commandLineSnippetManagerLabel->text().arg("https://github.com/qownnotes/qc"));
-
-            // Store original HTML texts for enable/disable state management
-            ui->commandSnippetTagLabel->setText(ui->commandSnippetTagLabel->text().arg(
-                "https://www.qownnotes.org/getting-started/command-line-snippet-manager.html"));
-            _commandSnippetTagLabelHtml = ui->commandSnippetTagLabel->text();
-
-            ui->commandSnippetsNoteNameLabel->hide();
-            ui->commandSnippetsNoteNameLineEdit->hide();
-
-            ui->bookmarkTagLabel->setText(ui->bookmarkTagLabel->text().arg(
-                "https://www.qownnotes.org/getting-started/browser-extension.html"));
-            _bookmarkTagLabelHtml = ui->bookmarkTagLabel->text();
+            ui->webCompanionSettingsWidget->initialize();
         } break;
         case SettingsPages::PanelsPage: {
             // connect the panel sort radio buttons
@@ -3864,73 +3809,6 @@ void SettingsDialog::on_overrideInterfaceFontSizeGroupBox_toggled(bool arg1) {
     Utils::Gui::updateInterfaceFontSize();
 }
 
-void SettingsDialog::on_webSocketServerServicePortResetButton_clicked() {
-    ui->webSocketServerServicePortSpinBox->setValue(WebSocketServerService::getDefaultPort());
-}
-
-void SettingsDialog::on_enableSocketServerCheckBox_toggled() {
-    bool checked = ui->enableSocketServerCheckBox->isChecked();
-    ui->browserExtensionFrame->setEnabled(checked);
-
-    // Update labels with disabled color when unchecked
-    QString disabledColor = palette().color(QPalette::Disabled, QPalette::Text).name();
-
-    if (!_bookmarkTagLabelHtml.isEmpty()) {
-        if (checked) {
-            ui->bookmarkTagLabel->setText(_bookmarkTagLabelHtml);
-        } else {
-            // Wrap content in a span with disabled color
-            ui->bookmarkTagLabel->setText(QStringLiteral("<span style=\"color:%1;\">%2</span>")
-                                              .arg(disabledColor, _bookmarkTagLabelHtml));
-        }
-    }
-
-    if (!_commandSnippetTagLabelHtml.isEmpty()) {
-        if (checked) {
-            ui->commandSnippetTagLabel->setText(_commandSnippetTagLabelHtml);
-        } else {
-            // Wrap content in a span with disabled color
-            ui->commandSnippetTagLabel->setText(
-                QStringLiteral("<span style=\"color:%1;\">%2</span>")
-                    .arg(disabledColor, _commandSnippetTagLabelHtml));
-        }
-    }
-
-    ui->bookmarkSuggestionApiGroupBox->setEnabled(checked);
-}
-
-void SettingsDialog::on_bookmarkSuggestionApiEnabledCheckBox_toggled(bool checked) {
-    ui->bookmarkSuggestionApiPortLabel->setEnabled(checked);
-    ui->bookmarkSuggestionApiPortSpinBox->setEnabled(checked);
-    ui->bookmarkSuggestionApiPortResetButton->setEnabled(checked);
-    ui->bookmarkSuggestionApiTokenLabel->setEnabled(checked);
-    ui->bookmarkSuggestionApiTokenLineEdit->setEnabled(checked);
-    ui->bookmarkSuggestionApiShowTokenButton->setEnabled(checked);
-    ui->bookmarkSuggestionApiCopyTokenButton->setEnabled(checked);
-    ui->bookmarkSuggestionApiGenerateTokenButton->setEnabled(checked);
-}
-
-void SettingsDialog::on_bookmarkSuggestionApiPortResetButton_clicked() {
-    ui->bookmarkSuggestionApiPortSpinBox->setValue(
-        WebSocketServerService::getBookmarkSuggestionApiDefaultPort());
-}
-
-void SettingsDialog::on_bookmarkSuggestionApiShowTokenButton_clicked() {
-    ui->bookmarkSuggestionApiTokenLineEdit->setEchoMode(
-        ui->bookmarkSuggestionApiTokenLineEdit->echoMode() == QLineEdit::EchoMode::Password
-            ? QLineEdit::EchoMode::Normal
-            : QLineEdit::EchoMode::Password);
-}
-
-void SettingsDialog::on_bookmarkSuggestionApiCopyTokenButton_clicked() {
-    QApplication::clipboard()->setText(ui->bookmarkSuggestionApiTokenLineEdit->text());
-}
-
-void SettingsDialog::on_bookmarkSuggestionApiGenerateTokenButton_clicked() {
-    ui->bookmarkSuggestionApiTokenLineEdit->setText(Utils::Misc::generateRandomString(32));
-    ui->bookmarkSuggestionApiTokenLineEdit->setEchoMode(QLineEdit::EchoMode::Normal);
-}
-
 void SettingsDialog::on_mcpServerEnabledCheckBox_toggled(bool checked) {
     ui->mcpServerPortLabel->setEnabled(checked);
     ui->mcpServerPortSpinBox->setEnabled(checked);
@@ -3960,12 +3838,6 @@ void SettingsDialog::on_mcpServerCopyTokenButton_clicked() {
 void SettingsDialog::on_mcpServerGenerateTokenButton_clicked() {
     ui->mcpServerTokenLineEdit->setText(Utils::Misc::generateRandomString(32));
     ui->mcpServerTokenLineEdit->setEchoMode(QLineEdit::EchoMode::Normal);
-}
-
-void SettingsDialog::on_webSocketTokenButton_clicked() {
-    auto webSocketTokenDialog = new WebSocketTokenDialog();
-    webSocketTokenDialog->exec();
-    delete (webSocketTokenDialog);
 }
 
 void SettingsDialog::initCloudConnectionComboBox(int selectedId) {

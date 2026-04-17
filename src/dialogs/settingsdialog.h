@@ -217,20 +217,6 @@ class SettingsDialog : public MasterDialog {
 
     void on_overrideInterfaceFontSizeGroupBox_toggled(bool arg1);
 
-    void on_webSocketServerServicePortResetButton_clicked();
-
-    void on_enableSocketServerCheckBox_toggled();
-
-    void on_bookmarkSuggestionApiEnabledCheckBox_toggled(bool checked);
-
-    void on_bookmarkSuggestionApiPortResetButton_clicked();
-
-    void on_bookmarkSuggestionApiShowTokenButton_clicked();
-
-    void on_bookmarkSuggestionApiCopyTokenButton_clicked();
-
-    void on_bookmarkSuggestionApiGenerateTokenButton_clicked();
-
     void on_mcpServerEnabledCheckBox_toggled(bool checked);
 
     void on_mcpServerPortResetButton_clicked();
@@ -240,8 +226,6 @@ class SettingsDialog : public MasterDialog {
     void on_mcpServerCopyTokenButton_clicked();
 
     void on_mcpServerGenerateTokenButton_clicked();
-
-    void on_webSocketTokenButton_clicked();
 
     void on_cloudConnectionComboBox_currentIndexChanged(int index);
 
@@ -304,8 +288,6 @@ class SettingsDialog : public MasterDialog {
     QString _installInfoTextLabel1Html;
     QString _installInfoTextLabel2Html;
     QString _installInfoTextLabel3Html;
-    QString _bookmarkTagLabelHtml;
-    QString _commandSnippetTagLabelHtml;
     bool _initialDarkMode = false;
     bool _initialDarkModeColors = false;
     bool _initialDarkModeTrayIcon = false;
