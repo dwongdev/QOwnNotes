@@ -142,6 +142,11 @@ static QVector<int> fetchNoteSubFolderIdsBreadthFirst(
         const QVector<NoteSubFolder> children = NoteSubFolder::fetchAllByParentId(
             id, QStringLiteral("file_last_modified DESC"), connectionName);
         for (const NoteSubFolder &child : children) {
+            // Skip excluded subfolders
+            if (NoteFolder::isCurrentSubfolderPathExcluded(
+                    child.relativePath('/', connectionName))) {
+                continue;
+            }
             queue.enqueue(child.getId());
         }
     }

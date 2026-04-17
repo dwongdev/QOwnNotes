@@ -2,6 +2,14 @@
 
 ## 26.4.16
 
+- Added the ability to select which **note subfolders** to show in the
+  **Note folders** settings when **Use note subfolders** is enabled, with an
+  **All subfolders** checkbox that shows all subfolders by default, and a
+  tri-state checkbox tree to include or exclude specific subfolders recursively
+  when unchecked (for [#1701](https://github.com/pbek/QOwnNotes/issues/1701))
+
+## 26.4.15
+
 - Added an optional **Anonymize personal information** toggle to the
   **Debug information** settings page and the **issue assistant**, which can
   hide usernames in paths and anonymize note names, cloud account identifiers,

@@ -536,6 +536,74 @@ QVariant NoteFolder::settingsValue(const QString &key, const QVariant &defaultVa
     return settings.value(QStringLiteral("NoteFolder-%1/%2").arg(id).arg(key), defaultValue);
 }
 
+/**
+ * Returns whether all subfolders should be shown (no filtering)
+ */
+bool NoteFolder::isAllSubfolders() const {
+    const SettingsService settings;
+    return settings.value(QStringLiteral("NoteFolder-%1/allSubfolders").arg(id), true).toBool();
+}
+
+/**
+ * Sets whether all subfolders should be shown
+ */
+void NoteFolder::setAllSubfolders(bool value) {
+    SettingsService settings;
+    settings.setValue(QStringLiteral("NoteFolder-%1/allSubfolders").arg(id), value);
+}
+
+/**
+ * Returns the list of excluded subfolder relative paths
+ */
+QStringList NoteFolder::excludedSubfolderPaths() const {
+    const SettingsService settings;
+    return settings.value(QStringLiteral("NoteFolder-%1/excludedSubfolderPaths").arg(id))
+        .toStringList();
+}
+
+/**
+ * Sets the list of excluded subfolder relative paths
+ */
+void NoteFolder::setExcludedSubfolderPaths(const QStringList &paths) {
+    SettingsService settings;
+    settings.setValue(QStringLiteral("NoteFolder-%1/excludedSubfolderPaths").arg(id), paths);
+}
+
+/**
+ * Checks if a subfolder relative path is excluded (also checks parent paths)
+ */
+bool NoteFolder::isSubfolderPathExcluded(const QString &relativePath) const {
+    if (!showSubfolders || isAllSubfolders()) {
+        return false;
+    }
+
+    const QStringList excluded = excludedSubfolderPaths();
+    if (excluded.isEmpty()) {
+        return false;
+    }
+
+    // Check if this path or any parent path is excluded
+    for (const QString &excludedPath : excluded) {
+        if (relativePath == excludedPath ||
+            relativePath.startsWith(excludedPath + QLatin1Char('/'))) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * Static helper to check if a subfolder path is excluded for the current note folder
+ */
+bool NoteFolder::isCurrentSubfolderPathExcluded(const QString &relativePath) {
+    const NoteFolder noteFolder = currentNoteFolder();
+    if (!noteFolder.isFetched()) {
+        return false;
+    }
+    return noteFolder.isSubfolderPathExcluded(relativePath);
+}
+
 QDebug operator<<(QDebug dbg, const NoteFolder &noteFolder) {
     dbg.nospace() << "NoteFolder: <id>" << noteFolder.id << " <name>" << noteFolder.name
                   << " <localPath>" << noteFolder.localPath << " <remotePath>"

@@ -2662,6 +2662,7 @@ void SettingsDialog::on_noteFolderListWidget_currentItemChanged(QListWidgetItem 
         ui->noteFolderLocalPathLineEdit->setText(_selectedNoteFolder.getLocalPath());
         ui->noteFolderRemotePathLineEdit->setText(_selectedNoteFolder.getRemotePath());
         ui->noteFolderShowSubfoldersCheckBox->setChecked(_selectedNoteFolder.isShowSubfolders());
+        ui->noteFolderAllSubfoldersCheckBox->setChecked(_selectedNoteFolder.isAllSubfolders());
         ui->allowDifferentNoteFileNameCheckBox->setChecked(
             _selectedNoteFolder.settingsValue(QStringLiteral("allowDifferentNoteFileName"))
                 .toBool());
@@ -2673,6 +2674,8 @@ void SettingsDialog::on_noteFolderListWidget_currentItemChanged(QListWidgetItem 
         Q_UNUSED(blocker)
         ui->noteFolderActiveCheckBox->setChecked(_selectedNoteFolder.isCurrent());
     }
+
+    updateSubfolderVisibility();
 }
 
 void SettingsDialog::on_noteFolderAddButton_clicked() {
@@ -3551,6 +3554,179 @@ void SettingsDialog::on_noteFolderShowSubfoldersCheckBox_toggled(bool checked) {
     }
 
     _selectedNoteFolder.store();
+
+    updateSubfolderVisibility();
+}
+
+void SettingsDialog::on_noteFolderAllSubfoldersCheckBox_toggled(bool checked) {
+    _selectedNoteFolder.setAllSubfolders(checked);
+
+    updateSubfolderVisibility();
+}
+
+/**
+ * Updates the visibility of the "All subfolders" checkbox and subfolder tree
+ * based on the current "Use note subfolders" and "All subfolders" settings
+ */
+void SettingsDialog::updateSubfolderVisibility() {
+    const bool showSubfolders = ui->noteFolderShowSubfoldersCheckBox->isChecked();
+    const bool allSubfolders = ui->noteFolderAllSubfoldersCheckBox->isChecked();
+
+    // Show the entire subfolder settings frame only when subfolders are enabled
+    ui->noteFolderSubfolderSettingsFrame->setVisible(showSubfolders);
+    ui->noteFolderSubfolderTreeWidget->setVisible(showSubfolders && !allSubfolders);
+
+    if (showSubfolders && !allSubfolders) {
+        populateSubfolderTree();
+    }
+}
+
+/**
+ * Populates the subfolder tree widget from the file system
+ */
+void SettingsDialog::populateSubfolderTree() {
+    ui->noteFolderSubfolderTreeWidget->clear();
+
+    const QString localPath = _selectedNoteFolder.getLocalPath();
+    if (localPath.isEmpty() || !QDir(localPath).exists()) {
+        return;
+    }
+
+    // Disconnect to avoid saving while populating
+    disconnect(ui->noteFolderSubfolderTreeWidget, &QTreeWidget::itemChanged, this,
+               &SettingsDialog::saveSubfolderTreeSelection);
+
+    const QStringList excludedPaths = _selectedNoteFolder.excludedSubfolderPaths();
+
+    // First pass: build the tree without check states (avoid auto-tristate interference)
+    populateSubfolderTreeFromDir(nullptr, localPath, QString());
+
+    // Second pass: apply check states bottom-up so auto-tristate works correctly
+    applySubfolderTreeCheckStates(ui->noteFolderSubfolderTreeWidget, excludedPaths);
+
+    ui->noteFolderSubfolderTreeWidget->expandAll();
+
+    // Reconnect
+    connect(ui->noteFolderSubfolderTreeWidget, &QTreeWidget::itemChanged, this,
+            &SettingsDialog::saveSubfolderTreeSelection);
+}
+
+/**
+ * Recursively populates subfolder tree items from a directory (without setting check states)
+ */
+void SettingsDialog::populateSubfolderTreeFromDir(QTreeWidgetItem *parentItem, const QString &path,
+                                                  const QString &relativePath) {
+    QDir dir(path);
+    const QStringList folders =
+        dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::Hidden, QDir::Name);
+
+    for (const QString &folder : folders) {
+        if (NoteSubFolder::willFolderBeIgnored(folder)) {
+            continue;
+        }
+
+        const QString childRelPath =
+            relativePath.isEmpty() ? folder : relativePath + QLatin1Char('/') + folder;
+        const QString childFullPath = path + QDir::separator() + folder;
+
+        auto *item = new QTreeWidgetItem();
+        item->setText(0, folder);
+        item->setData(0, Qt::UserRole, childRelPath);
+        item->setFlags(item->flags() | Qt::ItemIsUserCheckable | Qt::ItemIsAutoTristate);
+
+        if (parentItem) {
+            parentItem->addChild(item);
+        } else {
+            ui->noteFolderSubfolderTreeWidget->addTopLevelItem(item);
+        }
+
+        // Recurse into subdirectories
+        populateSubfolderTreeFromDir(item, childFullPath, childRelPath);
+    }
+}
+
+/**
+ * Applies check states to subfolder tree items bottom-up.
+ * Items whose path (or an ancestor path) is in excludedPaths are unchecked.
+ * Processing bottom-up ensures auto-tristate computes parent states correctly.
+ */
+void SettingsDialog::applySubfolderTreeCheckStates(QTreeWidget *tree,
+                                                   const QStringList &excludedPaths) {
+    for (int i = 0; i < tree->topLevelItemCount(); ++i) {
+        applyCheckStateToItem(tree->topLevelItem(i), excludedPaths);
+    }
+}
+
+/**
+ * Recursively applies check states to a tree item and its children (bottom-up).
+ * Children are processed first so auto-tristate computes parent states correctly.
+ */
+void SettingsDialog::applyCheckStateToItem(QTreeWidgetItem *item,
+                                           const QStringList &excludedPaths) {
+    const QString path = item->data(0, Qt::UserRole).toString();
+
+    // Check if this path or any ancestor is in the excluded list
+    bool excluded = false;
+    for (const QString &excludedPath : excludedPaths) {
+        if (path == excludedPath || path.startsWith(excludedPath + QLatin1Char('/'))) {
+            excluded = true;
+            break;
+        }
+    }
+
+    if (excluded) {
+        // Mark excluded branches recursively so every visible item gets a checkbox.
+        for (int i = 0; i < item->childCount(); ++i) {
+            applyCheckStateToItem(item->child(i), excludedPaths);
+        }
+
+        item->setCheckState(0, Qt::Unchecked);
+        return;
+    }
+
+    // Process children first (bottom-up)
+    for (int i = 0; i < item->childCount(); ++i) {
+        applyCheckStateToItem(item->child(i), excludedPaths);
+    }
+
+    // Leaf nodes: set checked explicitly; non-leaf: auto-tristate computes from children
+    if (item->childCount() == 0) {
+        item->setCheckState(0, Qt::Checked);
+    }
+}
+
+/**
+ * Saves the subfolder tree selection when an item check state changes
+ */
+void SettingsDialog::saveSubfolderTreeSelection() {
+    QStringList excludedPaths;
+
+    for (int i = 0; i < ui->noteFolderSubfolderTreeWidget->topLevelItemCount(); ++i) {
+        collectExcludedSubfolderPaths(ui->noteFolderSubfolderTreeWidget->topLevelItem(i),
+                                      excludedPaths);
+    }
+
+    _selectedNoteFolder.setExcludedSubfolderPaths(excludedPaths);
+}
+
+/**
+ * Recursively collects paths of unchecked subfolder tree items.
+ * Only stores the topmost unchecked parent (children are excluded implicitly).
+ */
+void SettingsDialog::collectExcludedSubfolderPaths(QTreeWidgetItem *item,
+                                                   QStringList &excludedPaths) {
+    const QString relativePath = item->data(0, Qt::UserRole).toString();
+
+    if (item->checkState(0) == Qt::Unchecked) {
+        // This folder and all children are excluded - only store this path
+        excludedPaths.append(relativePath);
+        return;
+    }
+
+    // If partially or fully checked, recurse into children
+    for (int i = 0; i < item->childCount(); ++i) {
+        collectExcludedSubfolderPaths(item->child(i), excludedPaths);
+    }
 }
 
 void SettingsDialog::on_allowDifferentNoteFileNameCheckBox_toggled(bool checked) {

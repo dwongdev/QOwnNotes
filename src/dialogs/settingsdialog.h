@@ -16,6 +16,7 @@ class QListWidgetItem;
 class QListWidget;
 class QKeySequenceWidget;
 class QTreeWidgetItem;
+class QTreeWidget;
 class QLineEdit;
 class QStatusBar;
 class QButtonGroup;
@@ -176,6 +177,8 @@ class SettingsDialog : public MasterDialog {
     void on_defaultNoteFileExtensionListWidget_itemChanged(QListWidgetItem *item);
 
     void on_noteFolderShowSubfoldersCheckBox_toggled(bool checked);
+
+    void on_noteFolderAllSubfoldersCheckBox_toggled(bool checked);
 
     void on_gitHubLineBreaksCheckBox_toggled(bool checked);
 
@@ -520,6 +523,19 @@ class SettingsDialog : public MasterDialog {
     void applyDarkModeSettings();
 
     void applyEditorSchemaSettings();
+
+    void populateSubfolderTree();
+
+    void populateSubfolderTreeFromDir(QTreeWidgetItem *parentItem, const QString &path,
+                                      const QString &relativePath);
+    void applySubfolderTreeCheckStates(QTreeWidget *tree, const QStringList &excludedPaths);
+    void applyCheckStateToItem(QTreeWidgetItem *item, const QStringList &excludedPaths);
+
+    void updateSubfolderVisibility();
+
+    void collectExcludedSubfolderPaths(QTreeWidgetItem *item, QStringList &excludedPaths);
+
+    void saveSubfolderTreeSelection();
 
     void runAiApiTest(QString backend, QString model, QString apiKey = QString());
 

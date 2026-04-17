@@ -281,6 +281,11 @@ void NoteSubFolderTree::buildTreeForParentItem(QTreeWidgetItem *parent) {
 
     // build the next level of note sub folders
     for (const auto &noteSubFolder : noteSubFolderList) {
+        // Skip excluded subfolders
+        if (NoteFolder::isCurrentSubfolderPathExcluded(noteSubFolder.relativePath())) {
+            continue;
+        }
+
         QTreeWidgetItem *item = addNoteSubFolder(parent, noteSubFolder);
 
         if (isCurrentNoteTreeEnabled) {
@@ -562,6 +567,11 @@ QMenu *NoteSubFolderTree::buildMoveDestinationMenuTree(
     for (const auto &noteSubFolder : noteSubFolderList) {
         const int noteSubFolderId = noteSubFolder.getId();
         if (forbiddenDestinationIds.contains(noteSubFolderId)) {
+            continue;
+        }
+
+        // Skip excluded subfolders
+        if (NoteFolder::isCurrentSubfolderPathExcluded(noteSubFolder.relativePath())) {
             continue;
         }
 

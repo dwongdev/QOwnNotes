@@ -428,9 +428,9 @@
              </property>
             </item>
            </item>
-           </widget>
-         </item>
-        </layout>
+                    </widget>
+                    </item>
+                   </layout>
        </widget>
       </item>
       <item>
@@ -618,8 +618,8 @@
                    <enum>QFrame::Shadow::Raised</enum>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_22">
-                   <item row="12" column="0" colspan="2">
-                    <widget class="QFrame" name="noteFolderRemotePathTreeWidgetFrame">
+                    <item row="13" column="0" colspan="2">
+                     <widget class="QFrame" name="noteFolderRemotePathTreeWidgetFrame">
                      <property name="frameShape">
                       <enum>QFrame::Shape::NoFrame</enum>
                      </property>
@@ -709,25 +709,25 @@
                      </layout>
                     </widget>
                    </item>
-                   <item row="8" column="0" colspan="2">
-                    <widget class="QLabel" name="noteFolderCloudConnectionLabel">
+                    <item row="9" column="0" colspan="2">
+                     <widget class="QLabel" name="noteFolderCloudConnectionLabel">
                      <property name="text">
                       <string>Cloud connection:</string>
                      </property>
                     </widget>
                    </item>
-                   <item row="9" column="0" colspan="2">
-                    <widget class="QComboBox" name="noteFolderCloudConnectionComboBox"/>
+                    <item row="10" column="0" colspan="2">
+                     <widget class="QComboBox" name="noteFolderCloudConnectionComboBox"/>
                    </item>
-                   <item row="10" column="0" colspan="2">
-                    <widget class="QLabel" name="noteFolderRemotePathLabel">
+                    <item row="11" column="0" colspan="2">
+                     <widget class="QLabel" name="noteFolderRemotePathLabel">
                      <property name="text">
                       <string>Path on your ownCloud server:</string>
                      </property>
                     </widget>
                    </item>
-                   <item row="13" column="0">
-                    <widget class="QFrame" name="noteFolderVerticalSpacerFrame">
+                    <item row="14" column="0">
+                     <widget class="QFrame" name="noteFolderVerticalSpacerFrame">
                      <property name="frameShape">
                       <enum>QFrame::Shape::NoFrame</enum>
                      </property>
@@ -773,8 +773,57 @@
                      </property>
                     </widget>
                    </item>
-                   <item row="6" column="0" colspan="2">
-                    <widget class="QCheckBox" name="noteFolderGitCommitCheckBox">
+                    <item row="6" column="0" colspan="2">
+                     <widget class="QGroupBox" name="noteFolderSubfolderSettingsFrame">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="title">
+                       <string>Subfolder visibility</string>
+                      </property>
+                      <layout class="QVBoxLayout" name="subfolderSettingsLayout">
+                       <item>
+                        <widget class="QCheckBox" name="noteFolderAllSubfoldersCheckBox">
+                         <property name="toolTip">
+                          <string>If checked, all subfolders will be shown. If unchecked, you can select which subfolders to show.</string>
+                         </property>
+                         <property name="text">
+                          <string>All subfolders</string>
+                         </property>
+                         <property name="checked">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QTreeWidget" name="noteFolderSubfolderTreeWidget">
+                         <property name="toolTip">
+                          <string>Select which subfolders to show. Unchecked subfolders and their children will be ignored.</string>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>200</height>
+                          </size>
+                         </property>
+                         <property name="headerHidden">
+                          <bool>true</bool>
+                         </property>
+                         <column>
+                          <property name="text">
+                           <string notr="true">1</string>
+                          </property>
+                         </column>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item row="7" column="0" colspan="2">
+                     <widget class="QCheckBox" name="noteFolderGitCommitCheckBox">
                      <property name="toolTip">
                       <string>You need to have git installed to make this work!</string>
                      </property>
@@ -800,8 +849,8 @@
                      </property>
                     </widget>
                    </item>
-                   <item row="11" column="1">
-                    <widget class="QPushButton" name="noteFolderRemotePathButton">
+                    <item row="12" column="1">
+                     <widget class="QPushButton" name="noteFolderRemotePathButton">
                      <property name="toolTip">
                       <string>Click here to select your remote note path on your ownCloud server</string>
                      </property>
@@ -861,8 +910,8 @@
                      </property>
                     </widget>
                    </item>
-                   <item row="11" column="0">
-                    <widget class="QLineEdit" name="noteFolderRemotePathLineEdit">
+                    <item row="12" column="0">
+                     <widget class="QLineEdit" name="noteFolderRemotePathLineEdit">
                      <property name="toolTip">
                       <string>Set the ownCloud path where the note folder path will be synced to on your ownCloud server.</string>
                      </property>
@@ -874,8 +923,8 @@
                      </property>
                     </widget>
                    </item>
-                   <item row="7" column="0" colspan="2">
-                    <widget class="QCheckBox" name="allowDifferentNoteFileNameCheckBox">
+                    <item row="8" column="0" colspan="2">
+                     <widget class="QCheckBox" name="allowDifferentNoteFileNameCheckBox">
                      <property name="toolTip">
                       <string>This also allows note files to be renamed</string>
                      </property>

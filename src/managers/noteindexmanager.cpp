@@ -262,6 +262,12 @@ bool NoteIndexManager::buildNotesIndex(int noteSubFolderId, bool forceRebuild) {
             }
 
             if (parentNoteSubFolder.isFetched()) {
+                // Skip excluded subfolders recursively
+                if (NoteFolder::isCurrentSubfolderPathExcluded(
+                        parentNoteSubFolder.relativePath())) {
+                    continue;
+                }
+
                 // add the note id to in the end check if notes need to
                 // be removed
                 _mainWindow->_buildNotesIndexAfterNoteSubFolderIdList

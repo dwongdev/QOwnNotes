@@ -769,6 +769,11 @@ void NoteOperationsManager::buildBulkNoteSubFolderMenuTree(QMenu *parentMenu, bo
         NoteSubFolder::fetchAllByParentId(parentNoteSubFolderId, QStringLiteral("name ASC"));
 
     for (const auto &noteSubFolder : noteSubFolderList) {
+        // Skip excluded subfolders
+        if (NoteFolder::isCurrentSubfolderPathExcluded(noteSubFolder.relativePath())) {
+            continue;
+        }
+
         const int noteSubFolderId = noteSubFolder.getId();
         const QString name = noteSubFolder.getName();
 

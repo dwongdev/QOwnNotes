@@ -42,6 +42,12 @@ class NoteFolder {
     void resetActiveNoteSubFolder();
     bool isUseGit() const;
     void setUseGit(bool value);
+    bool isAllSubfolders() const;
+    void setAllSubfolders(bool value);
+    QStringList excludedSubfolderPaths() const;
+    void setExcludedSubfolderPaths(const QStringList &paths);
+    bool isSubfolderPathExcluded(const QString &relativePath) const;
+    static bool isCurrentSubfolderPathExcluded(const QString &relativePath);
     QJsonObject jsonObject() const;
 
     static bool create(const QString &name, const QString &localPath, int cloudConnectionId,
