@@ -16,6 +16,7 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QDebug>
 #include <QFile>
 #include <QTextStream>
 

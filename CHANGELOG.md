@@ -1,5 +1,13 @@
 # QOwnNotes Changelog
 
+## 26.4.17
+
+- Fixed a build error on older Qt5 systems after the **Settings dialog** widget
+  refactoring by explicitly including `QDebug` in
+  `widgets/settings/debugsettingswidget.cpp`, so Ubuntu Focal and Debian 10
+  builds no longer fail with an incomplete `QDebug` type during the `#3570`
+  changes (for [#3570](https://github.com/pbek/QOwnNotes/issues/3570))
+
 ## 26.4.16
 
 - Tag assignments are now preserved when a **note subfolder** is renamed,
