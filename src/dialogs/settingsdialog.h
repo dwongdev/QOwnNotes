@@ -5,6 +5,8 @@
 #include <enums/oklabelstatus.h>
 
 #include "masterdialog.h"
+#include "widgets/settings/generalsettingswidget.h"
+#include "widgets/settings/interfacesettingswidget.h"
 #include "widgets/settings/mcpserversettingswidget.h"
 #include "widgets/settings/notefoldersettingswidget.h"
 #include "widgets/settings/owncloudsettingswidget.h"
@@ -97,20 +99,6 @@ class SettingsDialog : public MasterDialog {
 
     void on_buttonBox_clicked(QAbstractButton *button);
 
-    void on_reinitializeDatabaseButton_clicked();
-
-    void on_databaseIntegrityCheckButton_clicked();
-
-    void on_clearAppDataAndExitButton_clicked();
-
-    void on_setExternalEditorPathToolButton_clicked();
-
-    void on_addCustomNoteFileExtensionButton_clicked();
-
-    void on_removeCustomNoteFileExtensionButton_clicked();
-
-    void on_defaultNoteFileExtensionListWidget_itemChanged(QListWidgetItem *item);
-
     void on_shortcutSearchLineEdit_textChanged(const QString &arg1);
 
     void on_settingsTreeWidget_currentItemChanged(QTreeWidgetItem *current,
@@ -118,60 +106,22 @@ class SettingsDialog : public MasterDialog {
 
     void on_settingsStackedWidget_currentChanged(int index);
 
-    void on_toolbarIconSizeResetButton_clicked();
-
-    void on_itemHeightResetButton_clicked();
-
     void on_applyToolbarButton_clicked();
 
     void on_resetToolbarPushButton_clicked();
 
-    void on_imageScaleDownCheckBox_toggled(bool checked);
-
-    void on_enableReadOnlyModeCheckBox_toggled(bool checked);
-
     void on_searchLineEdit_textChanged(const QString &arg1);
 
-    void noteNotificationButtonGroupPressed(QAbstractButton *button);
-
-    void noteNotificationNoneCheckBoxCheck();
-
     void needRestart();
-
-    void on_interfaceStyleComboBox_currentTextChanged(const QString &arg1);
-
-    void on_showSystemTrayCheckBox_toggled(bool checked);
-
-    void on_resetMessageBoxesButton_clicked();
 
     void onLayoutStored(const QString &layoutUuid);
 
     void keySequenceEvent(const QString &objectName);
 
-    void on_exportSettingsButton_clicked();
-
-    void on_importSettingsButton_clicked();
-
-    void on_interfaceFontSizeSpinBox_valueChanged(int arg1);
-
-    void on_overrideInterfaceFontSizeGroupBox_toggled(bool arg1);
-
-    void on_languageSearchLineEdit_textChanged(const QString &arg1);
-
-    void on_defaultNoteFileExtensionListWidget_itemSelectionChanged();
-
-    void on_showStatusBarNotePathCheckBox_toggled(bool checked);
-
-    void on_overrideInterfaceScalingFactorGroupBox_toggled(bool arg1);
-
-    void on_interfaceScalingFactorSpinBox_valueChanged(int arg1);
-
    private:
     Ui::SettingsDialog *ui;
     static const int _defaultMarkdownHighlightingInterval = 200;
     QSplitter *_mainSplitter;
-    QButtonGroup *_noteNotificationButtonGroup;
-    QCheckBox *_noteNotificationNoneCheckBox;
     QHash<int, bool> _pageInitialized;
     bool _initialDarkMode = false;
     bool _initialDarkModeColors = false;
@@ -188,8 +138,6 @@ class SettingsDialog : public MasterDialog {
     static bool listWidgetValueExists(QListWidget *listWidget, const QString &value);
 
     static QString getSelectedListWidgetValue(QListWidget *listWidget);
-
-    QListWidgetItem *addCustomNoteFileExtension(QString fileExtension);
 
     void loadShortcutSettings();
 
@@ -213,10 +161,6 @@ class SettingsDialog : public MasterDialog {
     void clearSearchHighlights();
 
     void replaceOwnCloudText() const;
-
-    void loadInterfaceStyleComboBox() const;
-
-    void initSearchEngineComboBox() const;
 
     QKeySequenceWidget *findKeySequenceWidget(const QString &objectName);
 

@@ -249,8 +249,10 @@ SOURCES += main.cpp\
     widgets/settings/webapplicationsettingswidget.cpp \
     widgets/settings/mcpserversettingswidget.cpp \
     widgets/settings/notefoldersettingswidget.cpp \
-    widgets/settings/panelssettingswidget.cpp \
-    widgets/settings/scriptingsettingswidget.cpp \
+     widgets/settings/panelssettingswidget.cpp \
+     widgets/settings/interfacesettingswidget.cpp \
+     widgets/settings/generalsettingswidget.cpp \
+     widgets/settings/scriptingsettingswidget.cpp \
     dialogs/serverbookmarksimportdialog.cpp \
     dialogs/websockettokendialog.cpp \
     dialogs/imagedialog.cpp \
@@ -410,8 +412,10 @@ HEADERS  += mainwindow.h \
     widgets/settings/webapplicationsettingswidget.h \
     widgets/settings/mcpserversettingswidget.h \
     widgets/settings/notefoldersettingswidget.h \
-    widgets/settings/panelssettingswidget.h \
-    widgets/settings/scriptingsettingswidget.h \
+     widgets/settings/panelssettingswidget.h \
+     widgets/settings/interfacesettingswidget.h \
+     widgets/settings/generalsettingswidget.h \
+     widgets/settings/scriptingsettingswidget.h \
     dialogs/serverbookmarksimportdialog.h \
     dialogs/websockettokendialog.h \
     dialogs/imagedialog.h \
@@ -491,8 +495,10 @@ FORMS    += mainwindow.ui \
     widgets/settings/webapplicationsettingswidget.ui \
     widgets/settings/mcpserversettingswidget.ui \
     widgets/settings/notefoldersettingswidget.ui \
-    widgets/settings/panelssettingswidget.ui \
-    widgets/settings/scriptingsettingswidget.ui \
+     widgets/settings/panelssettingswidget.ui \
+     widgets/settings/interfacesettingswidget.ui \
+     widgets/settings/generalsettingswidget.ui \
+     widgets/settings/scriptingsettingswidget.ui \
     dialogs/serverbookmarksimportdialog.ui \
     dialogs/websockettokendialog.ui \
     dialogs/layoutdialog.ui

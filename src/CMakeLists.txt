@@ -519,6 +519,12 @@ set(SOURCE_FILES
     widgets/settings/panelssettingswidget.cpp
     widgets/settings/panelssettingswidget.h
     widgets/settings/panelssettingswidget.ui
+    widgets/settings/interfacesettingswidget.cpp
+    widgets/settings/interfacesettingswidget.h
+    widgets/settings/interfacesettingswidget.ui
+    widgets/settings/generalsettingswidget.cpp
+    widgets/settings/generalsettingswidget.h
+    widgets/settings/generalsettingswidget.ui
     widgets/settings/scriptingsettingswidget.cpp
     widgets/settings/scriptingsettingswidget.h
     widgets/settings/scriptingsettingswidget.ui
