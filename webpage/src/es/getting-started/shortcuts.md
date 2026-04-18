@@ -8,7 +8,7 @@
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> crea una nueva nota en una nueva pestaña
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> le permite buscar notas (en el nombre de la nota y su contenido)
 - <kbd>Alt</kbd> + <kbd>F</kbd> le permite buscar notas en todas las etiquetas / subcarpetas
-- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> cambia al espacio de trabajo anterior
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> edita una nota cifrada
 - <kbd>Alt</kbd> + <kbd>R</kbd> elimina la nota actual
 - <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> busca actualizaciones
@@ -53,7 +53,7 @@
 
 ### En la lista de notas
 
-- haga doble clic en la nota para abrirla en una nueva pestaña (tenga en cuenta que hay un gancho de secuencia de comandos que puede anular la acción del doble clic)
+- haga doble clic en la nota para abrirla en una nueva pestaña (tenga en cuenta que hay un gancho de secuencia de comandos que puede sobrescribir la acción del doble clic)
 - <kbd>Ctrl</kbd> + <kbd>A</kbd> selecciona todas las notas (para moverlas, copiarlas o eliminarlas con un clic derecho)
 - <kbd>Tab</kbd> o <kbd>Enter</kbd> le permite editar la nota actual
 
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> crea una nueva nota en una nueva pestaña
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> le permite buscar notas (en el nombre de la nota y su contenido)
 - <kbd>⌃ Ctrl</kbd> + <kbd>F</kbd> le permite buscar notas en todas las etiquetas / subcarpetas
-- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> cambia al espacio de trabajo anterior
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> edita una nota cifrada
 - <kbd>⌃ Ctrl</kbd> + <kbd>R</kbd> elimina la nota actual
 - <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> busca actualizaciones
@@ -168,7 +168,7 @@
 
 ### En la lista de notas
 
-- haga doble clic en la nota para abrirla en una nueva pestaña (tenga en cuenta que hay un gancho de secuencia de comandos que puede anular la acción del doble clic)
+- haga doble clic en la nota para abrirla en una nueva pestaña (tenga en cuenta que hay un gancho de secuencia de comandos que puede sobrescribir la acción del doble clic)
 - <kbd>⌘ Cmd</kbd> + <kbd>A</kbd> selecciona todas las notas (para moverlas, copiarlas o eliminarlas con un clic derecho)
 - <kbd>Tab</kbd> o <kbd>Enter</kbd> le permite editar la nota actual
 

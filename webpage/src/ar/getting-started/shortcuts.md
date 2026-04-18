@@ -8,7 +8,7 @@
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> يُنشئ ملاحظة جديدة في علامة تبويب جديدة
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> يتيح لك البحث عن الملاحظات (بالاسم والمحتوى)
 - <kbd>Alt</kbd> + <kbd>F</kbd> يتيح لك البحث عن الملاحظات في جميع الوسوم والمجلدات الفرعية
-- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> ينتقل إلى مساحة العمل السابقة
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> يحرر ملاحظة مشفرة
 - <kbd>Alt</kbd> + <kbd>R</kbd> يزيل الملاحظة الحالية
 - <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> يتحقق من وجود تحديثات
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> يُنشئ ملاحظة جديدة في علامة تبويب جديدة
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> يتيح لك البحث عن الملاحظات (بالاسم والمحتوى)
 - <kbd>⌃ Ctrl</kbd> + <kbd>F</kbd> يتيح لك البحث عن الملاحظات في جميع الوسوم والمجلدات الفرعية
-- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> ينتقل إلى مساحة العمل السابقة
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> يحرر ملاحظة مشفرة
 - <kbd>⌃ Ctrl</kbd> + <kbd>R</kbd> يزيل الملاحظة الحالية
 - <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> يتحقق من وجود تحديثات

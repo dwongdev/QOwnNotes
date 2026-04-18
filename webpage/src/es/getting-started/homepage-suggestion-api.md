@@ -5,7 +5,7 @@ backed by the same bookmark parsing/indexing used by the Web Companion data sour
 
 ## Habilitar en QOwnNotes
 
-1. Open `Settings -> Browser extension / command snippets`.
+1. Abra `Configuración -> Extensión del navegador/fragmentos de órdenes`.
 2. Enable `Enable socket server`.
 3. In `Bookmark suggestion API`, enable `Enable Homepage-compatible bookmark suggestions API` and set a port.
 
@@ -24,7 +24,7 @@ suggestions.
 Respuesta de ejemplo:
 
 ```json
-["home", ["Homepage", "https://example.com/home", "Some Home Link"]]
+["home", ["Homepage", "https://ejemplo.com/home", "Un enlace de página de inicio"]]
 ```
 
 ## Ejemplo de configuración de Homepage
@@ -32,7 +32,7 @@ Respuesta de ejemplo:
 ```yaml
 search:
   provider: custom
-  url: https://example.com/search?q=
+  url: https://ejemplo.com/search?q=
   suggestionUrl: http://127.0.0.1:22224/suggest?q=
   showSearchSuggestions: true
 ```

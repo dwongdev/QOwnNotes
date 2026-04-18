@@ -132,7 +132,7 @@ TagApi가 [ note-tagging-by-object.qml ](https://github.com/pbek/QOwnNotes/blob/
 ### 속성 및 방법
 
 ```cpp
-클래스 MainWindow {
+class MainWindow {
     Q_INVOKABLE void reloadTagTree();
     Q_INVOKABLE void reloadNoteSubFolderTree();
     Q_INVOKABLE void buildNotesIndexAndLoadNoteDirectoryList(
@@ -140,26 +140,25 @@ TagApi가 [ note-tagging-by-object.qml ](https://github.com/pbek/QOwnNotes/blob/
     Q_INVOKABLE void focusNoteTextEdit();
     // 현재 하위 폴더에 새 노트 하위 폴더를 만듭니다
     Q_INVOKABLE bool createNewNoteSubFolder(QString folderName = "");
-    // 현재 노트에 html을 마크다운으로 삽입합니다
-    // 이 방법은 또한 원격 이미지를 다운로드하고 "data:image"  URL을 미디어
-    // 디렉토리에저장된 로컬 이미지로 변환합니다
+    // 현재 노트에 HTML을 마크다운으로 삽입합니다
+    // 이 방법은 또한 원격 이미지를 다운로드하고 "data:image" URL을
+    // 미디어 디렉터리에 저장된 로컬 이미지로 변환합니다
     Q_INVOKABLE void insertHtmlAsMarkdownIntoCurrentNote(QString html);
-    // ID별로 현재 노트를 다시 불러오기
+    // 현재 노트를 ID별로 다시 로드합니다
     // 현재 노트의 경로 또는 파일 이름이 변경될 때 유용합니다
     Q_INVOKABLE void reloadCurrentNoteByNoteId();
-    // 작업 공간 UUID 목록을 반환합니다
-    Q_INVOKABLE QStringList getWorkspaceUuidList();
-    // 작업 공간 이름을 전달하는 워크스페이스의 UUID를 반환합니다
-    Q_INVOKABLE QString getWorkspaceUuid(const QString &workspaceName);
-    // UUID별로 현재 작업 공간을 설정합니다
-    Q_INVOKABLE void setCurrentWorkspace(const QString &uuid);
-    // 특정 인덱스에서 노트 탭을 닫습니다 (성공한 경우 true를 반환합니다)
+    // 레이아웃 UUID 목록을 반환합니다
+    Q_INVOKABLE QStringList getLayoutUuidList();
+    // 레이아웃 이름을 전달하여 레이아웃의 UUID를 반환합니다
+    Q_INVOKABLE QString getLayoutUuid(const QString &layoutName);
+    // 현재 레이아웃을 UUID로 설정합니다
+    Q_INVOKABLE void setCurrentLayout(const QString &uuid);
+    // 특정 인덱스에서 노트 탭을 닫습니다 (성공하면 true로 반환됨)
     Q_INVOKABLE bool removeNoteTab(int index);
-    // 탭에서 열려 있는 노트 ID 목록을 반환합니다
+    // 탭에 열려 있는 노트 ID 목록을 반환합니다
     Q_INVOKABLE QList<int> getNoteTabNoteIdList();
-    // 태그 트리의 태그로 이동합니다
+    // 태그 트리에서 태그로 이동합니다
     Q_INVOKABLE bool jumpToTag(int tagId);
-};;
 ```
 
 ### 예제
@@ -174,10 +173,10 @@ mainWindow.createNewNoteSubFolder("My fancy folder");
 // 현재 노트에 HTML을 마크다운으로 삽입합니다
 mainWindow.insertHtmlAsMarkdownIntoCurrentNote("<h2>my headline</h2>some text");
 
-// 'Edit' 작업 공간을 현재 작업 공간으로 설정합니다
-mainWindow.setCurrentWorkspace(mainWindow.getWorkspaceUuid("Edit"));
+// '편집' 레이아웃을 현재 레이아웃으로 설정
+mainWindow.setCurrentLayout(mainWindow.getLayoutUuid("Edit"));
 
-// 태그 트리의 태그 "test"로 이동합니다
+// 태그 트리의 태그 "테스트"로 이동합니다
 // https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/custom-actions.qml 에 한 가지 예가 있습니다
 var tag = script.getTagByNameBreadcrumbList(["test"]);
 mainWindow.jumpToTag(tag.id);

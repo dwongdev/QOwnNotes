@@ -9,6 +9,7 @@
 - Follow [QOwnNotes on **Mastodon**](https://social.qownnotes.org/@qownnotes)
 - [ ** خبرخوان وبلاگ ** QOwnNotes ](https://feeds.feedburner.com/QOwnNotesBlog) را اشتراک گذاری کنید
 - [ ** پخش خبرخوان ** QOwnNotes ](https://feeds.feedburner.com/QOwnNotesReleases) را اشتراک گذاری کنید
+- Read how [**code contributions** work](code-contributions.md)
 - در [ ** ترجمه های ** QOwnNotes ](translation.md) سهیم شوید
 - در [ صفحه ** مسائل گیت هاب ** QOwnNotes ](https://github.com/pbek/QOwnNotes/issues) مشکلات را گزارش دهید و ایده های مربوط به ویژگی های جدید را به اشتراک بگذارید
 - اگر طرحواره ویرایشگر بزرگی ساخته اید، لطفاً آن را در [ صفحه ** مسائل گیت هاب ** ](https://github.com/pbek/QOwnNotes/issues) هم پست کنید

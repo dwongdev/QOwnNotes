@@ -72,7 +72,7 @@ graph TB
 
 Puede administrar los **marcadores de su navegador** con QOwnNotes o usarlo como **web clipper**.
 
-The same bookmark parsing and indexing can also power a local suggestion API for [Homepage](https://github.com/gethomepage/homepage).
+El mismo análisis e indexación de marcadores también puede alimentar una API de sugerencias local para [Homepage](https://github.com/gethomepage/homepage).
 
 ::: tip
 Las extensiones del navegador funcionan **fuera de línea**. No se requiere de una conexión a Internet. Por favor visite la [ extensión del navegador QOwnNotes Web Companion](browser-extension.md) para mayor información.
@@ -80,18 +80,18 @@ Las extensiones del navegador funcionan **fuera de línea**. No se requiere de u
 
 ## Panel de control de Homepage
 
-QOwnNotes can expose a local HTTP endpoint for [Homepage](https://github.com/gethomepage/homepage) `suggestionUrl` support, backed by the same bookmark parsing and indexing used by the Web Companion data source.
+QOwnNotes puede exponer un endpoint HTTP local para la compatibilidad con [Homepage](https://github.com/gethomepage/homepage) y `suggestionUrl`, respaldado por el mismo análisis e indexación de marcadores que utiliza la fuente de datos de Web Companion.
 
-- Enable it in `Settings -> Browser extension / command snippets`
-- Turn on `Enable socket server`
+- Habilítelo en `Configuración -&gt; Extensión del navegador/fragmentos de órdenes0></li>
+<li>Habilite <code>Habilitar servidor de sockets`
 - In `Bookmark suggestion API`, enable `Enable Homepage-compatible bookmark suggestions API`
 - Establece un puerto para el endpoint local
-- Optionally set a security token if you want Homepage requests to authenticate
+- Opcionalmente, configure un token de seguridad si desea que las solicitudes a Homepage requieran autenticación
 - El servicio solo se conecta a `127.0.0.1`
 
 El endpoint está disponible como `GET /suggest?q=home` y admite un parámetro opcional `limit` (valor predeterminado `10`, máximo `50`) y un parámetro opcional `token`.
 
-If you use the custom Homepage assets from `docs/homepage/custom.js`, set `QON_TOKEN` to the same security token configured in QOwnNotes.
+Si utiliza los recursos personalizados de Homepage de `docs/homepage/custom.js`, establezca `QON_TOKEN` con el mismo token de seguridad configurado en QOwnNotes.
 
 Configuración de ejemplo de Homepage:
 

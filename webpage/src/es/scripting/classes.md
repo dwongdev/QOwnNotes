@@ -140,26 +140,26 @@ class MainWindow {
     Q_INVOKABLE void buildNotesIndexAndLoadNoteDirectoryList(
             bool forceBuild = false, bool forceLoad = false);
     Q_INVOKABLE void focusNoteTextEdit();
-    // Crea una nueva subcarpeta de notas en la subcarpeta actual
+    // Creates a new note subfolder in the current subfolder
     Q_INVOKABLE bool createNewNoteSubFolder(QString folderName = "");
-    // Inserta HTML en la nota actual como Markdown
-    // Este método también descarga imágenes remotas y transforma las URL de "data:image"
-    // en imágenes almacenadas en el directorio de medios
+    // Inserts html in the current note as markdown
+    // This method also downloads remote images and transforms "data:image"
+    // urls to local images stored in the media directory
     Q_INVOKABLE void insertHtmlAsMarkdownIntoCurrentNote(QString html);
-    // Recarga la nota actual por ID
-    // Esto es util cuando la ruta o el nombre de archivo de la nota actual ha cambiado
+    // Reloads the current note by id
+    // This is useful when the path or filename of the current note changed
     Q_INVOKABLE void reloadCurrentNoteByNoteId();
-    // Devuelve la lista de los UUID de los espacios de trabajo
-    Q_INVOKABLE QStringList getWorkspaceUuidList();
-    // Devuelve el UUID de un espacio de trabajo, pasando el nombre del espacio de trabajo
-    Q_INVOKABLE QString getWorkspaceUuid(const QString &workspaceName);
-    // Establece el espacio de trabajo actual por medio de un UUID
-    Q_INVOKABLE void setCurrentWorkspace(const QString &uuid);
-    // Cierra una pestaña de nota en un índice específico(devuelve verdadero si es exitoso)
+    // Returns the list of layout UUIDs
+    Q_INVOKABLE QStringList getLayoutUuidList();
+    // Returns the UUID of a layout, passing in the layout name
+    Q_INVOKABLE QString getLayoutUuid(const QString &layoutName);
+    // Sets the current layout by UUID
+    Q_INVOKABLE void setCurrentLayout(const QString &uuid);
+    // Closes a note tab on a specific index (returns true if successful)
     Q_INVOKABLE bool removeNoteTab(int index);
-    // Devuelve una lista de IDs de las notas que están abiertas en pestañas
+    // Returns a list of note ids that are opened in tabs
     Q_INVOKABLE QList<int> getNoteTabNoteIdList();
-    // Salta a una etiqueta en el árbol de etiquetas
+    // Jumps to a tag in the tag tree
     Q_INVOKABLE bool jumpToTag(int tagId);
 };
 ```
@@ -167,28 +167,28 @@ class MainWindow {
 ### Ejemplo
 
 ```js
-// Forzar una recarga de la lista de notas
+// Force a reload of the note list
 mainWindow.buildNotesIndexAndLoadNoteDirectoryList(true, true);
 
-// Crear una nueva subcarpeta de notas "Mi carpeta estrafalaria" en la subcarpeta actual
-mainWindow.createNewNoteSubFolder("Mi carpeta estrafalaria");
+// Creates a new note subfolder "My fancy folder" in the current subfolder
+mainWindow.createNewNoteSubFolder("My fancy folder");
 
-// Insertar HTML en la nota actual como Markdown
-mainWindow.insertHtmlAsMarkdownIntoCurrentNote("<h2>mi título</h2>algo de texto");
+// Inserts html in the current note as markdown
+mainWindow.insertHtmlAsMarkdownIntoCurrentNote("<h2>my headline</h2>some text");
 
-// Establecer el espacio de trabajo "Edición" como espacio de trabajo actual
-mainWindow.setCurrentWorkspace(mainWindow.getWorkspaceUuid("Edición"));
+// Set 'Edit' layout as current layout
+mainWindow.setCurrentLayout(mainWindow.getLayoutUuid("Edit"));
 
-// Saltar a la etiqueta "prueba" en el árbol de etiquetas
-// Hay un ejemplo en https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/custom-actions.qml
-var etiqueta = script.getTagByNameBreadcrumbList(["prueba"]);
-mainWindow.jumpToTag(etiqueta.id);
+// Jump to the tag "test" in the tag tree
+// There is an example in https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/custom-actions.qml
+var tag = script.getTagByNameBreadcrumbList(["test"]);
+mainWindow.jumpToTag(tag.id);
 
-// Obtener todas las notas de las pestañas que están abiertas 
-var IDnotas = mainWindow.getNoteTabNoteIdList();
-IDnotas.forEach(function (IDnota){
-  var nota = script.fetchNoteById(IDnota);
+// Get all notes that are opened in tabs
+var noteIds = mainWindow.getNoteTabNoteIdList();
+noteIds.forEach(function (noteId) {
+  var note = script.fetchNoteById(noteId);
 
-  // Hacer algo con la nota
+  // do something with the note
 });
 ```

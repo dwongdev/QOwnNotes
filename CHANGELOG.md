@@ -16,6 +16,7 @@
   **All subfolders** checkbox that shows all subfolders by default, and a
   tri-state checkbox tree to include or exclude specific subfolders recursively
   when unchecked (for [#1701](https://github.com/pbek/QOwnNotes/issues/1701))
+- Added more Spanish, Korean, French, Croatian translation (thank you, AlejandroMoc, VenusGirl, jd-develop, milotype)
 
 ## 26.4.15
 

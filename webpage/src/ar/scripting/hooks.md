@@ -372,7 +372,7 @@ function callAutocompletionHook();
 function callHandleWebsocketRawDataHook(requestType, pageUrl, pageTitle, rawData, screenshotDataUrl);
 ```
 
-ربما تحب أن تلقي نظرة على المثالين [websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-new-note.qml) و&nbsp;[websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml).
+You may want to take a look at the examples [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml) and [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml).
 
 ## onDetachedProcessCallback (عند رد عملية منفصلة)
 
@@ -412,25 +412,23 @@ function windowStateChangedHook(windowState);
 
 ربما تحب أن تلقي نظرة على المثال [window-state-changed.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/window-state-changed.qml).
 
-## workspaceSwitchedHook (خطاف تبديل مساحة العمل)
+## layoutSwitchedHook
 
-يُنادى هذا الخطاف عند تبديل مساحة العمل.
+This hook is called when layouts are switched.
 
 ### نداء الدالة ومُعامِلاتها
 
 ```js
 /**
- * تُنادى هذه الدالة عند تبديل مساحات العمل
+ * This function is called when layouts are switched
  *
- * @param oldUuid
- *       المعرف العالمي الفريد لمساحة العمل القديمة
- * @param newUuid
- *       المعرف العالمي الفريد لمساحة العمل الجديدة
+ * @param oldUuid old uuid of layout
+ * @param newUuid new uuid of layout
  */
-function workspaceSwitchedHook(oldUuid, newUuid);
+function layoutSwitchedHook(oldUuid, newUuid);
 ```
 
-ربما تحب أن تلقي نظرة على المثال [websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/workspaces.qml).
+You may want to take a look at the example [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml).
 
 ## openAiBackendsHook (خطاف خدمات الذكاء المصطنع)
 

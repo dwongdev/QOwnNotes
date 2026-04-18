@@ -8,7 +8,7 @@
 - <kbd>Ctrl</kbd> + <kbd>⇧ Maj</kbd> + <kbd>N</kbd> crée une nouvelle note dans un nouvel onglet
 - <kbd>Ctrl</kbd> + <kbd>⇧ Maj</kbd> + <kbd>F</kbd> permet de rechercher des notes (dans le nom de la note et dans son contenu)
 - <kbd>Alt</kbd> + <kbd>F</kbd> vous permet de rechercher des notes dans toutes les balises / sous-dossiers
-- <kbd>Alt</kbd> + <kbd>⇧ Maj</kbd> + <kbd>P</kbd> bascule vers l'espace de travail précédent
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>Ctrl</kbd> + <kbd>⇧ Maj</kbd> + <kbd>E</kbd> permet d'éditer une note chiffrée
 - <kbd>Alt</kbd> + <kbd>R</kbd> supprime la note actuelle
 - <kbd>Alt</kbd> + <kbd>⇧ Maj</kbd> + <kbd>U</kbd> recherche les mises à jour
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Maj</kbd> + <kbd>N</kbd> crée une nouvelle note dans un nouvel onglet
 - <kbd>⌘</kbd> + <kbd>⇧ Maj</kbd> + <kbd>F</kbd> permet de rechercher des notes (dans le nom de la note et dans son contenu)
 - <kbd>^ Ctrl</kbd> + <kbd>F</kbd> permet de rechercher des notes dans toutes les balises / sous-dossiers
-- <kbd>^ Ctrl</kbd> + <kbd>⇧ Maj</kbd> + <kbd>P</kbd> bascule vers l'espace de travail précédent
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Maj</kbd> + <kbd>E</kbd> permet d'éditer une note chiffrée
 - <kbd>^ Ctrl</kbd> + <kbd>R</kbd> supprime la note courante
 - <kbd>^ Ctrl</kbd> + <kbd>⇧ Maj</kbd> + <kbd>U</kbd> recherche les mises à jour

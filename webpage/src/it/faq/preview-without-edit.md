@@ -2,10 +2,10 @@
 
 Puoi farlo disattivando l'impostazione che il **pannello di modifica note** sia il **widget fissato al centro** nelle **Impostazioni Pannelli**.
 
-Quindi è meglio creare un nuovo spazio di lavoro `solo anteprima` facendo clic su **Finestra / Area di lavoro / Aggiungi nuova area di lavoro** nel menu principale. Potrai passare da un layout di pannelli all'altro.
+Then best create a new layout `Preview only` by clicking **Window / Layout / Add new layout** in the main menu. Potrai passare da un layout di pannelli all'altro.
 
 Dopo di che puoi disattivare il pannello di modifica delle note su **Finestra / Pannelli **.
 
 Tieni presente che puoi spostare tutti i pannelli come preferisci facendo clic su **Finestra / Sblocca pannelli** nel menu principale. Puoi anche ridimensionare tutti i pannelli per adattarli alle tue esigenze.
 
-In alternativa è possibile passare al layout **Solo anteprima** nelle **Impostazioni layout**.
+Alternatively you can switch to the **Preview only** layout in the **Layout preset settings**.

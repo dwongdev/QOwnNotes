@@ -9,6 +9,7 @@
 - Follow [QOwnNotes on **Mastodon**](https://social.qownnotes.org/@qownnotes)
 - اشترك في [**موجز RSS لمدونة** QOwnNotes](https://feeds.feedburner.com/QOwnNotesBlog)
 - اشترك في [**موجز RSS لإصدارات** QOwnNotes](https://feeds.feedburner.com/QOwnNotesReleases)
+- Read how [**code contributions** work](code-contributions.md)
 - ساهم في [**ترجمة** QOwnNotes](translation.md)
 - أبلغ عن مشاكل أو شارك أفكار خصائص جديدة على صفحة [**مسائل GitHub** الخاصة بـQOwnNotes](https://github.com/pbek/QOwnNotes/issues)
 - إذا أنشأت مخطط ألوان جميل، نود أن تشاركه في [صفحة **مسائل GitHub**](https://github.com/pbek/QOwnNotes/issues)

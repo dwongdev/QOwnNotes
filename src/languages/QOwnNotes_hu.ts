@@ -16,6 +16,104 @@
 </message>
 </context>
 <context>
+<name>AiSettingsWidget</name>
+<message>
+<source>To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</source>
+<translation type="unfinished">To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</translation>
+</message>
+<message>
+<source>You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</source>
+<translation type="unfinished">You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</translation>
+</message>
+<message>
+<source>Alternatively, you can also look in the script repository for already created AI integration scripts.</source>
+<translation type="unfinished">Alternatively, you can also look in the script repository for already created AI integration scripts.</translation>
+</message>
+<message>
+<source>Search script repository for AI integration scripts</source>
+<translation type="unfinished">Search script repository for AI integration scripts</translation>
+</message>
+<message>
+<source>Search script repository</source>
+<translation type="unfinished">Search script repository</translation>
+</message>
+<message>
+<source>AI backends added via the scripting engine</source>
+<translation type="unfinished">AI backends added via the scripting engine</translation>
+</message>
+<message>
+<source>API keys</source>
+<translation type="unfinished">API keys</translation>
+</message>
+<message>
+<source>OpenAI API key:</source>
+<translation type="unfinished">OpenAI API key:</translation>
+</message>
+<message>
+<source>Create Groq API key</source>
+<translation type="unfinished">Create Groq API key</translation>
+</message>
+<message>
+<source>Create OpenAI API key</source>
+<translation type="unfinished">Create OpenAI API key</translation>
+</message>
+<message>
+<source>API key</source>
+<translation type="unfinished">API key</translation>
+</message>
+<message>
+<source>Groq API key:</source>
+<translation type="unfinished">Groq API key:</translation>
+</message>
+<message>
+<source>Test connection</source>
+<comment>"Test" as verb</comment>
+<translation type="unfinished">Test connection</translation>
+</message>
+<message>
+<source>API settings</source>
+<translation type="unfinished">API settings</translation>
+</message>
+<message>
+<source>Time the application will wait for a response from the server before timing out and returning an error message.</source>
+<translation type="unfinished">Time the application will wait for a response from the server before timing out and returning an error message.</translation>
+</message>
+<message>
+<source>Response timeout:</source>
+<translation type="unfinished">Response timeout:</translation>
+</message>
+<message>
+<source>sec</source>
+<comment>seconds</comment>
+<translation type="unfinished">sec</translation>
+</message>
+<message>
+<source>API test result for %1 (%2)</source>
+<translation type="unfinished">API test result for %1 (%2)</translation>
+</message>
+<message>
+<source>AI backend: %1</source>
+<translation type="unfinished">AI backend: %1</translation>
+</message>
+<message>
+<source>API base URL</source>
+<translation type="unfinished">API base URL</translation>
+</message>
+<message>
+<source>AI model: %1</source>
+<translation type="unfinished">AI model: %1</translation>
+</message>
+<message>
+<source>Test</source>
+<comment>verb</comment>
+<translation type="unfinished">Test</translation>
+</message>
+<message>
+<source>Test connection to %1 (%2)</source>
+<translation type="unfinished">Test connection to %1 (%2)</translation>
+</message>
+</context>
+<context>
 <name>AiToolbarManager</name>
 <message>
 <source>Waiting for answer from AI</source>
@@ -212,6 +310,104 @@
 <message>
 <source>Color mode</source>
 <translation type="unfinished">Color mode</translation>
+</message>
+</context>
+<context>
+<name>DebugOptionSettingsWidget</name>
+<message>
+<source>Enable logging to file</source>
+<translation type="unfinished">Enable logging to file</translation>
+</message>
+<message>
+<source>Clear log file</source>
+<translation type="unfinished">Clear log file</translation>
+</message>
+<message>
+<source>Fake old version number to trigger update</source>
+<translation type="unfinished">Fake old version number to trigger update</translation>
+</message>
+<message>
+<source>Log file path:</source>
+<translation type="unfinished">Log file path:</translation>
+</message>
+<message>
+<source>Log file cleared</source>
+<translation type="unfinished">Log file cleared</translation>
+</message>
+<message>
+<source>The log file &lt;strong&gt;%1&lt;/strong&gt; was cleared.</source>
+<translation type="unfinished">The log file &lt;strong&gt;%1&lt;/strong&gt; was cleared.</translation>
+</message>
+</context>
+<context>
+<name>DebugSettingsWidget</name>
+<message>
+<source>Debug information</source>
+<translation type="unfinished">Debug information</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can &lt;span style=" font-weight:600;"&gt;copy and paste&lt;/span&gt; this text (or parts of this text) in an &lt;span style=" font-weight:600;"&gt;issue&lt;/span&gt; on the &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes issues page&lt;/a&gt; if you have &lt;span style=" font-weight:600;"&gt;questions or troubles&lt;/span&gt; with QOwnNotes. Data that is too sensitive is hidden in this information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can &lt;span style=" font-weight:600;"&gt;copy and paste&lt;/span&gt; this text (or parts of this text) in an &lt;span style=" font-weight:600;"&gt;issue&lt;/span&gt; on the &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes issues page&lt;/a&gt; if you have &lt;span style=" font-weight:600;"&gt;questions or troubles&lt;/span&gt; with QOwnNotes. Data that is too sensitive is hidden in this information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The best way to post issues is to use the issue assistant by pressing the &lt;span style=" font-weight:600;"&gt;Open issue assistant&lt;/span&gt; button on the bottom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The best way to post issues is to use the issue assistant by pressing the &lt;span style=" font-weight:600;"&gt;Open issue assistant&lt;/span&gt; button on the bottom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>GitHub doesn't need two spaces at the end of the line to do a line break</source>
+<translation type="unfinished">GitHub doesn't need two spaces at the end of the line to do a line break</translation>
+</message>
+<message>
+<source>Use GitHub line breaks</source>
+<translation type="unfinished">Use GitHub line breaks</translation>
+</message>
+<message>
+<source>Hide usernames in paths and anonymize other personal identifiers in the generated debug information</source>
+<translation type="unfinished">Hide usernames in paths and anonymize other personal identifiers in the generated debug information</translation>
+</message>
+<message>
+<source>Anonymize personal information</source>
+<translation type="unfinished">Anonymize personal information</translation>
+</message>
+<message>
+<source>This is the best way to open an issue</source>
+<translation type="unfinished">This is the best way to open an issue</translation>
+</message>
+<message>
+<source>Open issue assistant</source>
+<translation type="unfinished">Open issue assistant</translation>
+</message>
+<message>
+<source>Please use this in the issue tracker</source>
+<translation type="unfinished">Please use this in the issue tracker</translation>
+</message>
+<message>
+<source>&amp;Copy debug information to clipboard</source>
+<translation type="unfinished">&amp;Copy debug information to clipboard</translation>
+</message>
+<message>
+<source>Please don't use this in the issue tracker</source>
+<translation type="unfinished">Please don't use this in the issue tracker</translation>
+</message>
+<message>
+<source>&amp;Save debug information</source>
+<translation type="unfinished">&amp;Save debug information</translation>
+</message>
+<message>
+<source>Please don't use this in the issue tracker, copy the debug information text directly into the issue.</source>
+<translation type="unfinished">Please don't use this in the issue tracker, copy the debug information text directly into the issue.</translation>
+</message>
+<message>
+<source>Markdown files</source>
+<translation type="unfinished">Markdown files</translation>
+</message>
+<message>
+<source>Save debug information</source>
+<translation type="unfinished">Save debug information</translation>
+</message>
+<message>
+<source>The debug information was copied to the clipboard.</source>
+<translation type="unfinished">The debug information was copied to the clipboard.</translation>
 </message>
 </context>
 <context>
@@ -706,16 +902,8 @@
 <context>
 <name>DistractionFreeManager</name>
 <message>
-<source>leave</source>
-<translation type="unfinished">leave</translation>
-</message>
-<message>
-<source>Leave distraction free mode</source>
-<translation type="unfinished">Leave distraction free mode</translation>
-</message>
-<message>
-<source>Leave full-screen mode</source>
-<translation type="unfinished">Leave full-screen mode</translation>
+<source>Leave</source>
+<translation type="unfinished">Leave</translation>
 </message>
 <message>
 <source>Custom editor width</source>
@@ -724,6 +912,196 @@
 <message>
 <source>Characters:</source>
 <translation type="unfinished">Characters:</translation>
+</message>
+</context>
+<context>
+<name>EditorFontColorSettingsWidget</name>
+<message>
+<source>Fonts</source>
+<translation type="unfinished">Fonts</translation>
+</message>
+<message>
+<source>Default font:</source>
+<translation type="unfinished">Default font:</translation>
+</message>
+<message>
+<source>Set a new font</source>
+<translation type="unfinished">Set a new font</translation>
+</message>
+<message>
+<source>Reset font</source>
+<translation type="unfinished">Reset font</translation>
+</message>
+<message>
+<source>Code font:</source>
+<translation type="unfinished">Code font:</translation>
+</message>
+<message>
+<source>Set a new code font</source>
+<translation type="unfinished">Set a new code font</translation>
+</message>
+<message>
+<source>Reset code font</source>
+<translation type="unfinished">Reset code font</translation>
+</message>
+</context>
+<context>
+<name>EditorSettingsWidget</name>
+<message>
+<source>Markdown highlighting</source>
+<translation type="unfinished">Markdown highlighting</translation>
+</message>
+<message>
+<source>Note that disabling this will also disable the navigation panel!</source>
+<translation type="unfinished">Note that disabling this will also disable the navigation panel!</translation>
+</message>
+<message>
+<source>Enable markdown highlighting</source>
+<translation type="unfinished">Enable markdown highlighting</translation>
+</message>
+<message>
+<source>Fully highlight blockquotes</source>
+<translation type="unfinished">Fully highlight blockquotes</translation>
+</message>
+<message>
+<source>Editor options</source>
+<translation type="unfinished">Editor options</translation>
+</message>
+<message>
+<source>Enable automatic closing of brackets and markdown formatting characters</source>
+<translation type="unfinished">Enable automatic closing of brackets and markdown formatting characters</translation>
+</message>
+<message>
+<source>You have to use the backspace key to remove the opening character</source>
+<translation type="unfinished">You have to use the backspace key to remove the opening character</translation>
+</message>
+<message>
+<source>Enable automatic removal of matching closing characters</source>
+<translation type="unfinished">Enable automatic removal of matching closing characters</translation>
+</message>
+<message>
+<source>Highlight the current line</source>
+<translation type="unfinished">Highlight the current line</translation>
+</message>
+<message>
+<source>Only use editor width setting in distraction free mode</source>
+<translation type="unfinished">Only use editor width setting in distraction free mode</translation>
+</message>
+<message>
+<source>Enable Vim mode (some QOwnNotes shortcuts will not work)</source>
+<translation type="unfinished">Enable Vim mode (some QOwnNotes shortcuts will not work)</translation>
+</message>
+<message>
+<source>Disable cursor blinking</source>
+<translation type="unfinished">Disable cursor blinking</translation>
+</message>
+<message>
+<source>Note-edit cursor width:</source>
+<translation type="unfinished">Note-edit cursor width:</translation>
+</message>
+<message>
+<source>Reset the cursor width</source>
+<translation type="unfinished">Reset the cursor width</translation>
+</message>
+<message>
+<source>Automatically remove trailing spaces in the note text</source>
+<translation type="unfinished">Automatically remove trailing spaces in the note text</translation>
+</message>
+<message>
+<source>Show line numbers and bookmark markers (1-9)</source>
+<translation type="unfinished">Show line numbers and bookmark markers (1-9)</translation>
+</message>
+<message>
+<source>Show small Markdown preview images in the editor, if there is no text after the image</source>
+<translation type="unfinished">Show small Markdown preview images in the editor, if there is no text after the image</translation>
+</message>
+<message>
+<source>Shows fold buttons for Markdown headings and allows collapsing their contents</source>
+<translation type="unfinished">Shows fold buttons for Markdown headings and allows collapsing their contents</translation>
+</message>
+<message>
+<source>Enable heading folding in the editor</source>
+<translation type="unfinished">Enable heading folding in the editor</translation>
+</message>
+<message>
+<source>Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</source>
+<translation type="unfinished">Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</translation>
+</message>
+<message>
+<source>Hide markdown formatting syntax on inactive lines</source>
+<translation type="unfinished">Hide markdown formatting syntax on inactive lines</translation>
+</message>
+<message>
+<source>Enable wiki-style link support [[note name]]</source>
+<translation type="unfinished">Enable wiki-style link support [[note name]]</translation>
+</message>
+<message>
+<source>Show the note filename selection when [[ is typed</source>
+<translation type="unfinished">Show the note filename selection when [[ is typed</translation>
+</message>
+<message>
+<source>Show note filename selection when [[ is typed</source>
+<translation type="unfinished">Show note filename selection when [[ is typed</translation>
+</message>
+<message>
+<source>Tabs and Indents</source>
+<translation type="unfinished">Tabs and Indents</translation>
+</message>
+<message>
+<source>Use tab character instead of spaces</source>
+<translation type="unfinished">Use tab character instead of spaces</translation>
+</message>
+<message>
+<source>Indent:</source>
+<translation type="unfinished">Indent:</translation>
+</message>
+<message>
+<source>Enable hanging indentation for Markdown lists</source>
+<translation type="unfinished">Enable hanging indentation for Markdown lists</translation>
+</message>
+<message>
+<source>Markdown language server</source>
+<translation type="unfinished">Markdown language server</translation>
+</message>
+<message>
+<source>Enable Markdown language server (LSP)</source>
+<translation type="unfinished">Enable Markdown language server (LSP)</translation>
+</message>
+<message>
+<source>Command:</source>
+<translation type="unfinished">Command:</translation>
+</message>
+<message>
+<source>Arguments:</source>
+<translation type="unfinished">Arguments:</translation>
+</message>
+<message>
+<source>Optional arguments separated by spaces.</source>
+<translation type="unfinished">Optional arguments separated by spaces.</translation>
+</message>
+<message>
+<source>Optional arguments</source>
+<translation type="unfinished">Optional arguments</translation>
+</message>
+<message>
+<source>Here you can set your own time format for inserting the current time into a note.</source>
+<translation type="unfinished">Here you can set your own time format for inserting the current time into a note.</translation>
+</message>
+<message>
+<source>Insert current time</source>
+<translation type="unfinished">Insert current time</translation>
+</message>
+<message>
+<source>Time format:</source>
+<translation type="unfinished">Time format:</translation>
+</message>
+<message>
+<source>Enter your custom time format, like "dd.MM.yyyy hh:mm"</source>
+<translation type="unfinished">Enter your custom time format, like "dd.MM.yyyy hh:mm"</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 </context>
 <context>
@@ -1562,6 +1940,405 @@
 </message>
 </context>
 <context>
+<name>GeneralSettingsWidget</name>
+<message>
+<source>Notes</source>
+<translation type="unfinished">Notes</translation>
+</message>
+<message>
+<source>Check this if you want to accept all external modifications while you are editing the current note.</source>
+<translation type="unfinished">Check this if you want to accept all external modifications while you are editing the current note.</translation>
+</message>
+<message>
+<source>Accept all external modifications of the current note</source>
+<translation type="unfinished">Accept all external modifications of the current note</translation>
+</message>
+<message>
+<source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</source>
+<translation type="unfinished">You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</translation>
+</message>
+<message>
+<source>note save interval time [sec]</source>
+<translation type="unfinished">note save interval time [sec]</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked you will always be notified about external modifications, even if current note wasn't edited in the last minute. Recommended is &lt;span style=" font-style:italic;"&gt;unchecked&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked you will always be notified about external modifications, even if current note wasn't edited in the last minute. Recommended is &lt;span style=" font-style:italic;"&gt;unchecked&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>Notify about all external modifications of the current note</source>
+<translation type="unfinished">Notify about all external modifications of the current note</translation>
+</message>
+<message>
+<source>By default the headline will generated automatically</source>
+<translation type="unfinished">By default the headline will generated automatically</translation>
+</message>
+<message>
+<source>The shortcut to create a new note asks for a headline</source>
+<translation type="unfinished">The shortcut to create a new note asks for a headline</translation>
+</message>
+<message>
+<source>Do this at your own risk!</source>
+<translation type="unfinished">Do this at your own risk!</translation>
+</message>
+<message>
+<source>Ignore all external note folder changes</source>
+<translation type="unfinished">Ignore all external note folder changes</translation>
+</message>
+<message>
+<source>Maximum width:</source>
+<translation type="unfinished">Maximum width:</translation>
+</message>
+<message>
+<source>Maximum height:</source>
+<translation type="unfinished">Maximum height:</translation>
+</message>
+<message>
+<source>You can use this for example under Windows if you have troubles with newlines in the ownCloud / Nextcloud notes app</source>
+<translation type="unfinished">You can use this for example under Windows if you have troubles with newlines in the ownCloud / Nextcloud notes app</translation>
+</message>
+<message>
+<source>Use UNIX newline instead of native newline characters</source>
+<translation type="unfinished">Use UNIX newline instead of native newline characters</translation>
+</message>
+<message>
+<source>Check this if you want to ignore all external modifications while you are editing the current note.</source>
+<translation type="unfinished">Check this if you want to ignore all external modifications while you are editing the current note.</translation>
+</message>
+<message>
+<source>Ignore all external modifications of the current note</source>
+<translation type="unfinished">Ignore all external modifications of the current note</translation>
+</message>
+<message>
+<source>Use legacy way to link to notes, images and attachments</source>
+<translation type="unfinished">Use legacy way to link to notes, images and attachments</translation>
+</message>
+<message>
+<source>When opening notes the cursor position inside the note will now be restored to the position when the note was last visited in the current session</source>
+<translation type="unfinished">When opening notes the cursor position inside the note will now be restored to the position when the note was last visited in the current session</translation>
+</message>
+<message>
+<source>Restore cursor position when opening a note</source>
+<translation type="unfinished">Restore cursor position when opening a note</translation>
+</message>
+<message>
+<source>Automatically close the note folder database to prevent problems with sync tools</source>
+<translation type="unfinished">Automatically close the note folder database to prevent problems with sync tools</translation>
+</message>
+<message>
+<source>Automatically close the note folder database</source>
+<translation type="unfinished">Automatically close the note folder database</translation>
+</message>
+<message>
+<source>Scale images down when inserted into notes</source>
+<translation type="unfinished">Scale images down when inserted into notes</translation>
+</message>
+<message>
+<source>Disable this if you want to launch the application without opening a note</source>
+<translation type="unfinished">Disable this if you want to launch the application without opening a note</translation>
+</message>
+<message>
+<source>Open last accessed note at application startup</source>
+<translation type="unfinished">Open last accessed note at application startup</translation>
+</message>
+<message>
+<source>Use checksums to detect external modifications to unsaved notes</source>
+<translation type="unfinished">Use checksums to detect external modifications to unsaved notes</translation>
+</message>
+<message>
+<source>Read-only mode</source>
+<translation type="unfinished">Read-only mode</translation>
+</message>
+<message>
+<source>Enable or disable the read-only mode feature</source>
+<translation type="unfinished">Enable or disable the read-only mode feature</translation>
+</message>
+<message>
+<source>Enable read-only mode</source>
+<translation type="unfinished">Enable read-only mode</translation>
+</message>
+<message>
+<source>Start application in read-only mode</source>
+<translation type="unfinished">Start application in read-only mode</translation>
+</message>
+<message>
+<source>When inactive, enter read-only mode automatically after:</source>
+<translation type="unfinished">When inactive, enter read-only mode automatically after:</translation>
+</message>
+<message>
+<source> sec</source>
+<extracomment>short for seconds</extracomment>
+<translation type="unfinished"> sec</translation>
+</message>
+<message>
+<source>App instance</source>
+<translation type="unfinished">App instance</translation>
+</message>
+<message>
+<source>Only allow one app instance at the same time</source>
+<translation type="unfinished">Only allow one app instance at the same time</translation>
+</message>
+<message>
+<source>Update dialog</source>
+<translation type="unfinished">Update dialog</translation>
+</message>
+<message>
+<source>Don't show the update dialog automatically</source>
+<translation type="unfinished">Don't show the update dialog automatically</translation>
+</message>
+<message>
+<source>Search engine</source>
+<translation type="unfinished">Search engine</translation>
+</message>
+<message>
+<source>Message boxes</source>
+<translation type="unfinished">Message boxes</translation>
+</message>
+<message>
+<source>Forget all "Don't ask again" choices in message boxes</source>
+<translation type="unfinished">Forget all "Don't ask again" choices in message boxes</translation>
+</message>
+<message>
+<source>Reset message boxes</source>
+<translation type="unfinished">Reset message boxes</translation>
+</message>
+<message>
+<source>Note file extensions</source>
+<translation type="unfinished">Note file extensions</translation>
+</message>
+<message>
+<source>Files with the listed file extensions will be recognized as notes, the selected file extension will be used for new notes.</source>
+<translation type="unfinished">Files with the listed file extensions will be recognized as notes, the selected file extension will be used for new notes.</translation>
+</message>
+<message>
+<source>Add a new note file extension</source>
+<translation type="unfinished">Add a new note file extension</translation>
+</message>
+<message>
+<source>Remove selected note file extension</source>
+<translation type="unfinished">Remove selected note file extension</translation>
+</message>
+<message>
+<source>External editor</source>
+<translation type="unfinished">External editor</translation>
+</message>
+<message>
+<source>Path to external editor:</source>
+<translation type="unfinished">Path to external editor:</translation>
+</message>
+<message>
+<source>path to external editor, leave empty for default</source>
+<translation type="unfinished">path to external editor, leave empty for default</translation>
+</message>
+<message>
+<source>set external editor</source>
+<translation type="unfinished">set external editor</translation>
+</message>
+<message>
+<source>Clear application data and exit</source>
+<translation type="unfinished">Clear application data and exit</translation>
+</message>
+<message>
+<source>This button allows you to clear all settings, remove the local todo database and exit QOwnNotes.</source>
+<translation type="unfinished">This button allows you to clear all settings, remove the local todo database and exit QOwnNotes.</translation>
+</message>
+<message>
+<source>Clear app data and exit</source>
+<translation type="unfinished">Clear app data and exit</translation>
+</message>
+<message>
+<source>Settings</source>
+<translation type="unfinished">Settings</translation>
+</message>
+<message>
+<source>Import settings</source>
+<translation type="unfinished">Import settings</translation>
+</message>
+<message>
+<source>Export settings</source>
+<translation type="unfinished">Export settings</translation>
+</message>
+<message>
+<source>Database</source>
+<translation type="unfinished">Database</translation>
+</message>
+<message>
+<source>Reinitialize Database</source>
+<translation type="unfinished">Reinitialize Database</translation>
+</message>
+<message>
+<source>Checks the disk database integrity and fixes problems</source>
+<translation type="unfinished">Checks the disk database integrity and fixes problems</translation>
+</message>
+<message>
+<source>Check integrity</source>
+<translation type="unfinished">Check integrity</translation>
+</message>
+<message>
+<source>Be warned that reinitializing the database will also remove your cached todo items and configured note folders and scripts!</source>
+<translation type="unfinished">Be warned that reinitializing the database will also remove your cached todo items and configured note folders and scripts!</translation>
+</message>
+<message>
+<source>Do you really want to clear the local database? This will also remove your configured note folders and your cached todo items!</source>
+<translation type="unfinished">Do you really want to clear the local database? This will also remove your configured note folders and your cached todo items!</translation>
+</message>
+<message>
+<source>The Database was reinitialized. Please restart the application now!</source>
+<translation type="unfinished">The Database was reinitialized. Please restart the application now!</translation>
+</message>
+<message>
+<source>The integrity of the disk database is valid.</source>
+<translation type="unfinished">The integrity of the disk database is valid.</translation>
+</message>
+<message>
+<source>The integrity of the disk database is not valid!</source>
+<translation type="unfinished">The integrity of the disk database is not valid!</translation>
+</message>
+<message>
+<source>Do you really want to clear all settings, remove the database and exit QOwnNotes?
+
+Your notes will stay intact!</source>
+<translation type="unfinished">Do you really want to clear all settings, remove the database and exit QOwnNotes?
+
+Your notes will stay intact!</translation>
+</message>
+<message>
+<source>Select editor application</source>
+<translation type="unfinished">Select editor application</translation>
+</message>
+<message>
+<source>File extension</source>
+<translation type="unfinished">File extension</translation>
+</message>
+<message>
+<source>Please enter a new note file extension:</source>
+<translation type="unfinished">Please enter a new note file extension:</translation>
+</message>
+<message>
+<source>Markdown file</source>
+<translation type="unfinished">Markdown file</translation>
+</message>
+<message>
+<source>Plain text file</source>
+<translation type="unfinished">Plain text file</translation>
+</message>
+<message>
+<source>Remove note file extension</source>
+<translation type="unfinished">Remove note file extension</translation>
+</message>
+<message>
+<source>Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</source>
+<translation type="unfinished">Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</translation>
+</message>
+<message>
+<source>Do you really want to reset the overrides of all message boxes?</source>
+<translation type="unfinished">Do you really want to reset the overrides of all message boxes?</translation>
+</message>
+<message>
+<source>INI files</source>
+<translation type="unfinished">INI files</translation>
+</message>
+<message>
+<source>Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</source>
+<translation type="unfinished">Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</translation>
+</message>
+<message>
+<source>The application will be restarted after the import.</source>
+<translation type="unfinished">The application will be restarted after the import.</translation>
+</message>
+</context>
+<context>
+<name>GitSettingsWidget</name>
+<message>
+<source>Commit interval</source>
+<translation type="unfinished">Commit interval</translation>
+</message>
+<message>
+<source>sec</source>
+<extracomment>seconds</extracomment>
+<translation type="unfinished">sec</translation>
+</message>
+<message>
+<source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</source>
+<translation type="unfinished">You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</translation>
+</message>
+<message>
+<source>git commit interval time [sec]</source>
+<translation type="unfinished">git commit interval time [sec]</translation>
+</message>
+<message>
+<source>External git log command to show the git versions of a note</source>
+<translation type="unfinished">External git log command to show the git versions of a note</translation>
+</message>
+<message>
+<source>Enter a command to be used to show a git log (like for example "gitk")</source>
+<extracomment>Please don't translate "%notePath%"</extracomment>
+<translation type="unfinished">Enter a command to be used to show a git log (like for example "gitk")</translation>
+</message>
+<message>
+<source>You optionally can use "%notePath%" for the path of the note.</source>
+<extracomment>Please don't translate "%notePath%"</extracomment>
+<translation type="unfinished">You optionally can use "%notePath%" for the path of the note.</translation>
+</message>
+<message>
+<source>If you use this setting you will get a new menu entry to show the git versions if you right-click a note.</source>
+<extracomment>Please don't translate "%notePath%"</extracomment>
+<translation type="unfinished">If you use this setting you will get a new menu entry to show the git versions if you right-click a note.</translation>
+</message>
+<message>
+<source>Git client</source>
+<translation type="unfinished">Git client</translation>
+</message>
+<message>
+<source>Path to git client, leave empty for default</source>
+<translation type="unfinished">Path to git client, leave empty for default</translation>
+</message>
+<message>
+<source>Path to git executable:</source>
+<translation type="unfinished">Path to git executable:</translation>
+</message>
+<message>
+<source>Select the path of the git binary</source>
+<translation type="unfinished">Select the path of the git binary</translation>
+</message>
+<message>
+<source>Don't forget to enable git support for your note folders and to configure your name and email address for your git client, for example with these terminal commands:</source>
+<translation type="unfinished">Don't forget to enable git support for your note folders and to configure your name and email address for your git client, for example with these terminal commands:</translation>
+</message>
+<message>
+<source>Git library</source>
+<translation type="unfinished">Git library</translation>
+</message>
+<message>
+<source>Support for the git library libgit2 is activated.</source>
+<translation type="unfinished">Support for the git library libgit2 is activated.</translation>
+</message>
+<message>
+<source>Don't forget to enable git support for your note folders.</source>
+<translation type="unfinished">Don't forget to enable git support for your note folders.</translation>
+</message>
+<message>
+<source>You can download your git client here: &lt;a href="%url"&gt;Git for Windows&lt;/a&gt;</source>
+<translation type="unfinished">You can download your git client here: &lt;a href="%url"&gt;Git for Windows&lt;/a&gt;</translation>
+</message>
+<message>
+<source>Executable files</source>
+<translation type="unfinished">Executable files</translation>
+</message>
+<message>
+<source>All files</source>
+<translation type="unfinished">All files</translation>
+</message>
+<message>
+<source>Please select the path of your git executable</source>
+<translation type="unfinished">Please select the path of your git executable</translation>
+</message>
+</context>
+<context>
 <name>HtmlPreviewWidgetInternal</name>
 <message>
 <source>Copy</source>
@@ -1657,6 +2434,401 @@
 </message>
 </context>
 <context>
+<name>InterfaceSettingsWidget</name>
+<message>
+<source>Interface language</source>
+<translation type="unfinished">Interface language</translation>
+</message>
+<message>
+<source>If you want to help to translate QOwnNotes or update an existing translation please read: &lt;a href="%1"&gt;How can I help to translate QOwnNotes?&lt;/a&gt;</source>
+<translation type="unfinished">If you want to help to translate QOwnNotes or update an existing translation please read: &lt;a href="%1"&gt;How can I help to translate QOwnNotes?&lt;/a&gt;</translation>
+</message>
+<message>
+<source>If you change the language you have to restart the application for the changes to take action.</source>
+<translation type="unfinished">If you change the language you have to restart the application for the changes to take action.</translation>
+</message>
+<message>
+<source>Automatic</source>
+<translation type="unfinished">Automatic</translation>
+</message>
+<message>
+<source>Indonesian</source>
+<translation type="unfinished">Indonesian</translation>
+</message>
+<message>
+<source>Malay</source>
+<translation type="unfinished">Malay</translation>
+</message>
+<message>
+<source>Bengali</source>
+<translation type="unfinished">Bengali</translation>
+</message>
+<message>
+<source>Bosnian</source>
+<translation type="unfinished">Bosnian</translation>
+</message>
+<message>
+<source>Bulgarian</source>
+<translation type="unfinished">Bulgarian</translation>
+</message>
+<message>
+<source>Catalan</source>
+<translation type="unfinished">Catalan</translation>
+</message>
+<message>
+<source>Cebuano</source>
+<translation type="unfinished">Cebuano</translation>
+</message>
+<message>
+<source>Czech</source>
+<translation type="unfinished">Czech</translation>
+</message>
+<message>
+<source>Danish</source>
+<translation type="unfinished">Danish</translation>
+</message>
+<message>
+<source>German</source>
+<translation type="unfinished">German</translation>
+</message>
+<message>
+<source>Basque</source>
+<translation type="unfinished">Basque</translation>
+</message>
+<message>
+<source>English</source>
+<translation type="unfinished">English</translation>
+</message>
+<message>
+<source>English (British)</source>
+<translation type="unfinished">English (British)</translation>
+</message>
+<message>
+<source>Spanish</source>
+<translation type="unfinished">Spanish</translation>
+</message>
+<message>
+<source>Estonian</source>
+<translation type="unfinished">Estonian</translation>
+</message>
+<message>
+<source>Filipino</source>
+<translation type="unfinished">Filipino</translation>
+</message>
+<message>
+<source>Finnish</source>
+<translation type="unfinished">Finnish</translation>
+</message>
+<message>
+<source>French</source>
+<translation type="unfinished">French</translation>
+</message>
+<message>
+<source>Irish</source>
+<translation type="unfinished">Irish</translation>
+</message>
+<message>
+<source>Galician</source>
+<translation type="unfinished">Galician</translation>
+</message>
+<message>
+<source>Greek</source>
+<translation type="unfinished">Greek</translation>
+</message>
+<message>
+<source>Hausa</source>
+<translation type="unfinished">Hausa</translation>
+</message>
+<message>
+<source>Hebrew</source>
+<translation type="unfinished">Hebrew</translation>
+</message>
+<message>
+<source>Hindi</source>
+<translation type="unfinished">Hindi</translation>
+</message>
+<message>
+<source>Croatian</source>
+<translation type="unfinished">Croatian</translation>
+</message>
+<message>
+<source>Hiligaynon</source>
+<translation type="unfinished">Hiligaynon</translation>
+</message>
+<message>
+<source>Icelandic</source>
+<translation type="unfinished">Icelandic</translation>
+</message>
+<message>
+<source>Italian</source>
+<translation type="unfinished">Italian</translation>
+</message>
+<message>
+<source>Korean</source>
+<translation type="unfinished">Korean</translation>
+</message>
+<message>
+<source>Kurdish</source>
+<translation type="unfinished">Kurdish</translation>
+</message>
+<message>
+<source>Khmer</source>
+<translation type="unfinished">Khmer</translation>
+</message>
+<message>
+<source>Latvian</source>
+<translation type="unfinished">Latvian</translation>
+</message>
+<message>
+<source>Lithuanian</source>
+<translation type="unfinished">Lithuanian</translation>
+</message>
+<message>
+<source>Macedonian</source>
+<translation type="unfinished">Macedonian</translation>
+</message>
+<message>
+<source>Māori</source>
+<translation type="unfinished">Māori</translation>
+</message>
+<message>
+<source>Hungarian</source>
+<translation type="unfinished">Hungarian</translation>
+</message>
+<message>
+<source>Norwegian</source>
+<translation type="unfinished">Norwegian</translation>
+</message>
+<message>
+<source>Japanese</source>
+<translation type="unfinished">Japanese</translation>
+</message>
+<message>
+<source>Dutch</source>
+<translation type="unfinished">Dutch</translation>
+</message>
+<message>
+<source>Persian</source>
+<translation type="unfinished">Persian</translation>
+</message>
+<message>
+<source>Uzbek</source>
+<translation type="unfinished">Uzbek</translation>
+</message>
+<message>
+<source>Polish</source>
+<translation type="unfinished">Polish</translation>
+</message>
+<message>
+<source>Brazilian Portuguese</source>
+<translation type="unfinished">Brazilian Portuguese</translation>
+</message>
+<message>
+<source>Portuguese</source>
+<translation type="unfinished">Portuguese</translation>
+</message>
+<message>
+<source>Punjabi</source>
+<translation type="unfinished">Punjabi</translation>
+</message>
+<message>
+<source>Romanian</source>
+<translation type="unfinished">Romanian</translation>
+</message>
+<message>
+<source>Russian</source>
+<translation type="unfinished">Russian</translation>
+</message>
+<message>
+<source>Serbian</source>
+<translation type="unfinished">Serbian</translation>
+</message>
+<message>
+<source>Albanian</source>
+<translation type="unfinished">Albanian</translation>
+</message>
+<message>
+<source>Shona</source>
+<translation type="unfinished">Shona</translation>
+</message>
+<message>
+<source>Sinhala</source>
+<translation type="unfinished">Sinhala</translation>
+</message>
+<message>
+<source>Slovak</source>
+<translation type="unfinished">Slovak</translation>
+</message>
+<message>
+<source>Slovenian</source>
+<translation type="unfinished">Slovenian</translation>
+</message>
+<message>
+<source>Swedish</source>
+<translation type="unfinished">Swedish</translation>
+</message>
+<message>
+<source>Tagalog</source>
+<translation type="unfinished">Tagalog</translation>
+</message>
+<message>
+<source>Thai</source>
+<translation type="unfinished">Thai</translation>
+</message>
+<message>
+<source>Vietnamese</source>
+<translation type="unfinished">Vietnamese</translation>
+</message>
+<message>
+<source>Turkish</source>
+<translation type="unfinished">Turkish</translation>
+</message>
+<message>
+<source>Xhosa</source>
+<translation type="unfinished">Xhosa</translation>
+</message>
+<message>
+<source>Ukrainian</source>
+<translation type="unfinished">Ukrainian</translation>
+</message>
+<message>
+<source>Urdu</source>
+<translation type="unfinished">Urdu</translation>
+</message>
+<message>
+<source>Yiddish</source>
+<translation type="unfinished">Yiddish</translation>
+</message>
+<message>
+<source>Zulu</source>
+<translation type="unfinished">Zulu</translation>
+</message>
+<message>
+<source>Chinese Simplified</source>
+<translation type="unfinished">Chinese Simplified</translation>
+</message>
+<message>
+<source>Chinese Traditional</source>
+<translation type="unfinished">Chinese Traditional</translation>
+</message>
+<message>
+<source>Arabic</source>
+<translation type="unfinished">Arabic</translation>
+</message>
+<message>
+<source>Search for language</source>
+<translation type="unfinished">Search for language</translation>
+</message>
+<message>
+<source>System tray</source>
+<translation type="unfinished">System tray</translation>
+</message>
+<message>
+<source>You need to restart the application to let this setting take effect</source>
+<translation type="unfinished">You need to restart the application to let this setting take effect</translation>
+</message>
+<message>
+<source>Show system tray icon</source>
+<translation type="unfinished">Show system tray icon</translation>
+</message>
+<message>
+<source>Start application hidden</source>
+<translation type="unfinished">Start application hidden</translation>
+</message>
+<message>
+<source>Interface style</source>
+<translation type="unfinished">Interface style</translation>
+</message>
+<message>
+<source>Icons</source>
+<translation type="unfinished">Icons</translation>
+</message>
+<message>
+<source>Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</source>
+<translation type="unfinished">Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</translation>
+</message>
+<message>
+<source>Hide menu icons</source>
+<translation type="unfinished">Hide menu icons</translation>
+</message>
+<message>
+<source>Item sizes in the main window</source>
+<translation type="unfinished">Item sizes in the main window</translation>
+</message>
+<message>
+<source>List and tree item height:</source>
+<translation type="unfinished">List and tree item height:</translation>
+</message>
+<message>
+<source>Toolbar icon size:</source>
+<translation type="unfinished">Toolbar icon size:</translation>
+</message>
+<message>
+<source>Reset the icon size</source>
+<translation type="unfinished">Reset the icon size</translation>
+</message>
+<message>
+<source>Reset the item height</source>
+<translation type="unfinished">Reset the item height</translation>
+</message>
+<message>
+<source>Override interface font size</source>
+<translation type="unfinished">Override interface font size</translation>
+</message>
+<message>
+<source>Interface font size:</source>
+<translation type="unfinished">Interface font size:</translation>
+</message>
+<message>
+<source>Override interface scaling factor</source>
+<translation type="unfinished">Override interface scaling factor</translation>
+</message>
+<message>
+<source>Interface scaling factor:</source>
+<translation type="unfinished">Interface scaling factor:</translation>
+</message>
+<message>
+<source>Status bar</source>
+<translation type="unfinished">Status bar</translation>
+</message>
+<message>
+<source>Show note path</source>
+<translation type="unfinished">Show note path</translation>
+</message>
+<message>
+<source>Only show relative note path</source>
+<translation type="unfinished">Only show relative note path</translation>
+</message>
+<message>
+<source>Distraction free mode</source>
+<translation type="unfinished">Distraction free mode</translation>
+</message>
+<message>
+<source>Open distraction free mode in full-screen</source>
+<translation type="unfinished">Open distraction free mode in full-screen</translation>
+</message>
+<message>
+<source>Hide status bar in distraction free mode</source>
+<translation type="unfinished">Hide status bar in distraction free mode</translation>
+</message>
+<message>
+<source>Menu bar</source>
+<translation type="unfinished">Menu bar</translation>
+</message>
+<message>
+<source>Show menu bar item</source>
+<translation type="unfinished">Show menu bar item</translation>
+</message>
+<message>
+<source>Automatic (needs restart)</source>
+<translation type="unfinished">Automatic (needs restart)</translation>
+</message>
+<message>
+<source>If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</source>
+<translation type="unfinished">If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</translation>
+</message>
+</context>
+<context>
 <name>IssueAssistantDialog</name>
 <message>
 <source>Minimum 8 characters</source>
@@ -1737,82 +2909,299 @@
 </message>
 </context>
 <context>
-<name>LayoutWidget</name>
+<name>LanguageToolSettingsWidget</name>
 <message>
-<source>Use layout</source>
-<translation>Formátum használata</translation>
+<source>LanguageTool</source>
+<translation type="unfinished">LanguageTool</translation>
 </message>
 <message>
-<source>Keep in mind that workspaces that demand that there is no central widget will not work properly if the central widget is enabled.</source>
-<translation>Ne feledje, hogy a központi widget-et nem igénylő munkaterületek nem fognak megfelelően működni, ha a központi widget engedélyezve van.</translation>
+<source>Enable grammar and style checking with LanguageTool</source>
+<translation type="unfinished">Enable grammar and style checking with LanguageTool</translation>
 </message>
 <message>
-<source>Use new layout</source>
-<translation>Új formátum használata</translation>
+<source>Server URL:</source>
+<translation type="unfinished">Server URL:</translation>
 </message>
 <message>
-<source>Do you want to use the selected layout?</source>
-<translation>Használja a kijelölt elrendezést?</translation>
+<source>Test Connection</source>
+<translation type="unfinished">Test Connection</translation>
+</message>
+<message>
+<source>Language:</source>
+<translation type="unfinished">Language:</translation>
+</message>
+<message>
+<source>API key:</source>
+<translation type="unfinished">API key:</translation>
+</message>
+<message>
+<source>Optional premium or cloud API key</source>
+<translation type="unfinished">Optional premium or cloud API key</translation>
+</message>
+<message>
+<source>Check delay:</source>
+<translation type="unfinished">Check delay:</translation>
+</message>
+<message>
+<source> ms</source>
+<translation type="unfinished"> ms</translation>
+</message>
+<message>
+<source>Categories:</source>
+<translation type="unfinished">Categories:</translation>
+</message>
+<message>
+<source>Spelling</source>
+<translation type="unfinished">Spelling</translation>
+</message>
+<message>
+<source>Grammar</source>
+<translation type="unfinished">Grammar</translation>
+</message>
+<message>
+<source>Style</source>
+<translation type="unfinished">Style</translation>
+</message>
+<message>
+<source>Punctuation</source>
+<translation type="unfinished">Punctuation</translation>
+</message>
+<message>
+<source>Typography</source>
+<translation type="unfinished">Typography</translation>
+</message>
+<message>
+<source>Ignored:</source>
+<translation type="unfinished">Ignored:</translation>
+</message>
+<message>
+<source>Reset all ignored LanguageTool rules so they are checked again</source>
+<translation type="unfinished">Reset all ignored LanguageTool rules so they are checked again</translation>
+</message>
+<message>
+<source>Reset ignored rules</source>
+<translation type="unfinished">Reset ignored rules</translation>
+</message>
+<message>
+<source>Reset all ignored words so they are checked by LanguageTool again</source>
+<translation type="unfinished">Reset all ignored words so they are checked by LanguageTool again</translation>
+</message>
+<message>
+<source>Reset ignored words</source>
+<translation type="unfinished">Reset ignored words</translation>
+</message>
+<message>
+<source>Auto-detect</source>
+<translation type="unfinished">Auto-detect</translation>
+</message>
+<message>
+<source>LanguageTool connection successful.</source>
+<translation type="unfinished">LanguageTool connection successful.</translation>
+</message>
+<message>
+<source>LanguageTool connection failed: %1</source>
+<translation type="unfinished">LanguageTool connection failed: %1</translation>
+</message>
+<message>
+<source>There are no ignored rules to reset.</source>
+<translation type="unfinished">There are no ignored rules to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored rule(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored rules have been reset.</source>
+<translation type="unfinished">All ignored rules have been reset.</translation>
+</message>
+<message>
+<source>There are no ignored words to reset.</source>
+<translation type="unfinished">There are no ignored words to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored word(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored word(s)?</numerusform>
+<numerusform>Reset %n ignored word(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored words have been reset.</source>
+<translation type="unfinished">All ignored words have been reset.</translation>
+</message>
+</context>
+<context>
+<name>LayoutDialog</name>
+<message>
+<source>Manage layouts</source>
+<translation type="unfinished">Manage layouts</translation>
+</message>
+<message>
+<source>Add layout</source>
+<translation type="unfinished">Add layout</translation>
+</message>
+<message>
+<source>Add</source>
+<translation type="unfinished">Add</translation>
+</message>
+<message>
+<source>Remove layout</source>
+<translation type="unfinished">Remove layout</translation>
+</message>
+<message>
+<source>Remove</source>
+<translation type="unfinished">Remove</translation>
+</message>
+<message>
+<source>Rename layout</source>
+<translation type="unfinished">Rename layout</translation>
+</message>
+<message>
+<source>Rename</source>
+<translation type="unfinished">Rename</translation>
+</message>
+<message>
+<source>Move layout up</source>
+<translation type="unfinished">Move layout up</translation>
+</message>
+<message>
+<source>Move up</source>
+<translation type="unfinished">Move up</translation>
+</message>
+<message>
+<source>Move layout down</source>
+<translation type="unfinished">Move layout down</translation>
+</message>
+<message>
+<source>Move down</source>
+<translation type="unfinished">Move down</translation>
+</message>
+<message>
+<source>Layout name:</source>
+<translation type="unfinished">Layout name:</translation>
+</message>
+<message>
+<source>Remove the selected layout?</source>
+<translation type="unfinished">Remove the selected layout?</translation>
+</message>
+</context>
+<context>
+<name>LayoutManager</name>
+<message>
+<source>Layouts</source>
+<translation type="unfinished">Layouts</translation>
+</message>
+<message>
+<source>full</source>
+<comment>full layout</comment>
+<translation type="unfinished">full</translation>
+</message>
+<message>
+<source>minimal</source>
+<comment>minimal layout</comment>
+<translation type="unfinished">minimal</translation>
+</message>
+<message>
+<source>Create new layout</source>
+<translation type="unfinished">Create new layout</translation>
+</message>
+<message>
+<source>Layout name:</source>
+<translation type="unfinished">Layout name:</translation>
+</message>
+<message>
+<source>Remove current layout</source>
+<translation type="unfinished">Remove current layout</translation>
+</message>
+<message>
+<source>Remove the current layout?</source>
+<translation type="unfinished">Remove the current layout?</translation>
+</message>
+<message>
+<source>Rename layout</source>
+<translation type="unfinished">Rename layout</translation>
+</message>
+</context>
+<context>
+<name>LayoutPresetWidget</name>
+<message>
+<source>Use preset</source>
+<translation type="unfinished">Use preset</translation>
+</message>
+<message>
+<source>Keep in mind that layouts that demand that there is no central widget will not work properly if the central widget is enabled.</source>
+<translation type="unfinished">Keep in mind that layouts that demand that there is no central widget will not work properly if the central widget is enabled.</translation>
+</message>
+<message>
+<source>Use new layout preset</source>
+<translation type="unfinished">Use new layout preset</translation>
+</message>
+<message>
+<source>Do you want to use the selected layout preset?</source>
+<translation type="unfinished">Do you want to use the selected layout preset?</translation>
 </message>
 <message>
 <source>Minimal</source>
-<comment>Layout name</comment>
-<translation>Minimális</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Minimal</translation>
 </message>
 <message>
 <source>Full</source>
-<comment>Layout name</comment>
-<translation>Teljes</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Full</translation>
 </message>
 <message>
 <source>Preview only</source>
-<comment>Layout name</comment>
-<translation>Csak előnézet</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Preview only</translation>
 </message>
 <message>
 <source>Full vertical</source>
-<comment>Layout name</comment>
-<translation>Teljes függőleges</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Full vertical</translation>
 </message>
 <message>
 <source>Single column</source>
-<comment>Layout name</comment>
-<translation>Egyetlen oszlop</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Single column</translation>
 </message>
 <message>
 <source>The note edit panel is the central widget that will be resized automatically.</source>
-<comment>Layout description</comment>
-<translation>A jegyzet szerkesztő panel a központi widget, amely automatikus átméretezésre kerül.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">The note edit panel is the central widget that will be resized automatically.</translation>
 </message>
 <message>
 <source>Because of this there is no central widget that will be resized automatically.</source>
-<comment>Layout description</comment>
-<translation>Emiatt nem létezik olyan központi widget, amely automatikus átméretezésre kerül.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Because of this there is no central widget that will be resized automatically.</translation>
 </message>
 <message>
 <source>Just the note list on the left and the note edit panel on the right are enabled by default.</source>
-<comment>Layout description</comment>
-<translation>Csak a bal oldali jegyzetlista és a jobb oldali jegyzetszerkesztési panel van alapértelmezés szerint engedélyezve.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Just the note list on the left and the note edit panel on the right are enabled by default.</translation>
 </message>
 <message>
 <source>Most of the panels, like the note list on the left, the tagging panels, the note edit panel in the center and the preview panel on the right are enabled by default.</source>
-<comment>Layout description</comment>
-<translation>A legtöbb panel, például a bal oldali jegyzetlista, a címkézési panelek, a középső jegyzetpanel és a jobb oldali előnézeti panel alapértelmezés szerint engedélyezett.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Most of the panels, like the note list on the left, the tagging panels, the note edit panel in the center and the preview panel on the right are enabled by default.</translation>
 </message>
 <message>
-<source>Most of the panels, like the note list on the left, the tagging panels, and only the preview panel on the right are enabled by default. You will need another workspace to actually edit notes!</source>
-<comment>Layout description</comment>
-<translation>A panelek nagy része, mint például a bal oldali jegyzetlista, a címkéző panelek és csak a jobb oldalon található előnézeti panel, alapértelmezés szerint engedélyezve van. Szüksége lesz egy másik munkaterületre a jegyzetek tényleges szerkesztéséhez!</translation>
+<source>Most of the panels, like the note list on the left, the tagging panels, and only the preview panel on the right are enabled by default. You will need another layout to actually edit notes!</source>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Most of the panels, like the note list on the left, the tagging panels, and only the preview panel on the right are enabled by default. You will need another layout to actually edit notes!</translation>
 </message>
 <message>
 <source>Most of the panels, like the note list on the left, the tagging panels, the note edit panel on the right and the preview panel on top of the note edit panel are enabled by default.</source>
-<comment>Layout description</comment>
-<translation>A panelek többsége, mint a bal oldali jegyzetlista, a címkepanelek, a jegyzetszerkesztő panel a jobb oldalon és az előnézeti panel a jegyzetszerkesztö panel tetején alapértelmezés szerint engedélyezett.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Most of the panels, like the note list on the left, the tagging panels, the note edit panel on the right and the preview panel on top of the note edit panel are enabled by default.</translation>
 </message>
 <message>
 <source>Tiny one column layout with note search, note list and note edit on top of each other.</source>
-<comment>Layout description</comment>
-<translation>Minimális egyoszlopos elrendezés, ahol a jegyzettömb-keresés, jegyzettömb és értesítő egymás alatt helyezkedik el.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Tiny one column layout with note search, note list and note edit on top of each other.</translation>
 </message>
 </context>
 <context>
@@ -1986,6 +3375,40 @@
 </message>
 </context>
 <context>
+<name>LocalTrashSettingsWidget</name>
+<message>
+<source>Local trash settings</source>
+<translation type="unfinished">Local trash settings</translation>
+</message>
+<message>
+<source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</source>
+<translation type="unfinished">You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</translation>
+</message>
+<message>
+<source>Remove trashed notes after:</source>
+<translation type="unfinished">Remove trashed notes after:</translation>
+</message>
+<message>
+<source> days</source>
+<extracomment>seconds</extracomment>
+<translation type="unfinished"> days</translation>
+</message>
+<message>
+<source>Automatically remove trashed notes after a certain time</source>
+<translation type="unfinished">Automatically remove trashed notes after a certain time</translation>
+</message>
+<message>
+<source>Local trash support</source>
+<translation type="unfinished">Local trash support</translation>
+</message>
+<message>
+<source>Enable local trash to keep a copy of trashed notes</source>
+<translation type="unfinished">Enable local trash to keep a copy of trashed notes</translation>
+</message>
+</context>
+<context>
 <name>LogWidget</name>
 <message>
 <source>Logs</source>
@@ -2085,6 +3508,14 @@
 <message>
 <source>Editor width</source>
 <translation>Szerkesztő szélessége</translation>
+</message>
+<message>
+<source>Layouts</source>
+<translation type="unfinished">Layouts</translation>
+</message>
+<message>
+<source>Layout</source>
+<translation type="unfinished">Layout</translation>
 </message>
 <message>
 <source>Custom actions</source>
@@ -2255,10 +3686,6 @@
 <translation>&amp;Ablak</translation>
 </message>
 <message>
-<source>Workspaces</source>
-<translation>Munkaterületek</translation>
-</message>
-<message>
 <source>Panels</source>
 <translation>Panelek</translation>
 </message>
@@ -2270,10 +3697,6 @@
 <source>Show</source>
 <extracomment>To show or hide stuff</extracomment>
 <translation>Megjelenít</translation>
-</message>
-<message>
-<source>Workspace</source>
-<translation>Munkaterületek</translation>
 </message>
 <message>
 <source>Jump to</source>
@@ -2533,24 +3956,24 @@
 <translation type="unfinished">Reattaches all floating panels</translation>
 </message>
 <message>
-<source>Remove current workspace</source>
-<translation>Aktuális munkaterület eltávolítása</translation>
+<source>Remove current layout</source>
+<translation type="unfinished">Remove current layout</translation>
 </message>
 <message>
-<source>Add new workspace</source>
-<translation>Új munkaterület hozzáadása</translation>
+<source>Add new layout</source>
+<translation type="unfinished">Add new layout</translation>
 </message>
 <message>
-<source>Rename current workspace</source>
-<translation>Aktuális munkaterület átnevezése</translation>
+<source>Rename current layout</source>
+<translation type="unfinished">Rename current layout</translation>
 </message>
 <message>
-<source>Switch to previous workspace</source>
-<translation>Váltás az előző munkaterületre</translation>
+<source>Switch to previous layout</source>
+<translation type="unfinished">Switch to previous layout</translation>
 </message>
 <message>
-<source>Manage workspaces</source>
-<translation type="unfinished">Manage workspaces</translation>
+<source>Manage layouts</source>
+<translation type="unfinished">Manage layouts</translation>
 </message>
 <message>
 <source>Show all panels</source>
@@ -3056,6 +4479,13 @@ Ha a kuka a ownCloud kiszolgálón engedélyezett, onnan visszaállítható.</nu
 <numerusform>Nem sikerült %n (valószínűleg már meglévő) jegyzetet másolni</numerusform>
 </translation>
 </message>
+<message numerus="yes">
+<source>Skipped inserting %n file(s) because the current note is read-only</source>
+<translation type="unfinished">
+<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+</translation>
+</message>
 <message>
 <source>Saving temporary image</source>
 <translation>Kép mentése</translation>
@@ -3136,6 +4566,18 @@ Ha a kuka a ownCloud kiszolgálón engedélyezett, onnan visszaállítható.</nu
 <message>
 <source>No script updates were found</source>
 <translation>Nem található szkriptfrissítés</translation>
+</message>
+<message>
+<source>Layout selector</source>
+<translation type="unfinished">Layout selector</translation>
+</message>
+<message>
+<source>AI toolbar disabled</source>
+<translation type="unfinished">AI toolbar disabled</translation>
+</message>
+<message>
+<source>An AI backend is configured, but the AI toolbar is currently disabled. Do you want to turn it on?</source>
+<translation type="unfinished">An AI backend is configured, but the AI toolbar is currently disabled. Do you want to turn it on?</translation>
 </message>
 <message numerus="yes">
 <source>Skipped copying of %n note(s) (no Markdown or text file or not readable)</source>
@@ -3319,10 +4761,6 @@ Ha a kuka a ownCloud kiszolgálón engedélyezett, onnan visszaállítható.</nu
 <translation>egyéni művelet eszköztár</translation>
 </message>
 <message>
-<source>Workspace selector</source>
-<translation>Munkaterület választás</translation>
-</message>
-<message>
 <source>Show %1 panel</source>
 <translation>Megjelenít %1 panelt</translation>
 </message>
@@ -3376,6 +4814,45 @@ Ha a kuka a ownCloud kiszolgálón engedélyezett, onnan visszaállítható.</nu
 <message>
 <source>Failed to start Markdown LSP server: %1</source>
 <translation type="unfinished">Failed to start Markdown LSP server: %1</translation>
+</message>
+</context>
+<context>
+<name>McpServerSettingsWidget</name>
+<message>
+<source>MCP server</source>
+<translation type="unfinished">MCP server</translation>
+</message>
+<message>
+<source>Enable MCP server for AI agent access to notes</source>
+<translation type="unfinished">Enable MCP server for AI agent access to notes</translation>
+</message>
+<message>
+<source>Server port:</source>
+<translation type="unfinished">Server port:</translation>
+</message>
+<message>
+<source>Reset the MCP server port</source>
+<translation type="unfinished">Reset the MCP server port</translation>
+</message>
+<message>
+<source>Security token:</source>
+<translation type="unfinished">Security token:</translation>
+</message>
+<message>
+<source>If this is empty when saved, a new security token will be generated automatically.</source>
+<translation type="unfinished">If this is empty when saved, a new security token will be generated automatically.</translation>
+</message>
+<message>
+<source>Show security token</source>
+<translation type="unfinished">Show security token</translation>
+</message>
+<message>
+<source>Copy security token to clipboard</source>
+<translation type="unfinished">Copy security token to clipboard</translation>
+</message>
+<message>
+<source>Generate new security token</source>
+<translation type="unfinished">Generate new security token</translation>
 </message>
 </context>
 <context>
@@ -3453,6 +4930,13 @@ Ha a kuka a ownCloud kiszolgálón engedélyezett, onnan visszaállítható.</nu
 <numerusform>Skipped copying of %n note(s) (no Markdown or text file or not readable)</numerusform>
 </translation>
 </message>
+<message numerus="yes">
+<source>Skipped inserting %n file(s) because the current note is read-only</source>
+<translation type="unfinished">
+<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+</translation>
+</message>
 <message>
 <source>Saving temporary image</source>
 <translation type="unfinished">Saving temporary image</translation>
@@ -3521,6 +5005,105 @@ Ha a kuka a ownCloud kiszolgálón engedélyezett, onnan visszaállítható.</nu
 <message>
 <source>&amp;Rename heading</source>
 <translation type="unfinished">&amp;Rename heading</translation>
+</message>
+</context>
+<context>
+<name>NetworkSettingsWidget</name>
+<message>
+<source>Proxy Settings</source>
+<translation type="unfinished">Proxy Settings</translation>
+</message>
+<message>
+<source>No Proxy</source>
+<translation type="unfinished">No Proxy</translation>
+</message>
+<message>
+<source>Use system proxy</source>
+<translation type="unfinished">Use system proxy</translation>
+</message>
+<message>
+<source>Specify proxy manually as</source>
+<translation type="unfinished">Specify proxy manually as</translation>
+</message>
+<message>
+<source>Host</source>
+<translation type="unfinished">Host</translation>
+</message>
+<message>
+<source>Proxy server requires authentication</source>
+<translation type="unfinished">Proxy server requires authentication</translation>
+</message>
+<message>
+<source>SSL Settings</source>
+<translation type="unfinished">SSL Settings</translation>
+</message>
+<message>
+<source>Ignore SSL errors</source>
+<translation type="unfinished">Ignore SSL errors</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to consider getting a free SSL certificate from &lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to consider getting a free SSL certificate from &lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>App metrics</source>
+<translation type="unfinished">App metrics</translation>
+</message>
+<message>
+<source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. Please disable it only if you really can't live with it.</source>
+<translation type="unfinished">Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. Please disable it only if you really can't live with it.</translation>
+</message>
+<message>
+<source>Disable tracking of usage data</source>
+<translation type="unfinished">Disable tracking of usage data</translation>
+</message>
+<message>
+<source>This data includes anonymous information about what features of the app are used.</source>
+<translation type="unfinished">This data includes anonymous information about what features of the app are used.</translation>
+</message>
+<message>
+<source>Usage tracking is done on a private Piwik server.</source>
+<translation type="unfinished">Usage tracking is done on a private Piwik server.</translation>
+</message>
+<message>
+<source>App heartbeat</source>
+<translation type="unfinished">App heartbeat</translation>
+</message>
+<message>
+<source>A small heartbeat request is sent periodically while QOwnNotes is running. Make a developer happy by letting him know that someone is using QOwnNotes.</source>
+<translation type="unfinished">A small heartbeat request is sent periodically while QOwnNotes is running. Make a developer happy by letting him know that someone is using QOwnNotes.</translation>
+</message>
+<message>
+<source>Disable heartbeat</source>
+<translation type="unfinished">Disable heartbeat</translation>
+</message>
+<message>
+<source>hostname of proxy server</source>
+<translation type="unfinished">hostname of proxy server</translation>
+</message>
+<message>
+<source>username for proxy server</source>
+<translation type="unfinished">username for proxy server</translation>
+</message>
+<message>
+<source>password for proxy server</source>
+<translation type="unfinished">password for proxy server</translation>
+</message>
+<message>
+<source>HTTP(S) proxy</source>
+<translation type="unfinished">HTTP(S) proxy</translation>
+</message>
+<message>
+<source>SOCKS5 proxy</source>
+<translation type="unfinished">SOCKS5 proxy</translation>
+</message>
+<message>
+<source>Disable usage tracking</source>
+<translation type="unfinished">Disable usage tracking</translation>
+</message>
+<message>
+<source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can't live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</source>
+<translation type="unfinished">Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can't live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</translation>
 </message>
 </context>
 <context>
@@ -3874,6 +5457,154 @@ Ha a kuka a ownCloud kiszolgálón engedélyezett, onnan visszaállítható.</nu
 </message>
 </context>
 <context>
+<name>NoteFolderSettingsWidget</name>
+<message>
+<source>Your note folders</source>
+<translation type="unfinished">Your note folders</translation>
+</message>
+<message>
+<source>&amp;Add folder</source>
+<translation type="unfinished">&amp;Add folder</translation>
+</message>
+<message>
+<source>&amp;Remove folder</source>
+<translation type="unfinished">&amp;Remove folder</translation>
+</message>
+<message>
+<source>Click here to use the selected folder from your server as note folder</source>
+<translation type="unfinished">Click here to use the selected folder from your server as note folder</translation>
+</message>
+<message>
+<source>&amp;Use as ownCloud path</source>
+<translation type="unfinished">&amp;Use as ownCloud path</translation>
+</message>
+<message>
+<source>path</source>
+<translation type="unfinished">path</translation>
+</message>
+<message>
+<source>Please select your note folder on your ownCloud server:</source>
+<translation type="unfinished">Please select your note folder on your ownCloud server:</translation>
+</message>
+<message>
+<source>Cloud connection:</source>
+<translation type="unfinished">Cloud connection:</translation>
+</message>
+<message>
+<source>Path on your ownCloud server:</source>
+<translation type="unfinished">Path on your ownCloud server:</translation>
+</message>
+<message>
+<source>Note folder path:</source>
+<translation type="unfinished">Note folder path:</translation>
+</message>
+<message>
+<source>Subfolder visibility</source>
+<translation type="unfinished">Subfolder visibility</translation>
+</message>
+<message>
+<source>If checked, all subfolders will be shown. If unchecked, you can select which subfolders to show.</source>
+<translation type="unfinished">If checked, all subfolders will be shown. If unchecked, you can select which subfolders to show.</translation>
+</message>
+<message>
+<source>All subfolders</source>
+<translation type="unfinished">All subfolders</translation>
+</message>
+<message>
+<source>Select which subfolders to show. Unchecked subfolders and their children will be ignored.</source>
+<translation type="unfinished">Select which subfolders to show. Unchecked subfolders and their children will be ignored.</translation>
+</message>
+<message>
+<source>You need to have git installed to make this work!</source>
+<translation type="unfinished">You need to have git installed to make this work!</translation>
+</message>
+<message>
+<source>Use git to keep a local history of your notes</source>
+<translation type="unfinished">Use git to keep a local history of your notes</translation>
+</message>
+<message>
+<source>Use as active note folder</source>
+<translation type="unfinished">Use as active note folder</translation>
+</message>
+<message>
+<source>Be aware that the ownCloud notes app doesn't support subfolders!</source>
+<translation type="unfinished">Be aware that the ownCloud notes app doesn't support subfolders!</translation>
+</message>
+<message>
+<source>Use note subfolders</source>
+<translation type="unfinished">Use note subfolders</translation>
+</message>
+<message>
+<source>Click here to select your remote note path on your ownCloud server</source>
+<translation type="unfinished">Click here to select your remote note path on your ownCloud server</translation>
+</message>
+<message>
+<source>Path where your notes are stored locally</source>
+<translation type="unfinished">Path where your notes are stored locally</translation>
+</message>
+<message>
+<source>This name will be viewed in all the menus.</source>
+<translation type="unfinished">This name will be viewed in all the menus.</translation>
+</message>
+<message>
+<source>Note folder name</source>
+<translation type="unfinished">Note folder name</translation>
+</message>
+<message>
+<source>Name:</source>
+<translation type="unfinished">Name:</translation>
+</message>
+<message>
+<source>Click here to select your local note path</source>
+<translation type="unfinished">Click here to select your local note path</translation>
+</message>
+<message>
+<source>Set the ownCloud path where the note folder path will be synced to on your ownCloud server.</source>
+<translation type="unfinished">Set the ownCloud path where the note folder path will be synced to on your ownCloud server.</translation>
+</message>
+<message>
+<source>"Notes" path on your server</source>
+<extracomment>"Notes" should not be translated</extracomment>
+<translation type="unfinished">"Notes" path on your server</translation>
+</message>
+<message>
+<source>This also allows note files to be renamed</source>
+<translation type="unfinished">This also allows note files to be renamed</translation>
+</message>
+<message>
+<source>Allow note file name to be different from headline</source>
+<translation type="unfinished">Allow note file name to be different from headline</translation>
+</message>
+<message>
+<source>new folder</source>
+<translation type="unfinished">new folder</translation>
+</message>
+<message>
+<source>Remove note folder</source>
+<translation type="unfinished">Remove note folder</translation>
+</message>
+<message>
+<source>Remove the current note folder &lt;strong&gt;%1&lt;/strong&gt;?</source>
+<translation type="unfinished">Remove the current note folder &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+</message>
+<message>
+<source>Please select the folder where your notes will get stored to</source>
+<translation type="unfinished">Please select the folder where your notes will get stored to</translation>
+</message>
+<message>
+<source>Loading folders from server</source>
+<translation type="unfinished">Loading folders from server</translation>
+</message>
+<message>
+<source>No more folders were found in the current folder</source>
+<translation type="unfinished">No more folders were found in the current folder</translation>
+</message>
+<message>
+<source>Loading folders in '%1' from server</source>
+<translation type="unfinished">Loading folders in '%1' from server</translation>
+</message>
+</context>
+<context>
 <name>NoteIndexManager</name>
 <message>
 <source>Loading notes…</source>
@@ -4145,6 +5876,51 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <message>
 <source>Note headline</source>
 <translation type="unfinished">Note headline</translation>
+</message>
+<message>
+<source>The deleted note(s) had &lt;strong&gt;%1 image(s)&lt;/strong&gt; and &lt;strong&gt;%2 attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</source>
+<translation type="unfinished">The deleted note(s) had &lt;strong&gt;%1 image(s)&lt;/strong&gt; and &lt;strong&gt;%2 attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</translation>
+</message>
+<message numerus="yes">
+<source>The deleted note(s) had &lt;strong&gt;%n image(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</source>
+<translation type="unfinished">
+<numerusform>The deleted note(s) had &lt;strong&gt;%n image(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</numerusform>
+<numerusform>The deleted note(s) had &lt;strong&gt;%n image(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</numerusform>
+</translation>
+</message>
+<message numerus="yes">
+<source>The deleted note(s) had &lt;strong&gt;%n attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</source>
+<translation type="unfinished">
+<numerusform>The deleted note(s) had &lt;strong&gt;%n attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</numerusform>
+<numerusform>The deleted note(s) had &lt;strong&gt;%n attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</numerusform>
+</translation>
+</message>
+<message>
+<source>Delete orphaned images and attachments</source>
+<translation type="unfinished">Delete orphaned images and attachments</translation>
+</message>
+<message numerus="yes">
+<source>Removed %n orphaned file(s)</source>
+<translation type="unfinished">
+<numerusform>Removed %n orphaned file(s)</numerusform>
+<numerusform>Removed %n orphaned file(s)</numerusform>
+</translation>
 </message>
 </context>
 <context>
@@ -4531,6 +6307,374 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 </context>
 <context>
+<name>OwnCloudSettingsWidget</name>
+<message>
+<source>ownCloud support</source>
+<translation type="unfinished">ownCloud support</translation>
+</message>
+<message>
+<source>Enable ownCloud support</source>
+<translation type="unfinished">Enable ownCloud support</translation>
+</message>
+<message>
+<source>You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</source>
+<translation type="unfinished">You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</translation>
+</message>
+<message>
+<source>Your ownCloud server</source>
+<translation type="unfinished">Your ownCloud server</translation>
+</message>
+<message>
+<source>Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</source>
+<translation type="unfinished">Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens your ownCloud server &lt;span style=" font-weight:600;"&gt;App configuration&lt;/span&gt; page in your webbrowser to install or update QOwnNotesAPI and to enable the core apps &lt;span style=" font-weight:600;"&gt;Versions&lt;/span&gt; and &lt;span style=" font-weight:600;"&gt;Deleted files&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens your ownCloud server &lt;span style=" font-weight:600;"&gt;App configuration&lt;/span&gt; page in your webbrowser to install or update QOwnNotesAPI and to enable the core apps &lt;span style=" font-weight:600;"&gt;Versions&lt;/span&gt; and &lt;span style=" font-weight:600;"&gt;Deleted files&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>Open your ownCloud server &amp;Apps page</source>
+<translation type="unfinished">Open your ownCloud server &amp;Apps page</translation>
+</message>
+<message>
+<source>Opens your ownCloud server App Password page in your webbrowser to create a new app password for the application</source>
+<translation type="unfinished">Opens your ownCloud server App Password page in your webbrowser to create a new app password for the application</translation>
+</message>
+<message>
+<source>Open your ownCloud server App Password page</source>
+<translation type="unfinished">Open your ownCloud server App Password page</translation>
+</message>
+<message>
+<source>Error Message</source>
+<translation type="unfinished">Error Message</translation>
+</message>
+<message>
+<source>Select a connection to edit</source>
+<translation type="unfinished">Select a connection to edit</translation>
+</message>
+<message>
+<source>Add connection</source>
+<translation type="unfinished">Add connection</translation>
+</message>
+<message>
+<source>Remove connection</source>
+<translation type="unfinished">Remove connection</translation>
+</message>
+<message>
+<source>Connection name:</source>
+<translation type="unfinished">Connection name:</translation>
+</message>
+<message>
+<source>ownCloud server url:</source>
+<translation type="unfinished">ownCloud server url:</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>The login flow v2 only works with Nextcloud, not with ownCloud. If you have troubles you need to create an app password by hand.</source>
+<translation type="unfinished">The login flow v2 only works with Nextcloud, not with ownCloud. If you have troubles you need to create an app password by hand.</translation>
+</message>
+<message>
+<source>Login to Nextcloud to grant access</source>
+<translation type="unfinished">Login to Nextcloud to grant access</translation>
+</message>
+<message>
+<source>Cancel Nextcloud login</source>
+<translation type="unfinished">Cancel Nextcloud login</translation>
+</message>
+<message>
+<source>Username:</source>
+<translation type="unfinished">Username:</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the username on your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the username on your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>Your ownCloud username</source>
+<translation type="unfinished">Your ownCloud username</translation>
+</message>
+<message>
+<source>Password:</source>
+<translation type="unfinished">Password:</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the password for your username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the password for your username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>Your ownCloud password</source>
+<translation type="unfinished">Your ownCloud password</translation>
+</message>
+<message>
+<source>If your password doesn't work, create an app password (button on the right)</source>
+<translation type="unfinished">If your password doesn't work, create an app password (button on the right)</translation>
+</message>
+<message>
+<source>Enable QOwnNotesAPI app support</source>
+<translation type="unfinished">Enable QOwnNotesAPI app support</translation>
+</message>
+<message>
+<source>Enable Nextcloud Deck support</source>
+<translation type="unfinished">Enable Nextcloud Deck support</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to test the connection to your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to test the connection to your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>&amp;Connect to ownCloud server</source>
+<translation type="unfinished">&amp;Connect to ownCloud server</translation>
+</message>
+<message>
+<source>Connection status</source>
+<translation type="unfinished">Connection status</translation>
+</message>
+<message>
+<source>unknown</source>
+<translation type="unfinished">unknown</translation>
+</message>
+<message>
+<source>connection to web server</source>
+<translation type="unfinished">connection to web server</translation>
+</message>
+<message>
+<source>ownCloud server detected</source>
+<translation type="unfinished">ownCloud server detected</translation>
+</message>
+<message>
+<source>username and password correct</source>
+<translation type="unfinished">username and password correct</translation>
+</message>
+<message>
+<source>connection to QOwnNotesAPI</source>
+<translation type="unfinished">connection to QOwnNotesAPI</translation>
+</message>
+<message>
+<source>versions app enabled on server</source>
+<translation type="unfinished">versions app enabled on server</translation>
+</message>
+<message>
+<source>trash app enabled on server</source>
+<translation type="unfinished">trash app enabled on server</translation>
+</message>
+<message>
+<source>You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</source>
+<translation type="unfinished">You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</translation>
+</message>
+<message>
+<source>notes path found on server</source>
+<translation type="unfinished">notes path found on server</translation>
+</message>
+<message>
+<source>notes path &lt;b&gt;%1&lt;/b&gt; found on server</source>
+<translation type="unfinished">notes path &lt;b&gt;%1&lt;/b&gt; found on server</translation>
+</message>
+<message>
+<source>The connection was made successfully!
+Server version: %1
+QOwnNotesAPI version: %2</source>
+<translation type="unfinished">The connection was made successfully!
+Server version: %1
+QOwnNotesAPI version: %2</translation>
+</message>
+<message>
+<source>There was an error connecting to the ownCloud Server!
+You also need to have the QOwnNotesAPI app installed and enabled!
+
+Connection error message: </source>
+<translation type="unfinished">There was an error connecting to the ownCloud Server!
+You also need to have the QOwnNotesAPI app installed and enabled!
+
+Connection error message: </translation>
+</message>
+</context>
+<context>
+<name>PanelsSettingsWidget</name>
+<message>
+<source>Note search panel</source>
+<translation type="unfinished">Note search panel</translation>
+</message>
+<message>
+<source>Disable auto-completion of previous searches</source>
+<translation type="unfinished">Disable auto-completion of previous searches</translation>
+</message>
+<message>
+<source>Show the number of matches in each note</source>
+<translation type="unfinished">Show the number of matches in each note</translation>
+</message>
+<message>
+<source>Open newly created notes in a new tab</source>
+<translation type="unfinished">Open newly created notes in a new tab</translation>
+</message>
+<message>
+<source>Note folder panel</source>
+<translation type="unfinished">Note folder panel</translation>
+</message>
+<message>
+<source>Show note folders as buttons instead of in a select box</source>
+<translation type="unfinished">Show note folders as buttons instead of in a select box</translation>
+</message>
+<message>
+<source>Note list panel</source>
+<translation type="unfinished">Note list panel</translation>
+</message>
+<message>
+<source>Show all notes in a folder including their subfolders (only works if subfolders are turned on)</source>
+<translation type="unfinished">Show all notes in a folder including their subfolders (only works if subfolders are turned on)</translation>
+</message>
+<message>
+<source>Show all notes of a tag including the notes of their children-tags</source>
+<translation type="unfinished">Show all notes of a tag including the notes of their children-tags</translation>
+</message>
+<message>
+<source>Instead of a note list use a note tree with all the subfolders (if they are turned on for the note folder)</source>
+<translation type="unfinished">Instead of a note list use a note tree with all the subfolders (if they are turned on for the note folder)</translation>
+</message>
+<message>
+<source>Show notes in the note list with preview</source>
+<translation type="unfinished">Show notes in the note list with preview</translation>
+</message>
+<message>
+<source>Allow empty note files</source>
+<translation type="unfinished">Allow empty note files</translation>
+</message>
+<message>
+<source>Notes larger than this will not be shown in the note list</source>
+<translation type="unfinished">Notes larger than this will not be shown in the note list</translation>
+</message>
+<message>
+<source>Maximum note file size:</source>
+<translation type="unfinished">Maximum note file size:</translation>
+</message>
+<message>
+<source>Regular expressions of note files to ignore, separated by ";"</source>
+<translation type="unfinished">Regular expressions of note files to ignore, separated by ";"</translation>
+</message>
+<message>
+<source>Ignored note files</source>
+<translation type="unfinished">Ignored note files</translation>
+</message>
+<message>
+<source>Sort</source>
+<translation type="unfinished">Sort</translation>
+</message>
+<message>
+<source>Alphabetical</source>
+<translation type="unfinished">Alphabetical</translation>
+</message>
+<message>
+<source>By last change</source>
+<translation type="unfinished">By last change</translation>
+</message>
+<message>
+<source>Order</source>
+<translation type="unfinished">Order</translation>
+</message>
+<message>
+<source>Ascending</source>
+<translation type="unfinished">Ascending</translation>
+</message>
+<message>
+<source>Descending</source>
+<translation type="unfinished">Descending</translation>
+</message>
+<message>
+<source>Note edit panel</source>
+<translation type="unfinished">Note edit panel</translation>
+</message>
+<message>
+<source>If this is disabled you are able to create more complex panel layouts, but all panels will be resized if the window is resized</source>
+<translation type="unfinished">If this is disabled you are able to create more complex panel layouts, but all panels will be resized if the window is resized</translation>
+</message>
+<message>
+<source>Use the note edit panel as fixed central widget to be resized if the window or other panels are resized</source>
+<translation type="unfinished">Use the note edit panel as fixed central widget to be resized if the window or other panels are resized</translation>
+</message>
+<message>
+<source>Restore open note tabs at application startup and when note folders are switched</source>
+<translation type="unfinished">Restore open note tabs at application startup and when note folders are switched</translation>
+</message>
+<message>
+<source>Hide tab close button</source>
+<translation type="unfinished">Hide tab close button</translation>
+</message>
+<message>
+<source>Note subfolders panel</source>
+<translation type="unfinished">Note subfolders panel</translation>
+</message>
+<message>
+<source>Hide 'Find or create note subfolder' search</source>
+<translation type="unfinished">Hide 'Find or create note subfolder' search</translation>
+</message>
+<message>
+<source>Display note subfolders as full tree</source>
+<translation type="unfinished">Display note subfolders as full tree</translation>
+</message>
+<message>
+<source>Show root folder name</source>
+<translation type="unfinished">Show root folder name</translation>
+</message>
+<message>
+<source>Show with full path</source>
+<translation type="unfinished">Show with full path</translation>
+</message>
+<message>
+<source>Clicking a note tab unsets 'All notes' selection</source>
+<translation type="unfinished">Clicking a note tab unsets 'All notes' selection</translation>
+</message>
+<message>
+<source>Regular expressions of note subfolders to ignore, separated by ";"</source>
+<translation type="unfinished">Regular expressions of note subfolders to ignore, separated by ";"</translation>
+</message>
+<message>
+<source>Ignored subfolders</source>
+<translation type="unfinished">Ignored subfolders</translation>
+</message>
+<message>
+<source>Reset ignored subfolders</source>
+<translation type="unfinished">Reset ignored subfolders</translation>
+</message>
+<message>
+<source>Tags panel</source>
+<translation type="unfinished">Tags panel</translation>
+</message>
+<message>
+<source>Hide 'Find or create tag' search</source>
+<translation type="unfinished">Hide 'Find or create tag' search</translation>
+</message>
+<message>
+<source>Hide 'Note count' with tags (increases performance)</source>
+<translation type="unfinished">Hide 'Note count' with tags (increases performance)</translation>
+</message>
+<message>
+<source>By last change / use</source>
+<translation type="unfinished">By last change / use</translation>
+</message>
+<message>
+<source>Navigation panel</source>
+<translation type="unfinished">Navigation panel</translation>
+</message>
+<message>
+<source>Hide navigation item search bar</source>
+<translation type="unfinished">Hide navigation item search bar</translation>
+</message>
+<message>
+<source>Auto-select items in navigation panel when changing cursor position</source>
+<translation type="unfinished">Auto-select items in navigation panel when changing cursor position</translation>
+</message>
+</context>
+<context>
 <name>PasswordDialog</name>
 <message>
 <source>Please enter your password</source>
@@ -4562,6 +6706,69 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <message>
 <source>Hide password</source>
 <translation type="unfinished">Hide password</translation>
+</message>
+</context>
+<context>
+<name>PreviewFontSettingsWidget</name>
+<message>
+<source>Rendering</source>
+<translation type="unfinished">Rendering</translation>
+</message>
+<message>
+<source>Time to wait before refreshing the preview after typing:</source>
+<translation type="unfinished">Time to wait before refreshing the preview after typing:</translation>
+</message>
+<message>
+<source>Reset the debounce time</source>
+<translation type="unfinished">Reset the debounce time</translation>
+</message>
+<message>
+<source>0ms means don't wait for the typing to stop</source>
+<translation type="unfinished">0ms means don't wait for the typing to stop</translation>
+</message>
+<message>
+<source>Use editor highlighting styles also for the preview</source>
+<translation type="unfinished">Use editor highlighting styles also for the preview</translation>
+</message>
+<message>
+<source>Enable underline rendering</source>
+<translation type="unfinished">Enable underline rendering</translation>
+</message>
+<message>
+<source>View text right to left (RTL)</source>
+<translation type="unfinished">View text right to left (RTL)</translation>
+</message>
+<message>
+<source>Ignore code font size to allow zooming</source>
+<translation type="unfinished">Ignore code font size to allow zooming</translation>
+</message>
+<message>
+<source>Exporting</source>
+<translation type="unfinished">Exporting</translation>
+</message>
+<message>
+<source>Use internal export styling for the PDF export and printing of the preview</source>
+<translation type="unfinished">Use internal export styling for the PDF export and printing of the preview</translation>
+</message>
+<message>
+<source>Fonts</source>
+<translation type="unfinished">Fonts</translation>
+</message>
+<message>
+<source>Code font:</source>
+<translation type="unfinished">Code font:</translation>
+</message>
+<message>
+<source>Set a new font</source>
+<translation type="unfinished">Set a new font</translation>
+</message>
+<message>
+<source>Reset font</source>
+<translation type="unfinished">Reset font</translation>
+</message>
+<message>
+<source>Default font:</source>
+<translation type="unfinished">Default font:</translation>
 </message>
 </context>
 <context>
@@ -4707,8 +6914,8 @@ Click 'Cancel' to discard your changes and keep the external version.</translati
 <translation>Ismeretlen akció %1</translation>
 </message>
 <message>
-<source>Workspace selector</source>
-<translation>Munkaterület választás</translation>
+<source>Layout selector</source>
+<translation type="unfinished">Layout selector</translation>
 </message>
 <message>
 <source>Don't ask again!</source>
@@ -5410,6 +7617,139 @@ Mégis telepíti?</translation>
 </message>
 </context>
 <context>
+<name>ScriptingSettingsWidget</name>
+<message>
+<source>Your scripts</source>
+<translation type="unfinished">Your scripts</translation>
+</message>
+<message>
+<source>&amp;Add script…</source>
+<translation type="unfinished">&amp;Add script…</translation>
+</message>
+<message>
+<source>&amp;Remove script</source>
+<translation type="unfinished">&amp;Remove script</translation>
+</message>
+<message>
+<source>Search scripts</source>
+<translation type="unfinished">Search scripts</translation>
+</message>
+<message>
+<source>Description:</source>
+<translation type="unfinished">Description:</translation>
+</message>
+<message>
+<source>Author(s):</source>
+<translation type="unfinished">Author(s):</translation>
+</message>
+<message>
+<source>Repository:</source>
+<translation type="unfinished">Repository:</translation>
+</message>
+<message>
+<source>Version:</source>
+<translation type="unfinished">Version:</translation>
+</message>
+<message>
+<source>Name:</source>
+<translation type="unfinished">Name:</translation>
+</message>
+<message>
+<source>Script name</source>
+<translation type="unfinished">Script name</translation>
+</message>
+<message>
+<source>Script path:</source>
+<translation type="unfinished">Script path:</translation>
+</message>
+<message>
+<source>Validate script</source>
+<translation type="unfinished">Validate script</translation>
+</message>
+<message>
+<source>You need to reload the scripting engine if you modify a script file</source>
+<translation type="unfinished">You need to reload the scripting engine if you modify a script file</translation>
+</message>
+<message>
+<source>Reload scripting engine</source>
+<translation type="unfinished">Reload scripting engine</translation>
+</message>
+<message>
+<source>Click here to select your QML script</source>
+<translation type="unfinished">Click here to select your QML script</translation>
+</message>
+<message>
+<source>Path to your QML file</source>
+<translation type="unfinished">Path to your QML file</translation>
+</message>
+<message>
+<source>The name</source>
+<translation type="unfinished">The name</translation>
+</message>
+<message>
+<source>New script</source>
+<translation type="unfinished">New script</translation>
+</message>
+<message>
+<source>Take a look at the &lt;a href="%1"&gt;Scripting documentation&lt;/a&gt; to get started fast.</source>
+<translation type="unfinished">Take a look at the &lt;a href="%1"&gt;Scripting documentation&lt;/a&gt; to get started fast.</translation>
+</message>
+<message>
+<source>If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</source>
+<translation type="unfinished">If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</translation>
+</message>
+<message>
+<source>Search script repository</source>
+<translation type="unfinished">Search script repository</translation>
+</message>
+<message>
+<source>Find a script in the script repository</source>
+<translation type="unfinished">Find a script in the script repository</translation>
+</message>
+<message>
+<source>Check for script updates</source>
+<translation type="unfinished">Check for script updates</translation>
+</message>
+<message>
+<source>Add local script</source>
+<translation type="unfinished">Add local script</translation>
+</message>
+<message>
+<source>Add an existing, local script</source>
+<translation type="unfinished">Add an existing, local script</translation>
+</message>
+<message>
+<source>Remove script</source>
+<translation type="unfinished">Remove script</translation>
+</message>
+<message>
+<source>Remove the current script &lt;strong&gt;%1&lt;/strong&gt;?</source>
+<translation type="unfinished">Remove the current script &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+</message>
+<message>
+<source>QML files</source>
+<translation type="unfinished">QML files</translation>
+</message>
+<message>
+<source>Please select your QML file</source>
+<translation type="unfinished">Please select your QML file</translation>
+</message>
+<message>
+<source>Open repository</source>
+<translation type="unfinished">Open repository</translation>
+</message>
+<message>
+<source>Your script seems to be valid</source>
+<translation type="unfinished">Your script seems to be valid</translation>
+</message>
+<message>
+<source>There were script errors:
+%1</source>
+<translation type="unfinished">There were script errors:
+%1</translation>
+</message>
+</context>
+<context>
 <name>SearchFilterManager</name>
 <message numerus="yes">
 <source>Found &lt;strong&gt;%n&lt;/strong&gt; occurrence(s) of &lt;strong&gt;%1&lt;/strong&gt;</source>
@@ -5463,394 +7803,36 @@ Mégis telepíti?</translation>
 <translation>Jegyzet mappák</translation>
 </message>
 <message>
-<source>Your note folders</source>
-<translation>Az Ön jegyzetmappái</translation>
-</message>
-<message>
-<source>&amp;Add folder</source>
-<translation>mappa &amp;hozzáadása</translation>
-</message>
-<message>
-<source>&amp;Remove folder</source>
-<translation>Mappa &amp;eltávolítása</translation>
-</message>
-<message>
-<source>This name will be viewed in all the menus.</source>
-<translation>Ez a név tűnik fel az összes menüben.</translation>
-</message>
-<message>
-<source>Set the ownCloud path where the note folder path will be synced to on your ownCloud server.</source>
-<translation>A ownCloud elérési útjának beállítása, ahol a jegyzetmappa elérési útja szinkronizálódik az ownCloud kiszolgálóján.</translation>
-</message>
-<message>
-<source>Use as active note folder</source>
-<translation>Aktív jegyzet mappaként</translation>
-</message>
-<message>
-<source>Your ownCloud server</source>
-<translation>OwnCloud kiszolgálója</translation>
-</message>
-<message>
-<source>ownCloud server url:</source>
-<translation>ownCloud szerver Url-címe:</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt;&lt;p&gt;Kérjük, adja meg a ownCloud kiszolgáló URL-címét, például: &lt;span style="font-style:italic;"&gt; https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the username on your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt;&lt;p&gt;Kérjük, írja be a felhasználónevet a ownCloud kiszolgálón.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the password for your username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt;&lt;p&gt;Kérjük, írja be a felhasználóneve jelszavát. &lt;br/&gt; Jelenleg a jelszó titkosítva lesz elraktározva más beállításokkal együtt, de nem nagyon biztonságos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>connection to web server</source>
-<translation>web szerver kapcsolat</translation>
-</message>
-<message>
-<source>ownCloud server detected</source>
-<translation>ownCloud kiszolgáló észlelve</translation>
-</message>
-<message>
-<source>connection to QOwnNotesAPI</source>
-<translation>QOwnNotesAPI kapcsolat </translation>
-</message>
-<message>
-<source>username and password correct</source>
-<translation>a felhasználónév és jelszó helyes</translation>
-</message>
-<message>
-<source>unknown</source>
-<translation>ismeretlen</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to test the connection to your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt;&lt;p&gt;Kattintson ide, hogy tesztelje a kapcsolatot az ownCloud kiszolgálójával.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>versions app enabled on server</source>
-<translation>verziók-app engedélyezve a kiszolgálón</translation>
-</message>
-<message>
-<source>trash app enabled on server</source>
-<translation>kuka alkalmazás engedélyezve a kiszolgálón</translation>
-</message>
-<message>
-<source>notes path found on server</source>
-<translation>jegyzetek elérhetőek a kiszolgálón</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens your ownCloud server &lt;span style=" font-weight:600;"&gt;App configuration&lt;/span&gt; page in your webbrowser to install or update QOwnNotesAPI and to enable the core apps &lt;span style=" font-weight:600;"&gt;Versions&lt;/span&gt; and &lt;span style=" font-weight:600;"&gt;Deleted files&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt;&lt;p&gt;Megnyitja az ownCloud kiszolgáló &lt;span style="font-weight:600;"&gt; alkalmazáskonfiguráció&lt;/span&gt; oldalt a böngészőjében, mely elindítja a QOwnNotesAPI telepítését vagy frissítését és engedélyezi a fő alkalmazás &lt;span style="font-weight:600;"&gt; Változatokat&lt;/span&gt; és &lt;span style="font-weight:600;"&gt;Törölt fájlokat&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>path</source>
-<translation>elérési út</translation>
-</message>
-<message>
-<source>Click here to select your local note path</source>
-<translation>Kattintson ide a jegyzet helyi elérési útja kiválasztásához</translation>
-</message>
-<message>
-<source>Click here to select your remote note path on your ownCloud server</source>
-<translation>Kattintson ide a jegyzet távoli elérési útja kiválasztásához</translation>
-</message>
-<message>
-<source>Click here to use the selected folder from your server as note folder</source>
-<translation>Kattintson ide a kiszolgálóján kijelölt mappa jegyzetmappaként való használatához</translation>
-</message>
-<message>
-<source>Error Message</source>
-<translation>Hibaüzenet</translation>
-</message>
-<message>
 <source>Network</source>
 <translation>Hálózat</translation>
-</message>
-<message>
-<source>Proxy Settings</source>
-<translation>Proxy beállítások</translation>
-</message>
-<message>
-<source>No Proxy</source>
-<translation>Nincs Proxy</translation>
-</message>
-<message>
-<source>Use system proxy</source>
-<translation>Rendszer proxy használata</translation>
-</message>
-<message>
-<source>Specify proxy manually as</source>
-<translation>Adja meg a proxy-t manuálisan</translation>
-</message>
-<message>
-<source>Host</source>
-<translation>Host</translation>
-</message>
-<message>
-<source>Proxy server requires authentication</source>
-<translation>A proxy szerver hitelesítést igényel</translation>
-</message>
-<message>
-<source>SSL Settings</source>
-<translation>SSL-beállítások</translation>
-</message>
-<message>
-<source>Ignore SSL errors</source>
-<translation>Az SSL-hibák figyelmen kívül hagyása</translation>
 </message>
 <message>
 <source>Todo</source>
 <translation>Teendők</translation>
 </message>
 <message>
-<source>Default ownCloud calendar</source>
-<translation>Alapértelmezett OwnCloud naptár</translation>
-</message>
-<message>
 <source>Interface</source>
 <translation>Felület</translation>
-</message>
-<message>
-<source>Other CalDAV server</source>
-<translation>Más CalDAV-kiszolgáló</translation>
-</message>
-<message>
-<source>You need to restart the application to let this setting take effect</source>
-<translation>Újra kell indítania az alkalmazást, hogy a beállítás érvénybe lépjen</translation>
-</message>
-<message>
-<source>Item sizes in the main window</source>
-<translation>Elemek mérete a fő ablakban</translation>
-</message>
-<message>
-<source>Markdown highlighting</source>
-<translation>Markdown kiemelés</translation>
-</message>
-<message>
-<source>Enable markdown highlighting</source>
-<translation>Engedélyezi a markdown kiemelést</translation>
-</message>
-<message>
-<source>Interface language</source>
-<translation>Kezelőfelület nyelve</translation>
-</message>
-<message>
-<source>Automatic</source>
-<translation>Automatikus</translation>
-</message>
-<message>
-<source>English</source>
-<translation>Angol</translation>
 </message>
 <message>
 <source>Shortcuts</source>
 <translation>Parancsikonok</translation>
 </message>
 <message>
-<source>Default font:</source>
-<translation>Alapértelmezett betűtípusa:</translation>
-</message>
-<message>
-<source>Code font:</source>
-<translation>Kód betűtípusa:</translation>
-</message>
-<message>
 <source>Main window shortcuts</source>
 <translation>Főablak parancsikonok</translation>
-</message>
-<message>
-<source>Do this at your own risk!</source>
-<translation>Ezt a saját felelősségére tegye!</translation>
-</message>
-<message>
-<source>Ignore all external note folder changes</source>
-<translation>Figyelmen kívül hagyja az összes külső jegyzetmappa módosításokat</translation>
-</message>
-<message>
-<source>Use GitHub line breaks</source>
-<translation>Használja a GitHub sortöréseket</translation>
-</message>
-<message>
-<source>German</source>
-<translation>Német</translation>
-</message>
-<message>
-<source>French</source>
-<translation>francia</translation>
-</message>
-<message>
-<source>Polish</source>
-<translation>Lengyel</translation>
-</message>
-<message>
-<source>Portuguese</source>
-<translation>Portugál</translation>
-</message>
-<message>
-<source>Dutch</source>
-<translation>Holland</translation>
-</message>
-<message>
-<source>Hungarian</source>
-<translation>Magyar</translation>
-</message>
-<message>
-<source>Spanish</source>
-<translation>Spanyol</translation>
-</message>
-<message>
-<source>Disable tracking of usage data</source>
-<translation>Tiltsa le az adatok nyomon követését</translation>
-</message>
-<message>
-<source>Usage tracking is done on a private Piwik server.</source>
-<translation>A használatkövetés egy privát Piwik-kiszolgálón történik.</translation>
-</message>
-<message>
-<source>Disable heartbeat</source>
-<translation>Letiltja a szívverés-t</translation>
-</message>
-<message>
-<source>Russian</source>
-<translation>Orosz</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to consider getting a free SSL certificate from &lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt;&lt;p&gt;Érdemes megfontolni egy ingyenes SSL tanúsítvány beszerzését itt:&lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>If you change the language you have to restart the application for the changes to take action.</source>
-<translation>Ha módosítja a nyelvet, szükséges újraindítania az alkalmazást a módosulások érvényesítéséhez.</translation>
-</message>
-<message>
-<source>You need to reload the scripting engine if you modify a script file</source>
-<translation>Újra kell töltenie a parancsértelmezőt ha módosít egy parancsfájlt</translation>
-</message>
-<message>
-<source>Reload scripting engine</source>
-<translation>Parancsértelmező újratöltése</translation>
-</message>
-<message>
-<source>Validate script</source>
-<translation>Parancsfájl érvényesítése</translation>
 </message>
 <message>
 <source>General</source>
 <translation>Általános</translation>
 </message>
 <message>
-<source>Notes</source>
-<translation>Jegyzetek</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked you will always be notified about external modifications, even if current note wasn't edited in the last minute. Recommended is &lt;span style=" font-style:italic;"&gt;unchecked&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt;&lt;p&gt;Ha be van jelölve, mindig értesítést kap a külső módosításokról, még akkor is, ha az utolsó pillanatban az aktuális jegyzet nem szerkesztett. Ajánlott &lt;span style="font-style:italic;"&gt;nem bejelölni&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
-Just test yourself if you get sync conflicts and set a higher value if so.</source>
-<translation>Szinkronizációs konfliktusok léphetnek fel az ownCloud korábbi verzióival ha sokkal 10 mp alá megy. 
-Tesztelje, ha szinkronizációs konfliktus lép fel és állítson be ilyen esetben egy magasabb értéket.</translation>
-</message>
-<message>
-<source>Japanese</source>
-<translation>Japán</translation>
-</message>
-<message>
-<source>note save interval time [sec]</source>
-<translation>jegyzetmentés időintervalluma [sec]</translation>
-</message>
-<message>
-<source>Notify about all external modifications of the current note</source>
-<translation>Értesítsen az aktuális jegyzet minden külső módosításáról</translation>
-</message>
-<message>
-<source>Database</source>
-<translation>Adatbázis</translation>
-</message>
-<message>
-<source>Reinitialize Database</source>
-<translation>Újrainicializálja az adatbázist</translation>
-</message>
-<message>
-<source>Clear application data and exit</source>
-<translation>Alkalmazási adatok törlése és kilépés</translation>
-</message>
-<message>
-<source>This button allows you to clear all settings, remove the local todo database and exit QOwnNotes.</source>
-<translation>Ez a gomb törli az összes beállítást, eltávolítja a helyi tennivalók adatbázist és elhagyja vele a QOwnNotes-t.</translation>
-</message>
-<message>
-<source>Clear app data and exit</source>
-<translation>Alkalmazási adatok törlése és kilépés</translation>
-</message>
-<message>
-<source>Update dialog</source>
-<translation>Ablak frissítése</translation>
-</message>
-<message>
-<source>External editor</source>
-<translation>Külső szerkesztő</translation>
-</message>
-<message>
-<source>path to external editor, leave empty for default</source>
-<translation>térkép a külső szerkesztőhöz, hagyja üresen alapértelmezettként</translation>
-</message>
-<message>
-<source>set external editor</source>
-<translation>Állítsa be a külső szerkesztőt</translation>
-</message>
-<message>
-<source>App metrics</source>
-<translation>Alkalmazás statisztika</translation>
-</message>
-<message>
-<source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. Please disable it only if you really can't live with it.</source>
-<translation>Névtelen használatkövetési adatok segítenek eldönteni, hogy a QOwnNotes melyik részeit fejlesztjük és mely hibákat szerelünk meg. Kérjük, csak abban az esetben tiltsa le, ha egyáltalán nem tud vele élni.</translation>
-</message>
-<message>
-<source>This data includes anonymous information about what features of the app are used.</source>
-<translation>Az alkalmazás jellemzőiről tárolandó névtelen használatkövetési adatok.</translation>
-</message>
-<message>
-<source>App heartbeat</source>
-<translation>Szívverés alkalmazás</translation>
-</message>
-<message>
-<source>A small heartbeat request is sent periodically while QOwnNotes is running. Make a developer happy by letting him know that someone is using QOwnNotes.</source>
-<translation>Rendszeresen küldünk egy apró szívverés kérelmet a QOwnNotes futtatása közben. Tegyen egy fejlesztőt boldoggá és tudassa vele, hogy valaki használja a QOwnNotes-t.</translation>
-</message>
-<message>
-<source>Italian</source>
-<translation>Olasz</translation>
-</message>
-<message>
 <source>Scripting</source>
 <translation>Parancsfájlkezelés</translation>
 </message>
 <message>
-<source>Your scripts</source>
-<translation>A parancsfájlok</translation>
-</message>
-<message>
-<source>&amp;Remove script</source>
-<translation>Parancsfájl &amp;eltávolítása</translation>
-</message>
-<message>
-<source>Click here to select your QML script</source>
-<translation>Kattintson ide, hogy kijelölje a QML parancsfájlját</translation>
-</message>
-<message>
 <source>Find setting</source>
 <translation>Beállítások keresése</translation>
-</message>
-<message>
-<source>Layout</source>
-<translation>Elrendezés</translation>
 </message>
 <message>
 <source>Editor</source>
@@ -5885,89 +7867,8 @@ Tesztelje, ha szinkronizációs konfliktus lép fel és állítson be ilyen eset
 <translation>Hibakeresési lehetőségek</translation>
 </message>
 <message>
-<source>Path where your notes are stored locally</source>
-<translation>A tárolt jegyzetek elérési útja</translation>
-</message>
-<message>
-<source>"Notes" path on your server</source>
-<extracomment>"Notes" should not be translated</extracomment>
-<translation>"Jegyzet" elérési útja a kiszolgálón</translation>
-</message>
-<message>
-<source>&amp;Use as ownCloud path</source>
-<translation>Használata mint &amp;ownCloud elérési út</translation>
-</message>
-<message>
-<source>Please select your note folder on your ownCloud server:</source>
-<translation>Kérjük, válassza ki a jegyzet mappát a ownCloud szerveren:</translation>
-</message>
-<message>
-<source>Path on your ownCloud server:</source>
-<translation>OwnCloud kiszolgáló elérési útja:</translation>
-</message>
-<message>
-<source>Name:</source>
-<translation>Név:</translation>
-</message>
-<message>
-<source>Note folder path:</source>
-<translation>Jegyzetmappa elérési útja:</translation>
-</message>
-<message>
-<source>You need to have git installed to make this work!</source>
-<translation>Szüksége van a git telepítése, hogy ez működjön!</translation>
-</message>
-<message>
-<source>Use git to keep a local history of your notes</source>
-<translation>Git használata a jegyzetei helyi történet tárolásához</translation>
-</message>
-<message>
-<source>ownCloud support</source>
-<translation>ownCloud támogatás</translation>
-</message>
-<message>
-<source>Enable ownCloud support</source>
-<translation>ownCloud támogatás engedélyezése</translation>
-</message>
-<message>
-<source>Select a connection to edit</source>
-<translation>Válassza ki a szerkeszteni kívánt kapcsolatot</translation>
-</message>
-<message>
-<source>Add connection</source>
-<translation>Kapcsolat hozzáadása</translation>
-</message>
-<message>
-<source>Remove connection</source>
-<translation>Távolítsa el a kapcsolatot</translation>
-</message>
-<message>
-<source>Username:</source>
-<translation>Felhasználónév:</translation>
-</message>
-<message>
-<source>Your ownCloud username</source>
-<translation>ownCloud felhasználónév</translation>
-</message>
-<message>
-<source>Password:</source>
-<translation>Jelszó:</translation>
-</message>
-<message>
-<source>Your ownCloud password</source>
-<translation>OwnCloud jelszava</translation>
-</message>
-<message>
-<source>&amp;Connect to ownCloud server</source>
-<translation>&amp;kapcsolat az ownCloud kiszolgálóval</translation>
-</message>
-<message>
-<source>Connection status</source>
-<translation>Kapcsolat állapota</translation>
-</message>
-<message>
-<source>Connection name:</source>
-<translation>Kapcsolat neve:</translation>
+<source>Layout presets</source>
+<translation type="unfinished">Layout presets</translation>
 </message>
 <message>
 <source>Color modes</source>
@@ -5978,364 +7879,16 @@ Tesztelje, ha szinkronizációs konfliktus lép fel és állítson be ilyen eset
 <translation type="unfinished">MCP server</translation>
 </message>
 <message>
-<source>Be aware that the ownCloud notes app doesn't support subfolders!</source>
-<translation>Vegye figyelembe, hogy a ownCloud jegyzetek alkalmazás nem támogatja az almappákat!</translation>
+<source>Layout preset selector</source>
+<translation type="unfinished">Layout preset selector</translation>
 </message>
 <message>
-<source>Use note subfolders</source>
-<translation>Használjon jegyzet almappákat</translation>
+<source>You can create a new layout from a preset here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</source>
+<translation type="unfinished">You can create a new layout from a preset here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</translation>
 </message>
 <message>
-<source>The login flow v2 only works with Nextcloud, not with ownCloud. If you have troubles you need to create an app password by hand.</source>
-<translation>A bejelentkezési folyamat v2 csak a Nextcloud -al működik, a ownCloud -tal nem. Ha problémái vannak, kézzel kell létrehoznia egy alkalmazásjelszót.</translation>
-</message>
-<message>
-<source>Login to Nextcloud to grant access</source>
-<translation>Belépéshez jelentkezzen be a Nextcloud szolgáltatásba</translation>
-</message>
-<message>
-<source>Todo settings</source>
-<translation>Todo beállítások</translation>
-</message>
-<message>
-<source>Enable todo calendar support</source>
-<translation>A naptár támogatásának engedélyezése</translation>
-</message>
-<message>
-<source>Which cloud connection do you want to use?</source>
-<translation>Melyik cloud kapcsolatot szeretné használni?</translation>
-</message>
-<message>
-<source>Select the calendars you want to use for the Todo list</source>
-<translation>Kiválasztja a tennivalók listájához használt naptárakat</translation>
-</message>
-<message>
-<source>Todo list settings</source>
-<translation>Teendőlista beállításai</translation>
-</message>
-<message>
-<source>Saving an item also closes the Todo list</source>
-<translation>Cikk mentése zárja a teendőlistát</translation>
-</message>
-<message>
-<source>Indonesian</source>
-<translation>Indonéz</translation>
-</message>
-<message>
-<source>Bengali</source>
-<translation>Bengáli</translation>
-</message>
-<message>
-<source>Bosnian</source>
-<translation>Bosnyák</translation>
-</message>
-<message>
-<source>Bulgarian</source>
-<translation>Bolgár</translation>
-</message>
-<message>
-<source>Catalan</source>
-<translation>Katalán</translation>
-</message>
-<message>
-<source>Cebuano</source>
-<translation>Cebui</translation>
-</message>
-<message>
-<source>Danish</source>
-<translation>Dán</translation>
-</message>
-<message>
-<source>Basque</source>
-<translation>Baszk</translation>
-</message>
-<message>
-<source>English (British)</source>
-<translation type="unfinished">English (British)</translation>
-</message>
-<message>
-<source>Estonian</source>
-<translation>Észt</translation>
-</message>
-<message>
-<source>Filipino</source>
-<translation>Filippínó</translation>
-</message>
-<message>
-<source>Finnish</source>
-<translation>Finn</translation>
-</message>
-<message>
-<source>Irish</source>
-<translation>Ír</translation>
-</message>
-<message>
-<source>Galician</source>
-<translation>Galíciai</translation>
-</message>
-<message>
-<source>Greek</source>
-<translation>Görög</translation>
-</message>
-<message>
-<source>Hausa</source>
-<translation>Hausza</translation>
-</message>
-<message>
-<source>Hebrew</source>
-<translation>Héber</translation>
-</message>
-<message>
-<source>Hindi</source>
-<translation>Hindi</translation>
-</message>
-<message>
-<source>Hiligaynon</source>
-<translation>Klasszikus nahuatli</translation>
-</message>
-<message>
-<source>Icelandic</source>
-<translation>Izlandi</translation>
-</message>
-<message>
-<source>Korean</source>
-<translation>Koreai</translation>
-</message>
-<message>
-<source>Kurdish</source>
-<translation>Kurd</translation>
-</message>
-<message>
-<source>Latvian</source>
-<translation>Lett</translation>
-</message>
-<message>
-<source>Lithuanian</source>
-<translation>Litván</translation>
-</message>
-<message>
-<source>Macedonian</source>
-<translation>Macedóniai</translation>
-</message>
-<message>
-<source>Norwegian</source>
-<translation>Norvég</translation>
-</message>
-<message>
-<source>Uzbek</source>
-<translation>Üzbég</translation>
-</message>
-<message>
-<source>Punjabi</source>
-<translation>Pandzsábi</translation>
-</message>
-<message>
-<source>Open newly created notes in a new tab</source>
-<translation type="unfinished">Open newly created notes in a new tab</translation>
-</message>
-<message>
-<source>Ignored:</source>
-<translation type="unfinished">Ignored:</translation>
-</message>
-<message>
-<source>Reset all ignored LanguageTool rules so they are checked again</source>
-<translation type="unfinished">Reset all ignored LanguageTool rules so they are checked again</translation>
-</message>
-<message>
-<source>Reset ignored rules</source>
-<translation type="unfinished">Reset ignored rules</translation>
-</message>
-<message>
-<source>Reset all ignored words so they are checked by LanguageTool again</source>
-<translation type="unfinished">Reset all ignored words so they are checked by LanguageTool again</translation>
-</message>
-<message>
-<source>Reset ignored words</source>
-<translation type="unfinished">Reset ignored words</translation>
-</message>
-<message>
-<source>Enable MCP server for AI agent access to notes</source>
-<translation type="unfinished">Enable MCP server for AI agent access to notes</translation>
-</message>
-<message>
-<source>Server port:</source>
-<translation type="unfinished">Server port:</translation>
-</message>
-<message>
-<source>Reset the MCP server port</source>
-<translation type="unfinished">Reset the MCP server port</translation>
-</message>
-<message>
-<source>Persian</source>
-<translation>Perzsa</translation>
-</message>
-<message>
-<source>Romanian</source>
-<translation>Román</translation>
-</message>
-<message>
-<source>Serbian</source>
-<translation>Szerb</translation>
-</message>
-<message>
-<source>Albanian</source>
-<translation>Albán</translation>
-</message>
-<message>
-<source>Slovak</source>
-<translation>Szlovák</translation>
-</message>
-<message>
-<source>Slovenian</source>
-<translation>Szlovén</translation>
-</message>
-<message>
-<source>Swedish</source>
-<translation>Svéd</translation>
-</message>
-<message>
-<source>Tagalog</source>
-<translation>Tagalog</translation>
-</message>
-<message>
-<source>Turkish</source>
-<translation>Török</translation>
-</message>
-<message>
-<source>Urdu</source>
-<translation>Urdu</translation>
-</message>
-<message>
-<source>Chinese Simplified</source>
-<translation>Kínai (egyszerűsített)</translation>
-</message>
-<message>
-<source>Chinese Traditional</source>
-<translation>Kínai (hagyományos)</translation>
-</message>
-<message>
-<source>System tray</source>
-<translation>Rendszer tálca</translation>
-</message>
-<message>
-<source>Show system tray icon</source>
-<translation>Rendszer tálca ikon megjelenítése</translation>
-</message>
-<message>
-<source>Start application hidden</source>
-<translation>Az alkalmazást rejtetten indítja</translation>
-</message>
-<message>
-<source>Interface style</source>
-<translation>Interfész stílus</translation>
-</message>
-<message>
-<source>Override interface font size</source>
-<translation>Felülírja az interfész betűméretet</translation>
-</message>
-<message>
-<source>Interface font size:</source>
-<translation>Interfész betűméret:</translation>
-</message>
-<message>
-<source>&amp;Add script…</source>
-<translation>&amp;Parancsfájl hozzáadása…</translation>
-</message>
-<message>
-<source>Use legacy way to link to notes, images and attachments</source>
-<translation>Kapcsolja össze a jegyzeteket, képeket és mellékleteket a szokásos módon</translation>
-</message>
-<message>
-<source>When opening notes the cursor position inside the note will now be restored to the position when the note was last visited in the current session</source>
-<translation>A jegyzetek megnyitásakor a kurzor pozíciója a jegyzeten belül visszaáll abba a pozícióba, amikor a jegyzetet legutóbb megnyitotta az aktuális munkamenetben</translation>
-</message>
-<message>
-<source>By default the headline will generated automatically</source>
-<translation>Alapértelmezés szerint a címet automatikusan generáljuk</translation>
-</message>
-<message>
-<source>The shortcut to create a new note asks for a headline</source>
-<translation>A parancsikon egy új jegyzet létrehozására címet követel</translation>
-</message>
-<message>
-<source>Automatically close the note folder database to prevent problems with sync tools</source>
-<translation>Automatikusan zárja le a jegyzet mappa adatbázist és kerülje el a szinkronizáló eszközökkel való problémákat</translation>
-</message>
-<message>
-<source>Automatically close the note folder database</source>
-<translation>Automatikusan zárja le a jegyszet mappa adatbázist</translation>
-</message>
-<message>
-<source>Search engine</source>
-<translation>Kereső</translation>
-</message>
-<message>
-<source>Message boxes</source>
-<translation>Üzenet dobozok</translation>
-</message>
-<message>
-<source>Reset message boxes</source>
-<translation>Az üzenet dobozok visszaállítása alaphelyzetbe</translation>
-</message>
-<message>
-<source>Import settings</source>
-<translation>Beállítások importálása</translation>
-</message>
-<message>
-<source>Export settings</source>
-<translation>Beállítások exportálása</translation>
-</message>
-<message>
-<source>Open issue assistant</source>
-<translation>Nyitott kérdés asszisztens</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The best way to post issues is to use the issue assistant by pressing the &lt;span style=" font-weight:600;"&gt;Open issue assistant&lt;/span&gt; button on the bottom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A problémák közzétételének legjobb módja a probléma-asszisztens használata a&lt;span style=" font-weight:600;"&gt; lenti probléma asszisztens&lt;/span&gt;gomb megnyomása által.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>Ignore code font size to allow zooming</source>
-<translation>A nagyítás érdekében hagyja figyelmen kívül a kód betűméretét</translation>
-</message>
-<message>
-<source>Rendering</source>
-<translation>Látványterv</translation>
-</message>
-<message>
-<source>Enable underline rendering</source>
-<translation>Az aláhúzott megjelenítés engedélyezése</translation>
-</message>
-<message>
-<source>Fully highlight blockquotes</source>
-<translation>Teljesen kiemeli a blokkvázlatokat</translation>
-</message>
-<message>
-<source>Note-edit cursor width:</source>
-<translation>Jegyszetszerkesztő kurzor szélesség:</translation>
-</message>
-<message>
-<source>Enable Vim mode (some QOwnNotes shortcuts will not work)</source>
-<translation>Vim-üzemmód engedélyezése (Néhány QOwnNotes hivatkozások nem működnek)</translation>
-</message>
-<message>
-<source>Cloud connection:</source>
-<translation>Cloud csatlakozás:</translation>
-</message>
-<message>
-<source>Opens your ownCloud server App Password page in your webbrowser to create a new app password for the application</source>
-<translation>Megnyitja a ownCloud szerver alkalmazásjelszó oldalát a webböngészőben, hogy új alkalmazásjelszót hozzon létre az alkalmazáshoz</translation>
-</message>
-<message>
-<source>Open your ownCloud server App Password page</source>
-<translation>Nyissa meg a ownCloud szerver alkalmazásjelszó oldalát</translation>
-</message>
-<message>
-<source>Māori</source>
-<translation>Māori</translation>
-</message>
-<message>
-<source>Malay</source>
-<translation>Maláj</translation>
+<source>Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Layouts&lt;/i&gt; for different panel configurations.</source>
+<translation type="unfinished">Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Layouts&lt;/i&gt; for different panel configurations.</translation>
 </message>
 <message>
 <source>Browser extension / command snippets</source>
@@ -6354,106 +7907,6 @@ Tesztelje, ha szinkronizációs konfliktus lép fel és állítson be ilyen eset
 <translation type="unfinished">Experimental</translation>
 </message>
 <message>
-<source>This also allows note files to be renamed</source>
-<translation>Ez lehetővé teszi a jegyzetfájlok átnevezését is</translation>
-</message>
-<message>
-<source>You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</source>
-<translation>Az alkalmazáson belül elérheti a ownCloud szerverét, például a kukába helyezett jegyzetek és jegyzetverziók kezeléséhez vagy jegyzetek megosztásához. Ez az integráció nem végzi el a jegyzetfájlok szinkronizálását. A fájlok szinkronizálásához továbbra is telepítenie kell az ownCloud szinkronizálási klienst.</translation>
-</message>
-<message>
-<source>You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</source>
-<translation type="unfinished">You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</translation>
-</message>
-<message>
-<source>Enable QOwnNotesAPI app support</source>
-<translation type="unfinished">Enable QOwnNotesAPI app support</translation>
-</message>
-<message>
-<source>If your password doesn't work, create an app password (button on the right)</source>
-<translation>Ha a jelszava nem működik, hozzon létre egy alkalmazásjelszót (jobb oldalon található gomb)</translation>
-</message>
-<message>
-<source>Cancel Nextcloud login</source>
-<translation>Törölje a Nextcloud bejelentkezést</translation>
-</message>
-<message>
-<source>Enable Nextcloud Deck support</source>
-<translation type="unfinished">Enable Nextcloud Deck support</translation>
-</message>
-<message>
-<source>You can access your ownCloud server or a generic CalDAV server to manage your todo lists.</source>
-<translation>A teendőlisták kezeléséhez hozzáférhet sajátCloud-szerveréhez vagy egy általános CalDAV-kiszolgálóhoz.</translation>
-</message>
-<message>
-<source>If you want to help to translate QOwnNotes or update an existing translation please read: &lt;a href="%1"&gt;How can I help to translate QOwnNotes?&lt;/a&gt;</source>
-<translation>Ha szeretne segíteni a QOwnNotes fordításában vagy egy meglévő fordítás frissítésében, olvassa el: &lt;a href="%1"&gt; Hogyan segíthetek a QOwnNotes fordításában?&lt;/a&gt;</translation>
-</message>
-<message>
-<source>Khmer</source>
-<translation>Kambodzsai</translation>
-</message>
-<message>
-<source>Shona</source>
-<translation>Shona</translation>
-</message>
-<message>
-<source>Sinhala</source>
-<translation>Szingaléz</translation>
-</message>
-<message>
-<source>Thai</source>
-<translation>Thai</translation>
-</message>
-<message>
-<source>Vietnamese</source>
-<translation>Vietnámi</translation>
-</message>
-<message>
-<source>Xhosa</source>
-<translation>Xhosa</translation>
-</message>
-<message>
-<source>Yiddish</source>
-<translation>jiddis</translation>
-</message>
-<message>
-<source>Zulu</source>
-<translation>Zulu</translation>
-</message>
-<message>
-<source>Search for language</source>
-<translation>Nyelv keresése</translation>
-</message>
-<message>
-<source>Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</source>
-<translation type="unfinished">Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</translation>
-</message>
-<message>
-<source>Hide menu icons</source>
-<translation type="unfinished">Hide menu icons</translation>
-</message>
-<message>
-<source>Override interface scaling factor</source>
-<translation type="unfinished">Override interface scaling factor</translation>
-</message>
-<message>
-<source>Interface scaling factor:</source>
-<translation type="unfinished">Interface scaling factor:</translation>
-</message>
-<message>
-<source>Status bar</source>
-<translation type="unfinished">Status bar</translation>
-</message>
-<message>
-<source>Show note path</source>
-<translation type="unfinished">Show note path</translation>
-</message>
-<message>
-<source>Only show relative note path</source>
-<translation type="unfinished">Only show relative note path</translation>
-</message>
-<message>
 <source>Action name</source>
 <translation>Művelet neve</translation>
 </message>
@@ -6466,281 +7919,8 @@ Tesztelje, ha szinkronizációs konfliktus lép fel és állítson be ilyen eset
 <translation>Globális parancsikon</translation>
 </message>
 <message>
-<source>Disable this if you want to launch the application without opening a note</source>
-<translation>Tiltsa le, ha az alkalmazást jegyzet megnyitása nélkül szeretné elindítani</translation>
-</message>
-<message>
-<source>Open last accessed note at application startup</source>
-<translation>Az alkalmazás indításakor nyissa meg az utoljára megismert jegyzetet</translation>
-</message>
-<message>
-<source>Read-only mode</source>
-<translation type="unfinished">Read-only mode</translation>
-</message>
-<message>
-<source>Enable or disable the read-only mode feature</source>
-<translation type="unfinished">Enable or disable the read-only mode feature</translation>
-</message>
-<message>
-<source>Enable read-only mode</source>
-<translation type="unfinished">Enable read-only mode</translation>
-</message>
-<message>
-<source>Start application in read-only mode</source>
-<translation type="unfinished">Start application in read-only mode</translation>
-</message>
-<message>
-<source>Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</source>
-<translation type="unfinished">Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>Search scripts</source>
-<translation type="unfinished">Search scripts</translation>
-</message>
-<message>
-<source>When inactive, enter read-only mode automatically after:</source>
-<translation type="unfinished">When inactive, enter read-only mode automatically after:</translation>
-</message>
-<message>
-<source> sec</source>
-<extracomment>short for seconds</extracomment>
-<translation type="unfinished"> sec</translation>
-</message>
-<message>
-<source>Forget all "Don't ask again" choices in message boxes</source>
-<translation>Felejtsd el az összes „Ne kérdezz többé” lehetőséget az üzenetablakban</translation>
-</message>
-<message>
-<source>Note file extensions</source>
-<translation>Jegyezze meg a fájlkiterjesztéseket</translation>
-</message>
-<message>
-<source>Files with the listed file extensions will be recognized as notes, the selected file extension will be used for new notes.</source>
-<translation>A felsorolt ​​fájlkiterjesztéssel rendelkező fájlokat jegyzetekként ismeri fel a rendszer, a kiválasztott fájlkiterjesztést új jegyzetekhez használja fel.</translation>
-</message>
-<message>
-<source>Add a new note file extension</source>
-<translation>Új jegyzetfájl -kiterjesztés hozzáadása</translation>
-</message>
-<message>
-<source>Remove selected note file extension</source>
-<translation>Távolítsa el a kijelölt jegyzetfájl -kiterjesztést</translation>
-</message>
-<message>
-<source>Checks the disk database integrity and fixes problems</source>
-<translation>Ellenőrzi a lemez adatbázis integritását és kijavítja a problémákat</translation>
-</message>
-<message>
-<source>Check integrity</source>
-<translation>Ellenőrizze az integritást</translation>
-</message>
-<message>
-<source>Be warned that reinitializing the database will also remove your cached todo items and configured note folders and scripts!</source>
-<translation>Vegye figyelembe, hogy az adatbázis újraindítása a gyorsítótárazott todo elemeket, valamint a beállított jegyzetmappákat és szkripteket is eltávolítja!</translation>
-</message>
-<message>
-<source>GitHub doesn't need two spaces at the end of the line to do a line break</source>
-<translation>A GitHub-nak nincs szüksége két szóközre a sor végén a sortöréshez</translation>
-</message>
-<message>
-<source>This is the best way to open an issue</source>
-<translation>Ez a legjobb módszer a probléma megnyitására</translation>
-</message>
-<message>
-<source>Please use this in the issue tracker</source>
-<translation>Kérjük, használja ezt a problémakövetőben</translation>
-</message>
-<message>
-<source>&amp;Copy debug information to clipboard</source>
-<translation>&amp;Másolja a hibakeresési információkat a vágólapra</translation>
-</message>
-<message>
-<source>Please don't use this in the issue tracker</source>
-<translation>Kérjük, ne használja ezt a problémakövetőben</translation>
-</message>
-<message>
-<source>Time to wait before refreshing the preview after typing:</source>
-<translation>Várni kell az előnézet frissítése előtt a beírás után:</translation>
-</message>
-<message>
-<source>Reset the debounce time</source>
-<translation>Állítsa vissza a visszapattanási időt</translation>
-</message>
-<message>
-<source>0ms means don't wait for the typing to stop</source>
-<translation>A 0 ms azt jelenti, hogy nem várja meg, amíg a gépelés leáll</translation>
-</message>
-<message>
-<source>Use editor highlighting styles also for the preview</source>
-<translation>Az előnézethez használja a szerkesztő kiemelési stílusait is</translation>
-</message>
-<message>
-<source>Exporting</source>
-<translation>Exportálás</translation>
-</message>
-<message>
-<source>Use internal export styling for the PDF export and printing of the preview</source>
-<translation>Használjon belső exportstílusokat a PDF exportálásához és az előnézet nyomtatásához</translation>
-</message>
-<message>
-<source>Markdown language server</source>
-<translation type="unfinished">Markdown language server</translation>
-</message>
-<message>
-<source>Enable Markdown language server (LSP)</source>
-<translation type="unfinished">Enable Markdown language server (LSP)</translation>
-</message>
-<message>
-<source>Command:</source>
-<translation type="unfinished">Command:</translation>
-</message>
-<message>
-<source>Arguments:</source>
-<translation type="unfinished">Arguments:</translation>
-</message>
-<message>
-<source>Optional arguments separated by spaces.</source>
-<translation type="unfinished">Optional arguments separated by spaces.</translation>
-</message>
-<message>
-<source>Optional arguments</source>
-<translation type="unfinished">Optional arguments</translation>
-</message>
-<message>
 <source>LanguageTool</source>
 <translation type="unfinished">LanguageTool</translation>
-</message>
-<message>
-<source>Enable grammar and style checking with LanguageTool</source>
-<translation type="unfinished">Enable grammar and style checking with LanguageTool</translation>
-</message>
-<message>
-<source>Test Connection</source>
-<translation type="unfinished">Test Connection</translation>
-</message>
-<message>
-<source>Language:</source>
-<translation type="unfinished">Language:</translation>
-</message>
-<message>
-<source>API key:</source>
-<translation type="unfinished">API key:</translation>
-</message>
-<message>
-<source>Optional premium or cloud API key</source>
-<translation type="unfinished">Optional premium or cloud API key</translation>
-</message>
-<message>
-<source>Check delay:</source>
-<translation type="unfinished">Check delay:</translation>
-</message>
-<message>
-<source> ms</source>
-<translation type="unfinished"> ms</translation>
-</message>
-<message>
-<source>Categories:</source>
-<translation type="unfinished">Categories:</translation>
-</message>
-<message>
-<source>Spelling</source>
-<translation type="unfinished">Spelling</translation>
-</message>
-<message>
-<source>Grammar</source>
-<translation type="unfinished">Grammar</translation>
-</message>
-<message>
-<source>Style</source>
-<translation type="unfinished">Style</translation>
-</message>
-<message>
-<source>Punctuation</source>
-<translation type="unfinished">Punctuation</translation>
-</message>
-<message>
-<source>Typography</source>
-<translation type="unfinished">Typography</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>Tekintse meg az összes elérhető &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;időformátumot&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>Note that disabling this will also disable the navigation panel!</source>
-<translation>Vegye figyelembe, hogy ennek letiltása a navigációs panelt is letiltja!</translation>
-</message>
-<message>
-<source>Show line numbers and bookmark markers (1-9)</source>
-<translation type="unfinished">Show line numbers and bookmark markers (1-9)</translation>
-</message>
-<message>
-<source>Show small Markdown preview images in the editor, if there is no text after the image</source>
-<translation type="unfinished">Show small Markdown preview images in the editor, if there is no text after the image</translation>
-</message>
-<message>
-<source>Shows fold buttons for Markdown headings and allows collapsing their contents</source>
-<translation type="unfinished">Shows fold buttons for Markdown headings and allows collapsing their contents</translation>
-</message>
-<message>
-<source>Enable heading folding in the editor</source>
-<translation type="unfinished">Enable heading folding in the editor</translation>
-</message>
-<message>
-<source>Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</source>
-<translation type="unfinished">Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</translation>
-</message>
-<message>
-<source>Hide markdown formatting syntax on inactive lines</source>
-<translation type="unfinished">Hide markdown formatting syntax on inactive lines</translation>
-</message>
-<message>
-<source>Enable hanging indentation for Markdown lists</source>
-<translation type="unfinished">Enable hanging indentation for Markdown lists</translation>
-</message>
-<message>
-<source>Disable cursor blinking</source>
-<translation>Tiltsa le a kurzor villogását</translation>
-</message>
-<message>
-<source>Automatically remove trailing spaces in the note text</source>
-<translation>Automatikusan eltávolítja a jegyzetszövegből az egymást követő szóközöket</translation>
-</message>
-<message>
-<source>Git library</source>
-<translation type="unfinished">Git library</translation>
-</message>
-<message>
-<source>Support for the git library libgit2 is activated.</source>
-<translation type="unfinished">Support for the git library libgit2 is activated.</translation>
-</message>
-<message>
-<source>Don't forget to enable git support for your note folders.</source>
-<translation type="unfinished">Don't forget to enable git support for your note folders.</translation>
-</message>
-<message>
-<source>Allow empty note files</source>
-<translation type="unfinished">Allow empty note files</translation>
-</message>
-<message>
-<source>Notes larger than this will not be shown in the note list</source>
-<translation type="unfinished">Notes larger than this will not be shown in the note list</translation>
-</message>
-<message>
-<source>Maximum note file size:</source>
-<translation type="unfinished">Maximum note file size:</translation>
-</message>
-<message>
-<source>Hide tab close button</source>
-<translation type="unfinished">Hide tab close button</translation>
 </message>
 <message>
 <source>AI autocomplete</source>
@@ -6755,615 +7935,8 @@ Tesztelje, ha szinkronizációs konfliktus lép fel és állítson be ilyen eset
 <translation type="unfinished">Enable AI autocomplete in note editor</translation>
 </message>
 <message>
-<source>Search script repository for AI integration scripts</source>
-<translation type="unfinished">Search script repository for AI integration scripts</translation>
-</message>
-<message>
-<source>API keys</source>
-<translation type="unfinished">API keys</translation>
-</message>
-<message>
-<source>OpenAI API key:</source>
-<translation type="unfinished">OpenAI API key:</translation>
-</message>
-<message>
-<source>Create Groq API key</source>
-<translation type="unfinished">Create Groq API key</translation>
-</message>
-<message>
-<source>Create OpenAI API key</source>
-<translation type="unfinished">Create OpenAI API key</translation>
-</message>
-<message>
-<source>Test connection</source>
-<comment>"Test" as verb</comment>
-<translation type="unfinished">Test connection</translation>
-</message>
-<message>
-<source>API settings</source>
-<translation type="unfinished">API settings</translation>
-</message>
-<message>
-<source>Response timeout:</source>
-<translation type="unfinished">Response timeout:</translation>
-</message>
-<message>
-<source>Time the application will wait for a response from the server before timing out and returning an error message.</source>
-<translation type="unfinished">Time the application will wait for a response from the server before timing out and returning an error message.</translation>
-</message>
-<message>
-<source>sec</source>
-<comment>seconds</comment>
-<translation>mp</translation>
-</message>
-<message>
-<source>AI backends added via the scripting engine</source>
-<translation type="unfinished">AI backends added via the scripting engine</translation>
-</message>
-<message>
-<source>To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</source>
-<translation type="unfinished">To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</translation>
-</message>
-<message>
-<source>You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</source>
-<translation type="unfinished">You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</translation>
-</message>
-<message>
-<source>Alternatively, you can also look in the script repository for already created AI integration scripts.</source>
-<translation type="unfinished">Alternatively, you can also look in the script repository for already created AI integration scripts.</translation>
-</message>
-<message>
-<source>Groq API key:</source>
-<translation type="unfinished">Groq API key:</translation>
-</message>
-<message>
-<source>API key</source>
-<translation type="unfinished">API key</translation>
-</message>
-<message>
-<source>Tabs and Indents</source>
-<translation>Lapok és bekezdések</translation>
-</message>
-<message>
-<source>Use tab character instead of spaces</source>
-<translation>Használjon tabulátor karaktert szóköz helyett</translation>
-</message>
-<message>
-<source>Indent:</source>
-<translation>Bekezdés:</translation>
-</message>
-<message>
-<source>Regular expressions of note subfolders to ignore, separated by ";"</source>
-<translation>A jegyzet almappáinak rendszeres kifejezései, amelyeket figyelmen kívül kell hagyni, ";" elválasztva</translation>
-</message>
-<message>
-<source>Ignored note files</source>
-<translation type="unfinished">Ignored note files</translation>
-</message>
-<message>
-<source>Use checksums to detect external modifications to unsaved notes</source>
-<translation type="unfinished">Use checksums to detect external modifications to unsaved notes</translation>
-</message>
-<message>
-<source>Enable wiki-style link support [[note name]]</source>
-<translation type="unfinished">Enable wiki-style link support [[note name]]</translation>
-</message>
-<message>
-<source>Select the path of the git binary</source>
-<translation type="unfinished">Select the path of the git binary</translation>
-</message>
-<message>
-<source>Regular expressions of note files to ignore, separated by ";"</source>
-<translation type="unfinished">Regular expressions of note files to ignore, separated by ";"</translation>
-</message>
-<message>
-<source>Ignored subfolders</source>
-<translation>Figyelmen kívül hagyott almappák</translation>
-</message>
-<message>
-<source>Reset ignored subfolders</source>
-<translation>Alaphelyzetbe állítja a figyelmen kívül hagyott almappákat</translation>
-</message>
-<message>
-<source>Clicking a note tab unsets 'All notes' selection</source>
-<translation type="unfinished">Clicking a note tab unsets 'All notes' selection</translation>
-</message>
-<message>
-<source>Restore open note tabs at application startup and when note folders are switched</source>
-<translation>Állítsa vissza a nyitott jegyzetek lapjait az alkalmazás indításakor és a jegyzetmappák váltásakor</translation>
-</message>
-<message>
-<source>Auto-select items in navigation panel when changing cursor position</source>
-<translation>Elemek automatikus kiválasztása a navigációs panelen a kurzor pozíciójának megváltoztatásakor</translation>
-</message>
-<message>
-<source>Hide 'Note count' with tags (increases performance)</source>
-<translation>A "jegyzetek számozása" elrejtése kulcsszavakkal (növeli a teljesítményt)</translation>
-</message>
-<message>
-<source>Show the number of matches in each note</source>
-<translation>Mutassa a találatok számát az egyes jegyzetekben</translation>
-</message>
-<message>
-<source>Command snippets</source>
-<translation>Parancsrészletek</translation>
-</message>
-<message>
-<source>Tag name for commands notes</source>
-<translation>Címkenév a parancsjegyzetekhez</translation>
-</message>
-<message>
-<source>Commands tag:</source>
-<translation>Parancsok címke:</translation>
-</message>
-<message>
-<source>Commands note name:</source>
-<translation>Parancsok megjegyzésének neve:</translation>
-</message>
-<message>
-<source>Note name for adding new commands</source>
-<translation>Jegyezze fel a nevet az új parancsok hozzáadásához</translation>
-</message>
-<message>
-<source>Bookmark suggestion API</source>
-<translation type="unfinished">Bookmark suggestion API</translation>
-</message>
-<message>
-<source>Enable Homepage-compatible bookmark suggestions API</source>
-<translation type="unfinished">Enable Homepage-compatible bookmark suggestions API</translation>
-</message>
-<message>
-<source>Suggestion API port:</source>
-<translation type="unfinished">Suggestion API port:</translation>
-</message>
-<message>
-<source>Reset the suggestion API port</source>
-<translation type="unfinished">Reset the suggestion API port</translation>
-</message>
-<message>
-<source>If this is empty when saved, a new security token will be generated automatically.</source>
-<translation type="unfinished">If this is empty when saved, a new security token will be generated automatically.</translation>
-</message>
-<message>
-<source>You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</source>
-<translation>A &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; segítségével fényképeket illeszthet be az asztali QOwnNotes-ba mobiltelefonjáról az interneten keresztül.</translation>
-</message>
-<message>
-<source>QOwnNotes web application</source>
-<translation>QOwnNotes webalkalmazás</translation>
-</message>
-<message>
-<source>A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</source>
-<translation type="unfinished">A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</translation>
-</message>
-<message>
-<source>Server URL:</source>
-<translation>Szerver URL-címe:</translation>
-</message>
-<message>
-<source>Show QR code</source>
-<translation>QR-kód megjelenítése</translation>
-</message>
-<message>
-<source>Security token:</source>
-<translation>Biztonsági jelkép:</translation>
-</message>
-<message>
-<source>Install the &lt;a href="%1"&gt;Web Companion browser extension&lt;/a&gt; from the &lt;a href="%2"&gt;Chrome Web Store&lt;/a&gt; or &lt;a href="%3"&gt;Firefox Add-ons page&lt;/a&gt; to use QOwnNotes as web clipper or for bookmark management.</source>
-<translation>Telepítse a &lt;a href="%1"&gt;Web Companion böngészőbővítményt&lt;/a&gt; a &lt;a href="%2"&gt;Chrome Internetes áruházból&lt;/a&gt; vagy a &lt;a href="%3"&gt;Firefox Add- ons oldalon&lt;/a&gt;, hogy a QOwnNotes-ot webvágóként vagy könyvjelzőkezelésként használhassa.</translation>
-</message>
-<message>
-<source>Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</source>
-<translation>Töltse le a &lt;a href="%1"&gt;Parancssori kódrészletkezelőt&lt;/a&gt; a QOwnNotes jegyzeteiben tárolt parancsrészletek parancssorból történő végrehajtásához.</translation>
-</message>
-<message>
-<source>You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
-<translation>Speciális címkével ellátott jegyzetek segítségével parancsrészleteket tárolhat, amelyeket a parancssori kódrészletkezelőből hajthat végre. A parancsrészlet szintaxisával kapcsolatos további információkért kattintson &lt;a href="%1"&gt;ide&lt;/a&gt;.</translation>
-</message>
-<message>
-<source>You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</source>
-<translation>Ezt a tokent be kell írnia a QOwnNotes webalkalmazásba, hogy kommunikálni tudjon a QOwnNotes asztali alkalmazásával.</translation>
-</message>
-<message>
-<source>Copy security token to clipboard</source>
-<translation>Másolja a biztonsági tokent a vágólapra</translation>
-</message>
-<message>
-<source>Generate new security token</source>
-<translation>Új biztonsági token generálása</translation>
-</message>
-<message>
-<source>Reset the URL to default</source>
-<translation>Állítsa vissza az URL-t alapértelmezettre</translation>
-</message>
-<message>
-<source>QOwnNotes web application support</source>
-<translation>QOwnNotes webalkalmazások támogatása</translation>
-</message>
-<message>
-<source>Enable web application support</source>
-<translation>Engedélyezze a webalkalmazások támogatását</translation>
-</message>
-<message>
-<source>Note list panel</source>
-<translation>Jegyzetlista panel</translation>
-</message>
-<message>
-<source>Show notes in the note list with preview</source>
-<translation>Megmutatja a jegyzeteket az előnézet jegyzetlistában</translation>
-</message>
-<message>
-<source>Instead of a note list use a note tree with all the subfolders (if they are turned on for the note folder)</source>
-<translation>Jegyzetlista helyett használjon jegyzetfát az összes almappával (ha be vannak kapcsolva a jegyzetmappához)</translation>
-</message>
-<message>
-<source>Note folder panel</source>
-<translation>Jegyzetmappa</translation>
-</message>
-<message>
-<source>Show note folders as buttons instead of in a select box</source>
-<translation>Jegyzetmappák megjelenítése gombként jelölőnégyzet helyett</translation>
-</message>
-<message>
-<source>Enable local trash to keep a copy of trashed notes</source>
-<translation>A helyi kuka engedélyezése a kukába helyezett jegyzetek másolatának megőrzéséhez</translation>
-</message>
-<message>
-<source>Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Workspaces&lt;/i&gt; for different panel configurations.</source>
-<translation>A panelek be- és kikapcsolhatók az &lt;i&gt; Ablak / Panelek &lt;/i&gt; főmenüben, és különböző &lt;i&gt; munkaterületeket &lt;/i&gt; konfigurálhat a különböző panelekkonfigurációkhoz.</translation>
-</message>
-<message>
-<source>Bookmarks</source>
-<translation>Könyvjelzők</translation>
-</message>
-<message>
-<source>Notes with this tag will be used for fetching bookmarks</source>
-<translation>A címkével ellátott jegyzetek a könyvjelzők letöltését szolgálják</translation>
-</message>
-<message>
-<source>Tag name for bookmarks notes</source>
-<translation>A könyvjelzők jegyzeteinek címkéje</translation>
-</message>
-<message>
-<source>Bookmarks tag:</source>
-<translation>Könyvjelző címke:</translation>
-</message>
-<message>
-<source>By default the browser extension will show all links of the current note. You can also make it show special bookmark links of notes with a certain tag. For more information about the bookmark link syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
-<translation>Alapértelmezés szerint a böngészőbővítmény az aktuális jegyzet összes linkjét mutatja. Azt is megteheti, hogy egy speciális címkével ellátott jegyzetek speciális könyvjelzői linkjeit jeleníti meg. A könyvjelző link szintaxisával kapcsolatos további információkért kattintson &lt;a href="%1"&gt;ide&lt;/a&gt;.</translation>
-</message>
-<message>
-<source>Bookmarks note name:</source>
-<translation>A könyvjelző-jegyzet neve:</translation>
-</message>
-<message>
-<source>This note will be used for adding new bookmarks from the browser extension</source>
-<translation>Ez a jegyzet új könyvjelzők hozzáadására szolgál a böngészőbővítményből</translation>
-</message>
-<message>
-<source>Note name for adding new bookmarks</source>
-<translation>Jegyzet név könyvjelzők hozzáadásához</translation>
-</message>
-<message>
-<source>Web socket server</source>
-<translation>Web socket szerver</translation>
-</message>
-<message>
-<source>Socket server port:</source>
-<translation>Socket szerver port:</translation>
-</message>
-<message>
-<source>Reset the socket server port</source>
-<translation>Állítsa vissza a socket kiszolgáló portját</translation>
-</message>
-<message>
-<source>Show security token</source>
-<translation>Biztonsági jelző megjelenítése</translation>
-</message>
-<message>
-<source>Web socket server support</source>
-<translation>Webkiszolgáló aljzat támogatása</translation>
-</message>
-<message>
-<source>Enable socket server</source>
-<translation>Engedélyezi az aljzat szervert</translation>
-</message>
-<message>
-<source>Note edit panel</source>
-<translation>Jegyzetszerkesztés panel</translation>
-</message>
-<message>
-<source>If this is disabled you are able to create more complex panel layouts, but all panels will be resized if the window is resized</source>
-<translation>Ha ez le van tiltva, bonyolultabb panel elrendezéseket hozhat létre, azonban az összes panelt átméretezi, ha az ablakot átméretezi</translation>
-</message>
-<message>
-<source>Use the note edit panel as fixed central widget to be resized if the window or other panels are resized</source>
-<translation>Használja a jegyzetszerkesztő panelt rögzített központi modulként, mely átméretezhető, ha az ablakot vagy más panelt átméretez</translation>
-</message>
-<message>
-<source>Note search panel</source>
-<translation>Jegyzetkeresés panel</translation>
-</message>
-<message>
-<source>Disable auto-completion of previous searches</source>
-<translation>Letiltja az előző keresések automatikus befejezését</translation>
-</message>
-<message>
-<source>Navigation panel</source>
-<translation>Navigációs panel</translation>
-</message>
-<message>
-<source>Hide navigation item search bar</source>
-<translation>Navigációs elem keresősáv elrejtése</translation>
-</message>
-<message>
-<source>Local trash settings</source>
-<translation>Helyi kuka beállítások</translation>
-</message>
-<message>
-<source>Remove trashed notes after:</source>
-<translation>Törölt jegyzeteket eltávolít:</translation>
-</message>
-<message>
-<source> days</source>
-<extracomment>seconds</extracomment>
-<translation> nap</translation>
-</message>
-<message>
-<source>Automatically remove trashed notes after a certain time</source>
-<translation>Automatikusan eltávolítja a kukába jegyzeteket egy adott idõ elteltével</translation>
-</message>
-<message>
-<source>Local trash support</source>
-<translation>Helyi kuka segítség</translation>
-</message>
-<message>
-<source>Layout selector</source>
-<translation>Elrendezésválasztó</translation>
-</message>
-<message>
-<source>You can set a new layout here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</source>
-<translation>Itt beállíthat egy új elrendezést. A &lt;i&gt;Panelek feloldása&lt;/i&gt; gombbal bármikor módosíthatja a panelek helyzetét.</translation>
-</message>
-<message>
-<source>Reset the cursor width</source>
-<translation>Kurzorszélesség visszaállítása</translation>
-</message>
-<message>
-<source>External git log command to show the git versions of a note</source>
-<translation>Külső git napló parancs a jegyzet git változatai megjelenítéséhez</translation>
-</message>
-<message>
-<source>Enter a command to be used to show a git log (like for example "gitk")</source>
-<extracomment>Please don't translate "%notePath%"</extracomment>
-<translation>Írjon be egy parancsot egy git napló használata megjelenítéséhez (mint például a "gitk")</translation>
-</message>
-<message>
-<source>If you use this setting you will get a new menu entry to show the git versions if you right-click a note.</source>
-<extracomment>Please don't translate "%notePath%"</extracomment>
-<translation>Ezzel a beállítással kap egy új menü bejegyzést a git változatok megjelenítéséhez ha jobb gombbal kattint egy jegyzetre.</translation>
-</message>
-<message>
-<source>Show all notes of a tag including the notes of their children-tags</source>
-<translation>Címke minden jegyzetét megmutatja a gyermek-címkéket beleértve</translation>
-</message>
-<message>
-<source>Show all notes in a folder including their subfolders (only works if subfolders are turned on)</source>
-<translation>Megmutatja az összes jegyzetet egy mappában, beleértve az almappákat (csak akkor működik, ha almappák be vannak kapcsolva)</translation>
-</message>
-<message>
-<source>Highlight the current line</source>
-<translation>Kijelöli az aktuális sort</translation>
-</message>
-<message>
-<source>Don't forget to enable git support for your note folders and to configure your name and email address for your git client, for example with these terminal commands:</source>
-<translation>Ne felejtse engedélyezni a jegyzetmappák git támogatását és beállítani a nevét és az e-mail címét a git-ügyfelénél, pl. ezen terminálparancsokkal:</translation>
-</message>
-<message>
-<source>Tags panel</source>
-<translation>Címkék panel</translation>
-</message>
-<message>
-<source>Order</source>
-<translation>Rendezés</translation>
-</message>
-<message>
-<source>Ascending</source>
-<translation>Növekvő</translation>
-</message>
-<message>
-<source>Descending</source>
-<translation>Csökkenő</translation>
-</message>
-<message>
-<source>Sort</source>
-<translation>Rendezés típusa</translation>
-</message>
-<message>
-<source>Only use editor width setting in distraction free mode</source>
-<translation>Csak figyelemelterelés ingyenes módban használja a szerkesztő szélesség beállítását</translation>
-</message>
-<message>
-<source>Alphabetical</source>
-<translation>Betűrendben</translation>
-</message>
-<message>
-<source>By last change / use</source>
-<translation>Az utolsó módosítás használata</translation>
-</message>
-<message>
-<source>Hide 'Find or create tag' search</source>
-<translation>A "Címke keresése vagy létrehozása" keresés elrejtése</translation>
-</message>
-<message>
-<source>Note subfolders panel</source>
-<translation>Jegyzet almappák panel</translation>
-</message>
-<message>
-<source>Show with full path</source>
-<translation>Megjelenítés elérési úttal</translation>
-</message>
-<message>
-<source>By last change</source>
-<translation>A legutóbbi változások szerint </translation>
-</message>
-<message>
-<source>Show root folder name</source>
-<translation>Megmutatja a gyökér mappa nevet</translation>
-</message>
-<message>
-<source>Hide 'Find or create note subfolder' search</source>
-<translation>"Jegyzet almappa keresése vagy létrehozása" keresés elrejtése</translation>
-</message>
-<message>
-<source>Display note subfolders as full tree</source>
-<translation>Megmutatja a jegyzetalmappákat mint teljes fa</translation>
-</message>
-<message>
-<source>Search script repository</source>
-<translation>Keresés szkript adattárban</translation>
-</message>
-<message>
-<source>You optionally can use "%notePath%" for the path of the note.</source>
-<extracomment>Please don't translate "%notePath%"</extracomment>
-<translation>Tetszés szerint a "%notePath%" segítségével is eléri a jegyzet hozzáférési útját.</translation>
-</message>
-<message>
-<source>Git client</source>
-<translation>Git ügyfél</translation>
-</message>
-<message>
-<source>Path to git executable:</source>
-<translation>Git végrehajtható elérési útja:</translation>
-</message>
-<message>
-<source>Path to git client, leave empty for default</source>
-<translation>Ösvény a git ügyfélhez, alapértelmezetten hagyja üresen</translation>
-</message>
-<message>
-<source>Commit interval</source>
-<translation>Commit intervallum</translation>
-</message>
-<message>
-<source>sec</source>
-<extracomment>seconds</extracomment>
-<translation type="unfinished">sec</translation>
-</message>
-<message>
-<source>git commit interval time [sec]</source>
-<translation>git véglegesítési intervallum idő [mp]</translation>
-</message>
-<message>
-<source>Open your ownCloud server &amp;Apps page</source>
-<translation>Nyissa meg a ownCloud server &amp;alkalmazások oldalt</translation>
-</message>
-<message>
 <source>Preview</source>
 <translation>Előnézet</translation>
-</message>
-<message>
-<source>Which calendar backend do you want to use?</source>
-<translation>Melyik naptár backend-et szeretné használni?</translation>
-</message>
-<message>
-<source>For most current ownCloud and Nextcloud installations</source>
-<translation>A legfrissebb ownCloud és Nextcloud berendezések</translation>
-</message>
-<message>
-<source>For older versions of ownCloud where the default setting doesn't work</source>
-<translation>OwnCloud régebbi verziói, amelynél az alapértelmezett beállítás nem működik</translation>
-</message>
-<message>
-<source>Legacy ownCloud calendar</source>
-<translation>Örökölt ownCloud naptár</translation>
-</message>
-<message>
-<source>CalDAV server settings</source>
-<translation>CalDAV kiszolgáló beállításai</translation>
-</message>
-<message>
-<source>Calendar base url:</source>
-<translation>Naptár alap URL-címe:</translation>
-</message>
-<message>
-<source>Please enter the CalDAV base url to your calendar.</source>
-<translation>Kérjük, írja be a CalDAV alap Url-t a naptárba.</translation>
-</message>
-<message>
-<source>Please enter the password for your CalDAV username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.</source>
-<translation>Kérjük, írja be a jelszót a CalDAV felhasználónevét. &lt;br/&gt; Jelenleg a jelszót titkosítva tároljuk más beállítások mellet, de nem nagyon biztonságos.</translation>
-</message>
-<message>
-<source>Czech</source>
-<translation>Cseh</translation>
-</message>
-<message>
-<source>Brazilian Portuguese</source>
-<translation>Brazíliai Portugál</translation>
-</message>
-<message>
-<source>Ukrainian</source>
-<translation>Ukrán</translation>
-</message>
-<message>
-<source>The name</source>
-<translation>A név</translation>
-</message>
-<message>
-<source>Maximum height:</source>
-<translation>Maximális magasság:</translation>
-</message>
-<message>
-<source>Maximum width:</source>
-<translation>Maximális szélesség:</translation>
-</message>
-<message>
-<source>Scale images down when inserted into notes</source>
-<translation>Képek lekerekítése a jegyzetekbe való behelyezésekor</translation>
-</message>
-<message>
-<source>Croatian</source>
-<translation>Horvát</translation>
-</message>
-<message>
-<source>Path to your QML file</source>
-<translation>A QML fájl elérési útja</translation>
-</message>
-<message>
-<source>Script name</source>
-<translation>Parancsfájl neve</translation>
-</message>
-<message>
-<source>Description:</source>
-<translation>Leírás:</translation>
-</message>
-<message>
-<source>Version:</source>
-<translation>Verzió:</translation>
-</message>
-<message>
-<source>Repository:</source>
-<translation>Adattár:</translation>
-</message>
-<message>
-<source>Author(s):</source>
-<translation>Szerző(k):</translation>
-</message>
-<message>
-<source>Check this if you want to accept all external modifications while you are editing the current note.</source>
-<translation>Jelölje be, ha szeretne minden külső módosítást elfogadni az aktuális jegyzet szerkesztése alatt.</translation>
-</message>
-<message>
-<source>Accept all external modifications of the current note</source>
-<translation>Elfogadja az aktuális jegyzet minden külső módosítását</translation>
-</message>
-<message>
-<source>Use UNIX newline instead of native newline characters</source>
-<translation>UNIX újsor használata natív újsor karakterek helyett</translation>
-</message>
-<message>
-<source>Restore cursor position when opening a note</source>
-<translation>Visszaállítja a kurzor pozícióját a jegyzet megnyitásakor</translation>
 </message>
 <message>
 <source>Apply toolbar configuration</source>
@@ -7374,433 +7947,20 @@ Tesztelje, ha szinkronizációs konfliktus lép fel és állítson be ilyen eset
 <translation>Eszköztárak visszaállítása</translation>
 </message>
 <message>
-<source>Enable logging to file</source>
-<translation>Engedélyezi a naplózást a fájlban</translation>
-</message>
-<message>
-<source>Clear log file</source>
-<translation>Törli a log fájlt</translation>
-</message>
-<message>
-<source>Fake old version number to trigger update</source>
-<translation>Hamis régi verzió számmal hívja elő a frissítést</translation>
-</message>
-<message>
-<source>Log file path:</source>
-<translation>Naplófájl elérési útja:</translation>
-</message>
-<message>
-<source>Here you can set your own time format for inserting the current time into a note.</source>
-<translation>Itt állíthatja be a saját időformátumát az aktuális idő beszúrásához a jegyzetbe.</translation>
-</message>
-<message>
-<source>Insert current time</source>
-<translation>Aktuális idő beszúrása</translation>
-</message>
-<message>
-<source>Time format:</source>
-<translation>Időformátum:</translation>
-</message>
-<message>
-<source>Enter your custom time format, like "dd.MM.yyyy hh:mm"</source>
-<translation>Adja meg a választott időformátumát, mint pl. "ÉÉÉÉ. HH. NN., óó:pp."</translation>
-</message>
-<message>
-<source>Editor options</source>
-<translation>Szerkesztő beállításai</translation>
-</message>
-<message>
-<source>Enable automatic closing of brackets and markdown formatting characters</source>
-<translation>Automatikus záró zárójel és a markdown karakterformázás engedélyezése</translation>
-</message>
-<message>
-<source>You have to use the backspace key to remove the opening character</source>
-<translation>A vissza billentyűgombot használja a nyitó karakter eltavolitására</translation>
-</message>
-<message>
-<source>Enable automatic removal of matching closing characters</source>
-<translation>Engedélyezi az egyforma karakterek automatikus eltávolítását</translation>
-</message>
-<message>
-<source>Your CalDAV calendar base url</source>
-<translation>A CalDAV naptár alap Url-címe</translation>
-</message>
-<message>
-<source>Please enter the username of your CalDAV server.</source>
-<translation>Kérjük, írja be a felhasználónevet a CalDAV-kiszolgálón.</translation>
-</message>
-<message>
-<source>Your CalDAV username</source>
-<translation>A CalDAV felhasználónevét</translation>
-</message>
-<message>
-<source>Your CalDAV password</source>
-<translation>A CalDAV jelszava</translation>
-</message>
-<message>
-<source>This causes all todo list items to be reloaded from your server the next time you open your todo dialog.</source>
-<translation>A teendő párbeszédpanel következő megnyitásával az összes teendőlista elemet betölti a kiszolgálóról.</translation>
-</message>
-<message>
-<source>Empty calendar item cache</source>
-<translation>Üres naptárelem raktár</translation>
-</message>
-<message>
-<source>Click here to reload the list of calendars from your calendar server.</source>
-<translation>Kattintson ide a naptárlisták újratöltéséhez a naptárkiszolgálójáról.</translation>
-</message>
-<message>
-<source>&amp;Reload calendar list</source>
-<translation>Naptárlista &amp;újratöltése</translation>
-</message>
-<message>
-<source>Toolbar icon size:</source>
-<translation>Eszköztár ikonméret:</translation>
-</message>
-<message>
-<source>List and tree item height:</source>
-<translation>Lista- és favezérlő elem magasság:</translation>
-</message>
-<message>
-<source>Reset the icon size</source>
-<translation>Ikonméret visszaállítása</translation>
-</message>
-<message>
-<source>Reset the item height</source>
-<translation>Ikon magasság visszaállítása</translation>
-</message>
-<message>
-<source>View text right to left (RTL)</source>
-<translation>Szöveg jobbról balra (RTL)</translation>
-</message>
-<message>
 <source>Search for shortcut</source>
 <translation>Parancsikon keresés</translation>
-</message>
-<message>
-<source>Ignore calendars that don't support todo items</source>
-<translation>Figyelmen kívül hagy teendőelemekkel nem kompatibilis naptárakat</translation>
-</message>
-<message>
-<source>Arabic</source>
-<translation>Arab</translation>
-</message>
-<message>
-<source>Icons</source>
-<translation>Ikonok</translation>
-</message>
-<message>
-<source>Script path:</source>
-<translation>Parancsfájl elérési útja:</translation>
-</message>
-<message>
-<source>Note folder name</source>
-<translation>Jegyzetmappa neve</translation>
-</message>
-<message>
-<source>Allow note file name to be different from headline</source>
-<translation>Engedélyezi a jegyzet fájlneve eltérését a címtől</translation>
-</message>
-<message>
-<source>Check this if you want to ignore all external modifications while you are editing the current note.</source>
-<translation>Jelölje be, ha szeretne minden külső módosítást figyelmen kívül hagyni az aktuális jegyzet szerkesztése alatt.</translation>
-</message>
-<message>
-<source>Ignore all external modifications of the current note</source>
-<translation>Figyelmen kívül hagyja az aktuális jegyzet összes külső módosítását</translation>
-</message>
-<message>
-<source>You can use this for example under Windows if you have troubles with newlines in the ownCloud / Nextcloud notes app</source>
-<translation>Használja ezt pl. a Windows alatt, ha konfliktusa akad a sortöréssel az ownCloud / Nextcloud jegyzetalkalmazásban</translation>
-</message>
-<message>
-<source>App instance</source>
-<translation>Alkalmazáspéldány</translation>
-</message>
-<message>
-<source>Only allow one app instance at the same time</source>
-<translation>Egyszerre csak egy alkalmazáspéldányt engedélyez</translation>
-</message>
-<message>
-<source>Path to external editor:</source>
-<translation>Külső szerkesztő elérési útja:</translation>
-</message>
-<message>
-<source>Don't show the update dialog automatically</source>
-<translation>Ne jelenjen meg a frissítés párbeszédpanel automatikusan</translation>
-</message>
-<message>
-<source>Fonts</source>
-<translation>Betűtípusok</translation>
-</message>
-<message>
-<source>Set a new font</source>
-<translation>Egy új betűtípus beállítása</translation>
-</message>
-<message>
-<source>Reset font</source>
-<translation>Betűtípusok visszaállítása</translation>
 </message>
 <message>
 <source>Debug</source>
 <translation>Hibakeresés</translation>
 </message>
 <message>
-<source>Debug information</source>
-<translation>Hibakeresési információk</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can &lt;span style=" font-weight:600;"&gt;copy and paste&lt;/span&gt; this text (or parts of this text) in an &lt;span style=" font-weight:600;"&gt;issue&lt;/span&gt; on the &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes issues page&lt;/a&gt; if you have &lt;span style=" font-weight:600;"&gt;questions or troubles&lt;/span&gt; with QOwnNotes. Data that is too sensitive is hidden in this information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt; &lt;body&gt;&lt;p&gt; Itt &lt;span style="font-weight:600;"&gt;másolhatja és beillesztheti&lt;/span&gt; ezt a szöveget (vagy a szöveg egyes részeit) egy &lt;span style="font-weight:600;"&gt; egy témában &lt;/span&gt; a &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes kérdések vagy ötletek oldal &lt;/a&gt; ha &lt;span style="font-weight:600;"&gt;-on, ha kérdései vagy konfliktusai&lt;/span&gt; akadnak a QOwnNotes-ban. Az érzékenyebb adatok ebben az információban rejtettek.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>&amp;Save debug information</source>
-<translation>&amp;Hibakeresési adatok mentése</translation>
-</message>
-<message>
-<source>hostname of proxy server</source>
-<translation>hosztnév a proxykiszolgálóhoz</translation>
-</message>
-<message>
-<source>username for proxy server</source>
-<translation>felhasználónév a proxykiszolgálóhoz</translation>
-</message>
-<message>
-<source>password for proxy server</source>
-<translation>jelszó a proxykiszolgálóhoz</translation>
-</message>
-<message>
-<source>HTTP(S) proxy</source>
-<translation>Proxy HTTP(S)</translation>
-</message>
-<message>
-<source>SOCKS5 proxy</source>
-<translation>Socks5 proxy</translation>
-</message>
-<message>
-<source>notes path &lt;b&gt;%1&lt;/b&gt; found on server</source>
-<translation type="unfinished">notes path &lt;b&gt;%1&lt;/b&gt; found on server</translation>
-</message>
-<message>
-<source>Automatic (needs restart)</source>
-<translation>Automatikus (újraindítás szükséges)</translation>
-</message>
-<message>
 <source>Shortcut already assigned</source>
 <translation>Már hozzárendelt parancsikon</translation>
 </message>
 <message>
-<source>The connection was made successfully!
-Server version: %1
-QOwnNotesAPI version: %2</source>
-<translation>Sikeresen létrejött a kapcsolat! 
-Kiszolgáló verziószáma: %1 
-QOwnNotesAPI verzió: %2</translation>
-</message>
-<message>
-<source>There was an error connecting to the ownCloud Server!
-You also need to have the QOwnNotesAPI app installed and enabled!
-
-Connection error message: </source>
-<translation>Hiba akadt az ownCloud-dal való kapcsolattal! 
-Szükséges szintén telepítenie és engedélyeztetnie a QOwnNotesAPI alkalmazást! 
-
-Kapcsolathiba üzenet: </translation>
-</message>
-<message>
-<source>LanguageTool connection successful.</source>
-<translation type="unfinished">LanguageTool connection successful.</translation>
-</message>
-<message>
-<source>LanguageTool connection failed: %1</source>
-<translation type="unfinished">LanguageTool connection failed: %1</translation>
-</message>
-<message>
-<source>There are no ignored rules to reset.</source>
-<translation type="unfinished">There are no ignored rules to reset.</translation>
-</message>
-<message numerus="yes">
-<source>Reset %n ignored rule(s)?</source>
-<translation type="unfinished">
-<numerusform>Reset %n ignored rule(s)?</numerusform>
-<numerusform>Reset %n ignored rule(s)?</numerusform>
-</translation>
-</message>
-<message>
-<source>All ignored rules have been reset.</source>
-<translation type="unfinished">All ignored rules have been reset.</translation>
-</message>
-<message>
-<source>There are no ignored words to reset.</source>
-<translation type="unfinished">There are no ignored words to reset.</translation>
-</message>
-<message numerus="yes">
-<source>Reset %n ignored word(s)?</source>
-<translation type="unfinished">
-<numerusform>Reset %n ignored word(s)?</numerusform>
-<numerusform>Reset %n ignored word(s)?</numerusform>
-</translation>
-</message>
-<message>
-<source>All ignored words have been reset.</source>
-<translation type="unfinished">All ignored words have been reset.</translation>
-</message>
-<message>
-<source>The Database was reinitialized. Please restart the application now!</source>
-<translation>Az adatbázist újraindították. Kérjük, indítsa újra az alkalmazást most!</translation>
-</message>
-<message>
-<source>Please don't use this in the issue tracker, copy the debug information text directly into the issue.</source>
-<translation>Kérjük, ne használja ezt a problémakövetőben, másolja a hibakeresési információt közvetlenül a kiadásba.</translation>
-</message>
-<message>
-<source>Markdown files</source>
-<translation>Markdown-fájlok</translation>
-</message>
-<message>
-<source>Disable usage tracking</source>
-<translation>Letiltja a használatkövetést</translation>
-</message>
-<message>
-<source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can't live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</source>
-<translation>Névtelen használatkövetési adatok segítenek eldönteni, hogy a QOwnNotes melyik részeit fejlesztjük és mely hibákat szerelünk meg.&lt;br/&gt;&lt;br/&gt;Kérjük, csak abban az esetben tiltsa le, ha egyáltalán nem tud vele élni.&lt;br /&gt;&lt;br /&gt;Valóban letiltja a használatkövetést?</translation>
-</message>
-<message>
-<source>new folder</source>
-<translation>új mappa</translation>
-</message>
-<message>
-<source>Remove note folder</source>
-<translation>Jegyzet mappa eltávolítása</translation>
-</message>
-<message>
-<source>Remove the current note folder &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation>Eltávolítja a jelenlegi &lt;strong&gt;%1&lt;/strong&gt; jegyzetmappát?</translation>
-</message>
-<message>
-<source>Please select the folder where your notes will get stored to</source>
-<translation>Kérjük, válasszon mappát a jegyzetek tárolására</translation>
-</message>
-<message>
-<source>Loading folders from server</source>
-<translation>Mappák betöltése a kiszolgálóról</translation>
-</message>
-<message>
-<source>No more folders were found in the current folder</source>
-<translation>Nincs több mappa az aktuális mappában</translation>
-</message>
-<message>
-<source>Loading folders in '%1' from server</source>
-<translation>"%1" mappák betöltése a kiszolgálóról</translation>
-</message>
-<message>
-<source>Take a look at the &lt;a href="%1"&gt;Scripting documentation&lt;/a&gt; to get started fast.</source>
-<translation>Vessen egy pillantást a &lt;a href="%1"&gt;Parancsfájlkezelés dokumentációra&lt;/a&gt; a gyors kezdéshez.</translation>
-</message>
-<message>
-<source>If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</source>
-<translation>Ha hozzá szeretne férni bizonyos funkciókhoz a QOwnNotes-ban, tegyen fel egy kérdést a &lt;a href="%1"&gt;QOwnNotes kérdések és ötletek oldal&lt;/a&gt;-on.</translation>
-</message>
-<message>
-<source>Check for script updates</source>
-<translation>Parancsfájl-frissítések keresése</translation>
-</message>
-<message>
-<source>Add local script</source>
-<translation>Helyi parancsfájl hozzáadása</translation>
-</message>
-<message>
-<source>Add an existing, local script</source>
-<translation>Egy létező, helyi parancsfájl hozzáadása</translation>
-</message>
-<message>
-<source>Please enter a new note file extension:</source>
-<translation>Kérjük, adjon meg új jegyzetfájl -kiterjesztést:</translation>
-</message>
-<message>
-<source>Markdown file</source>
-<translation>Markdown-fájl</translation>
-</message>
-<message>
-<source>Plain text file</source>
-<translation>Sima szövegfájl</translation>
-</message>
-<message>
-<source>Remove note file extension</source>
-<translation>Távolítsa el a jegyzet fájlkiterjesztését</translation>
-</message>
-<message>
-<source>INI files</source>
-<translation>INI fájlok</translation>
-</message>
-<message>
-<source>Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</source>
-<translation>Valóban be szeretné importálni a beállításokat? A jelenlegi beállítások eltávolításra kerülnek, és nem minden beállítás visszaállítható, mint például a jegyzet mappa beállításai és az Ön által használt szkriptek. Bizonyos beállításokat helyesbítenie szükséges majd, különösen az egyes platformok között, de a jegyzetek érintetlenül maradnak!</translation>
-</message>
-<message>
-<source>The application will be restarted after the import.</source>
-<translation>Az alkalmazás újraindul az importálás után.</translation>
-</message>
-<message>
-<source>The debug information was copied to the clipboard.</source>
-<translation>A hibakeresési információkat a vágólapra másolta.</translation>
-</message>
-<message>
-<source>The integrity of the disk database is valid.</source>
-<translation>A lemez adatbázis integritása érvényes.</translation>
-</message>
-<message>
-<source>The integrity of the disk database is not valid!</source>
-<translation>A lemez adatbázis integritása nem érvényes!</translation>
-</message>
-<message>
-<source>API test result for %1 (%2)</source>
-<translation type="unfinished">API test result for %1 (%2)</translation>
-</message>
-<message>
-<source>AI backend: %1</source>
-<translation type="unfinished">AI backend: %1</translation>
-</message>
-<message>
-<source>API base URL</source>
-<translation type="unfinished">API base URL</translation>
-</message>
-<message>
-<source>AI model: %1</source>
-<translation type="unfinished">AI model: %1</translation>
-</message>
-<message>
-<source>Test</source>
-<comment>verb</comment>
-<translation type="unfinished">Test</translation>
-</message>
-<message>
-<source>Test connection to %1 (%2)</source>
-<translation type="unfinished">Test connection to %1 (%2)</translation>
-</message>
-<message>
-<source>If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</source>
-<translation type="unfinished">If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</translation>
-</message>
-<message>
-<source>Find a script in the script repository</source>
-<translation>Szkript keresése a szkript adattárban</translation>
-</message>
-<message>
-<source>Menu bar</source>
-<translation>Menüsor</translation>
-</message>
-<message>
-<source>Show menu bar item</source>
-<translation>Menüelem megjelenítése</translation>
-</message>
-<message>
 <source>Undefined shortcut</source>
 <translation>Meghatározatlan parancsikon</translation>
-</message>
-<message>
-<source>Auto-detect</source>
-<translation type="unfinished">Auto-detect</translation>
 </message>
 <message>
 <source>Assign a new shortcut</source>
@@ -7819,89 +7979,12 @@ Kapcsolathiba üzenet: </translation>
 <translation>A parancsikon &lt;strong&gt;%1&lt;/strong&gt; már hozzá van rendelve a &lt;strong&gt;%2&lt;/strong&gt;! Szeretne ugrani a parancsikonra?</translation>
 </message>
 <message>
-<source>Remove script</source>
-<translation>Parancsfájl eltávolítása</translation>
-</message>
-<message>
-<source>Remove the current script &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation>Eltávolítja az aktuális &lt;strong&gt;%1&lt;/strong&gt; parancsfájlt?</translation>
-</message>
-<message>
-<source>QML files</source>
-<translation>QML fájlok</translation>
-</message>
-<message>
-<source>Please select your QML file</source>
-<translation>Kérjük, válasszon QML fájlt</translation>
-</message>
-<message>
-<source>Open repository</source>
-<translation>Adattár megnyitása</translation>
-</message>
-<message>
-<source>Your script seems to be valid</source>
-<translation>A parancsfájl érvényesnek tűnik</translation>
-</message>
-<message>
-<source>There were script errors:
-%1</source>
-<translation>Parancsfájl-hiba: %1</translation>
-</message>
-<message>
-<source>File extension</source>
-<translation>Fájlkiterjesztés</translation>
-</message>
-<message>
-<source>Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</source>
-<translation>Valóban el szeretné távolítani a megjegyzésfájl -kiterjesztést &lt;strong&gt;%1&lt;/strong&gt;? Többé nem fog látni ilyen kiterjesztésű fájlokat a jegyzetlistában!</translation>
-</message>
-<message>
-<source>Calendar cache emptied</source>
-<translation>Naptár-tároló ürült</translation>
-</message>
-<message>
-<source>Your calendar cache was emptied.</source>
-<translation>A naptár tárolója ürült.</translation>
-</message>
-<message>
 <source>Reset toolbars and exit</source>
 <translation>Az eszköztárak visszaállítása alaphelyzetbe és kilépés</translation>
 </message>
 <message>
 <source>Do you really want to reset all toolbars? The application will be closed in the process, the default toolbars will be restored when you start it again.</source>
 <translation>Biztosan visszaállítja alaphelyzetbe az eszköztárakat? Az alkalmazás zárva lesz a folyamat alatt, újraindítás után visszaáll az alapértelmezett eszköztár.</translation>
-</message>
-<message>
-<source>Log file cleared</source>
-<translation>Log fájl törölve</translation>
-</message>
-<message>
-<source>The log file &lt;strong&gt;%1&lt;/strong&gt; was cleared.</source>
-<translation>A naplófájl &lt;strong&gt;%1&lt;/strong&gt; törlésre került.</translation>
-</message>
-<message>
-<source>Executable files</source>
-<translation>Végrehajtható fájlok</translation>
-</message>
-<message>
-<source>All files</source>
-<translation>Minden fájl</translation>
-</message>
-<message>
-<source>Please select the path of your git executable</source>
-<translation>Kérjük, válassza ki az utat a futtatható git-hez</translation>
-</message>
-<message>
-<source>Do you really want to reset the overrides of all message boxes?</source>
-<translation>Biztosan visszaállítja alaphelyzetbe az összes üzenetdoboz felülírásait?</translation>
-</message>
-<message>
-<source>New script</source>
-<translation>Új parancsfájl</translation>
-</message>
-<message>
-<source>You can download your git client here: &lt;a href="%url"&gt;Git for Windows&lt;/a&gt;</source>
-<translation>Itt töltheti le a git ügyfelet: &lt;a href="%url"&gt; Git for Windows&lt;/a&gt;</translation>
 </message>
 <message>
 <source>enabled</source>
@@ -7936,28 +8019,8 @@ Kapcsolathiba üzenet: </translation>
 <translation>Ez lesz aktivált, ha QOwnNotes alkalmazást a &lt;code&gt;hordozható&lt;/code&gt; paraméterrel használja.</translation>
 </message>
 <message>
-<source>Save debug information</source>
-<translation>Hibakeresési adatok mentése</translation>
-</message>
-<message>
-<source>Do you really want to clear all settings, remove the database and exit QOwnNotes?
-
-Your notes will stay intact!</source>
-<translation>Valóban szeretné az összes beállítás törlését, az adatbázis eltávolítását és kilép a QOwnNotes-ból?
-
-A jegyzetek érintetlenül maradnak!</translation>
-</message>
-<message>
 <source>You will find a &lt;code&gt;QOwnNotesPortable.bat&lt;/code&gt; in your release path to start QOwnNotes in portable mode.</source>
 <translation>Talál egy &lt;code&gt;QOwnNotesPortable.bat&lt;/code&gt; -ot a elérési útban, a QOwnNotes indításához hordozható módban.</translation>
-</message>
-<message>
-<source>Do you really want to clear the local database? This will also remove your configured note folders and your cached todo items!</source>
-<translation>Valóban törli a helyi adatbázist? Ezzel a beállított jegyzetekmappáit és a tárolt teendőelemeit is eltávolítja!</translation>
-</message>
-<message>
-<source>Select editor application</source>
-<translation>Kiválaszt szerkesztő alkalmazást</translation>
 </message>
 </context>
 <context>
@@ -8843,6 +8906,129 @@ Nem lehet visszavonni!</translation>
 </message>
 </context>
 <context>
+<name>TodoSettingsWidget</name>
+<message>
+<source>Todo settings</source>
+<translation type="unfinished">Todo settings</translation>
+</message>
+<message>
+<source>Enable todo calendar support</source>
+<translation type="unfinished">Enable todo calendar support</translation>
+</message>
+<message>
+<source>You can access your ownCloud server or a generic CalDAV server to manage your todo lists.</source>
+<translation type="unfinished">You can access your ownCloud server or a generic CalDAV server to manage your todo lists.</translation>
+</message>
+<message>
+<source>Which calendar backend do you want to use?</source>
+<translation type="unfinished">Which calendar backend do you want to use?</translation>
+</message>
+<message>
+<source>Other CalDAV server</source>
+<translation type="unfinished">Other CalDAV server</translation>
+</message>
+<message>
+<source>For older versions of ownCloud where the default setting doesn't work</source>
+<translation type="unfinished">For older versions of ownCloud where the default setting doesn't work</translation>
+</message>
+<message>
+<source>Legacy ownCloud calendar</source>
+<translation type="unfinished">Legacy ownCloud calendar</translation>
+</message>
+<message>
+<source>For most current ownCloud and Nextcloud installations</source>
+<translation type="unfinished">For most current ownCloud and Nextcloud installations</translation>
+</message>
+<message>
+<source>Default ownCloud calendar</source>
+<translation type="unfinished">Default ownCloud calendar</translation>
+</message>
+<message>
+<source>CalDAV server settings</source>
+<translation type="unfinished">CalDAV server settings</translation>
+</message>
+<message>
+<source>Calendar base url:</source>
+<translation type="unfinished">Calendar base url:</translation>
+</message>
+<message>
+<source>Please enter the CalDAV base url to your calendar.</source>
+<translation type="unfinished">Please enter the CalDAV base url to your calendar.</translation>
+</message>
+<message>
+<source>Your CalDAV calendar base url</source>
+<translation type="unfinished">Your CalDAV calendar base url</translation>
+</message>
+<message>
+<source>Username:</source>
+<translation type="unfinished">Username:</translation>
+</message>
+<message>
+<source>Please enter the username of your CalDAV server.</source>
+<translation type="unfinished">Please enter the username of your CalDAV server.</translation>
+</message>
+<message>
+<source>Your CalDAV username</source>
+<translation type="unfinished">Your CalDAV username</translation>
+</message>
+<message>
+<source>Password:</source>
+<translation type="unfinished">Password:</translation>
+</message>
+<message>
+<source>Please enter the password for your CalDAV username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.</source>
+<translation type="unfinished">Please enter the password for your CalDAV username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.</translation>
+</message>
+<message>
+<source>Your CalDAV password</source>
+<translation type="unfinished">Your CalDAV password</translation>
+</message>
+<message>
+<source>Which cloud connection do you want to use?</source>
+<translation type="unfinished">Which cloud connection do you want to use?</translation>
+</message>
+<message>
+<source>Select the calendars you want to use for the Todo list</source>
+<translation type="unfinished">Select the calendars you want to use for the Todo list</translation>
+</message>
+<message>
+<source>This causes all todo list items to be reloaded from your server the next time you open your todo dialog.</source>
+<translation type="unfinished">This causes all todo list items to be reloaded from your server the next time you open your todo dialog.</translation>
+</message>
+<message>
+<source>Empty calendar item cache</source>
+<translation type="unfinished">Empty calendar item cache</translation>
+</message>
+<message>
+<source>Click here to reload the list of calendars from your calendar server.</source>
+<translation type="unfinished">Click here to reload the list of calendars from your calendar server.</translation>
+</message>
+<message>
+<source>&amp;Reload calendar list</source>
+<translation type="unfinished">&amp;Reload calendar list</translation>
+</message>
+<message>
+<source>Ignore calendars that don't support todo items</source>
+<translation type="unfinished">Ignore calendars that don't support todo items</translation>
+</message>
+<message>
+<source>Todo list settings</source>
+<translation type="unfinished">Todo list settings</translation>
+</message>
+<message>
+<source>Saving an item also closes the Todo list</source>
+<translation type="unfinished">Saving an item also closes the Todo list</translation>
+</message>
+<message>
+<source>Calendar cache emptied</source>
+<translation type="unfinished">Calendar cache emptied</translation>
+</message>
+<message>
+<source>Your calendar cache was emptied.</source>
+<translation type="unfinished">Your calendar cache was emptied.</translation>
+</message>
+</context>
+<context>
 <name>Toolbar_Editor</name>
 <message>
 <source>Select a menu</source>
@@ -9195,6 +9381,17 @@ Nem lehet visszavonni!</translation>
 </message>
 </context>
 <context>
+<name>Utils::Misc</name>
+<message>
+<source>Open folder in file manager</source>
+<translation type="unfinished">Open folder in file manager</translation>
+</message>
+<message>
+<source>Do you want to show this item in your file manager?</source>
+<translation type="unfinished">Do you want to show this item in your file manager?</translation>
+</message>
+</context>
+<context>
 <name>VersionDialog</name>
 <message>
 <source>Note versions on your ownCloud server</source>
@@ -9250,6 +9447,184 @@ Nem lehet visszavonni!</translation>
 <message>
 <source>Image received from web app and copied to clipboard</source>
 <translation type="unfinished">Image received from web app and copied to clipboard</translation>
+</message>
+</context>
+<context>
+<name>WebApplicationSettingsWidget</name>
+<message>
+<source>QOwnNotes web application support</source>
+<translation type="unfinished">QOwnNotes web application support</translation>
+</message>
+<message>
+<source>Enable web application support</source>
+<translation type="unfinished">Enable web application support</translation>
+</message>
+<message>
+<source>You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</source>
+<translation type="unfinished">You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</translation>
+</message>
+<message>
+<source>QOwnNotes web application</source>
+<translation type="unfinished">QOwnNotes web application</translation>
+</message>
+<message>
+<source>A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</source>
+<translation type="unfinished">A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</translation>
+</message>
+<message>
+<source>Security token:</source>
+<translation type="unfinished">Security token:</translation>
+</message>
+<message>
+<source>Show security token</source>
+<translation type="unfinished">Show security token</translation>
+</message>
+<message>
+<source>Generate new security token</source>
+<translation type="unfinished">Generate new security token</translation>
+</message>
+<message>
+<source>Server URL:</source>
+<translation type="unfinished">Server URL:</translation>
+</message>
+<message>
+<source>You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</source>
+<translation type="unfinished">You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</translation>
+</message>
+<message>
+<source>Copy security token to clipboard</source>
+<translation type="unfinished">Copy security token to clipboard</translation>
+</message>
+<message>
+<source>Reset the URL to default</source>
+<translation type="unfinished">Reset the URL to default</translation>
+</message>
+<message>
+<source>Show QR code</source>
+<translation type="unfinished">Show QR code</translation>
+</message>
+</context>
+<context>
+<name>WebCompanionSettingsWidget</name>
+<message>
+<source>Command snippets</source>
+<translation type="unfinished">Command snippets</translation>
+</message>
+<message>
+<source>Notes with this tag will be used for fetching bookmarks</source>
+<translation type="unfinished">Notes with this tag will be used for fetching bookmarks</translation>
+</message>
+<message>
+<source>Tag name for commands notes</source>
+<translation type="unfinished">Tag name for commands notes</translation>
+</message>
+<message>
+<source>Commands tag:</source>
+<translation type="unfinished">Commands tag:</translation>
+</message>
+<message>
+<source>You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
+<translation type="unfinished">You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</translation>
+</message>
+<message>
+<source>Commands note name:</source>
+<translation type="unfinished">Commands note name:</translation>
+</message>
+<message>
+<source>This note will be used for adding new bookmarks from the browser extension</source>
+<translation type="unfinished">This note will be used for adding new bookmarks from the browser extension</translation>
+</message>
+<message>
+<source>Note name for adding new commands</source>
+<translation type="unfinished">Note name for adding new commands</translation>
+</message>
+<message>
+<source>Web socket server</source>
+<translation type="unfinished">Web socket server</translation>
+</message>
+<message>
+<source>Socket server port:</source>
+<translation type="unfinished">Socket server port:</translation>
+</message>
+<message>
+<source>Reset the socket server port</source>
+<translation type="unfinished">Reset the socket server port</translation>
+</message>
+<message>
+<source>Show security token</source>
+<translation type="unfinished">Show security token</translation>
+</message>
+<message>
+<source>Bookmarks</source>
+<translation type="unfinished">Bookmarks</translation>
+</message>
+<message>
+<source>Bookmarks tag:</source>
+<translation type="unfinished">Bookmarks tag:</translation>
+</message>
+<message>
+<source>Tag name for bookmarks notes</source>
+<translation type="unfinished">Tag name for bookmarks notes</translation>
+</message>
+<message>
+<source>Bookmarks note name:</source>
+<translation type="unfinished">Bookmarks note name:</translation>
+</message>
+<message>
+<source>Note name for adding new bookmarks</source>
+<translation type="unfinished">Note name for adding new bookmarks</translation>
+</message>
+<message>
+<source>By default the browser extension will show all links of the current note. You can also make it show special bookmark links of notes with a certain tag. For more information about the bookmark link syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
+<translation type="unfinished">By default the browser extension will show all links of the current note. You can also make it show special bookmark links of notes with a certain tag. For more information about the bookmark link syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</translation>
+</message>
+<message>
+<source>Bookmark suggestion API</source>
+<translation type="unfinished">Bookmark suggestion API</translation>
+</message>
+<message>
+<source>Enable Homepage-compatible bookmark suggestions API</source>
+<translation type="unfinished">Enable Homepage-compatible bookmark suggestions API</translation>
+</message>
+<message>
+<source>Suggestion API port:</source>
+<translation type="unfinished">Suggestion API port:</translation>
+</message>
+<message>
+<source>Reset the suggestion API port</source>
+<translation type="unfinished">Reset the suggestion API port</translation>
+</message>
+<message>
+<source>Security token:</source>
+<translation type="unfinished">Security token:</translation>
+</message>
+<message>
+<source>If this is empty when saved, a new security token will be generated automatically.</source>
+<translation type="unfinished">If this is empty when saved, a new security token will be generated automatically.</translation>
+</message>
+<message>
+<source>Copy security token to clipboard</source>
+<translation type="unfinished">Copy security token to clipboard</translation>
+</message>
+<message>
+<source>Generate new security token</source>
+<translation type="unfinished">Generate new security token</translation>
+</message>
+<message>
+<source>Web socket server support</source>
+<translation type="unfinished">Web socket server support</translation>
+</message>
+<message>
+<source>Enable socket server</source>
+<translation type="unfinished">Enable socket server</translation>
+</message>
+<message>
+<source>Install the &lt;a href="%1"&gt;Web Companion browser extension&lt;/a&gt; from the &lt;a href="%2"&gt;Chrome Web Store&lt;/a&gt; or &lt;a href="%3"&gt;Firefox Add-ons page&lt;/a&gt; to use QOwnNotes as web clipper or for bookmark management.</source>
+<translation type="unfinished">Install the &lt;a href="%1"&gt;Web Companion browser extension&lt;/a&gt; from the &lt;a href="%2"&gt;Chrome Web Store&lt;/a&gt; or &lt;a href="%3"&gt;Firefox Add-ons page&lt;/a&gt; to use QOwnNotes as web clipper or for bookmark management.</translation>
+</message>
+<message>
+<source>Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</source>
+<translation type="unfinished">Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</translation>
 </message>
 </context>
 <context>
@@ -9374,10 +9749,6 @@ Nem lehet visszavonni!</translation>
 <translation>Mappa kijelölése</translation>
 </message>
 <message>
-<source>Panel layout</source>
-<translation>Panel elrendezése</translation>
-</message>
-<message>
 <source>Open ownCloud settings</source>
 <translation>OwnCloud &amp;beállítások megnyitása</translation>
 </message>
@@ -9396,6 +9767,10 @@ Nem lehet visszavonni!</translation>
 <message>
 <source>Show subfolders</source>
 <translation>Almappák megjelenítése</translation>
+</message>
+<message>
+<source>Layout preset</source>
+<translation type="unfinished">Layout preset</translation>
 </message>
 <message>
 <source>If you want to be able to access your note versions and your trashed notes on your ownCloud server, you can configure QOwnNotes for it now. You can also do it at a later time.</source>
@@ -9428,98 +9803,6 @@ Nem lehet visszavonni!</translation>
 <message>
 <source>Keep in mind that the note folder will be stored relative to the directory where QOwnNotes resides in portable mode! So you need to stay on the same drive.</source>
 <translation>Ne feledje, hogy a jegyzet mappa a könyvtárhoz viszonyítva tárolódik, ahol a QOwnNotes hordozható üzemmódban fut! Ezért maradjon a megfelelő lemezen.</translation>
-</message>
-</context>
-<context>
-<name>WorkspaceDialog</name>
-<message>
-<source>Manage workspaces</source>
-<translation type="unfinished">Manage workspaces</translation>
-</message>
-<message>
-<source>Add workspace</source>
-<translation type="unfinished">Add workspace</translation>
-</message>
-<message>
-<source>Add</source>
-<translation type="unfinished">Add</translation>
-</message>
-<message>
-<source>Remove workspace</source>
-<translation type="unfinished">Remove workspace</translation>
-</message>
-<message>
-<source>Remove</source>
-<translation type="unfinished">Remove</translation>
-</message>
-<message>
-<source>Rename workspace</source>
-<translation type="unfinished">Rename workspace</translation>
-</message>
-<message>
-<source>Rename</source>
-<translation type="unfinished">Rename</translation>
-</message>
-<message>
-<source>Move workspace up</source>
-<translation type="unfinished">Move workspace up</translation>
-</message>
-<message>
-<source>Move up</source>
-<translation type="unfinished">Move up</translation>
-</message>
-<message>
-<source>Move workspace down</source>
-<translation type="unfinished">Move workspace down</translation>
-</message>
-<message>
-<source>Move down</source>
-<translation type="unfinished">Move down</translation>
-</message>
-<message>
-<source>Workspace name:</source>
-<translation type="unfinished">Workspace name:</translation>
-</message>
-<message>
-<source>Remove the selected workspace?</source>
-<translation type="unfinished">Remove the selected workspace?</translation>
-</message>
-</context>
-<context>
-<name>WorkspaceManager</name>
-<message>
-<source>Workspaces</source>
-<translation type="unfinished">Workspaces</translation>
-</message>
-<message>
-<source>full</source>
-<comment>full workspace</comment>
-<translation type="unfinished">full</translation>
-</message>
-<message>
-<source>minimal</source>
-<comment>minimal workspace</comment>
-<translation type="unfinished">minimal</translation>
-</message>
-<message>
-<source>Create new workspace</source>
-<translation type="unfinished">Create new workspace</translation>
-</message>
-<message>
-<source>Workspace name:</source>
-<translation type="unfinished">Workspace name:</translation>
-</message>
-<message>
-<source>Remove current workspace</source>
-<translation type="unfinished">Remove current workspace</translation>
-</message>
-<message>
-<source>Remove the current workspace?</source>
-<translation type="unfinished">Remove the current workspace?</translation>
-</message>
-<message>
-<source>Rename workspace</source>
-<translation type="unfinished">Rename workspace</translation>
 </message>
 </context>
 <context>

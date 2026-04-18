@@ -16,6 +16,104 @@
 </message>
 </context>
 <context>
+<name>AiSettingsWidget</name>
+<message>
+<source>To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</source>
+<translation type="unfinished">To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</translation>
+</message>
+<message>
+<source>You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</source>
+<translation type="unfinished">You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</translation>
+</message>
+<message>
+<source>Alternatively, you can also look in the script repository for already created AI integration scripts.</source>
+<translation type="unfinished">Alternatively, you can also look in the script repository for already created AI integration scripts.</translation>
+</message>
+<message>
+<source>Search script repository for AI integration scripts</source>
+<translation type="unfinished">Search script repository for AI integration scripts</translation>
+</message>
+<message>
+<source>Search script repository</source>
+<translation type="unfinished">Search script repository</translation>
+</message>
+<message>
+<source>AI backends added via the scripting engine</source>
+<translation type="unfinished">AI backends added via the scripting engine</translation>
+</message>
+<message>
+<source>API keys</source>
+<translation type="unfinished">API keys</translation>
+</message>
+<message>
+<source>OpenAI API key:</source>
+<translation type="unfinished">OpenAI API key:</translation>
+</message>
+<message>
+<source>Create Groq API key</source>
+<translation type="unfinished">Create Groq API key</translation>
+</message>
+<message>
+<source>Create OpenAI API key</source>
+<translation type="unfinished">Create OpenAI API key</translation>
+</message>
+<message>
+<source>API key</source>
+<translation type="unfinished">API key</translation>
+</message>
+<message>
+<source>Groq API key:</source>
+<translation type="unfinished">Groq API key:</translation>
+</message>
+<message>
+<source>Test connection</source>
+<comment>"Test" as verb</comment>
+<translation type="unfinished">Test connection</translation>
+</message>
+<message>
+<source>API settings</source>
+<translation type="unfinished">API settings</translation>
+</message>
+<message>
+<source>Time the application will wait for a response from the server before timing out and returning an error message.</source>
+<translation type="unfinished">Time the application will wait for a response from the server before timing out and returning an error message.</translation>
+</message>
+<message>
+<source>Response timeout:</source>
+<translation type="unfinished">Response timeout:</translation>
+</message>
+<message>
+<source>sec</source>
+<comment>seconds</comment>
+<translation type="unfinished">sec</translation>
+</message>
+<message>
+<source>API test result for %1 (%2)</source>
+<translation type="unfinished">API test result for %1 (%2)</translation>
+</message>
+<message>
+<source>AI backend: %1</source>
+<translation type="unfinished">AI backend: %1</translation>
+</message>
+<message>
+<source>API base URL</source>
+<translation type="unfinished">API base URL</translation>
+</message>
+<message>
+<source>AI model: %1</source>
+<translation type="unfinished">AI model: %1</translation>
+</message>
+<message>
+<source>Test</source>
+<comment>verb</comment>
+<translation type="unfinished">Test</translation>
+</message>
+<message>
+<source>Test connection to %1 (%2)</source>
+<translation type="unfinished">Test connection to %1 (%2)</translation>
+</message>
+</context>
+<context>
 <name>AiToolbarManager</name>
 <message>
 <source>Waiting for answer from AI</source>
@@ -212,6 +310,104 @@
 <message>
 <source>Color mode</source>
 <translation type="unfinished">Color mode</translation>
+</message>
+</context>
+<context>
+<name>DebugOptionSettingsWidget</name>
+<message>
+<source>Enable logging to file</source>
+<translation type="unfinished">Enable logging to file</translation>
+</message>
+<message>
+<source>Clear log file</source>
+<translation type="unfinished">Clear log file</translation>
+</message>
+<message>
+<source>Fake old version number to trigger update</source>
+<translation type="unfinished">Fake old version number to trigger update</translation>
+</message>
+<message>
+<source>Log file path:</source>
+<translation type="unfinished">Log file path:</translation>
+</message>
+<message>
+<source>Log file cleared</source>
+<translation type="unfinished">Log file cleared</translation>
+</message>
+<message>
+<source>The log file &lt;strong&gt;%1&lt;/strong&gt; was cleared.</source>
+<translation type="unfinished">The log file &lt;strong&gt;%1&lt;/strong&gt; was cleared.</translation>
+</message>
+</context>
+<context>
+<name>DebugSettingsWidget</name>
+<message>
+<source>Debug information</source>
+<translation type="unfinished">Debug information</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can &lt;span style=" font-weight:600;"&gt;copy and paste&lt;/span&gt; this text (or parts of this text) in an &lt;span style=" font-weight:600;"&gt;issue&lt;/span&gt; on the &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes issues page&lt;/a&gt; if you have &lt;span style=" font-weight:600;"&gt;questions or troubles&lt;/span&gt; with QOwnNotes. Data that is too sensitive is hidden in this information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can &lt;span style=" font-weight:600;"&gt;copy and paste&lt;/span&gt; this text (or parts of this text) in an &lt;span style=" font-weight:600;"&gt;issue&lt;/span&gt; on the &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes issues page&lt;/a&gt; if you have &lt;span style=" font-weight:600;"&gt;questions or troubles&lt;/span&gt; with QOwnNotes. Data that is too sensitive is hidden in this information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The best way to post issues is to use the issue assistant by pressing the &lt;span style=" font-weight:600;"&gt;Open issue assistant&lt;/span&gt; button on the bottom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The best way to post issues is to use the issue assistant by pressing the &lt;span style=" font-weight:600;"&gt;Open issue assistant&lt;/span&gt; button on the bottom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>GitHub doesn't need two spaces at the end of the line to do a line break</source>
+<translation type="unfinished">GitHub doesn't need two spaces at the end of the line to do a line break</translation>
+</message>
+<message>
+<source>Use GitHub line breaks</source>
+<translation type="unfinished">Use GitHub line breaks</translation>
+</message>
+<message>
+<source>Hide usernames in paths and anonymize other personal identifiers in the generated debug information</source>
+<translation type="unfinished">Hide usernames in paths and anonymize other personal identifiers in the generated debug information</translation>
+</message>
+<message>
+<source>Anonymize personal information</source>
+<translation type="unfinished">Anonymize personal information</translation>
+</message>
+<message>
+<source>This is the best way to open an issue</source>
+<translation type="unfinished">This is the best way to open an issue</translation>
+</message>
+<message>
+<source>Open issue assistant</source>
+<translation type="unfinished">Open issue assistant</translation>
+</message>
+<message>
+<source>Please use this in the issue tracker</source>
+<translation type="unfinished">Please use this in the issue tracker</translation>
+</message>
+<message>
+<source>&amp;Copy debug information to clipboard</source>
+<translation type="unfinished">&amp;Copy debug information to clipboard</translation>
+</message>
+<message>
+<source>Please don't use this in the issue tracker</source>
+<translation type="unfinished">Please don't use this in the issue tracker</translation>
+</message>
+<message>
+<source>&amp;Save debug information</source>
+<translation type="unfinished">&amp;Save debug information</translation>
+</message>
+<message>
+<source>Please don't use this in the issue tracker, copy the debug information text directly into the issue.</source>
+<translation type="unfinished">Please don't use this in the issue tracker, copy the debug information text directly into the issue.</translation>
+</message>
+<message>
+<source>Markdown files</source>
+<translation type="unfinished">Markdown files</translation>
+</message>
+<message>
+<source>Save debug information</source>
+<translation type="unfinished">Save debug information</translation>
+</message>
+<message>
+<source>The debug information was copied to the clipboard.</source>
+<translation type="unfinished">The debug information was copied to the clipboard.</translation>
 </message>
 </context>
 <context>
@@ -706,16 +902,8 @@
 <context>
 <name>DistractionFreeManager</name>
 <message>
-<source>leave</source>
-<translation type="unfinished">leave</translation>
-</message>
-<message>
-<source>Leave distraction free mode</source>
-<translation type="unfinished">Leave distraction free mode</translation>
-</message>
-<message>
-<source>Leave full-screen mode</source>
-<translation type="unfinished">Leave full-screen mode</translation>
+<source>Leave</source>
+<translation type="unfinished">Leave</translation>
 </message>
 <message>
 <source>Custom editor width</source>
@@ -724,6 +912,196 @@
 <message>
 <source>Characters:</source>
 <translation type="unfinished">Characters:</translation>
+</message>
+</context>
+<context>
+<name>EditorFontColorSettingsWidget</name>
+<message>
+<source>Fonts</source>
+<translation type="unfinished">Fonts</translation>
+</message>
+<message>
+<source>Default font:</source>
+<translation type="unfinished">Default font:</translation>
+</message>
+<message>
+<source>Set a new font</source>
+<translation type="unfinished">Set a new font</translation>
+</message>
+<message>
+<source>Reset font</source>
+<translation type="unfinished">Reset font</translation>
+</message>
+<message>
+<source>Code font:</source>
+<translation type="unfinished">Code font:</translation>
+</message>
+<message>
+<source>Set a new code font</source>
+<translation type="unfinished">Set a new code font</translation>
+</message>
+<message>
+<source>Reset code font</source>
+<translation type="unfinished">Reset code font</translation>
+</message>
+</context>
+<context>
+<name>EditorSettingsWidget</name>
+<message>
+<source>Markdown highlighting</source>
+<translation type="unfinished">Markdown highlighting</translation>
+</message>
+<message>
+<source>Note that disabling this will also disable the navigation panel!</source>
+<translation type="unfinished">Note that disabling this will also disable the navigation panel!</translation>
+</message>
+<message>
+<source>Enable markdown highlighting</source>
+<translation type="unfinished">Enable markdown highlighting</translation>
+</message>
+<message>
+<source>Fully highlight blockquotes</source>
+<translation type="unfinished">Fully highlight blockquotes</translation>
+</message>
+<message>
+<source>Editor options</source>
+<translation type="unfinished">Editor options</translation>
+</message>
+<message>
+<source>Enable automatic closing of brackets and markdown formatting characters</source>
+<translation type="unfinished">Enable automatic closing of brackets and markdown formatting characters</translation>
+</message>
+<message>
+<source>You have to use the backspace key to remove the opening character</source>
+<translation type="unfinished">You have to use the backspace key to remove the opening character</translation>
+</message>
+<message>
+<source>Enable automatic removal of matching closing characters</source>
+<translation type="unfinished">Enable automatic removal of matching closing characters</translation>
+</message>
+<message>
+<source>Highlight the current line</source>
+<translation type="unfinished">Highlight the current line</translation>
+</message>
+<message>
+<source>Only use editor width setting in distraction free mode</source>
+<translation type="unfinished">Only use editor width setting in distraction free mode</translation>
+</message>
+<message>
+<source>Enable Vim mode (some QOwnNotes shortcuts will not work)</source>
+<translation type="unfinished">Enable Vim mode (some QOwnNotes shortcuts will not work)</translation>
+</message>
+<message>
+<source>Disable cursor blinking</source>
+<translation type="unfinished">Disable cursor blinking</translation>
+</message>
+<message>
+<source>Note-edit cursor width:</source>
+<translation type="unfinished">Note-edit cursor width:</translation>
+</message>
+<message>
+<source>Reset the cursor width</source>
+<translation type="unfinished">Reset the cursor width</translation>
+</message>
+<message>
+<source>Automatically remove trailing spaces in the note text</source>
+<translation type="unfinished">Automatically remove trailing spaces in the note text</translation>
+</message>
+<message>
+<source>Show line numbers and bookmark markers (1-9)</source>
+<translation type="unfinished">Show line numbers and bookmark markers (1-9)</translation>
+</message>
+<message>
+<source>Show small Markdown preview images in the editor, if there is no text after the image</source>
+<translation type="unfinished">Show small Markdown preview images in the editor, if there is no text after the image</translation>
+</message>
+<message>
+<source>Shows fold buttons for Markdown headings and allows collapsing their contents</source>
+<translation type="unfinished">Shows fold buttons for Markdown headings and allows collapsing their contents</translation>
+</message>
+<message>
+<source>Enable heading folding in the editor</source>
+<translation type="unfinished">Enable heading folding in the editor</translation>
+</message>
+<message>
+<source>Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</source>
+<translation type="unfinished">Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</translation>
+</message>
+<message>
+<source>Hide markdown formatting syntax on inactive lines</source>
+<translation type="unfinished">Hide markdown formatting syntax on inactive lines</translation>
+</message>
+<message>
+<source>Enable wiki-style link support [[note name]]</source>
+<translation type="unfinished">Enable wiki-style link support [[note name]]</translation>
+</message>
+<message>
+<source>Show the note filename selection when [[ is typed</source>
+<translation type="unfinished">Show the note filename selection when [[ is typed</translation>
+</message>
+<message>
+<source>Show note filename selection when [[ is typed</source>
+<translation type="unfinished">Show note filename selection when [[ is typed</translation>
+</message>
+<message>
+<source>Tabs and Indents</source>
+<translation type="unfinished">Tabs and Indents</translation>
+</message>
+<message>
+<source>Use tab character instead of spaces</source>
+<translation type="unfinished">Use tab character instead of spaces</translation>
+</message>
+<message>
+<source>Indent:</source>
+<translation type="unfinished">Indent:</translation>
+</message>
+<message>
+<source>Enable hanging indentation for Markdown lists</source>
+<translation type="unfinished">Enable hanging indentation for Markdown lists</translation>
+</message>
+<message>
+<source>Markdown language server</source>
+<translation type="unfinished">Markdown language server</translation>
+</message>
+<message>
+<source>Enable Markdown language server (LSP)</source>
+<translation type="unfinished">Enable Markdown language server (LSP)</translation>
+</message>
+<message>
+<source>Command:</source>
+<translation type="unfinished">Command:</translation>
+</message>
+<message>
+<source>Arguments:</source>
+<translation type="unfinished">Arguments:</translation>
+</message>
+<message>
+<source>Optional arguments separated by spaces.</source>
+<translation type="unfinished">Optional arguments separated by spaces.</translation>
+</message>
+<message>
+<source>Optional arguments</source>
+<translation type="unfinished">Optional arguments</translation>
+</message>
+<message>
+<source>Here you can set your own time format for inserting the current time into a note.</source>
+<translation type="unfinished">Here you can set your own time format for inserting the current time into a note.</translation>
+</message>
+<message>
+<source>Insert current time</source>
+<translation type="unfinished">Insert current time</translation>
+</message>
+<message>
+<source>Time format:</source>
+<translation type="unfinished">Time format:</translation>
+</message>
+<message>
+<source>Enter your custom time format, like "dd.MM.yyyy hh:mm"</source>
+<translation type="unfinished">Enter your custom time format, like "dd.MM.yyyy hh:mm"</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 </context>
 <context>
@@ -1562,6 +1940,405 @@
 </message>
 </context>
 <context>
+<name>GeneralSettingsWidget</name>
+<message>
+<source>Notes</source>
+<translation type="unfinished">Notes</translation>
+</message>
+<message>
+<source>Check this if you want to accept all external modifications while you are editing the current note.</source>
+<translation type="unfinished">Check this if you want to accept all external modifications while you are editing the current note.</translation>
+</message>
+<message>
+<source>Accept all external modifications of the current note</source>
+<translation type="unfinished">Accept all external modifications of the current note</translation>
+</message>
+<message>
+<source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</source>
+<translation type="unfinished">You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</translation>
+</message>
+<message>
+<source>note save interval time [sec]</source>
+<translation type="unfinished">note save interval time [sec]</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked you will always be notified about external modifications, even if current note wasn't edited in the last minute. Recommended is &lt;span style=" font-style:italic;"&gt;unchecked&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked you will always be notified about external modifications, even if current note wasn't edited in the last minute. Recommended is &lt;span style=" font-style:italic;"&gt;unchecked&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>Notify about all external modifications of the current note</source>
+<translation type="unfinished">Notify about all external modifications of the current note</translation>
+</message>
+<message>
+<source>By default the headline will generated automatically</source>
+<translation type="unfinished">By default the headline will generated automatically</translation>
+</message>
+<message>
+<source>The shortcut to create a new note asks for a headline</source>
+<translation type="unfinished">The shortcut to create a new note asks for a headline</translation>
+</message>
+<message>
+<source>Do this at your own risk!</source>
+<translation type="unfinished">Do this at your own risk!</translation>
+</message>
+<message>
+<source>Ignore all external note folder changes</source>
+<translation type="unfinished">Ignore all external note folder changes</translation>
+</message>
+<message>
+<source>Maximum width:</source>
+<translation type="unfinished">Maximum width:</translation>
+</message>
+<message>
+<source>Maximum height:</source>
+<translation type="unfinished">Maximum height:</translation>
+</message>
+<message>
+<source>You can use this for example under Windows if you have troubles with newlines in the ownCloud / Nextcloud notes app</source>
+<translation type="unfinished">You can use this for example under Windows if you have troubles with newlines in the ownCloud / Nextcloud notes app</translation>
+</message>
+<message>
+<source>Use UNIX newline instead of native newline characters</source>
+<translation type="unfinished">Use UNIX newline instead of native newline characters</translation>
+</message>
+<message>
+<source>Check this if you want to ignore all external modifications while you are editing the current note.</source>
+<translation type="unfinished">Check this if you want to ignore all external modifications while you are editing the current note.</translation>
+</message>
+<message>
+<source>Ignore all external modifications of the current note</source>
+<translation type="unfinished">Ignore all external modifications of the current note</translation>
+</message>
+<message>
+<source>Use legacy way to link to notes, images and attachments</source>
+<translation type="unfinished">Use legacy way to link to notes, images and attachments</translation>
+</message>
+<message>
+<source>When opening notes the cursor position inside the note will now be restored to the position when the note was last visited in the current session</source>
+<translation type="unfinished">When opening notes the cursor position inside the note will now be restored to the position when the note was last visited in the current session</translation>
+</message>
+<message>
+<source>Restore cursor position when opening a note</source>
+<translation type="unfinished">Restore cursor position when opening a note</translation>
+</message>
+<message>
+<source>Automatically close the note folder database to prevent problems with sync tools</source>
+<translation type="unfinished">Automatically close the note folder database to prevent problems with sync tools</translation>
+</message>
+<message>
+<source>Automatically close the note folder database</source>
+<translation type="unfinished">Automatically close the note folder database</translation>
+</message>
+<message>
+<source>Scale images down when inserted into notes</source>
+<translation type="unfinished">Scale images down when inserted into notes</translation>
+</message>
+<message>
+<source>Disable this if you want to launch the application without opening a note</source>
+<translation type="unfinished">Disable this if you want to launch the application without opening a note</translation>
+</message>
+<message>
+<source>Open last accessed note at application startup</source>
+<translation type="unfinished">Open last accessed note at application startup</translation>
+</message>
+<message>
+<source>Use checksums to detect external modifications to unsaved notes</source>
+<translation type="unfinished">Use checksums to detect external modifications to unsaved notes</translation>
+</message>
+<message>
+<source>Read-only mode</source>
+<translation type="unfinished">Read-only mode</translation>
+</message>
+<message>
+<source>Enable or disable the read-only mode feature</source>
+<translation type="unfinished">Enable or disable the read-only mode feature</translation>
+</message>
+<message>
+<source>Enable read-only mode</source>
+<translation type="unfinished">Enable read-only mode</translation>
+</message>
+<message>
+<source>Start application in read-only mode</source>
+<translation type="unfinished">Start application in read-only mode</translation>
+</message>
+<message>
+<source>When inactive, enter read-only mode automatically after:</source>
+<translation type="unfinished">When inactive, enter read-only mode automatically after:</translation>
+</message>
+<message>
+<source> sec</source>
+<extracomment>short for seconds</extracomment>
+<translation type="unfinished"> sec</translation>
+</message>
+<message>
+<source>App instance</source>
+<translation type="unfinished">App instance</translation>
+</message>
+<message>
+<source>Only allow one app instance at the same time</source>
+<translation type="unfinished">Only allow one app instance at the same time</translation>
+</message>
+<message>
+<source>Update dialog</source>
+<translation type="unfinished">Update dialog</translation>
+</message>
+<message>
+<source>Don't show the update dialog automatically</source>
+<translation type="unfinished">Don't show the update dialog automatically</translation>
+</message>
+<message>
+<source>Search engine</source>
+<translation type="unfinished">Search engine</translation>
+</message>
+<message>
+<source>Message boxes</source>
+<translation type="unfinished">Message boxes</translation>
+</message>
+<message>
+<source>Forget all "Don't ask again" choices in message boxes</source>
+<translation type="unfinished">Forget all "Don't ask again" choices in message boxes</translation>
+</message>
+<message>
+<source>Reset message boxes</source>
+<translation type="unfinished">Reset message boxes</translation>
+</message>
+<message>
+<source>Note file extensions</source>
+<translation type="unfinished">Note file extensions</translation>
+</message>
+<message>
+<source>Files with the listed file extensions will be recognized as notes, the selected file extension will be used for new notes.</source>
+<translation type="unfinished">Files with the listed file extensions will be recognized as notes, the selected file extension will be used for new notes.</translation>
+</message>
+<message>
+<source>Add a new note file extension</source>
+<translation type="unfinished">Add a new note file extension</translation>
+</message>
+<message>
+<source>Remove selected note file extension</source>
+<translation type="unfinished">Remove selected note file extension</translation>
+</message>
+<message>
+<source>External editor</source>
+<translation type="unfinished">External editor</translation>
+</message>
+<message>
+<source>Path to external editor:</source>
+<translation type="unfinished">Path to external editor:</translation>
+</message>
+<message>
+<source>path to external editor, leave empty for default</source>
+<translation type="unfinished">path to external editor, leave empty for default</translation>
+</message>
+<message>
+<source>set external editor</source>
+<translation type="unfinished">set external editor</translation>
+</message>
+<message>
+<source>Clear application data and exit</source>
+<translation type="unfinished">Clear application data and exit</translation>
+</message>
+<message>
+<source>This button allows you to clear all settings, remove the local todo database and exit QOwnNotes.</source>
+<translation type="unfinished">This button allows you to clear all settings, remove the local todo database and exit QOwnNotes.</translation>
+</message>
+<message>
+<source>Clear app data and exit</source>
+<translation type="unfinished">Clear app data and exit</translation>
+</message>
+<message>
+<source>Settings</source>
+<translation type="unfinished">Settings</translation>
+</message>
+<message>
+<source>Import settings</source>
+<translation type="unfinished">Import settings</translation>
+</message>
+<message>
+<source>Export settings</source>
+<translation type="unfinished">Export settings</translation>
+</message>
+<message>
+<source>Database</source>
+<translation type="unfinished">Database</translation>
+</message>
+<message>
+<source>Reinitialize Database</source>
+<translation type="unfinished">Reinitialize Database</translation>
+</message>
+<message>
+<source>Checks the disk database integrity and fixes problems</source>
+<translation type="unfinished">Checks the disk database integrity and fixes problems</translation>
+</message>
+<message>
+<source>Check integrity</source>
+<translation type="unfinished">Check integrity</translation>
+</message>
+<message>
+<source>Be warned that reinitializing the database will also remove your cached todo items and configured note folders and scripts!</source>
+<translation type="unfinished">Be warned that reinitializing the database will also remove your cached todo items and configured note folders and scripts!</translation>
+</message>
+<message>
+<source>Do you really want to clear the local database? This will also remove your configured note folders and your cached todo items!</source>
+<translation type="unfinished">Do you really want to clear the local database? This will also remove your configured note folders and your cached todo items!</translation>
+</message>
+<message>
+<source>The Database was reinitialized. Please restart the application now!</source>
+<translation type="unfinished">The Database was reinitialized. Please restart the application now!</translation>
+</message>
+<message>
+<source>The integrity of the disk database is valid.</source>
+<translation type="unfinished">The integrity of the disk database is valid.</translation>
+</message>
+<message>
+<source>The integrity of the disk database is not valid!</source>
+<translation type="unfinished">The integrity of the disk database is not valid!</translation>
+</message>
+<message>
+<source>Do you really want to clear all settings, remove the database and exit QOwnNotes?
+
+Your notes will stay intact!</source>
+<translation type="unfinished">Do you really want to clear all settings, remove the database and exit QOwnNotes?
+
+Your notes will stay intact!</translation>
+</message>
+<message>
+<source>Select editor application</source>
+<translation type="unfinished">Select editor application</translation>
+</message>
+<message>
+<source>File extension</source>
+<translation type="unfinished">File extension</translation>
+</message>
+<message>
+<source>Please enter a new note file extension:</source>
+<translation type="unfinished">Please enter a new note file extension:</translation>
+</message>
+<message>
+<source>Markdown file</source>
+<translation type="unfinished">Markdown file</translation>
+</message>
+<message>
+<source>Plain text file</source>
+<translation type="unfinished">Plain text file</translation>
+</message>
+<message>
+<source>Remove note file extension</source>
+<translation type="unfinished">Remove note file extension</translation>
+</message>
+<message>
+<source>Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</source>
+<translation type="unfinished">Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</translation>
+</message>
+<message>
+<source>Do you really want to reset the overrides of all message boxes?</source>
+<translation type="unfinished">Do you really want to reset the overrides of all message boxes?</translation>
+</message>
+<message>
+<source>INI files</source>
+<translation type="unfinished">INI files</translation>
+</message>
+<message>
+<source>Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</source>
+<translation type="unfinished">Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</translation>
+</message>
+<message>
+<source>The application will be restarted after the import.</source>
+<translation type="unfinished">The application will be restarted after the import.</translation>
+</message>
+</context>
+<context>
+<name>GitSettingsWidget</name>
+<message>
+<source>Commit interval</source>
+<translation type="unfinished">Commit interval</translation>
+</message>
+<message>
+<source>sec</source>
+<extracomment>seconds</extracomment>
+<translation type="unfinished">sec</translation>
+</message>
+<message>
+<source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</source>
+<translation type="unfinished">You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</translation>
+</message>
+<message>
+<source>git commit interval time [sec]</source>
+<translation type="unfinished">git commit interval time [sec]</translation>
+</message>
+<message>
+<source>External git log command to show the git versions of a note</source>
+<translation type="unfinished">External git log command to show the git versions of a note</translation>
+</message>
+<message>
+<source>Enter a command to be used to show a git log (like for example "gitk")</source>
+<extracomment>Please don't translate "%notePath%"</extracomment>
+<translation type="unfinished">Enter a command to be used to show a git log (like for example "gitk")</translation>
+</message>
+<message>
+<source>You optionally can use "%notePath%" for the path of the note.</source>
+<extracomment>Please don't translate "%notePath%"</extracomment>
+<translation type="unfinished">You optionally can use "%notePath%" for the path of the note.</translation>
+</message>
+<message>
+<source>If you use this setting you will get a new menu entry to show the git versions if you right-click a note.</source>
+<extracomment>Please don't translate "%notePath%"</extracomment>
+<translation type="unfinished">If you use this setting you will get a new menu entry to show the git versions if you right-click a note.</translation>
+</message>
+<message>
+<source>Git client</source>
+<translation type="unfinished">Git client</translation>
+</message>
+<message>
+<source>Path to git client, leave empty for default</source>
+<translation type="unfinished">Path to git client, leave empty for default</translation>
+</message>
+<message>
+<source>Path to git executable:</source>
+<translation type="unfinished">Path to git executable:</translation>
+</message>
+<message>
+<source>Select the path of the git binary</source>
+<translation type="unfinished">Select the path of the git binary</translation>
+</message>
+<message>
+<source>Don't forget to enable git support for your note folders and to configure your name and email address for your git client, for example with these terminal commands:</source>
+<translation type="unfinished">Don't forget to enable git support for your note folders and to configure your name and email address for your git client, for example with these terminal commands:</translation>
+</message>
+<message>
+<source>Git library</source>
+<translation type="unfinished">Git library</translation>
+</message>
+<message>
+<source>Support for the git library libgit2 is activated.</source>
+<translation type="unfinished">Support for the git library libgit2 is activated.</translation>
+</message>
+<message>
+<source>Don't forget to enable git support for your note folders.</source>
+<translation type="unfinished">Don't forget to enable git support for your note folders.</translation>
+</message>
+<message>
+<source>You can download your git client here: &lt;a href="%url"&gt;Git for Windows&lt;/a&gt;</source>
+<translation type="unfinished">You can download your git client here: &lt;a href="%url"&gt;Git for Windows&lt;/a&gt;</translation>
+</message>
+<message>
+<source>Executable files</source>
+<translation type="unfinished">Executable files</translation>
+</message>
+<message>
+<source>All files</source>
+<translation type="unfinished">All files</translation>
+</message>
+<message>
+<source>Please select the path of your git executable</source>
+<translation type="unfinished">Please select the path of your git executable</translation>
+</message>
+</context>
+<context>
 <name>HtmlPreviewWidgetInternal</name>
 <message>
 <source>Copy</source>
@@ -1657,6 +2434,401 @@
 </message>
 </context>
 <context>
+<name>InterfaceSettingsWidget</name>
+<message>
+<source>Interface language</source>
+<translation type="unfinished">Interface language</translation>
+</message>
+<message>
+<source>If you want to help to translate QOwnNotes or update an existing translation please read: &lt;a href="%1"&gt;How can I help to translate QOwnNotes?&lt;/a&gt;</source>
+<translation type="unfinished">If you want to help to translate QOwnNotes or update an existing translation please read: &lt;a href="%1"&gt;How can I help to translate QOwnNotes?&lt;/a&gt;</translation>
+</message>
+<message>
+<source>If you change the language you have to restart the application for the changes to take action.</source>
+<translation type="unfinished">If you change the language you have to restart the application for the changes to take action.</translation>
+</message>
+<message>
+<source>Automatic</source>
+<translation type="unfinished">Automatic</translation>
+</message>
+<message>
+<source>Indonesian</source>
+<translation type="unfinished">Indonesian</translation>
+</message>
+<message>
+<source>Malay</source>
+<translation type="unfinished">Malay</translation>
+</message>
+<message>
+<source>Bengali</source>
+<translation type="unfinished">Bengali</translation>
+</message>
+<message>
+<source>Bosnian</source>
+<translation type="unfinished">Bosnian</translation>
+</message>
+<message>
+<source>Bulgarian</source>
+<translation type="unfinished">Bulgarian</translation>
+</message>
+<message>
+<source>Catalan</source>
+<translation type="unfinished">Catalan</translation>
+</message>
+<message>
+<source>Cebuano</source>
+<translation type="unfinished">Cebuano</translation>
+</message>
+<message>
+<source>Czech</source>
+<translation type="unfinished">Czech</translation>
+</message>
+<message>
+<source>Danish</source>
+<translation type="unfinished">Danish</translation>
+</message>
+<message>
+<source>German</source>
+<translation type="unfinished">German</translation>
+</message>
+<message>
+<source>Basque</source>
+<translation type="unfinished">Basque</translation>
+</message>
+<message>
+<source>English</source>
+<translation type="unfinished">English</translation>
+</message>
+<message>
+<source>English (British)</source>
+<translation type="unfinished">English (British)</translation>
+</message>
+<message>
+<source>Spanish</source>
+<translation type="unfinished">Spanish</translation>
+</message>
+<message>
+<source>Estonian</source>
+<translation type="unfinished">Estonian</translation>
+</message>
+<message>
+<source>Filipino</source>
+<translation type="unfinished">Filipino</translation>
+</message>
+<message>
+<source>Finnish</source>
+<translation type="unfinished">Finnish</translation>
+</message>
+<message>
+<source>French</source>
+<translation type="unfinished">French</translation>
+</message>
+<message>
+<source>Irish</source>
+<translation type="unfinished">Irish</translation>
+</message>
+<message>
+<source>Galician</source>
+<translation type="unfinished">Galician</translation>
+</message>
+<message>
+<source>Greek</source>
+<translation type="unfinished">Greek</translation>
+</message>
+<message>
+<source>Hausa</source>
+<translation type="unfinished">Hausa</translation>
+</message>
+<message>
+<source>Hebrew</source>
+<translation type="unfinished">Hebrew</translation>
+</message>
+<message>
+<source>Hindi</source>
+<translation type="unfinished">Hindi</translation>
+</message>
+<message>
+<source>Croatian</source>
+<translation type="unfinished">Croatian</translation>
+</message>
+<message>
+<source>Hiligaynon</source>
+<translation type="unfinished">Hiligaynon</translation>
+</message>
+<message>
+<source>Icelandic</source>
+<translation type="unfinished">Icelandic</translation>
+</message>
+<message>
+<source>Italian</source>
+<translation type="unfinished">Italian</translation>
+</message>
+<message>
+<source>Korean</source>
+<translation type="unfinished">Korean</translation>
+</message>
+<message>
+<source>Kurdish</source>
+<translation type="unfinished">Kurdish</translation>
+</message>
+<message>
+<source>Khmer</source>
+<translation type="unfinished">Khmer</translation>
+</message>
+<message>
+<source>Latvian</source>
+<translation type="unfinished">Latvian</translation>
+</message>
+<message>
+<source>Lithuanian</source>
+<translation type="unfinished">Lithuanian</translation>
+</message>
+<message>
+<source>Macedonian</source>
+<translation type="unfinished">Macedonian</translation>
+</message>
+<message>
+<source>Māori</source>
+<translation type="unfinished">Māori</translation>
+</message>
+<message>
+<source>Hungarian</source>
+<translation type="unfinished">Hungarian</translation>
+</message>
+<message>
+<source>Norwegian</source>
+<translation type="unfinished">Norwegian</translation>
+</message>
+<message>
+<source>Japanese</source>
+<translation type="unfinished">Japanese</translation>
+</message>
+<message>
+<source>Dutch</source>
+<translation type="unfinished">Dutch</translation>
+</message>
+<message>
+<source>Persian</source>
+<translation type="unfinished">Persian</translation>
+</message>
+<message>
+<source>Uzbek</source>
+<translation type="unfinished">Uzbek</translation>
+</message>
+<message>
+<source>Polish</source>
+<translation type="unfinished">Polish</translation>
+</message>
+<message>
+<source>Brazilian Portuguese</source>
+<translation type="unfinished">Brazilian Portuguese</translation>
+</message>
+<message>
+<source>Portuguese</source>
+<translation type="unfinished">Portuguese</translation>
+</message>
+<message>
+<source>Punjabi</source>
+<translation type="unfinished">Punjabi</translation>
+</message>
+<message>
+<source>Romanian</source>
+<translation type="unfinished">Romanian</translation>
+</message>
+<message>
+<source>Russian</source>
+<translation type="unfinished">Russian</translation>
+</message>
+<message>
+<source>Serbian</source>
+<translation type="unfinished">Serbian</translation>
+</message>
+<message>
+<source>Albanian</source>
+<translation type="unfinished">Albanian</translation>
+</message>
+<message>
+<source>Shona</source>
+<translation type="unfinished">Shona</translation>
+</message>
+<message>
+<source>Sinhala</source>
+<translation type="unfinished">Sinhala</translation>
+</message>
+<message>
+<source>Slovak</source>
+<translation type="unfinished">Slovak</translation>
+</message>
+<message>
+<source>Slovenian</source>
+<translation type="unfinished">Slovenian</translation>
+</message>
+<message>
+<source>Swedish</source>
+<translation type="unfinished">Swedish</translation>
+</message>
+<message>
+<source>Tagalog</source>
+<translation type="unfinished">Tagalog</translation>
+</message>
+<message>
+<source>Thai</source>
+<translation type="unfinished">Thai</translation>
+</message>
+<message>
+<source>Vietnamese</source>
+<translation type="unfinished">Vietnamese</translation>
+</message>
+<message>
+<source>Turkish</source>
+<translation type="unfinished">Turkish</translation>
+</message>
+<message>
+<source>Xhosa</source>
+<translation type="unfinished">Xhosa</translation>
+</message>
+<message>
+<source>Ukrainian</source>
+<translation type="unfinished">Ukrainian</translation>
+</message>
+<message>
+<source>Urdu</source>
+<translation type="unfinished">Urdu</translation>
+</message>
+<message>
+<source>Yiddish</source>
+<translation type="unfinished">Yiddish</translation>
+</message>
+<message>
+<source>Zulu</source>
+<translation type="unfinished">Zulu</translation>
+</message>
+<message>
+<source>Chinese Simplified</source>
+<translation type="unfinished">Chinese Simplified</translation>
+</message>
+<message>
+<source>Chinese Traditional</source>
+<translation type="unfinished">Chinese Traditional</translation>
+</message>
+<message>
+<source>Arabic</source>
+<translation type="unfinished">Arabic</translation>
+</message>
+<message>
+<source>Search for language</source>
+<translation type="unfinished">Search for language</translation>
+</message>
+<message>
+<source>System tray</source>
+<translation type="unfinished">System tray</translation>
+</message>
+<message>
+<source>You need to restart the application to let this setting take effect</source>
+<translation type="unfinished">You need to restart the application to let this setting take effect</translation>
+</message>
+<message>
+<source>Show system tray icon</source>
+<translation type="unfinished">Show system tray icon</translation>
+</message>
+<message>
+<source>Start application hidden</source>
+<translation type="unfinished">Start application hidden</translation>
+</message>
+<message>
+<source>Interface style</source>
+<translation type="unfinished">Interface style</translation>
+</message>
+<message>
+<source>Icons</source>
+<translation type="unfinished">Icons</translation>
+</message>
+<message>
+<source>Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</source>
+<translation type="unfinished">Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</translation>
+</message>
+<message>
+<source>Hide menu icons</source>
+<translation type="unfinished">Hide menu icons</translation>
+</message>
+<message>
+<source>Item sizes in the main window</source>
+<translation type="unfinished">Item sizes in the main window</translation>
+</message>
+<message>
+<source>List and tree item height:</source>
+<translation type="unfinished">List and tree item height:</translation>
+</message>
+<message>
+<source>Toolbar icon size:</source>
+<translation type="unfinished">Toolbar icon size:</translation>
+</message>
+<message>
+<source>Reset the icon size</source>
+<translation type="unfinished">Reset the icon size</translation>
+</message>
+<message>
+<source>Reset the item height</source>
+<translation type="unfinished">Reset the item height</translation>
+</message>
+<message>
+<source>Override interface font size</source>
+<translation type="unfinished">Override interface font size</translation>
+</message>
+<message>
+<source>Interface font size:</source>
+<translation type="unfinished">Interface font size:</translation>
+</message>
+<message>
+<source>Override interface scaling factor</source>
+<translation type="unfinished">Override interface scaling factor</translation>
+</message>
+<message>
+<source>Interface scaling factor:</source>
+<translation type="unfinished">Interface scaling factor:</translation>
+</message>
+<message>
+<source>Status bar</source>
+<translation type="unfinished">Status bar</translation>
+</message>
+<message>
+<source>Show note path</source>
+<translation type="unfinished">Show note path</translation>
+</message>
+<message>
+<source>Only show relative note path</source>
+<translation type="unfinished">Only show relative note path</translation>
+</message>
+<message>
+<source>Distraction free mode</source>
+<translation type="unfinished">Distraction free mode</translation>
+</message>
+<message>
+<source>Open distraction free mode in full-screen</source>
+<translation type="unfinished">Open distraction free mode in full-screen</translation>
+</message>
+<message>
+<source>Hide status bar in distraction free mode</source>
+<translation type="unfinished">Hide status bar in distraction free mode</translation>
+</message>
+<message>
+<source>Menu bar</source>
+<translation type="unfinished">Menu bar</translation>
+</message>
+<message>
+<source>Show menu bar item</source>
+<translation type="unfinished">Show menu bar item</translation>
+</message>
+<message>
+<source>Automatic (needs restart)</source>
+<translation type="unfinished">Automatic (needs restart)</translation>
+</message>
+<message>
+<source>If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</source>
+<translation type="unfinished">If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</translation>
+</message>
+</context>
+<context>
 <name>IssueAssistantDialog</name>
 <message>
 <source>Minimum 8 characters</source>
@@ -1737,82 +2909,299 @@
 </message>
 </context>
 <context>
-<name>LayoutWidget</name>
+<name>LanguageToolSettingsWidget</name>
 <message>
-<source>Use layout</source>
-<translation>Yi amfani da layout</translation>
+<source>LanguageTool</source>
+<translation type="unfinished">LanguageTool</translation>
 </message>
 <message>
-<source>Keep in mind that workspaces that demand that there is no central widget will not work properly if the central widget is enabled.</source>
-<translation>Lura cewa wuraren aiki waɗanda ke buƙatar cewa babu wani widget din tsakiya ba zai yi aiki da kyau ba idan an kunna widget din na tsakiya.</translation>
+<source>Enable grammar and style checking with LanguageTool</source>
+<translation type="unfinished">Enable grammar and style checking with LanguageTool</translation>
 </message>
 <message>
-<source>Use new layout</source>
-<translation>Yi amfani da sabon saiti</translation>
+<source>Server URL:</source>
+<translation type="unfinished">Server URL:</translation>
 </message>
 <message>
-<source>Do you want to use the selected layout?</source>
-<translation>Kuna so kuyi amfani da layin da aka zaɓa?</translation>
+<source>Test Connection</source>
+<translation type="unfinished">Test Connection</translation>
+</message>
+<message>
+<source>Language:</source>
+<translation type="unfinished">Language:</translation>
+</message>
+<message>
+<source>API key:</source>
+<translation type="unfinished">API key:</translation>
+</message>
+<message>
+<source>Optional premium or cloud API key</source>
+<translation type="unfinished">Optional premium or cloud API key</translation>
+</message>
+<message>
+<source>Check delay:</source>
+<translation type="unfinished">Check delay:</translation>
+</message>
+<message>
+<source> ms</source>
+<translation type="unfinished"> ms</translation>
+</message>
+<message>
+<source>Categories:</source>
+<translation type="unfinished">Categories:</translation>
+</message>
+<message>
+<source>Spelling</source>
+<translation type="unfinished">Spelling</translation>
+</message>
+<message>
+<source>Grammar</source>
+<translation type="unfinished">Grammar</translation>
+</message>
+<message>
+<source>Style</source>
+<translation type="unfinished">Style</translation>
+</message>
+<message>
+<source>Punctuation</source>
+<translation type="unfinished">Punctuation</translation>
+</message>
+<message>
+<source>Typography</source>
+<translation type="unfinished">Typography</translation>
+</message>
+<message>
+<source>Ignored:</source>
+<translation type="unfinished">Ignored:</translation>
+</message>
+<message>
+<source>Reset all ignored LanguageTool rules so they are checked again</source>
+<translation type="unfinished">Reset all ignored LanguageTool rules so they are checked again</translation>
+</message>
+<message>
+<source>Reset ignored rules</source>
+<translation type="unfinished">Reset ignored rules</translation>
+</message>
+<message>
+<source>Reset all ignored words so they are checked by LanguageTool again</source>
+<translation type="unfinished">Reset all ignored words so they are checked by LanguageTool again</translation>
+</message>
+<message>
+<source>Reset ignored words</source>
+<translation type="unfinished">Reset ignored words</translation>
+</message>
+<message>
+<source>Auto-detect</source>
+<translation type="unfinished">Auto-detect</translation>
+</message>
+<message>
+<source>LanguageTool connection successful.</source>
+<translation type="unfinished">LanguageTool connection successful.</translation>
+</message>
+<message>
+<source>LanguageTool connection failed: %1</source>
+<translation type="unfinished">LanguageTool connection failed: %1</translation>
+</message>
+<message>
+<source>There are no ignored rules to reset.</source>
+<translation type="unfinished">There are no ignored rules to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored rule(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored rules have been reset.</source>
+<translation type="unfinished">All ignored rules have been reset.</translation>
+</message>
+<message>
+<source>There are no ignored words to reset.</source>
+<translation type="unfinished">There are no ignored words to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored word(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored word(s)?</numerusform>
+<numerusform>Reset %n ignored word(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored words have been reset.</source>
+<translation type="unfinished">All ignored words have been reset.</translation>
+</message>
+</context>
+<context>
+<name>LayoutDialog</name>
+<message>
+<source>Manage layouts</source>
+<translation type="unfinished">Manage layouts</translation>
+</message>
+<message>
+<source>Add layout</source>
+<translation type="unfinished">Add layout</translation>
+</message>
+<message>
+<source>Add</source>
+<translation type="unfinished">Add</translation>
+</message>
+<message>
+<source>Remove layout</source>
+<translation type="unfinished">Remove layout</translation>
+</message>
+<message>
+<source>Remove</source>
+<translation type="unfinished">Remove</translation>
+</message>
+<message>
+<source>Rename layout</source>
+<translation type="unfinished">Rename layout</translation>
+</message>
+<message>
+<source>Rename</source>
+<translation type="unfinished">Rename</translation>
+</message>
+<message>
+<source>Move layout up</source>
+<translation type="unfinished">Move layout up</translation>
+</message>
+<message>
+<source>Move up</source>
+<translation type="unfinished">Move up</translation>
+</message>
+<message>
+<source>Move layout down</source>
+<translation type="unfinished">Move layout down</translation>
+</message>
+<message>
+<source>Move down</source>
+<translation type="unfinished">Move down</translation>
+</message>
+<message>
+<source>Layout name:</source>
+<translation type="unfinished">Layout name:</translation>
+</message>
+<message>
+<source>Remove the selected layout?</source>
+<translation type="unfinished">Remove the selected layout?</translation>
+</message>
+</context>
+<context>
+<name>LayoutManager</name>
+<message>
+<source>Layouts</source>
+<translation type="unfinished">Layouts</translation>
+</message>
+<message>
+<source>full</source>
+<comment>full layout</comment>
+<translation type="unfinished">full</translation>
+</message>
+<message>
+<source>minimal</source>
+<comment>minimal layout</comment>
+<translation type="unfinished">minimal</translation>
+</message>
+<message>
+<source>Create new layout</source>
+<translation type="unfinished">Create new layout</translation>
+</message>
+<message>
+<source>Layout name:</source>
+<translation type="unfinished">Layout name:</translation>
+</message>
+<message>
+<source>Remove current layout</source>
+<translation type="unfinished">Remove current layout</translation>
+</message>
+<message>
+<source>Remove the current layout?</source>
+<translation type="unfinished">Remove the current layout?</translation>
+</message>
+<message>
+<source>Rename layout</source>
+<translation type="unfinished">Rename layout</translation>
+</message>
+</context>
+<context>
+<name>LayoutPresetWidget</name>
+<message>
+<source>Use preset</source>
+<translation type="unfinished">Use preset</translation>
+</message>
+<message>
+<source>Keep in mind that layouts that demand that there is no central widget will not work properly if the central widget is enabled.</source>
+<translation type="unfinished">Keep in mind that layouts that demand that there is no central widget will not work properly if the central widget is enabled.</translation>
+</message>
+<message>
+<source>Use new layout preset</source>
+<translation type="unfinished">Use new layout preset</translation>
+</message>
+<message>
+<source>Do you want to use the selected layout preset?</source>
+<translation type="unfinished">Do you want to use the selected layout preset?</translation>
 </message>
 <message>
 <source>Minimal</source>
-<comment>Layout name</comment>
-<translation>Kadan</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Minimal</translation>
 </message>
 <message>
 <source>Full</source>
-<comment>Layout name</comment>
-<translation>Cikakke</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Full</translation>
 </message>
 <message>
 <source>Preview only</source>
-<comment>Layout name</comment>
-<translation>Gano kawai</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Preview only</translation>
 </message>
 <message>
 <source>Full vertical</source>
-<comment>Layout name</comment>
-<translation>Cikakken tsaye</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Full vertical</translation>
 </message>
 <message>
 <source>Single column</source>
-<comment>Layout name</comment>
-<translation>Shafi ɗaya</translation>
+<comment>Layout preset name</comment>
+<translation type="unfinished">Single column</translation>
 </message>
 <message>
 <source>The note edit panel is the central widget that will be resized automatically.</source>
-<comment>Layout description</comment>
-<translation>Faifan shirya allon rubutu shine widget din tsakiya wanda za'a zazzage shi ta atomatik.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">The note edit panel is the central widget that will be resized automatically.</translation>
 </message>
 <message>
 <source>Because of this there is no central widget that will be resized automatically.</source>
-<comment>Layout description</comment>
-<translation>Saboda wannan babu wani widget din tsakiya wanda zai sake canzawa ta atomatik.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Because of this there is no central widget that will be resized automatically.</translation>
 </message>
 <message>
 <source>Just the note list on the left and the note edit panel on the right are enabled by default.</source>
-<comment>Layout description</comment>
-<translation>Kawai bayanin kula na gefen hagu da bayanin kula na bayanin kula a hannun dama ana sa su ta hanyar tsohuwa.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Just the note list on the left and the note edit panel on the right are enabled by default.</translation>
 </message>
 <message>
 <source>Most of the panels, like the note list on the left, the tagging panels, the note edit panel in the center and the preview panel on the right are enabled by default.</source>
-<comment>Layout description</comment>
-<translation>Yawancin bangarori, kamar jerin bayanin kula a hagu, bangarorin yin alama, panel bayanin lura a tsakiya da kuma gabanin samfoti na dama an kunna su ta hanyar tsohuwa.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Most of the panels, like the note list on the left, the tagging panels, the note edit panel in the center and the preview panel on the right are enabled by default.</translation>
 </message>
 <message>
-<source>Most of the panels, like the note list on the left, the tagging panels, and only the preview panel on the right are enabled by default. You will need another workspace to actually edit notes!</source>
-<comment>Layout description</comment>
-<translation>Yawancin bangarori, kamar jerin bayanin kula a hagu, bangarorin alamar, kuma kawai samfoti na samfoti na dama suna kunna ta tsohuwa. Za ku buƙaci wani filin aiki don a zahiri shirya bayanin kula!</translation>
+<source>Most of the panels, like the note list on the left, the tagging panels, and only the preview panel on the right are enabled by default. You will need another layout to actually edit notes!</source>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Most of the panels, like the note list on the left, the tagging panels, and only the preview panel on the right are enabled by default. You will need another layout to actually edit notes!</translation>
 </message>
 <message>
 <source>Most of the panels, like the note list on the left, the tagging panels, the note edit panel on the right and the preview panel on top of the note edit panel are enabled by default.</source>
-<comment>Layout description</comment>
-<translation>Yawancin bangarori, kamar jerin bayanin kula a hagu, bangarorin yin alama, panel bayanin kula a hannun dama da preview panel a saman kwamiti na bayanin gyara an kunna ta tsohuwa.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Most of the panels, like the note list on the left, the tagging panels, the note edit panel on the right and the preview panel on top of the note edit panel are enabled by default.</translation>
 </message>
 <message>
 <source>Tiny one column layout with note search, note list and note edit on top of each other.</source>
-<comment>Layout description</comment>
-<translation>Inyan karamin layin rubutu ɗaya tare da binciken bayanin kula, jerin bayanin kula da gyara bayanin kula akan junan ku.</translation>
+<comment>Layout preset description</comment>
+<translation type="unfinished">Tiny one column layout with note search, note list and note edit on top of each other.</translation>
 </message>
 </context>
 <context>
@@ -1986,6 +3375,40 @@
 </message>
 </context>
 <context>
+<name>LocalTrashSettingsWidget</name>
+<message>
+<source>Local trash settings</source>
+<translation type="unfinished">Local trash settings</translation>
+</message>
+<message>
+<source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</source>
+<translation type="unfinished">You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
+Just test yourself if you get sync conflicts and set a higher value if so.</translation>
+</message>
+<message>
+<source>Remove trashed notes after:</source>
+<translation type="unfinished">Remove trashed notes after:</translation>
+</message>
+<message>
+<source> days</source>
+<extracomment>seconds</extracomment>
+<translation type="unfinished"> days</translation>
+</message>
+<message>
+<source>Automatically remove trashed notes after a certain time</source>
+<translation type="unfinished">Automatically remove trashed notes after a certain time</translation>
+</message>
+<message>
+<source>Local trash support</source>
+<translation type="unfinished">Local trash support</translation>
+</message>
+<message>
+<source>Enable local trash to keep a copy of trashed notes</source>
+<translation type="unfinished">Enable local trash to keep a copy of trashed notes</translation>
+</message>
+</context>
+<context>
 <name>LogWidget</name>
 <message>
 <source>Logs</source>
@@ -2085,6 +3508,14 @@
 <message>
 <source>Editor width</source>
 <translation>Faɗin Edita</translation>
+</message>
+<message>
+<source>Layouts</source>
+<translation type="unfinished">Layouts</translation>
+</message>
+<message>
+<source>Layout</source>
+<translation type="unfinished">Layout</translation>
 </message>
 <message>
 <source>Custom actions</source>
@@ -2255,10 +3686,6 @@
 <translation>&amp;Taga</translation>
 </message>
 <message>
-<source>Workspaces</source>
-<translation>Aiki</translation>
-</message>
-<message>
 <source>Panels</source>
 <translation>Bangarori</translation>
 </message>
@@ -2270,10 +3697,6 @@
 <source>Show</source>
 <extracomment>To show or hide stuff</extracomment>
 <translation>Nuna</translation>
-</message>
-<message>
-<source>Workspace</source>
-<translation>Filin aiki</translation>
 </message>
 <message>
 <source>Jump to</source>
@@ -2533,24 +3956,24 @@
 <translation type="unfinished">Reattaches all floating panels</translation>
 </message>
 <message>
-<source>Remove current workspace</source>
-<translation>Cire filin aiki na yanzu</translation>
+<source>Remove current layout</source>
+<translation type="unfinished">Remove current layout</translation>
 </message>
 <message>
-<source>Add new workspace</source>
-<translation>Sanya sabon filin aiki</translation>
+<source>Add new layout</source>
+<translation type="unfinished">Add new layout</translation>
 </message>
 <message>
-<source>Rename current workspace</source>
-<translation>Sake suna da filin aiki na yanzu</translation>
+<source>Rename current layout</source>
+<translation type="unfinished">Rename current layout</translation>
 </message>
 <message>
-<source>Switch to previous workspace</source>
-<translation>Canja wurin aikin da ya gabata</translation>
+<source>Switch to previous layout</source>
+<translation type="unfinished">Switch to previous layout</translation>
 </message>
 <message>
-<source>Manage workspaces</source>
-<translation type="unfinished">Manage workspaces</translation>
+<source>Manage layouts</source>
+<translation type="unfinished">Manage layouts</translation>
 </message>
 <message>
 <source>Show all panels</source>
@@ -3060,6 +4483,13 @@ Idan an kunna tarkace a uwar garken naku to ya kamata ku iya dawo dasu daga can.
 <numerusform>Ba a iya yin kwafin %n bayanin kulas ba (ana iya yiwuwa tuni)</numerusform>
 </translation>
 </message>
+<message numerus="yes">
+<source>Skipped inserting %n file(s) because the current note is read-only</source>
+<translation type="unfinished">
+<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+</translation>
+</message>
 <message>
 <source>Saving temporary image</source>
 <translation>Ajiye hoto na ɗan lokaci</translation>
@@ -3142,6 +4572,18 @@ Idan an kunna tarkace a uwar garken naku to ya kamata ku iya dawo dasu daga can.
 <source>No script updates were found</source>
 <translation>Ba a sami ɗaukaka bayanan rubutun ba
 </translation>
+</message>
+<message>
+<source>Layout selector</source>
+<translation type="unfinished">Layout selector</translation>
+</message>
+<message>
+<source>AI toolbar disabled</source>
+<translation type="unfinished">AI toolbar disabled</translation>
+</message>
+<message>
+<source>An AI backend is configured, but the AI toolbar is currently disabled. Do you want to turn it on?</source>
+<translation type="unfinished">An AI backend is configured, but the AI toolbar is currently disabled. Do you want to turn it on?</translation>
 </message>
 <message numerus="yes">
 <source>Skipped copying of %n note(s) (no Markdown or text file or not readable)</source>
@@ -3325,10 +4767,6 @@ Idan an kunna tarkace a uwar garken naku to ya kamata ku iya dawo dasu daga can.
 <translation>kayan aiki na yau da kullun</translation>
 </message>
 <message>
-<source>Workspace selector</source>
-<translation>Zaɓin fagen aiki</translation>
-</message>
-<message>
 <source>Show %1 panel</source>
 <translation>Nuna %1 panel</translation>
 </message>
@@ -3383,6 +4821,45 @@ Idan an kunna tarkace a uwar garken naku to ya kamata ku iya dawo dasu daga can.
 <message>
 <source>Failed to start Markdown LSP server: %1</source>
 <translation type="unfinished">Failed to start Markdown LSP server: %1</translation>
+</message>
+</context>
+<context>
+<name>McpServerSettingsWidget</name>
+<message>
+<source>MCP server</source>
+<translation type="unfinished">MCP server</translation>
+</message>
+<message>
+<source>Enable MCP server for AI agent access to notes</source>
+<translation type="unfinished">Enable MCP server for AI agent access to notes</translation>
+</message>
+<message>
+<source>Server port:</source>
+<translation type="unfinished">Server port:</translation>
+</message>
+<message>
+<source>Reset the MCP server port</source>
+<translation type="unfinished">Reset the MCP server port</translation>
+</message>
+<message>
+<source>Security token:</source>
+<translation type="unfinished">Security token:</translation>
+</message>
+<message>
+<source>If this is empty when saved, a new security token will be generated automatically.</source>
+<translation type="unfinished">If this is empty when saved, a new security token will be generated automatically.</translation>
+</message>
+<message>
+<source>Show security token</source>
+<translation type="unfinished">Show security token</translation>
+</message>
+<message>
+<source>Copy security token to clipboard</source>
+<translation type="unfinished">Copy security token to clipboard</translation>
+</message>
+<message>
+<source>Generate new security token</source>
+<translation type="unfinished">Generate new security token</translation>
 </message>
 </context>
 <context>
@@ -3460,6 +4937,13 @@ Idan an kunna tarkace a uwar garken naku to ya kamata ku iya dawo dasu daga can.
 <numerusform>Skipped copying of %n note(s) (no Markdown or text file or not readable)</numerusform>
 </translation>
 </message>
+<message numerus="yes">
+<source>Skipped inserting %n file(s) because the current note is read-only</source>
+<translation type="unfinished">
+<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+</translation>
+</message>
 <message>
 <source>Saving temporary image</source>
 <translation type="unfinished">Saving temporary image</translation>
@@ -3528,6 +5012,105 @@ Idan an kunna tarkace a uwar garken naku to ya kamata ku iya dawo dasu daga can.
 <message>
 <source>&amp;Rename heading</source>
 <translation type="unfinished">&amp;Rename heading</translation>
+</message>
+</context>
+<context>
+<name>NetworkSettingsWidget</name>
+<message>
+<source>Proxy Settings</source>
+<translation type="unfinished">Proxy Settings</translation>
+</message>
+<message>
+<source>No Proxy</source>
+<translation type="unfinished">No Proxy</translation>
+</message>
+<message>
+<source>Use system proxy</source>
+<translation type="unfinished">Use system proxy</translation>
+</message>
+<message>
+<source>Specify proxy manually as</source>
+<translation type="unfinished">Specify proxy manually as</translation>
+</message>
+<message>
+<source>Host</source>
+<translation type="unfinished">Host</translation>
+</message>
+<message>
+<source>Proxy server requires authentication</source>
+<translation type="unfinished">Proxy server requires authentication</translation>
+</message>
+<message>
+<source>SSL Settings</source>
+<translation type="unfinished">SSL Settings</translation>
+</message>
+<message>
+<source>Ignore SSL errors</source>
+<translation type="unfinished">Ignore SSL errors</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to consider getting a free SSL certificate from &lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to consider getting a free SSL certificate from &lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>App metrics</source>
+<translation type="unfinished">App metrics</translation>
+</message>
+<message>
+<source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. Please disable it only if you really can't live with it.</source>
+<translation type="unfinished">Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. Please disable it only if you really can't live with it.</translation>
+</message>
+<message>
+<source>Disable tracking of usage data</source>
+<translation type="unfinished">Disable tracking of usage data</translation>
+</message>
+<message>
+<source>This data includes anonymous information about what features of the app are used.</source>
+<translation type="unfinished">This data includes anonymous information about what features of the app are used.</translation>
+</message>
+<message>
+<source>Usage tracking is done on a private Piwik server.</source>
+<translation type="unfinished">Usage tracking is done on a private Piwik server.</translation>
+</message>
+<message>
+<source>App heartbeat</source>
+<translation type="unfinished">App heartbeat</translation>
+</message>
+<message>
+<source>A small heartbeat request is sent periodically while QOwnNotes is running. Make a developer happy by letting him know that someone is using QOwnNotes.</source>
+<translation type="unfinished">A small heartbeat request is sent periodically while QOwnNotes is running. Make a developer happy by letting him know that someone is using QOwnNotes.</translation>
+</message>
+<message>
+<source>Disable heartbeat</source>
+<translation type="unfinished">Disable heartbeat</translation>
+</message>
+<message>
+<source>hostname of proxy server</source>
+<translation type="unfinished">hostname of proxy server</translation>
+</message>
+<message>
+<source>username for proxy server</source>
+<translation type="unfinished">username for proxy server</translation>
+</message>
+<message>
+<source>password for proxy server</source>
+<translation type="unfinished">password for proxy server</translation>
+</message>
+<message>
+<source>HTTP(S) proxy</source>
+<translation type="unfinished">HTTP(S) proxy</translation>
+</message>
+<message>
+<source>SOCKS5 proxy</source>
+<translation type="unfinished">SOCKS5 proxy</translation>
+</message>
+<message>
+<source>Disable usage tracking</source>
+<translation type="unfinished">Disable usage tracking</translation>
+</message>
+<message>
+<source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can't live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</source>
+<translation type="unfinished">Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can't live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</translation>
 </message>
 </context>
 <context>
@@ -3883,6 +5466,154 @@ Idan an kunna tarkace a uwar garken naku to ya kamata ku iya dawo dasu daga can.
 </message>
 </context>
 <context>
+<name>NoteFolderSettingsWidget</name>
+<message>
+<source>Your note folders</source>
+<translation type="unfinished">Your note folders</translation>
+</message>
+<message>
+<source>&amp;Add folder</source>
+<translation type="unfinished">&amp;Add folder</translation>
+</message>
+<message>
+<source>&amp;Remove folder</source>
+<translation type="unfinished">&amp;Remove folder</translation>
+</message>
+<message>
+<source>Click here to use the selected folder from your server as note folder</source>
+<translation type="unfinished">Click here to use the selected folder from your server as note folder</translation>
+</message>
+<message>
+<source>&amp;Use as ownCloud path</source>
+<translation type="unfinished">&amp;Use as ownCloud path</translation>
+</message>
+<message>
+<source>path</source>
+<translation type="unfinished">path</translation>
+</message>
+<message>
+<source>Please select your note folder on your ownCloud server:</source>
+<translation type="unfinished">Please select your note folder on your ownCloud server:</translation>
+</message>
+<message>
+<source>Cloud connection:</source>
+<translation type="unfinished">Cloud connection:</translation>
+</message>
+<message>
+<source>Path on your ownCloud server:</source>
+<translation type="unfinished">Path on your ownCloud server:</translation>
+</message>
+<message>
+<source>Note folder path:</source>
+<translation type="unfinished">Note folder path:</translation>
+</message>
+<message>
+<source>Subfolder visibility</source>
+<translation type="unfinished">Subfolder visibility</translation>
+</message>
+<message>
+<source>If checked, all subfolders will be shown. If unchecked, you can select which subfolders to show.</source>
+<translation type="unfinished">If checked, all subfolders will be shown. If unchecked, you can select which subfolders to show.</translation>
+</message>
+<message>
+<source>All subfolders</source>
+<translation type="unfinished">All subfolders</translation>
+</message>
+<message>
+<source>Select which subfolders to show. Unchecked subfolders and their children will be ignored.</source>
+<translation type="unfinished">Select which subfolders to show. Unchecked subfolders and their children will be ignored.</translation>
+</message>
+<message>
+<source>You need to have git installed to make this work!</source>
+<translation type="unfinished">You need to have git installed to make this work!</translation>
+</message>
+<message>
+<source>Use git to keep a local history of your notes</source>
+<translation type="unfinished">Use git to keep a local history of your notes</translation>
+</message>
+<message>
+<source>Use as active note folder</source>
+<translation type="unfinished">Use as active note folder</translation>
+</message>
+<message>
+<source>Be aware that the ownCloud notes app doesn't support subfolders!</source>
+<translation type="unfinished">Be aware that the ownCloud notes app doesn't support subfolders!</translation>
+</message>
+<message>
+<source>Use note subfolders</source>
+<translation type="unfinished">Use note subfolders</translation>
+</message>
+<message>
+<source>Click here to select your remote note path on your ownCloud server</source>
+<translation type="unfinished">Click here to select your remote note path on your ownCloud server</translation>
+</message>
+<message>
+<source>Path where your notes are stored locally</source>
+<translation type="unfinished">Path where your notes are stored locally</translation>
+</message>
+<message>
+<source>This name will be viewed in all the menus.</source>
+<translation type="unfinished">This name will be viewed in all the menus.</translation>
+</message>
+<message>
+<source>Note folder name</source>
+<translation type="unfinished">Note folder name</translation>
+</message>
+<message>
+<source>Name:</source>
+<translation type="unfinished">Name:</translation>
+</message>
+<message>
+<source>Click here to select your local note path</source>
+<translation type="unfinished">Click here to select your local note path</translation>
+</message>
+<message>
+<source>Set the ownCloud path where the note folder path will be synced to on your ownCloud server.</source>
+<translation type="unfinished">Set the ownCloud path where the note folder path will be synced to on your ownCloud server.</translation>
+</message>
+<message>
+<source>"Notes" path on your server</source>
+<extracomment>"Notes" should not be translated</extracomment>
+<translation type="unfinished">"Notes" path on your server</translation>
+</message>
+<message>
+<source>This also allows note files to be renamed</source>
+<translation type="unfinished">This also allows note files to be renamed</translation>
+</message>
+<message>
+<source>Allow note file name to be different from headline</source>
+<translation type="unfinished">Allow note file name to be different from headline</translation>
+</message>
+<message>
+<source>new folder</source>
+<translation type="unfinished">new folder</translation>
+</message>
+<message>
+<source>Remove note folder</source>
+<translation type="unfinished">Remove note folder</translation>
+</message>
+<message>
+<source>Remove the current note folder &lt;strong&gt;%1&lt;/strong&gt;?</source>
+<translation type="unfinished">Remove the current note folder &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+</message>
+<message>
+<source>Please select the folder where your notes will get stored to</source>
+<translation type="unfinished">Please select the folder where your notes will get stored to</translation>
+</message>
+<message>
+<source>Loading folders from server</source>
+<translation type="unfinished">Loading folders from server</translation>
+</message>
+<message>
+<source>No more folders were found in the current folder</source>
+<translation type="unfinished">No more folders were found in the current folder</translation>
+</message>
+<message>
+<source>Loading folders in '%1' from server</source>
+<translation type="unfinished">Loading folders in '%1' from server</translation>
+</message>
+</context>
+<context>
 <name>NoteIndexManager</name>
 <message>
 <source>Loading notes…</source>
@@ -4154,6 +5885,51 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <message>
 <source>Note headline</source>
 <translation type="unfinished">Note headline</translation>
+</message>
+<message>
+<source>The deleted note(s) had &lt;strong&gt;%1 image(s)&lt;/strong&gt; and &lt;strong&gt;%2 attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</source>
+<translation type="unfinished">The deleted note(s) had &lt;strong&gt;%1 image(s)&lt;/strong&gt; and &lt;strong&gt;%2 attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</translation>
+</message>
+<message numerus="yes">
+<source>The deleted note(s) had &lt;strong&gt;%n image(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</source>
+<translation type="unfinished">
+<numerusform>The deleted note(s) had &lt;strong&gt;%n image(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</numerusform>
+<numerusform>The deleted note(s) had &lt;strong&gt;%n image(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</numerusform>
+</translation>
+</message>
+<message numerus="yes">
+<source>The deleted note(s) had &lt;strong&gt;%n attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</source>
+<translation type="unfinished">
+<numerusform>The deleted note(s) had &lt;strong&gt;%n attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</numerusform>
+<numerusform>The deleted note(s) had &lt;strong&gt;%n attachment(s)&lt;/strong&gt; that are not used in any other note.
+
+Do you want to delete those files as well?</numerusform>
+</translation>
+</message>
+<message>
+<source>Delete orphaned images and attachments</source>
+<translation type="unfinished">Delete orphaned images and attachments</translation>
+</message>
+<message numerus="yes">
+<source>Removed %n orphaned file(s)</source>
+<translation type="unfinished">
+<numerusform>Removed %n orphaned file(s)</numerusform>
+<numerusform>Removed %n orphaned file(s)</numerusform>
+</translation>
 </message>
 </context>
 <context>
@@ -4540,6 +6316,374 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 </context>
 <context>
+<name>OwnCloudSettingsWidget</name>
+<message>
+<source>ownCloud support</source>
+<translation type="unfinished">ownCloud support</translation>
+</message>
+<message>
+<source>Enable ownCloud support</source>
+<translation type="unfinished">Enable ownCloud support</translation>
+</message>
+<message>
+<source>You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</source>
+<translation type="unfinished">You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</translation>
+</message>
+<message>
+<source>Your ownCloud server</source>
+<translation type="unfinished">Your ownCloud server</translation>
+</message>
+<message>
+<source>Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</source>
+<translation type="unfinished">Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens your ownCloud server &lt;span style=" font-weight:600;"&gt;App configuration&lt;/span&gt; page in your webbrowser to install or update QOwnNotesAPI and to enable the core apps &lt;span style=" font-weight:600;"&gt;Versions&lt;/span&gt; and &lt;span style=" font-weight:600;"&gt;Deleted files&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens your ownCloud server &lt;span style=" font-weight:600;"&gt;App configuration&lt;/span&gt; page in your webbrowser to install or update QOwnNotesAPI and to enable the core apps &lt;span style=" font-weight:600;"&gt;Versions&lt;/span&gt; and &lt;span style=" font-weight:600;"&gt;Deleted files&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>Open your ownCloud server &amp;Apps page</source>
+<translation type="unfinished">Open your ownCloud server &amp;Apps page</translation>
+</message>
+<message>
+<source>Opens your ownCloud server App Password page in your webbrowser to create a new app password for the application</source>
+<translation type="unfinished">Opens your ownCloud server App Password page in your webbrowser to create a new app password for the application</translation>
+</message>
+<message>
+<source>Open your ownCloud server App Password page</source>
+<translation type="unfinished">Open your ownCloud server App Password page</translation>
+</message>
+<message>
+<source>Error Message</source>
+<translation type="unfinished">Error Message</translation>
+</message>
+<message>
+<source>Select a connection to edit</source>
+<translation type="unfinished">Select a connection to edit</translation>
+</message>
+<message>
+<source>Add connection</source>
+<translation type="unfinished">Add connection</translation>
+</message>
+<message>
+<source>Remove connection</source>
+<translation type="unfinished">Remove connection</translation>
+</message>
+<message>
+<source>Connection name:</source>
+<translation type="unfinished">Connection name:</translation>
+</message>
+<message>
+<source>ownCloud server url:</source>
+<translation type="unfinished">ownCloud server url:</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>The login flow v2 only works with Nextcloud, not with ownCloud. If you have troubles you need to create an app password by hand.</source>
+<translation type="unfinished">The login flow v2 only works with Nextcloud, not with ownCloud. If you have troubles you need to create an app password by hand.</translation>
+</message>
+<message>
+<source>Login to Nextcloud to grant access</source>
+<translation type="unfinished">Login to Nextcloud to grant access</translation>
+</message>
+<message>
+<source>Cancel Nextcloud login</source>
+<translation type="unfinished">Cancel Nextcloud login</translation>
+</message>
+<message>
+<source>Username:</source>
+<translation type="unfinished">Username:</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the username on your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the username on your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>Your ownCloud username</source>
+<translation type="unfinished">Your ownCloud username</translation>
+</message>
+<message>
+<source>Password:</source>
+<translation type="unfinished">Password:</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the password for your username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the password for your username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>Your ownCloud password</source>
+<translation type="unfinished">Your ownCloud password</translation>
+</message>
+<message>
+<source>If your password doesn't work, create an app password (button on the right)</source>
+<translation type="unfinished">If your password doesn't work, create an app password (button on the right)</translation>
+</message>
+<message>
+<source>Enable QOwnNotesAPI app support</source>
+<translation type="unfinished">Enable QOwnNotesAPI app support</translation>
+</message>
+<message>
+<source>Enable Nextcloud Deck support</source>
+<translation type="unfinished">Enable Nextcloud Deck support</translation>
+</message>
+<message>
+<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to test the connection to your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to test the connection to your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+</message>
+<message>
+<source>&amp;Connect to ownCloud server</source>
+<translation type="unfinished">&amp;Connect to ownCloud server</translation>
+</message>
+<message>
+<source>Connection status</source>
+<translation type="unfinished">Connection status</translation>
+</message>
+<message>
+<source>unknown</source>
+<translation type="unfinished">unknown</translation>
+</message>
+<message>
+<source>connection to web server</source>
+<translation type="unfinished">connection to web server</translation>
+</message>
+<message>
+<source>ownCloud server detected</source>
+<translation type="unfinished">ownCloud server detected</translation>
+</message>
+<message>
+<source>username and password correct</source>
+<translation type="unfinished">username and password correct</translation>
+</message>
+<message>
+<source>connection to QOwnNotesAPI</source>
+<translation type="unfinished">connection to QOwnNotesAPI</translation>
+</message>
+<message>
+<source>versions app enabled on server</source>
+<translation type="unfinished">versions app enabled on server</translation>
+</message>
+<message>
+<source>trash app enabled on server</source>
+<translation type="unfinished">trash app enabled on server</translation>
+</message>
+<message>
+<source>You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</source>
+<translation type="unfinished">You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</translation>
+</message>
+<message>
+<source>notes path found on server</source>
+<translation type="unfinished">notes path found on server</translation>
+</message>
+<message>
+<source>notes path &lt;b&gt;%1&lt;/b&gt; found on server</source>
+<translation type="unfinished">notes path &lt;b&gt;%1&lt;/b&gt; found on server</translation>
+</message>
+<message>
+<source>The connection was made successfully!
+Server version: %1
+QOwnNotesAPI version: %2</source>
+<translation type="unfinished">The connection was made successfully!
+Server version: %1
+QOwnNotesAPI version: %2</translation>
+</message>
+<message>
+<source>There was an error connecting to the ownCloud Server!
+You also need to have the QOwnNotesAPI app installed and enabled!
+
+Connection error message: </source>
+<translation type="unfinished">There was an error connecting to the ownCloud Server!
+You also need to have the QOwnNotesAPI app installed and enabled!
+
+Connection error message: </translation>
+</message>
+</context>
+<context>
+<name>PanelsSettingsWidget</name>
+<message>
+<source>Note search panel</source>
+<translation type="unfinished">Note search panel</translation>
+</message>
+<message>
+<source>Disable auto-completion of previous searches</source>
+<translation type="unfinished">Disable auto-completion of previous searches</translation>
+</message>
+<message>
+<source>Show the number of matches in each note</source>
+<translation type="unfinished">Show the number of matches in each note</translation>
+</message>
+<message>
+<source>Open newly created notes in a new tab</source>
+<translation type="unfinished">Open newly created notes in a new tab</translation>
+</message>
+<message>
+<source>Note folder panel</source>
+<translation type="unfinished">Note folder panel</translation>
+</message>
+<message>
+<source>Show note folders as buttons instead of in a select box</source>
+<translation type="unfinished">Show note folders as buttons instead of in a select box</translation>
+</message>
+<message>
+<source>Note list panel</source>
+<translation type="unfinished">Note list panel</translation>
+</message>
+<message>
+<source>Show all notes in a folder including their subfolders (only works if subfolders are turned on)</source>
+<translation type="unfinished">Show all notes in a folder including their subfolders (only works if subfolders are turned on)</translation>
+</message>
+<message>
+<source>Show all notes of a tag including the notes of their children-tags</source>
+<translation type="unfinished">Show all notes of a tag including the notes of their children-tags</translation>
+</message>
+<message>
+<source>Instead of a note list use a note tree with all the subfolders (if they are turned on for the note folder)</source>
+<translation type="unfinished">Instead of a note list use a note tree with all the subfolders (if they are turned on for the note folder)</translation>
+</message>
+<message>
+<source>Show notes in the note list with preview</source>
+<translation type="unfinished">Show notes in the note list with preview</translation>
+</message>
+<message>
+<source>Allow empty note files</source>
+<translation type="unfinished">Allow empty note files</translation>
+</message>
+<message>
+<source>Notes larger than this will not be shown in the note list</source>
+<translation type="unfinished">Notes larger than this will not be shown in the note list</translation>
+</message>
+<message>
+<source>Maximum note file size:</source>
+<translation type="unfinished">Maximum note file size:</translation>
+</message>
+<message>
+<source>Regular expressions of note files to ignore, separated by ";"</source>
+<translation type="unfinished">Regular expressions of note files to ignore, separated by ";"</translation>
+</message>
+<message>
+<source>Ignored note files</source>
+<translation type="unfinished">Ignored note files</translation>
+</message>
+<message>
+<source>Sort</source>
+<translation type="unfinished">Sort</translation>
+</message>
+<message>
+<source>Alphabetical</source>
+<translation type="unfinished">Alphabetical</translation>
+</message>
+<message>
+<source>By last change</source>
+<translation type="unfinished">By last change</translation>
+</message>
+<message>
+<source>Order</source>
+<translation type="unfinished">Order</translation>
+</message>
+<message>
+<source>Ascending</source>
+<translation type="unfinished">Ascending</translation>
+</message>
+<message>
+<source>Descending</source>
+<translation type="unfinished">Descending</translation>
+</message>
+<message>
+<source>Note edit panel</source>
+<translation type="unfinished">Note edit panel</translation>
+</message>
+<message>
+<source>If this is disabled you are able to create more complex panel layouts, but all panels will be resized if the window is resized</source>
+<translation type="unfinished">If this is disabled you are able to create more complex panel layouts, but all panels will be resized if the window is resized</translation>
+</message>
+<message>
+<source>Use the note edit panel as fixed central widget to be resized if the window or other panels are resized</source>
+<translation type="unfinished">Use the note edit panel as fixed central widget to be resized if the window or other panels are resized</translation>
+</message>
+<message>
+<source>Restore open note tabs at application startup and when note folders are switched</source>
+<translation type="unfinished">Restore open note tabs at application startup and when note folders are switched</translation>
+</message>
+<message>
+<source>Hide tab close button</source>
+<translation type="unfinished">Hide tab close button</translation>
+</message>
+<message>
+<source>Note subfolders panel</source>
+<translation type="unfinished">Note subfolders panel</translation>
+</message>
+<message>
+<source>Hide 'Find or create note subfolder' search</source>
+<translation type="unfinished">Hide 'Find or create note subfolder' search</translation>
+</message>
+<message>
+<source>Display note subfolders as full tree</source>
+<translation type="unfinished">Display note subfolders as full tree</translation>
+</message>
+<message>
+<source>Show root folder name</source>
+<translation type="unfinished">Show root folder name</translation>
+</message>
+<message>
+<source>Show with full path</source>
+<translation type="unfinished">Show with full path</translation>
+</message>
+<message>
+<source>Clicking a note tab unsets 'All notes' selection</source>
+<translation type="unfinished">Clicking a note tab unsets 'All notes' selection</translation>
+</message>
+<message>
+<source>Regular expressions of note subfolders to ignore, separated by ";"</source>
+<translation type="unfinished">Regular expressions of note subfolders to ignore, separated by ";"</translation>
+</message>
+<message>
+<source>Ignored subfolders</source>
+<translation type="unfinished">Ignored subfolders</translation>
+</message>
+<message>
+<source>Reset ignored subfolders</source>
+<translation type="unfinished">Reset ignored subfolders</translation>
+</message>
+<message>
+<source>Tags panel</source>
+<translation type="unfinished">Tags panel</translation>
+</message>
+<message>
+<source>Hide 'Find or create tag' search</source>
+<translation type="unfinished">Hide 'Find or create tag' search</translation>
+</message>
+<message>
+<source>Hide 'Note count' with tags (increases performance)</source>
+<translation type="unfinished">Hide 'Note count' with tags (increases performance)</translation>
+</message>
+<message>
+<source>By last change / use</source>
+<translation type="unfinished">By last change / use</translation>
+</message>
+<message>
+<source>Navigation panel</source>
+<translation type="unfinished">Navigation panel</translation>
+</message>
+<message>
+<source>Hide navigation item search bar</source>
+<translation type="unfinished">Hide navigation item search bar</translation>
+</message>
+<message>
+<source>Auto-select items in navigation panel when changing cursor position</source>
+<translation type="unfinished">Auto-select items in navigation panel when changing cursor position</translation>
+</message>
+</context>
+<context>
 <name>PasswordDialog</name>
 <message>
 <source>Please enter your password</source>
@@ -4571,6 +6715,69 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <message>
 <source>Hide password</source>
 <translation type="unfinished">Hide password</translation>
+</message>
+</context>
+<context>
+<name>PreviewFontSettingsWidget</name>
+<message>
+<source>Rendering</source>
+<translation type="unfinished">Rendering</translation>
+</message>
+<message>
+<source>Time to wait before refreshing the preview after typing:</source>
+<translation type="unfinished">Time to wait before refreshing the preview after typing:</translation>
+</message>
+<message>
+<source>Reset the debounce time</source>
+<translation type="unfinished">Reset the debounce time</translation>
+</message>
+<message>
+<source>0ms means don't wait for the typing to stop</source>
+<translation type="unfinished">0ms means don't wait for the typing to stop</translation>
+</message>
+<message>
+<source>Use editor highlighting styles also for the preview</source>
+<translation type="unfinished">Use editor highlighting styles also for the preview</translation>
+</message>
+<message>
+<source>Enable underline rendering</source>
+<translation type="unfinished">Enable underline rendering</translation>
+</message>
+<message>
+<source>View text right to left (RTL)</source>
+<translation type="unfinished">View text right to left (RTL)</translation>
+</message>
+<message>
+<source>Ignore code font size to allow zooming</source>
+<translation type="unfinished">Ignore code font size to allow zooming</translation>
+</message>
+<message>
+<source>Exporting</source>
+<translation type="unfinished">Exporting</translation>
+</message>
+<message>
+<source>Use internal export styling for the PDF export and printing of the preview</source>
+<translation type="unfinished">Use internal export styling for the PDF export and printing of the preview</translation>
+</message>
+<message>
+<source>Fonts</source>
+<translation type="unfinished">Fonts</translation>
+</message>
+<message>
+<source>Code font:</source>
+<translation type="unfinished">Code font:</translation>
+</message>
+<message>
+<source>Set a new font</source>
+<translation type="unfinished">Set a new font</translation>
+</message>
+<message>
+<source>Reset font</source>
+<translation type="unfinished">Reset font</translation>
+</message>
+<message>
+<source>Default font:</source>
+<translation type="unfinished">Default font:</translation>
 </message>
 </context>
 <context>
@@ -4716,8 +6923,8 @@ Click 'Cancel' to discard your changes and keep the external version.</translati
 <translation>Ba a San matakin %1</translation>
 </message>
 <message>
-<source>Workspace selector</source>
-<translation>Zaɓin fagen aiki</translation>
+<source>Layout selector</source>
+<translation type="unfinished">Layout selector</translation>
 </message>
 <message>
 <source>Don't ask again!</source>
@@ -5420,6 +7627,139 @@ Kuna so ku saka shi ta wata hanya?</translation>
 </message>
 </context>
 <context>
+<name>ScriptingSettingsWidget</name>
+<message>
+<source>Your scripts</source>
+<translation type="unfinished">Your scripts</translation>
+</message>
+<message>
+<source>&amp;Add script…</source>
+<translation type="unfinished">&amp;Add script…</translation>
+</message>
+<message>
+<source>&amp;Remove script</source>
+<translation type="unfinished">&amp;Remove script</translation>
+</message>
+<message>
+<source>Search scripts</source>
+<translation type="unfinished">Search scripts</translation>
+</message>
+<message>
+<source>Description:</source>
+<translation type="unfinished">Description:</translation>
+</message>
+<message>
+<source>Author(s):</source>
+<translation type="unfinished">Author(s):</translation>
+</message>
+<message>
+<source>Repository:</source>
+<translation type="unfinished">Repository:</translation>
+</message>
+<message>
+<source>Version:</source>
+<translation type="unfinished">Version:</translation>
+</message>
+<message>
+<source>Name:</source>
+<translation type="unfinished">Name:</translation>
+</message>
+<message>
+<source>Script name</source>
+<translation type="unfinished">Script name</translation>
+</message>
+<message>
+<source>Script path:</source>
+<translation type="unfinished">Script path:</translation>
+</message>
+<message>
+<source>Validate script</source>
+<translation type="unfinished">Validate script</translation>
+</message>
+<message>
+<source>You need to reload the scripting engine if you modify a script file</source>
+<translation type="unfinished">You need to reload the scripting engine if you modify a script file</translation>
+</message>
+<message>
+<source>Reload scripting engine</source>
+<translation type="unfinished">Reload scripting engine</translation>
+</message>
+<message>
+<source>Click here to select your QML script</source>
+<translation type="unfinished">Click here to select your QML script</translation>
+</message>
+<message>
+<source>Path to your QML file</source>
+<translation type="unfinished">Path to your QML file</translation>
+</message>
+<message>
+<source>The name</source>
+<translation type="unfinished">The name</translation>
+</message>
+<message>
+<source>New script</source>
+<translation type="unfinished">New script</translation>
+</message>
+<message>
+<source>Take a look at the &lt;a href="%1"&gt;Scripting documentation&lt;/a&gt; to get started fast.</source>
+<translation type="unfinished">Take a look at the &lt;a href="%1"&gt;Scripting documentation&lt;/a&gt; to get started fast.</translation>
+</message>
+<message>
+<source>If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</source>
+<translation type="unfinished">If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</translation>
+</message>
+<message>
+<source>Search script repository</source>
+<translation type="unfinished">Search script repository</translation>
+</message>
+<message>
+<source>Find a script in the script repository</source>
+<translation type="unfinished">Find a script in the script repository</translation>
+</message>
+<message>
+<source>Check for script updates</source>
+<translation type="unfinished">Check for script updates</translation>
+</message>
+<message>
+<source>Add local script</source>
+<translation type="unfinished">Add local script</translation>
+</message>
+<message>
+<source>Add an existing, local script</source>
+<translation type="unfinished">Add an existing, local script</translation>
+</message>
+<message>
+<source>Remove script</source>
+<translation type="unfinished">Remove script</translation>
+</message>
+<message>
+<source>Remove the current script &lt;strong&gt;%1&lt;/strong&gt;?</source>
+<translation type="unfinished">Remove the current script &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+</message>
+<message>
+<source>QML files</source>
+<translation type="unfinished">QML files</translation>
+</message>
+<message>
+<source>Please select your QML file</source>
+<translation type="unfinished">Please select your QML file</translation>
+</message>
+<message>
+<source>Open repository</source>
+<translation type="unfinished">Open repository</translation>
+</message>
+<message>
+<source>Your script seems to be valid</source>
+<translation type="unfinished">Your script seems to be valid</translation>
+</message>
+<message>
+<source>There were script errors:
+%1</source>
+<translation type="unfinished">There were script errors:
+%1</translation>
+</message>
+</context>
+<context>
 <name>SearchFilterManager</name>
 <message numerus="yes">
 <source>Found &lt;strong&gt;%n&lt;/strong&gt; occurrence(s) of &lt;strong&gt;%1&lt;/strong&gt;</source>
@@ -5473,394 +7813,36 @@ Kuna so ku saka shi ta wata hanya?</translation>
 <translation>Fayil manyan fayiloli</translation>
 </message>
 <message>
-<source>Your note folders</source>
-<translation>Fayil na bayanin kula</translation>
-</message>
-<message>
-<source>&amp;Add folder</source>
-<translation>&amp;Sanya babban fayil</translation>
-</message>
-<message>
-<source>&amp;Remove folder</source>
-<translation>&amp;Cire babban fayil</translation>
-</message>
-<message>
-<source>This name will be viewed in all the menus.</source>
-<translation>This name will be viewed in all the menus.</translation>
-</message>
-<message>
-<source>Set the ownCloud path where the note folder path will be synced to on your ownCloud server.</source>
-<translation>Sanya hanyar ownCloud inda za a yi amfani da hanyar babban fayil ɗin bayanin kula akan uwar garken naka.</translation>
-</message>
-<message>
-<source>Use as active note folder</source>
-<translation>Yi amfani azaman babban fayil bayanin kula</translation>
-</message>
-<message>
-<source>Your ownCloud server</source>
-<translation>Sabar saukunan ka</translation>
-</message>
-<message>
-<source>ownCloud server url:</source>
-<translation>url kansa uwar garke:</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Da fatan za a shigar da URL na uwar garke naka, misali: &lt;span style = "font-style: italic;"&gt; https://cloud.yourserver.com &lt;/ span &gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the username on your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Da fatan za a shigar da sunan mai amfani a sabar naka naka. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the password for your username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Da fatan za a shigar da kalmar wucewa don sunan mai amfani. &lt;br/&gt;A halin yanzu za a adana kalmar sirri tare da sauran saitunan, amma ba shi da amintaccen tsaro.&lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
-</message>
-<message>
-<source>connection to web server</source>
-<translation>haɗi zuwa sabar yanar gizo</translation>
-</message>
-<message>
-<source>ownCloud server detected</source>
-<translation>ownCloud uwar garke gano</translation>
-</message>
-<message>
-<source>connection to QOwnNotesAPI</source>
-<translation>haɗi zuwa QOwnNotesAPI</translation>
-</message>
-<message>
-<source>username and password correct</source>
-<translation>sunan mai amfani da kalmar wucewa daidai</translation>
-</message>
-<message>
-<source>unknown</source>
-<translation>ba a sani ba</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to test the connection to your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Danna nan don gwada haɗin haɗi zuwa uwar garken ownCloud.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>versions app enabled on server</source>
-<translation>an kunna sigar app a sabar</translation>
-</message>
-<message>
-<source>trash app enabled on server</source>
-<translation>an kunna app din sharan akan uwar garke</translation>
-</message>
-<message>
-<source>notes path found on server</source>
-<translation>hanyar bayanin kula da aka samo akan sabar</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens your ownCloud server &lt;span style=" font-weight:600;"&gt;App configuration&lt;/span&gt; page in your webbrowser to install or update QOwnNotesAPI and to enable the core apps &lt;span style=" font-weight:600;"&gt;Versions&lt;/span&gt; and &lt;span style=" font-weight:600;"&gt;Deleted files&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Yana buɗe uwar garken naku &lt;span style = "font-nauyi: 600;"&gt; Shafin aikace-aikacen &lt;/span&gt; shafin yanar gizonku don sakawa ko sabunta QOwnNotesAPI kuma don kunna tushen apps &lt;span style = "font-nauyi: 600;"&gt; Ayoyi &lt;/span&gt; da &lt;span style = "font-nauyi: 600;"&gt; Share fayiloli &lt;/span&gt;. &lt;/p&gt; &lt;/body&gt; &lt;/ html&gt;</translation>
-</message>
-<message>
-<source>path</source>
-<translation>hanya</translation>
-</message>
-<message>
-<source>Click here to select your local note path</source>
-<translation>Danna nan don zaɓar hanyar bayanin kula na gida</translation>
-</message>
-<message>
-<source>Click here to select your remote note path on your ownCloud server</source>
-<translation>Latsa nan don zaɓar hanyar bayanin kula ta nesa akan sabbin saoshinku</translation>
-</message>
-<message>
-<source>Click here to use the selected folder from your server as note folder</source>
-<translation>Danna nan don amfani da babban fayil ɗin da aka zaɓa daga uwar garken azaman babban fayil ɗin bayanin kula</translation>
-</message>
-<message>
-<source>Error Message</source>
-<translation>Saƙon Kuskure</translation>
-</message>
-<message>
 <source>Network</source>
 <translation>Hanyar sadarwa</translation>
-</message>
-<message>
-<source>Proxy Settings</source>
-<translation>Saitunan wakili</translation>
-</message>
-<message>
-<source>No Proxy</source>
-<translation>Babu Wakili</translation>
-</message>
-<message>
-<source>Use system proxy</source>
-<translation>Yi amfani da wakili na tsarin</translation>
-</message>
-<message>
-<source>Specify proxy manually as</source>
-<translation>Saka wakili da hannu azaman</translation>
-</message>
-<message>
-<source>Host</source>
-<translation>Mai watsa shiri</translation>
-</message>
-<message>
-<source>Proxy server requires authentication</source>
-<translation>Sabis na wakili na bukatar ingantacciya</translation>
-</message>
-<message>
-<source>SSL Settings</source>
-<translation>Saitunan SSL</translation>
-</message>
-<message>
-<source>Ignore SSL errors</source>
-<translation>Yi watsi da kurakuran SSL</translation>
 </message>
 <message>
 <source>Todo</source>
 <translation>Todo</translation>
 </message>
 <message>
-<source>Default ownCloud calendar</source>
-<translation>Kayan kalanda ownCloud</translation>
-</message>
-<message>
 <source>Interface</source>
 <translation>Karafici</translation>
-</message>
-<message>
-<source>Other CalDAV server</source>
-<translation>Sauran sabar CalDAV</translation>
-</message>
-<message>
-<source>You need to restart the application to let this setting take effect</source>
-<translation>Kuna buƙatar sake kunna aikace-aikacen don barin wannan saiti yayi tasiri</translation>
-</message>
-<message>
-<source>Item sizes in the main window</source>
-<translation>Girman abu a cikin babban taga</translation>
-</message>
-<message>
-<source>Markdown highlighting</source>
-<translation>Sa alama</translation>
-</message>
-<message>
-<source>Enable markdown highlighting</source>
-<translation>Sanya saka alama</translation>
-</message>
-<message>
-<source>Interface language</source>
-<translation>Harshen Intanet</translation>
-</message>
-<message>
-<source>Automatic</source>
-<translation>Kai tsaye</translation>
-</message>
-<message>
-<source>English</source>
-<translation>Turanci</translation>
 </message>
 <message>
 <source>Shortcuts</source>
 <translation>Gajerun hanyoyi</translation>
 </message>
 <message>
-<source>Default font:</source>
-<translation>Tsarin rubutu na asali:</translation>
-</message>
-<message>
-<source>Code font:</source>
-<translation>Font code:</translation>
-</message>
-<message>
 <source>Main window shortcuts</source>
 <translation>Gajerun hanyoyin taga</translation>
-</message>
-<message>
-<source>Do this at your own risk!</source>
-<translation>Yi wannan a kashin kansa!</translation>
-</message>
-<message>
-<source>Ignore all external note folder changes</source>
-<translation>Yi watsi da duk canje-canjen bayanin kula na waje</translation>
-</message>
-<message>
-<source>Use GitHub line breaks</source>
-<translation>Yi amfani da layin GitHub</translation>
-</message>
-<message>
-<source>German</source>
-<translation>Jamusanci</translation>
-</message>
-<message>
-<source>French</source>
-<translation>Faransanci</translation>
-</message>
-<message>
-<source>Polish</source>
-<translation>Yaren mutanen Poland</translation>
-</message>
-<message>
-<source>Portuguese</source>
-<translation>Fotigal</translation>
-</message>
-<message>
-<source>Dutch</source>
-<translation>Yaren mutanen Holland</translation>
-</message>
-<message>
-<source>Hungarian</source>
-<translation>Harshen Harshen</translation>
-</message>
-<message>
-<source>Spanish</source>
-<translation>Harshen Sipaniyanci</translation>
-</message>
-<message>
-<source>Disable tracking of usage data</source>
-<translation>Musaki bin diddigin bayanan amfani</translation>
-</message>
-<message>
-<source>Usage tracking is done on a private Piwik server.</source>
-<translation>Ana yin amfani da saiti ta amfani da sabar Piwik masu zaman kansu.</translation>
-</message>
-<message>
-<source>Disable heartbeat</source>
-<translation>Kashe bugun zuciya</translation>
-</message>
-<message>
-<source>Russian</source>
-<translation>Rashanci</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to consider getting a free SSL certificate from &lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Kuna iya la'akari da samun takardar shedar SSL kyauta daga &lt;a href="https://letsencrypt.org/"&gt; Bari mu rufaffen &lt;/a&gt;. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
-</message>
-<message>
-<source>If you change the language you have to restart the application for the changes to take action.</source>
-<translation>Idan ka canza yaren to dole ne ka sake kunna aikace-aikacen don canje-canje don aiwatarwa.</translation>
-</message>
-<message>
-<source>You need to reload the scripting engine if you modify a script file</source>
-<translation>Kuna buƙatar sake yin amfani da injin rubutun idan kun canza fayil ɗin rubutun</translation>
-</message>
-<message>
-<source>Reload scripting engine</source>
-<translation>Sake buga rubutun injin din</translation>
-</message>
-<message>
-<source>Validate script</source>
-<translation>Rubutun ingantacce</translation>
 </message>
 <message>
 <source>General</source>
 <translation>Janar</translation>
 </message>
 <message>
-<source>Notes</source>
-<translation>Bayanan kula</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked you will always be notified about external modifications, even if current note wasn't edited in the last minute. Recommended is &lt;span style=" font-style:italic;"&gt;unchecked&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Idan an bincika koyaushe za a sanar da kai game da gyare-gyare na waje, koda ba a gyara bayanin yanzu ba a cikin minti na ƙarshe. An ba da shawarar shi ne &lt;span style = "font-style: italic;"&gt; ba'a kula da shi ba &lt;/span&gt;. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
-</message>
-<message>
-<source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
-Just test yourself if you get sync conflicts and set a higher value if so.</source>
-<translation>Kuna iya shiga cikin daidaitawa tare da tsofaffin sigogin sync na kansu lokacin da kuke ƙasa da 10 sec.
-Kawai gwada kanka idan ka sami rikice-rikice kuma saita wata babbar darajar idan haka ne.</translation>
-</message>
-<message>
-<source>Japanese</source>
-<translation>Jafananci</translation>
-</message>
-<message>
-<source>note save interval time [sec]</source>
-<translation>bayanin kula ajiyar tazara [sec]</translation>
-</message>
-<message>
-<source>Notify about all external modifications of the current note</source>
-<translation>Sanarwa game da duk gyare-gyare na waje na bayanin kula na yanzu</translation>
-</message>
-<message>
-<source>Database</source>
-<translation>Bayanai</translation>
-</message>
-<message>
-<source>Reinitialize Database</source>
-<translation>Reinitialize Database</translation>
-</message>
-<message>
-<source>Clear application data and exit</source>
-<translation>Share bayanan aikace-aikace da fita</translation>
-</message>
-<message>
-<source>This button allows you to clear all settings, remove the local todo database and exit QOwnNotes.</source>
-<translation>Wannan maɓallin yana ba ku damar share duk saiti, cire bayanan yanar gizo na gida da kuma fita QOwnNotes.</translation>
-</message>
-<message>
-<source>Clear app data and exit</source>
-<translation>Share bayanan app da fita</translation>
-</message>
-<message>
-<source>Update dialog</source>
-<translation>Sabunta maganganu</translation>
-</message>
-<message>
-<source>External editor</source>
-<translation>Edita na waje</translation>
-</message>
-<message>
-<source>path to external editor, leave empty for default</source>
-<translation>hanya zuwa edita na waje, bar komai don tsoho</translation>
-</message>
-<message>
-<source>set external editor</source>
-<translation>saita edita na waje</translation>
-</message>
-<message>
-<source>App metrics</source>
-<translation>Ajin awo</translation>
-</message>
-<message>
-<source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. Please disable it only if you really can't live with it.</source>
-<translation>Bayanan amfani da ba a sani ba suna taimakawa wajen yanke shawarar menene ɓangarorin QOwnNotes don inganta gaba da nemowa da kuma gyara kwari. Da fatan za a kashe shi kawai idan har da gaske ne ba za ku iya rayuwa da shi ba.</translation>
-</message>
-<message>
-<source>This data includes anonymous information about what features of the app are used.</source>
-<translation>Wannan bayanan ya haɗa da bayanan da ba a sani ba game da abin da ake amfani da fasalin aikin.</translation>
-</message>
-<message>
-<source>App heartbeat</source>
-<translation>App bugun zuciya</translation>
-</message>
-<message>
-<source>A small heartbeat request is sent periodically while QOwnNotes is running. Make a developer happy by letting him know that someone is using QOwnNotes.</source>
-<translation>Ana aika karamin roƙon bugun zuciya lokaci-lokaci yayin da QOwnNotes ke gudana. Sanya mai haɓakawa ya yi farin ciki ta sanar da shi cewa wani yana amfani da QOwnNotes.</translation>
-</message>
-<message>
-<source>Italian</source>
-<translation>Italiyanci</translation>
-</message>
-<message>
 <source>Scripting</source>
 <translation>Yin rubutun</translation>
 </message>
 <message>
-<source>Your scripts</source>
-<translation>Rubutun ku</translation>
-</message>
-<message>
-<source>&amp;Remove script</source>
-<translation>&amp;Cire rubutun</translation>
-</message>
-<message>
-<source>Click here to select your QML script</source>
-<translation>Danna nan don zaɓar rubutun ku na QML</translation>
-</message>
-<message>
 <source>Find setting</source>
 <translation>Nemo wuri</translation>
-</message>
-<message>
-<source>Layout</source>
-<translation>Saiti</translation>
 </message>
 <message>
 <source>Editor</source>
@@ -5895,89 +7877,8 @@ Kawai gwada kanka idan ka sami rikice-rikice kuma saita wata babbar darajar idan
 <translation>Zaɓuɓɓukan Yatsa</translation>
 </message>
 <message>
-<source>Path where your notes are stored locally</source>
-<translation>Hanyar inda aka adana bayanan ku a cikin gida</translation>
-</message>
-<message>
-<source>"Notes" path on your server</source>
-<extracomment>"Notes" should not be translated</extracomment>
-<translation>Hanyar "Bayanan kula" akan uwar garke</translation>
-</message>
-<message>
-<source>&amp;Use as ownCloud path</source>
-<translation>&amp;Yi amfani azaman hanyar ownCloud</translation>
-</message>
-<message>
-<source>Please select your note folder on your ownCloud server:</source>
-<translation>Da fatan za selecti babban fayil na bayanin kula akan sabar ownCloud:</translation>
-</message>
-<message>
-<source>Path on your ownCloud server:</source>
-<translation>Hanya kan sabar sabar:</translation>
-</message>
-<message>
-<source>Name:</source>
-<translation>Suna:</translation>
-</message>
-<message>
-<source>Note folder path:</source>
-<translation>Hanyar babban fayil:</translation>
-</message>
-<message>
-<source>You need to have git installed to make this work!</source>
-<translation>Kuna buƙatar shigar da git don yin wannan aikin!</translation>
-</message>
-<message>
-<source>Use git to keep a local history of your notes</source>
-<translation>Yi amfani da git don adana tarihin gida na bayanan ku</translation>
-</message>
-<message>
-<source>ownCloud support</source>
-<translation>ownCloud tallafi</translation>
-</message>
-<message>
-<source>Enable ownCloud support</source>
-<translation>Taimakawa tallafin ownCloud</translation>
-</message>
-<message>
-<source>Select a connection to edit</source>
-<translation>Zaɓi hanyar haɗi don shirya</translation>
-</message>
-<message>
-<source>Add connection</source>
-<translation>Sanya haɗi</translation>
-</message>
-<message>
-<source>Remove connection</source>
-<translation>Cire haɗi</translation>
-</message>
-<message>
-<source>Username:</source>
-<translation>Sunan mai amfani:</translation>
-</message>
-<message>
-<source>Your ownCloud username</source>
-<translation>Na ownCloud sunan mai amfani</translation>
-</message>
-<message>
-<source>Password:</source>
-<translation>Kalmar sirri:</translation>
-</message>
-<message>
-<source>Your ownCloud password</source>
-<translation>Na ownCloud kalmar sirri</translation>
-</message>
-<message>
-<source>&amp;Connect to ownCloud server</source>
-<translation>&amp;Haɗa zuwa sabar ownCloud</translation>
-</message>
-<message>
-<source>Connection status</source>
-<translation>Halin haɗi</translation>
-</message>
-<message>
-<source>Connection name:</source>
-<translation>Sunan haɗi:</translation>
+<source>Layout presets</source>
+<translation type="unfinished">Layout presets</translation>
 </message>
 <message>
 <source>Color modes</source>
@@ -5988,365 +7889,16 @@ Kawai gwada kanka idan ka sami rikice-rikice kuma saita wata babbar darajar idan
 <translation type="unfinished">MCP server</translation>
 </message>
 <message>
-<source>Be aware that the ownCloud notes app doesn't support subfolders!</source>
-<translation>Kasance da lura cewa app na bayanin kula na sirri baya goyon bayan manyan fayiloli mataimaka!
-</translation>
+<source>Layout preset selector</source>
+<translation type="unfinished">Layout preset selector</translation>
 </message>
 <message>
-<source>Use note subfolders</source>
-<translation>Yi amfani da manyan fayiloli mataimaka</translation>
+<source>You can create a new layout from a preset here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</source>
+<translation type="unfinished">You can create a new layout from a preset here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</translation>
 </message>
 <message>
-<source>The login flow v2 only works with Nextcloud, not with ownCloud. If you have troubles you need to create an app password by hand.</source>
-<translation type="unfinished">The login flow v2 only works with Nextcloud, not with ownCloud. If you have troubles you need to create an app password by hand.</translation>
-</message>
-<message>
-<source>Login to Nextcloud to grant access</source>
-<translation type="unfinished">Login to Nextcloud to grant access</translation>
-</message>
-<message>
-<source>Todo settings</source>
-<translation>Todo saituna</translation>
-</message>
-<message>
-<source>Enable todo calendar support</source>
-<translation>Kunna goyon bayan kalanda</translation>
-</message>
-<message>
-<source>Which cloud connection do you want to use?</source>
-<translation>Wanne haɗin girgije kake son amfani da shi?</translation>
-</message>
-<message>
-<source>Select the calendars you want to use for the Todo list</source>
-<translation>Zaɓi kalandar da kake son amfani da su don jerin sunayen Todo</translation>
-</message>
-<message>
-<source>Todo list settings</source>
-<translation>Saitunan jerin abubuwan Todo</translation>
-</message>
-<message>
-<source>Saving an item also closes the Todo list</source>
-<translation>Adana abu kuma yana rufe jerin Todo</translation>
-</message>
-<message>
-<source>Indonesian</source>
-<translation>Indonesiyan</translation>
-</message>
-<message>
-<source>Bengali</source>
-<translation>Bengali</translation>
-</message>
-<message>
-<source>Bosnian</source>
-<translation>Bosniyanci</translation>
-</message>
-<message>
-<source>Bulgarian</source>
-<translation>Bulgaria</translation>
-</message>
-<message>
-<source>Catalan</source>
-<translation>Katalan</translation>
-</message>
-<message>
-<source>Cebuano</source>
-<translation>Cebuano</translation>
-</message>
-<message>
-<source>Danish</source>
-<translation>Danish</translation>
-</message>
-<message>
-<source>Basque</source>
-<translation>Basque</translation>
-</message>
-<message>
-<source>English (British)</source>
-<translation type="unfinished">English (British)</translation>
-</message>
-<message>
-<source>Estonian</source>
-<translation>Estoniyanci</translation>
-</message>
-<message>
-<source>Filipino</source>
-<translation>Filincinci</translation>
-</message>
-<message>
-<source>Finnish</source>
-<translation>Yaren Finnish</translation>
-</message>
-<message>
-<source>Irish</source>
-<translation>Dan Irish</translation>
-</message>
-<message>
-<source>Galician</source>
-<translation>Galibi</translation>
-</message>
-<message>
-<source>Greek</source>
-<translation>Girkanci</translation>
-</message>
-<message>
-<source>Hausa</source>
-<translation>Hausa</translation>
-</message>
-<message>
-<source>Hebrew</source>
-<translation>Ibrananci</translation>
-</message>
-<message>
-<source>Hindi</source>
-<translation>Hindi</translation>
-</message>
-<message>
-<source>Hiligaynon</source>
-<translation>Hiligaynon</translation>
-</message>
-<message>
-<source>Icelandic</source>
-<translation>Icelandic</translation>
-</message>
-<message>
-<source>Korean</source>
-<translation>Korean</translation>
-</message>
-<message>
-<source>Kurdish</source>
-<translation>Kurdawa</translation>
-</message>
-<message>
-<source>Latvian</source>
-<translation>Harshen Latvia</translation>
-</message>
-<message>
-<source>Lithuanian</source>
-<translation>Lithuaniyanci</translation>
-</message>
-<message>
-<source>Macedonian</source>
-<translation>Masedonia</translation>
-</message>
-<message>
-<source>Norwegian</source>
-<translation>Yaren mutanen Norway</translation>
-</message>
-<message>
-<source>Uzbek</source>
-<translation>Uzbek</translation>
-</message>
-<message>
-<source>Punjabi</source>
-<translation>Harshen Punjabi</translation>
-</message>
-<message>
-<source>Open newly created notes in a new tab</source>
-<translation type="unfinished">Open newly created notes in a new tab</translation>
-</message>
-<message>
-<source>Ignored:</source>
-<translation type="unfinished">Ignored:</translation>
-</message>
-<message>
-<source>Reset all ignored LanguageTool rules so they are checked again</source>
-<translation type="unfinished">Reset all ignored LanguageTool rules so they are checked again</translation>
-</message>
-<message>
-<source>Reset ignored rules</source>
-<translation type="unfinished">Reset ignored rules</translation>
-</message>
-<message>
-<source>Reset all ignored words so they are checked by LanguageTool again</source>
-<translation type="unfinished">Reset all ignored words so they are checked by LanguageTool again</translation>
-</message>
-<message>
-<source>Reset ignored words</source>
-<translation type="unfinished">Reset ignored words</translation>
-</message>
-<message>
-<source>Enable MCP server for AI agent access to notes</source>
-<translation type="unfinished">Enable MCP server for AI agent access to notes</translation>
-</message>
-<message>
-<source>Server port:</source>
-<translation type="unfinished">Server port:</translation>
-</message>
-<message>
-<source>Reset the MCP server port</source>
-<translation type="unfinished">Reset the MCP server port</translation>
-</message>
-<message>
-<source>Persian</source>
-<translation>Bahaushe</translation>
-</message>
-<message>
-<source>Romanian</source>
-<translation>Romaniyanci</translation>
-</message>
-<message>
-<source>Serbian</source>
-<translation>Serbian</translation>
-</message>
-<message>
-<source>Albanian</source>
-<translation>Albaniyanci</translation>
-</message>
-<message>
-<source>Slovak</source>
-<translation>Harshen Slovak</translation>
-</message>
-<message>
-<source>Slovenian</source>
-<translation>Harshen Slovenia</translation>
-</message>
-<message>
-<source>Swedish</source>
-<translation>Yaren mutanen Sweden</translation>
-</message>
-<message>
-<source>Tagalog</source>
-<translation>Tagalog</translation>
-</message>
-<message>
-<source>Turkish</source>
-<translation>Baturke</translation>
-</message>
-<message>
-<source>Urdu</source>
-<translation>Urdu</translation>
-</message>
-<message>
-<source>Chinese Simplified</source>
-<translation>Sauƙaƙe na Sinanci</translation>
-</message>
-<message>
-<source>Chinese Traditional</source>
-<translation>Al'adun kasar Sin</translation>
-</message>
-<message>
-<source>System tray</source>
-<translation>Tashar tsarin</translation>
-</message>
-<message>
-<source>Show system tray icon</source>
-<translation>Nuna alamar tire</translation>
-</message>
-<message>
-<source>Start application hidden</source>
-<translation>Fara aikace-aikace a ɓoye</translation>
-</message>
-<message>
-<source>Interface style</source>
-<translation>Tsarin Interface</translation>
-</message>
-<message>
-<source>Override interface font size</source>
-<translation>Retare girman font dubawa</translation>
-</message>
-<message>
-<source>Interface font size:</source>
-<translation>Girman rubutun hoto:</translation>
-</message>
-<message>
-<source>&amp;Add script…</source>
-<translation>&amp;Sanya rubutun…</translation>
-</message>
-<message>
-<source>Use legacy way to link to notes, images and attachments</source>
-<translation>Yi amfani da hanyar gado don haɗi zuwa bayanin kula, hotuna da haɗe-haɗe</translation>
-</message>
-<message>
-<source>When opening notes the cursor position inside the note will now be restored to the position when the note was last visited in the current session</source>
-<translation>Lokacin buɗe bayanin kula da siginan kwamfuta a cikin bayanin kula yanzu za'a dawo dashi wurin lokacin da aka kula da bayanin kula a zaman na yanzu</translation>
-</message>
-<message>
-<source>By default the headline will generated automatically</source>
-<translation>Ta hanyar tsohuwa kanun labarai zai fito ta atomatik</translation>
-</message>
-<message>
-<source>The shortcut to create a new note asks for a headline</source>
-<translation>Gajeriyar hanyar ƙirƙirar sabon bayanin kula yana buƙatar taken</translation>
-</message>
-<message>
-<source>Automatically close the note folder database to prevent problems with sync tools</source>
-<translation>Ta atomatik rufe bayanan fayil ɗin bayanin kula ta atomatik don hana matsaloli tare da kayan aikin daidaitawa</translation>
-</message>
-<message>
-<source>Automatically close the note folder database</source>
-<translation>Ta atomatik rufe bayanan babban fayil ɗin bayanin kula</translation>
-</message>
-<message>
-<source>Search engine</source>
-<translation>Injin bincike</translation>
-</message>
-<message>
-<source>Message boxes</source>
-<translation>Kwalaye na sakonni</translation>
-</message>
-<message>
-<source>Reset message boxes</source>
-<translation>Sake saita kwalaye na sakonni</translation>
-</message>
-<message>
-<source>Import settings</source>
-<translation>Shigo da saiti</translation>
-</message>
-<message>
-<source>Export settings</source>
-<translation>Saitunan fitarwa</translation>
-</message>
-<message>
-<source>Open issue assistant</source>
-<translation>Bude batun mataimakin</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The best way to post issues is to use the issue assistant by pressing the &lt;span style=" font-weight:600;"&gt;Open issue assistant&lt;/span&gt; button on the bottom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Hanya mafi kyawun hanyar sanya batutuwan ita ce amfani da mai taimakawa batun ta hanyar latsa &lt;span style = "font-nauyi: 600;"&gt; Bude mai taimakawa batun &lt;/span&gt; kasan. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
-</message>
-<message>
-<source>Ignore code font size to allow zooming</source>
-<translation>Yi watsi da girman font lambar don ba da izinin zuƙowa</translation>
-</message>
-<message>
-<source>Rendering</source>
-<translation>Rendering</translation>
-</message>
-<message>
-<source>Enable underline rendering</source>
-<translation>Sanya ma'ana daidai</translation>
-</message>
-<message>
-<source>Fully highlight blockquotes</source>
-<translation>Cikakken haskakawa</translation>
-</message>
-<message>
-<source>Note-edit cursor width:</source>
-<translation>Faifan siginan bayanin kula:</translation>
-</message>
-<message>
-<source>Enable Vim mode (some QOwnNotes shortcuts will not work)</source>
-<translation>Sanya yanayin Vim (wasu gajerun hanyoyin QOwnNotes ba zasuyi aiki ba)</translation>
-</message>
-<message>
-<source>Cloud connection:</source>
-<translation>Cloud dangane:</translation>
-</message>
-<message>
-<source>Opens your ownCloud server App Password page in your webbrowser to create a new app password for the application</source>
-<translation>Yana buɗe shafin ownCloud da lambar sirri a cikin mai amfani da yanar gizonku don ƙirƙirar sabuwar kalmar sirri don aikace-aikacen</translation>
-</message>
-<message>
-<source>Open your ownCloud server App Password page</source>
-<translation>Bude shafin ownCloud</translation>
-</message>
-<message>
-<source>Māori</source>
-<translation>Māori</translation>
-</message>
-<message>
-<source>Malay</source>
-<translation type="unfinished">Malay</translation>
+<source>Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Layouts&lt;/i&gt; for different panel configurations.</source>
+<translation type="unfinished">Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Layouts&lt;/i&gt; for different panel configurations.</translation>
 </message>
 <message>
 <source>Browser extension / command snippets</source>
@@ -6365,106 +7917,6 @@ Kawai gwada kanka idan ka sami rikice-rikice kuma saita wata babbar darajar idan
 <translation type="unfinished">Experimental</translation>
 </message>
 <message>
-<source>This also allows note files to be renamed</source>
-<translation type="unfinished">This also allows note files to be renamed</translation>
-</message>
-<message>
-<source>You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</source>
-<translation type="unfinished">You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</translation>
-</message>
-<message>
-<source>You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</source>
-<translation type="unfinished">You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</translation>
-</message>
-<message>
-<source>Enable QOwnNotesAPI app support</source>
-<translation type="unfinished">Enable QOwnNotesAPI app support</translation>
-</message>
-<message>
-<source>If your password doesn't work, create an app password (button on the right)</source>
-<translation type="unfinished">If your password doesn't work, create an app password (button on the right)</translation>
-</message>
-<message>
-<source>Cancel Nextcloud login</source>
-<translation type="unfinished">Cancel Nextcloud login</translation>
-</message>
-<message>
-<source>Enable Nextcloud Deck support</source>
-<translation type="unfinished">Enable Nextcloud Deck support</translation>
-</message>
-<message>
-<source>You can access your ownCloud server or a generic CalDAV server to manage your todo lists.</source>
-<translation type="unfinished">You can access your ownCloud server or a generic CalDAV server to manage your todo lists.</translation>
-</message>
-<message>
-<source>If you want to help to translate QOwnNotes or update an existing translation please read: &lt;a href="%1"&gt;How can I help to translate QOwnNotes?&lt;/a&gt;</source>
-<translation type="unfinished">If you want to help to translate QOwnNotes or update an existing translation please read: &lt;a href="%1"&gt;How can I help to translate QOwnNotes?&lt;/a&gt;</translation>
-</message>
-<message>
-<source>Khmer</source>
-<translation type="unfinished">Khmer</translation>
-</message>
-<message>
-<source>Shona</source>
-<translation type="unfinished">Shona</translation>
-</message>
-<message>
-<source>Sinhala</source>
-<translation type="unfinished">Sinhala</translation>
-</message>
-<message>
-<source>Thai</source>
-<translation>Harshen Thai</translation>
-</message>
-<message>
-<source>Vietnamese</source>
-<translation>Harshen Vietnamese</translation>
-</message>
-<message>
-<source>Xhosa</source>
-<translation type="unfinished">Xhosa</translation>
-</message>
-<message>
-<source>Yiddish</source>
-<translation type="unfinished">Yiddish</translation>
-</message>
-<message>
-<source>Zulu</source>
-<translation type="unfinished">Zulu</translation>
-</message>
-<message>
-<source>Search for language</source>
-<translation>Neman harshe</translation>
-</message>
-<message>
-<source>Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</source>
-<translation type="unfinished">Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</translation>
-</message>
-<message>
-<source>Hide menu icons</source>
-<translation type="unfinished">Hide menu icons</translation>
-</message>
-<message>
-<source>Override interface scaling factor</source>
-<translation type="unfinished">Override interface scaling factor</translation>
-</message>
-<message>
-<source>Interface scaling factor:</source>
-<translation type="unfinished">Interface scaling factor:</translation>
-</message>
-<message>
-<source>Status bar</source>
-<translation type="unfinished">Status bar</translation>
-</message>
-<message>
-<source>Show note path</source>
-<translation type="unfinished">Show note path</translation>
-</message>
-<message>
-<source>Only show relative note path</source>
-<translation type="unfinished">Only show relative note path</translation>
-</message>
-<message>
 <source>Action name</source>
 <translation>Sunan aiki</translation>
 </message>
@@ -6477,281 +7929,8 @@ Kawai gwada kanka idan ka sami rikice-rikice kuma saita wata babbar darajar idan
 <translation>Gajeriyar hanya ta duniya</translation>
 </message>
 <message>
-<source>Disable this if you want to launch the application without opening a note</source>
-<translation>Musaki wannan idan kuna son ƙaddamar da aikace-aikacen ba tare da buɗe bayanin kula ba</translation>
-</message>
-<message>
-<source>Open last accessed note at application startup</source>
-<translation>Buɗe bayanin karshe da aka yi amfani da shi yayin fara aikace-aikace</translation>
-</message>
-<message>
-<source>Read-only mode</source>
-<translation type="unfinished">Read-only mode</translation>
-</message>
-<message>
-<source>Enable or disable the read-only mode feature</source>
-<translation type="unfinished">Enable or disable the read-only mode feature</translation>
-</message>
-<message>
-<source>Enable read-only mode</source>
-<translation type="unfinished">Enable read-only mode</translation>
-</message>
-<message>
-<source>Start application in read-only mode</source>
-<translation type="unfinished">Start application in read-only mode</translation>
-</message>
-<message>
-<source>Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</source>
-<translation type="unfinished">Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>Search scripts</source>
-<translation type="unfinished">Search scripts</translation>
-</message>
-<message>
-<source>When inactive, enter read-only mode automatically after:</source>
-<translation type="unfinished">When inactive, enter read-only mode automatically after:</translation>
-</message>
-<message>
-<source> sec</source>
-<extracomment>short for seconds</extracomment>
-<translation type="unfinished"> sec</translation>
-</message>
-<message>
-<source>Forget all "Don't ask again" choices in message boxes</source>
-<translation type="unfinished">Forget all "Don't ask again" choices in message boxes</translation>
-</message>
-<message>
-<source>Note file extensions</source>
-<translation type="unfinished">Note file extensions</translation>
-</message>
-<message>
-<source>Files with the listed file extensions will be recognized as notes, the selected file extension will be used for new notes.</source>
-<translation type="unfinished">Files with the listed file extensions will be recognized as notes, the selected file extension will be used for new notes.</translation>
-</message>
-<message>
-<source>Add a new note file extension</source>
-<translation type="unfinished">Add a new note file extension</translation>
-</message>
-<message>
-<source>Remove selected note file extension</source>
-<translation type="unfinished">Remove selected note file extension</translation>
-</message>
-<message>
-<source>Checks the disk database integrity and fixes problems</source>
-<translation type="unfinished">Checks the disk database integrity and fixes problems</translation>
-</message>
-<message>
-<source>Check integrity</source>
-<translation type="unfinished">Check integrity</translation>
-</message>
-<message>
-<source>Be warned that reinitializing the database will also remove your cached todo items and configured note folders and scripts!</source>
-<translation type="unfinished">Be warned that reinitializing the database will also remove your cached todo items and configured note folders and scripts!</translation>
-</message>
-<message>
-<source>GitHub doesn't need two spaces at the end of the line to do a line break</source>
-<translation>GitHub baya buƙatar sarari biyu a ƙarshen layin don yin hutun layi</translation>
-</message>
-<message>
-<source>This is the best way to open an issue</source>
-<translation>Wannan ita ce hanya mafi kyau don buɗe batun</translation>
-</message>
-<message>
-<source>Please use this in the issue tracker</source>
-<translation>Da fatan za a yi amfani da wannan a cikin maɓallin batun</translation>
-</message>
-<message>
-<source>&amp;Copy debug information to clipboard</source>
-<translation>&amp;Kwafa bayanan cire kuskure zuwa allo</translation>
-</message>
-<message>
-<source>Please don't use this in the issue tracker</source>
-<translation>Da fatan kar a yi amfani da wannan a cikin bin diddigin batun</translation>
-</message>
-<message>
-<source>Time to wait before refreshing the preview after typing:</source>
-<translation type="unfinished">Time to wait before refreshing the preview after typing:</translation>
-</message>
-<message>
-<source>Reset the debounce time</source>
-<translation type="unfinished">Reset the debounce time</translation>
-</message>
-<message>
-<source>0ms means don't wait for the typing to stop</source>
-<translation type="unfinished">0ms means don't wait for the typing to stop</translation>
-</message>
-<message>
-<source>Use editor highlighting styles also for the preview</source>
-<translation>Yi amfani da nuna edita don saukaka salon ma domin samfotin</translation>
-</message>
-<message>
-<source>Exporting</source>
-<translation>Fitar da kaya</translation>
-</message>
-<message>
-<source>Use internal export styling for the PDF export and printing of the preview</source>
-<translation>Yi amfani da sajan fitarwa na ciki don fitarwa zuwa fitowar PDF da bugawar samfotin</translation>
-</message>
-<message>
-<source>Markdown language server</source>
-<translation type="unfinished">Markdown language server</translation>
-</message>
-<message>
-<source>Enable Markdown language server (LSP)</source>
-<translation type="unfinished">Enable Markdown language server (LSP)</translation>
-</message>
-<message>
-<source>Command:</source>
-<translation type="unfinished">Command:</translation>
-</message>
-<message>
-<source>Arguments:</source>
-<translation type="unfinished">Arguments:</translation>
-</message>
-<message>
-<source>Optional arguments separated by spaces.</source>
-<translation type="unfinished">Optional arguments separated by spaces.</translation>
-</message>
-<message>
-<source>Optional arguments</source>
-<translation type="unfinished">Optional arguments</translation>
-</message>
-<message>
 <source>LanguageTool</source>
 <translation type="unfinished">LanguageTool</translation>
-</message>
-<message>
-<source>Enable grammar and style checking with LanguageTool</source>
-<translation type="unfinished">Enable grammar and style checking with LanguageTool</translation>
-</message>
-<message>
-<source>Test Connection</source>
-<translation type="unfinished">Test Connection</translation>
-</message>
-<message>
-<source>Language:</source>
-<translation type="unfinished">Language:</translation>
-</message>
-<message>
-<source>API key:</source>
-<translation type="unfinished">API key:</translation>
-</message>
-<message>
-<source>Optional premium or cloud API key</source>
-<translation type="unfinished">Optional premium or cloud API key</translation>
-</message>
-<message>
-<source>Check delay:</source>
-<translation type="unfinished">Check delay:</translation>
-</message>
-<message>
-<source> ms</source>
-<translation type="unfinished"> ms</translation>
-</message>
-<message>
-<source>Categories:</source>
-<translation type="unfinished">Categories:</translation>
-</message>
-<message>
-<source>Spelling</source>
-<translation type="unfinished">Spelling</translation>
-</message>
-<message>
-<source>Grammar</source>
-<translation type="unfinished">Grammar</translation>
-</message>
-<message>
-<source>Style</source>
-<translation type="unfinished">Style</translation>
-</message>
-<message>
-<source>Punctuation</source>
-<translation type="unfinished">Punctuation</translation>
-</message>
-<message>
-<source>Typography</source>
-<translation type="unfinished">Typography</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kuna iya bincika duk samammatun &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;tsarin lokaci&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-</message>
-<message>
-<source>Note that disabling this will also disable the navigation panel!</source>
-<translation type="unfinished">Note that disabling this will also disable the navigation panel!</translation>
-</message>
-<message>
-<source>Show line numbers and bookmark markers (1-9)</source>
-<translation type="unfinished">Show line numbers and bookmark markers (1-9)</translation>
-</message>
-<message>
-<source>Show small Markdown preview images in the editor, if there is no text after the image</source>
-<translation type="unfinished">Show small Markdown preview images in the editor, if there is no text after the image</translation>
-</message>
-<message>
-<source>Shows fold buttons for Markdown headings and allows collapsing their contents</source>
-<translation type="unfinished">Shows fold buttons for Markdown headings and allows collapsing their contents</translation>
-</message>
-<message>
-<source>Enable heading folding in the editor</source>
-<translation type="unfinished">Enable heading folding in the editor</translation>
-</message>
-<message>
-<source>Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</source>
-<translation type="unfinished">Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</translation>
-</message>
-<message>
-<source>Hide markdown formatting syntax on inactive lines</source>
-<translation type="unfinished">Hide markdown formatting syntax on inactive lines</translation>
-</message>
-<message>
-<source>Enable hanging indentation for Markdown lists</source>
-<translation type="unfinished">Enable hanging indentation for Markdown lists</translation>
-</message>
-<message>
-<source>Disable cursor blinking</source>
-<translation>Kashe siginar siginar kwamfuta</translation>
-</message>
-<message>
-<source>Automatically remove trailing spaces in the note text</source>
-<translation>Ta atomatik cire sarari masu ɓoye a cikin rubutun bayanin kula</translation>
-</message>
-<message>
-<source>Git library</source>
-<translation type="unfinished">Git library</translation>
-</message>
-<message>
-<source>Support for the git library libgit2 is activated.</source>
-<translation type="unfinished">Support for the git library libgit2 is activated.</translation>
-</message>
-<message>
-<source>Don't forget to enable git support for your note folders.</source>
-<translation type="unfinished">Don't forget to enable git support for your note folders.</translation>
-</message>
-<message>
-<source>Allow empty note files</source>
-<translation type="unfinished">Allow empty note files</translation>
-</message>
-<message>
-<source>Notes larger than this will not be shown in the note list</source>
-<translation type="unfinished">Notes larger than this will not be shown in the note list</translation>
-</message>
-<message>
-<source>Maximum note file size:</source>
-<translation type="unfinished">Maximum note file size:</translation>
-</message>
-<message>
-<source>Hide tab close button</source>
-<translation type="unfinished">Hide tab close button</translation>
 </message>
 <message>
 <source>AI autocomplete</source>
@@ -6766,619 +7945,8 @@ Kawai gwada kanka idan ka sami rikice-rikice kuma saita wata babbar darajar idan
 <translation type="unfinished">Enable AI autocomplete in note editor</translation>
 </message>
 <message>
-<source>Search script repository for AI integration scripts</source>
-<translation type="unfinished">Search script repository for AI integration scripts</translation>
-</message>
-<message>
-<source>API keys</source>
-<translation type="unfinished">API keys</translation>
-</message>
-<message>
-<source>OpenAI API key:</source>
-<translation type="unfinished">OpenAI API key:</translation>
-</message>
-<message>
-<source>Create Groq API key</source>
-<translation type="unfinished">Create Groq API key</translation>
-</message>
-<message>
-<source>Create OpenAI API key</source>
-<translation type="unfinished">Create OpenAI API key</translation>
-</message>
-<message>
-<source>Test connection</source>
-<comment>"Test" as verb</comment>
-<translation type="unfinished">Test connection</translation>
-</message>
-<message>
-<source>API settings</source>
-<translation type="unfinished">API settings</translation>
-</message>
-<message>
-<source>Response timeout:</source>
-<translation type="unfinished">Response timeout:</translation>
-</message>
-<message>
-<source>Time the application will wait for a response from the server before timing out and returning an error message.</source>
-<translation type="unfinished">Time the application will wait for a response from the server before timing out and returning an error message.</translation>
-</message>
-<message>
-<source>sec</source>
-<comment>seconds</comment>
-<translation>sec</translation>
-</message>
-<message>
-<source>AI backends added via the scripting engine</source>
-<translation type="unfinished">AI backends added via the scripting engine</translation>
-</message>
-<message>
-<source>To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</source>
-<translation type="unfinished">To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</translation>
-</message>
-<message>
-<source>You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</source>
-<translation type="unfinished">You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</translation>
-</message>
-<message>
-<source>Alternatively, you can also look in the script repository for already created AI integration scripts.</source>
-<translation type="unfinished">Alternatively, you can also look in the script repository for already created AI integration scripts.</translation>
-</message>
-<message>
-<source>Groq API key:</source>
-<translation type="unfinished">Groq API key:</translation>
-</message>
-<message>
-<source>API key</source>
-<translation type="unfinished">API key</translation>
-</message>
-<message>
-<source>Tabs and Indents</source>
-<translation>Tabs da Manuniya</translation>
-</message>
-<message>
-<source>Use tab character instead of spaces</source>
-<translation>Yi amfani da yanayin tab maimakon filaye</translation>
-</message>
-<message>
-<source>Indent:</source>
-<translation>Shiga ciki:</translation>
-</message>
-<message>
-<source>Regular expressions of note subfolders to ignore, separated by ";"</source>
-<translation>Abubuwan nuna rubutu na yau da kullun masu nuna alama don watsi, ";" rabe ta ";"
-</translation>
-</message>
-<message>
-<source>Ignored note files</source>
-<translation type="unfinished">Ignored note files</translation>
-</message>
-<message>
-<source>Use checksums to detect external modifications to unsaved notes</source>
-<translation type="unfinished">Use checksums to detect external modifications to unsaved notes</translation>
-</message>
-<message>
-<source>Enable wiki-style link support [[note name]]</source>
-<translation type="unfinished">Enable wiki-style link support [[note name]]</translation>
-</message>
-<message>
-<source>Select the path of the git binary</source>
-<translation type="unfinished">Select the path of the git binary</translation>
-</message>
-<message>
-<source>Regular expressions of note files to ignore, separated by ";"</source>
-<translation type="unfinished">Regular expressions of note files to ignore, separated by ";"</translation>
-</message>
-<message>
-<source>Ignored subfolders</source>
-<translation>Maɓallai manyan fayilolin mata
-</translation>
-</message>
-<message>
-<source>Reset ignored subfolders</source>
-<translation>Sake saita sake saiti babban folda
-</translation>
-</message>
-<message>
-<source>Clicking a note tab unsets 'All notes' selection</source>
-<translation type="unfinished">Clicking a note tab unsets 'All notes' selection</translation>
-</message>
-<message>
-<source>Restore open note tabs at application startup and when note folders are switched</source>
-<translation>Mayar da maɓallin bayanin kula a buɗe a aikace-aikacen aikace-aikace kuma lokacin da manyan fayilolin rubutu suke kunnawa</translation>
-</message>
-<message>
-<source>Auto-select items in navigation panel when changing cursor position</source>
-<translation type="unfinished">Auto-select items in navigation panel when changing cursor position</translation>
-</message>
-<message>
-<source>Hide 'Note count' with tags (increases performance)</source>
-<translation>Boye 'lambar bayanin kula' tare da kalmomin shiga (yana kara aiki)</translation>
-</message>
-<message>
-<source>Show the number of matches in each note</source>
-<translation>Nuna yawan adadin a cikin kowane bayanin kula</translation>
-</message>
-<message>
-<source>Command snippets</source>
-<translation type="unfinished">Command snippets</translation>
-</message>
-<message>
-<source>Tag name for commands notes</source>
-<translation type="unfinished">Tag name for commands notes</translation>
-</message>
-<message>
-<source>Commands tag:</source>
-<translation type="unfinished">Commands tag:</translation>
-</message>
-<message>
-<source>Commands note name:</source>
-<translation type="unfinished">Commands note name:</translation>
-</message>
-<message>
-<source>Note name for adding new commands</source>
-<translation type="unfinished">Note name for adding new commands</translation>
-</message>
-<message>
-<source>Bookmark suggestion API</source>
-<translation type="unfinished">Bookmark suggestion API</translation>
-</message>
-<message>
-<source>Enable Homepage-compatible bookmark suggestions API</source>
-<translation type="unfinished">Enable Homepage-compatible bookmark suggestions API</translation>
-</message>
-<message>
-<source>Suggestion API port:</source>
-<translation type="unfinished">Suggestion API port:</translation>
-</message>
-<message>
-<source>Reset the suggestion API port</source>
-<translation type="unfinished">Reset the suggestion API port</translation>
-</message>
-<message>
-<source>If this is empty when saved, a new security token will be generated automatically.</source>
-<translation type="unfinished">If this is empty when saved, a new security token will be generated automatically.</translation>
-</message>
-<message>
-<source>You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</source>
-<translation type="unfinished">You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</translation>
-</message>
-<message>
-<source>QOwnNotes web application</source>
-<translation type="unfinished">QOwnNotes web application</translation>
-</message>
-<message>
-<source>A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</source>
-<translation type="unfinished">A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</translation>
-</message>
-<message>
-<source>Server URL:</source>
-<translation type="unfinished">Server URL:</translation>
-</message>
-<message>
-<source>Show QR code</source>
-<translation type="unfinished">Show QR code</translation>
-</message>
-<message>
-<source>Security token:</source>
-<translation type="unfinished">Security token:</translation>
-</message>
-<message>
-<source>Install the &lt;a href="%1"&gt;Web Companion browser extension&lt;/a&gt; from the &lt;a href="%2"&gt;Chrome Web Store&lt;/a&gt; or &lt;a href="%3"&gt;Firefox Add-ons page&lt;/a&gt; to use QOwnNotes as web clipper or for bookmark management.</source>
-<translation type="unfinished">Install the &lt;a href="%1"&gt;Web Companion browser extension&lt;/a&gt; from the &lt;a href="%2"&gt;Chrome Web Store&lt;/a&gt; or &lt;a href="%3"&gt;Firefox Add-ons page&lt;/a&gt; to use QOwnNotes as web clipper or for bookmark management.</translation>
-</message>
-<message>
-<source>Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</source>
-<translation type="unfinished">Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</translation>
-</message>
-<message>
-<source>You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
-<translation type="unfinished">You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</translation>
-</message>
-<message>
-<source>You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</source>
-<translation type="unfinished">You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</translation>
-</message>
-<message>
-<source>Copy security token to clipboard</source>
-<translation type="unfinished">Copy security token to clipboard</translation>
-</message>
-<message>
-<source>Generate new security token</source>
-<translation type="unfinished">Generate new security token</translation>
-</message>
-<message>
-<source>Reset the URL to default</source>
-<translation type="unfinished">Reset the URL to default</translation>
-</message>
-<message>
-<source>QOwnNotes web application support</source>
-<translation type="unfinished">QOwnNotes web application support</translation>
-</message>
-<message>
-<source>Enable web application support</source>
-<translation type="unfinished">Enable web application support</translation>
-</message>
-<message>
-<source>Note list panel</source>
-<translation>Bayanin jerin abubuwan lura</translation>
-</message>
-<message>
-<source>Show notes in the note list with preview</source>
-<translation>Nuna bayanin kula a jerin bayanin kula tare da samfoti</translation>
-</message>
-<message>
-<source>Instead of a note list use a note tree with all the subfolders (if they are turned on for the note folder)</source>
-<translation>Madadin jerin bayanin kula yi amfani da itace bayanin kula tare da duk manyan mataimaka (idan an kunna su ga fayil ɗin bayanin kula)</translation>
-</message>
-<message>
-<source>Note folder panel</source>
-<translation>Bayanin fayil ɗin fayil
-</translation>
-</message>
-<message>
-<source>Show note folders as buttons instead of in a select box</source>
-<translation>Nuna manyan fayilolin bayanin kula azaman maɓallan maimakon a cikin akwatin zaɓi</translation>
-</message>
-<message>
-<source>Enable local trash to keep a copy of trashed notes</source>
-<translation type="unfinished">Enable local trash to keep a copy of trashed notes</translation>
-</message>
-<message>
-<source>Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Workspaces&lt;/i&gt; for different panel configurations.</source>
-<translation>Za a iya kunna ko kashe bangarori a cikin babban &lt;i&gt; Window / bangarori &lt;/i&gt; kuma zaka iya saita &lt;i&gt; Wuraren aiki &lt;/i&gt; daban-daban domin saitawar kwamiti.</translation>
-</message>
-<message>
-<source>Bookmarks</source>
-<translation>Alamomin</translation>
-</message>
-<message>
-<source>Notes with this tag will be used for fetching bookmarks</source>
-<translation>Notes tare da wannan alamar za'a yi amfani dasu don samo alamun alamun shafi</translation>
-</message>
-<message>
-<source>Tag name for bookmarks notes</source>
-<translation>Yi wa alama alama don alamun rubutu</translation>
-</message>
-<message>
-<source>Bookmarks tag:</source>
-<translation>Alamar alamomin:</translation>
-</message>
-<message>
-<source>By default the browser extension will show all links of the current note. You can also make it show special bookmark links of notes with a certain tag. For more information about the bookmark link syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
-<translation>Ta hanyar tsohuwar hanyar mai binciken zai nuna duk hanyoyin haɗin bayanin sanarwa na yanzu. Hakanan zaka iya sa ya nuna alamomin alamar shafi na musamman tare da takamammen alama. Don ƙarin bayani game da hanyar daidaita alamomin alamar danna danna &lt;a href="%1"&gt; nan &lt;/a&gt;.</translation>
-</message>
-<message>
-<source>Bookmarks note name:</source>
-<translation>Sunan bayanin kula na alamun shafi:</translation>
-</message>
-<message>
-<source>This note will be used for adding new bookmarks from the browser extension</source>
-<translation>Za'a yi amfani da wannan bayanin don ƙara sabbin alamun shafi daga haɓakar mai lilo</translation>
-</message>
-<message>
-<source>Note name for adding new bookmarks</source>
-<translation>Lura sunan don ƙara sabon alamun shafi</translation>
-</message>
-<message>
-<source>Web socket server</source>
-<translation>Sabar yanar gizo soket</translation>
-</message>
-<message>
-<source>Socket server port:</source>
-<translation>Soket sabar tashar jiragen ruwa:</translation>
-</message>
-<message>
-<source>Reset the socket server port</source>
-<translation type="unfinished">Reset the socket server port</translation>
-</message>
-<message>
-<source>Show security token</source>
-<translation>Nuna alamar tsaro</translation>
-</message>
-<message>
-<source>Web socket server support</source>
-<translation>Sabar soket na yanar gizo yana goyan baya</translation>
-</message>
-<message>
-<source>Enable socket server</source>
-<translation>Sanya sabar soket</translation>
-</message>
-<message>
-<source>Note edit panel</source>
-<translation>Bayanin gyara panel</translation>
-</message>
-<message>
-<source>If this is disabled you are able to create more complex panel layouts, but all panels will be resized if the window is resized</source>
-<translation>Idan wannan aka kashe za ku sami damar ƙirƙirar shimfidu masu rikitarwa, amma dukkanin bangarori za a sake girman su idan taga ya sake girman</translation>
-</message>
-<message>
-<source>Use the note edit panel as fixed central widget to be resized if the window or other panels are resized</source>
-<translation>Yi amfani da bayanin shirya bayanin kula azaman widget din tsakiyar da za'a gyara idan taga ko sauran bangarori</translation>
-</message>
-<message>
-<source>Note search panel</source>
-<translation>Bayanin binciken bincike</translation>
-</message>
-<message>
-<source>Disable auto-completion of previous searches</source>
-<translation>A kashe kammala binciken baya</translation>
-</message>
-<message>
-<source>Navigation panel</source>
-<translation>Bangon tashi</translation>
-</message>
-<message>
-<source>Hide navigation item search bar</source>
-<translation>Boye sandar binciken abin nema</translation>
-</message>
-<message>
-<source>Local trash settings</source>
-<translation>Saitunan shara na gida</translation>
-</message>
-<message>
-<source>Remove trashed notes after:</source>
-<translation>Cire bayanan da aka tarko bayan:</translation>
-</message>
-<message>
-<source> days</source>
-<extracomment>seconds</extracomment>
-<translation>kwana</translation>
-</message>
-<message>
-<source>Automatically remove trashed notes after a certain time</source>
-<translation>Kai tsaye cire bayanan abin da aka fashe bayan wani lokaci</translation>
-</message>
-<message>
-<source>Local trash support</source>
-<translation>Taimako na shara</translation>
-</message>
-<message>
-<source>Layout selector</source>
-<translation>Zaɓi mai zaɓi</translation>
-</message>
-<message>
-<source>You can set a new layout here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</source>
-<translation>Kuna iya saita sabon saiti a nan. Lura cewa koyaushe zaka iya canza matsayin bangarorin tare da maɓallin &lt;i&gt; Buše bangarori &lt;/i&gt;.</translation>
-</message>
-<message>
-<source>Reset the cursor width</source>
-<translation>Sake saita siginar siginan kwamfuta</translation>
-</message>
-<message>
-<source>External git log command to show the git versions of a note</source>
-<translation>Umurnin git na waje don nuna git iri na bayanin kula</translation>
-</message>
-<message>
-<source>Enter a command to be used to show a git log (like for example "gitk")</source>
-<extracomment>Please don't translate "%notePath%"</extracomment>
-<translation>Shigar da umarnin da za a yi amfani da shi don nuna git log (misali "gitk")</translation>
-</message>
-<message>
-<source>If you use this setting you will get a new menu entry to show the git versions if you right-click a note.</source>
-<extracomment>Please don't translate "%notePath%"</extracomment>
-<translation>Idan kayi amfani da wannan saitin zaka sami sabon shigowar menu domin nuna nau'in git din idan ka latsa bayanin kula.</translation>
-</message>
-<message>
-<source>Show all notes of a tag including the notes of their children-tags</source>
-<translation>Nuna duk bayanan alamun alama gami da bayanin alamun yaransu</translation>
-</message>
-<message>
-<source>Show all notes in a folder including their subfolders (only works if subfolders are turned on)</source>
-<translation>Nuna duk bayanan kula a babban fayil ciki har da manyan folda mata (kawai suna aiki idan an kunna manyan fayiloli mataimaka)</translation>
-</message>
-<message>
-<source>Highlight the current line</source>
-<translation>Haskaka layin na yanzu</translation>
-</message>
-<message>
-<source>Don't forget to enable git support for your note folders and to configure your name and email address for your git client, for example with these terminal commands:</source>
-<translation>Kar ka manta ka kunna tallafin git don manyan fayilolin bayanin ka kuma saita sunanka da adireshin email don abokin cinikinka, misali tare da wadannan umarnin:</translation>
-</message>
-<message>
-<source>Tags panel</source>
-<translation>Manyan labarai</translation>
-</message>
-<message>
-<source>Order</source>
-<translation>Oda</translation>
-</message>
-<message>
-<source>Ascending</source>
-<translation>Hawan sama</translation>
-</message>
-<message>
-<source>Descending</source>
-<translation>Talakawa</translation>
-</message>
-<message>
-<source>Sort</source>
-<translation>Tace</translation>
-</message>
-<message>
-<source>Only use editor width setting in distraction free mode</source>
-<translation>Yi amfani kawai da saitin nisa na edita a cikin yanayin free</translation>
-</message>
-<message>
-<source>Alphabetical</source>
-<translation>Haruffa</translation>
-</message>
-<message>
-<source>By last change / use</source>
-<translation>Ta hanyar canji / amfani</translation>
-</message>
-<message>
-<source>Hide 'Find or create tag' search</source>
-<translation>Boye 'nemo ko kirkiro alama'</translation>
-</message>
-<message>
-<source>Note subfolders panel</source>
-<translation>Lura manyan fayilolin mataimaka</translation>
-</message>
-<message>
-<source>Show with full path</source>
-<translation>Nuna tare da cikakken hanya</translation>
-</message>
-<message>
-<source>By last change</source>
-<translation>Ta hanyar canji na ƙarshe</translation>
-</message>
-<message>
-<source>Show root folder name</source>
-<translation>Nuna sunan babban fayil</translation>
-</message>
-<message>
-<source>Hide 'Find or create note subfolder' search</source>
-<translation>Boye 'nemo ko ƙirƙirar binciken bayanai'</translation>
-</message>
-<message>
-<source>Display note subfolders as full tree</source>
-<translation>Nuna manyan fayilolin bayanin kula azaman cikakken itace</translation>
-</message>
-<message>
-<source>Search script repository</source>
-<translation>Binciken ajiyar rubutun</translation>
-</message>
-<message>
-<source>You optionally can use "%notePath%" for the path of the note.</source>
-<extracomment>Please don't translate "%notePath%"</extracomment>
-<translation>Kuna iya yin amfani da "%notePath%" don hanyar bayanin.</translation>
-</message>
-<message>
-<source>Git client</source>
-<translation>Git abokin ciniki</translation>
-</message>
-<message>
-<source>Path to git executable:</source>
-<translation>Hanyar zuwa git aiwatarwa:</translation>
-</message>
-<message>
-<source>Path to git client, leave empty for default</source>
-<translation>Hanyar zuwa abokin ciniki git, bar wofi don tsoho</translation>
-</message>
-<message>
-<source>Commit interval</source>
-<translation>Yi tazara</translation>
-</message>
-<message>
-<source>sec</source>
-<extracomment>seconds</extracomment>
-<translation type="unfinished">sec</translation>
-</message>
-<message>
-<source>git commit interval time [sec]</source>
-<translation>git aikata tsakani lokaci [sec]</translation>
-</message>
-<message>
-<source>Open your ownCloud server &amp;Apps page</source>
-<translation>Bude shafinka na sabar &amp;Apps na kansa</translation>
-</message>
-<message>
 <source>Preview</source>
 <translation>Gabatarwa</translation>
-</message>
-<message>
-<source>Which calendar backend do you want to use?</source>
-<translation>Wace jadawalin kalanda kuke son amfani da su?</translation>
-</message>
-<message>
-<source>For most current ownCloud and Nextcloud installations</source>
-<translation>Ga yawancin saukakkun abubuwan da ake dasu na yanzu da kuma shigarwar Nextcloud</translation>
-</message>
-<message>
-<source>For older versions of ownCloud where the default setting doesn't work</source>
-<translation>Ga tsofaffin nau'ikan nasuCloud inda saitin tsoho bai yi aiki ba</translation>
-</message>
-<message>
-<source>Legacy ownCloud calendar</source>
-<translation>Kalanda suka mallaki kalanda</translation>
-</message>
-<message>
-<source>CalDAV server settings</source>
-<translation>Saitunan uwar garke CalDAV</translation>
-</message>
-<message>
-<source>Calendar base url:</source>
-<translation>Calendar tushe url:</translation>
-</message>
-<message>
-<source>Please enter the CalDAV base url to your calendar.</source>
-<translation>Da fatan za a shigar da ur url na CalDAV zuwa kalandarka.</translation>
-</message>
-<message>
-<source>Please enter the password for your CalDAV username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.</source>
-<translation>Da fatan za a shigar da kalmar wucewa don sunan mai amfani CalDAV.&lt;br/&gt; A halin yanzu za a adana kalmar sirri tare da sauran saitunan, amma ba shi da amintaccen tsaro.</translation>
-</message>
-<message>
-<source>Czech</source>
-<translation>Czech</translation>
-</message>
-<message>
-<source>Brazilian Portuguese</source>
-<translation>Fotigal ta Burtaniya</translation>
-</message>
-<message>
-<source>Ukrainian</source>
-<translation>Harshen Ukrain</translation>
-</message>
-<message>
-<source>The name</source>
-<translation>Sunan</translation>
-</message>
-<message>
-<source>Maximum height:</source>
-<translation>Matsakaicin tsawo:</translation>
-</message>
-<message>
-<source>Maximum width:</source>
-<translation>Mafi girman fadi:</translation>
-</message>
-<message>
-<source>Scale images down when inserted into notes</source>
-<translation>Hoton sikelin ƙasa lokacin da aka shigar cikin bayanin kula</translation>
-</message>
-<message>
-<source>Croatian</source>
-<translation>Kroshiya</translation>
-</message>
-<message>
-<source>Path to your QML file</source>
-<translation>Hanyar zuwa fayil ɗin ku na QML</translation>
-</message>
-<message>
-<source>Script name</source>
-<translation>Sunan rubutun</translation>
-</message>
-<message>
-<source>Description:</source>
-<translation>Bayanin:</translation>
-</message>
-<message>
-<source>Version:</source>
-<translation>Shafi:</translation>
-</message>
-<message>
-<source>Repository:</source>
-<translation>Majiya:</translation>
-</message>
-<message>
-<source>Author(s):</source>
-<translation>Mawallafi/ Mawallafa:</translation>
-</message>
-<message>
-<source>Check this if you want to accept all external modifications while you are editing the current note.</source>
-<translation>Duba wannan idan kuna son karɓar duk gyare-gyare na waje yayin da kuke gyara bayanin yanzu.</translation>
-</message>
-<message>
-<source>Accept all external modifications of the current note</source>
-<translation>Yarda duk gyare-gyare na waje na bayanin kula na yanzu</translation>
-</message>
-<message>
-<source>Use UNIX newline instead of native newline characters</source>
-<translation>Yi amfani da sabon layin UNIX maimakon haruffan sabbin haruffa</translation>
-</message>
-<message>
-<source>Restore cursor position when opening a note</source>
-<translation>Dawo wuri siginan kwamfuta yayin buɗe bayanin kula</translation>
 </message>
 <message>
 <source>Apply toolbar configuration</source>
@@ -7389,434 +7957,21 @@ Kawai gwada kanka idan ka sami rikice-rikice kuma saita wata babbar darajar idan
 <translation>Sake saita kayan aiki</translation>
 </message>
 <message>
-<source>Enable logging to file</source>
-<translation>Sanya shiga cikin fayil</translation>
-</message>
-<message>
-<source>Clear log file</source>
-<translation>Share fayil ɗin log</translation>
-</message>
-<message>
-<source>Fake old version number to trigger update</source>
-<translation>Karya tsohon lambar don haifar da sabuntawa</translation>
-</message>
-<message>
-<source>Log file path:</source>
-<translation>Hanyar fayil ɗin log:</translation>
-</message>
-<message>
-<source>Here you can set your own time format for inserting the current time into a note.</source>
-<translation>Anan zaka iya saita tsarin lokacin ka na shigar da lokacin da kake ciki a cikin bayanin kula.</translation>
-</message>
-<message>
-<source>Insert current time</source>
-<translation>Sanya lokacin na yanzu</translation>
-</message>
-<message>
-<source>Time format:</source>
-<translation>Tsarin lokaci:</translation>
-</message>
-<message>
-<source>Enter your custom time format, like "dd.MM.yyyy hh:mm"</source>
-<translation>Shigar da tsarin lokacinku na al'ada, kamar "dd.MM.yyyy hh: mm"</translation>
-</message>
-<message>
-<source>Editor options</source>
-<translation>Zaɓuɓɓukan edita</translation>
-</message>
-<message>
-<source>Enable automatic closing of brackets and markdown formatting characters</source>
-<translation>Taimaka rufewa da baka na atomatik da kuma rubutun haruffa</translation>
-</message>
-<message>
-<source>You have to use the backspace key to remove the opening character</source>
-<translation>Dole ne ku yi amfani da maɓallin baya don cire harafin buɗewa</translation>
-</message>
-<message>
-<source>Enable automatic removal of matching closing characters</source>
-<translation>Sanya cire atomatik cire haruffa masu rufewa</translation>
-</message>
-<message>
-<source>Your CalDAV calendar base url</source>
-<translation>Kalanda kalanda CalDAV url</translation>
-</message>
-<message>
-<source>Please enter the username of your CalDAV server.</source>
-<translation>Da fatan za a shigar da sunan mai amfani na uwar garken CalDAV.</translation>
-</message>
-<message>
-<source>Your CalDAV username</source>
-<translation>Sunan mai amfani na CalDAV</translation>
-</message>
-<message>
-<source>Your CalDAV password</source>
-<translation>Kalmar sirri ta CalDAV</translation>
-</message>
-<message>
-<source>This causes all todo list items to be reloaded from your server the next time you open your todo dialog.</source>
-<translation>Wannan yana haifar da duk abubuwan jerin lambobin da za a sake fitarwa daga uwar garken ku a gaba in kun buɗe maganganun lamirin ku.</translation>
-</message>
-<message>
-<source>Empty calendar item cache</source>
-<translation>Kayan abun cikin kalanda</translation>
-</message>
-<message>
-<source>Click here to reload the list of calendars from your calendar server.</source>
-<translation>Latsa nan don saukar da jerin kalandarku daga sabar kalanda.</translation>
-</message>
-<message>
-<source>&amp;Reload calendar list</source>
-<translation>&amp;Sake jera jerin kalanda</translation>
-</message>
-<message>
-<source>Toolbar icon size:</source>
-<translation>Girman icon toolbar:</translation>
-</message>
-<message>
-<source>List and tree item height:</source>
-<translation>Lissafi da tsayin abu itace:</translation>
-</message>
-<message>
-<source>Reset the icon size</source>
-<translation>Sake saita girman alamar</translation>
-</message>
-<message>
-<source>Reset the item height</source>
-<translation>Sake saita abu mai tsayi</translation>
-</message>
-<message>
-<source>View text right to left (RTL)</source>
-<translation>Duba rubutu dama zuwa hagu (RTL)</translation>
-</message>
-<message>
 <source>Search for shortcut</source>
 <translation>Nemo gajerar hanya</translation>
-</message>
-<message>
-<source>Ignore calendars that don't support todo items</source>
-<translation>Yi watsi da kalandarku waɗanda ba sa tallafar abubuwa</translation>
-</message>
-<message>
-<source>Arabic</source>
-<translation>Larabci</translation>
-</message>
-<message>
-<source>Icons</source>
-<translation>Gumaka</translation>
-</message>
-<message>
-<source>Script path:</source>
-<translation>Hanyar rubutun:</translation>
-</message>
-<message>
-<source>Note folder name</source>
-<translation>Sunan babban fayil</translation>
-</message>
-<message>
-<source>Allow note file name to be different from headline</source>
-<translation>Bada sunan fayil bayanin kula ya bambanta da kan labari</translation>
-</message>
-<message>
-<source>Check this if you want to ignore all external modifications while you are editing the current note.</source>
-<translation>Duba wannan idan kuna son watsi da duk gyare-gyare na waje yayin da kuke gyara bayanin yanzu.</translation>
-</message>
-<message>
-<source>Ignore all external modifications of the current note</source>
-<translation>Yi watsi da duk gyare-gyare na waje na bayanin kula na yanzu</translation>
-</message>
-<message>
-<source>You can use this for example under Windows if you have troubles with newlines in the ownCloud / Nextcloud notes app</source>
-<translation>Kuna iya amfani da wannan misali a ƙarƙashin Windows idan kuna da matsala tare da sabbin sabbin labarai a cikin saitunan bayanin kula na ownCloud / Nextcloud</translation>
-</message>
-<message>
-<source>App instance</source>
-<translation>Misalin misali</translation>
-</message>
-<message>
-<source>Only allow one app instance at the same time</source>
-<translation>Bada izinin misali ɗaya kawai a lokaci guda</translation>
-</message>
-<message>
-<source>Path to external editor:</source>
-<translation>Hanyar zuwa edita na waje:</translation>
-</message>
-<message>
-<source>Don't show the update dialog automatically</source>
-<translation>Karka nuna maganganun sabuntawa kai tsaye</translation>
-</message>
-<message>
-<source>Fonts</source>
-<translation>Yankuna</translation>
-</message>
-<message>
-<source>Set a new font</source>
-<translation>Sanya sabon rubutu</translation>
-</message>
-<message>
-<source>Reset font</source>
-<translation>Sake saitin rubutu</translation>
 </message>
 <message>
 <source>Debug</source>
 <translation>Karkatarwa</translation>
 </message>
 <message>
-<source>Debug information</source>
-<translation>Bayani na cire</translation>
-</message>
-<message>
-<source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can &lt;span style=" font-weight:600;"&gt;copy and paste&lt;/span&gt; this text (or parts of this text) in an &lt;span style=" font-weight:600;"&gt;issue&lt;/span&gt; on the &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes issues page&lt;/a&gt; if you have &lt;span style=" font-weight:600;"&gt;questions or troubles&lt;/span&gt; with QOwnNotes. Data that is too sensitive is hidden in this information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; Zaku iya &lt;span style=" font-weight:600;"&gt;kwafa da liƙa &lt;/span&gt; wannan rubutun (ko ɓangarorin wannan rubutun) a cikin salon &lt;span style=" font-weight:600;"&gt; fitowar &lt;/span&gt; akan &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt; QOwnNotes shafi abubuwan &lt;/a&gt; idan kuna da &lt;span style=" font-weight:600;"&gt; tambayoyi ko matsaloli &lt;/span&gt; tare da QOwnNotes. Bayanin da suke da matukar saukarwa ana ɓoye a cikin wannan bayanin. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
-</message>
-<message>
-<source>&amp;Save debug information</source>
-<translation>&amp;Ajiye bayanan gyara</translation>
-</message>
-<message>
-<source>hostname of proxy server</source>
-<translation>sunan mai gidan wakili na wakili</translation>
-</message>
-<message>
-<source>username for proxy server</source>
-<translation>sunan mai amfani don sabar wakili</translation>
-</message>
-<message>
-<source>password for proxy server</source>
-<translation>kalmar sirri don sabar wakili</translation>
-</message>
-<message>
-<source>HTTP(S) proxy</source>
-<translation>Wakili na HTTP(S)</translation>
-</message>
-<message>
-<source>SOCKS5 proxy</source>
-<translation>Wakili SOCKS5</translation>
-</message>
-<message>
-<source>notes path &lt;b&gt;%1&lt;/b&gt; found on server</source>
-<translation type="unfinished">notes path &lt;b&gt;%1&lt;/b&gt; found on server</translation>
-</message>
-<message>
-<source>Automatic (needs restart)</source>
-<translation>Atomatik (yana buƙatar sake kunnawa)</translation>
-</message>
-<message>
 <source>Shortcut already assigned</source>
 <translation>An riga an sanya gajerar hanya</translation>
-</message>
-<message>
-<source>The connection was made successfully!
-Server version: %1
-QOwnNotesAPI version: %2</source>
-<translation>Anyi nasarar yin haɗin yanar gizon!
-Sigar sabar: %1
-Sigar QOwnNotesAPI: %2</translation>
-</message>
-<message>
-<source>There was an error connecting to the ownCloud Server!
-You also need to have the QOwnNotesAPI app installed and enabled!
-
-Connection error message: </source>
-<translation>An sami kuskure wajen haɗawa da Servern nasa na kansa!
-Hakanan kuna buƙatar shigar da kayan QOwnNotesAPI kuma an kunna!
-
-Saƙon kuskuren haɗin: </translation>
-</message>
-<message>
-<source>LanguageTool connection successful.</source>
-<translation type="unfinished">LanguageTool connection successful.</translation>
-</message>
-<message>
-<source>LanguageTool connection failed: %1</source>
-<translation type="unfinished">LanguageTool connection failed: %1</translation>
-</message>
-<message>
-<source>There are no ignored rules to reset.</source>
-<translation type="unfinished">There are no ignored rules to reset.</translation>
-</message>
-<message numerus="yes">
-<source>Reset %n ignored rule(s)?</source>
-<translation type="unfinished">
-<numerusform>Reset %n ignored rule(s)?</numerusform>
-<numerusform>Reset %n ignored rule(s)?</numerusform>
-</translation>
-</message>
-<message>
-<source>All ignored rules have been reset.</source>
-<translation type="unfinished">All ignored rules have been reset.</translation>
-</message>
-<message>
-<source>There are no ignored words to reset.</source>
-<translation type="unfinished">There are no ignored words to reset.</translation>
-</message>
-<message numerus="yes">
-<source>Reset %n ignored word(s)?</source>
-<translation type="unfinished">
-<numerusform>Reset %n ignored word(s)?</numerusform>
-<numerusform>Reset %n ignored word(s)?</numerusform>
-</translation>
-</message>
-<message>
-<source>All ignored words have been reset.</source>
-<translation type="unfinished">All ignored words have been reset.</translation>
-</message>
-<message>
-<source>The Database was reinitialized. Please restart the application now!</source>
-<translation type="unfinished">The Database was reinitialized. Please restart the application now!</translation>
-</message>
-<message>
-<source>Please don't use this in the issue tracker, copy the debug information text directly into the issue.</source>
-<translation>Don Allah kar a yi amfani da wannan a cikin mahayin batun, kwafin rubutun cire kuskure kai tsaye cikin batun.</translation>
-</message>
-<message>
-<source>Markdown files</source>
-<translation>Alama fayiloli</translation>
-</message>
-<message>
-<source>Disable usage tracking</source>
-<translation>Musaki bin sawu</translation>
-</message>
-<message>
-<source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can't live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</source>
-<translation>Bayanan amfani da ba a sani ba suna taimakawa wajen yanke shawarar menene ɓangarorin QOwnNotes don inganta gaba da nemowa da kuma gyara kwari. &lt;br/&gt; Da fatan za a kashe shi kawai idan har da gaske ne ba za ku iya rayuwa da shi ba. &lt;br/&gt; &lt;br/&gt; Da gaske za a kashe amfani da sawu?</translation>
-</message>
-<message>
-<source>new folder</source>
-<translation>sabon babban fayil</translation>
-</message>
-<message>
-<source>Remove note folder</source>
-<translation>Cire babban fayil na bayanin kula</translation>
-</message>
-<message>
-<source>Remove the current note folder &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation>Cire babban fayil ɗin bayanin kula na yanzu &lt;strong&gt;%1 &lt;/strong&gt;?</translation>
-</message>
-<message>
-<source>Please select the folder where your notes will get stored to</source>
-<translation>Da fatan za selecti babban fayil ɗin inda bayanin kula zai adana shi</translation>
-</message>
-<message>
-<source>Loading folders from server</source>
-<translation>Ana loda manyan fayiloli daga sabar</translation>
-</message>
-<message>
-<source>No more folders were found in the current folder</source>
-<translation>Ba a sami ƙarin manyan fayiloli a babban fayil ɗin yanzu ba</translation>
-</message>
-<message>
-<source>Loading folders in '%1' from server</source>
-<translation>Ana loda manyan fayiloli a '%1' daga sabar</translation>
-</message>
-<message>
-<source>Take a look at the &lt;a href="%1"&gt;Scripting documentation&lt;/a&gt; to get started fast.</source>
-<translation>Kalli &lt;a href="%1"&gt; Littattafan rubutun &lt;/a&gt; don farawa da sauri.</translation>
-</message>
-<message>
-<source>If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</source>
-<translation>Idan kuna buƙatar samun dama ga takamaiman aikin a cikin QOwnNotes, da fatan za a bude wani batun a shafin &lt;a href="%1"&gt; QOwnNotes shafi shafi &lt;/a&gt;.</translation>
-</message>
-<message>
-<source>Check for script updates</source>
-<translation>Duba don sabunta rubutun</translation>
-</message>
-<message>
-<source>Add local script</source>
-<translation>Sanya rubutun cikin gida</translation>
-</message>
-<message>
-<source>Add an existing, local script</source>
-<translation>Sanya wani data kasance, rubutun gida</translation>
-</message>
-<message>
-<source>Please enter a new note file extension:</source>
-<translation type="unfinished">Please enter a new note file extension:</translation>
-</message>
-<message>
-<source>Markdown file</source>
-<translation type="unfinished">Markdown file</translation>
-</message>
-<message>
-<source>Plain text file</source>
-<translation type="unfinished">Plain text file</translation>
-</message>
-<message>
-<source>Remove note file extension</source>
-<translation type="unfinished">Remove note file extension</translation>
-</message>
-<message>
-<source>INI files</source>
-<translation>Fayilolin INI</translation>
-</message>
-<message>
-<source>Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</source>
-<translation>Shin kana son shigo da saiti? Saitunan da kake yanzu za a cire su kuma ba kowane saiti na iya dawo da su ba, kamar tsarin babban fayil ɗin bayanin kula da kuma rubutun rubutun da kake amfani da shi. Hakanan kuna buƙatar gyara wasu saitunan, musamman a duk faɗin dandamali, amma bayanan kula ba za su zauna ba!</translation>
-</message>
-<message>
-<source>The application will be restarted after the import.</source>
-<translation>Za'a sake kunna aikace-aikacen bayan shigo da shi.</translation>
-</message>
-<message>
-<source>The debug information was copied to the clipboard.</source>
-<translation>An kwafar bayanin kula da kuskuren zuwa allo.</translation>
-</message>
-<message>
-<source>The integrity of the disk database is valid.</source>
-<translation type="unfinished">The integrity of the disk database is valid.</translation>
-</message>
-<message>
-<source>The integrity of the disk database is not valid!</source>
-<translation type="unfinished">The integrity of the disk database is not valid!</translation>
-</message>
-<message>
-<source>API test result for %1 (%2)</source>
-<translation type="unfinished">API test result for %1 (%2)</translation>
-</message>
-<message>
-<source>AI backend: %1</source>
-<translation type="unfinished">AI backend: %1</translation>
-</message>
-<message>
-<source>API base URL</source>
-<translation type="unfinished">API base URL</translation>
-</message>
-<message>
-<source>AI model: %1</source>
-<translation type="unfinished">AI model: %1</translation>
-</message>
-<message>
-<source>Test</source>
-<comment>verb</comment>
-<translation type="unfinished">Test</translation>
-</message>
-<message>
-<source>Test connection to %1 (%2)</source>
-<translation type="unfinished">Test connection to %1 (%2)</translation>
-</message>
-<message>
-<source>If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</source>
-<translation type="unfinished">If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</translation>
-</message>
-<message>
-<source>Find a script in the script repository</source>
-<translation>Nemo rubutu a cikin kayan rubutun</translation>
-</message>
-<message>
-<source>Menu bar</source>
-<translation>Hanyar menu</translation>
-</message>
-<message>
-<source>Show menu bar item</source>
-<translation>Nuna abun mashaya</translation>
 </message>
 <message>
 <source>Undefined shortcut</source>
 <translation>Gajeriyar hanya
 </translation>
-</message>
-<message>
-<source>Auto-detect</source>
-<translation type="unfinished">Auto-detect</translation>
 </message>
 <message>
 <source>Assign a new shortcut</source>
@@ -7837,90 +7992,12 @@ Saƙon kuskuren haɗin: </translation>
 <translation>Gajeriyar hanyar &lt;strong&gt;%1&lt;/strong&gt; an riga an sanya shi zuwa &lt;strong&gt;%2 &lt;/strong&gt;! Kuna so tsalle zuwa gajeriyar hanya?</translation>
 </message>
 <message>
-<source>Remove script</source>
-<translation>Cire rubutun</translation>
-</message>
-<message>
-<source>Remove the current script &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation>Cire rubutun na yanzu &lt;strong&gt;%1 &lt;/strong&gt;?</translation>
-</message>
-<message>
-<source>QML files</source>
-<translation>Fayilolin QML</translation>
-</message>
-<message>
-<source>Please select your QML file</source>
-<translation>Da fatan za a zabi fayil din QML</translation>
-</message>
-<message>
-<source>Open repository</source>
-<translation>Bude ajiya</translation>
-</message>
-<message>
-<source>Your script seems to be valid</source>
-<translation>Rubutun rubutunku suna da inganci</translation>
-</message>
-<message>
-<source>There were script errors:
-%1</source>
-<translation>Akwai kuskuren rubutun:
-%1</translation>
-</message>
-<message>
-<source>File extension</source>
-<translation>Fadada fayil</translation>
-</message>
-<message>
-<source>Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</source>
-<translation type="unfinished">Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</translation>
-</message>
-<message>
-<source>Calendar cache emptied</source>
-<translation>Kayan kalanda aka wofin</translation>
-</message>
-<message>
-<source>Your calendar cache was emptied.</source>
-<translation>An cire komai na kalandar kalanda.</translation>
-</message>
-<message>
 <source>Reset toolbars and exit</source>
 <translation>Sake saita maɓallin kayan aiki da fita</translation>
 </message>
 <message>
 <source>Do you really want to reset all toolbars? The application will be closed in the process, the default toolbars will be restored when you start it again.</source>
 <translation>Shin kana son sake saita duk kayan aikin? Aikace-aikacen za a rufe su a cikin tsari, za a dawo da kayan aiki na ainihi lokacin da kuka sake farawa.</translation>
-</message>
-<message>
-<source>Log file cleared</source>
-<translation>An share fayil ɗin log</translation>
-</message>
-<message>
-<source>The log file &lt;strong&gt;%1&lt;/strong&gt; was cleared.</source>
-<translation>An bar fayil ɗin log ɗin &lt;strong&gt;%1&lt;/strong&gt;.</translation>
-</message>
-<message>
-<source>Executable files</source>
-<translation>Fayilolin aiwatar da su</translation>
-</message>
-<message>
-<source>All files</source>
-<translation>Duk fayiloli</translation>
-</message>
-<message>
-<source>Please select the path of your git executable</source>
-<translation>Da fatan za a zabi hanyar git ta zartar</translation>
-</message>
-<message>
-<source>Do you really want to reset the overrides of all message boxes?</source>
-<translation>Shin kana son sake saita shinge na duk akwatunan saƙo?</translation>
-</message>
-<message>
-<source>New script</source>
-<translation>Sabon rubutun</translation>
-</message>
-<message>
-<source>You can download your git client here: &lt;a href="%url"&gt;Git for Windows&lt;/a&gt;</source>
-<translation>Zaku iya saukar da abokin aikin naku anan: &lt;a href="%url"&gt; Git for Windows &lt;/a&gt;</translation>
 </message>
 <message>
 <source>enabled</source>
@@ -7955,28 +8032,8 @@ Saƙon kuskuren haɗin: </translation>
 <translation>Za a kunna ta idan kun gudanar da QOwnNotes tare da sigogin &lt;code&gt; - Canja wurin &lt;/code&gt;.</translation>
 </message>
 <message>
-<source>Save debug information</source>
-<translation>Ajiye bayanan gyara</translation>
-</message>
-<message>
-<source>Do you really want to clear all settings, remove the database and exit QOwnNotes?
-
-Your notes will stay intact!</source>
-<translation>Shin kana son ka share duk saiti, ka cire bayanai sannan ka fita QOwnNotes?
-
-Bayanan kula ku za su zauna lafiya!</translation>
-</message>
-<message>
 <source>You will find a &lt;code&gt;QOwnNotesPortable.bat&lt;/code&gt; in your release path to start QOwnNotes in portable mode.</source>
 <translation>Zaka sami &lt;code&gt; QOwnNotesPortable.bat &lt;/code&gt; a hanyarka ta sakin layi don fara QOwnNotes a yanayin canji.</translation>
-</message>
-<message>
-<source>Do you really want to clear the local database? This will also remove your configured note folders and your cached todo items!</source>
-<translation>Shin kuna son share bayanan gida? Hakanan zai cire manyan fayilolin bayanin kula da abubuwanda aka adana!</translation>
-</message>
-<message>
-<source>Select editor application</source>
-<translation>Zaɓi aikace-aikacen edita</translation>
 </message>
 </context>
 <context>
@@ -8862,6 +8919,129 @@ Ba za a sake yin wannan ba!</translation>
 </message>
 </context>
 <context>
+<name>TodoSettingsWidget</name>
+<message>
+<source>Todo settings</source>
+<translation type="unfinished">Todo settings</translation>
+</message>
+<message>
+<source>Enable todo calendar support</source>
+<translation type="unfinished">Enable todo calendar support</translation>
+</message>
+<message>
+<source>You can access your ownCloud server or a generic CalDAV server to manage your todo lists.</source>
+<translation type="unfinished">You can access your ownCloud server or a generic CalDAV server to manage your todo lists.</translation>
+</message>
+<message>
+<source>Which calendar backend do you want to use?</source>
+<translation type="unfinished">Which calendar backend do you want to use?</translation>
+</message>
+<message>
+<source>Other CalDAV server</source>
+<translation type="unfinished">Other CalDAV server</translation>
+</message>
+<message>
+<source>For older versions of ownCloud where the default setting doesn't work</source>
+<translation type="unfinished">For older versions of ownCloud where the default setting doesn't work</translation>
+</message>
+<message>
+<source>Legacy ownCloud calendar</source>
+<translation type="unfinished">Legacy ownCloud calendar</translation>
+</message>
+<message>
+<source>For most current ownCloud and Nextcloud installations</source>
+<translation type="unfinished">For most current ownCloud and Nextcloud installations</translation>
+</message>
+<message>
+<source>Default ownCloud calendar</source>
+<translation type="unfinished">Default ownCloud calendar</translation>
+</message>
+<message>
+<source>CalDAV server settings</source>
+<translation type="unfinished">CalDAV server settings</translation>
+</message>
+<message>
+<source>Calendar base url:</source>
+<translation type="unfinished">Calendar base url:</translation>
+</message>
+<message>
+<source>Please enter the CalDAV base url to your calendar.</source>
+<translation type="unfinished">Please enter the CalDAV base url to your calendar.</translation>
+</message>
+<message>
+<source>Your CalDAV calendar base url</source>
+<translation type="unfinished">Your CalDAV calendar base url</translation>
+</message>
+<message>
+<source>Username:</source>
+<translation type="unfinished">Username:</translation>
+</message>
+<message>
+<source>Please enter the username of your CalDAV server.</source>
+<translation type="unfinished">Please enter the username of your CalDAV server.</translation>
+</message>
+<message>
+<source>Your CalDAV username</source>
+<translation type="unfinished">Your CalDAV username</translation>
+</message>
+<message>
+<source>Password:</source>
+<translation type="unfinished">Password:</translation>
+</message>
+<message>
+<source>Please enter the password for your CalDAV username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.</source>
+<translation type="unfinished">Please enter the password for your CalDAV username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.</translation>
+</message>
+<message>
+<source>Your CalDAV password</source>
+<translation type="unfinished">Your CalDAV password</translation>
+</message>
+<message>
+<source>Which cloud connection do you want to use?</source>
+<translation type="unfinished">Which cloud connection do you want to use?</translation>
+</message>
+<message>
+<source>Select the calendars you want to use for the Todo list</source>
+<translation type="unfinished">Select the calendars you want to use for the Todo list</translation>
+</message>
+<message>
+<source>This causes all todo list items to be reloaded from your server the next time you open your todo dialog.</source>
+<translation type="unfinished">This causes all todo list items to be reloaded from your server the next time you open your todo dialog.</translation>
+</message>
+<message>
+<source>Empty calendar item cache</source>
+<translation type="unfinished">Empty calendar item cache</translation>
+</message>
+<message>
+<source>Click here to reload the list of calendars from your calendar server.</source>
+<translation type="unfinished">Click here to reload the list of calendars from your calendar server.</translation>
+</message>
+<message>
+<source>&amp;Reload calendar list</source>
+<translation type="unfinished">&amp;Reload calendar list</translation>
+</message>
+<message>
+<source>Ignore calendars that don't support todo items</source>
+<translation type="unfinished">Ignore calendars that don't support todo items</translation>
+</message>
+<message>
+<source>Todo list settings</source>
+<translation type="unfinished">Todo list settings</translation>
+</message>
+<message>
+<source>Saving an item also closes the Todo list</source>
+<translation type="unfinished">Saving an item also closes the Todo list</translation>
+</message>
+<message>
+<source>Calendar cache emptied</source>
+<translation type="unfinished">Calendar cache emptied</translation>
+</message>
+<message>
+<source>Your calendar cache was emptied.</source>
+<translation type="unfinished">Your calendar cache was emptied.</translation>
+</message>
+</context>
+<context>
 <name>Toolbar_Editor</name>
 <message>
 <source>Select a menu</source>
@@ -9214,6 +9394,17 @@ Ba za a sake yin wannan ba!</translation>
 </message>
 </context>
 <context>
+<name>Utils::Misc</name>
+<message>
+<source>Open folder in file manager</source>
+<translation type="unfinished">Open folder in file manager</translation>
+</message>
+<message>
+<source>Do you want to show this item in your file manager?</source>
+<translation type="unfinished">Do you want to show this item in your file manager?</translation>
+</message>
+</context>
+<context>
 <name>VersionDialog</name>
 <message>
 <source>Note versions on your ownCloud server</source>
@@ -9269,6 +9460,184 @@ Ba za a sake yin wannan ba!</translation>
 <message>
 <source>Image received from web app and copied to clipboard</source>
 <translation type="unfinished">Image received from web app and copied to clipboard</translation>
+</message>
+</context>
+<context>
+<name>WebApplicationSettingsWidget</name>
+<message>
+<source>QOwnNotes web application support</source>
+<translation type="unfinished">QOwnNotes web application support</translation>
+</message>
+<message>
+<source>Enable web application support</source>
+<translation type="unfinished">Enable web application support</translation>
+</message>
+<message>
+<source>You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</source>
+<translation type="unfinished">You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</translation>
+</message>
+<message>
+<source>QOwnNotes web application</source>
+<translation type="unfinished">QOwnNotes web application</translation>
+</message>
+<message>
+<source>A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</source>
+<translation type="unfinished">A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</translation>
+</message>
+<message>
+<source>Security token:</source>
+<translation type="unfinished">Security token:</translation>
+</message>
+<message>
+<source>Show security token</source>
+<translation type="unfinished">Show security token</translation>
+</message>
+<message>
+<source>Generate new security token</source>
+<translation type="unfinished">Generate new security token</translation>
+</message>
+<message>
+<source>Server URL:</source>
+<translation type="unfinished">Server URL:</translation>
+</message>
+<message>
+<source>You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</source>
+<translation type="unfinished">You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</translation>
+</message>
+<message>
+<source>Copy security token to clipboard</source>
+<translation type="unfinished">Copy security token to clipboard</translation>
+</message>
+<message>
+<source>Reset the URL to default</source>
+<translation type="unfinished">Reset the URL to default</translation>
+</message>
+<message>
+<source>Show QR code</source>
+<translation type="unfinished">Show QR code</translation>
+</message>
+</context>
+<context>
+<name>WebCompanionSettingsWidget</name>
+<message>
+<source>Command snippets</source>
+<translation type="unfinished">Command snippets</translation>
+</message>
+<message>
+<source>Notes with this tag will be used for fetching bookmarks</source>
+<translation type="unfinished">Notes with this tag will be used for fetching bookmarks</translation>
+</message>
+<message>
+<source>Tag name for commands notes</source>
+<translation type="unfinished">Tag name for commands notes</translation>
+</message>
+<message>
+<source>Commands tag:</source>
+<translation type="unfinished">Commands tag:</translation>
+</message>
+<message>
+<source>You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
+<translation type="unfinished">You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</translation>
+</message>
+<message>
+<source>Commands note name:</source>
+<translation type="unfinished">Commands note name:</translation>
+</message>
+<message>
+<source>This note will be used for adding new bookmarks from the browser extension</source>
+<translation type="unfinished">This note will be used for adding new bookmarks from the browser extension</translation>
+</message>
+<message>
+<source>Note name for adding new commands</source>
+<translation type="unfinished">Note name for adding new commands</translation>
+</message>
+<message>
+<source>Web socket server</source>
+<translation type="unfinished">Web socket server</translation>
+</message>
+<message>
+<source>Socket server port:</source>
+<translation type="unfinished">Socket server port:</translation>
+</message>
+<message>
+<source>Reset the socket server port</source>
+<translation type="unfinished">Reset the socket server port</translation>
+</message>
+<message>
+<source>Show security token</source>
+<translation type="unfinished">Show security token</translation>
+</message>
+<message>
+<source>Bookmarks</source>
+<translation type="unfinished">Bookmarks</translation>
+</message>
+<message>
+<source>Bookmarks tag:</source>
+<translation type="unfinished">Bookmarks tag:</translation>
+</message>
+<message>
+<source>Tag name for bookmarks notes</source>
+<translation type="unfinished">Tag name for bookmarks notes</translation>
+</message>
+<message>
+<source>Bookmarks note name:</source>
+<translation type="unfinished">Bookmarks note name:</translation>
+</message>
+<message>
+<source>Note name for adding new bookmarks</source>
+<translation type="unfinished">Note name for adding new bookmarks</translation>
+</message>
+<message>
+<source>By default the browser extension will show all links of the current note. You can also make it show special bookmark links of notes with a certain tag. For more information about the bookmark link syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
+<translation type="unfinished">By default the browser extension will show all links of the current note. You can also make it show special bookmark links of notes with a certain tag. For more information about the bookmark link syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</translation>
+</message>
+<message>
+<source>Bookmark suggestion API</source>
+<translation type="unfinished">Bookmark suggestion API</translation>
+</message>
+<message>
+<source>Enable Homepage-compatible bookmark suggestions API</source>
+<translation type="unfinished">Enable Homepage-compatible bookmark suggestions API</translation>
+</message>
+<message>
+<source>Suggestion API port:</source>
+<translation type="unfinished">Suggestion API port:</translation>
+</message>
+<message>
+<source>Reset the suggestion API port</source>
+<translation type="unfinished">Reset the suggestion API port</translation>
+</message>
+<message>
+<source>Security token:</source>
+<translation type="unfinished">Security token:</translation>
+</message>
+<message>
+<source>If this is empty when saved, a new security token will be generated automatically.</source>
+<translation type="unfinished">If this is empty when saved, a new security token will be generated automatically.</translation>
+</message>
+<message>
+<source>Copy security token to clipboard</source>
+<translation type="unfinished">Copy security token to clipboard</translation>
+</message>
+<message>
+<source>Generate new security token</source>
+<translation type="unfinished">Generate new security token</translation>
+</message>
+<message>
+<source>Web socket server support</source>
+<translation type="unfinished">Web socket server support</translation>
+</message>
+<message>
+<source>Enable socket server</source>
+<translation type="unfinished">Enable socket server</translation>
+</message>
+<message>
+<source>Install the &lt;a href="%1"&gt;Web Companion browser extension&lt;/a&gt; from the &lt;a href="%2"&gt;Chrome Web Store&lt;/a&gt; or &lt;a href="%3"&gt;Firefox Add-ons page&lt;/a&gt; to use QOwnNotes as web clipper or for bookmark management.</source>
+<translation type="unfinished">Install the &lt;a href="%1"&gt;Web Companion browser extension&lt;/a&gt; from the &lt;a href="%2"&gt;Chrome Web Store&lt;/a&gt; or &lt;a href="%3"&gt;Firefox Add-ons page&lt;/a&gt; to use QOwnNotes as web clipper or for bookmark management.</translation>
+</message>
+<message>
+<source>Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</source>
+<translation type="unfinished">Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</translation>
 </message>
 </context>
 <context>
@@ -9393,10 +9762,6 @@ Ba za a sake yin wannan ba!</translation>
 <translation>Zaɓi babban fayil</translation>
 </message>
 <message>
-<source>Panel layout</source>
-<translation>Tsarin panel</translation>
-</message>
-<message>
 <source>Open ownCloud settings</source>
 <translation>Bude saitin ownCloud</translation>
 </message>
@@ -9415,6 +9780,10 @@ Ba za a sake yin wannan ba!</translation>
 <message>
 <source>Show subfolders</source>
 <translation>Nuna manyan fayiloli mataimaka</translation>
+</message>
+<message>
+<source>Layout preset</source>
+<translation type="unfinished">Layout preset</translation>
 </message>
 <message>
 <source>If you want to be able to access your note versions and your trashed notes on your ownCloud server, you can configure QOwnNotes for it now. You can also do it at a later time.</source>
@@ -9447,98 +9816,6 @@ Ba za a sake yin wannan ba!</translation>
 <message>
 <source>Keep in mind that the note folder will be stored relative to the directory where QOwnNotes resides in portable mode! So you need to stay on the same drive.</source>
 <translation>Lura cewa za a adana babban fayil ɗin bayanin kula da kundin adireshin inda QOwnNotes ke zaune a cikin yanayin šaukuwa! Don haka kuna buƙatar tsayawa akan tasi guda.</translation>
-</message>
-</context>
-<context>
-<name>WorkspaceDialog</name>
-<message>
-<source>Manage workspaces</source>
-<translation type="unfinished">Manage workspaces</translation>
-</message>
-<message>
-<source>Add workspace</source>
-<translation type="unfinished">Add workspace</translation>
-</message>
-<message>
-<source>Add</source>
-<translation type="unfinished">Add</translation>
-</message>
-<message>
-<source>Remove workspace</source>
-<translation type="unfinished">Remove workspace</translation>
-</message>
-<message>
-<source>Remove</source>
-<translation type="unfinished">Remove</translation>
-</message>
-<message>
-<source>Rename workspace</source>
-<translation type="unfinished">Rename workspace</translation>
-</message>
-<message>
-<source>Rename</source>
-<translation type="unfinished">Rename</translation>
-</message>
-<message>
-<source>Move workspace up</source>
-<translation type="unfinished">Move workspace up</translation>
-</message>
-<message>
-<source>Move up</source>
-<translation type="unfinished">Move up</translation>
-</message>
-<message>
-<source>Move workspace down</source>
-<translation type="unfinished">Move workspace down</translation>
-</message>
-<message>
-<source>Move down</source>
-<translation type="unfinished">Move down</translation>
-</message>
-<message>
-<source>Workspace name:</source>
-<translation type="unfinished">Workspace name:</translation>
-</message>
-<message>
-<source>Remove the selected workspace?</source>
-<translation type="unfinished">Remove the selected workspace?</translation>
-</message>
-</context>
-<context>
-<name>WorkspaceManager</name>
-<message>
-<source>Workspaces</source>
-<translation type="unfinished">Workspaces</translation>
-</message>
-<message>
-<source>full</source>
-<comment>full workspace</comment>
-<translation type="unfinished">full</translation>
-</message>
-<message>
-<source>minimal</source>
-<comment>minimal workspace</comment>
-<translation type="unfinished">minimal</translation>
-</message>
-<message>
-<source>Create new workspace</source>
-<translation type="unfinished">Create new workspace</translation>
-</message>
-<message>
-<source>Workspace name:</source>
-<translation type="unfinished">Workspace name:</translation>
-</message>
-<message>
-<source>Remove current workspace</source>
-<translation type="unfinished">Remove current workspace</translation>
-</message>
-<message>
-<source>Remove the current workspace?</source>
-<translation type="unfinished">Remove the current workspace?</translation>
-</message>
-<message>
-<source>Rename workspace</source>
-<translation type="unfinished">Rename workspace</translation>
 </message>
 </context>
 <context>

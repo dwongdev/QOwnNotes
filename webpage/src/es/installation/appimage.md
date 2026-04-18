@@ -34,21 +34,20 @@ Si tiene problemas para ejecutar AppImage, porque su versión de glibc es demasi
 
 ## Modo portátil
 
-You can run the AppImage in **portable mode** by passing the `--portable` argument:
+Puede ejecutar la AppImage en modo **portátil** pasando el argumento `--portable`:
 
 ```bash
 ./QOwnNotes-x86_64.AppImage --portable
 ```
 
-In portable mode all application data is stored in a `Data` folder next to the AppImage file instead of in your home directory. Esto incluye:
+En el modo portátil, todos los datos de la aplicación se almacenan en una carpeta `Data` junto al archivo AppImage, en lugar de en su directorio personal. Esto incluye:
 
-- Settings (`Data/QOwnNotes.ini`)
+- Configuración (`Data/QOwnNotes.ini`)
 - La base de datos de notas (`Data/QOwnNotes.sqlite`)
 - Sus notas (`Data/Notes/`)
-- Scripts, spell-check dictionaries, and other application data
+- Scripts, diccionarios de corrección ortográfica y otros datos de la aplicación
 
-This makes it easy to carry QOwnNotes together with all your notes on a USB drive or any other portable storage device.
+Esto facilita llevar QOwnNotes junto con todas sus notas en una unidad USB o cualquier otro dispositivo de almacenamiento portátil.
 
-::: tip
-Make sure the directory containing the AppImage file is writable, so that the `Data` folder can be created next to it.
+::: Consejo Asegúrese de que el directorio que contiene el archivo AppImage tenga permisos de escritura, para que la carpeta `Data` pueda crearse junto a él.
 :::

@@ -8,7 +8,7 @@
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> tworzy nową notatkę w nowej karcie
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> umożliwia wyszukiwanie notatek (w nazwie notatki i jej treści)
 - <kbd>Alt</kbd> + <kbd>F</kbd> umożliwia wyszukiwanie notatek we wszystkich tagach / podfolderach
-- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> przełącza do poprzedniego obszaru roboczego
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> edytuje zaszyfrowaną notatkę
 - <kbd>Alt</kbd> + <kbd>R</kbd> usuwa bieżącą notatkę
 - <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> sprawdza dostępność aktualizacji
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> tworzy nową notatkę w nowej karcie
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> umożliwia wyszukiwanie notatek (w nazwie notatki i jej treści)
 - <kbd>⌃ Ctrl</kbd> + <kbd>F</kbd> umożliwia wyszukiwanie notatek we wszystkich tagach / podfolderach
-- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> przełącza do poprzedniego obszaru roboczego
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> edytuje zaszyfrowaną notatkę
 - <kbd>⌃ Ctrl</kbd> + <kbd>R</kbd> usuwa bieżącą notatkę
 - <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> sprawdza dostępność aktualizacji

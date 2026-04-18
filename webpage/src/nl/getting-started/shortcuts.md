@@ -8,7 +8,7 @@
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> doorloopt de gevallen van de geselecteerde tekst
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> laat je naar noten zoeken (in de naam van de notitie en de inhoud ervan)
 - <kbd>Alt</kbd> + <kbd>F</kbd> laat je zoeken naar notities in alle tags / submappen
-- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> schakelt naar de vorige werkruimte
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> bewerkt een versleutelde notitie
 - <kbd>Alt</kbd> + <kbd>R</kbd> verwijdert de huidige notitie
 - <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> controleert op updates
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> erstellt eine neue Notiz in einem neuen Tab
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> laat je naar noten zoeken (in de naam van de notitie en de inhoud ervan)
 - <kbd>⌃ Ctrl</kbd> + <kbd>F</kbd> laat je zoeken naar notities in alle tags / submappen
-- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> schakelt naar de vorige werkruimte
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> bewerkt een versleutelde notitie
 - <kbd>⌃ Ctrl</kbd> + <kbd>R</kbd> verwijdert de huidige notitie
 - <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> controleert op updates

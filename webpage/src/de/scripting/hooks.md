@@ -348,7 +348,7 @@ Dieser Hook wird aufgerufen, wenn Daten von der QOwnNotes Web Companion-Browsere
 function callHandleWebsocketRawDataHook(requestType, pageUrl, pageTitle, rawData, screenshotDataUrl);
 ```
 
-Schauen Sie sich dazu die Beispiele auf [websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-new-note.qml) und [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml) an.
+You may want to take a look at the examples [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml) and [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml).
 
 ## onDetachedProcessCallback
 
@@ -386,23 +386,23 @@ function windowStateChangedHook(windowState);
 
 Schauen Sie sich dazu das Beispiel auf [window-state-changed.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/window-state-changed.qml) an.
 
-## workspaceSwitchedHook
+## layoutSwitchedHook
 
-Dieser Hook wird aufgerufen, wenn Arbeitsbereiche gewechselt werden.
+This hook is called when layouts are switched.
 
 ### Methodenaufruf und Parameter
 
 ```js
 /**
- * Diese Funktion wird aufgerufen, wenn Arbeitsbereiche gewechselt werden
+ * This function is called when layouts are switched
  *
- * @param oldUuid Alte Arbeitsbereich-UUID
- * @param newUuid Neue Arbeitsbereich-UUID
+ * @param oldUuid old uuid of layout
+ * @param newUuid new uuid of layout
  */
-function workspaceSwitchedHook(oldUuid, newUuid);
+function layoutSwitchedHook(oldUuid, newUuid);
 ```
 
-Schauen Sie sich dazu das Beispiel auf [websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/workspaces.qml) an.
+You may want to take a look at the example [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml).
 
 ## openAiBackendsHook
 

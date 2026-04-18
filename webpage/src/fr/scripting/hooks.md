@@ -348,7 +348,7 @@ Ce hook est appelé lorsque des données sont envoyées depuis l'extension de na
 function callHandleWebsocketRawDataHook(requestType, pageUrl, pageTitle, rawData, screenshotDataUrl);
 ```
 
-Vous voudrez peut-être jeter un coup d'œil aux exemples [websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-new-note.qml) et [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml).
+You may want to take a look at the examples [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml) and [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml).
 
 ## onDetachedProcessCallback
 
@@ -386,23 +386,23 @@ function windowStateChangedHook (windowState);
 
 Vous voudrez peut-être jeter un coup d'œil à l'exemple [window-state-changed.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/window-state-changed.qml).
 
-## workspaceSwitchedHook
+## layoutSwitchedHook
 
-Ce crochet est appelé quand il y a bascule entre les flux de travail.
+This hook is called when layouts are switched.
 
 ### Appel de méthode et paramètres
 
 ```js
 /**
- * Cette fonction est appelée quand il y a bascule entre les flux de travail
+ * This function is called when layouts are switched
  *
- * @param oldUuid uuid actuel de l'espace de travail
- * @param newUuid nouvel uuid de l'espace de travail
+ * @param oldUuid old uuid of layout
+ * @param newUuid new uuid of layout
  */
-function workspaceSwitchedHook(oldUuid, newUuid);
+function layoutSwitchedHook(oldUuid, newUuid);
 ```
 
-Vous voudrez peut-être jeter un coup d'œil à l'exemple [websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/workspaces.qml).
+You may want to take a look at the example [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml).
 
 ## openAiBackendsHook
 

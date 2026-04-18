@@ -21,10 +21,10 @@ If you know what you are doing, you can also build QOwnNotes directly in your te
 ```bash
 cd src
 
-# erstellt Binary-Überseztungsdateien, wenn Sie eine andere Sprache als Englisch möchten
+# build binary translation files if you want another language than English
 lrelease QOwnNotes.pro
 
-# bereite Build-Prozess vor und baue die Anwendung
+# prepare build process and build the application
 qmake
 make
 ```
@@ -34,7 +34,7 @@ Zögern Sie nicht, diesem Projekt Quellcode beizutragen, Vorschläge zu machen o
 Besuchen Sie [QOwnNotes auf GitHub](https://github.com/pbek/QOwnNotes).
 
 ::: tip
-If you want to contribute source code to the project please make your pull requests to the `main` branch.
+If you want to contribute source code to the project please make your pull requests to the `main` branch. But please make sure to read the [code contribution guidelines](../contributing/code-contributions.md) first.
 :::
 
 ## Quellarchiv

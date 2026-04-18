@@ -140,24 +140,26 @@ class MainWindow {
     Q_INVOKABLE void buildNotesIndexAndLoadNoteDirectoryList(
             bool forceBuild = false, bool forceLoad = false);
     Q_INVOKABLE void focusNoteTextEdit();
-    // Créer un nouveau sous-dossier de notes dans le sous-dossier courant
+    // Creates a new note subfolder in the current subfolder
     Q_INVOKABLE bool createNewNoteSubFolder(QString folderName = "");
-    // Insère le HTML dans la note courante au format MarkDown
-    // Cette méthode télécharge également les images distantes et transforme les URL "data:image"
-    // en images stockées localement dans le dossier media
+    // Inserts html in the current note as markdown
+    // This method also downloads remote images and transforms "data:image"
+    // urls to local images stored in the media directory
     Q_INVOKABLE void insertHtmlAsMarkdownIntoCurrentNote(QString html);
-    // Re-charge la note courante, par id
-    // Ceci est utile quand le chemin ou le nom de fichier de la note courante ont changé
+    // Reloads the current note by id
+    // This is useful when the path or filename of the current note changed
     Q_INVOKABLE void reloadCurrentNoteByNoteId();
-    // Retourne la liste des UUID des espaces de travail
-    Q_INVOKABLE QStringList getWorkspaceUuidList();
-    // Retourne l'UUID correspondant au nom de l'espace de travail entré
-    Q_INVOKABLE QString getWorkspaceUuid(const QString &workspaceName);
-    // Définit l'espace de travail courant par son UUID
-    Q_INVOKABLE void setCurrentWorkspace(const QString &uuid);
-    // Ferme un onglet de note sur un index spécifique (retourne true en cas de succès)
+    // Returns the list of layout UUIDs
+    Q_INVOKABLE QStringList getLayoutUuidList();
+    // Returns the UUID of a layout, passing in the layout name
+    Q_INVOKABLE QString getLayoutUuid(const QString &layoutName);
+    // Sets the current layout by UUID
+    Q_INVOKABLE void setCurrentLayout(const QString &uuid);
+    // Closes a note tab on a specific index (returns true if successful)
     Q_INVOKABLE bool removeNoteTab(int index);
-    // Saute à une étiquette dans l'arbre des étiquettes
+    // Returns a list of note ids that are opened in tabs
+    Q_INVOKABLE QList<int> getNoteTabNoteIdList();
+    // Jumps to a tag in the tag tree
     Q_INVOKABLE bool jumpToTag(int tagId);
 };
 ```
@@ -174,8 +176,8 @@ mainWindow.createNewNoteSubFolder("My fancy folder");
 // Inserts html in the current note as markdown
 mainWindow.insertHtmlAsMarkdownIntoCurrentNote("<h2>my headline</h2>some text");
 
-// Set 'Edit' workspace as current workspace
-mainWindow.setCurrentWorkspace(mainWindow.getWorkspaceUuid("Edit"));
+// Set 'Edit' layout as current layout
+mainWindow.setCurrentLayout(mainWindow.getLayoutUuid("Edit"));
 
 // Jump to the tag "test" in the tag tree
 // There is an example in https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/custom-actions.qml

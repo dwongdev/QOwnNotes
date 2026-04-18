@@ -8,7 +8,7 @@
 - <kbd>N</kbd> + <kbd>⇧ Shift</kbd> + <kbd>Ctrl</kbd> یک یادداشت جدید در یک زبانه جدید ایجاد می کند
 - <kbd>F</kbd> + <kbd>⇧ Shift</kbd> + <kbd>Ctrl</kbd> به شما اجازه می دهد تا یادداشت ها را (براساس نام یادداشت و محتوای آن) جستجو کنید
 - <kbd>F</kbd> + <kbd>Alt</kbd> به شما امکان می دهد یادداشت ها را در همه زبانه ها یا زیر پوشه ها جستجو کنید
-- <kbd>P</kbd> + <kbd>⇧ Shift</kbd> + <kbd>Alt</kbd> به فضای کاری قبلی تغییر می کند
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>E</kbd> + <kbd>⇧ Shift</kbd> + <kbd>Ctrl</kbd> یک یادداشت رمزگذاری شده را ویرایش می کند
 - <kbd>R</kbd> + <kbd>Alt</kbd> یادداشت کنونی را حذف می کند
 - <kbd>U</kbd> + <kbd>⇧ Shift</kbd> + <kbd>Alt</kbd> برای بروز رسانی بررسی انجام می دهد
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> یادداشت جدیدی در یک زبانه جدید ایجاد می کند
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> به شما اجازه می دهد تا یادداشت ها را (براساس نام یادداشت و محتوای آن) جستجو کنید
 - <kbd>F</kbd> + <kbd>⌃ Ctrl</kbd> به شما امکان می دهد یادداشت ها را در همه زبانه ها یا زیر پوشه ها جستجو کنید
-- <kbd>P</kbd> + <kbd>⇧ Shift</kbd> + <kbd>⌃ Ctrl</kbd> به فضای کاری قبلی تغییر می کند
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> یک یادداشت رمزگذاری شده را ویرایش می کند
 - <kbd>R</kbd> + <kbd>⌃ Ctrl</kbd> یادداشت کنونی را حذف می کند
 - <kbd>U</kbd> + <kbd>⇧ Shift</kbd> + <kbd>⌃ Ctrl</kbd> برای بروز رسانی بررسی انجام می دهد

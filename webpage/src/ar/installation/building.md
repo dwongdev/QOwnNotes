@@ -21,10 +21,10 @@ git submodule update --init
 ```bash
 cd src
 
-# ابنِ الملفات الثنائية للترجمات إذا أردت لغة غير الإنجليزية
+# build binary translation files if you want another language than English
 lrelease QOwnNotes.pro
 
-# حضّر عملية البناء وابنِ التطبيق
+# prepare build process and build the application
 qmake
 make
 ```
@@ -34,7 +34,7 @@ make
 قم بزيارة [QOwnNotes على GitHub](https://github.com/pbek/QOwnNotes).
 
 ::: tip
-If you want to contribute source code to the project please make your pull requests to the `main` branch.
+If you want to contribute source code to the project please make your pull requests to the `main` branch. But please make sure to read the [code contribution guidelines](../contributing/code-contributions.md) first.
 :::
 
 ## ملفات المصدر البرمجي المضغوطة

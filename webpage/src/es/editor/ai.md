@@ -26,37 +26,35 @@ De esta manera puede hacer lo que quiera y experimentar con ella.
 
 ![ai-settings](/img/editor/ai-settings.webp)
 
-## MCP Server
+## Servidor MCP
 
 QOwnNotes includes a built-in **MCP (Model Context Protocol) server** that allows external AI agents
 to access your notes over HTTP with Server-Sent Events (SSE) transport.
 
 You can enable and configure the MCP server in the **AI / MCP server** settings page.
 
-- **Enable/disable** the MCP server
-- **Configure the port** (default: 22226)
-- **Bearer token authentication** — a security token is auto-generated and must be included as a
-  `Bearer` token in the `Authorization` header of all requests
+- **Active/desactive** el servidor MCP
+- **Configure el puerto** (por defecto: 22226)
+- **Autenticación con token de portador**: se genera automáticamente un token de seguridad que debe incluirse como token de portador en el encabezado de autorización de todas las solicitudes
 
-### Available MCP Tools
+### Herramientas MCP disponibles
 
-The MCP server exposes the following tools to AI agents:
+El servidor MCP expone las siguientes herramientas a los agentes de IA:
 
-- **`search_notes`** — Full-text search across all notes in the current note folder.
-  Accepts a `query` string parameter and an optional `limit` (default 20).
-  Returns matching note names and a short preview of each.
-- **`fetch_note`** — Retrieve the full content of a single note by `name` or `id`.
+- **`search_notes`** — Búsqueda de texto completo en todas las notas de la carpeta de notas actual.
+  Acepta un parámetro de cadena `query` y un límite opcional `limit` (por defecto 20).
+  Devuelve los nombres de las notas coincidentes y una breve vista previa de cada una.
+- **`fetch_note`** — Recupera el contenido completo de una sola nota por `name` o `id`.
   Devuelve el texto, nombre de archivo e identificador de la nota.
 
 ### Conectar un agente de IA
 
-AI agents connect to the MCP server using the HTTP+SSE transport:
+Los agentes de IA se conectan al servidor MCP mediante el protocolo de transporte HTTP+SSE:
 
-1. **SSE endpoint**: `GET http://localhost:22226/sse`  
-   Opens a Server-Sent Events stream. The server sends an `endpoint` event containing
-   the URL for sending JSON-RPC messages.
-2. **Message endpoint**: `POST http://localhost:22226/message?sessionId=<id>`  
-   Send MCP JSON-RPC requests here. The response is delivered over the SSE stream.
+1. **Endpoint SSE**: `GET http://localhost:22226/sse` Abre un flujo de eventos enviados por el servidor. El servidor envía un evento `endpoint` que contiene
+   la URL para enviar mensajes JSON-RPC.
+2. **Endpoint de mensajes**: `POST http://localhost:22226/message?sessionId=<id>`  
+   Envíe aquí las solicitudes JSON-RPC de MCP. La respuesta se transmite a través del flujo SSE.
 
 Todas las solicitudes deben incluir el encabezado:
 
@@ -64,7 +62,7 @@ Todas las solicitudes deben incluir el encabezado:
 Authorization: Bearer <your-security-token>
 ```
 
-### Example `curl` Requests
+### Ejemplo de solicitudes `curl`
 
 Primero, establezca el token y puerto:
 
@@ -89,10 +87,10 @@ event: endpoint
 data: http://localhost:22226/message?sessionId=3d8c7b0e-...
 ```
 
-Use the `sessionId` from that event in the following requests. The `POST` request itself returns
-`202 Accepted`; the JSON-RPC response is delivered over the SSE stream.
+Utilice el `sessionId` de ese evento en las siguientes solicitudes. La solicitud `POST` devuelve
+`202 Accepted`; la respuesta JSON-RPC se entrega a través del flujo SSE.
 
-Initialize the MCP session:
+Inicializar la sesión MCP:
 
 ```bash
 curl \
@@ -108,7 +106,7 @@ curl \
   "http://localhost:$PORT/message?sessionId=3d8c7b0e-..."
 ```
 
-List the available MCP tools:
+Listar las herramientas MCP disponibles:
 
 ```bash
 curl \
@@ -124,7 +122,7 @@ curl \
   "http://localhost:$PORT/message?sessionId=3d8c7b0e-..."
 ```
 
-Search notes:
+Buscar notas:
 
 ```bash
 curl \
@@ -146,7 +144,7 @@ curl \
   "http://localhost:$PORT/message?sessionId=3d8c7b0e-..."
 ```
 
-Fetch a note by name:
+Obtener una nota por nombre:
 
 ```bash
 curl \
@@ -167,7 +165,7 @@ curl \
   "http://localhost:$PORT/message?sessionId=3d8c7b0e-..."
 ```
 
-Fetch a note by ID:
+Obtener una nota por ID:
 
 ```bash
 curl \

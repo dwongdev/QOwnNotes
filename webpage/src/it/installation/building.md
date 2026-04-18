@@ -21,10 +21,10 @@ In alternativa, se sai come funziona, puoi fare il build di QOwnNotes direttamen
 ```bash
 cd src
 
-# costruisci i file binari delle traduzioni se vuoi una lingua diversa dall'inglese
+# build binary translation files if you want another language than English
 lrelease QOwnNotes.pro
 
-# prepara il processo di build dell'applicazione
+# prepare build process and build the application
 qmake
 make
 ```
@@ -34,7 +34,7 @@ Sentiti libero di contribuire con il codice sorgente a questo progetto, dare sug
 Visita [QOwnNotes su GitHub](https://github.com/pbek/QOwnNotes).
 
 ::: tip
-If you want to contribute source code to the project please make your pull requests to the `main` branch.
+If you want to contribute source code to the project please make your pull requests to the `main` branch. But please make sure to read the [code contribution guidelines](../contributing/code-contributions.md) first.
 :::
 
 ## Archivio sorgente

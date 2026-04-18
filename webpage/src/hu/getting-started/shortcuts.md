@@ -8,7 +8,7 @@
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> új jegyzetet hoz létre egy új lapon
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> lehetővé teszi a jegyzetek keresését (a jegyzet nevében és tartalmában)
 - <kbd>Alt</kbd> + <kbd>F</kbd> lehetővé teszi jegyzetek keresését (a jegyzet és tartalma nevében)
-- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> átvált az előző munkaterületre
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> titkosított jegyzetet szerkeszt
 - <kbd>Alt</kbd> + <kbd>R</kbd> eltávolítja az aktuális jegyzetet
 - <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> frissítéseket keres
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> új jegyzetet hoz létre egy új lapon
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> lehetővé teszi jegyzetek keresését (a jegyzet és tartalma nevében)
 - A <kbd>⌃ Ctrl</kbd> + <kbd>F</kbd> segítségével jegyzeteket kereshet az összes címkében/almappában
-- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> átvált az előző munkaterületre
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> szerkeszt egy titkosított jegyzetet
 - <kbd>⌃ Ctrl</kbd> + <kbd>R</kbd> eltávolítja az aktuális hangjegyet
 - <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> frissítéseket keres

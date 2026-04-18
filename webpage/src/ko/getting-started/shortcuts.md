@@ -8,7 +8,7 @@
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> 새 탭에서 새 노트를 만듭니다
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> 노트를 검색할 수 있습니다 (노트 이름 및 내용)
 - <kbd>Alt</kbd> + <kbd>F</kbd> 모든 태그/하위 폴더에서 노트를 검색할 수 있습니다
-- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> 이전 작업 공간으로 전환합니다
+- <kbd>Alt</kbd> + <kbd> ⇧ Shift</kbd> + <kbd>P</kbd> 이전 레이아웃으로 전환합니다
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> 암호화된 노트를 편집합니다
 - <kbd>Alt</kbd> + <kbd>R</kbd> 현재 노트를 제거합니다
 - <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> 업데이트를 확인합니다
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> 새 탭에 새 노트를 만듭니다
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> 노트를 검색할 수 있습니다 (노트 및 내용 이름)
 - <kbd>⌃ Ctrl</kbd> + <kbd>F</kbd> 모든 태그/하위 폴더에서 노트를 검색할 수 있습니다
-- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> 이전 작업영역으로 전환합니다
+- <kbd>⌃ Ctrl</kbd> + <kbd> ⇧ Shift</kbd> + <kbd>P</kbd> 이전 레이아웃으로 전환합니다
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> 암호화된 노트를 편집합니다
 - <kbd>⌃ Ctrl</kbd> + <kbd>R</kbd> 현재 노트를 제거합니다
 - <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> 업데이트를 확인합니다

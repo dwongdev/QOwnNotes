@@ -9,6 +9,7 @@ QOwnNotes에 참여하는 다양한 방법
 - **Mastodon**에서 [QOwnNotes](https://social.qownnotes.org/@qownnotes) 팔로우
 - [QOwnNotes **블로그 RSS 피드**](https://feeds.feedburner.com/QOwnNotesBlog) 구독
 - [QOwnNotes **릴리즈 RSS 피드**](https://feeds.feedburner.com/QOwnNotesReleases) 구독
+- Read how [**code contributions** work](code-contributions.md)
 - [QOwnNotes에 **번역** ](translation.md)기여
 - [QOownNotes **GitHub 이슈** 페이지](https://github.com/pbek/QOwnNotes/issues)에서 새로운 기능에 대한 문제 보고 또는 아이디어 공유
 - 훌륭한 편집기 구성표를 만들었다면 [**GitHub 이슈** 페이지](https://github.com/pbek/QOwnNotes/issues)에 게시하기

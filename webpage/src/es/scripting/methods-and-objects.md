@@ -1283,7 +1283,7 @@ Además, puede sobreescribir `settingsVariables` con una función especial `regi
 /**
  * Registra las variables de configuración nuevamente
  *
- * Use este método si desea usar código para anular sus variables, como al establecer
+ * Use este método si desea usar código para sobrescribir sus variables, como al establecer
  * valores predeterminados dependiendo del sistema operativo.
  */
 function registerSettingsVariables() {
@@ -1856,11 +1856,11 @@ script.addHighlightingRule("^.{32}(.+)", "", 24, 1, -1);
 
 También puede echar un vistazo a los ejemplos en [highlighting.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/highlighting.qml).
 
-## Adding a highlighting rule with custom colors and styles
+## Agregar una regla de resaltado con colores y estilos personalizados
 
 You can also add highlighting rules with custom foreground/background colors and font styles, instead of being limited to the predefined highlighting states. This allows you to define your own color schemes for custom syntax patterns.
 
-### Method call and parameters
+### Llamada y parámetros del método
 
 ```cpp
 /**
@@ -1888,10 +1888,10 @@ void ScriptingService::addHighlightingRule(const QString &pattern,
 ```
 
 ::: tip
-You can combine a predefined `state` with custom format properties. The custom properties will override the state's defaults. Use state `-1` (`NoState`) if you only want to use custom formatting.
+You can combine a predefined `state` with custom format properties. Las propiedades personalizadas sobrescribirán los valores predeterminados del estado. Use state `-1` (`NoState`) if you only want to use custom formatting.
 :::
 
-### Example
+### Ejemplo
 
 ```js
 function init() {
@@ -1916,4 +1916,4 @@ function init() {
 }
 ```
 
-You can also take a look at the examples in [highlighting.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/highlighting.qml) and [custom-highlighting.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/custom-highlighting.qml).
+También puede consultar los ejemplos en [highlighting.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/highlighting.qml) y [custom-highlighting.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/custom-highlighting.qml).

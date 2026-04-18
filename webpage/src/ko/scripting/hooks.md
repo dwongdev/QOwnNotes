@@ -348,7 +348,7 @@ function callAutocompletionHook();
 function callHandleWebsocketRawDataHook(requestType, pageUrl, pageTitle, rawData, screenshotDataUrl);
 ```
 
-[websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-new-note.qml) 및 [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml)의 예를 살펴볼 수 있습니다.
+노트를 사용하여 작업하기 [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml) 및 [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml) 예제를 살펴보는 것이 좋습니다.
 
 ## onDetachedProcessCallback
 
@@ -386,23 +386,23 @@ function windowStateChangedHook(windowState);
 
 [window-state-changed.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/window-state-changed.qml) 예제를 살펴볼 수 있습니다.
 
-## workspaceSwitchedHook
+## layoutSwitchedHook
 
-이 후크는 작업 공간이 전환될 때 호출됩니다.
+레이아웃이 전환될 때 이 후크를 호출합니다.
 
 ### 메서드 호출 및 매개 변수
 
 ```js
 /**
- * 이 기능은 작업 공간이 전환될 때 호출됩니다
+ * 레이아웃이 전환될 때 이 함수를 호출합니다
  *
- * @param oldUuid old uuid of workspace
- * @param newUuid new uuid of workspace
+ * @param oldUuid old uuid of layout
+ * @param newUuid new uuid of layout
  */
-function workspaceSwitchedHook(oldUuid, newUuid);
+function layoutSwitchedHook(oldUuid, newUuid);
 ```
 
-[websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/workspaces.qml) 예제를 살펴볼 수 있습니다.
+예제 [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml)을 살펴보는 것이 좋습니다.
 
 ## openAiBackendsHook
 

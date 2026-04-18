@@ -348,7 +348,7 @@ Este gancho se llama cuando se envían datos desde la extensión del navegador Q
 function callHandleWebsocketRawDataHook(requestType, pageUrl, pageTitle, rawData, screenshotDataUrl);
 ```
 
-Puede que quiera echar un vistazo a los ejemplos [websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-new-note.qml) y [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml).
+You may want to take a look at the examples [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml) and [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml).
 
 ## onDetachedProcessCallback
 
@@ -386,23 +386,23 @@ function windowStateChangedHook (windowState);
 
 Puede que quiera echar un vistazo al ejemplo [window-state-changed.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/window-state-changed.qml).
 
-## workspaceSwitchedHook
+## layoutSwitchedHook
 
-Este gancho se llama cuando se cambian los espacios de trabajo.
+This hook is called when layouts are switched.
 
 ### Llamada y parámetros del método
 
 ```js
 /**
- * Esta función se llama cuando se cambian los espacios de trabajo
+ * This function is called when layouts are switched
  *
- * @param oldUuid uuid actual del espacio de trabajo
- * @param newUuid uuid nuevo del espacio de trabajo
+ * @param oldUuid old uuid of layout
+ * @param newUuid new uuid of layout
  */
-function workspaceSwitchedHook(oldUuid, newUuid);
+function layoutSwitchedHook(oldUuid, newUuid);
 ```
 
-Puede que quiera echar un vistazo al ejemplo [websocket-raw-data-new-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/workspaces.qml).
+You may want to take a look at the example [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml).
 
 ## openAiBackendsHook
 
@@ -445,18 +445,18 @@ Puede que quiera echar un vistazo al ejemplo [custom-openai-backends.qml](https:
 
 ## highlightingHook
 
-This hook is called for each text block in the editor during syntax highlighting. It allows you to add dynamic, context-aware highlighting that goes beyond static regex rules registered with `addHighlightingRule`.
+Este gancho se llama para cada bloque de texto en el editor durante el resaltado de sintaxis. Permite agregar resaltado dinámico y contextual que va más allá de las reglas de expresiones regulares estáticas registradas con `addHighlightingRule`.
 
 ::: warning
-This hook is called very frequently (for every visible text block on every keystroke), so keep your implementation fast. If you only need static regex-based highlighting, prefer using [`addHighlightingRule`](methods-and-objects.md#adding-a-highlighting-rule-for-the-editor) or [`addHighlightingRule` with custom colors](methods-and-objects.md#adding-a-highlighting-rule-with-custom-colors-and-styles) instead.
+Este gancho se llama con mucha frecuencia (por cada bloque de texto visible y con cada pulsación de tecla), así que asegúrese de que su implementación sea rápida. If you only need static regex-based highlighting, prefer using [`addHighlightingRule`](methods-and-objects.md#adding-a-highlighting-rule-for-the-editor) or [`addHighlightingRule` with custom colors](methods-and-objects.md#adding-a-highlighting-rule-with-custom-colors-and-styles) instead.
 :::
 
-### Method call and parameters
+### Llamada y parámetros del método
 
 ```js
 /**
- * This function is called for each text block during syntax highlighting.
- * It allows context-aware, dynamic highlighting.
+* Esta función se llama para cada bloque de texto durante el resaltado de sintaxis.
+ * Permite un resaltado dinámico y sensible al contexto.
  *
  * @param text {QString} the text of the current block being highlighted
  * @param previousBlockState {int} the highlighter state of the previous block
@@ -492,4 +492,4 @@ function highlightingHook(text, previousBlockState) {
 }
 ```
 
-You may want to take a look at the examples [highlighting.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/highlighting.qml) and [custom-highlighting.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/custom-highlighting.qml).
+Puede que quiera consultar los ejemplos [highlighting.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/highlighting.qml) y [custom-highlighting.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/custom-highlighting.qml).

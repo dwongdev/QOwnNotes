@@ -8,7 +8,7 @@
 - <kbd>Strg</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>N</kbd> erstellt eine neue Notiz in einem neuen Tab
 - Mit <kbd>Strg</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>F</kbd> können Sie nach Notizen suchen (im Namen der Notiz und ihren Inhalten)
 - Mit <kbd>Alt</kbd> + <kbd>F</kbd> können Sie in allen Schlagwörtern / Unterordnern nach Notizen suchen
-- <kbd>Alt</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>P</kbd> wechselt zum vorherigen Arbeitsbereich
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>Strg</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>E</kbd> bearbeitet eine verschlüsselte Notiz
 - <kbd>Alt</kbd> + <kbd>R</kbd> entfernt die aktuelle Notiz
 - <kbd>Alt</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>U</kbd> sucht nach Updates
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>N</kbd> erstellt eine neue Notiz in einem neuen Tab
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>F</kbd> lässt Sie nach Notizen suchen (im Namen der Notiz und ihren Inhalten)
 - <kbd>⌃ Ctrl</kbd> + <kbd>F</kbd> ermöglicht die Suche nach Notizen in allen Schlagwörtern / Unterordnern
-- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>P</kbd> wechselt zum vorherigen Arbeitsbereich
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>E</kbd> bearbeitet eine verschlüsselte Notiz
 - <kbd>⌃ Ctrl</kbd> + <kbd>R</kbd> entfernt die aktuelle Notiz
 - <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Umschalt</kbd> + <kbd>U</kbd> sucht nach Updates

@@ -19,14 +19,8 @@ git submodule update --init
 사용법을 잘 알고 있다면 터미널에서 직접 QOwnNotes를 만들 수도 있습니다:
 
 ```bash
-cd src
-
-# build binary translation files if you want another language than English
+# 영어가 아닌 다른 언어를 원하는 경우 이진 번역 파일 만들기
 lrelease QOwnNotes.pro
-
-# prepare build process and build the application
-qmake
-make
 ```
 
 이 프로젝트에 소스 코드를 제공하거나, 제안을 하거나, [QOwnNotes 문제 페이지](https://github.com/pbek/QOwnNotes/issues)에서 문제를 보고할 수 있습니다.
@@ -34,7 +28,7 @@ make
 [GitHub의 QOnNotes](https://github.com/pbek/QOwnNotes)를 방문합니다.
 
 ::: tip
-프로젝트에 소스 코드를 기여하고 싶으시면 `메인` 지점에 풀 요청을 해주시기 바랍니다.
+프로젝트에 소스 코드를 기여하고 싶으시면 `메인` 지점에 풀 요청을 해주시기 바랍니다. But please make sure to read the [code contribution guidelines](../contributing/code-contributions.md) first.
 :::
 
 ## 원본 보관소

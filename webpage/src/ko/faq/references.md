@@ -142,9 +142,9 @@ QOwnNotes에 대해 다른 사람들이 한 말입니다…
 - [QOwnNotes는 Markdown을 지원하는 Windows, Linux 및 macOS용 오픈 소스 노트 필기 도구입니다. - 핀 시스템](https://pinsystem.co.uk/2019/11/22/qownnotes-is-an-open-source-note-taking-tool-for-windows-linux-and-macos-that-supports-markdown/)
 - [QOwnNotes - Nextcloud 연동 기능이 있는 메모장 | ITrig](http://www.itrig.de/index.php?/archives/2341-QOwnNotes-Notepad-mit-Nextcloud-Anbindung.html)
 - Chip Magazin (3.2.2020 im Handel)
-- [QOwnNotes for Debian – There and back again](https://www.preining.info/blog/2020/02/qownnotes-for-debian/)
-  - this has been on <https://planet.debian.org/>
-- [Search for the near-perfect note taking software | Animesh Bulusu](https://animesh.blog/near-perfect-note-taking-software/)
+- [데비안용 QOwnNotes - 갔다가 다시 돌아오기](https://www.preining.info/blog/2020/02/qownnotes-for-debian/)
+  - 이것은 [https://planet.debian.org/ ](https://planet.debian.org/)에 게시되었습니다
+- [거의 완벽한 노트 필기 소프트웨어를 검색하세요 | Animesh Bulusu](https://animesh.blog/near-perfect-note-taking-software/)
 - [qownnotes (Wiki ubuntu-fr)](http://doc.ubuntu-fr.org/qownnotes)
 - [Taking Notes with Nextcloud, QOwnNotes, and Notebooks | Life Meets Code](https://lifemeetscode.com/blog/taking-notes-with-nextcloud-qownnotes-and-notebooks)
   - Nextcloud Notes 및 Android Client가 포함된 전체 설치 튜토리얼

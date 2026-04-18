@@ -8,7 +8,7 @@
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> crea una nuova nota in una nuova scheda
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> ti permette di cercare note (nel nome della nota e nel suo contenuto)
 - <kbd>Alt</kbd> + <kbd>F</kbd> ti consente di cercare note in tutte le etichette / sottocartelle
-- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> passa all'area di lavoro precedente
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> modifica una nota crittografata
 - <kbd>Alt</kbd> + <kbd>R</kbd> rimuove la nota corrente
 - <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> controlla gli aggiornamenti
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> crea una nuova nota in una nuova scheda
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> ti permette di cercare note (nel nome della nota e nel suo contenuto)
 - <kbd>^ Ctrl</kbd> + <kbd>F</kbd> ti consente di cercare note in tutte le etichette / sottocartelle
-- <kbd>^ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> passa all'area di lavoro precedente
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> modifica una nota crittografata
 - <kbd>^ Ctrl</kbd> + <kbd>R</kbd> rimuove la nota corrente
 - <kbd>^ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> controlla gli aggiornamenti

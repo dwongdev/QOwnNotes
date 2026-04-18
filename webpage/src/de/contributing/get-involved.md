@@ -9,6 +9,7 @@ Es gibt verschiedene Möglichkeiten, sich an QOwnNotes zu beteiligen:
 - Follow [QOwnNotes on **Mastodon**](https://social.qownnotes.org/@qownnotes)
 - Abonniere den [QOwnNotes **Blog-RSS-Feed**](https://feeds.feedburner.com/QOwnNotesBlog)
 - Abonniere den [ QOwnNotes **Veröffentlichungen RSS-Feed** ](https://feeds.feedburner.com/QOwnNotesReleases)
+- Read how [**code contributions** work](code-contributions.md)
 - Trage [**Übersetzungen** zu QOwnNotes ](translation.md) bei
 - Melde Probleme oder teile Ideen für neue Funktionen auf der [QOwnNotes **GitHub-Probleme**-Seite](https://github.com/pbek/QOwnNotes/issues)
 - Wenn du ein schönes Editor-Schema erstellt hast, veröffentliche es bitte auch auf der Seite [**GitHub-Probleme**](https://github.com/pbek/QOwnNotes/issues)
