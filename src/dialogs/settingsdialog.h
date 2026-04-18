@@ -1,12 +1,13 @@
 #ifndef SETTINGSDIALOG_H
 #define SETTINGSDIALOG_H
 
-#include <entities/cloudconnection.h>
 #include <entities/notefolder.h>
+#include <enums/oklabelstatus.h>
 
 #include "masterdialog.h"
 #include "widgets/settings/mcpserversettingswidget.h"
 #include "widgets/settings/notefoldersettingswidget.h"
+#include "widgets/settings/owncloudsettingswidget.h"
 #include "widgets/settings/panelssettingswidget.h"
 #include "widgets/settings/scriptingsettingswidget.h"
 
@@ -26,7 +27,6 @@ class QButtonGroup;
 class QCheckBox;
 class NoteFolder;
 class QSplitter;
-class CloudConnection;
 
 struct CalDAVCalendarData;
 
@@ -34,12 +34,14 @@ class SettingsDialog : public MasterDialog {
     Q_OBJECT
 
    public:
-    enum OKLabelStatus {
-        Unknown,
-        Warning,
-        OK,
-        Failure,
-    };
+    // OKLabelStatus is a global enum defined in enums/oklabelstatus.h
+    using OKLabelStatus = ::OKLabelStatus;
+    // Expose enum values for backward compatibility (owncloudservice.cpp uses SettingsDialog::OK
+    // etc.)
+    static constexpr OKLabelStatus Unknown = ::Unknown;
+    static constexpr OKLabelStatus Warning = ::Warning;
+    static constexpr OKLabelStatus OK = ::OK;
+    static constexpr OKLabelStatus Failure = ::Failure;
 
     enum SettingsPages {
         NoteFolderPage,
@@ -93,13 +95,11 @@ class SettingsDialog : public MasterDialog {
 
    private slots:
 
-    void on_connectButton_clicked();
-
     void on_buttonBox_clicked(QAbstractButton *button);
 
-    void on_ownCloudServerAppPageButton_clicked();
-
     void on_reinitializeDatabaseButton_clicked();
+
+    void on_databaseIntegrityCheckButton_clicked();
 
     void on_clearAppDataAndExitButton_clicked();
 
@@ -138,8 +138,6 @@ class SettingsDialog : public MasterDialog {
 
     void needRestart();
 
-    void on_ownCloudSupportCheckBox_toggled();
-
     void on_interfaceStyleComboBox_currentTextChanged(const QString &arg1);
 
     void on_showSystemTrayCheckBox_toggled(bool checked);
@@ -158,29 +156,9 @@ class SettingsDialog : public MasterDialog {
 
     void on_overrideInterfaceFontSizeGroupBox_toggled(bool arg1);
 
-    void on_cloudConnectionComboBox_currentIndexChanged(int index);
-
-    void on_cloudConnectionAddButton_clicked();
-
-    void on_cloudConnectionRemoveButton_clicked();
-
-    void storeSelectedCloudConnection();
-
-    void on_ownCloudServerAppPasswordPageButton_clicked();
-
     void on_languageSearchLineEdit_textChanged(const QString &arg1);
 
-    void on_databaseIntegrityCheckButton_clicked();
-
-    void on_loginFlowButton_clicked();
-
-    void on_loginFlowCancelButton_clicked();
-
     void on_defaultNoteFileExtensionListWidget_itemSelectionChanged();
-
-    void on_appNextcloudDeckCheckBox_toggled(bool checked);
-
-    void onSettingsConnectionTestFinished();
 
     void on_showStatusBarNotePathCheckBox_toggled(bool checked);
 
@@ -190,37 +168,20 @@ class SettingsDialog : public MasterDialog {
 
    private:
     Ui::SettingsDialog *ui;
-    bool appIsValid;
-    QString appVersion;
-    QString serverVersion;
-    QString notesPathExistsText;
-    QString connectionErrorMessage;
     static const int _defaultMarkdownHighlightingInterval = 200;
     QSplitter *_mainSplitter;
     QButtonGroup *_noteNotificationButtonGroup;
     QCheckBox *_noteNotificationNoneCheckBox;
-    CloudConnection _selectedCloudConnection;
-    int _loginFlowPollCount = 0;
     QHash<int, bool> _pageInitialized;
-    QString _installInfoTextLabel1Html;
-    QString _installInfoTextLabel2Html;
-    QString _installInfoTextLabel3Html;
     bool _initialDarkMode = false;
     bool _initialDarkModeColors = false;
     bool _initialDarkModeTrayIcon = false;
     bool _initialDarkModeIconTheme = false;
     QString _initialSchemaKey;
-    bool _connectionTestInProgress = false;
     QList<QWidget *> _searchMatchedWidgets;
     QHash<QWidget *, QString> _searchMatchedWidgetOriginalTexts;
 
     void storeSettings();
-
-    void startConnectionTest();
-
-    void setConnectionTestInProgress(bool inProgress);
-
-    void cancelConnectionTest();
 
     static void selectListWidgetValue(QListWidget *listWidget, const QString &value);
 
@@ -253,21 +214,13 @@ class SettingsDialog : public MasterDialog {
 
     void replaceOwnCloudText() const;
 
-    bool connectionTestCanBeStarted() const;
-
     void loadInterfaceStyleComboBox() const;
 
     void initSearchEngineComboBox() const;
 
     QKeySequenceWidget *findKeySequenceWidget(const QString &objectName);
 
-    void storeOwncloudDebugData() const;
-
-    void initCloudConnectionComboBox(int selectedId = -1);
-
     void handleDarkModeCheckBoxToggled(bool updateCheckBoxes = false, bool updateSchema = false);
-
-    void resetOKLabelData();
 
     void updateSearchLineEditIcons();
 

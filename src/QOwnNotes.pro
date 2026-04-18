@@ -240,8 +240,9 @@ SOURCES += main.cpp\
     widgets/settings/previewfontsettingswidget.cpp \
     widgets/settings/debugsettingswidget.cpp \
     widgets/settings/languagetoolsettingswidget.cpp \
-    widgets/settings/networksettingswidget.cpp \
-    widgets/settings/todosettingswidget.cpp \
+     widgets/settings/networksettingswidget.cpp \
+     widgets/settings/owncloudsettingswidget.cpp \
+     widgets/settings/todosettingswidget.cpp \
     widgets/settings/aisettingswidget.cpp \
     widgets/settings/webcompanionsettingswidget.cpp \
     widgets/settings/editorsettingswidget.cpp \
@@ -400,8 +401,9 @@ HEADERS  += mainwindow.h \
     widgets/settings/previewfontsettingswidget.h \
     widgets/settings/debugsettingswidget.h \
     widgets/settings/languagetoolsettingswidget.h \
-    widgets/settings/networksettingswidget.h \
-    widgets/settings/todosettingswidget.h \
+     widgets/settings/networksettingswidget.h \
+     widgets/settings/owncloudsettingswidget.h \
+     widgets/settings/todosettingswidget.h \
     widgets/settings/aisettingswidget.h \
     widgets/settings/webcompanionsettingswidget.h \
     widgets/settings/editorsettingswidget.h \
@@ -480,8 +482,9 @@ FORMS    += mainwindow.ui \
     widgets/settings/previewfontsettingswidget.ui \
     widgets/settings/debugsettingswidget.ui \
     widgets/settings/languagetoolsettingswidget.ui \
-    widgets/settings/networksettingswidget.ui \
-    widgets/settings/todosettingswidget.ui \
+     widgets/settings/networksettingswidget.ui \
+     widgets/settings/owncloudsettingswidget.ui \
+     widgets/settings/todosettingswidget.ui \
     widgets/settings/aisettingswidget.ui \
     widgets/settings/webcompanionsettingswidget.ui \
     widgets/settings/editorsettingswidget.ui \
