@@ -1288,17 +1288,27 @@ bool Tag::renameNoteFileNamesOfLinks(const QString &oldFileName, const QString &
 
 /**
  * Renames the note sub folder paths of note links
+ *
+ * Uses prefix-only substitution to avoid accidentally modifying sibling paths
+ * that share the same prefix (e.g. renaming "work" must not affect "workplace"),
+ * and to prevent the global replace() from corrupting paths that contain the
+ * old folder name in a deeper component (e.g. "A/A/note" when renaming "A").
  */
 bool Tag::renameNoteSubFolderPathsOfLinks(const QString &oldPath, const QString &newPath) {
     QSqlDatabase db = DatabaseService::getNoteFolderDatabase();
     QSqlQuery query(db);
+    // Replace only the prefix: match the exact path or direct/deep children
+    // (separated by "/"), then concatenate newPath with the remainder of the
+    // original string so that inner occurrences of the old name are untouched.
     query.prepare(
         QStringLiteral("UPDATE noteTagLink SET note_sub_folder_path = "
-                       "replace(note_sub_folder_path, :oldPath, :newPath) WHERE "
-                       "note_sub_folder_path LIKE :oldPathLike"));
+                       ":newPath || substr(note_sub_folder_path, length(:oldPath2) + 1) "
+                       "WHERE note_sub_folder_path = :oldPath "
+                       "OR note_sub_folder_path LIKE :oldPathChildLike"));
 
     query.bindValue(QStringLiteral(":oldPath"), oldPath);
-    query.bindValue(QStringLiteral(":oldPathLike"), oldPath + "%");
+    query.bindValue(QStringLiteral(":oldPath2"), oldPath);
+    query.bindValue(QStringLiteral(":oldPathChildLike"), oldPath + "/%");
     query.bindValue(QStringLiteral(":newPath"), newPath);
 
     if (!query.exec()) {

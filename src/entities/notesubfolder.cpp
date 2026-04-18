@@ -178,6 +178,13 @@ bool NoteSubFolder::rename(const QString& newName) {
         Note::updateQualifiedWikiLinksForSubfolderRename(oldRelativePath, newRelativePath);
         Note::updateRelativeMarkdownLinksForSubfolderRename(oldRelativePath, newRelativePath);
 
+        // Persist the new name to the database so that the re-index triggered
+        // by the folder rename below can locate the existing row by its new
+        // name and reuse it (instead of deleting the old row and creating a
+        // fresh one with a new id, which would cause note rows to be
+        // recreated and tag links to be temporarily unresolvable).
+        store();
+
         // rename the note subfolder
         const bool ret = QDir().rename(oldPath, newPath);
 

@@ -2,6 +2,12 @@
 
 ## 26.4.16
 
+- Tag assignments are now preserved when a **note subfolder** is renamed,
+  moved, or contains notes that are moved as part of a subfolder operation;
+  the subfolder path update now uses a safe prefix-only replacement so that
+  sibling folders sharing the same name prefix and notes whose path components
+  happen to repeat the folder name are no longer incorrectly modified
+  (for [#1696](https://github.com/pbek/QOwnNotes/issues/1696))
 - Refactored the **Settings dialog** by extracting individual settings pages
   into separate widget classes and moved them to a dedicated `widgets/settings`
   directory for better code organization (for [#3570](https://github.com/pbek/QOwnNotes/issues/3570))
