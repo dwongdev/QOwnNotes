@@ -67,6 +67,13 @@ find src -name "*.md" -type f 2>/dev/null | grep -E 'src/[a-z]{2}(-[A-Z]{2})?/' 
     error_details="${error_details}unescaped angle-bracket placeholder outside code span (e.g. '<id>'); "
   fi
 
+  # Pattern 9: Orphaned HTML list/paragraph tags (<li>, </li>, <ul>, </ul>, <ol>, </ol>, </p>)
+  # These break Vue template compilation when they appear as bare HTML in markdown
+  if grep -qE '</?li\s*>|</?ul\s*>|</?ol\s*>' "$file" 2>/dev/null; then
+    has_error=true
+    error_details="${error_details}orphaned HTML list tags (<li>, </li>, <ul>, </ul>, etc.); "
+  fi
+
   if [ "$has_error" = true ]; then
     corrupted_files="$corrupted_files$file
 "

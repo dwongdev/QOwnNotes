@@ -126,6 +126,20 @@ fixCrowdinTranslationProblems() {
   # Fix malformed anchor tags where the closing > of the opening tag is missing (e.g. <a href="url"text</a>)
   perl -i -pe 's|<a href="([^"]+)"([^>\s<][^<]*)</a>|[$2]($1)|g' "$1"
   sed -i -e ':a' -e 'N' -e '$!ba' -e 's/~~~\n~~~/```\n~~~/g' "$1"
+  # Convert <code>text</code> pairs to backtick code spans
+  perl -i -pe 's|<code>([^<]*)</code>|`$1`|g' "$1"
+  # Convert <li> at the start of a line to a markdown list item
+  sed -i -E 's|^<li>|- |g' "$1"
+  # Remove orphaned HTML list/paragraph tags that break Vue template compilation
+  sed -i -E 's|</?(li|ul|ol|p)\s*>||g' "$1"
+  # Remove remaining orphaned <code> and </code> tags
+  sed -i -E 's|</?code\s*>||g' "$1"
+  # Remove numeric placeholder tags like <0>, </0>, <1>, </1>, </0 >, etc.
+  sed -i -E 's|</?[0-9]+\s*>||g' "$1"
+  # Fix HTML entity &gt; to > inside backtick code spans (Crowdin sometimes encodes -> as -&gt;)
+  perl -i -pe 's|(`[^`]*?)&gt;([^`]*`)|$1>$2|g' "$1"
+  # Fix HTML entity &lt; to < inside backtick code spans
+  perl -i -pe 's|(`[^`]*?)&lt;([^`]*`)|$1<$2|g' "$1"
 }
 
 echo "Fix Crowdin translation bugs..."
