@@ -348,7 +348,7 @@ Este gancho se llama cuando se envían datos desde la extensión del navegador Q
 function callHandleWebsocketRawDataHook(requestType, pageUrl, pageTitle, rawData, screenshotDataUrl);
 ```
 
-You may want to take a look at the examples [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml) and [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml).
+Es posible que desee echar un vistazo a los ejemplos [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml) y [websocket-raw-data-selection-in-note.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/websocket-raw-data-selection-in-note.qml).
 
 ## onDetachedProcessCallback
 
@@ -388,21 +388,21 @@ Puede que quiera echar un vistazo al ejemplo [window-state-changed.qml](https://
 
 ## layoutSwitchedHook
 
-This hook is called when layouts are switched.
+Este gancho se llama cuando se cambian los diseños.
 
 ### Llamada y parámetros del método
 
 ```js
 /**
- * This function is called when layouts are switched
+ * Esta función se llama cuando se cambian los diseños
  *
- * @param oldUuid old uuid of layout
- * @param newUuid new uuid of layout
+ * @param oldUuid uuid antiguo del diseño
+ * @param newUuid nuevo uuid del diseño
  */
 function layoutSwitchedHook(oldUuid, newUuid);
 ```
 
-You may want to take a look at the example [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml).
+Puede que quiera echar un vistazo al ejemplo [layouts.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/layouts.qml).
 
 ## openAiBackendsHook
 
@@ -448,7 +448,7 @@ Puede que quiera echar un vistazo al ejemplo [custom-openai-backends.qml](https:
 Este gancho se llama para cada bloque de texto en el editor durante el resaltado de sintaxis. Permite agregar resaltado dinámico y contextual que va más allá de las reglas de expresiones regulares estáticas registradas con `addHighlightingRule`.
 
 ::: warning
-Este gancho se llama con mucha frecuencia (por cada bloque de texto visible y con cada pulsación de tecla), así que asegúrese de que su implementación sea rápida. If you only need static regex-based highlighting, prefer using [`addHighlightingRule`](methods-and-objects.md#adding-a-highlighting-rule-for-the-editor) or [`addHighlightingRule` with custom colors](methods-and-objects.md#adding-a-highlighting-rule-with-custom-colors-and-styles) instead.
+Este gancho se llama con mucha frecuencia (por cada bloque de texto visible y con cada pulsación de tecla), así que asegúrese de que su implementación sea rápida. Si solo necesita resaltado estático basado en expresiones regulares, prefiera usar [`addHighlightingRule`](methods-and-objects.md#adding-a-highlighting-rule-for-the-editor) o [`addHighlightingRule` con colores personalizados](methods-and-objects.md#adding-a-highlighting-rule-with-custom-colors-and-styles).
 :::
 
 ### Llamada y parámetros del método
@@ -458,25 +458,25 @@ Este gancho se llama con mucha frecuencia (por cada bloque de texto visible y co
 * Esta función se llama para cada bloque de texto durante el resaltado de sintaxis.
  * Permite un resaltado dinámico y sensible al contexto.
  *
- * @param text {QString} the text of the current block being highlighted
- * @param previousBlockState {int} the highlighter state of the previous block
- *     (-1 if this is the first block)
- * @return {Array} an array of highlight range objects, each with:
- *     start {int} - start position in the text
- *     length {int} - number of characters to highlight
- *     state {int} - the HighlighterState to use (optional, -1 for custom only)
- *     foregroundColor {string} - foreground color name or hex (optional)
- *     backgroundColor {string} - background color name or hex (optional)
- *     bold {bool} - bold font weight (optional)
- *     italic {bool} - italic font style (optional)
- *     underline {bool} - underline the text (optional)
- *     fontSize {int} - font point size (optional)
+* @param text {QString} el texto del bloque que se está resaltando
+* @param previousBlockState {int} el estado del resaltador del bloque anterior
+* (-1 si es el primer bloque)
+* @return {Array} un array de objetos de rango de resaltado, cada uno con:
+* start {int} - posición inicial en el texto
+* length {int} - número de caracteres a resaltar
+* state {int} - el estado del resaltador a utilizar (opcional, -1 para personalización)
+* foregroundColor {string} - nombre o código hexadecimal del color de primer plano (opcional)
+* backgroundColor {string} - nombre o código hexadecimal del color de fondo (opcional)
+* bold {bool} - grosor de la fuente en negrita (opcional)
+* italic {bool} - estilo de fuente en cursiva (opcional)
+* underline {bool} - subrayar el texto (opcional)
+* fontSize {int} - tamaño de fuente en puntos (opcional)
  */
 function highlightingHook(text, previousBlockState) {
   var highlights = [];
 
-  // Example: highlight all occurrences of "FIXME" with red bold underline
-  var re = /FIXME/g;
+ */ // Ejemplo: resaltar todas las apariciones de "ARREGLAR" con subrayado rojo en negrita
+  var re = /ARREGLAR/g;
   var match;
   while ((match = re.exec(text)) !== null) {
     highlights.push({

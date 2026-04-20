@@ -1,40 +1,37 @@
-# Code contributions
+# Contribuciones de código
 
-Thank you for contributing code to QOwnNotes.
+Gracias por contribuir código a QOwnNotes.
 
-## Pull requests
+## Solicitudes de incorporación
 
-### Open an issue first
+### Abrir una incidencia primero
 
-Please open an issue before opening a pull request.
+Por favor, abra una incidencia antes de abrir una solicitud de incorporación.
 
-This helps discuss the problem, proposed solution, scope, and possible side effects before code is reviewed.
+Esto ayuda a debatir el problema, la solución propuesta, el alcance y los posibles efectos secundarios antes de que se revise el código.
 
-The only exception is something obviously trivial, like a typo, a very small documentation fix,
-or another tiny change that does not need prior discussion.
+La única excepción es algo obviamente trivial, como una errata, una pequeña corrección en la documentación o cualquier otro cambio mínimo que no requiera discusión previa.
 
-If there is already an existing issue for your work, reference it in your pull request.
+Si ya existe una incidencia relacionada con su trabajo, haga referencia a ella en su solicitud de incorporación.
 
-### Branches and pull requests
+### Ramas y solicitudes de incorporación
 
-Please open pull requests against the `main` branch.
+Por favor, abre solicitudes de incorporación hacia la rama `main`.
 
-Before you start your work, create a new branch for your change and open the pull request from that branch.
+Antes de comenzar su trabajo, cree una nueva rama para su cambio y abra la solicitud de incorporación desde esa rama.
 
-Please do not open pull requests from your own `main` branch, as that can cause problems with keeping your
-fork up to date and can lead to accidentally including unrelated changes in the pull request.
+Por favor, no abra solicitudes de extracción desde su rama principal, ya que esto puede causar problemas para mantener su bifurcación actualizada y puede provocar la inclusión accidental de cambios no relacionados en la solicitud de incorporación.
 
-### Translation contributions
+### Contribuciones de traducción
 
-Please do not make translation contributions by changing the translation files directly.
-Translation files are generated automatically, so translation work should go through the
-[translation page](translation.md).
+Por favor, no realice contribuciones de traducción modificando directamente los archivos de traducción.
+Los archivos de traducción se generan automáticamente, por lo que el trabajo de traducción debe realizarse a través de la página de traducción (translation.md).
 
-## Commit messages
+## Mensajes de confirmación
 
-Please follow the existing commit message style used in this repository.
+Por favor, siga el estilo de mensaje de confirmación que se utiliza en este repositorio.
 
-Recent examples:
+Ejemplos recientes:
 
 - `#1765 misc: optionally anonymize personal information in debug output`
 - `#1789 misc: add remembered file manager open prompts`
@@ -42,11 +39,11 @@ Recent examples:
 - `ci: fix step name`
 - `release: bump version`
 
-In general, commit messages should:
+En general, los mensajes de confirmación deberían:
 
-- be short and descriptive
-- use a scope followed by a colon, like `misc:`, `mainwindow:`, `tests:`, or `ci:`
-- use an imperative description after the colon, like `fix`, `add`, `allow`, `update`, or `refactor`
+- Ser cortos y descriptivos
+- Usar un ámbito seguido de dos puntos, como `misc:`, `mainwindow:`, `tests:` o `ci:`
+- Usar una descripción imperativa después de los dos puntos, como `fix`, `add`, `allow`, `update` o `refactor`
 - include the issue number at the start when there is one, for example `#3568 mainwindow: allow dragging text file to import as note`
 
-Please keep commits focused, so each commit represents one logical change.
+Por favor, mantén las confirmaciones centradas, de modo que cada confirmación represente un cambio lógico.

@@ -71,7 +71,7 @@ export TOKEN="su-token-mcp"
 export PORT=22226
 ```
 
-Open the SSE stream in one terminal:
+Abra el flujo SSE en una terminal:
 
 ```bash
 curl -N \
@@ -80,7 +80,7 @@ curl -N \
   "http://localhost:$PORT/sse"
 ```
 
-The server will send an `endpoint` event containing a URL like:
+El servidor enviará un evento `endpoint` que contiene una URL similar a:
 
 ```text
 event: endpoint

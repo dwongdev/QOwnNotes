@@ -14,7 +14,7 @@ El servicio solo se conecta a `127.0.0.1`.
 ## Endpoint
 
 - `GET /suggest?q=home`
-- Optional: `limit` (default `10`, max `50`)
+- Opcional: `limit` (valor predeterminado `10`, valor máximo `50`)
 - Optional: `token` (if you configured a security token in QOwnNotes)
 
 If you use the custom Homepage assets from `docs/homepage/custom.js`, set `QON_TOKEN` to the same
@@ -45,10 +45,10 @@ and set `QON_TOKEN` inside `custom.js` instead.
 En una instalación estándar de Homepage, añada el bloque «search» en uno de estos archivos:
 
 - `settings.yaml` (global Homepage settings)
-- `settings.yml` (same as above, depending on your setup)
-- the file mounted into your container as `/app/config/settings.yaml`
+- `settings.yml` (igual que lo anterior, dependiendo de su configuración)
+- El archivo montado en su contenedor como `/app/config/settings.yaml`
 
-If your Homepage deployment splits configuration across multiple files, edit the file that already contains your `search` provider settings.
+Si la configuración de su Homepage se divide en varios archivos, edite el archivo que ya contiene la configuración de su proveedor de búsqueda.
 
 ## Recursos para Homepage personalizado
 
@@ -56,11 +56,10 @@ This repository also contains a ready-to-use Homepage customization example in:
 
 - [docs/homepage on GitHub](https://github.com/pbek/QOwnNotes/tree/main/docs/homepage)
 
-Use these files when your Homepage deployment supports loading `custom.js` and `custom.css`.
+Utilice estos archivos cuando la implementación de su Homepage admita la carga de `custom.js` y `custom.css`.
 
-If your Homepage runs on an external host (different machine / container than QOwnNotes),
-you need these files on that hosted Homepage instance so it can query your local QOwnNotes
-suggestion API and merge/display those suggestions in Homepage search.
+Si su Homepage se ejecuta en un servidor externo (máquina/contenedor diferente al de QOwnNotes),
+necesita estos archivos en esa instancia de Homepage alojada para que pueda consultar la API de sugerencias de QOwnNotes local y combinar/mostrar esas sugerencias en la búsqueda de Homepage.
 
 When you use that setup with a QOwnNotes security token, make sure the same token is configured in
 `QON_TOKEN` inside `custom.js`.

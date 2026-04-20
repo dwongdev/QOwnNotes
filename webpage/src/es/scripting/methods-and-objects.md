@@ -1795,14 +1795,14 @@ Puede inyectar directamente reglas de resaltado en el editor definiendo expresio
 
 ```cpp
 /**
- * Adds a highlighting rule to the syntax highlighter of the editor
+ * Agrega una regla de resaltado al resaltador de sintaxis del editor.
  *
- * @param pattern {QString} the regular expression pattern to highlight
- * @param shouldContain {QString} a string that must be contained in the highlighted text for the pattern to be parsed
- * @param state {int} the state of the syntax highlighter to use
- * @param capturingGroup {int} the capturing group for the pattern to use for highlighting (default: 0)
- * @param maskedGroup {int} the capturing group for the pattern to use for masking (default: 0)
- */
+ * @param pattern {QString} El patrón de expresión regular que se va a resaltar.
+ * @param shouldContain {QString} Una cadena que debe estar contenida en el texto resaltado para que el patrón se analice correctamente.
+ * @param state {int} El estado del resaltador de sintaxis que se va a utilizar.
+ * @param capturingGroup {int} El grupo de captura que el patrón utilizará para el resaltado  (predeterminado: 0).
+ * @param maskedGroup {int} El grupo de captura que el patrón utilizará para el enmascaramiento (predeterminado: 0).
+*/
 void ScriptingService::addHighlightingRule(const QString &pattern,
                                             const QString &shouldContain,
                                             int state,
@@ -1858,27 +1858,27 @@ También puede echar un vistazo a los ejemplos en [highlighting.qml](https://git
 
 ## Agregar una regla de resaltado con colores y estilos personalizados
 
-You can also add highlighting rules with custom foreground/background colors and font styles, instead of being limited to the predefined highlighting states. This allows you to define your own color schemes for custom syntax patterns.
+También puede añadir reglas de resaltado con colores de primer plano/fondo personalizados y estilos de fuente, en lugar de limitarse a los estados de resaltado predefinidos. Esto permite definir sus propios esquemas de color para patrones de sintaxis personalizados.
 
 ### Llamada y parámetros del método
 
 ```cpp
 /**
- * Adds a highlighting rule with custom format styling to the syntax highlighter
+ * Agrega una regla de resaltado con formato personalizado al resaltador de sintaxis.
  *
- * @param pattern {QString} the regular expression pattern to highlight
- * @param shouldContain {QString} a string that must be contained in the highlighted text for the pattern to be parsed
- * @param state {int} the state of the syntax highlighter to use (use -1 / NoState for custom format only)
- * @param capturingGroup {int} the capturing group for the pattern to use for highlighting
- * @param maskedGroup {int} the capturing group for the pattern to use for masking
- * @param formatStyle {QVariantMap} a map with custom format properties:
- *   - foregroundColor {QString} foreground color name or hex value (e.g. "#ff0000" or "red")
- *   - backgroundColor {QString} background color name or hex value
- *   - bold {bool} whether to use bold font weight
- *   - italic {bool} whether to use italic font style
- *   - underline {bool} whether to underline the text
- *   - fontSize {int} the font point size
- */
+ * @param pattern {QString} El patrón de expresión regular a resaltar.
+ * @param shouldContain {QString} Una cadena que debe estar contenida en el texto resaltado para que el patrón se analice correctamente.
+ * @param state {int} El estado del resaltador de sintaxis a utilizar (use -1 / NoState solo para formato personalizado).
+ * @param capturingGroup {int} El grupo de captura que el patrón utilizará para el resaltado.
+ * @param maskedGroup {int} El grupo de captura que el patrón utilizará para el enmascaramiento.
+ * @param formatStyle {QVariantMap} Un mapa con propiedades de formato personalizadas:
+ * - foregroundColor {QString} Nombre o valor hexadecimal del color de primer plano (por ejemplo, "#ff0000" o "red").
+ * - backgroundColor {QString} Nombre o valor hexadecimal del color de fondo.
+ * - bold {bool} Indica si se debe usar negrita.
+ * - italic {bool} indica si se debe usar cursiva
+ * - subrayado {bool} indica si se debe subrayar el texto
+ * - tamaño de fuente {int} tamaño de fuente en puntos
+ */ 
 void ScriptingService::addHighlightingRule(const QString &pattern,
                                             const QString &shouldContain,
                                             int state,
@@ -1888,28 +1888,28 @@ void ScriptingService::addHighlightingRule(const QString &pattern,
 ```
 
 ::: tip
-You can combine a predefined `state` with custom format properties. Las propiedades personalizadas sobrescribirán los valores predeterminados del estado. Use state `-1` (`NoState`) if you only want to use custom formatting.
+Puede combinar un `estado` predefinido con propiedades de formato personalizadas. Las propiedades personalizadas sobrescribirán los valores predeterminados del estado. Utilice el estado `-1` (`NoState`) si solo desea utilizar un formato personalizado.
 :::
 
 ### Ejemplo
 
 ```js
 function init() {
-  // Highlight "IMPORTANT" with bold red text on a yellow background
-  script.addHighlightingRule("IMPORTANT", "IMPORTANT", -1, 0, 0, {
+// Resaltar "IMPORTANTE" con texto rojo en negrita sobre fondo amarillo
+  script.addHighlightingRule("IMPORTANTE", "IMPORTANTE", -1, 0, 0, {
     foregroundColor: "#ff0000",
     backgroundColor: "#ffff00",
     bold: true,
   });
 
-  // Highlight "@username" mentions with underlined blue text
+ // Resaltar las menciones de "@username" con texto azul subrayado
   script.addHighlightingRule("@\\w+", "@", -1, 0, 0, {
     foregroundColor: "#3366cc",
     underline: true,
   });
 
-  // Highlight "NOTE:" with italic green text
-  script.addHighlightingRule("NOTE:", "NOTE:", -1, 0, 0, {
+ // Resaltar "NOTA:" con texto verde en cursiva
+  script.addHighlightingRule("NOTA:", "NOTA:", -1, 0, 0, {
     foregroundColor: "#00aa00",
     italic: true,
   });

@@ -19,98 +19,98 @@
 <name>AiSettingsWidget</name>
 <message>
 <source>To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</source>
-<translation type="unfinished">To make use of the AI backends, you can either use the scripting command &lt;a href="%1"&gt;aiComplete&lt;/a&gt;, or look in the script repository for already-written scripts.</translation>
+<translation>要使用AI后端，您可以使用脚本命令 &lt;a href="%1"&gt;aiComplete&lt;/a&gt;，或在脚本仓库中查找已编写的脚本。</translation>
 </message>
 <message>
 <source>You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</source>
-<translation type="unfinished">You can use the scripting hook &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; to add more OpenAI API compatible backends.</translation>
+<translation>您可以使用脚本钩子 &lt;a href="%1"&gt;openAiBackendsHook&lt;/a&gt; 添加更多与OpenAI API兼容的后端。</translation>
 </message>
 <message>
 <source>Alternatively, you can also look in the script repository for already created AI integration scripts.</source>
-<translation type="unfinished">Alternatively, you can also look in the script repository for already created AI integration scripts.</translation>
+<translation>另外，您也可以在脚本仓库中查找已创建的AI集成脚本。</translation>
 </message>
 <message>
 <source>Search script repository for AI integration scripts</source>
-<translation type="unfinished">Search script repository for AI integration scripts</translation>
+<translation>在脚本仓库中搜索AI集成脚本</translation>
 </message>
 <message>
 <source>Search script repository</source>
-<translation type="unfinished">Search script repository</translation>
+<translation>搜索脚本仓库</translation>
 </message>
 <message>
 <source>AI backends added via the scripting engine</source>
-<translation type="unfinished">AI backends added via the scripting engine</translation>
+<translation>通过脚本引擎添加的AI后端</translation>
 </message>
 <message>
 <source>API keys</source>
-<translation type="unfinished">API keys</translation>
+<translation>API密钥</translation>
 </message>
 <message>
 <source>OpenAI API key:</source>
-<translation type="unfinished">OpenAI API key:</translation>
+<translation>OpenAI API密钥：</translation>
 </message>
 <message>
 <source>Create Groq API key</source>
-<translation type="unfinished">Create Groq API key</translation>
+<translation>创建Groq API密钥</translation>
 </message>
 <message>
 <source>Create OpenAI API key</source>
-<translation type="unfinished">Create OpenAI API key</translation>
+<translation>创建OpenAI API密钥</translation>
 </message>
 <message>
 <source>API key</source>
-<translation type="unfinished">API key</translation>
+<translation>API密钥</translation>
 </message>
 <message>
 <source>Groq API key:</source>
-<translation type="unfinished">Groq API key:</translation>
+<translation>Groq API密钥：</translation>
 </message>
 <message>
 <source>Test connection</source>
 <comment>"Test" as verb</comment>
-<translation type="unfinished">Test connection</translation>
+<translation>测试连接</translation>
 </message>
 <message>
 <source>API settings</source>
-<translation type="unfinished">API settings</translation>
+<translation>API设置</translation>
 </message>
 <message>
 <source>Time the application will wait for a response from the server before timing out and returning an error message.</source>
-<translation type="unfinished">Time the application will wait for a response from the server before timing out and returning an error message.</translation>
+<translation>应用程序在超时并返回错误消息之前等待服务器响应的时间。</translation>
 </message>
 <message>
 <source>Response timeout:</source>
-<translation type="unfinished">Response timeout:</translation>
+<translation>响应超时：</translation>
 </message>
 <message>
 <source>sec</source>
 <comment>seconds</comment>
-<translation type="unfinished">sec</translation>
+<translation>秒</translation>
 </message>
 <message>
 <source>API test result for %1 (%2)</source>
-<translation type="unfinished">API test result for %1 (%2)</translation>
+<translation>%1 (%2) 的API测试结果</translation>
 </message>
 <message>
 <source>AI backend: %1</source>
-<translation type="unfinished">AI backend: %1</translation>
+<translation>AI后端：%1</translation>
 </message>
 <message>
 <source>API base URL</source>
-<translation type="unfinished">API base URL</translation>
+<translation>API基础URL</translation>
 </message>
 <message>
 <source>AI model: %1</source>
-<translation type="unfinished">AI model: %1</translation>
+<translation>AI模型：%1</translation>
 </message>
 <message>
 <source>Test</source>
 <comment>verb</comment>
-<translation type="unfinished">Test</translation>
+<translation>测试</translation>
 </message>
 <message>
 <source>Test connection to %1 (%2)</source>
-<translation type="unfinished">Test connection to %1 (%2)</translation>
+<translation>测试连接到 %1 (%2)</translation>
 </message>
 </context>
 <context>
@@ -210,201 +210,201 @@
 <name>ColorModeSettingsWidget</name>
 <message>
 <source>Color modes</source>
-<translation type="unfinished">Color modes</translation>
+<translation>颜色模式</translation>
 </message>
 <message>
 <source>&amp;Add color mode</source>
-<translation type="unfinished">&amp;Add color mode</translation>
+<translation>添加颜色模式(&amp;A)</translation>
 </message>
 <message>
 <source>&amp;Remove color mode</source>
-<translation type="unfinished">&amp;Remove color mode</translation>
+<translation>移除颜色模式(&amp;R)</translation>
 </message>
 <message>
 <source>Name:</source>
-<translation type="unfinished">Name:</translation>
+<translation>名称：</translation>
 </message>
 <message>
 <source>Name of the color mode</source>
-<translation type="unfinished">Name of the color mode</translation>
+<translation>颜色模式的名称</translation>
 </message>
 <message>
 <source>Color mode name</source>
-<translation type="unfinished">Color mode name</translation>
+<translation>颜色模式名称</translation>
 </message>
 <message>
 <source>Use as active color mode</source>
-<translation type="unfinished">Use as active color mode</translation>
+<translation>设为活动颜色模式</translation>
 </message>
 <message>
 <source>Dark mode</source>
-<translation type="unfinished">Dark mode</translation>
+<translation>深色模式</translation>
 </message>
 <message>
 <source>This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</source>
-<translation type="unfinished">This enables the dark mode, interface and icons will be modified. You need to restart the application to let these changes take action.</translation>
+<translation>启用深色模式后，界面和图标将被修改。您需要重启应用程序使这些更改生效。</translation>
 </message>
 <message>
 <source>Enable dark mode</source>
-<translation type="unfinished">Enable dark mode</translation>
+<translation>启用深色模式</translation>
 </message>
 <message>
 <source>Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</source>
-<translation type="unfinished">Only some colors will be adapted, your desktop theme will control the rest. You need to restart the application to let these changes take action.</translation>
+<translation>只有部分颜色会被调整，其余由您的桌面主题控制。您需要重启应用程序使这些更改生效。</translation>
 </message>
 <message>
 <source>Optimize preview colors for dark mode desktop themes</source>
-<translation type="unfinished">Optimize preview colors for dark mode desktop themes</translation>
+<translation>为深色模式桌面主题优化预览颜色</translation>
 </message>
 <message>
 <source>You may need to restart the application to let these changes take effect</source>
-<translation type="unfinished">You may need to restart the application to let these changes take effect</translation>
+<translation>您可能需要重启应用程序使这些更改生效</translation>
 </message>
 <message>
 <source>Enable dark mode application icon and tray icon</source>
-<translation type="unfinished">Enable dark mode application icon and tray icon</translation>
+<translation>启用深色模式应用图标和托盘图标</translation>
 </message>
 <message>
 <source>Icons</source>
-<translation type="unfinished">Icons</translation>
+<translation>图标</translation>
 </message>
 <message>
 <source>You need to restart the application to let this setting take effect</source>
-<translation type="unfinished">You need to restart the application to let this setting take effect</translation>
+<translation>您需要重启应用程序使此设置生效</translation>
 </message>
 <message>
 <source>Use internal icon theme instead of system icon theme</source>
-<translation type="unfinished">Use internal icon theme instead of system icon theme</translation>
+<translation>使用内置图标主题代替系统图标主题</translation>
 </message>
 <message>
 <source>Enforce system icon theme</source>
-<translation type="unfinished">Enforce system icon theme</translation>
+<translation>强制使用系统图标主题</translation>
 </message>
 <message>
 <source>Enable dark mode icon theme</source>
-<translation type="unfinished">Enable dark mode icon theme</translation>
+<translation>启用深色模式图标主题</translation>
 </message>
 <message>
 <source>Editor color schema</source>
-<translation type="unfinished">Editor color schema</translation>
+<translation>编辑器颜色方案</translation>
 </message>
 <message>
 <source>Select the editor color schema for this color mode</source>
-<translation type="unfinished">Select the editor color schema for this color mode</translation>
+<translation>为此颜色模式选择编辑器颜色方案</translation>
 </message>
 <message>
 <source>New color mode</source>
-<translation type="unfinished">New color mode</translation>
+<translation>新建颜色模式</translation>
 </message>
 <message>
 <source>Remove color mode</source>
-<translation type="unfinished">Remove color mode</translation>
+<translation>移除颜色模式</translation>
 </message>
 <message>
 <source>Remove the color mode &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation type="unfinished">Remove the color mode &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+<translation>移除颜色模式 &lt;strong&gt;%1&lt;/strong&gt;？</translation>
 </message>
 <message>
 <source>Color mode</source>
-<translation type="unfinished">Color mode</translation>
+<translation>颜色模式</translation>
 </message>
 </context>
 <context>
 <name>DebugOptionSettingsWidget</name>
 <message>
 <source>Enable logging to file</source>
-<translation type="unfinished">Enable logging to file</translation>
+<translation>启用日志记录到文件</translation>
 </message>
 <message>
 <source>Clear log file</source>
-<translation type="unfinished">Clear log file</translation>
+<translation>清除日志文件</translation>
 </message>
 <message>
 <source>Fake old version number to trigger update</source>
-<translation type="unfinished">Fake old version number to trigger update</translation>
+<translation>伪造旧版本号以触发更新</translation>
 </message>
 <message>
 <source>Log file path:</source>
-<translation type="unfinished">Log file path:</translation>
+<translation>日志文件路径：</translation>
 </message>
 <message>
 <source>Log file cleared</source>
-<translation type="unfinished">Log file cleared</translation>
+<translation>日志文件已清除</translation>
 </message>
 <message>
 <source>The log file &lt;strong&gt;%1&lt;/strong&gt; was cleared.</source>
-<translation type="unfinished">The log file &lt;strong&gt;%1&lt;/strong&gt; was cleared.</translation>
+<translation>日志文件 &lt;strong&gt;%1&lt;/strong&gt; 已被清除。</translation>
 </message>
 </context>
 <context>
 <name>DebugSettingsWidget</name>
 <message>
 <source>Debug information</source>
-<translation type="unfinished">Debug information</translation>
+<translation>调试信息</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can &lt;span style=" font-weight:600;"&gt;copy and paste&lt;/span&gt; this text (or parts of this text) in an &lt;span style=" font-weight:600;"&gt;issue&lt;/span&gt; on the &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes issues page&lt;/a&gt; if you have &lt;span style=" font-weight:600;"&gt;questions or troubles&lt;/span&gt; with QOwnNotes. Data that is too sensitive is hidden in this information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can &lt;span style=" font-weight:600;"&gt;copy and paste&lt;/span&gt; this text (or parts of this text) in an &lt;span style=" font-weight:600;"&gt;issue&lt;/span&gt; on the &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes issues page&lt;/a&gt; if you have &lt;span style=" font-weight:600;"&gt;questions or troubles&lt;/span&gt; with QOwnNotes. Data that is too sensitive is hidden in this information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果您对QOwnNotes有&lt;span style=" font-weight:600;"&gt;疑问或问题&lt;/span&gt;，可以将此文本（或部分文本）&lt;span style=" font-weight:600;"&gt;复制粘贴&lt;/span&gt;到 &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes问题页面&lt;/a&gt;的&lt;span style=" font-weight:600;"&gt;Issue&lt;/span&gt;中。过于敏感的数据已在此信息中隐藏。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The best way to post issues is to use the issue assistant by pressing the &lt;span style=" font-weight:600;"&gt;Open issue assistant&lt;/span&gt; button on the bottom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The best way to post issues is to use the issue assistant by pressing the &lt;span style=" font-weight:600;"&gt;Open issue assistant&lt;/span&gt; button on the bottom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;提交问题的最佳方式是点击底部的 &lt;span style=" font-weight:600;"&gt;打开问题助手&lt;/span&gt; 按钮。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>GitHub doesn't need two spaces at the end of the line to do a line break</source>
-<translation type="unfinished">GitHub doesn't need two spaces at the end of the line to do a line break</translation>
+<translation>GitHub不需要在行尾加两个空格来换行</translation>
 </message>
 <message>
 <source>Use GitHub line breaks</source>
-<translation type="unfinished">Use GitHub line breaks</translation>
+<translation>使用GitHub换行方式</translation>
 </message>
 <message>
 <source>Hide usernames in paths and anonymize other personal identifiers in the generated debug information</source>
-<translation type="unfinished">Hide usernames in paths and anonymize other personal identifiers in the generated debug information</translation>
+<translation>在生成的调试信息中隐藏路径中的用户名并匿名化其他个人标识符</translation>
 </message>
 <message>
 <source>Anonymize personal information</source>
-<translation type="unfinished">Anonymize personal information</translation>
+<translation>匿名化个人信息</translation>
 </message>
 <message>
 <source>This is the best way to open an issue</source>
-<translation type="unfinished">This is the best way to open an issue</translation>
+<translation>这是提交问题的最佳方式</translation>
 </message>
 <message>
 <source>Open issue assistant</source>
-<translation type="unfinished">Open issue assistant</translation>
+<translation>打开问题助手</translation>
 </message>
 <message>
 <source>Please use this in the issue tracker</source>
-<translation type="unfinished">Please use this in the issue tracker</translation>
+<translation>请在问题跟踪器中使用此内容</translation>
 </message>
 <message>
 <source>&amp;Copy debug information to clipboard</source>
-<translation type="unfinished">&amp;Copy debug information to clipboard</translation>
+<translation>复制调试信息到剪贴板(&amp;C)</translation>
 </message>
 <message>
 <source>Please don't use this in the issue tracker</source>
-<translation type="unfinished">Please don't use this in the issue tracker</translation>
+<translation>请勿在问题跟踪器中使用此内容</translation>
 </message>
 <message>
 <source>&amp;Save debug information</source>
-<translation type="unfinished">&amp;Save debug information</translation>
+<translation>保存调试信息(&amp;S)</translation>
 </message>
 <message>
 <source>Please don't use this in the issue tracker, copy the debug information text directly into the issue.</source>
-<translation type="unfinished">Please don't use this in the issue tracker, copy the debug information text directly into the issue.</translation>
+<translation>请勿在问题跟踪器中使用此内容，请将调试信息文本直接复制到Issue中。</translation>
 </message>
 <message>
 <source>Markdown files</source>
-<translation type="unfinished">Markdown files</translation>
+<translation>Markdown文件</translation>
 </message>
 <message>
 <source>Save debug information</source>
-<translation type="unfinished">Save debug information</translation>
+<translation>保存调试信息</translation>
 </message>
 <message>
 <source>The debug information was copied to the clipboard.</source>
-<translation type="unfinished">The debug information was copied to the clipboard.</translation>
+<translation>调试信息已复制到剪贴板。</translation>
 </message>
 </context>
 <context>
@@ -900,7 +900,7 @@
 <name>DistractionFreeManager</name>
 <message>
 <source>Leave</source>
-<translation type="unfinished">Leave</translation>
+<translation>离开</translation>
 </message>
 <message>
 <source>Custom editor width</source>
@@ -915,190 +915,190 @@
 <name>EditorFontColorSettingsWidget</name>
 <message>
 <source>Fonts</source>
-<translation type="unfinished">Fonts</translation>
+<translation>字体</translation>
 </message>
 <message>
 <source>Default font:</source>
-<translation type="unfinished">Default font:</translation>
+<translation>默认字体：</translation>
 </message>
 <message>
 <source>Set a new font</source>
-<translation type="unfinished">Set a new font</translation>
+<translation>设置新字体</translation>
 </message>
 <message>
 <source>Reset font</source>
-<translation type="unfinished">Reset font</translation>
+<translation>重置字体</translation>
 </message>
 <message>
 <source>Code font:</source>
-<translation type="unfinished">Code font:</translation>
+<translation>代码字体：</translation>
 </message>
 <message>
 <source>Set a new code font</source>
-<translation type="unfinished">Set a new code font</translation>
+<translation>设置新代码字体</translation>
 </message>
 <message>
 <source>Reset code font</source>
-<translation type="unfinished">Reset code font</translation>
+<translation>重置代码字体</translation>
 </message>
 </context>
 <context>
 <name>EditorSettingsWidget</name>
 <message>
 <source>Markdown highlighting</source>
-<translation type="unfinished">Markdown highlighting</translation>
+<translation>Markdown高亮</translation>
 </message>
 <message>
 <source>Note that disabling this will also disable the navigation panel!</source>
-<translation type="unfinished">Note that disabling this will also disable the navigation panel!</translation>
+<translation>注意，禁用此选项也会禁用导航面板！</translation>
 </message>
 <message>
 <source>Enable markdown highlighting</source>
-<translation type="unfinished">Enable markdown highlighting</translation>
+<translation>启用Markdown高亮</translation>
 </message>
 <message>
 <source>Fully highlight blockquotes</source>
-<translation type="unfinished">Fully highlight blockquotes</translation>
+<translation>完全高亮引用块</translation>
 </message>
 <message>
 <source>Editor options</source>
-<translation type="unfinished">Editor options</translation>
+<translation>编辑器选项</translation>
 </message>
 <message>
 <source>Enable automatic closing of brackets and markdown formatting characters</source>
-<translation type="unfinished">Enable automatic closing of brackets and markdown formatting characters</translation>
+<translation>启用括号和Markdown格式字符的自动闭合</translation>
 </message>
 <message>
 <source>You have to use the backspace key to remove the opening character</source>
-<translation type="unfinished">You have to use the backspace key to remove the opening character</translation>
+<translation>您需要使用退格键删除开始字符</translation>
 </message>
 <message>
 <source>Enable automatic removal of matching closing characters</source>
-<translation type="unfinished">Enable automatic removal of matching closing characters</translation>
+<translation>启用匹配闭合字符的自动删除</translation>
 </message>
 <message>
 <source>Highlight the current line</source>
-<translation type="unfinished">Highlight the current line</translation>
+<translation>高亮当前行</translation>
 </message>
 <message>
 <source>Only use editor width setting in distraction free mode</source>
-<translation type="unfinished">Only use editor width setting in distraction free mode</translation>
+<translation>仅在无干扰模式下使用编辑器宽度设置</translation>
 </message>
 <message>
 <source>Enable Vim mode (some QOwnNotes shortcuts will not work)</source>
-<translation type="unfinished">Enable Vim mode (some QOwnNotes shortcuts will not work)</translation>
+<translation>启用Vim模式（部分QOwnNotes快捷键将不可用）</translation>
 </message>
 <message>
 <source>Disable cursor blinking</source>
-<translation type="unfinished">Disable cursor blinking</translation>
+<translation>禁用光标闪烁</translation>
 </message>
 <message>
 <source>Note-edit cursor width:</source>
-<translation type="unfinished">Note-edit cursor width:</translation>
+<translation>笔记编辑光标宽度：</translation>
 </message>
 <message>
 <source>Reset the cursor width</source>
-<translation type="unfinished">Reset the cursor width</translation>
+<translation>重置光标宽度</translation>
 </message>
 <message>
 <source>Automatically remove trailing spaces in the note text</source>
-<translation type="unfinished">Automatically remove trailing spaces in the note text</translation>
+<translation>自动删除笔记文本中的尾随空格</translation>
 </message>
 <message>
 <source>Show line numbers and bookmark markers (1-9)</source>
-<translation type="unfinished">Show line numbers and bookmark markers (1-9)</translation>
+<translation>显示行号和书签标记（1-9）</translation>
 </message>
 <message>
 <source>Show small Markdown preview images in the editor, if there is no text after the image</source>
-<translation type="unfinished">Show small Markdown preview images in the editor, if there is no text after the image</translation>
+<translation>如果图片后面没有文本，在编辑器中显示小的Markdown预览图片</translation>
 </message>
 <message>
 <source>Shows fold buttons for Markdown headings and allows collapsing their contents</source>
-<translation type="unfinished">Shows fold buttons for Markdown headings and allows collapsing their contents</translation>
+<translation>显示Markdown标题的折叠按钮并允许折叠其内容</translation>
 </message>
 <message>
 <source>Enable heading folding in the editor</source>
-<translation type="unfinished">Enable heading folding in the editor</translation>
+<translation>在编辑器中启用标题折叠</translation>
 </message>
 <message>
 <source>Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</source>
-<translation type="unfinished">Hides markdown formatting syntax (like **, *, #) on lines that are not being edited</translation>
+<translation>在未被编辑的行上隐藏Markdown格式语法（如**、*、#）</translation>
 </message>
 <message>
 <source>Hide markdown formatting syntax on inactive lines</source>
-<translation type="unfinished">Hide markdown formatting syntax on inactive lines</translation>
+<translation>在非活动行上隐藏Markdown格式语法</translation>
 </message>
 <message>
 <source>Enable wiki-style link support [[note name]]</source>
-<translation type="unfinished">Enable wiki-style link support [[note name]]</translation>
+<translation>启用维基风格链接支持 [[笔记名称]]</translation>
 </message>
 <message>
 <source>Show the note filename selection when [[ is typed</source>
-<translation type="unfinished">Show the note filename selection when [[ is typed</translation>
+<translation>输入[[时显示笔记文件名选择</translation>
 </message>
 <message>
 <source>Show note filename selection when [[ is typed</source>
-<translation type="unfinished">Show note filename selection when [[ is typed</translation>
+<translation>输入[[时显示笔记文件名选择</translation>
 </message>
 <message>
 <source>Tabs and Indents</source>
-<translation type="unfinished">Tabs and Indents</translation>
+<translation>制表符和缩进</translation>
 </message>
 <message>
 <source>Use tab character instead of spaces</source>
-<translation type="unfinished">Use tab character instead of spaces</translation>
+<translation>使用制表符代替空格</translation>
 </message>
 <message>
 <source>Indent:</source>
-<translation type="unfinished">Indent:</translation>
+<translation>缩进：</translation>
 </message>
 <message>
 <source>Enable hanging indentation for Markdown lists</source>
-<translation type="unfinished">Enable hanging indentation for Markdown lists</translation>
+<translation>启用Markdown列表的悬挂缩进</translation>
 </message>
 <message>
 <source>Markdown language server</source>
-<translation type="unfinished">Markdown language server</translation>
+<translation>Markdown语言服务器</translation>
 </message>
 <message>
 <source>Enable Markdown language server (LSP)</source>
-<translation type="unfinished">Enable Markdown language server (LSP)</translation>
+<translation>启用Markdown语言服务器（LSP）</translation>
 </message>
 <message>
 <source>Command:</source>
-<translation type="unfinished">Command:</translation>
+<translation>命令：</translation>
 </message>
 <message>
 <source>Arguments:</source>
-<translation type="unfinished">Arguments:</translation>
+<translation>参数：</translation>
 </message>
 <message>
 <source>Optional arguments separated by spaces.</source>
-<translation type="unfinished">Optional arguments separated by spaces.</translation>
+<translation>用空格分隔的可选参数。</translation>
 </message>
 <message>
 <source>Optional arguments</source>
-<translation type="unfinished">Optional arguments</translation>
+<translation>可选参数</translation>
 </message>
 <message>
 <source>Here you can set your own time format for inserting the current time into a note.</source>
-<translation type="unfinished">Here you can set your own time format for inserting the current time into a note.</translation>
+<translation>在这里您可以设置自己的时间格式，用于在笔记中插入当前时间。</translation>
 </message>
 <message>
 <source>Insert current time</source>
-<translation type="unfinished">Insert current time</translation>
+<translation>插入当前时间</translation>
 </message>
 <message>
 <source>Time format:</source>
-<translation type="unfinished">Time format:</translation>
+<translation>时间格式：</translation>
 </message>
 <message>
 <source>Enter your custom time format, like "dd.MM.yyyy hh:mm"</source>
-<translation type="unfinished">Enter your custom time format, like "dd.MM.yyyy hh:mm"</translation>
+<translation>输入您的自定义时间格式，例如 "dd.MM.yyyy hh:mm"</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to take a look at all available &lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;time formats&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可能需要查看所有可用的&lt;a href="http://docs.qownnotes.org/en/latest/editor/time-formats/"&gt;时间格式&lt;/a&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 </context>
 <context>
@@ -1786,15 +1786,15 @@
 </message>
 <message>
 <source>Link (internal)</source>
-<translation type="unfinished">Link (internal)</translation>
+<translation>链接（内部）</translation>
 </message>
 <message>
 <source>Wiki link</source>
-<translation type="unfinished">Wiki link</translation>
+<translation>维基链接</translation>
 </message>
 <message>
 <source>Wiki link (broken)</source>
-<translation type="unfinished">Wiki link (broken)</translation>
+<translation>维基链接（已损坏）</translation>
 </message>
 <message>
 <source>Image</source>
@@ -1931,399 +1931,399 @@
 <name>GeneralSettingsWidget</name>
 <message>
 <source>Notes</source>
-<translation type="unfinished">Notes</translation>
+<translation>笔记</translation>
 </message>
 <message>
 <source>Check this if you want to accept all external modifications while you are editing the current note.</source>
-<translation type="unfinished">Check this if you want to accept all external modifications while you are editing the current note.</translation>
+<translation>如果您想在编辑当前笔记时接受所有外部修改，请勾选此项。</translation>
 </message>
 <message>
 <source>Accept all external modifications of the current note</source>
-<translation type="unfinished">Accept all external modifications of the current note</translation>
+<translation>接受当前笔记的所有外部修改</translation>
 </message>
 <message>
 <source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
 Just test yourself if you get sync conflicts and set a higher value if so.</source>
-<translation type="unfinished">You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
-Just test yourself if you get sync conflicts and set a higher value if so.</translation>
+<translation>当设置远低于10秒时，使用旧版ownCloud同步可能会遇到同步问题。
+如果出现同步冲突，请自行测试并设置更高的值。</translation>
 </message>
 <message>
 <source>note save interval time [sec]</source>
-<translation type="unfinished">note save interval time [sec]</translation>
+<translation>笔记保存间隔时间[秒]</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked you will always be notified about external modifications, even if current note wasn't edited in the last minute. Recommended is &lt;span style=" font-style:italic;"&gt;unchecked&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked you will always be notified about external modifications, even if current note wasn't edited in the last minute. Recommended is &lt;span style=" font-style:italic;"&gt;unchecked&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果勾选，即使当前笔记在最近一分钟内未被编辑，您也会始终收到外部修改的通知。建议&lt;span style=" font-style:italic;"&gt;不勾选&lt;/span&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>Notify about all external modifications of the current note</source>
-<translation type="unfinished">Notify about all external modifications of the current note</translation>
+<translation>通知当前笔记的所有外部修改</translation>
 </message>
 <message>
 <source>By default the headline will generated automatically</source>
-<translation type="unfinished">By default the headline will generated automatically</translation>
+<translation>默认情况下，标题将自动生成</translation>
 </message>
 <message>
 <source>The shortcut to create a new note asks for a headline</source>
-<translation type="unfinished">The shortcut to create a new note asks for a headline</translation>
+<translation>创建新笔记的快捷方式将询问标题</translation>
 </message>
 <message>
 <source>Do this at your own risk!</source>
-<translation type="unfinished">Do this at your own risk!</translation>
+<translation>请自行承担风险！</translation>
 </message>
 <message>
 <source>Ignore all external note folder changes</source>
-<translation type="unfinished">Ignore all external note folder changes</translation>
+<translation>忽略所有外部笔记文件夹更改</translation>
 </message>
 <message>
 <source>Maximum width:</source>
-<translation type="unfinished">Maximum width:</translation>
+<translation>最大宽度：</translation>
 </message>
 <message>
 <source>Maximum height:</source>
-<translation type="unfinished">Maximum height:</translation>
+<translation>最大高度：</translation>
 </message>
 <message>
 <source>You can use this for example under Windows if you have troubles with newlines in the ownCloud / Nextcloud notes app</source>
-<translation type="unfinished">You can use this for example under Windows if you have troubles with newlines in the ownCloud / Nextcloud notes app</translation>
+<translation>例如，如果您在Windows下使用ownCloud/Nextcloud笔记应用程序时遇到换行问题，可以使用此选项</translation>
 </message>
 <message>
 <source>Use UNIX newline instead of native newline characters</source>
-<translation type="unfinished">Use UNIX newline instead of native newline characters</translation>
+<translation>使用UNIX换行符代替原生换行符</translation>
 </message>
 <message>
 <source>Check this if you want to ignore all external modifications while you are editing the current note.</source>
-<translation type="unfinished">Check this if you want to ignore all external modifications while you are editing the current note.</translation>
+<translation>如果您想在编辑当前笔记时忽略所有外部修改，请勾选此项。</translation>
 </message>
 <message>
 <source>Ignore all external modifications of the current note</source>
-<translation type="unfinished">Ignore all external modifications of the current note</translation>
+<translation>忽略当前笔记的所有外部修改</translation>
 </message>
 <message>
 <source>Use legacy way to link to notes, images and attachments</source>
-<translation type="unfinished">Use legacy way to link to notes, images and attachments</translation>
+<translation>使用旧方式链接笔记、图片和附件</translation>
 </message>
 <message>
 <source>When opening notes the cursor position inside the note will now be restored to the position when the note was last visited in the current session</source>
-<translation type="unfinished">When opening notes the cursor position inside the note will now be restored to the position when the note was last visited in the current session</translation>
+<translation>打开笔记时，光标位置将恢复到本次会话中上次访问笔记时的位置</translation>
 </message>
 <message>
 <source>Restore cursor position when opening a note</source>
-<translation type="unfinished">Restore cursor position when opening a note</translation>
+<translation>打开笔记时恢复光标位置</translation>
 </message>
 <message>
 <source>Automatically close the note folder database to prevent problems with sync tools</source>
-<translation type="unfinished">Automatically close the note folder database to prevent problems with sync tools</translation>
+<translation>自动关闭笔记文件夹数据库以防止与同步工具发生冲突</translation>
 </message>
 <message>
 <source>Automatically close the note folder database</source>
-<translation type="unfinished">Automatically close the note folder database</translation>
+<translation>自动关闭笔记文件夹数据库</translation>
 </message>
 <message>
 <source>Scale images down when inserted into notes</source>
-<translation type="unfinished">Scale images down when inserted into notes</translation>
+<translation>将图片插入笔记时缩小图片</translation>
 </message>
 <message>
 <source>Disable this if you want to launch the application without opening a note</source>
-<translation type="unfinished">Disable this if you want to launch the application without opening a note</translation>
+<translation>如果您希望启动应用程序时不打开笔记，请禁用此选项</translation>
 </message>
 <message>
 <source>Open last accessed note at application startup</source>
-<translation type="unfinished">Open last accessed note at application startup</translation>
+<translation>启动应用程序时打开最后访问的笔记</translation>
 </message>
 <message>
 <source>Use checksums to detect external modifications to unsaved notes</source>
-<translation type="unfinished">Use checksums to detect external modifications to unsaved notes</translation>
+<translation>使用校验和检测未保存笔记的外部修改</translation>
 </message>
 <message>
 <source>Read-only mode</source>
-<translation type="unfinished">Read-only mode</translation>
+<translation>只读模式</translation>
 </message>
 <message>
 <source>Enable or disable the read-only mode feature</source>
-<translation type="unfinished">Enable or disable the read-only mode feature</translation>
+<translation>启用或禁用只读模式功能</translation>
 </message>
 <message>
 <source>Enable read-only mode</source>
-<translation type="unfinished">Enable read-only mode</translation>
+<translation>启用只读模式</translation>
 </message>
 <message>
 <source>Start application in read-only mode</source>
-<translation type="unfinished">Start application in read-only mode</translation>
+<translation>以只读模式启动应用程序</translation>
 </message>
 <message>
 <source>When inactive, enter read-only mode automatically after:</source>
-<translation type="unfinished">When inactive, enter read-only mode automatically after:</translation>
+<translation>不活动时，在以下时间后自动进入只读模式：</translation>
 </message>
 <message>
 <source> sec</source>
 <extracomment>short for seconds</extracomment>
-<translation type="unfinished"> sec</translation>
+<translation> 秒</translation>
 </message>
 <message>
 <source>App instance</source>
-<translation type="unfinished">App instance</translation>
+<translation>应用实例</translation>
 </message>
 <message>
 <source>Only allow one app instance at the same time</source>
-<translation type="unfinished">Only allow one app instance at the same time</translation>
+<translation>同一时间只允许一个应用实例</translation>
 </message>
 <message>
 <source>Update dialog</source>
-<translation type="unfinished">Update dialog</translation>
+<translation>更新对话框</translation>
 </message>
 <message>
 <source>Don't show the update dialog automatically</source>
-<translation type="unfinished">Don't show the update dialog automatically</translation>
+<translation>不自动显示更新对话框</translation>
 </message>
 <message>
 <source>Search engine</source>
-<translation type="unfinished">Search engine</translation>
+<translation>搜索引擎</translation>
 </message>
 <message>
 <source>Message boxes</source>
-<translation type="unfinished">Message boxes</translation>
+<translation>消息框</translation>
 </message>
 <message>
 <source>Forget all "Don't ask again" choices in message boxes</source>
-<translation type="unfinished">Forget all "Don't ask again" choices in message boxes</translation>
+<translation>忘记消息框中所有"不再询问"的选择</translation>
 </message>
 <message>
 <source>Reset message boxes</source>
-<translation type="unfinished">Reset message boxes</translation>
+<translation>重置消息框</translation>
 </message>
 <message>
 <source>Note file extensions</source>
-<translation type="unfinished">Note file extensions</translation>
+<translation>笔记文件扩展名</translation>
 </message>
 <message>
 <source>Files with the listed file extensions will be recognized as notes, the selected file extension will be used for new notes.</source>
-<translation type="unfinished">Files with the listed file extensions will be recognized as notes, the selected file extension will be used for new notes.</translation>
+<translation>列表中的文件扩展名将被识别为笔记，选定的文件扩展名将用于新建笔记。</translation>
 </message>
 <message>
 <source>Add a new note file extension</source>
-<translation type="unfinished">Add a new note file extension</translation>
+<translation>添加新的笔记文件扩展名</translation>
 </message>
 <message>
 <source>Remove selected note file extension</source>
-<translation type="unfinished">Remove selected note file extension</translation>
+<translation>移除选定的笔记文件扩展名</translation>
 </message>
 <message>
 <source>External editor</source>
-<translation type="unfinished">External editor</translation>
+<translation>外部编辑器</translation>
 </message>
 <message>
 <source>Path to external editor:</source>
-<translation type="unfinished">Path to external editor:</translation>
+<translation>外部编辑器路径：</translation>
 </message>
 <message>
 <source>path to external editor, leave empty for default</source>
-<translation type="unfinished">path to external editor, leave empty for default</translation>
+<translation>外部编辑器路径，留空使用默认值</translation>
 </message>
 <message>
 <source>set external editor</source>
-<translation type="unfinished">set external editor</translation>
+<translation>设置外部编辑器</translation>
 </message>
 <message>
 <source>Clear application data and exit</source>
-<translation type="unfinished">Clear application data and exit</translation>
+<translation>清除应用程序数据并退出</translation>
 </message>
 <message>
 <source>This button allows you to clear all settings, remove the local todo database and exit QOwnNotes.</source>
-<translation type="unfinished">This button allows you to clear all settings, remove the local todo database and exit QOwnNotes.</translation>
+<translation>此按钮允许您清除所有设置、删除本地待办事项数据库并退出QOwnNotes。</translation>
 </message>
 <message>
 <source>Clear app data and exit</source>
-<translation type="unfinished">Clear app data and exit</translation>
+<translation>清除应用数据并退出</translation>
 </message>
 <message>
 <source>Settings</source>
-<translation type="unfinished">Settings</translation>
+<translation>设置</translation>
 </message>
 <message>
 <source>Import settings</source>
-<translation type="unfinished">Import settings</translation>
+<translation>导入设置</translation>
 </message>
 <message>
 <source>Export settings</source>
-<translation type="unfinished">Export settings</translation>
+<translation>导出设置</translation>
 </message>
 <message>
 <source>Database</source>
-<translation type="unfinished">Database</translation>
+<translation>数据库</translation>
 </message>
 <message>
 <source>Reinitialize Database</source>
-<translation type="unfinished">Reinitialize Database</translation>
+<translation>重新初始化数据库</translation>
 </message>
 <message>
 <source>Checks the disk database integrity and fixes problems</source>
-<translation type="unfinished">Checks the disk database integrity and fixes problems</translation>
+<translation>检查磁盘数据库完整性并修复问题</translation>
 </message>
 <message>
 <source>Check integrity</source>
-<translation type="unfinished">Check integrity</translation>
+<translation>检查完整性</translation>
 </message>
 <message>
 <source>Be warned that reinitializing the database will also remove your cached todo items and configured note folders and scripts!</source>
-<translation type="unfinished">Be warned that reinitializing the database will also remove your cached todo items and configured note folders and scripts!</translation>
+<translation>警告：重新初始化数据库将同时删除您已缓存的待办事项及已配置的笔记文件夹和脚本！</translation>
 </message>
 <message>
 <source>Do you really want to clear the local database? This will also remove your configured note folders and your cached todo items!</source>
-<translation type="unfinished">Do you really want to clear the local database? This will also remove your configured note folders and your cached todo items!</translation>
+<translation>您确定要清除本地数据库吗？这也将删除您已配置的笔记文件夹和已缓存的待办事项！</translation>
 </message>
 <message>
 <source>The Database was reinitialized. Please restart the application now!</source>
-<translation type="unfinished">The Database was reinitialized. Please restart the application now!</translation>
+<translation>数据库已重新初始化。请立即重启应用程序！</translation>
 </message>
 <message>
 <source>The integrity of the disk database is valid.</source>
-<translation type="unfinished">The integrity of the disk database is valid.</translation>
+<translation>磁盘数据库的完整性有效。</translation>
 </message>
 <message>
 <source>The integrity of the disk database is not valid!</source>
-<translation type="unfinished">The integrity of the disk database is not valid!</translation>
+<translation>磁盘数据库的完整性无效！</translation>
 </message>
 <message>
 <source>Do you really want to clear all settings, remove the database and exit QOwnNotes?
 
 Your notes will stay intact!</source>
-<translation type="unfinished">Do you really want to clear all settings, remove the database and exit QOwnNotes?
+<translation>您确定要清除所有设置、删除数据库并退出QOwnNotes吗？
 
-Your notes will stay intact!</translation>
+您的笔记将保持完整！</translation>
 </message>
 <message>
 <source>Select editor application</source>
-<translation type="unfinished">Select editor application</translation>
+<translation>选择编辑器应用程序</translation>
 </message>
 <message>
 <source>File extension</source>
-<translation type="unfinished">File extension</translation>
+<translation>文件扩展名</translation>
 </message>
 <message>
 <source>Please enter a new note file extension:</source>
-<translation type="unfinished">Please enter a new note file extension:</translation>
+<translation>请输入新的笔记文件扩展名：</translation>
 </message>
 <message>
 <source>Markdown file</source>
-<translation type="unfinished">Markdown file</translation>
+<translation>Markdown文件</translation>
 </message>
 <message>
 <source>Plain text file</source>
-<translation type="unfinished">Plain text file</translation>
+<translation>纯文本文件</translation>
 </message>
 <message>
 <source>Remove note file extension</source>
-<translation type="unfinished">Remove note file extension</translation>
+<translation>移除笔记文件扩展名</translation>
 </message>
 <message>
 <source>Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</source>
-<translation type="unfinished">Do you really want to remove the note file extension &lt;strong&gt;%1&lt;/strong&gt;? You will not see files with this extension in the note list any more!</translation>
+<translation>您确定要移除笔记文件扩展名 &lt;strong&gt;%1&lt;/strong&gt; 吗？您将不再在笔记列表中看到具有此扩展名的文件！</translation>
 </message>
 <message>
 <source>Do you really want to reset the overrides of all message boxes?</source>
-<translation type="unfinished">Do you really want to reset the overrides of all message boxes?</translation>
+<translation>您确定要重置所有消息框的覆盖设置吗？</translation>
 </message>
 <message>
 <source>INI files</source>
-<translation type="unfinished">INI files</translation>
+<translation>INI文件</translation>
 </message>
 <message>
 <source>Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</source>
-<translation type="unfinished">Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</translation>
+<translation>您确定要导入设置吗？您当前的设置将被删除，并非所有设置都能恢复，例如笔记文件夹设置和您正在使用的脚本。您还需要调整一些设置，尤其是跨平台时，但您的笔记将保持完整！</translation>
 </message>
 <message>
 <source>The application will be restarted after the import.</source>
-<translation type="unfinished">The application will be restarted after the import.</translation>
+<translation>导入后应用程序将重启。</translation>
 </message>
 </context>
 <context>
 <name>GitSettingsWidget</name>
 <message>
 <source>Commit interval</source>
-<translation type="unfinished">Commit interval</translation>
+<translation>提交间隔</translation>
 </message>
 <message>
 <source>sec</source>
 <extracomment>seconds</extracomment>
-<translation type="unfinished">sec</translation>
+<translation>秒</translation>
 </message>
 <message>
 <source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
 Just test yourself if you get sync conflicts and set a higher value if so.</source>
-<translation type="unfinished">You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
-Just test yourself if you get sync conflicts and set a higher value if so.</translation>
+<translation>当设置远低于10秒时，使用旧版ownCloud同步可能会遇到同步问题。
+如果出现同步冲突，请自行测试并设置更高的值。</translation>
 </message>
 <message>
 <source>git commit interval time [sec]</source>
-<translation type="unfinished">git commit interval time [sec]</translation>
+<translation>git提交间隔时间[秒]</translation>
 </message>
 <message>
 <source>External git log command to show the git versions of a note</source>
-<translation type="unfinished">External git log command to show the git versions of a note</translation>
+<translation>显示笔记git版本的外部git日志命令</translation>
 </message>
 <message>
 <source>Enter a command to be used to show a git log (like for example "gitk")</source>
 <extracomment>Please don't translate "%notePath%"</extracomment>
-<translation type="unfinished">Enter a command to be used to show a git log (like for example "gitk")</translation>
+<translation>输入用于显示git日志的命令（例如 "gitk"）</translation>
 </message>
 <message>
 <source>You optionally can use "%notePath%" for the path of the note.</source>
 <extracomment>Please don't translate "%notePath%"</extracomment>
-<translation type="unfinished">You optionally can use "%notePath%" for the path of the note.</translation>
+<translation>您可以选择使用 "%notePath%" 表示笔记的路径。</translation>
 </message>
 <message>
 <source>If you use this setting you will get a new menu entry to show the git versions if you right-click a note.</source>
 <extracomment>Please don't translate "%notePath%"</extracomment>
-<translation type="unfinished">If you use this setting you will get a new menu entry to show the git versions if you right-click a note.</translation>
+<translation>如果使用此设置，右键单击笔记时将获得一个新的菜单项来显示git版本。</translation>
 </message>
 <message>
 <source>Git client</source>
-<translation type="unfinished">Git client</translation>
+<translation>Git客户端</translation>
 </message>
 <message>
 <source>Path to git client, leave empty for default</source>
-<translation type="unfinished">Path to git client, leave empty for default</translation>
+<translation>Git客户端路径，留空使用默认值</translation>
 </message>
 <message>
 <source>Path to git executable:</source>
-<translation type="unfinished">Path to git executable:</translation>
+<translation>Git可执行文件路径：</translation>
 </message>
 <message>
 <source>Select the path of the git binary</source>
-<translation type="unfinished">Select the path of the git binary</translation>
+<translation>选择git二进制文件的路径</translation>
 </message>
 <message>
 <source>Don't forget to enable git support for your note folders and to configure your name and email address for your git client, for example with these terminal commands:</source>
-<translation type="unfinished">Don't forget to enable git support for your note folders and to configure your name and email address for your git client, for example with these terminal commands:</translation>
+<translation>不要忘记为您的笔记文件夹启用git支持，并为您的git客户端配置姓名和电子邮件地址，例如使用以下终端命令：</translation>
 </message>
 <message>
 <source>Git library</source>
-<translation type="unfinished">Git library</translation>
+<translation>Git库</translation>
 </message>
 <message>
 <source>Support for the git library libgit2 is activated.</source>
-<translation type="unfinished">Support for the git library libgit2 is activated.</translation>
+<translation>已激活对git库libgit2的支持。</translation>
 </message>
 <message>
 <source>Don't forget to enable git support for your note folders.</source>
-<translation type="unfinished">Don't forget to enable git support for your note folders.</translation>
+<translation>不要忘记为您的笔记文件夹启用git支持。</translation>
 </message>
 <message>
 <source>You can download your git client here: &lt;a href="%url"&gt;Git for Windows&lt;/a&gt;</source>
-<translation type="unfinished">You can download your git client here: &lt;a href="%url"&gt;Git for Windows&lt;/a&gt;</translation>
+<translation>您可以在此处下载git客户端：&lt;a href="%url"&gt;Git for Windows&lt;/a&gt;</translation>
 </message>
 <message>
 <source>Executable files</source>
-<translation type="unfinished">Executable files</translation>
+<translation>可执行文件</translation>
 </message>
 <message>
 <source>All files</source>
-<translation type="unfinished">All files</translation>
+<translation>所有文件</translation>
 </message>
 <message>
 <source>Please select the path of your git executable</source>
-<translation type="unfinished">Please select the path of your git executable</translation>
+<translation>请选择git可执行文件的路径</translation>
 </message>
 </context>
 <context>
@@ -2334,11 +2334,11 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 </message>
 <message>
 <source>Copy image file path</source>
-<translation type="unfinished">Copy image file path</translation>
+<translation>复制图片文件路径</translation>
 </message>
 <message>
 <source>Copy image to clipboard</source>
-<translation type="unfinished">Copy image to clipboard</translation>
+<translation>复制图片到剪贴板</translation>
 </message>
 <message>
 <source>Copy link location</source>
@@ -2425,395 +2425,395 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <name>InterfaceSettingsWidget</name>
 <message>
 <source>Interface language</source>
-<translation type="unfinished">Interface language</translation>
+<translation>界面语言</translation>
 </message>
 <message>
 <source>If you want to help to translate QOwnNotes or update an existing translation please read: &lt;a href="%1"&gt;How can I help to translate QOwnNotes?&lt;/a&gt;</source>
-<translation type="unfinished">If you want to help to translate QOwnNotes or update an existing translation please read: &lt;a href="%1"&gt;How can I help to translate QOwnNotes?&lt;/a&gt;</translation>
+<translation>如果您想帮助翻译QOwnNotes或更新现有翻译，请阅读：&lt;a href="%1"&gt;如何帮助翻译QOwnNotes？&lt;/a&gt;</translation>
 </message>
 <message>
 <source>If you change the language you have to restart the application for the changes to take action.</source>
-<translation type="unfinished">If you change the language you have to restart the application for the changes to take action.</translation>
+<translation>如果您更改了语言，需要重启应用程序使更改生效。</translation>
 </message>
 <message>
 <source>Automatic</source>
-<translation type="unfinished">Automatic</translation>
+<translation>自动</translation>
 </message>
 <message>
 <source>Indonesian</source>
-<translation type="unfinished">Indonesian</translation>
+<translation>印度尼西亚语</translation>
 </message>
 <message>
 <source>Malay</source>
-<translation type="unfinished">Malay</translation>
+<translation>马来语</translation>
 </message>
 <message>
 <source>Bengali</source>
-<translation type="unfinished">Bengali</translation>
+<translation>孟加拉语</translation>
 </message>
 <message>
 <source>Bosnian</source>
-<translation type="unfinished">Bosnian</translation>
+<translation>波斯尼亚语</translation>
 </message>
 <message>
 <source>Bulgarian</source>
-<translation type="unfinished">Bulgarian</translation>
+<translation>保加利亚语</translation>
 </message>
 <message>
 <source>Catalan</source>
-<translation type="unfinished">Catalan</translation>
+<translation>加泰罗尼亚语</translation>
 </message>
 <message>
 <source>Cebuano</source>
-<translation type="unfinished">Cebuano</translation>
+<translation>宿务语</translation>
 </message>
 <message>
 <source>Czech</source>
-<translation type="unfinished">Czech</translation>
+<translation>捷克语</translation>
 </message>
 <message>
 <source>Danish</source>
-<translation type="unfinished">Danish</translation>
+<translation>丹麦语</translation>
 </message>
 <message>
 <source>German</source>
-<translation type="unfinished">German</translation>
+<translation>德语</translation>
 </message>
 <message>
 <source>Basque</source>
-<translation type="unfinished">Basque</translation>
+<translation>巴斯克语</translation>
 </message>
 <message>
 <source>English</source>
-<translation type="unfinished">English</translation>
+<translation>英语</translation>
 </message>
 <message>
 <source>English (British)</source>
-<translation type="unfinished">English (British)</translation>
+<translation>英语（英式）</translation>
 </message>
 <message>
 <source>Spanish</source>
-<translation type="unfinished">Spanish</translation>
+<translation>西班牙语</translation>
 </message>
 <message>
 <source>Estonian</source>
-<translation type="unfinished">Estonian</translation>
+<translation>爱沙尼亚语</translation>
 </message>
 <message>
 <source>Filipino</source>
-<translation type="unfinished">Filipino</translation>
+<translation>菲律宾语</translation>
 </message>
 <message>
 <source>Finnish</source>
-<translation type="unfinished">Finnish</translation>
+<translation>芬兰语</translation>
 </message>
 <message>
 <source>French</source>
-<translation type="unfinished">French</translation>
+<translation>法语</translation>
 </message>
 <message>
 <source>Irish</source>
-<translation type="unfinished">Irish</translation>
+<translation>爱尔兰语</translation>
 </message>
 <message>
 <source>Galician</source>
-<translation type="unfinished">Galician</translation>
+<translation>加利西亚语</translation>
 </message>
 <message>
 <source>Greek</source>
-<translation type="unfinished">Greek</translation>
+<translation>希腊语</translation>
 </message>
 <message>
 <source>Hausa</source>
-<translation type="unfinished">Hausa</translation>
+<translation>豪萨语</translation>
 </message>
 <message>
 <source>Hebrew</source>
-<translation type="unfinished">Hebrew</translation>
+<translation>希伯来语</translation>
 </message>
 <message>
 <source>Hindi</source>
-<translation type="unfinished">Hindi</translation>
+<translation>印地语</translation>
 </message>
 <message>
 <source>Croatian</source>
-<translation type="unfinished">Croatian</translation>
+<translation>克罗地亚语</translation>
 </message>
 <message>
 <source>Hiligaynon</source>
-<translation type="unfinished">Hiligaynon</translation>
+<translation>希利盖农语</translation>
 </message>
 <message>
 <source>Icelandic</source>
-<translation type="unfinished">Icelandic</translation>
+<translation>冰岛语</translation>
 </message>
 <message>
 <source>Italian</source>
-<translation type="unfinished">Italian</translation>
+<translation>意大利语</translation>
 </message>
 <message>
 <source>Korean</source>
-<translation type="unfinished">Korean</translation>
+<translation>韩语</translation>
 </message>
 <message>
 <source>Kurdish</source>
-<translation type="unfinished">Kurdish</translation>
+<translation>库尔德语</translation>
 </message>
 <message>
 <source>Khmer</source>
-<translation type="unfinished">Khmer</translation>
+<translation>高棉语</translation>
 </message>
 <message>
 <source>Latvian</source>
-<translation type="unfinished">Latvian</translation>
+<translation>拉脱维亚语</translation>
 </message>
 <message>
 <source>Lithuanian</source>
-<translation type="unfinished">Lithuanian</translation>
+<translation>立陶宛语</translation>
 </message>
 <message>
 <source>Macedonian</source>
-<translation type="unfinished">Macedonian</translation>
+<translation>马其顿语</translation>
 </message>
 <message>
 <source>Māori</source>
-<translation type="unfinished">Māori</translation>
+<translation>毛利语</translation>
 </message>
 <message>
 <source>Hungarian</source>
-<translation type="unfinished">Hungarian</translation>
+<translation>匈牙利语</translation>
 </message>
 <message>
 <source>Norwegian</source>
-<translation type="unfinished">Norwegian</translation>
+<translation>挪威语</translation>
 </message>
 <message>
 <source>Japanese</source>
-<translation type="unfinished">Japanese</translation>
+<translation>日语</translation>
 </message>
 <message>
 <source>Dutch</source>
-<translation type="unfinished">Dutch</translation>
+<translation>荷兰语</translation>
 </message>
 <message>
 <source>Persian</source>
-<translation type="unfinished">Persian</translation>
+<translation>波斯语</translation>
 </message>
 <message>
 <source>Uzbek</source>
-<translation type="unfinished">Uzbek</translation>
+<translation>乌兹别克语</translation>
 </message>
 <message>
 <source>Polish</source>
-<translation type="unfinished">Polish</translation>
+<translation>波兰语</translation>
 </message>
 <message>
 <source>Brazilian Portuguese</source>
-<translation type="unfinished">Brazilian Portuguese</translation>
+<translation>巴西葡萄牙语</translation>
 </message>
 <message>
 <source>Portuguese</source>
-<translation type="unfinished">Portuguese</translation>
+<translation>葡萄牙语</translation>
 </message>
 <message>
 <source>Punjabi</source>
-<translation type="unfinished">Punjabi</translation>
+<translation>旁遮普语</translation>
 </message>
 <message>
 <source>Romanian</source>
-<translation type="unfinished">Romanian</translation>
+<translation>罗马尼亚语</translation>
 </message>
 <message>
 <source>Russian</source>
-<translation type="unfinished">Russian</translation>
+<translation>俄语</translation>
 </message>
 <message>
 <source>Serbian</source>
-<translation type="unfinished">Serbian</translation>
+<translation>塞尔维亚语</translation>
 </message>
 <message>
 <source>Albanian</source>
-<translation type="unfinished">Albanian</translation>
+<translation>阿尔巴尼亚语</translation>
 </message>
 <message>
 <source>Shona</source>
-<translation type="unfinished">Shona</translation>
+<translation>绍纳语</translation>
 </message>
 <message>
 <source>Sinhala</source>
-<translation type="unfinished">Sinhala</translation>
+<translation>僧伽罗语</translation>
 </message>
 <message>
 <source>Slovak</source>
-<translation type="unfinished">Slovak</translation>
+<translation>斯洛伐克语</translation>
 </message>
 <message>
 <source>Slovenian</source>
-<translation type="unfinished">Slovenian</translation>
+<translation>斯洛文尼亚语</translation>
 </message>
 <message>
 <source>Swedish</source>
-<translation type="unfinished">Swedish</translation>
+<translation>瑞典语</translation>
 </message>
 <message>
 <source>Tagalog</source>
-<translation type="unfinished">Tagalog</translation>
+<translation>他加禄语</translation>
 </message>
 <message>
 <source>Thai</source>
-<translation type="unfinished">Thai</translation>
+<translation>泰语</translation>
 </message>
 <message>
 <source>Vietnamese</source>
-<translation type="unfinished">Vietnamese</translation>
+<translation>越南语</translation>
 </message>
 <message>
 <source>Turkish</source>
-<translation type="unfinished">Turkish</translation>
+<translation>土耳其语</translation>
 </message>
 <message>
 <source>Xhosa</source>
-<translation type="unfinished">Xhosa</translation>
+<translation>科萨语</translation>
 </message>
 <message>
 <source>Ukrainian</source>
-<translation type="unfinished">Ukrainian</translation>
+<translation>乌克兰语</translation>
 </message>
 <message>
 <source>Urdu</source>
-<translation type="unfinished">Urdu</translation>
+<translation>乌尔都语</translation>
 </message>
 <message>
 <source>Yiddish</source>
-<translation type="unfinished">Yiddish</translation>
+<translation>意第绪语</translation>
 </message>
 <message>
 <source>Zulu</source>
-<translation type="unfinished">Zulu</translation>
+<translation>祖鲁语</translation>
 </message>
 <message>
 <source>Chinese Simplified</source>
-<translation type="unfinished">Chinese Simplified</translation>
+<translation>简体中文</translation>
 </message>
 <message>
 <source>Chinese Traditional</source>
-<translation type="unfinished">Chinese Traditional</translation>
+<translation>繁体中文</translation>
 </message>
 <message>
 <source>Arabic</source>
-<translation type="unfinished">Arabic</translation>
+<translation>阿拉伯语</translation>
 </message>
 <message>
 <source>Search for language</source>
-<translation type="unfinished">Search for language</translation>
+<translation>搜索语言</translation>
 </message>
 <message>
 <source>System tray</source>
-<translation type="unfinished">System tray</translation>
+<translation>系统托盘</translation>
 </message>
 <message>
 <source>You need to restart the application to let this setting take effect</source>
-<translation type="unfinished">You need to restart the application to let this setting take effect</translation>
+<translation>您需要重启应用程序使此设置生效</translation>
 </message>
 <message>
 <source>Show system tray icon</source>
-<translation type="unfinished">Show system tray icon</translation>
+<translation>显示系统托盘图标</translation>
 </message>
 <message>
 <source>Start application hidden</source>
-<translation type="unfinished">Start application hidden</translation>
+<translation>以隐藏方式启动应用程序</translation>
 </message>
 <message>
 <source>Interface style</source>
-<translation type="unfinished">Interface style</translation>
+<translation>界面风格</translation>
 </message>
 <message>
 <source>Icons</source>
-<translation type="unfinished">Icons</translation>
+<translation>图标</translation>
 </message>
 <message>
 <source>Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</source>
-<translation type="unfinished">Hide icons in menus as well as the "Find action" dialog. Requires restart to take effect</translation>
+<translation>在菜单和"查找操作"对话框中隐藏图标。需要重启才能生效</translation>
 </message>
 <message>
 <source>Hide menu icons</source>
-<translation type="unfinished">Hide menu icons</translation>
+<translation>隐藏菜单图标</translation>
 </message>
 <message>
 <source>Item sizes in the main window</source>
-<translation type="unfinished">Item sizes in the main window</translation>
+<translation>主窗口中的项目大小</translation>
 </message>
 <message>
 <source>List and tree item height:</source>
-<translation type="unfinished">List and tree item height:</translation>
+<translation>列表和树形项目高度：</translation>
 </message>
 <message>
 <source>Toolbar icon size:</source>
-<translation type="unfinished">Toolbar icon size:</translation>
+<translation>工具栏图标大小：</translation>
 </message>
 <message>
 <source>Reset the icon size</source>
-<translation type="unfinished">Reset the icon size</translation>
+<translation>重置图标大小</translation>
 </message>
 <message>
 <source>Reset the item height</source>
-<translation type="unfinished">Reset the item height</translation>
+<translation>重置项目高度</translation>
 </message>
 <message>
 <source>Override interface font size</source>
-<translation type="unfinished">Override interface font size</translation>
+<translation>覆盖界面字体大小</translation>
 </message>
 <message>
 <source>Interface font size:</source>
-<translation type="unfinished">Interface font size:</translation>
+<translation>界面字体大小：</translation>
 </message>
 <message>
 <source>Override interface scaling factor</source>
-<translation type="unfinished">Override interface scaling factor</translation>
+<translation>覆盖界面缩放比例</translation>
 </message>
 <message>
 <source>Interface scaling factor:</source>
-<translation type="unfinished">Interface scaling factor:</translation>
+<translation>界面缩放比例：</translation>
 </message>
 <message>
 <source>Status bar</source>
-<translation type="unfinished">Status bar</translation>
+<translation>状态栏</translation>
 </message>
 <message>
 <source>Show note path</source>
-<translation type="unfinished">Show note path</translation>
+<translation>显示笔记路径</translation>
 </message>
 <message>
 <source>Only show relative note path</source>
-<translation type="unfinished">Only show relative note path</translation>
+<translation>仅显示相对笔记路径</translation>
 </message>
 <message>
 <source>Distraction free mode</source>
-<translation type="unfinished">Distraction free mode</translation>
+<translation>无干扰模式</translation>
 </message>
 <message>
 <source>Open distraction free mode in full-screen</source>
-<translation type="unfinished">Open distraction free mode in full-screen</translation>
+<translation>以全屏方式打开无干扰模式</translation>
 </message>
 <message>
 <source>Hide status bar in distraction free mode</source>
-<translation type="unfinished">Hide status bar in distraction free mode</translation>
+<translation>在无干扰模式下隐藏状态栏</translation>
 </message>
 <message>
 <source>Menu bar</source>
-<translation type="unfinished">Menu bar</translation>
+<translation>菜单栏</translation>
 </message>
 <message>
 <source>Show menu bar item</source>
-<translation type="unfinished">Show menu bar item</translation>
+<translation>显示菜单栏项目</translation>
 </message>
 <message>
 <source>Automatic (needs restart)</source>
-<translation type="unfinished">Automatic (needs restart)</translation>
+<translation>自动（需要重启）</translation>
 </message>
 <message>
 <source>If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</source>
-<translation type="unfinished">If you had this setting enabled, you now need to restart the application manually so the previous environment variable that overrides the scale factor is not in your environment again.</translation>
+<translation>如果您曾启用此设置，现在需要手动重启应用程序，以使之前覆盖缩放比例的环境变量不再存在于您的环境中。</translation>
 </message>
 </context>
 <context>
@@ -2904,290 +2904,290 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 </message>
 <message>
 <source>Enable grammar and style checking with LanguageTool</source>
-<translation type="unfinished">Enable grammar and style checking with LanguageTool</translation>
+<translation>使用LanguageTool启用语法和风格检查</translation>
 </message>
 <message>
 <source>Server URL:</source>
-<translation type="unfinished">Server URL:</translation>
+<translation>服务器URL：</translation>
 </message>
 <message>
 <source>Test Connection</source>
-<translation type="unfinished">Test Connection</translation>
+<translation>测试连接</translation>
 </message>
 <message>
 <source>Language:</source>
-<translation type="unfinished">Language:</translation>
+<translation>语言：</translation>
 </message>
 <message>
 <source>API key:</source>
-<translation type="unfinished">API key:</translation>
+<translation>API密钥：</translation>
 </message>
 <message>
 <source>Optional premium or cloud API key</source>
-<translation type="unfinished">Optional premium or cloud API key</translation>
+<translation>可选的高级或云API密钥</translation>
 </message>
 <message>
 <source>Check delay:</source>
-<translation type="unfinished">Check delay:</translation>
+<translation>检查延迟：</translation>
 </message>
 <message>
 <source> ms</source>
-<translation type="unfinished"> ms</translation>
+<translation> 毫秒</translation>
 </message>
 <message>
 <source>Categories:</source>
-<translation type="unfinished">Categories:</translation>
+<translation>类别：</translation>
 </message>
 <message>
 <source>Spelling</source>
-<translation type="unfinished">Spelling</translation>
+<translation>拼写</translation>
 </message>
 <message>
 <source>Grammar</source>
-<translation type="unfinished">Grammar</translation>
+<translation>语法</translation>
 </message>
 <message>
 <source>Style</source>
-<translation type="unfinished">Style</translation>
+<translation>风格</translation>
 </message>
 <message>
 <source>Punctuation</source>
-<translation type="unfinished">Punctuation</translation>
+<translation>标点</translation>
 </message>
 <message>
 <source>Typography</source>
-<translation type="unfinished">Typography</translation>
+<translation>排版</translation>
 </message>
 <message>
 <source>Ignored:</source>
-<translation type="unfinished">Ignored:</translation>
+<translation>已忽略：</translation>
 </message>
 <message>
 <source>Reset all ignored LanguageTool rules so they are checked again</source>
-<translation type="unfinished">Reset all ignored LanguageTool rules so they are checked again</translation>
+<translation>重置所有已忽略的LanguageTool规则以便重新检查</translation>
 </message>
 <message>
 <source>Reset ignored rules</source>
-<translation type="unfinished">Reset ignored rules</translation>
+<translation>重置已忽略规则</translation>
 </message>
 <message>
 <source>Reset all ignored words so they are checked by LanguageTool again</source>
-<translation type="unfinished">Reset all ignored words so they are checked by LanguageTool again</translation>
+<translation>重置所有已忽略的单词以便LanguageTool重新检查</translation>
 </message>
 <message>
 <source>Reset ignored words</source>
-<translation type="unfinished">Reset ignored words</translation>
+<translation>重置已忽略单词</translation>
 </message>
 <message>
 <source>Auto-detect</source>
-<translation type="unfinished">Auto-detect</translation>
+<translation>自动检测</translation>
 </message>
 <message>
 <source>LanguageTool connection successful.</source>
-<translation type="unfinished">LanguageTool connection successful.</translation>
+<translation>LanguageTool连接成功。</translation>
 </message>
 <message>
 <source>LanguageTool connection failed: %1</source>
-<translation type="unfinished">LanguageTool connection failed: %1</translation>
+<translation>LanguageTool连接失败：%1</translation>
 </message>
 <message>
 <source>There are no ignored rules to reset.</source>
-<translation type="unfinished">There are no ignored rules to reset.</translation>
+<translation>没有需要重置的已忽略规则。</translation>
 </message>
 <message numerus="yes">
 <source>Reset %n ignored rule(s)?</source>
-<translation type="unfinished">
-<numerusform>Reset %n ignored rule(s)?</numerusform>
+<translation>
+<numerusform>重置已忽略的规则？</numerusform>
 </translation>
 </message>
 <message>
 <source>All ignored rules have been reset.</source>
-<translation type="unfinished">All ignored rules have been reset.</translation>
+<translation>所有已忽略规则已重置。</translation>
 </message>
 <message>
 <source>There are no ignored words to reset.</source>
-<translation type="unfinished">There are no ignored words to reset.</translation>
+<translation>没有需要重置的已忽略单词。</translation>
 </message>
 <message numerus="yes">
 <source>Reset %n ignored word(s)?</source>
-<translation type="unfinished">
-<numerusform>Reset %n ignored word(s)?</numerusform>
+<translation>
+<numerusform>重置已忽略的单词？</numerusform>
 </translation>
 </message>
 <message>
 <source>All ignored words have been reset.</source>
-<translation type="unfinished">All ignored words have been reset.</translation>
+<translation>所有已忽略单词已重置。</translation>
 </message>
 </context>
 <context>
 <name>LayoutDialog</name>
 <message>
 <source>Manage layouts</source>
-<translation type="unfinished">Manage layouts</translation>
+<translation>管理布局</translation>
 </message>
 <message>
 <source>Add layout</source>
-<translation type="unfinished">Add layout</translation>
+<translation>添加布局</translation>
 </message>
 <message>
 <source>Add</source>
-<translation type="unfinished">Add</translation>
+<translation>添加</translation>
 </message>
 <message>
 <source>Remove layout</source>
-<translation type="unfinished">Remove layout</translation>
+<translation>移除布局</translation>
 </message>
 <message>
 <source>Remove</source>
-<translation type="unfinished">Remove</translation>
+<translation>移除</translation>
 </message>
 <message>
 <source>Rename layout</source>
-<translation type="unfinished">Rename layout</translation>
+<translation>重命名布局</translation>
 </message>
 <message>
 <source>Rename</source>
-<translation type="unfinished">Rename</translation>
+<translation>重命名</translation>
 </message>
 <message>
 <source>Move layout up</source>
-<translation type="unfinished">Move layout up</translation>
+<translation>向上移动布局</translation>
 </message>
 <message>
 <source>Move up</source>
-<translation type="unfinished">Move up</translation>
+<translation>向上移动</translation>
 </message>
 <message>
 <source>Move layout down</source>
-<translation type="unfinished">Move layout down</translation>
+<translation>向下移动布局</translation>
 </message>
 <message>
 <source>Move down</source>
-<translation type="unfinished">Move down</translation>
+<translation>向下移动</translation>
 </message>
 <message>
 <source>Layout name:</source>
-<translation type="unfinished">Layout name:</translation>
+<translation>布局名称：</translation>
 </message>
 <message>
 <source>Remove the selected layout?</source>
-<translation type="unfinished">Remove the selected layout?</translation>
+<translation>移除所选布局？</translation>
 </message>
 </context>
 <context>
 <name>LayoutManager</name>
 <message>
 <source>Layouts</source>
-<translation type="unfinished">Layouts</translation>
+<translation>布局</translation>
 </message>
 <message>
 <source>full</source>
 <comment>full layout</comment>
-<translation type="unfinished">full</translation>
+<translation>完整</translation>
 </message>
 <message>
 <source>minimal</source>
 <comment>minimal layout</comment>
-<translation type="unfinished">minimal</translation>
+<translation>最小</translation>
 </message>
 <message>
 <source>Create new layout</source>
-<translation type="unfinished">Create new layout</translation>
+<translation>创建新布局</translation>
 </message>
 <message>
 <source>Layout name:</source>
-<translation type="unfinished">Layout name:</translation>
+<translation>布局名称：</translation>
 </message>
 <message>
 <source>Remove current layout</source>
-<translation type="unfinished">Remove current layout</translation>
+<translation>移除当前布局</translation>
 </message>
 <message>
 <source>Remove the current layout?</source>
-<translation type="unfinished">Remove the current layout?</translation>
+<translation>移除当前布局？</translation>
 </message>
 <message>
 <source>Rename layout</source>
-<translation type="unfinished">Rename layout</translation>
+<translation>重命名布局</translation>
 </message>
 </context>
 <context>
 <name>LayoutPresetWidget</name>
 <message>
 <source>Use preset</source>
-<translation type="unfinished">Use preset</translation>
+<translation>使用预设</translation>
 </message>
 <message>
 <source>Keep in mind that layouts that demand that there is no central widget will not work properly if the central widget is enabled.</source>
-<translation type="unfinished">Keep in mind that layouts that demand that there is no central widget will not work properly if the central widget is enabled.</translation>
+<translation>请注意，如果启用了中央部件，要求没有中央部件的布局将无法正常工作。</translation>
 </message>
 <message>
 <source>Use new layout preset</source>
-<translation type="unfinished">Use new layout preset</translation>
+<translation>使用新布局预设</translation>
 </message>
 <message>
 <source>Do you want to use the selected layout preset?</source>
-<translation type="unfinished">Do you want to use the selected layout preset?</translation>
+<translation>您想使用所选布局预设吗？</translation>
 </message>
 <message>
 <source>Minimal</source>
 <comment>Layout preset name</comment>
-<translation type="unfinished">Minimal</translation>
+<translation>最小</translation>
 </message>
 <message>
 <source>Full</source>
 <comment>Layout preset name</comment>
-<translation type="unfinished">Full</translation>
+<translation>完整</translation>
 </message>
 <message>
 <source>Preview only</source>
 <comment>Layout preset name</comment>
-<translation type="unfinished">Preview only</translation>
+<translation>仅预览</translation>
 </message>
 <message>
 <source>Full vertical</source>
 <comment>Layout preset name</comment>
-<translation type="unfinished">Full vertical</translation>
+<translation>完整垂直</translation>
 </message>
 <message>
 <source>Single column</source>
 <comment>Layout preset name</comment>
-<translation type="unfinished">Single column</translation>
+<translation>单列</translation>
 </message>
 <message>
 <source>The note edit panel is the central widget that will be resized automatically.</source>
 <comment>Layout preset description</comment>
-<translation type="unfinished">The note edit panel is the central widget that will be resized automatically.</translation>
+<translation>笔记编辑面板是将自动调整大小的中央部件。</translation>
 </message>
 <message>
 <source>Because of this there is no central widget that will be resized automatically.</source>
 <comment>Layout preset description</comment>
-<translation type="unfinished">Because of this there is no central widget that will be resized automatically.</translation>
+<translation>因此，没有将自动调整大小的中央部件。</translation>
 </message>
 <message>
 <source>Just the note list on the left and the note edit panel on the right are enabled by default.</source>
 <comment>Layout preset description</comment>
-<translation type="unfinished">Just the note list on the left and the note edit panel on the right are enabled by default.</translation>
+<translation>默认情况下，仅左侧的笔记列表和右侧的笔记编辑面板处于启用状态。</translation>
 </message>
 <message>
 <source>Most of the panels, like the note list on the left, the tagging panels, the note edit panel in the center and the preview panel on the right are enabled by default.</source>
 <comment>Layout preset description</comment>
-<translation type="unfinished">Most of the panels, like the note list on the left, the tagging panels, the note edit panel in the center and the preview panel on the right are enabled by default.</translation>
+<translation>大多数面板默认处于启用状态，例如左侧的笔记列表、标签面板、中央的笔记编辑面板和右侧的预览面板。</translation>
 </message>
 <message>
 <source>Most of the panels, like the note list on the left, the tagging panels, and only the preview panel on the right are enabled by default. You will need another layout to actually edit notes!</source>
 <comment>Layout preset description</comment>
-<translation type="unfinished">Most of the panels, like the note list on the left, the tagging panels, and only the preview panel on the right are enabled by default. You will need another layout to actually edit notes!</translation>
+<translation>大多数面板默认处于启用状态，例如左侧的笔记列表、标签面板和右侧的预览面板。您需要另一种布局才能实际编辑笔记！</translation>
 </message>
 <message>
 <source>Most of the panels, like the note list on the left, the tagging panels, the note edit panel on the right and the preview panel on top of the note edit panel are enabled by default.</source>
 <comment>Layout preset description</comment>
-<translation type="unfinished">Most of the panels, like the note list on the left, the tagging panels, the note edit panel on the right and the preview panel on top of the note edit panel are enabled by default.</translation>
+<translation>大多数面板默认处于启用状态，例如左侧的笔记列表、标签面板、右侧的笔记编辑面板和笔记编辑面板顶部的预览面板。</translation>
 </message>
 <message>
 <source>Tiny one column layout with note search, note list and note edit on top of each other.</source>
 <comment>Layout preset description</comment>
-<translation type="unfinished">Tiny one column layout with note search, note list and note edit on top of each other.</translation>
+<translation>带有笔记搜索、笔记列表和笔记编辑的紧凑单列布局，各部分叠放在一起。</translation>
 </message>
 </context>
 <context>
@@ -3230,11 +3230,11 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 </message>
 <message>
 <source>Insert the link as a wiki-style link ([[Note Name]]) instead of a Markdown link</source>
-<translation type="unfinished">Insert the link as a wiki-style link ([[Note Name]]) instead of a Markdown link</translation>
+<translation>将链接作为维基风格链接（[[笔记名称]]）而不是Markdown链接插入</translation>
 </message>
 <message>
 <source>Create wiki-style link ([[...]])</source>
-<translation type="unfinished">Create wiki-style link ([[...]])</translation>
+<translation>创建维基风格链接（[[...]]）</translation>
 </message>
 <message>
 <source>Enter the name of the link (optional)</source>
@@ -3359,35 +3359,47 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <context>
 <name>LocalTrashSettingsWidget</name>
 <message>
+<source>Trash</source>
+<translation type="unfinished">Trash</translation>
+</message>
+<message>
 <source>Local trash settings</source>
-<translation type="unfinished">Local trash settings</translation>
+<translation>本地回收站设置</translation>
 </message>
 <message>
 <source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
 Just test yourself if you get sync conflicts and set a higher value if so.</source>
-<translation type="unfinished">You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
-Just test yourself if you get sync conflicts and set a higher value if so.</translation>
+<translation>当设置远低于10秒时，使用旧版ownCloud同步可能会遇到同步问题。
+如果出现同步冲突，请自行测试并设置更高的值。</translation>
 </message>
 <message>
 <source>Remove trashed notes after:</source>
-<translation type="unfinished">Remove trashed notes after:</translation>
+<translation>在以下时间后删除回收站中的笔记：</translation>
 </message>
 <message>
 <source> days</source>
 <extracomment>seconds</extracomment>
-<translation type="unfinished"> days</translation>
+<translation> 天</translation>
 </message>
 <message>
 <source>Automatically remove trashed notes after a certain time</source>
-<translation type="unfinished">Automatically remove trashed notes after a certain time</translation>
+<translation>在一定时间后自动删除回收站中的笔记</translation>
 </message>
 <message>
-<source>Local trash support</source>
-<translation type="unfinished">Local trash support</translation>
+<source>No trashing</source>
+<translation type="unfinished">No trashing</translation>
+</message>
+<message>
+<source>System trash</source>
+<translation type="unfinished">System trash</translation>
+</message>
+<message>
+<source>Local trash</source>
+<translation type="unfinished">Local trash</translation>
 </message>
 <message>
 <source>Enable local trash to keep a copy of trashed notes</source>
-<translation type="unfinished">Enable local trash to keep a copy of trashed notes</translation>
+<translation>启用本地回收站以保留已删除笔记的副本</translation>
 </message>
 </context>
 <context>
@@ -3493,11 +3505,11 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 </message>
 <message>
 <source>Layouts</source>
-<translation type="unfinished">Layouts</translation>
+<translation>布局</translation>
 </message>
 <message>
 <source>Layout</source>
-<translation type="unfinished">Layout</translation>
+<translation>布局</translation>
 </message>
 <message>
 <source>Custom actions</source>
@@ -3902,7 +3914,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 </message>
 <message>
 <source>Use softwrap in note editor</source>
-<translation type="unfinished">Use softwrap in note editor</translation>
+<translation>在笔记编辑器中使用软换行</translation>
 </message>
 <message>
 <source>Cycle text case</source>
@@ -3939,23 +3951,23 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 </message>
 <message>
 <source>Remove current layout</source>
-<translation type="unfinished">Remove current layout</translation>
+<translation>移除当前布局</translation>
 </message>
 <message>
 <source>Add new layout</source>
-<translation type="unfinished">Add new layout</translation>
+<translation>添加新布局</translation>
 </message>
 <message>
 <source>Rename current layout</source>
-<translation type="unfinished">Rename current layout</translation>
+<translation>重命名当前布局</translation>
 </message>
 <message>
 <source>Switch to previous layout</source>
-<translation type="unfinished">Switch to previous layout</translation>
+<translation>切换到上一个布局</translation>
 </message>
 <message>
 <source>Manage layouts</source>
-<translation type="unfinished">Manage layouts</translation>
+<translation>管理布局</translation>
 </message>
 <message>
 <source>Show all panels</source>
@@ -4127,7 +4139,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 </message>
 <message>
 <source>Toggle note pinning of current tab</source>
-<translation type="unfinished">Toggle note pinning of current tab</translation>
+<translation>切换当前标签页的笔记固定状态</translation>
 </message>
 <message>
 <source>Format text underline</source>
@@ -4454,8 +4466,8 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message numerus="yes">
 <source>Skipped inserting %n file(s) because the current note is read-only</source>
-<translation type="unfinished">
-<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+<translation>
+<numerusform>跳过插入文件，因为当前笔记是只读的</numerusform>
 </translation>
 </message>
 <message>
@@ -4541,15 +4553,15 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Layout selector</source>
-<translation type="unfinished">Layout selector</translation>
+<translation>布局选择器</translation>
 </message>
 <message>
 <source>AI toolbar disabled</source>
-<translation type="unfinished">AI toolbar disabled</translation>
+<translation>AI工具栏已禁用</translation>
 </message>
 <message>
 <source>An AI backend is configured, but the AI toolbar is currently disabled. Do you want to turn it on?</source>
-<translation type="unfinished">An AI backend is configured, but the AI toolbar is currently disabled. Do you want to turn it on?</translation>
+<translation>已配置AI后端，但AI工具栏当前已禁用。您想启用它吗？</translation>
 </message>
 <message numerus="yes">
 <source>Skipped copying of %n note(s) (no Markdown or text file or not readable)</source>
@@ -4789,46 +4801,46 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <name>McpServerSettingsWidget</name>
 <message>
 <source>MCP server</source>
-<translation type="unfinished">MCP server</translation>
+<translation>MCP服务器</translation>
 </message>
 <message>
 <source>Enable MCP server for AI agent access to notes</source>
-<translation type="unfinished">Enable MCP server for AI agent access to notes</translation>
+<translation>启用MCP服务器以供AI代理访问笔记</translation>
 </message>
 <message>
 <source>Server port:</source>
-<translation type="unfinished">Server port:</translation>
+<translation>服务器端口：</translation>
 </message>
 <message>
 <source>Reset the MCP server port</source>
-<translation type="unfinished">Reset the MCP server port</translation>
+<translation>重置MCP服务器端口</translation>
 </message>
 <message>
 <source>Security token:</source>
-<translation type="unfinished">Security token:</translation>
+<translation>安全令牌：</translation>
 </message>
 <message>
 <source>If this is empty when saved, a new security token will be generated automatically.</source>
-<translation type="unfinished">If this is empty when saved, a new security token will be generated automatically.</translation>
+<translation>如果保存时为空，将自动生成一个新的安全令牌。</translation>
 </message>
 <message>
 <source>Show security token</source>
-<translation type="unfinished">Show security token</translation>
+<translation>显示安全令牌</translation>
 </message>
 <message>
 <source>Copy security token to clipboard</source>
-<translation type="unfinished">Copy security token to clipboard</translation>
+<translation>将安全令牌复制到剪贴板</translation>
 </message>
 <message>
 <source>Generate new security token</source>
-<translation type="unfinished">Generate new security token</translation>
+<translation>生成新安全令牌</translation>
 </message>
 </context>
 <context>
 <name>McpService</name>
 <message>
 <source>MCP server listening on port %1</source>
-<translation type="unfinished">MCP server listening on port %1</translation>
+<translation>MCP服务器正在监听端口 %1</translation>
 </message>
 </context>
 <context>
@@ -4898,8 +4910,8 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message numerus="yes">
 <source>Skipped inserting %n file(s) because the current note is read-only</source>
-<translation type="unfinished">
-<numerusform>Skipped inserting %n file(s) because the current note is read-only</numerusform>
+<translation>
+<numerusform>跳过插入文件，因为当前笔记是只读的</numerusform>
 </translation>
 </message>
 <message>
@@ -4973,99 +4985,99 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <name>NetworkSettingsWidget</name>
 <message>
 <source>Proxy Settings</source>
-<translation type="unfinished">Proxy Settings</translation>
+<translation>代理设置</translation>
 </message>
 <message>
 <source>No Proxy</source>
-<translation type="unfinished">No Proxy</translation>
+<translation>无代理</translation>
 </message>
 <message>
 <source>Use system proxy</source>
-<translation type="unfinished">Use system proxy</translation>
+<translation>使用系统代理</translation>
 </message>
 <message>
 <source>Specify proxy manually as</source>
-<translation type="unfinished">Specify proxy manually as</translation>
+<translation>手动指定代理为</translation>
 </message>
 <message>
 <source>Host</source>
-<translation type="unfinished">Host</translation>
+<translation>主机</translation>
 </message>
 <message>
 <source>Proxy server requires authentication</source>
-<translation type="unfinished">Proxy server requires authentication</translation>
+<translation>代理服务器需要验证</translation>
 </message>
 <message>
 <source>SSL Settings</source>
-<translation type="unfinished">SSL Settings</translation>
+<translation>SSL设置</translation>
 </message>
 <message>
 <source>Ignore SSL errors</source>
-<translation type="unfinished">Ignore SSL errors</translation>
+<translation>忽略SSL错误</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to consider getting a free SSL certificate from &lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You might want to consider getting a free SSL certificate from &lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可能需要考虑从&lt;a href="https://letsencrypt.org/"&gt;Let's encrypt&lt;/a&gt;获取免费SSL证书。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>App metrics</source>
-<translation type="unfinished">App metrics</translation>
+<translation>应用指标</translation>
 </message>
 <message>
 <source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. Please disable it only if you really can't live with it.</source>
-<translation type="unfinished">Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. Please disable it only if you really can't live with it.</translation>
+<translation>匿名使用数据有助于决定下一步改进QOwnNotes的哪些部分以及发现和修复错误。只有在您真的无法接受时才请禁用它。</translation>
 </message>
 <message>
 <source>Disable tracking of usage data</source>
-<translation type="unfinished">Disable tracking of usage data</translation>
+<translation>禁用使用数据跟踪</translation>
 </message>
 <message>
 <source>This data includes anonymous information about what features of the app are used.</source>
-<translation type="unfinished">This data includes anonymous information about what features of the app are used.</translation>
+<translation>此数据包含关于应用程序使用了哪些功能的匿名信息。</translation>
 </message>
 <message>
 <source>Usage tracking is done on a private Piwik server.</source>
-<translation type="unfinished">Usage tracking is done on a private Piwik server.</translation>
+<translation>使用跟踪在私有Piwik服务器上进行。</translation>
 </message>
 <message>
 <source>App heartbeat</source>
-<translation type="unfinished">App heartbeat</translation>
+<translation>应用心跳</translation>
 </message>
 <message>
 <source>A small heartbeat request is sent periodically while QOwnNotes is running. Make a developer happy by letting him know that someone is using QOwnNotes.</source>
-<translation type="unfinished">A small heartbeat request is sent periodically while QOwnNotes is running. Make a developer happy by letting him know that someone is using QOwnNotes.</translation>
+<translation>QOwnNotes运行时会定期发送一个小的心跳请求。让开发者知道有人在使用QOwnNotes，让他们开心。</translation>
 </message>
 <message>
 <source>Disable heartbeat</source>
-<translation type="unfinished">Disable heartbeat</translation>
+<translation>禁用心跳</translation>
 </message>
 <message>
 <source>hostname of proxy server</source>
-<translation type="unfinished">hostname of proxy server</translation>
+<translation>代理服务器主机名</translation>
 </message>
 <message>
 <source>username for proxy server</source>
-<translation type="unfinished">username for proxy server</translation>
+<translation>代理服务器用户名</translation>
 </message>
 <message>
 <source>password for proxy server</source>
-<translation type="unfinished">password for proxy server</translation>
+<translation>代理服务器密码</translation>
 </message>
 <message>
 <source>HTTP(S) proxy</source>
-<translation type="unfinished">HTTP(S) proxy</translation>
+<translation>HTTP(S)代理</translation>
 </message>
 <message>
 <source>SOCKS5 proxy</source>
-<translation type="unfinished">SOCKS5 proxy</translation>
+<translation>SOCKS5代理</translation>
 </message>
 <message>
 <source>Disable usage tracking</source>
-<translation type="unfinished">Disable usage tracking</translation>
+<translation>禁用使用跟踪</translation>
 </message>
 <message>
 <source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can't live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</source>
-<translation type="unfinished">Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can't live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</translation>
+<translation>匿名使用数据有助于决定下一步改进QOwnNotes的哪些部分以及发现和修复错误。&lt;br /&gt;只有在您真的无法接受时才请禁用它。&lt;br /&gt;&lt;br /&gt;真的要禁用使用跟踪吗？</translation>
 </message>
 </context>
 <context>
@@ -5132,7 +5144,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Select the board and stack to work with</source>
-<translation type="unfinished">Select the board and stack to work with</translation>
+<translation>选择要使用的看板和堆栈</translation>
 </message>
 <message>
 <source>Create card and insert link into current note</source>
@@ -5180,7 +5192,7 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Reload boards, stacks and cards from server</source>
-<translation type="unfinished">Reload boards, stacks and cards from server</translation>
+<translation>从服务器重新加载看板、堆栈和卡片</translation>
 </message>
 <message>
 <source>%1 / %2</source>
@@ -5239,11 +5251,11 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 </message>
 <message>
 <source>Archiving the card failed with status code %1 and message: %2</source>
-<translation type="unfinished">Archiving the card failed with status code %1 and message: %2</translation>
+<translation>归档卡片失败，状态代码为%1，消息为：%2</translation>
 </message>
 <message>
 <source>Deleting the card failed with status code %1 and message: %2</source>
-<translation type="unfinished">Deleting the card failed with status code %1 and message: %2</translation>
+<translation>删除卡片失败，状态代码为%1，消息为：%2</translation>
 </message>
 <message>
 <source>Error while loading boards</source>
@@ -5422,148 +5434,148 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <name>NoteFolderSettingsWidget</name>
 <message>
 <source>Your note folders</source>
-<translation type="unfinished">Your note folders</translation>
+<translation>您的笔记文件夹</translation>
 </message>
 <message>
 <source>&amp;Add folder</source>
-<translation type="unfinished">&amp;Add folder</translation>
+<translation>添加文件夹(&amp;A)</translation>
 </message>
 <message>
 <source>&amp;Remove folder</source>
-<translation type="unfinished">&amp;Remove folder</translation>
+<translation>移除文件夹(&amp;R)</translation>
 </message>
 <message>
 <source>Click here to use the selected folder from your server as note folder</source>
-<translation type="unfinished">Click here to use the selected folder from your server as note folder</translation>
+<translation>点击此处将服务器中选定的文件夹用作笔记文件夹</translation>
 </message>
 <message>
 <source>&amp;Use as ownCloud path</source>
-<translation type="unfinished">&amp;Use as ownCloud path</translation>
+<translation>用作ownCloud路径(&amp;U)</translation>
 </message>
 <message>
 <source>path</source>
-<translation type="unfinished">path</translation>
+<translation>路径</translation>
 </message>
 <message>
 <source>Please select your note folder on your ownCloud server:</source>
-<translation type="unfinished">Please select your note folder on your ownCloud server:</translation>
+<translation>请在您的ownCloud服务器上选择您的笔记文件夹：</translation>
 </message>
 <message>
 <source>Cloud connection:</source>
-<translation type="unfinished">Cloud connection:</translation>
+<translation>云连接：</translation>
 </message>
 <message>
 <source>Path on your ownCloud server:</source>
-<translation type="unfinished">Path on your ownCloud server:</translation>
+<translation>您的ownCloud服务器上的路径：</translation>
 </message>
 <message>
 <source>Note folder path:</source>
-<translation type="unfinished">Note folder path:</translation>
+<translation>笔记文件夹路径：</translation>
 </message>
 <message>
 <source>Subfolder visibility</source>
-<translation type="unfinished">Subfolder visibility</translation>
+<translation>子文件夹可见性</translation>
 </message>
 <message>
 <source>If checked, all subfolders will be shown. If unchecked, you can select which subfolders to show.</source>
-<translation type="unfinished">If checked, all subfolders will be shown. If unchecked, you can select which subfolders to show.</translation>
+<translation>如果勾选，将显示所有子文件夹。如果取消勾选，您可以选择要显示哪些子文件夹。</translation>
 </message>
 <message>
 <source>All subfolders</source>
-<translation type="unfinished">All subfolders</translation>
+<translation>所有子文件夹</translation>
 </message>
 <message>
 <source>Select which subfolders to show. Unchecked subfolders and their children will be ignored.</source>
-<translation type="unfinished">Select which subfolders to show. Unchecked subfolders and their children will be ignored.</translation>
+<translation>选择要显示的子文件夹。未选中的子文件夹及其子项将被忽略。</translation>
 </message>
 <message>
 <source>You need to have git installed to make this work!</source>
-<translation type="unfinished">You need to have git installed to make this work!</translation>
+<translation>您需要安装git才能使此功能正常工作！</translation>
 </message>
 <message>
 <source>Use git to keep a local history of your notes</source>
-<translation type="unfinished">Use git to keep a local history of your notes</translation>
+<translation>使用git保留笔记的本地历史记录</translation>
 </message>
 <message>
 <source>Use as active note folder</source>
-<translation type="unfinished">Use as active note folder</translation>
+<translation>设为活动笔记文件夹</translation>
 </message>
 <message>
 <source>Be aware that the ownCloud notes app doesn't support subfolders!</source>
-<translation type="unfinished">Be aware that the ownCloud notes app doesn't support subfolders!</translation>
+<translation>请注意，ownCloud笔记应用程序不支持子文件夹！</translation>
 </message>
 <message>
 <source>Use note subfolders</source>
-<translation type="unfinished">Use note subfolders</translation>
+<translation>使用笔记子文件夹</translation>
 </message>
 <message>
 <source>Click here to select your remote note path on your ownCloud server</source>
-<translation type="unfinished">Click here to select your remote note path on your ownCloud server</translation>
+<translation>点击此处在您的ownCloud服务器上选择远程笔记路径</translation>
 </message>
 <message>
 <source>Path where your notes are stored locally</source>
-<translation type="unfinished">Path where your notes are stored locally</translation>
+<translation>您的笔记本地存储路径</translation>
 </message>
 <message>
 <source>This name will be viewed in all the menus.</source>
-<translation type="unfinished">This name will be viewed in all the menus.</translation>
+<translation>此名称将在所有菜单中显示。</translation>
 </message>
 <message>
 <source>Note folder name</source>
-<translation type="unfinished">Note folder name</translation>
+<translation>笔记文件夹名称</translation>
 </message>
 <message>
 <source>Name:</source>
-<translation type="unfinished">Name:</translation>
+<translation>名称：</translation>
 </message>
 <message>
 <source>Click here to select your local note path</source>
-<translation type="unfinished">Click here to select your local note path</translation>
+<translation>点击此处选择您的本地笔记路径</translation>
 </message>
 <message>
 <source>Set the ownCloud path where the note folder path will be synced to on your ownCloud server.</source>
-<translation type="unfinished">Set the ownCloud path where the note folder path will be synced to on your ownCloud server.</translation>
+<translation>设置笔记文件夹路径将在您的ownCloud服务器上同步到的ownCloud路径。</translation>
 </message>
 <message>
 <source>"Notes" path on your server</source>
 <extracomment>"Notes" should not be translated</extracomment>
-<translation type="unfinished">"Notes" path on your server</translation>
+<translation>您服务器上的"Notes"路径</translation>
 </message>
 <message>
 <source>This also allows note files to be renamed</source>
-<translation type="unfinished">This also allows note files to be renamed</translation>
+<translation>这也允许重命名笔记文件</translation>
 </message>
 <message>
 <source>Allow note file name to be different from headline</source>
-<translation type="unfinished">Allow note file name to be different from headline</translation>
+<translation>允许笔记文件名与标题不同</translation>
 </message>
 <message>
 <source>new folder</source>
-<translation type="unfinished">new folder</translation>
+<translation>新建文件夹</translation>
 </message>
 <message>
 <source>Remove note folder</source>
-<translation type="unfinished">Remove note folder</translation>
+<translation>移除笔记文件夹</translation>
 </message>
 <message>
 <source>Remove the current note folder &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation type="unfinished">Remove the current note folder &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+<translation>移除当前笔记文件夹 &lt;strong&gt;%1&lt;/strong&gt;？</translation>
 </message>
 <message>
 <source>Please select the folder where your notes will get stored to</source>
-<translation type="unfinished">Please select the folder where your notes will get stored to</translation>
+<translation>请选择您的笔记将存储到的文件夹</translation>
 </message>
 <message>
 <source>Loading folders from server</source>
-<translation type="unfinished">Loading folders from server</translation>
+<translation>从服务器加载文件夹</translation>
 </message>
 <message>
 <source>No more folders were found in the current folder</source>
-<translation type="unfinished">No more folders were found in the current folder</translation>
+<translation>在当前文件夹中未找到更多文件夹</translation>
 </message>
 <message>
 <source>Loading folders in '%1' from server</source>
-<translation type="unfinished">Loading folders in '%1' from server</translation>
+<translation>从服务器加载'%1'中的文件夹</translation>
 </message>
 </context>
 <context>
@@ -5661,12 +5673,12 @@ Restore current note?</source>
 <name>NoteOperationsManager</name>
 <message>
 <source>Note has backlinks</source>
-<translation type="unfinished">Note has backlinks</translation>
+<translation>笔记有反向链接</translation>
 </message>
 <message numerus="yes">
 <source>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</source>
-<translation type="unfinished">
-<numerusform>The note &lt;strong&gt;%1&lt;/strong&gt; is linked from %n other note(s). Deleting it will leave those links broken. Do you still want to remove it?</numerusform>
+<translation>
+<numerusform>笔记 &lt;strong&gt;%1&lt;/strong&gt; 被其他笔记链接。删除它将使那些链接失效。您仍然想删除它吗？</numerusform>
 </translation>
 </message>
 <message>
@@ -5679,12 +5691,12 @@ Restore current note?</source>
 </message>
 <message>
 <source>Notes have backlinks</source>
-<translation type="unfinished">Notes have backlinks</translation>
+<translation>笔记有反向链接</translation>
 </message>
 <message numerus="yes">
 <source>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</source>
-<translation type="unfinished">
-<numerusform>%n of the selected note(s) are linked from other notes (%1 link(s) in total). Deleting them will leave those links broken. Do you still want to remove them?</numerusform>
+<translation>
+<numerusform>所选笔记被其他笔记链接（共 %1 个链接）。删除它们将使那些链接失效。您仍然想删除它们吗？</numerusform>
 </translation>
 </message>
 <message>
@@ -5824,38 +5836,38 @@ If the trash is enabled on your ownCloud server you should be able to restore th
 <source>The deleted note(s) had &lt;strong&gt;%1 image(s)&lt;/strong&gt; and &lt;strong&gt;%2 attachment(s)&lt;/strong&gt; that are not used in any other note.
 
 Do you want to delete those files as well?</source>
-<translation type="unfinished">The deleted note(s) had &lt;strong&gt;%1 image(s)&lt;/strong&gt; and &lt;strong&gt;%2 attachment(s)&lt;/strong&gt; that are not used in any other note.
+<translation>被删除的笔记有&lt;strong&gt;%1张图片&lt;/strong&gt;和&lt;strong&gt;%2个附件&lt;/strong&gt;未在任何其他笔记中使用。
 
-Do you want to delete those files as well?</translation>
+您也想删除这些文件吗？</translation>
 </message>
 <message numerus="yes">
 <source>The deleted note(s) had &lt;strong&gt;%n image(s)&lt;/strong&gt; that are not used in any other note.
 
 Do you want to delete those files as well?</source>
-<translation type="unfinished">
-<numerusform>The deleted note(s) had &lt;strong&gt;%n image(s)&lt;/strong&gt; that are not used in any other note.
+<translation>
+<numerusform>被删除的笔记有&lt;strong&gt;图片&lt;/strong&gt;未在任何其他笔记中使用。
 
-Do you want to delete those files as well?</numerusform>
+您也想删除这些文件吗？</numerusform>
 </translation>
 </message>
 <message numerus="yes">
 <source>The deleted note(s) had &lt;strong&gt;%n attachment(s)&lt;/strong&gt; that are not used in any other note.
 
 Do you want to delete those files as well?</source>
-<translation type="unfinished">
-<numerusform>The deleted note(s) had &lt;strong&gt;%n attachment(s)&lt;/strong&gt; that are not used in any other note.
+<translation>
+<numerusform>被删除的笔记有&lt;strong&gt;附件&lt;/strong&gt;未在任何其他笔记中使用。
 
-Do you want to delete those files as well?</numerusform>
+您也想删除这些文件吗？</numerusform>
 </translation>
 </message>
 <message>
 <source>Delete orphaned images and attachments</source>
-<translation type="unfinished">Delete orphaned images and attachments</translation>
+<translation>删除孤立的图片和附件</translation>
 </message>
 <message numerus="yes">
 <source>Removed %n orphaned file(s)</source>
-<translation type="unfinished">
-<numerusform>Removed %n orphaned file(s)</numerusform>
+<translation>
+<numerusform>已删除孤立文件</numerusform>
 </translation>
 </message>
 </context>
@@ -5980,7 +5992,7 @@ Do you want to delete those files as well?</numerusform>
 <name>NoteTabManager</name>
 <message>
 <source>Toggle note pinning</source>
-<translation type="unfinished">Toggle note pinning</translation>
+<translation>切换笔记固定状态</translation>
 </message>
 <message>
 <source>Close other note tabs</source>
@@ -6243,368 +6255,368 @@ Do you want to delete those files as well?</numerusform>
 <name>OwnCloudSettingsWidget</name>
 <message>
 <source>ownCloud support</source>
-<translation type="unfinished">ownCloud support</translation>
+<translation>ownCloud支持</translation>
 </message>
 <message>
 <source>Enable ownCloud support</source>
-<translation type="unfinished">Enable ownCloud support</translation>
+<translation>启用ownCloud支持</translation>
 </message>
 <message>
 <source>You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</source>
-<translation type="unfinished">You can access your ownCloud server from inside the application for example to manage trashed notes and note versions or to share notes. This integration doesn't do note file syncing. You still need to install the ownCloud sync client for syncing the files.</translation>
+<translation>您可以从应用程序内访问您的ownCloud服务器，例如管理已删除的笔记和笔记版本或共享笔记。此集成不进行笔记文件同步。您仍然需要安装ownCloud同步客户端来同步文件。</translation>
 </message>
 <message>
 <source>Your ownCloud server</source>
-<translation type="unfinished">Your ownCloud server</translation>
+<translation>您的ownCloud服务器</translation>
 </message>
 <message>
 <source>Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</source>
-<translation type="unfinished">Please install the latest version of &lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt; (at least version QOWNNOTESAPI_MIN_VERSION) on your ownCloud server if you want QOwnNotes to be able to access note versions and trashed notes.</translation>
+<translation>如果您希望QOwnNotes能够访问笔记版本和已删除的笔记，请在您的ownCloud服务器上安装最新版本的&lt;a href="https://github.com/pbek/qownnotesapi"&gt;&lt;b&gt;QOwnNotesAPI&lt;/b&gt;&lt;/a&gt;（至少版本QOWNNOTESAPI_MIN_VERSION）。</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You also need to have the two ownCloud core apps &lt;b&gt;Versions&lt;/b&gt; and &lt;b&gt;Deleted files&lt;/b&gt; enabled on your ownCloud server (that should be the default).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您还需要在ownCloud服务器上启用两个ownCloud核心应用程序&lt;b&gt;版本&lt;/b&gt;和&lt;b&gt;已删除文件&lt;/b&gt;（这应该是默认设置）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You will still need the &lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud sync client&lt;/b&gt;&lt;/a&gt; (or another desktop sync client) to sync your notes!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您仍然需要&lt;a href="https://owncloud.org/"&gt;&lt;b&gt;ownCloud同步客户端&lt;/b&gt;&lt;/a&gt;（或其他桌面同步客户端）来同步您的笔记！&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens your ownCloud server &lt;span style=" font-weight:600;"&gt;App configuration&lt;/span&gt; page in your webbrowser to install or update QOwnNotesAPI and to enable the core apps &lt;span style=" font-weight:600;"&gt;Versions&lt;/span&gt; and &lt;span style=" font-weight:600;"&gt;Deleted files&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens your ownCloud server &lt;span style=" font-weight:600;"&gt;App configuration&lt;/span&gt; page in your webbrowser to install or update QOwnNotesAPI and to enable the core apps &lt;span style=" font-weight:600;"&gt;Versions&lt;/span&gt; and &lt;span style=" font-weight:600;"&gt;Deleted files&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在您的网络浏览器中打开ownCloud服务器的&lt;span style=" font-weight:600;"&gt;应用配置&lt;/span&gt;页面，以安装或更新QOwnNotesAPI并启用核心应用程序&lt;span style=" font-weight:600;"&gt;版本&lt;/span&gt;和&lt;span style=" font-weight:600;"&gt;已删除文件&lt;/span&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>Open your ownCloud server &amp;Apps page</source>
-<translation type="unfinished">Open your ownCloud server &amp;Apps page</translation>
+<translation>打开您的ownCloud服务器应用页面(&amp;A)</translation>
 </message>
 <message>
 <source>Opens your ownCloud server App Password page in your webbrowser to create a new app password for the application</source>
-<translation type="unfinished">Opens your ownCloud server App Password page in your webbrowser to create a new app password for the application</translation>
+<translation>在您的网络浏览器中打开ownCloud服务器应用密码页面，为应用程序创建新的应用密码</translation>
 </message>
 <message>
 <source>Open your ownCloud server App Password page</source>
-<translation type="unfinished">Open your ownCloud server App Password page</translation>
+<translation>打开您的ownCloud服务器应用密码页面</translation>
 </message>
 <message>
 <source>Error Message</source>
-<translation type="unfinished">Error Message</translation>
+<translation>错误消息</translation>
 </message>
 <message>
 <source>Select a connection to edit</source>
-<translation type="unfinished">Select a connection to edit</translation>
+<translation>选择要编辑的连接</translation>
 </message>
 <message>
 <source>Add connection</source>
-<translation type="unfinished">Add connection</translation>
+<translation>添加连接</translation>
 </message>
 <message>
 <source>Remove connection</source>
-<translation type="unfinished">Remove connection</translation>
+<translation>移除连接</translation>
 </message>
 <message>
 <source>Connection name:</source>
-<translation type="unfinished">Connection name:</translation>
+<translation>连接名称：</translation>
 </message>
 <message>
 <source>ownCloud server url:</source>
-<translation type="unfinished">ownCloud server url:</translation>
+<translation>ownCloud服务器URL：</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;请输入您的ownCloud服务器URL，例如：&lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>The login flow v2 only works with Nextcloud, not with ownCloud. If you have troubles you need to create an app password by hand.</source>
-<translation type="unfinished">The login flow v2 only works with Nextcloud, not with ownCloud. If you have troubles you need to create an app password by hand.</translation>
+<translation>登录流程v2仅适用于Nextcloud，不适用于ownCloud。如果遇到问题，您需要手动创建应用密码。</translation>
 </message>
 <message>
 <source>Login to Nextcloud to grant access</source>
-<translation type="unfinished">Login to Nextcloud to grant access</translation>
+<translation>登录Nextcloud以授予访问权限</translation>
 </message>
 <message>
 <source>Cancel Nextcloud login</source>
-<translation type="unfinished">Cancel Nextcloud login</translation>
+<translation>取消Nextcloud登录</translation>
 </message>
 <message>
 <source>Username:</source>
-<translation type="unfinished">Username:</translation>
+<translation>用户名：</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the username on your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the username on your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;请输入您在ownCloud服务器上的用户名。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>Your ownCloud username</source>
-<translation type="unfinished">Your ownCloud username</translation>
+<translation>您的ownCloud用户名</translation>
 </message>
 <message>
 <source>Password:</source>
-<translation type="unfinished">Password:</translation>
+<translation>密码：</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the password for your username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the password for your username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;请输入您用户名的密码。&lt;br/&gt;目前密码将与其他设置一起加密存储，但并不十分安全。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>Your ownCloud password</source>
-<translation type="unfinished">Your ownCloud password</translation>
+<translation>您的ownCloud密码</translation>
 </message>
 <message>
 <source>If your password doesn't work, create an app password (button on the right)</source>
-<translation type="unfinished">If your password doesn't work, create an app password (button on the right)</translation>
+<translation>如果您的密码不起作用，请创建一个应用密码（右侧按钮）</translation>
 </message>
 <message>
 <source>Enable QOwnNotesAPI app support</source>
-<translation type="unfinished">Enable QOwnNotesAPI app support</translation>
+<translation>启用QOwnNotesAPI应用支持</translation>
 </message>
 <message>
 <source>Enable Nextcloud Deck support</source>
-<translation type="unfinished">Enable Nextcloud Deck support</translation>
+<translation>启用Nextcloud Deck支持</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to test the connection to your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click here to test the connection to your ownCloud server.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;点击此处测试与您的ownCloud服务器的连接。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>&amp;Connect to ownCloud server</source>
-<translation type="unfinished">&amp;Connect to ownCloud server</translation>
+<translation>连接到ownCloud服务器(&amp;C)</translation>
 </message>
 <message>
 <source>Connection status</source>
-<translation type="unfinished">Connection status</translation>
+<translation>连接状态</translation>
 </message>
 <message>
 <source>unknown</source>
-<translation type="unfinished">unknown</translation>
+<translation>未知</translation>
 </message>
 <message>
 <source>connection to web server</source>
-<translation type="unfinished">connection to web server</translation>
+<translation>连接到Web服务器</translation>
 </message>
 <message>
 <source>ownCloud server detected</source>
-<translation type="unfinished">ownCloud server detected</translation>
+<translation>检测到ownCloud服务器</translation>
 </message>
 <message>
 <source>username and password correct</source>
-<translation type="unfinished">username and password correct</translation>
+<translation>用户名和密码正确</translation>
 </message>
 <message>
 <source>connection to QOwnNotesAPI</source>
-<translation type="unfinished">connection to QOwnNotesAPI</translation>
+<translation>连接到QOwnNotesAPI</translation>
 </message>
 <message>
 <source>versions app enabled on server</source>
-<translation type="unfinished">versions app enabled on server</translation>
+<translation>服务器上已启用版本应用</translation>
 </message>
 <message>
 <source>trash app enabled on server</source>
-<translation type="unfinished">trash app enabled on server</translation>
+<translation>服务器上已启用回收站应用</translation>
 </message>
 <message>
 <source>You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</source>
-<translation type="unfinished">You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</translation>
+<translation>您可以在&lt;i&gt;Nextcloud / ownCloud&lt;/i&gt;设置中找到此路径</translation>
 </message>
 <message>
 <source>notes path found on server</source>
-<translation type="unfinished">notes path found on server</translation>
+<translation>在服务器上找到笔记路径</translation>
 </message>
 <message>
 <source>notes path &lt;b&gt;%1&lt;/b&gt; found on server</source>
-<translation type="unfinished">notes path &lt;b&gt;%1&lt;/b&gt; found on server</translation>
+<translation>在服务器上找到笔记路径 &lt;b&gt;%1&lt;/b&gt;</translation>
 </message>
 <message>
 <source>The connection was made successfully!
 Server version: %1
 QOwnNotesAPI version: %2</source>
-<translation type="unfinished">The connection was made successfully!
-Server version: %1
-QOwnNotesAPI version: %2</translation>
+<translation>连接成功！
+服务器版本：%1
+QOwnNotesAPI版本：%2</translation>
 </message>
 <message>
 <source>There was an error connecting to the ownCloud Server!
 You also need to have the QOwnNotesAPI app installed and enabled!
 
 Connection error message: </source>
-<translation type="unfinished">There was an error connecting to the ownCloud Server!
-You also need to have the QOwnNotesAPI app installed and enabled!
+<translation>连接到ownCloud服务器时出错！
+您还需要安装并启用QOwnNotesAPI应用！
 
-Connection error message: </translation>
+连接错误消息：</translation>
 </message>
 </context>
 <context>
 <name>PanelsSettingsWidget</name>
 <message>
 <source>Note search panel</source>
-<translation type="unfinished">Note search panel</translation>
+<translation>笔记搜索面板</translation>
 </message>
 <message>
 <source>Disable auto-completion of previous searches</source>
-<translation type="unfinished">Disable auto-completion of previous searches</translation>
+<translation>禁用之前搜索的自动完成</translation>
 </message>
 <message>
 <source>Show the number of matches in each note</source>
-<translation type="unfinished">Show the number of matches in each note</translation>
+<translation>在每个笔记中显示匹配数量</translation>
 </message>
 <message>
 <source>Open newly created notes in a new tab</source>
-<translation type="unfinished">Open newly created notes in a new tab</translation>
+<translation>在新标签页中打开新建的笔记</translation>
 </message>
 <message>
 <source>Note folder panel</source>
-<translation type="unfinished">Note folder panel</translation>
+<translation>笔记文件夹面板</translation>
 </message>
 <message>
 <source>Show note folders as buttons instead of in a select box</source>
-<translation type="unfinished">Show note folders as buttons instead of in a select box</translation>
+<translation>将笔记文件夹显示为按钮而不是下拉框</translation>
 </message>
 <message>
 <source>Note list panel</source>
-<translation type="unfinished">Note list panel</translation>
+<translation>笔记列表面板</translation>
 </message>
 <message>
 <source>Show all notes in a folder including their subfolders (only works if subfolders are turned on)</source>
-<translation type="unfinished">Show all notes in a folder including their subfolders (only works if subfolders are turned on)</translation>
+<translation>显示文件夹中的所有笔记，包括子文件夹中的笔记（仅在开启子文件夹时有效）</translation>
 </message>
 <message>
 <source>Show all notes of a tag including the notes of their children-tags</source>
-<translation type="unfinished">Show all notes of a tag including the notes of their children-tags</translation>
+<translation>显示标签的所有笔记，包括子标签的笔记</translation>
 </message>
 <message>
 <source>Instead of a note list use a note tree with all the subfolders (if they are turned on for the note folder)</source>
-<translation type="unfinished">Instead of a note list use a note tree with all the subfolders (if they are turned on for the note folder)</translation>
+<translation>使用包含所有子文件夹的笔记树代替笔记列表（如果为笔记文件夹开启了子文件夹）</translation>
 </message>
 <message>
 <source>Show notes in the note list with preview</source>
-<translation type="unfinished">Show notes in the note list with preview</translation>
+<translation>在笔记列表中显示笔记预览</translation>
 </message>
 <message>
 <source>Allow empty note files</source>
-<translation type="unfinished">Allow empty note files</translation>
+<translation>允许空笔记文件</translation>
 </message>
 <message>
 <source>Notes larger than this will not be shown in the note list</source>
-<translation type="unfinished">Notes larger than this will not be shown in the note list</translation>
+<translation>大于此大小的笔记将不会显示在笔记列表中</translation>
 </message>
 <message>
 <source>Maximum note file size:</source>
-<translation type="unfinished">Maximum note file size:</translation>
+<translation>最大笔记文件大小：</translation>
 </message>
 <message>
 <source>Regular expressions of note files to ignore, separated by ";"</source>
-<translation type="unfinished">Regular expressions of note files to ignore, separated by ";"</translation>
+<translation>要忽略的笔记文件的正则表达式，用";"分隔</translation>
 </message>
 <message>
 <source>Ignored note files</source>
-<translation type="unfinished">Ignored note files</translation>
+<translation>已忽略的笔记文件</translation>
 </message>
 <message>
 <source>Sort</source>
-<translation type="unfinished">Sort</translation>
+<translation>排序</translation>
 </message>
 <message>
 <source>Alphabetical</source>
-<translation type="unfinished">Alphabetical</translation>
+<translation>按字母顺序</translation>
 </message>
 <message>
 <source>By last change</source>
-<translation type="unfinished">By last change</translation>
+<translation>按最后修改</translation>
 </message>
 <message>
 <source>Order</source>
-<translation type="unfinished">Order</translation>
+<translation>顺序</translation>
 </message>
 <message>
 <source>Ascending</source>
-<translation type="unfinished">Ascending</translation>
+<translation>升序</translation>
 </message>
 <message>
 <source>Descending</source>
-<translation type="unfinished">Descending</translation>
+<translation>降序</translation>
 </message>
 <message>
 <source>Note edit panel</source>
-<translation type="unfinished">Note edit panel</translation>
+<translation>笔记编辑面板</translation>
 </message>
 <message>
 <source>If this is disabled you are able to create more complex panel layouts, but all panels will be resized if the window is resized</source>
-<translation type="unfinished">If this is disabled you are able to create more complex panel layouts, but all panels will be resized if the window is resized</translation>
+<translation>如果禁用此选项，您可以创建更复杂的面板布局，但如果调整窗口大小，所有面板都将被调整大小</translation>
 </message>
 <message>
 <source>Use the note edit panel as fixed central widget to be resized if the window or other panels are resized</source>
-<translation type="unfinished">Use the note edit panel as fixed central widget to be resized if the window or other panels are resized</translation>
+<translation>将笔记编辑面板用作固定中央部件，在调整窗口或其他面板大小时调整其大小</translation>
 </message>
 <message>
 <source>Restore open note tabs at application startup and when note folders are switched</source>
-<translation type="unfinished">Restore open note tabs at application startup and when note folders are switched</translation>
+<translation>在应用程序启动时和切换笔记文件夹时恢复打开的笔记标签页</translation>
 </message>
 <message>
 <source>Hide tab close button</source>
-<translation type="unfinished">Hide tab close button</translation>
+<translation>隐藏标签页关闭按钮</translation>
 </message>
 <message>
 <source>Note subfolders panel</source>
-<translation type="unfinished">Note subfolders panel</translation>
+<translation>笔记子文件夹面板</translation>
 </message>
 <message>
 <source>Hide 'Find or create note subfolder' search</source>
-<translation type="unfinished">Hide 'Find or create note subfolder' search</translation>
+<translation>隐藏'查找或创建笔记子文件夹'搜索</translation>
 </message>
 <message>
 <source>Display note subfolders as full tree</source>
-<translation type="unfinished">Display note subfolders as full tree</translation>
+<translation>将笔记子文件夹显示为完整树</translation>
 </message>
 <message>
 <source>Show root folder name</source>
-<translation type="unfinished">Show root folder name</translation>
+<translation>显示根文件夹名称</translation>
 </message>
 <message>
 <source>Show with full path</source>
-<translation type="unfinished">Show with full path</translation>
+<translation>显示完整路径</translation>
 </message>
 <message>
 <source>Clicking a note tab unsets 'All notes' selection</source>
-<translation type="unfinished">Clicking a note tab unsets 'All notes' selection</translation>
+<translation>点击笔记标签页取消'所有笔记'的选择</translation>
 </message>
 <message>
 <source>Regular expressions of note subfolders to ignore, separated by ";"</source>
-<translation type="unfinished">Regular expressions of note subfolders to ignore, separated by ";"</translation>
+<translation>要忽略的笔记子文件夹的正则表达式，用";"分隔</translation>
 </message>
 <message>
 <source>Ignored subfolders</source>
-<translation type="unfinished">Ignored subfolders</translation>
+<translation>已忽略的子文件夹</translation>
 </message>
 <message>
 <source>Reset ignored subfolders</source>
-<translation type="unfinished">Reset ignored subfolders</translation>
+<translation>重置已忽略的子文件夹</translation>
 </message>
 <message>
 <source>Tags panel</source>
-<translation type="unfinished">Tags panel</translation>
+<translation>标签面板</translation>
 </message>
 <message>
 <source>Hide 'Find or create tag' search</source>
-<translation type="unfinished">Hide 'Find or create tag' search</translation>
+<translation>隐藏'查找或创建标签'搜索</translation>
 </message>
 <message>
 <source>Hide 'Note count' with tags (increases performance)</source>
-<translation type="unfinished">Hide 'Note count' with tags (increases performance)</translation>
+<translation>隐藏标签的'笔记数量'（提高性能）</translation>
 </message>
 <message>
 <source>By last change / use</source>
-<translation type="unfinished">By last change / use</translation>
+<translation>按最后修改/使用</translation>
 </message>
 <message>
 <source>Navigation panel</source>
-<translation type="unfinished">Navigation panel</translation>
+<translation>导航面板</translation>
 </message>
 <message>
 <source>Hide navigation item search bar</source>
-<translation type="unfinished">Hide navigation item search bar</translation>
+<translation>隐藏导航项目搜索栏</translation>
 </message>
 <message>
 <source>Auto-select items in navigation panel when changing cursor position</source>
-<translation type="unfinished">Auto-select items in navigation panel when changing cursor position</translation>
+<translation>更改光标位置时自动选择导航面板中的项目</translation>
 </message>
 </context>
 <context>
@@ -6645,63 +6657,63 @@ Connection error message: </translation>
 <name>PreviewFontSettingsWidget</name>
 <message>
 <source>Rendering</source>
-<translation type="unfinished">Rendering</translation>
+<translation>渲染</translation>
 </message>
 <message>
 <source>Time to wait before refreshing the preview after typing:</source>
-<translation type="unfinished">Time to wait before refreshing the preview after typing:</translation>
+<translation>输入后刷新预览前等待的时间：</translation>
 </message>
 <message>
 <source>Reset the debounce time</source>
-<translation type="unfinished">Reset the debounce time</translation>
+<translation>重置防抖时间</translation>
 </message>
 <message>
 <source>0ms means don't wait for the typing to stop</source>
-<translation type="unfinished">0ms means don't wait for the typing to stop</translation>
+<translation>0毫秒表示不等待停止输入</translation>
 </message>
 <message>
 <source>Use editor highlighting styles also for the preview</source>
-<translation type="unfinished">Use editor highlighting styles also for the preview</translation>
+<translation>在预览中也使用编辑器高亮样式</translation>
 </message>
 <message>
 <source>Enable underline rendering</source>
-<translation type="unfinished">Enable underline rendering</translation>
+<translation>启用下划线渲染</translation>
 </message>
 <message>
 <source>View text right to left (RTL)</source>
-<translation type="unfinished">View text right to left (RTL)</translation>
+<translation>从右到左查看文本（RTL）</translation>
 </message>
 <message>
 <source>Ignore code font size to allow zooming</source>
-<translation type="unfinished">Ignore code font size to allow zooming</translation>
+<translation>忽略代码字体大小以允许缩放</translation>
 </message>
 <message>
 <source>Exporting</source>
-<translation type="unfinished">Exporting</translation>
+<translation>导出</translation>
 </message>
 <message>
 <source>Use internal export styling for the PDF export and printing of the preview</source>
-<translation type="unfinished">Use internal export styling for the PDF export and printing of the preview</translation>
+<translation>在PDF导出和预览打印时使用内部导出样式</translation>
 </message>
 <message>
 <source>Fonts</source>
-<translation type="unfinished">Fonts</translation>
+<translation>字体</translation>
 </message>
 <message>
 <source>Code font:</source>
-<translation type="unfinished">Code font:</translation>
+<translation>代码字体：</translation>
 </message>
 <message>
 <source>Set a new font</source>
-<translation type="unfinished">Set a new font</translation>
+<translation>设置新字体</translation>
 </message>
 <message>
 <source>Reset font</source>
-<translation type="unfinished">Reset font</translation>
+<translation>重置字体</translation>
 </message>
 <message>
 <source>Default font:</source>
-<translation type="unfinished">Default font:</translation>
+<translation>默认字体：</translation>
 </message>
 </context>
 <context>
@@ -6816,12 +6828,12 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>Subfolder path changed</source>
-<translation type="unfinished">Subfolder path changed</translation>
+<translation>子文件夹路径已更改</translation>
 </message>
 <message numerus="yes">
 <source>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</source>
-<translation type="unfinished">
-<numerusform>The subfolder was renamed from &lt;strong&gt;%1&lt;/strong&gt; to &lt;strong&gt;%2&lt;/strong&gt;. Would you like to update all relative Markdown links that point into this subfolder in &lt;strong&gt;%n&lt;/strong&gt; note file(s)?</numerusform>
+<translation>
+<numerusform>子文件夹已从 &lt;strong&gt;%1&lt;/strong&gt; 重命名为 &lt;strong&gt;%2&lt;/strong&gt;。您想更新笔记文件中指向此子文件夹的所有相对Markdown链接吗？</numerusform>
 </translation>
 </message>
 <message>
@@ -6844,7 +6856,7 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>Layout selector</source>
-<translation type="unfinished">Layout selector</translation>
+<translation>布局选择器</translation>
 </message>
 <message>
 <source>Don't ask again!</source>
@@ -6880,11 +6892,11 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>Double-click to unpin note from tab</source>
-<translation type="unfinished">Double-click to unpin note from tab</translation>
+<translation>双击取消笔记固定到标签页</translation>
 </message>
 <message>
 <source>Double-click to pin note to tab</source>
-<translation type="unfinished">Double-click to pin note to tab</translation>
+<translation>双击将笔记固定到标签页</translation>
 </message>
 <message>
 <source>Your Linux system seems to use the dark mode. Do you also want to turn on dark mode in QOwnNotes?</source>
@@ -6988,11 +7000,11 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>Note '%1' does not exist. Create it?</source>
-<translation type="unfinished">Note '%1' does not exist. Create it?</translation>
+<translation>笔记'%1'不存在。是否创建？</translation>
 </message>
 <message>
 <source>Note '%1' does not exist in '%2'. Create it?</source>
-<translation type="unfinished">Note '%1' does not exist in '%2'. Create it?</translation>
+<translation>笔记'%1'在'%2'中不存在。是否创建？</translation>
 </message>
 <message>
 <source>Note was not found</source>
@@ -7040,11 +7052,11 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>Light</source>
-<translation type="unfinished">Light</translation>
+<translation>浅色</translation>
 </message>
 <message>
 <source>Dark</source>
-<translation type="unfinished">Dark</translation>
+<translation>深色</translation>
 </message>
 </context>
 <context>
@@ -7088,35 +7100,35 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>List operations</source>
-<translation type="unfinished">List operations</translation>
+<translation>列表操作</translation>
 </message>
 <message>
 <source>Toggle checkbox(es)</source>
-<translation type="unfinished">Toggle checkbox(es)</translation>
+<translation>切换复选框</translation>
 </message>
 <message>
 <source>1. 2. 3. list</source>
-<translation type="unfinished">1. 2. 3. list</translation>
+<translation>1. 2. 3. 列表</translation>
 </message>
 <message>
 <source>a. b. c. list</source>
-<translation type="unfinished">a. b. c. list</translation>
+<translation>a. b. c. 列表</translation>
 </message>
 <message>
 <source>- list</source>
-<translation type="unfinished">- list</translation>
+<translation>- 列表</translation>
 </message>
 <message>
 <source>Create checkbox list</source>
-<translation type="unfinished">Create checkbox list</translation>
+<translation>创建复选框列表</translation>
 </message>
 <message>
 <source>Clear list formatting</source>
-<translation type="unfinished">Clear list formatting</translation>
+<translation>清除列表格式</translation>
 </message>
 <message>
 <source>Order checkboxes</source>
-<translation type="unfinished">Order checkboxes</translation>
+<translation>排序复选框</translation>
 </message>
 <message>
 <source>Copy code block</source>
@@ -7216,7 +7228,7 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 </message>
 <message>
 <source>Ignore word "%1"</source>
-<translation type="unfinished">Ignore word "%1"</translation>
+<translation>忽略单词"%1"</translation>
 </message>
 <message>
 <source>Markdown LSP server connected</source>
@@ -7547,132 +7559,132 @@ Do you want to install it anyway?</source>
 <name>ScriptingSettingsWidget</name>
 <message>
 <source>Your scripts</source>
-<translation type="unfinished">Your scripts</translation>
+<translation>您的脚本</translation>
 </message>
 <message>
 <source>&amp;Add script…</source>
-<translation type="unfinished">&amp;Add script…</translation>
+<translation>添加脚本(&amp;A)…</translation>
 </message>
 <message>
 <source>&amp;Remove script</source>
-<translation type="unfinished">&amp;Remove script</translation>
+<translation>移除脚本(&amp;R)</translation>
 </message>
 <message>
 <source>Search scripts</source>
-<translation type="unfinished">Search scripts</translation>
+<translation>搜索脚本</translation>
 </message>
 <message>
 <source>Description:</source>
-<translation type="unfinished">Description:</translation>
+<translation>描述：</translation>
 </message>
 <message>
 <source>Author(s):</source>
-<translation type="unfinished">Author(s):</translation>
+<translation>作者：</translation>
 </message>
 <message>
 <source>Repository:</source>
-<translation type="unfinished">Repository:</translation>
+<translation>仓库：</translation>
 </message>
 <message>
 <source>Version:</source>
-<translation type="unfinished">Version:</translation>
+<translation>版本：</translation>
 </message>
 <message>
 <source>Name:</source>
-<translation type="unfinished">Name:</translation>
+<translation>名称：</translation>
 </message>
 <message>
 <source>Script name</source>
-<translation type="unfinished">Script name</translation>
+<translation>脚本名称</translation>
 </message>
 <message>
 <source>Script path:</source>
-<translation type="unfinished">Script path:</translation>
+<translation>脚本路径：</translation>
 </message>
 <message>
 <source>Validate script</source>
-<translation type="unfinished">Validate script</translation>
+<translation>验证脚本</translation>
 </message>
 <message>
 <source>You need to reload the scripting engine if you modify a script file</source>
-<translation type="unfinished">You need to reload the scripting engine if you modify a script file</translation>
+<translation>如果您修改了脚本文件，需要重新加载脚本引擎</translation>
 </message>
 <message>
 <source>Reload scripting engine</source>
-<translation type="unfinished">Reload scripting engine</translation>
+<translation>重新加载脚本引擎</translation>
 </message>
 <message>
 <source>Click here to select your QML script</source>
-<translation type="unfinished">Click here to select your QML script</translation>
+<translation>点击此处选择您的QML脚本</translation>
 </message>
 <message>
 <source>Path to your QML file</source>
-<translation type="unfinished">Path to your QML file</translation>
+<translation>您的QML文件路径</translation>
 </message>
 <message>
 <source>The name</source>
-<translation type="unfinished">The name</translation>
+<translation>名称</translation>
 </message>
 <message>
 <source>New script</source>
-<translation type="unfinished">New script</translation>
+<translation>新建脚本</translation>
 </message>
 <message>
 <source>Take a look at the &lt;a href="%1"&gt;Scripting documentation&lt;/a&gt; to get started fast.</source>
-<translation type="unfinished">Take a look at the &lt;a href="%1"&gt;Scripting documentation&lt;/a&gt; to get started fast.</translation>
+<translation>查看&lt;a href="%1"&gt;脚本文档&lt;/a&gt;以快速入门。</translation>
 </message>
 <message>
 <source>If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</source>
-<translation type="unfinished">If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</translation>
+<translation>如果您需要访问QOwnNotes中的某些功能，请在&lt;a href="%1"&gt; QOwnNotes问题页面&lt;/a&gt;上提交Issue。</translation>
 </message>
 <message>
 <source>Search script repository</source>
-<translation type="unfinished">Search script repository</translation>
+<translation>搜索脚本仓库</translation>
 </message>
 <message>
 <source>Find a script in the script repository</source>
-<translation type="unfinished">Find a script in the script repository</translation>
+<translation>在脚本仓库中查找脚本</translation>
 </message>
 <message>
 <source>Check for script updates</source>
-<translation type="unfinished">Check for script updates</translation>
+<translation>检查脚本更新</translation>
 </message>
 <message>
 <source>Add local script</source>
-<translation type="unfinished">Add local script</translation>
+<translation>添加本地脚本</translation>
 </message>
 <message>
 <source>Add an existing, local script</source>
-<translation type="unfinished">Add an existing, local script</translation>
+<translation>添加现有的本地脚本</translation>
 </message>
 <message>
 <source>Remove script</source>
-<translation type="unfinished">Remove script</translation>
+<translation>移除脚本</translation>
 </message>
 <message>
 <source>Remove the current script &lt;strong&gt;%1&lt;/strong&gt;?</source>
-<translation type="unfinished">Remove the current script &lt;strong&gt;%1&lt;/strong&gt;?</translation>
+<translation>移除当前脚本 &lt;strong&gt;%1&lt;/strong&gt;？</translation>
 </message>
 <message>
 <source>QML files</source>
-<translation type="unfinished">QML files</translation>
+<translation>QML文件</translation>
 </message>
 <message>
 <source>Please select your QML file</source>
-<translation type="unfinished">Please select your QML file</translation>
+<translation>请选择您的QML文件</translation>
 </message>
 <message>
 <source>Open repository</source>
-<translation type="unfinished">Open repository</translation>
+<translation>打开仓库</translation>
 </message>
 <message>
 <source>Your script seems to be valid</source>
-<translation type="unfinished">Your script seems to be valid</translation>
+<translation>您的脚本似乎有效</translation>
 </message>
 <message>
 <source>There were script errors:
 %1</source>
-<translation type="unfinished">There were script errors:
+<translation>存在脚本错误：
 %1</translation>
 </message>
 </context>
@@ -7743,6 +7755,10 @@ Do you want to install it anyway?</source>
 <translation>快捷键</translation>
 </message>
 <message>
+<source>Trash</source>
+<translation type="unfinished">Trash</translation>
+</message>
+<message>
 <source>Main window shortcuts</source>
 <translation>主窗口快捷键</translation>
 </message>
@@ -7783,36 +7799,32 @@ Do you want to install it anyway?</source>
 <translation>Git 版本控制</translation>
 </message>
 <message>
-<source>Local trash</source>
-<translation>本地回收站</translation>
-</message>
-<message>
 <source>Debug options</source>
 <translation>调试选项</translation>
 </message>
 <message>
 <source>Layout presets</source>
-<translation type="unfinished">Layout presets</translation>
+<translation>布局预设</translation>
 </message>
 <message>
 <source>Color modes</source>
-<translation type="unfinished">Color modes</translation>
+<translation>颜色模式</translation>
 </message>
 <message>
 <source>MCP server</source>
-<translation type="unfinished">MCP server</translation>
+<translation>MCP服务器</translation>
 </message>
 <message>
 <source>Layout preset selector</source>
-<translation type="unfinished">Layout preset selector</translation>
+<translation>布局预设选择器</translation>
 </message>
 <message>
 <source>You can create a new layout from a preset here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</source>
-<translation type="unfinished">You can create a new layout from a preset here. Keep in mind that you always can modify the position of the panels with the &lt;i&gt;Unlock panels&lt;/i&gt; button.</translation>
+<translation>您可以在此处从预设创建新布局。请记住，您始终可以使用&lt;i&gt;解锁面板&lt;/i&gt;按钮修改面板的位置。</translation>
 </message>
 <message>
 <source>Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Layouts&lt;/i&gt; for different panel configurations.</source>
-<translation type="unfinished">Panels can be turned on and off in the &lt;i&gt;Window / Panels&lt;/i&gt; main menu and you can also configure different &lt;i&gt;Layouts&lt;/i&gt; for different panel configurations.</translation>
+<translation>面板可以在&lt;i&gt;窗口/面板&lt;/i&gt;主菜单中打开和关闭，您还可以为不同的面板配置设置不同的&lt;i&gt;布局&lt;/i&gt;。</translation>
 </message>
 <message>
 <source>Browser extension / command snippets</source>
@@ -8823,123 +8835,123 @@ This cannot be undone!</source>
 <name>TodoSettingsWidget</name>
 <message>
 <source>Todo settings</source>
-<translation type="unfinished">Todo settings</translation>
+<translation>待办事项设置</translation>
 </message>
 <message>
 <source>Enable todo calendar support</source>
-<translation type="unfinished">Enable todo calendar support</translation>
+<translation>启用待办事项日历支持</translation>
 </message>
 <message>
 <source>You can access your ownCloud server or a generic CalDAV server to manage your todo lists.</source>
-<translation type="unfinished">You can access your ownCloud server or a generic CalDAV server to manage your todo lists.</translation>
+<translation>您可以访问您的ownCloud服务器或通用CalDAV服务器来管理您的待办事项列表。</translation>
 </message>
 <message>
 <source>Which calendar backend do you want to use?</source>
-<translation type="unfinished">Which calendar backend do you want to use?</translation>
+<translation>您想使用哪种日历后端？</translation>
 </message>
 <message>
 <source>Other CalDAV server</source>
-<translation type="unfinished">Other CalDAV server</translation>
+<translation>其他CalDAV服务器</translation>
 </message>
 <message>
 <source>For older versions of ownCloud where the default setting doesn't work</source>
-<translation type="unfinished">For older versions of ownCloud where the default setting doesn't work</translation>
+<translation>适用于默认设置不起作用的旧版ownCloud</translation>
 </message>
 <message>
 <source>Legacy ownCloud calendar</source>
-<translation type="unfinished">Legacy ownCloud calendar</translation>
+<translation>旧版ownCloud日历</translation>
 </message>
 <message>
 <source>For most current ownCloud and Nextcloud installations</source>
-<translation type="unfinished">For most current ownCloud and Nextcloud installations</translation>
+<translation>适用于大多数当前的ownCloud和Nextcloud安装</translation>
 </message>
 <message>
 <source>Default ownCloud calendar</source>
-<translation type="unfinished">Default ownCloud calendar</translation>
+<translation>默认ownCloud日历</translation>
 </message>
 <message>
 <source>CalDAV server settings</source>
-<translation type="unfinished">CalDAV server settings</translation>
+<translation>CalDAV服务器设置</translation>
 </message>
 <message>
 <source>Calendar base url:</source>
-<translation type="unfinished">Calendar base url:</translation>
+<translation>日历基础URL：</translation>
 </message>
 <message>
 <source>Please enter the CalDAV base url to your calendar.</source>
-<translation type="unfinished">Please enter the CalDAV base url to your calendar.</translation>
+<translation>请输入您的日历的CalDAV基础URL。</translation>
 </message>
 <message>
 <source>Your CalDAV calendar base url</source>
-<translation type="unfinished">Your CalDAV calendar base url</translation>
+<translation>您的CalDAV日历基础URL</translation>
 </message>
 <message>
 <source>Username:</source>
-<translation type="unfinished">Username:</translation>
+<translation>用户名：</translation>
 </message>
 <message>
 <source>Please enter the username of your CalDAV server.</source>
-<translation type="unfinished">Please enter the username of your CalDAV server.</translation>
+<translation>请输入您的CalDAV服务器的用户名。</translation>
 </message>
 <message>
 <source>Your CalDAV username</source>
-<translation type="unfinished">Your CalDAV username</translation>
+<translation>您的CalDAV用户名</translation>
 </message>
 <message>
 <source>Password:</source>
-<translation type="unfinished">Password:</translation>
+<translation>密码：</translation>
 </message>
 <message>
 <source>Please enter the password for your CalDAV username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.</source>
-<translation type="unfinished">Please enter the password for your CalDAV username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.</translation>
+<translation>请输入您的CalDAV用户名的密码。&lt;br/&gt;目前密码将与其他设置一起加密存储，但并不十分安全。</translation>
 </message>
 <message>
 <source>Your CalDAV password</source>
-<translation type="unfinished">Your CalDAV password</translation>
+<translation>您的CalDAV密码</translation>
 </message>
 <message>
 <source>Which cloud connection do you want to use?</source>
-<translation type="unfinished">Which cloud connection do you want to use?</translation>
+<translation>您想使用哪种云连接？</translation>
 </message>
 <message>
 <source>Select the calendars you want to use for the Todo list</source>
-<translation type="unfinished">Select the calendars you want to use for the Todo list</translation>
+<translation>选择您想用于待办事项列表的日历</translation>
 </message>
 <message>
 <source>This causes all todo list items to be reloaded from your server the next time you open your todo dialog.</source>
-<translation type="unfinished">This causes all todo list items to be reloaded from your server the next time you open your todo dialog.</translation>
+<translation>这将导致下次打开待办事项对话框时从服务器重新加载所有待办事项。</translation>
 </message>
 <message>
 <source>Empty calendar item cache</source>
-<translation type="unfinished">Empty calendar item cache</translation>
+<translation>清空日历项目缓存</translation>
 </message>
 <message>
 <source>Click here to reload the list of calendars from your calendar server.</source>
-<translation type="unfinished">Click here to reload the list of calendars from your calendar server.</translation>
+<translation>点击此处从您的日历服务器重新加载日历列表。</translation>
 </message>
 <message>
 <source>&amp;Reload calendar list</source>
-<translation type="unfinished">&amp;Reload calendar list</translation>
+<translation>重新加载日历列表(&amp;R)</translation>
 </message>
 <message>
 <source>Ignore calendars that don't support todo items</source>
-<translation type="unfinished">Ignore calendars that don't support todo items</translation>
+<translation>忽略不支持待办事项的日历</translation>
 </message>
 <message>
 <source>Todo list settings</source>
-<translation type="unfinished">Todo list settings</translation>
+<translation>待办事项列表设置</translation>
 </message>
 <message>
 <source>Saving an item also closes the Todo list</source>
-<translation type="unfinished">Saving an item also closes the Todo list</translation>
+<translation>保存项目也会关闭待办事项列表</translation>
 </message>
 <message>
 <source>Calendar cache emptied</source>
-<translation type="unfinished">Calendar cache emptied</translation>
+<translation>日历缓存已清空</translation>
 </message>
 <message>
 <source>Your calendar cache was emptied.</source>
-<translation type="unfinished">Your calendar cache was emptied.</translation>
+<translation>您的日历缓存已清空。</translation>
 </message>
 </context>
 <context>
@@ -9298,11 +9310,11 @@ This cannot be undone!</source>
 <name>Utils::Misc</name>
 <message>
 <source>Open folder in file manager</source>
-<translation type="unfinished">Open folder in file manager</translation>
+<translation>在文件管理器中打开文件夹</translation>
 </message>
 <message>
 <source>Do you want to show this item in your file manager?</source>
-<translation type="unfinished">Do you want to show this item in your file manager?</translation>
+<translation>您想在文件管理器中显示此项目吗？</translation>
 </message>
 </context>
 <context>
@@ -9367,178 +9379,178 @@ This cannot be undone!</source>
 <name>WebApplicationSettingsWidget</name>
 <message>
 <source>QOwnNotes web application support</source>
-<translation type="unfinished">QOwnNotes web application support</translation>
+<translation>QOwnNotes Web应用支持</translation>
 </message>
 <message>
 <source>Enable web application support</source>
-<translation type="unfinished">Enable web application support</translation>
+<translation>启用Web应用支持</translation>
 </message>
 <message>
 <source>You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</source>
-<translation type="unfinished">You can use the &lt;a href="%1"&gt;QOwnNotes Web App&lt;/a&gt; to be able to insert photos into QOwnNotes on your desktop from your mobile phone over the internet.</translation>
+<translation>您可以使用&lt;a href="%1"&gt;QOwnNotes Web应用&lt;/a&gt;通过互联网从手机向桌面上的QOwnNotes插入照片。</translation>
 </message>
 <message>
 <source>QOwnNotes web application</source>
-<translation type="unfinished">QOwnNotes web application</translation>
+<translation>QOwnNotes Web应用</translation>
 </message>
 <message>
 <source>A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</source>
-<translation type="unfinished">A web socket connection to this server will be opened to act as bridge between the QOwnNotes web application and the QOwnNotes desktop application.</translation>
+<translation>将打开到此服务器的Web套接字连接，作为QOwnNotes Web应用和QOwnNotes桌面应用之间的桥梁。</translation>
 </message>
 <message>
 <source>Security token:</source>
-<translation type="unfinished">Security token:</translation>
+<translation>安全令牌：</translation>
 </message>
 <message>
 <source>Show security token</source>
-<translation type="unfinished">Show security token</translation>
+<translation>显示安全令牌</translation>
 </message>
 <message>
 <source>Generate new security token</source>
-<translation type="unfinished">Generate new security token</translation>
+<translation>生成新安全令牌</translation>
 </message>
 <message>
 <source>Server URL:</source>
-<translation type="unfinished">Server URL:</translation>
+<translation>服务器URL：</translation>
 </message>
 <message>
 <source>You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</source>
-<translation type="unfinished">You need to enter this token in the QOwnNotes web application to be able to talk to your QOwnNotes desktop application.</translation>
+<translation>您需要在QOwnNotes Web应用中输入此令牌才能与您的QOwnNotes桌面应用通信。</translation>
 </message>
 <message>
 <source>Copy security token to clipboard</source>
-<translation type="unfinished">Copy security token to clipboard</translation>
+<translation>将安全令牌复制到剪贴板</translation>
 </message>
 <message>
 <source>Reset the URL to default</source>
-<translation type="unfinished">Reset the URL to default</translation>
+<translation>将URL重置为默认值</translation>
 </message>
 <message>
 <source>Show QR code</source>
-<translation type="unfinished">Show QR code</translation>
+<translation>显示二维码</translation>
 </message>
 </context>
 <context>
 <name>WebCompanionSettingsWidget</name>
 <message>
 <source>Command snippets</source>
-<translation type="unfinished">Command snippets</translation>
+<translation>命令片段</translation>
 </message>
 <message>
 <source>Notes with this tag will be used for fetching bookmarks</source>
-<translation type="unfinished">Notes with this tag will be used for fetching bookmarks</translation>
+<translation>带有此标签的笔记将用于获取书签</translation>
 </message>
 <message>
 <source>Tag name for commands notes</source>
-<translation type="unfinished">Tag name for commands notes</translation>
+<translation>命令笔记的标签名称</translation>
 </message>
 <message>
 <source>Commands tag:</source>
-<translation type="unfinished">Commands tag:</translation>
+<translation>命令标签：</translation>
 </message>
 <message>
 <source>You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
-<translation type="unfinished">You can use notes with a special tag to store command snippets, which you can execute from the command-line snippet manager. For more information about the command snippet syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</translation>
+<translation>您可以使用带有特殊标签的笔记存储命令片段，可以从命令行片段管理器执行这些片段。有关命令片段语法的更多信息，请点击&lt;a href="%1"&gt;此处&lt;/a&gt;。</translation>
 </message>
 <message>
 <source>Commands note name:</source>
-<translation type="unfinished">Commands note name:</translation>
+<translation>命令笔记名称：</translation>
 </message>
 <message>
 <source>This note will be used for adding new bookmarks from the browser extension</source>
-<translation type="unfinished">This note will be used for adding new bookmarks from the browser extension</translation>
+<translation>此笔记将用于从浏览器扩展添加新书签</translation>
 </message>
 <message>
 <source>Note name for adding new commands</source>
-<translation type="unfinished">Note name for adding new commands</translation>
+<translation>添加新命令的笔记名称</translation>
 </message>
 <message>
 <source>Web socket server</source>
-<translation type="unfinished">Web socket server</translation>
+<translation>Web套接字服务器</translation>
 </message>
 <message>
 <source>Socket server port:</source>
-<translation type="unfinished">Socket server port:</translation>
+<translation>套接字服务器端口：</translation>
 </message>
 <message>
 <source>Reset the socket server port</source>
-<translation type="unfinished">Reset the socket server port</translation>
+<translation>重置套接字服务器端口</translation>
 </message>
 <message>
 <source>Show security token</source>
-<translation type="unfinished">Show security token</translation>
+<translation>显示安全令牌</translation>
 </message>
 <message>
 <source>Bookmarks</source>
-<translation type="unfinished">Bookmarks</translation>
+<translation>书签</translation>
 </message>
 <message>
 <source>Bookmarks tag:</source>
-<translation type="unfinished">Bookmarks tag:</translation>
+<translation>书签标签：</translation>
 </message>
 <message>
 <source>Tag name for bookmarks notes</source>
-<translation type="unfinished">Tag name for bookmarks notes</translation>
+<translation>书签笔记的标签名称</translation>
 </message>
 <message>
 <source>Bookmarks note name:</source>
-<translation type="unfinished">Bookmarks note name:</translation>
+<translation>书签笔记名称：</translation>
 </message>
 <message>
 <source>Note name for adding new bookmarks</source>
-<translation type="unfinished">Note name for adding new bookmarks</translation>
+<translation>添加新书签的笔记名称</translation>
 </message>
 <message>
 <source>By default the browser extension will show all links of the current note. You can also make it show special bookmark links of notes with a certain tag. For more information about the bookmark link syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</source>
-<translation type="unfinished">By default the browser extension will show all links of the current note. You can also make it show special bookmark links of notes with a certain tag. For more information about the bookmark link syntax click &lt;a href="%1"&gt;here&lt;/a&gt;.</translation>
+<translation>默认情况下，浏览器扩展将显示当前笔记的所有链接。您还可以使其显示具有特定标签的笔记的特殊书签链接。有关书签链接语法的更多信息，请点击&lt;a href="%1"&gt;此处&lt;/a&gt;。</translation>
 </message>
 <message>
 <source>Bookmark suggestion API</source>
-<translation type="unfinished">Bookmark suggestion API</translation>
+<translation>书签建议API</translation>
 </message>
 <message>
 <source>Enable Homepage-compatible bookmark suggestions API</source>
-<translation type="unfinished">Enable Homepage-compatible bookmark suggestions API</translation>
+<translation>启用与Homepage兼容的书签建议API</translation>
 </message>
 <message>
 <source>Suggestion API port:</source>
-<translation type="unfinished">Suggestion API port:</translation>
+<translation>建议API端口：</translation>
 </message>
 <message>
 <source>Reset the suggestion API port</source>
-<translation type="unfinished">Reset the suggestion API port</translation>
+<translation>重置建议API端口</translation>
 </message>
 <message>
 <source>Security token:</source>
-<translation type="unfinished">Security token:</translation>
+<translation>安全令牌：</translation>
 </message>
 <message>
 <source>If this is empty when saved, a new security token will be generated automatically.</source>
-<translation type="unfinished">If this is empty when saved, a new security token will be generated automatically.</translation>
+<translation>如果保存时为空，将自动生成一个新的安全令牌。</translation>
 </message>
 <message>
 <source>Copy security token to clipboard</source>
-<translation type="unfinished">Copy security token to clipboard</translation>
+<translation>将安全令牌复制到剪贴板</translation>
 </message>
 <message>
 <source>Generate new security token</source>
-<translation type="unfinished">Generate new security token</translation>
+<translation>生成新安全令牌</translation>
 </message>
 <message>
 <source>Web socket server support</source>
-<translation type="unfinished">Web socket server support</translation>
+<translation>Web套接字服务器支持</translation>
 </message>
 <message>
 <source>Enable socket server</source>
-<translation type="unfinished">Enable socket server</translation>
+<translation>启用套接字服务器</translation>
 </message>
 <message>
 <source>Install the &lt;a href="%1"&gt;Web Companion browser extension&lt;/a&gt; from the &lt;a href="%2"&gt;Chrome Web Store&lt;/a&gt; or &lt;a href="%3"&gt;Firefox Add-ons page&lt;/a&gt; to use QOwnNotes as web clipper or for bookmark management.</source>
-<translation type="unfinished">Install the &lt;a href="%1"&gt;Web Companion browser extension&lt;/a&gt; from the &lt;a href="%2"&gt;Chrome Web Store&lt;/a&gt; or &lt;a href="%3"&gt;Firefox Add-ons page&lt;/a&gt; to use QOwnNotes as web clipper or for bookmark management.</translation>
+<translation>从&lt;a href="%2"&gt;Chrome网上应用店&lt;/a&gt;或&lt;a href="%3"&gt;Firefox附加组件页面&lt;/a&gt;安装&lt;a href="%1"&gt;Web Companion浏览器扩展&lt;/a&gt;，以将QOwnNotes用作网页剪藏工具或书签管理工具。</translation>
 </message>
 <message>
 <source>Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</source>
-<translation type="unfinished">Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</translation>
+<translation>下载&lt;a href="%1"&gt;命令行片段管理器&lt;/a&gt;，从命令行执行存储在QOwnNotes笔记中的命令片段。</translation>
 </message>
 </context>
 <context>
@@ -9681,7 +9693,7 @@ This cannot be undone!</source>
 </message>
 <message>
 <source>Layout preset</source>
-<translation type="unfinished">Layout preset</translation>
+<translation>布局预设</translation>
 </message>
 <message>
 <source>If you want to be able to access your note versions and your trashed notes on your ownCloud server, you can configure QOwnNotes for it now. You can also do it at a later time.</source>

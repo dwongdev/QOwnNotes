@@ -3371,6 +3371,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <context>
 <name>LocalTrashSettingsWidget</name>
 <message>
+<source>Trash</source>
+<translation type="unfinished">Trash</translation>
+</message>
+<message>
 <source>Local trash settings</source>
 <translation type="unfinished">Local trash settings</translation>
 </message>
@@ -3394,8 +3398,16 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <translation type="unfinished">Automatically remove trashed notes after a certain time</translation>
 </message>
 <message>
-<source>Local trash support</source>
-<translation type="unfinished">Local trash support</translation>
+<source>No trashing</source>
+<translation type="unfinished">No trashing</translation>
+</message>
+<message>
+<source>System trash</source>
+<translation type="unfinished">System trash</translation>
+</message>
+<message>
+<source>Local trash</source>
+<translation type="unfinished">Local trash</translation>
 </message>
 <message>
 <source>Enable local trash to keep a copy of trashed notes</source>
@@ -7811,6 +7823,10 @@ Tot i així, el voleu instal·lar?</translation>
 <translation>Dreceres</translation>
 </message>
 <message>
+<source>Trash</source>
+<translation type="unfinished">Trash</translation>
+</message>
+<message>
 <source>Main window shortcuts</source>
 <translation>Dreceres de la pantalla principal</translation>
 </message>
@@ -7849,10 +7865,6 @@ Tot i així, el voleu instal·lar?</translation>
 <message>
 <source>Git versioning</source>
 <translation>Versionat git</translation>
-</message>
-<message>
-<source>Local trash</source>
-<translation>Paperera local</translation>
 </message>
 <message>
 <source>Debug options</source>

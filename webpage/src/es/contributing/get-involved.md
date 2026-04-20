@@ -9,7 +9,7 @@ Las diversas formas de involucrarse con QOwnNotes
 - Siga a [QOwnNotes en **Mastodon**](https://social.qownnotes.org/@qownnotes)
 - Suscríbase al [**feed RSS del blog** de QOwnNotes](https://feeds.feedburner.com/QOwnNotesBlog)
 - Suscríbase al [**feed RSS de los lanzamientos** de QOwnNotes](https://feeds.feedburner.com/QOwnNotesReleases)
-- Read how [**code contributions** work](code-contributions.md)
+- Lea cómo [funcionan las **contribuciones de código**](code-contributions.md)
 - Contribuir [**traducciones** a QOwnNotes](translation.md)
 - Reporte incidencias o comparta ideas para nuevas funciones en la página de [**incidencias de GitHub** de QOwnNotes](https://github.com/pbek/QOwnNotes/issues)
 - Si ha creado un excelente esquema de editor, publíquelo también en la [página de **incidencias de GitHub**](https://github.com/pbek/QOwnNotes/issues)

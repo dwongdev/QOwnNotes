@@ -8,7 +8,7 @@
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> crea una nueva nota en una nueva pestaña
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> le permite buscar notas (en el nombre de la nota y su contenido)
 - <kbd>Alt</kbd> + <kbd>F</kbd> le permite buscar notas en todas las etiquetas / subcarpetas
-- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
+- <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> cambia al diseño anterior
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> edita una nota cifrada
 - <kbd>Alt</kbd> + <kbd>R</kbd> elimina la nota actual
 - <kbd>Alt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> busca actualizaciones
@@ -123,7 +123,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>N</kbd> crea una nueva nota en una nueva pestaña
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>F</kbd> le permite buscar notas (en el nombre de la nota y su contenido)
 - <kbd>⌃ Ctrl</kbd> + <kbd>F</kbd> le permite buscar notas en todas las etiquetas / subcarpetas
-- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> switches to the previous layout
+- <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>P</kbd> cambia al diseño anterior
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> edita una nota cifrada
 - <kbd>⌃ Ctrl</kbd> + <kbd>R</kbd> elimina la nota actual
 - <kbd>⌃ Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>U</kbd> busca actualizaciones

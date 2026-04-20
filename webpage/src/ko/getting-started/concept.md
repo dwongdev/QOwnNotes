@@ -51,7 +51,7 @@ graph TB
 - Nextcloud / ownCloud 서버와 대화하여 다른 사람과 **공개적으로 노트를 공유 **할 수 있습니다
 - 또한 [QOwnNotesApi Nextcloud 앱](#qownnotesapi-nextcloud-app)을 통해 Nextcloud / ownCloud 서버의 **노트 기록 및 휴지통에 액세스**할 수 있습니다
 - QOwnNotes 내에서 Nextcloud / ownCloud 서버의 작업관리 목록에 액세스할 수 있습니다
-- **QOwnNotes**QOwnNotes 는 노트와 미디어/첨부 파일을 <0>동기화하지 않습니다</0>!
+- **QOwnNotes**QOwnNotes 는 노트와 미디어/첨부 파일을 동기화하지 않습니다!
   - 파일 동기화는 복잡한 작업입니다. 이미 우수한 파일 동기화 솔루션이 있습니다 ([Nextcloud 데스크탑 동기화 클라이언트](#nextcloud-desktop-sync-client) 참조)
 
 ## 마크다운 노트 파일

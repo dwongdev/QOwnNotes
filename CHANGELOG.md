@@ -23,6 +23,7 @@
   `widgets/settings/debugsettingswidget.cpp`, so Ubuntu Focal and Debian 10
   builds no longer fail with an incomplete `QDebug` type during the `#3570`
   changes (for [#3570](https://github.com/pbek/QOwnNotes/issues/3570))
+- Added more Polish, Portuguese, Brazilian, Italian, Russian, Spanish, German, Chinese Simplified, French translation (thank you, pbek, jd-develop, AlejandroMoc)
 
 ## 26.4.16
 

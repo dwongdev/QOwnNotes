@@ -1,11 +1,11 @@
-# Comment puis-je simplement afficher le panneau d'aperçu sans le panneau d'édition des notes?
+# Comment puis-je simplement afficher le panneau d'aperçu sans le panneau d'édition des notes ?
 
-Vous pouvez le faire en désactivant le fait que le **panneau d'édition de notes** est le **widget central** dans **les paramètres du panneau**.
+Vous pouvez le faire en désactivant le fait que le **panneau d'édition de notes** soit le **widget central** dans **les paramètres des panneaux**.
 
-Then best create a new layout `Preview only` by clicking **Window / Layout / Add new layout** in the main menu. Vous pourrez basculer entre les différentes dispositions de panneau.
+Pour ce faire, mieux vaut créer une nouvelle disposition `Aperçu uniquement` en cliquant successivement sur **Fenêtre / Disposition / Ajouter une nouvelle disposition** dans le menu principal. Vous pourrez basculer entre les différentes dispositions de panneau.
 
-Afterward you can turn off the note edit panel in the **Window / Panels menu**.
+Ensuite, vous pouvez désactiver le panneau d'édition des notes dans le menu **Fenêtre / Panneaux**.
 
-Gardez à l'esprit que vous pouvez vous déplacer dans tous les panneaux à votre guise en cliquant sur **Fenêtre / Déverrouiller les panneaux** dans le menu principal. Vous pouvez également redimensionner tous les panneaux en fonction de vos besoins.
+Gardez à l'esprit que vous pouvez déplacer tous les panneaux à votre guise en cliquant sur **Fenêtre / Déverrouiller les panneaux** dans le menu principal. Vous pouvez également redimensionner tous les panneaux en fonction de vos besoins.
 
-Alternatively you can switch to the **Preview only** layout in the **Layout preset settings**.
+Vous pouvez également passer sur la disposition **Aperçu uniquement** dans les **Paramètres, section Préréglages de dispositions**.

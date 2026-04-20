@@ -24,7 +24,7 @@ Open `Settings -> Editor` and configure the **LanguageTool** section.
 - Selecciona el "Idioma"
   - "Detectar automáticamente" está disponible
   - You can also enter a custom language code if needed
-- Add an optional `API key` if your LanguageTool service requires one
+- Agregue una clave de API `API key` opcional si su servicio de LanguageTool la requiere
 - Adjust the `Check delay` to control how long QOwnNotes waits after typing before sending a request
 - Seleccione las categorías que deben verificarse
   - `Ortografía`
@@ -44,7 +44,7 @@ Utilice la función "Probar conexión" para verificar que el servicio configurad
 
 ## Notas
 
-- LanguageTool support is optional and depends on the feature being enabled in your build
+- La compatibilidad con LanguageTool es opcional y depende de que la función esté habilitada en su compilación
 - If the service cannot be reached, QOwnNotes shows a warning and stops checking until it is available again
 - You can use it with a local self-hosted LanguageTool server or another compatible LanguageTool endpoint
 

@@ -1,40 +1,40 @@
-# Code contributions
+# Contributions sur le code source
 
-Thank you for contributing code to QOwnNotes.
+Merci de contribuer au code de QOwnNotes.
 
-## Pull requests
+## Requêtes de fusion
 
-### Open an issue first
+### Ouvrez d’abord un ticket
 
-Please open an issue before opening a pull request.
+Merci d’ouvrir un ticket avant d’ouvrir une requête de fusion.
 
-This helps discuss the problem, proposed solution, scope, and possible side effects before code is reviewed.
+Cela permet de discuter du problème, de la solution proposée, de sa portée et de ses possibles effets de bord avant que le code soit relu.
 
-The only exception is something obviously trivial, like a typo, a very small documentation fix,
-or another tiny change that does not need prior discussion.
+L’unique exception porte sur les changements triviaux, comme les fautes d’orthographes, les petites corrections de la documentation,
+ou les autres changements ne nécessitant pas de discussion au préalable.
 
-If there is already an existing issue for your work, reference it in your pull request.
+S’il y a déjà un ticket ouvert, référencez-le dans votre requête de fusion.
 
-### Branches and pull requests
+### Branches et requêtes de fusion
 
-Please open pull requests against the `main` branch.
+Merci d’ouvrir des requêtes de fusion dans la branche `main`.
 
-Before you start your work, create a new branch for your change and open the pull request from that branch.
+Avant de commencer à travailler, créez une nouvelle branche pour votre changement et ouvrez la requête de fusion depuis cette branche.
 
-Please do not open pull requests from your own `main` branch, as that can cause problems with keeping your
-fork up to date and can lead to accidentally including unrelated changes in the pull request.
+Merci de ne pas ouvrir de requêtes de fusion depuis votre propre branche `main` : cela pourrait poser des problèmes pour
+garder votre bifurcation (fork) à jour et pourrait accidentellement inclure des changements sans rapport dans votre requête de fusion.
 
-### Translation contributions
+### Contributions aux traductions
 
-Please do not make translation contributions by changing the translation files directly.
-Translation files are generated automatically, so translation work should go through the
-[translation page](translation.md).
+Merci de ne pas faire de contributions aux traductions en changeant directement les fichiers de traduction.
+Les fichiers de traduction sont générés automatiquement, il vaut donc mieux aller voir la
+page [Traduction](translation.md).
 
-## Commit messages
+## Messages de validations (commits)
 
-Please follow the existing commit message style used in this repository.
+Merci de suivre le style de messages de validations utilisé dans ce dépôt.
 
-Recent examples:
+Exemples récents :
 
 - `#1765 misc: optionally anonymize personal information in debug output`
 - `#1789 misc: add remembered file manager open prompts`
@@ -42,11 +42,11 @@ Recent examples:
 - `ci: fix step name`
 - `release: bump version`
 
-In general, commit messages should:
+De manière générale, les messages de validations doivent :
 
-- be short and descriptive
-- use a scope followed by a colon, like `misc:`, `mainwindow:`, `tests:`, or `ci:`
-- use an imperative description after the colon, like `fix`, `add`, `allow`, `update`, or `refactor`
-- include the issue number at the start when there is one, for example `#3568 mainwindow: allow dragging text file to import as note`
+- être courts et descriptifs ;
+- préciser d’abord la portée suivie de deux-points, comme `misc:`, `mainwindow:`, `tests:` ou `ci:` ;
+- utiliser une description rédigée en anglais et à l’impératif après les deux-points, comme `fix`, `add`, `allow`, `update` ou `refactor` ;
+- inclure le numéro de ticket au début quand il y en a un, par exemple `#3568 mainwindow: allow dragging text file to import as note`.
 
-Please keep commits focused, so each commit represents one logical change.
+Merci de faire des petites validations représentant chacune un petit changement élémentaire.

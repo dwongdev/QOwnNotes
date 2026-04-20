@@ -83,8 +83,8 @@ Las extensiones del navegador funcionan **fuera de línea**. No se requiere de u
 QOwnNotes puede exponer un endpoint HTTP local para la compatibilidad con [Homepage](https://github.com/gethomepage/homepage) y `suggestionUrl`, respaldado por el mismo análisis e indexación de marcadores que utiliza la fuente de datos de Web Companion.
 
 - Habilítelo en `Configuración -&gt; Extensión del navegador/fragmentos de órdenes0></li>
-<li>Habilite <code>Habilitar servidor de sockets`
-- In `Bookmark suggestion API`, enable `Enable Homepage-compatible bookmark suggestions API`
+- Habilite Habilitar servidor de sockets`
+- En `API de sugerencias de marcadores`, habilite `Activar API de sugerencias de marcadores compatible con Homepage`
 - Establece un puerto para el endpoint local
 - Opcionalmente, configure un token de seguridad si desea que las solicitudes a Homepage requieran autenticación
 - El servicio solo se conecta a `127.0.0.1`
@@ -98,13 +98,13 @@ Configuración de ejemplo de Homepage:
 ```yaml
 search:
   provider: custom
-  url: https://example.com/search?q=
+  url: https://ejemplo.com/search?q=
   suggestionUrl: http://127.0.0.1:22224/suggest?q=
   showSearchSuggestions: true
 ```
 
 ::: tip
-Please visit [Homepage suggestion API](homepage-suggestion-api.md) for more information, including which Homepage settings file to edit and how to use the custom assets from `docs/homepage`.
+Visite la [API de sugerencias de Homepage](homepage-suggestion-api.md) para obtener más información, incluyendo qué archivo de configuración de la página de inicio editar y cómo usar los recursos personalizados de `docs/homepage`.
 :::
 
 ## Gestor de fragmentos de órdenes de terminal de QOwnNotes
@@ -120,8 +120,8 @@ Por favor visite el [gestor de fragmentos de órdenes de terminal de QOwnNotes](
 QOwnNotes puede usar un servidor de [LanguageTool](https://languagetool.org/) local o remoto para la **comprobación de gramática y estilo** en el editor.
 
 - Es **opcional** y funciona en conjunto con el soporte actual de correctores ortográficos
-- Enable it in `Settings -> Editor`, then configure your **server URL**, **language**, optional **API key**, and the categories you want to check
-- You can also toggle it quickly from the **Spelling** menu with `Check grammar with LanguageTool`
+- Actívelo en `Ajustes -> Editor`, luego configure su **URL del servidor**, **idioma**, **clave de API opcional** y las categorías que desea consultar
+- También puede activarlo rápidamente desde el menú **Ortografía** con `Verificar gramática con LanguageTool`
 - En el menú contextual del editor se ofrecen sugerencias y acciones para los problemas detectados
 
 ::: tip

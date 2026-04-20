@@ -1,10 +1,10 @@
 # Gestionnaire de snippets en ligne de commande
 
-Vous pouvez utiliser le [Gestionnaire d'extraits de commandes en ligne de commande de QOwnNotes](https://github.com/qownnotes/qc) pour **exécuter des extraits de commandes stockés dans des notes** se trouvant dans QownNotes depuis la ligne de commande.
+Vous pouvez utiliser le [Gestionnaire de snippets en ligne de commande de QOwnNotes](https://github.com/qownnotes/qc) pour **exécuter des snippets stockés dans des notes** se trouvant dans QownNotes depuis la ligne de commande.
 
 ![qc](/img/qc.png)
 
-Vous pouvez utiliser des **notes avec une étiquette spécifique** pour y stocker **des extraits de commandes** que vous pouvez **exécuter depuis le Gestionnaire d'extraits de commandes en ligne de commande**.
+Vous pouvez utiliser des **notes avec un tag spécifique** pour y stocker **des snippets de commandes** que vous pouvez **exécuter depuis le Gestionnaire de snippets en ligne de commande**.
 
 ![commands](/img/commands.png)
 
@@ -39,7 +39,7 @@ sudo mv /tmp/qc /usr/local/bin/qc && \
 
 ![socket-server-token](/img/socket-server-token.png)
 
-Before you are using the snippet manager you need to enable the _Web socket server_ (2) in the _Browser extension / command snippets_ (1) settings in QOwnNotes.
+Avant d'utiliser le gestionnaire de snippets de commandes, vous devez activer le _serveur Web socket _ (2) dans la section _Extension de navigateur / Snippets de commandes_ (1) dans les paramètres de QOwnNotes.
 
 Vous devez ensuite afficher le jeton de sécurité (3) et le copier (4).
 
@@ -58,33 +58,33 @@ token = "votre_jeton_ici"
 ```
 
 ::: tip
-Dans les paramètres de QOwnNotes vous pouvez également définir quelle étiquette devrait être utilisée pour rechercher des commandes dans les notes. Par défaut l'étiquette `commands` est utilisée.
+Dans les paramètres de QOwnNotes vous pouvez également définir quel tag devrait être utilisée pour rechercher des commandes dans les notes. Par défaut le tag `commands` est utilisé.
 :::
 
-## Syntaxe des extraits de commandes
+## Syntaxe des snippets
 
-Vous pouvez utiliser des **listes non-ordonnées avec des blocs de code en ligne** pour stocker des extraits de commandes. Toutes les notes avec l'étiquette `commands` sont lues pour y trouver d'éventuels extraits de commandes.
+Vous pouvez utiliser des **listes non-ordonnées avec des blocs de code en ligne** pour stocker des snippets de commandes. Toutes les notes avec le tag `commands` sont lues pour y trouver d'éventuels snippets de commandes.
 
-Si vous ajoutez un `cmd:` avant le bloc de code en ligne, la commande sera aussi trouvée dans la **note courante** quelles que soient les étiquettes de cette dernière.
+Si vous ajoutez un `cmd:` avant le bloc de code en ligne, la commande sera aussi trouvée dans la **note courante** quels que soient les tags de cette dernière.
 
 ```markdown
-- `echo I am a command` I am a description #tag1 #tag2 #tag3
+- `echo Je suis une commande` Je suis une description #tag1 #tag2 #tag3
 
-* `echo I am also a command` I am a description #tag3 #tag4 #tag5
+* `echo Je suis aussi une commande` Je suis une description #tag3 #tag4 #tag5
 
-- cmd: `echo I will be found in the current note` This command will be found in the current note regardless of note tags
+- cmd: `echo Je serai trouvée dans la note courante` Cette commande sera trouvée dans la note courante quels que soient ses tags
 
-<!-- Example for asking for user input -->
+<!-- Exemple pour demander une entrée utilisateur -->
 
-- `read -p "PR ID: " id && git fetch origin pull/$id/head:pull-$id && git checkout pull-$id` Ask for pull request ID and checkout pull request
+- `read -p "PR ID: " id && git fetch origin pull/$id/head:pull-$id && git checkout pull-$id` Demande l’identifiant d’une requête de fusion et la checkout
 ```
 
-Des **blocs de code `bash` ou `shell`** précédés par un en-tête niveau 2 ou plus élevé peuvent également être utilisés pour des extraits de commandes. Les étiquettes sont également prises en charge si elles sont placées entre un en-tête et un bloc de code.
+Des **blocs de code `bash` ou `shell`** précédés par un en-tête niveau 2 ou plus élevé peuvent également être utilisés pour des snippets de commandes. Les tags sont également pris en charge s’ils sont placés entre un en-tête et un bloc de code.
 
-    ## Faire ceci avec un bloc de code "bash"
+    ## Faire ceci avec un bloc de code « bash »
 
     - ce texte sera du texte ignoré
-    - mais des étiquettes peuvent être utilisées : #étiquette1 #étiquette2
+    - mais des tags peuvent être utilisés : #tag1 #tag2
 
     ```bash
     echo fais ceci
@@ -92,24 +92,24 @@ Des **blocs de code `bash` ou `shell`** précédés par un en-tête niveau 2 ou 
     ```
 
 
-    ## Faire autre chose avec un bloc de code "sh"
+    ## Faire autre chose avec un bloc de code « sh »
 
     ```sh
     echo fais autre chose
     echo fais encore autre chose
     ```
 
-Les exemples ci-dessus résulteront en deux extraits de commandes, le premier avec les deux étiquettes `étiquette1` et `étiquette2`.
+Les exemples ci-dessus résulteront en deux snippets de commandes, le premier avec les deux tags `tag1` et `tag2`.
 
 ## Utilisation
 
 ```bash
-# Rechercher et exécuter des extraits de commandes
+# Rechercher et exécuter des snippets de commandes
 qc exec
 ```
 
 ```bash
-# Rechercher et afficher des extraits de commandes
+# Rechercher et afficher des snippets de commandes
 qc search
 ```
 
@@ -133,7 +133,7 @@ Exécutez `qc configure`.
 
 Vous pouvez générer du code de complétion pour votre shell avec `qc completion <shell>`.
 
-Pour le Fish shell vous pouvez par exemple utiliser :
+Pour le shell Fish vous pouvez par exemple utiliser :
 
 ```bash
 qc completion fish > ~/.config/fish/completions/qc.fish

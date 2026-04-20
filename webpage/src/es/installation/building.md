@@ -21,10 +21,10 @@ Si sabe lo que está haciendo, también puede construir QOwnNotes directamente d
 ```bash
 cd src
 
-# build binary translation files if you want another language than English
+# Construir los archivos binarios de traducción si desea algún idioma distinto al inglés
 lrelease QOwnNotes.pro
 
-# prepare build process and build the application
+# Preparar el proceso de construcción y construir la aplicación
 qmake
 make
 ```
@@ -34,7 +34,7 @@ No dude en contribuir con el código fuente a este proyecto, realizar sugerencia
 Visitar [QOwnNotes en GitHub](https://github.com/pbek/QOwnNotes).
 
 ::: tip
-Si desea contribuir código fuente al proyecto, por favor haga sus solicitudes de incorporación de cambios (pull requests) en la rama `main`. But please make sure to read the [code contribution guidelines](../contributing/code-contributions.md) first.
+Si desea contribuir código fuente al proyecto, por favor haga sus solicitudes de incorporación de cambios (pull requests) en la rama `main`. No obstante, asegúrese de leer primero las [directrices para la contribución de código](../contributing/code-contributions.md).
 :::
 
 ## Archivo fuente
@@ -50,12 +50,12 @@ Los archivos fuente serán accesibles de esta forma:
 Si tienes instalado el gestor de paquetes [Nix](https://nixos.org/download/) y [Devenv](https://devenv.sh/getting-started/), puedes clonar el repositorio con git, como se explicó anteriormente, y construilro con:
 
 ```bash
-# Open a shell with all the tools you need
+# Abrir una consola para obtener todas las herramientas necesarias
 devenv shell
 
-# Build the application
+# Construir la aplicación
 just nix-build
 
-# Run the built application
+# Ejecutar la aplicación construida
 just nix-run
 ```

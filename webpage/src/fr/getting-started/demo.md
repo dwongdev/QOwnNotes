@@ -2,24 +2,24 @@
 
 ::: tip
 Note
-This might not always work, depending on the current state of the demo environment.
+La démo pourrait ne pas toujours marcher, en fonction de l’état actuel de l’environnement de démo.
 :::
 
 Vous pouvez essayer **QOwnNotes** dans votre navigateur Web sans l’installer en suivant ces instructions:
 
-1. Click on this [Play With Docker](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/qownnotes/docker-desktop/main/examples/docker-compose.play-with-docker.yml&stack_name=desktop) link.
-2. Click the **Login / Start** button (see screenshot bullet **1**) and login with your Docker account (you need to create one if you don't already have one).
+1. Cliquez sur ce lien [Play With Docker](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/qownnotes/docker-desktop/main/examples/docker-compose.play-with-docker.yml&stack_name=desktop).
+2. Cliquez sur le bouton **Connexion / Démarrer** (voir la capture d'écran au petit **1**) et connectez-vous avec votre compte Docker (vous devez en créer un si vous n'en avez pas déjà).
 
 ![screenshot01](/img/demo/playwithdocker01.png)
 
-3. Wait until the container is created and spun up. Then you should be able to click on **6080** on the top (see screenshot bullet **2**). If you get an error please wait a bit more and try to click _6080_ again, it takes a while for the desktop environment to load.
+3. Attendez que le conteneur soit créé et à jour. Vous pourrez ensuite cliquer sur **6080** en haut (voir la capture d’écran au petit **2**). Si vous rencontrez une erreur, attendez un peu plus et essayez à nouveau de cliquer sur _6080_, le chargement de l'environnement de bureau prend un certain temps.
 
 ![screenshot02](/img/demo/playwithdocker02.png)
 
-4. A new browser tab should open producing a desktop. Click on the **bottom left symbol** on the screen (in the task bar), hover over **Accessories** and click on **QOwnNotes** (see screenshot bullet **3**).
+4. Un nouvel onglet de navigateur devrait s'ouvrir pour produire un bureau. Cliquez sur le symbole **en bas à gauche** à l'écran (dans la barre des tâches), survolez **Accessoires** et cliquez sur **QOwnNotes** (voir la capture d'écran au petit **3**).
 
 ![screenshot03](/img/demo/playwithdocker03.png)
 
-5. The **QOwnNotes** install dialog should open, click through it and press _Finish_ to see the QOwnNotes main window.
+5. La boîte de dialogue d'installation de **QOwnNotes** devrait s'ouvrir, cliquez dessus et appuyez sur _Terminer_ pour voir la fenêtre principale de QOwnNotes.
 
 ![screenshot04](/img/demo/playwithdocker04.png)
