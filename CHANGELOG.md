@@ -2,6 +2,9 @@
 
 ## 26.4.17
 
+- Fixed wiki-link auto-completion so finishing a link by typing the missing
+  opening `[[` no longer opens or creates the target note as if the link had
+  been activated while editing (for [#3574](https://github.com/pbek/QOwnNotes/issues/3574))
 - Fixed sorting by the **Trashed** date in the **Locally trashed notes** dialog,
   which could be ordered incorrectly because the internal millisecond
   timestamps were compared as truncated 32-bit integers instead of full 64-bit

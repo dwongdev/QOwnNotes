@@ -751,6 +751,13 @@ void QOwnNotesMarkdownTextEdit::onAutoCompleteRequested() {
         return;
     }
 
+    QString wikiFilterText;
+    int wikiReplaceLength = 0;
+    QStringList wikiResultList;
+    const bool wikiContextActive =
+        Note::isWikiLinkSupportEnabled() &&
+        wikiLinkAutoComplete(wikiResultList, wikiFilterText, wikiReplaceLength);
+
     if (_markdownLspEnabled && _markdownLspClient && !_markdownLspUri.isEmpty()) {
         const QTextCursor cursor = textCursor();
         const int line = cursor.blockNumber();
@@ -762,8 +769,9 @@ void QOwnNotesMarkdownTextEdit::onAutoCompleteRequested() {
         }
     }
 
-    // try to open a link at the cursor position
-    if (openLinkAtCursorPosition()) {
+    // Don't treat typing inside a wiki-link target as an activation request.
+    // This prevents completing the leading "[[" from opening or creating the note.
+    if (!wikiContextActive && openLinkAtCursorPosition()) {
         MainWindow::instance()->showStatusBarMessage(
             tr("An url was opened at the current cursor position"), QStringLiteral("📃"), 5000);
         return;
@@ -775,13 +783,6 @@ void QOwnNotesMarkdownTextEdit::onAutoCompleteRequested() {
     }
 
     QMenu menu;
-
-    QString wikiFilterText;
-    int wikiReplaceLength = 0;
-    QStringList wikiResultList;
-    const bool wikiContextActive =
-        Note::isWikiLinkSupportEnabled() &&
-        wikiLinkAutoComplete(wikiResultList, wikiFilterText, wikiReplaceLength);
 
     if (wikiContextActive) {
         for (const QString &text : Utils::asConst(wikiResultList)) {
