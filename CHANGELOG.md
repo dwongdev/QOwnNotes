@@ -2,6 +2,10 @@
 
 ## 26.4.17
 
+- Restored the long-standing **note editor** behavior where pressing the bare
+  `Up` arrow on the first line moves the cursor to the start of that line, by
+  handling the boundary navigation in `keyPressEvent` so it also works again on
+  macOS builds with Qt6 (for [#3572](https://github.com/pbek/QOwnNotes/issues/3572))
 - Fixed a build error on older Qt5 systems after the **Settings dialog** widget
   refactoring by explicitly including `QDebug` in
   `widgets/settings/debugsettingswidget.cpp`, so Ubuntu Focal and Debian 10
