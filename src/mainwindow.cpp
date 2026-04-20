@@ -2619,6 +2619,8 @@ void MainWindow::readSettingsFromSettingsDialog(const bool isAppLaunch) {
     ui->actionShow_note_git_versions_external->setVisible(false);
 #endif
 
+    updateLocalTrashActionVisibility();
+
     // show or hide 'Find or create ...' search in Note Subfolders & Tags Panels
     ui->noteSubFolderLineEdit->setHidden(
         settings.value(QStringLiteral("noteSubfoldersPanelHideSearch")).toBool());
@@ -2725,6 +2727,10 @@ void MainWindow::readSettingsFromSettingsDialog(const bool isAppLaunch) {
     if (!startAutoReadOnlyModeIfEnabled()) {
         _autoReadOnlyModeTimer->stop();
     }
+}
+
+void MainWindow::updateLocalTrashActionVisibility() {
+    ui->actionShow_local_trash->setVisible(TrashItem::isLocalTrashEnabled());
 }
 
 /**

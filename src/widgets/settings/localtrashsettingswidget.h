@@ -15,6 +15,7 @@
 #pragma once
 
 #include <QWidget>
+#include <QtGlobal>
 
 namespace Ui {
 class LocalTrashSettingsWidget;
@@ -33,7 +34,12 @@ class LocalTrashSettingsWidget : public QWidget {
    private slots:
     void on_localTrashEnabledCheckBox_toggled(bool checked);
     void on_localTrashClearCheckBox_toggled(bool checked);
+    void on_noTrashRadioButton_toggled(bool checked);
+    void on_systemTrashRadioButton_toggled(bool checked);
+    void on_localTrashRadioButton_toggled(bool checked);
 
    private:
     Ui::LocalTrashSettingsWidget *ui;
+
+    void updateTrashSettingsState();
 };

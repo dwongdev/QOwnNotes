@@ -378,19 +378,19 @@
               <iconset theme="appointment-new" resource="../breeze-qownnotes.qrc">
                <normaloff>:/icons/breeze-qownnotes/16x16/appointment-new.svg</normaloff>:/icons/breeze-qownnotes/16x16/appointment-new.svg</iconset>
              </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Local trash</string>
-             </property>
-             <property name="whatsThis">
-              <string notr="true">17</string>
-             </property>
-             <property name="icon">
-              <iconset theme="trash-empty" resource="../breeze-qownnotes.qrc">
-               <normaloff>:/icons/breeze-qownnotes/16x16/trash-empty.svg</normaloff>:/icons/breeze-qownnotes/16x16/trash-empty.svg</iconset>
-             </property>
-            </item>
+             </item>
+             <item>
+              <property name="text">
+               <string>Trash</string>
+              </property>
+              <property name="whatsThis">
+               <string notr="true">17</string>
+              </property>
+              <property name="icon">
+               <iconset theme="trash-empty" resource="../breeze-qownnotes.qrc">
+                <normaloff>:/icons/breeze-qownnotes/16x16/trash-empty.svg</normaloff>:/icons/breeze-qownnotes/16x16/trash-empty.svg</iconset>
+              </property>
+             </item>
            </item>
            <item>
             <property name="text">

@@ -2,6 +2,11 @@
 
 ## 26.4.17
 
+- Renamed the **Local trash** settings page to **Trash**, added a Qt 5.15+
+  **trash mode** selector for **No trashing**, **System trash**, and
+  **Local trash**, switched note deletion to `QFile::moveToTrash()` when
+  **System trash** is selected, and now only show the **Local trash** action
+  when local trash support is enabled (for [#3573](https://github.com/pbek/QOwnNotes/issues/3573))
 - Restored the long-standing **note editor** behavior where pressing the bare
   `Up` arrow on the first line moves the cursor to the start of that line, by
   handling the boundary navigation in `keyPressEvent` so it also works again on

@@ -718,6 +718,8 @@ class MainWindow : public QMainWindow {
 
     void initMcpService();
 
+    void updateLocalTrashActionVisibility();
+
     void on_actionJump_to_note_list_panel_triggered();
 
     void on_actionJump_to_tags_panel_triggered();

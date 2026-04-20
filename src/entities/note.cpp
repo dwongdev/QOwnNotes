@@ -3098,6 +3098,13 @@ bool Note::removeNoteFile() {
         QFile file(fullNoteFilePath());
         qDebug() << __func__ << " - 'this->fileName': " << this->_fileName;
         qDebug() << __func__ << " - 'file': " << file.fileName();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+        if (TrashItem::isSystemTrashEnabled()) {
+            return file.moveToTrash();
+        }
+#endif
+
         return file.remove();
     }
 

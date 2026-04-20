@@ -513,9 +513,37 @@ int TrashItem::countAll() {
     return 0;
 }
 
-bool TrashItem::isLocalTrashEnabled() {
+TrashItem::TrashMode TrashItem::trashMode() {
     SettingsService settings;
-    return settings.value(QStringLiteral("localTrash/supportEnabled"), true).toBool();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+    if (settings.contains(QStringLiteral("localTrash/mode"))) {
+        switch (settings.value(QStringLiteral("localTrash/mode")).toInt()) {
+            case static_cast<int>(TrashMode::NoTrashing):
+                return TrashMode::NoTrashing;
+            case static_cast<int>(TrashMode::SystemTrash):
+                return TrashMode::SystemTrash;
+            case static_cast<int>(TrashMode::LocalTrash):
+                return TrashMode::LocalTrash;
+            default:
+                break;
+        }
+    }
+#endif
+
+    return settings.value(QStringLiteral("localTrash/supportEnabled"), true).toBool()
+               ? TrashMode::LocalTrash
+               : TrashMode::NoTrashing;
+}
+
+bool TrashItem::isLocalTrashEnabled() { return trashMode() == TrashMode::LocalTrash; }
+
+bool TrashItem::isSystemTrashEnabled() {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+    return trashMode() == TrashMode::SystemTrash;
+#else
+    return false;
+#endif
 }
 
 /**

@@ -11,10 +11,29 @@
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout_64">
-   <item row="1" column="0">
-    <widget class="QGroupBox" name="localTrashGroupBox">
-     <property name="title">
-      <string>Local trash settings</string>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="legacyTrashSupportGroupBox">
+      <property name="title">
+       <string>Trash</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_65">
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="localTrashEnabledCheckBox">
+         <property name="text">
+          <string>Enable local trash to keep a copy of trashed notes</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QGroupBox" name="localTrashGroupBox">
+      <property name="title">
+       <string>Local trash settings</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_66">
       <item row="1" column="0">
@@ -82,12 +101,12 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
        </widget>
       </item>
      </layout>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <spacer name="verticalSpacer_15">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <spacer name="verticalSpacer_15">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -95,24 +114,38 @@ Just test yourself if you get sync conflicts and set a higher value if so.</stri
        <height>40</height>
       </size>
      </property>
-    </spacer>
-   </item>
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="groupBox_29">
-     <property name="title">
-      <string>Local trash support</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_65">
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="localTrashEnabledCheckBox">
-        <property name="text">
-         <string>Enable local trash to keep a copy of trashed notes</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
+     </spacer>
+    </item>
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="trashModeGroupBox">
+      <property name="title">
+       <string>Trash</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_67">
+       <item row="0" column="0">
+        <widget class="QRadioButton" name="noTrashRadioButton">
+         <property name="text">
+          <string>No trashing</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QRadioButton" name="systemTrashRadioButton">
+         <property name="text">
+          <string>System trash</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QRadioButton" name="localTrashRadioButton">
+         <property name="text">
+          <string>Local trash</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
      </layout>
     </widget>
    </item>
