@@ -6,7 +6,7 @@ FROM node:22-alpine AS node
 WORKDIR /app
 
 ## Install Python 3 for HTML fixer script
-#RUN apk add --no-cache python3
+RUN apk add --no-cache python3
 
 # Copy package files first for better layer caching
 COPY package*.json ./

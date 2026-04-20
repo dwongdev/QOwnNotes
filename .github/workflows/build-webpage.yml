@@ -32,10 +32,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-      - id: files
-        uses: masesgroup/retrieve-changed-files@v4
-        with:
-          format: "csv"
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
