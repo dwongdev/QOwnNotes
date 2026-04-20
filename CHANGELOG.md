@@ -2,6 +2,10 @@
 
 ## 26.4.17
 
+- Fixed sorting by the **Trashed** date in the **Locally trashed notes** dialog,
+  which could be ordered incorrectly because the internal millisecond
+  timestamps were compared as truncated 32-bit integers instead of full 64-bit
+  values (for [#3573](https://github.com/pbek/QOwnNotes/issues/3573))
 - Renamed the **Local trash** settings page to **Trash**, added a Qt 5.15+
   **trash mode** selector for **No trashing**, **System trash**, and
   **Local trash**, switched note deletion to `QFile::moveToTrash()` when

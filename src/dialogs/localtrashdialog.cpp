@@ -21,7 +21,8 @@ class LocalTrashTreeWidgetItem : public QTreeWidgetItem {
 
         // allow sorting for the date column
         if (column == 1) {
-            return data(column, Qt::UserRole).toInt() < other.data(column, Qt::UserRole).toInt();
+            return data(column, Qt::UserRole).toLongLong() <
+                   other.data(column, Qt::UserRole).toLongLong();
         }
 
         return text(column).toLower() < other.text(column).toLower();
