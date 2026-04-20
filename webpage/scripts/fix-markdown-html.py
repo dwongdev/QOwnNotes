@@ -18,10 +18,24 @@ def fix_markdown_content(content):
     content = re.sub(r'<p spaces-before="[^"]*">\s*', '', content)
     content = re.sub(r'<pre spaces-before="[^"]*">\s*', '```\n', content)
     content = re.sub(r'</pre>\s*', '\n```\n', content)
-    content = re.sub(r'<code[^>]*>\s*', '`', content)
-    content = re.sub(r'</code>\s*', '`', content)
     content = re.sub(r'<h([1-6]) spaces-before="[^"]*">\s*', lambda m: '\n' + '#' * int(m.group(1)) + ' ', content)
     content = re.sub(r'</h[1-6]>\s*', '\n', content)
+
+    # Fix 0b: Convert <code dir="ltr"> / <code> tags to markdown backtick notation
+    # Crowdin often generates <code dir="ltr">content</code> or leaves tags unclosed
+    # Step 1: Handle complete <code>...</code> pairs
+    content = re.sub(r'<code[^>]*>\s*(.*?)\s*</code>', r'`\1`', content)
+    # Step 2: Handle unclosed <code dir="ltr"> tags - extract LTR code content
+    # Code content is non-Arabic text + HTML entities like &lt;Arabic&gt;
+    # Stops before Arabic text/punctuation or end of line
+    content = re.sub(
+        r'<code[^>]*>\s*((?:(?:&lt;[^<]*?&gt;)|(?:&(?:gt|amp|nbsp|quot|#\d+);)|[^\u0600-\u06FF\u060C\u061B\u061F،؛\n<])*)',
+        lambda m: f'`{m.group(1).strip()}`' if m.group(1).strip() else '`',
+        content
+    )
+    # Step 3: Fallback - remove any remaining <code> / </code> tags
+    content = re.sub(r'<code[^>]*>', '`', content)
+    content = re.sub(r'</code>', '`', content)
 
     # Fix 1: Remove orphaned closing tags
     content = re.sub(r'</noscript>', '', content)

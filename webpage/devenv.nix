@@ -6,6 +6,7 @@
   # https://devenv.sh/packages/
   packages = with pkgs; [
     zellij
+    python3
   ];
 
   env = {

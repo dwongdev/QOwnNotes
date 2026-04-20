@@ -38,9 +38,9 @@ else
   [ -f "src/it/getting-started/overview.md" ] && replace_with_english "src/it/getting-started/overview.md"
 fi
 
-#echo ""
-#echo "🔧 Fixing HTML issues in markdown files..."
-#python3 ./scripts/fix-markdown-html.py
+echo ""
+echo "🔧 Fixing HTML issues in markdown files..."
+python3 ./scripts/fix-markdown-html.py
 
 echo ""
 echo "📦 Copying assets..."
