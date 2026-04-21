@@ -19,6 +19,40 @@
 #include "services/settingsservice.h"
 #include "ui_evernoteimportdialog.h"
 
+namespace {
+QString getFrontmatterKeyForEvernoteAttribute(const QString &attributeName) {
+    if (attributeName == QLatin1String("updated")) {
+        return QStringLiteral("modified");
+    }
+
+    static const QString noteAttributesPrefix = QStringLiteral("note-attributes/");
+
+    if (attributeName.startsWith(noteAttributesPrefix)) {
+        return attributeName.mid(noteAttributesPrefix.length());
+    }
+
+    return attributeName;
+}
+
+QString getYamlValueForFrontmatter(const QString &value) {
+    QString normalizedValue = value;
+    const QString carriageReturn = QString(QChar('\r'));
+    const QString lineFeed = QString(QChar('\n'));
+    normalizedValue.replace(carriageReturn + lineFeed, lineFeed);
+    normalizedValue.replace(lineFeed + carriageReturn, lineFeed);
+    normalizedValue.replace(QLatin1Char('\r'), QLatin1Char('\n'));
+
+    if (normalizedValue.indexOf(QLatin1Char('\n')) != -1) {
+        const auto lines = normalizedValue.split(QLatin1Char('\n'));
+        return QString::fromLatin1("|-\n  ") + lines.join(QString::fromLatin1("\n  "));
+    }
+
+    return QString::fromLatin1("'") +
+           normalizedValue.replace(QString::fromLatin1("'"), QString::fromLatin1("''")) +
+           QString::fromLatin1("'");
+}
+}    // namespace
+
 EvernoteImportDialog::EvernoteImportDialog(QWidget *parent)
     : MasterDialog(parent), ui(new Ui::EvernoteImportDialog) {
     ui->setupUi(this);
@@ -28,13 +62,16 @@ EvernoteImportDialog::EvernoteImportDialog(QWidget *parent)
     _mediaFileDataHash.clear();
     _attachmentFileDataHash.clear();
     _metaDataAttributeHash.clear();
-    _metaDataTableText.clear();
+    _metaDataEntries.clear();
 
     SettingsService settings;
     ui->imageImportCheckBox->setChecked(
         settings.value(QStringLiteral("EvernoteImport/ImageImportCheckBoxChecked"), true).toBool());
     ui->attachmentImportCheckBox->setChecked(
         settings.value(QStringLiteral("EvernoteImport/AttachmentImportCheckBoxChecked"), true)
+            .toBool());
+    ui->metaDataAsFrontmatterCheckBox->setChecked(
+        settings.value(QStringLiteral("EvernoteImport/MetaDataAsFrontmatterCheckBoxChecked"), false)
             .toBool());
 
     // Load the last selected ENEX file
@@ -59,6 +96,8 @@ EvernoteImportDialog::~EvernoteImportDialog() {
                       ui->imageImportCheckBox->isChecked());
     settings.setValue(QStringLiteral("EvernoteImport/AttachmentImportCheckBoxChecked"),
                       ui->attachmentImportCheckBox->isChecked());
+    settings.setValue(QStringLiteral("EvernoteImport/MetaDataAsFrontmatterCheckBoxChecked"),
+                      ui->metaDataAsFrontmatterCheckBox->isChecked());
 
     // Save the last selected ENEX file
     QString currentFile = ui->fileLineEdit->text();
@@ -142,7 +181,7 @@ Note EvernoteImportDialog::parseNote(QXmlStreamReader &xml, bool importMetaData)
     QString title;
     QString content;
     QStringList tagNames;
-    _metaDataTableText.clear();
+    _metaDataEntries.clear();
     _mediaFileDataHash.clear();
     _attachmentFileDataHash.clear();
 
@@ -243,10 +282,18 @@ Note EvernoteImportDialog::parseNote(QXmlStreamReader &xml, bool importMetaData)
     title.remove("\"");
 #endif
 
-    QString noteText = Note::createNoteHeader(title);
+    QString noteText;
+    const QString noteHeader = Note::createNoteHeader(title);
 
-    if (importMetaData) {
+    if (importMetaData && isMetaDataFrontmatterEnabled()) {
         noteText += compileMetaDataText();
+        noteText += noteHeader;
+    } else {
+        noteText += noteHeader;
+
+        if (importMetaData) {
+            noteText += compileMetaDataText();
+        }
     }
 
     noteText += content.trimmed();
@@ -729,9 +776,9 @@ void EvernoteImportDialog::parseMetaDataItem(QXmlStreamReader &xml, bool isNoteA
         return;
     }
 
-    QString name = _metaDataAttributeHash[attributeName];
-    _metaDataTableText +=
-        QStringLiteral("| ") + name + (" | ") + attribute + QStringLiteral(" |\n");
+    const QString name = _metaDataAttributeHash[attributeName];
+    _metaDataEntries.append(
+        {getFrontmatterKeyForEvernoteAttribute(attributeName), name, attribute});
 }
 
 void EvernoteImportDialog::parseNoteAttributes(QXmlStreamReader &xml) {
@@ -745,19 +792,43 @@ void EvernoteImportDialog::parseNoteAttributes(QXmlStreamReader &xml) {
 }
 
 QString EvernoteImportDialog::compileMetaDataText() {
-    if (_metaDataTableText.isEmpty()) {
+    if (_metaDataEntries.isEmpty()) {
         return {};
     }
 
-    return "| " + tr("Attribute") + " | " + tr("Value") +
-           " |\n"
-           "|---|---|\n" +
-           _metaDataTableText + QStringLiteral("\n");
+    if (isMetaDataFrontmatterEnabled()) {
+        QStringList lines;
+        lines.reserve(_metaDataEntries.count() + 3);
+        lines << QStringLiteral("---");
+
+        Q_FOREACH (const MetaDataEntry &entry, _metaDataEntries) {
+            lines << entry.key + QStringLiteral(": ") + getYamlValueForFrontmatter(entry.value);
+        }
+
+        lines << QStringLiteral("---") << QString();
+
+        return lines.join(QChar('\n'));
+    }
+
+    QString text = "| " + tr("Attribute") + " | " + tr("Value") +
+                   " |\n"
+                   "|---|---|\n";
+
+    Q_FOREACH (const MetaDataEntry &entry, _metaDataEntries) {
+        text += QStringLiteral("| ") + entry.name + QStringLiteral(" | ") + entry.value +
+                QStringLiteral(" |\n");
+    }
+
+    return text + QStringLiteral("\n");
+}
+
+bool EvernoteImportDialog::isMetaDataFrontmatterEnabled() const {
+    return ui->metaDataAsFrontmatterCheckBox->isChecked();
 }
 
 void EvernoteImportDialog::determineMetaDataAttributes() {
     _metaDataAttributeHash.clear();
-    _metaDataTableText.clear();
+    _metaDataEntries.clear();
 
     QList<QTreeWidgetItem *> items = ui->metaDataTreeWidget->findItems(
         QStringLiteral("*"), Qt::MatchWrap | Qt::MatchWildcard | Qt::MatchRecursive);

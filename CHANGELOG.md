@@ -2,6 +2,10 @@
 
 ## 26.4.18
 
+- Added an optional **Import metadata as YAML front matter** mode to the
+  **Evernote import** dialog, so imported note metadata can be stored in hidden
+  front matter instead of a visible Markdown table when that format is preferred
+  (for [#1404](https://github.com/pbek/QOwnNotes/issues/1404))
 - Added a new **Edit > Select > Select enclosed text** action that selects the
   innermost text surrounded by common Markdown delimiters, quotes, or brackets,
   making Vim-like "select inner block" selection available from the menu and a
