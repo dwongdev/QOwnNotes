@@ -212,6 +212,10 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     }
 }
 
+void SettingsDialog::searchScriptInRepository() {
+    ui->scriptingSettingsWidget->searchScriptInRepository();
+}
+
 /**
  * Replaces the "ownCloud" text by "ownCloud / NextCloud"
  */

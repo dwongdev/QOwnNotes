@@ -2,6 +2,9 @@
 
 ## 26.4.18
 
+- Fixed the main menu action **Scripting > Find scripts in script repository**,
+  which stopped opening the script repository after the settings dialog pages
+  were moved into dedicated widgets (for [#3570](https://github.com/pbek/QOwnNotes/issues/3570))
 - Added an optional **Import metadata as YAML front matter** mode to the
   **Evernote import** dialog, so imported note metadata can be stored in hidden
   front matter instead of a visible Markdown table when that format is preferred

@@ -92,6 +92,8 @@ class SettingsDialog : public MasterDialog {
 
     void readSettings();
 
+    void searchScriptInRepository();
+
    protected:
     void closeEvent(QCloseEvent *event) override;
 

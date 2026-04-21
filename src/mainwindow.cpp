@@ -3885,7 +3885,7 @@ void MainWindow::openSettingsDialog(int page, bool openScriptRepository) {
     QPointer<SettingsDialog> settingsDialog = new SettingsDialog(page, this);
 
     if (openScriptRepository) {
-        QTimer::singleShot(10, settingsDialog, SLOT(searchScriptInRepository()));
+        QTimer::singleShot(10, settingsDialog, &SettingsDialog::searchScriptInRepository);
     }
 
     // open the settings dialog
