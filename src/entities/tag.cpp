@@ -4,6 +4,7 @@
 #include <utils/misc.h>
 
 #include <QDebug>
+#include <QHash>
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
@@ -15,6 +16,141 @@
 #include "notefolder.h"
 #include "notesubfolder.h"
 #include "services/settingsservice.h"
+
+namespace {
+struct MergeTagData {
+    int id = 0;
+    QString name;
+    int parentId = 0;
+    int priority = 0;
+    QString color;
+    QString darkColor;
+};
+
+struct MergeNoteTagLinkData {
+    int sourceTagId = 0;
+    QString noteFileName;
+    QString noteSubFolderPath;
+};
+
+bool fetchMergeTags(QSqlDatabase &db, QHash<int, MergeTagData> &tagDataById) {
+    QSqlQuery query(db);
+    query.prepare(
+        QStringLiteral("SELECT id, name, parent_id, priority, color, dark_color FROM tag"));
+
+    if (!query.exec()) {
+        qWarning() << __func__ << ":" << query.lastError();
+        return false;
+    }
+
+    while (query.next()) {
+        MergeTagData tagData;
+        tagData.id = query.value(QStringLiteral("id")).toInt();
+        tagData.name = query.value(QStringLiteral("name")).toString();
+        tagData.parentId = query.value(QStringLiteral("parent_id")).toInt();
+        tagData.priority = query.value(QStringLiteral("priority")).toInt();
+        tagData.color = query.value(QStringLiteral("color")).toString();
+        tagData.darkColor = query.value(QStringLiteral("dark_color")).toString();
+        tagDataById.insert(tagData.id, tagData);
+    }
+
+    return true;
+}
+
+bool fetchMergeNoteTagLinks(QSqlDatabase &db, QVector<MergeNoteTagLinkData> &noteTagLinks) {
+    QSqlQuery query(db);
+    query.prepare(
+        QStringLiteral("SELECT tag_id, note_file_name, note_sub_folder_path FROM noteTagLink"));
+
+    if (!query.exec()) {
+        qWarning() << __func__ << ":" << query.lastError();
+        return false;
+    }
+
+    while (query.next()) {
+        MergeNoteTagLinkData noteTagLinkData;
+        noteTagLinkData.sourceTagId = query.value(QStringLiteral("tag_id")).toInt();
+        noteTagLinkData.noteFileName = query.value(QStringLiteral("note_file_name")).toString();
+        noteTagLinkData.noteSubFolderPath =
+            query.value(QStringLiteral("note_sub_folder_path")).toString();
+        noteTagLinks.append(noteTagLinkData);
+    }
+
+    return true;
+}
+
+int fetchMergedTagId(QSqlDatabase &db, const QString &name, int parentId) {
+    QSqlQuery query(db);
+    query.prepare(
+        QStringLiteral("SELECT id FROM tag WHERE name = :name AND parent_id = :parentId"));
+    query.bindValue(QStringLiteral(":name"), name);
+    query.bindValue(QStringLiteral(":parentId"), parentId);
+
+    if (!query.exec()) {
+        qWarning() << __func__ << ":" << query.lastError();
+        return -1;
+    }
+
+    return query.first() ? query.value(QStringLiteral("id")).toInt() : 0;
+}
+
+int insertMergedTag(QSqlDatabase &db, const MergeTagData &tagData, int targetParentId) {
+    QSqlQuery query(db);
+    query.prepare(
+        QStringLiteral("INSERT INTO tag (name, priority, parent_id, color, dark_color) "
+                       "VALUES (:name, :priority, :parentId, :color, :darkColor)"));
+    query.bindValue(QStringLiteral(":name"), tagData.name);
+    query.bindValue(QStringLiteral(":priority"), tagData.priority);
+    query.bindValue(QStringLiteral(":parentId"), targetParentId);
+    query.bindValue(QStringLiteral(":color"), tagData.color);
+    query.bindValue(QStringLiteral(":darkColor"), tagData.darkColor);
+
+    if (!query.exec()) {
+        qWarning() << __func__ << ":" << query.lastError();
+        return -1;
+    }
+
+    return query.lastInsertId().toInt();
+}
+
+int ensureMergedTagId(QSqlDatabase &targetDb, const QHash<int, MergeTagData> &sourceTagDataById,
+                      QHash<int, int> &tagIdMap, int sourceTagId) {
+    if (tagIdMap.contains(sourceTagId)) {
+        return tagIdMap.value(sourceTagId);
+    }
+
+    const auto it = sourceTagDataById.constFind(sourceTagId);
+    if (it == sourceTagDataById.constEnd()) {
+        qWarning() << __func__ << ": missing tag for id" << sourceTagId;
+        return -1;
+    }
+
+    const MergeTagData &tagData = it.value();
+    int targetParentId = 0;
+
+    if (tagData.parentId > 0) {
+        targetParentId = ensureMergedTagId(targetDb, sourceTagDataById, tagIdMap, tagData.parentId);
+        if (targetParentId < 0) {
+            return -1;
+        }
+    }
+
+    int targetTagId = fetchMergedTagId(targetDb, tagData.name, targetParentId);
+    if (targetTagId < 0) {
+        return -1;
+    }
+
+    if (targetTagId == 0) {
+        targetTagId = insertMergedTag(targetDb, tagData, targetParentId);
+        if (targetTagId < 0) {
+            return -1;
+        }
+    }
+
+    tagIdMap.insert(sourceTagId, targetTagId);
+    return targetTagId;
+}
+}    // namespace
 
 Tag::Tag() noexcept : _parentId(0), _priority(0) {}
 
@@ -1407,9 +1543,60 @@ bool Tag::mergeFromDatabase(QSqlDatabase &db) {
         return true;
     }
 
-    // TODO: try to merge
+    QHash<int, MergeTagData> sourceTagDataById;
+    QVector<MergeNoteTagLinkData> noteTagLinks;
 
-    return false;
+    if (!fetchMergeTags(db, sourceTagDataById) || !fetchMergeNoteTagLinks(db, noteTagLinks)) {
+        return false;
+    }
+
+    if (!noteFolderDB.transaction()) {
+        qWarning() << __func__ << ":" << noteFolderDB.lastError();
+        return false;
+    }
+
+    QHash<int, int> tagIdMap;
+
+    for (auto it = sourceTagDataById.constBegin(); it != sourceTagDataById.constEnd(); ++it) {
+        if (ensureMergedTagId(noteFolderDB, sourceTagDataById, tagIdMap, it.key()) < 0) {
+            noteFolderDB.rollback();
+            return false;
+        }
+    }
+
+    QSqlQuery linkInsertQuery(noteFolderDB);
+    linkInsertQuery.prepare(
+        QStringLiteral("INSERT OR IGNORE INTO noteTagLink (tag_id, note_file_name, "
+                       "note_sub_folder_path) VALUES (:tagId, :noteFileName, "
+                       ":noteSubFolderPath)"));
+
+    for (const MergeNoteTagLinkData &noteTagLink : noteTagLinks) {
+        const int targetTagId =
+            ensureMergedTagId(noteFolderDB, sourceTagDataById, tagIdMap, noteTagLink.sourceTagId);
+        if (targetTagId < 0) {
+            noteFolderDB.rollback();
+            return false;
+        }
+
+        linkInsertQuery.bindValue(QStringLiteral(":tagId"), targetTagId);
+        linkInsertQuery.bindValue(QStringLiteral(":noteFileName"), noteTagLink.noteFileName);
+        linkInsertQuery.bindValue(QStringLiteral(":noteSubFolderPath"),
+                                  noteTagLink.noteSubFolderPath);
+
+        if (!linkInsertQuery.exec()) {
+            qWarning() << __func__ << ":" << linkInsertQuery.lastError();
+            noteFolderDB.rollback();
+            return false;
+        }
+    }
+
+    if (!noteFolderDB.commit()) {
+        qWarning() << __func__ << ":" << noteFolderDB.lastError();
+        noteFolderDB.rollback();
+        return false;
+    }
+
+    return true;
 }
 
 /**

@@ -1013,14 +1013,17 @@ QString DatabaseService::getAppData(const QString& name, const QString& connecti
 }
 
 /**
- * WIP
+ * Tries to merge a conflicted note folder database into the current one.
  *
  * @param path
  * @return
  */
 bool DatabaseService::mergeNoteFolderDatabase(const QString& path) {
+    const QString connectionName = QStringLiteral("note_folder_merge");
     QSqlDatabase mergeDB =
-        QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("note_folder_merge"));
+        QSqlDatabase::contains(connectionName)
+            ? QSqlDatabase::database(connectionName)
+            : QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), connectionName);
     mergeDB.setDatabaseName(path);
 
     if (!mergeDB.open()) {
@@ -1036,6 +1039,8 @@ bool DatabaseService::mergeNoteFolderDatabase(const QString& path) {
 
     const bool isTagsMerged = Tag::mergeFromDatabase(mergeDB);
     mergeDB.close();
+    mergeDB = QSqlDatabase();
+    QSqlDatabase::removeDatabase(connectionName);
 
     // We can ignore the appData table, because data there will get updated by
     // QOwnNotes itself

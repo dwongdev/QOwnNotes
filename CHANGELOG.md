@@ -1,5 +1,13 @@
 # QOwnNotes Changelog
 
+## 26.4.18
+
+- Conflicted copies of the note folder database `notes.sqlite` can now merge
+  missing tags and note tag assignments into the current database before the
+  conflicted copy is removed, so sync conflicts no longer force you to choose
+  between keeping one side's tag changes or deleting the conflicted database
+  copy outright (for [#1625](https://github.com/pbek/QOwnNotes/issues/1625))
+
 ## 26.4.17
 
 - Fixed wiki-link auto-completion so finishing a link by typing the missing
