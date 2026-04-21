@@ -380,6 +380,8 @@ class MainWindow : public QMainWindow {
 
     void on_actionSelect_all_notes_triggered();
 
+    void on_actionSelect_enclosed_text_triggered();
+
     void jumpToWelcomeNote();
 
     void pasteMediaIntoNote();
@@ -882,6 +884,7 @@ class MainWindow : public QMainWindow {
     QAction *pasteImageAction();
     QAction *autocompleteAction();
     QAction *splitNoteAtPosAction();
+    QAction *selectEnclosedTextAction();
     QAction *findNoteAction();
     QList<QAction *> customTextEditActions();
     QString noteFoldingReference(const Note &note) const;

@@ -1165,6 +1165,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <addaction name="actionStrike_out_text"/>
      <addaction name="actionToggle_text_case"/>
     </widget>
+    <widget class="QMenu" name="menuSelect">
+     <property name="title">
+      <string>Select</string>
+     </property>
+     <addaction name="actionSelect_enclosed_text"/>
+    </widget>
     <widget class="QMenu" name="menuExtra">
      <property name="title">
       <string>Extra</string>
@@ -1238,10 +1244,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <addaction name="action_Find_text_in_note"/>
     <addaction name="actionReplace_in_current_note"/>
     <addaction name="separator"/>
-    <addaction name="menuInsert"/>
-    <addaction name="menuFormat"/>
-    <addaction name="actionSelect_all_notes"/>
-    <addaction name="actionPaste_image"/>
+     <addaction name="menuInsert"/>
+     <addaction name="menuFormat"/>
+     <addaction name="menuSelect"/>
+     <addaction name="actionSelect_all_notes"/>
+     <addaction name="actionPaste_image"/>
     <addaction name="separator"/>
     <addaction name="menuVersioning"/>
     <addaction name="menuEncryption"/>
@@ -1585,6 +1592,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <action name="actionSelect_all_notes">
    <property name="text">
     <string>Select &amp;all notes</string>
+   </property>
+  </action>
+  <action name="actionSelect_enclosed_text">
+   <property name="text">
+    <string>Select enclosed &amp;text</string>
+   </property>
+   <property name="toolTip">
+    <string>Select the innermost text around the current cursor position</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+Alt+I</string>
    </property>
   </action>
   <action name="actionInsert_text_link">

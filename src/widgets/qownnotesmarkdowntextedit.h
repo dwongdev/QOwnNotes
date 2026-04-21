@@ -57,6 +57,11 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     void toggleCase();
 
     /**
+     * Selects the innermost text enclosed by surrounding delimiters
+     */
+    void selectEnclosedText();
+
+    /**
      * Register this editor as the active one for AI autocomplete
      */
     void registerAsActiveEditor();

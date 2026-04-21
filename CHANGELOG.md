@@ -2,6 +2,10 @@
 
 ## 26.4.18
 
+- Added a new **Edit > Select > Select enclosed text** action that selects the
+  innermost text surrounded by common Markdown delimiters, quotes, or brackets,
+  making Vim-like "select inner block" selection available from the menu and a
+  shortcut (for [#1555](https://github.com/pbek/QOwnNotes/issues/1555))
 - Conflicted copies of the note folder database `notes.sqlite` can now merge
   missing tags and note tag assignments into the current database before the
   conflicted copy is removed, so sync conflicts no longer force you to choose

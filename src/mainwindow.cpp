@@ -4579,6 +4579,10 @@ void MainWindow::on_actionInsert_note_link_triggered() {
 
 void MainWindow::on_action_DuplicateText_triggered() { activeNoteTextEdit()->duplicateText(); }
 
+void MainWindow::on_actionSelect_enclosed_text_triggered() {
+    activeNoteTextEdit()->selectEnclosedText();
+}
+
 void MainWindow::on_action_Back_in_note_history_triggered() {
     if (this->noteHistory.back()) {
         ui->searchLineEdit->clear();
@@ -7780,6 +7784,8 @@ QAction *MainWindow::pasteImageAction() { return ui->actionPaste_image; }
 QAction *MainWindow::autocompleteAction() { return ui->actionAutocomplete; }
 
 QAction *MainWindow::splitNoteAtPosAction() { return ui->actionSplit_note_at_cursor_position; }
+
+QAction *MainWindow::selectEnclosedTextAction() { return ui->actionSelect_enclosed_text; }
 
 QAction *MainWindow::findNoteAction() { return ui->action_Find_note; }
 
