@@ -61,6 +61,7 @@
 #include "widgets/settings/debugsettingswidget.h"
 #include "widgets/settings/editorfontcolorsettingswidget.h"
 #include "widgets/settings/editorsettingswidget.h"
+#include "widgets/settings/harpersettingswidget.h"
 #include "widgets/settings/languagetoolsettingswidget.h"
 #include "widgets/settings/networksettingswidget.h"
 #include "widgets/settings/owncloudsettingswidget.h"
@@ -115,6 +116,7 @@ SettingsDialog::SettingsDialog(int page, QWidget *parent)
     }
 
     ui->languageToolSettingsWidget->initialize();
+    ui->harperSettingsWidget->initialize();
 
     updateSearchLineEditIcons();
 
@@ -306,6 +308,7 @@ void SettingsDialog::storeSettings() {
     ui->debugOptionSettingsWidget->storeSettings();
     ui->editorSettingsWidget->storeSettings();
     ui->languageToolSettingsWidget->storeSettings();
+    ui->harperSettingsWidget->storeSettings();
 
     ui->networkSettingsWidget->storeSettings();
 
@@ -369,6 +372,7 @@ void SettingsDialog::readSettings() {
     ui->debugOptionSettingsWidget->readSettings();
     ui->editorSettingsWidget->readSettings();
     ui->languageToolSettingsWidget->readSettings();
+    ui->harperSettingsWidget->readSettings();
     ui->networkSettingsWidget->readSettings();
     ui->editorFontColorSettingsWidget->readSettings();
 

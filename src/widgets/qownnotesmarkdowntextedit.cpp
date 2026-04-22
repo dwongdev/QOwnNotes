@@ -54,6 +54,9 @@
 #ifdef LANGUAGETOOL_ENABLED
 #include "services/languagetoolchecker.h"
 #endif
+#ifdef HARPER_ENABLED
+#include "services/harperchecker.h"
+#endif
 #include "services/markdownlspclient.h"
 #include "services/nextclouddeckservice.h"
 #include "services/openaiservice.h"
@@ -377,6 +380,27 @@ QOwnNotesMarkdownTextEdit::QOwnNotesMarkdownTextEdit(QWidget *parent)
 
 #ifdef LANGUAGETOOL_ENABLED
     connect(LanguageToolChecker::instance(), &LanguageToolChecker::blockMatchesUpdated, this,
+            [this](const QVector<int> &blockNumbers) {
+                if (!document() || !highlighter()) {
+                    return;
+                }
+
+                if (blockNumbers.isEmpty()) {
+                    highlighter()->rehighlight();
+                    return;
+                }
+
+                for (const int blockNumber : blockNumbers) {
+                    const QTextBlock block = document()->findBlockByNumber(blockNumber);
+                    if (block.isValid()) {
+                        highlighter()->rehighlightBlock(block);
+                    }
+                }
+            });
+#endif
+
+#ifdef HARPER_ENABLED
+    connect(HarperChecker::instance(), &HarperChecker::blockMatchesUpdated, this,
             [this](const QVector<int> &blockNumbers) {
                 if (!document() || !highlighter()) {
                     return;
@@ -2186,6 +2210,19 @@ void QOwnNotesMarkdownTextEdit::updateSettings() {
     }
 #endif
 
+#ifdef HARPER_ENABLED
+    auto *harperChecker = HarperChecker::instance();
+    if (harperChecker) {
+        if ((objectName() == QStringLiteral("noteTextEdit")) ||
+            (objectName() == QStringLiteral("encryptedNoteTextEdit")) || objectName().isEmpty()) {
+            harperChecker->setTextEdit(this);
+            harperChecker->scheduleCheck(true);
+        } else {
+            harperChecker->clearForTextEdit(this);
+        }
+    }
+#endif
+
     // highlighting is always disabled for logTextEdit
     if (objectName() != QStringLiteral("logTextEdit")) {
         // enable or disable Markdown highlighting
@@ -2514,6 +2551,10 @@ QMenu *QOwnNotesMarkdownTextEdit::spellCheckContextMenu(QPoint pos) {
     addLanguageToolMenuSection(menu, cursorAtMouse, cursor, hasEntries);
 #endif
 
+#ifdef HARPER_ENABLED
+    addHarperMenuSection(menu, cursorAtMouse, cursor, hasEntries);
+#endif
+
     if (!spellchecker || !spellchecker->isActive() || _isSpellCheckingDisabled) {
         if (!hasEntries) {
             delete menu;
@@ -2705,6 +2746,94 @@ void QOwnNotesMarkdownTextEdit::applyLanguageToolReplacement(const QTextCursor &
     }
 
     // Turn off read-only mode first so the note will be stored
+    if (auto *mw = MainWindow::instance()) {
+        mw->allowNoteEditing();
+    }
+
+    mutableCursor.insertText(replacement);
+    setTextCursor(mutableCursor);
+}
+#endif
+
+#ifdef HARPER_ENABLED
+void QOwnNotesMarkdownTextEdit::addHarperMenuSection(QMenu *menu, const QTextCursor &cursorAtMouse,
+                                                     const QTextCursor &selectedCursor,
+                                                     bool &hasEntries) {
+    auto *checker = HarperChecker::instance();
+    if ((checker == nullptr) || !checker->isEnabled()) {
+        return;
+    }
+
+    QTextCursor matchCursor(cursorAtMouse);
+    matchCursor.clearSelection();
+    const auto blockMatch = checker->matchAtPosition(matchCursor, matchCursor.positionInBlock());
+    if ((blockMatch.blockNumber < 0) || checker->isRuleIgnored(blockMatch.match.ruleId)) {
+        return;
+    }
+
+    if (hasEntries) {
+        menu->addSeparator();
+    }
+
+    QTextCursor replacementCursor(selectedCursor);
+    const int blockPosition = matchCursor.block().position();
+    replacementCursor.setPosition(blockPosition + blockMatch.match.offset);
+    replacementCursor.setPosition(blockPosition + blockMatch.match.offset + blockMatch.match.length,
+                                  QTextCursor::KeepAnchor);
+
+    const QString category =
+        blockMatch.match.ruleCategory.isEmpty() ? tr("Harper") : blockMatch.match.ruleCategory;
+    QString headerText = category;
+    if (!blockMatch.match.shortMessage.isEmpty()) {
+        headerText += QStringLiteral(": ") + blockMatch.match.shortMessage;
+    } else if (!blockMatch.match.message.isEmpty()) {
+        headerText += QStringLiteral(": ") + blockMatch.match.message;
+    }
+
+    QAction *headerAction = menu->addAction(headerText);
+    headerAction->setEnabled(false);
+
+    if (blockMatch.match.replacements.isEmpty()) {
+        QAction *noSuggestionsAction = menu->addAction(tr("No suggestions"));
+        noSuggestionsAction->setEnabled(false);
+    } else {
+        const QStringList replacements = blockMatch.match.replacements.mid(0, 8);
+        for (const QString &replacement : replacements) {
+            menu->addAction(replacement, this, [this, replacementCursor, replacement]() mutable {
+                applyHarperReplacement(replacementCursor, replacement);
+            });
+        }
+    }
+
+    const auto ruleId = blockMatch.match.ruleId;
+    menu->addAction(tr("Ignore this rule"), this, [this, checker, ruleId]() {
+        checker->ignoreRule(ruleId);
+        if (highlighter()) {
+            highlighter()->rehighlight();
+        }
+    });
+
+    const QString matchedWord = replacementCursor.selectedText();
+    if (!matchedWord.isEmpty()) {
+        menu->addAction(tr("Ignore word \"%1\"").arg(matchedWord), this,
+                        [this, checker, matchedWord]() {
+                            checker->ignoreWord(matchedWord);
+                            if (highlighter()) {
+                                highlighter()->rehighlight();
+                            }
+                        });
+    }
+
+    hasEntries = true;
+}
+
+void QOwnNotesMarkdownTextEdit::applyHarperReplacement(const QTextCursor &cursor,
+                                                       const QString &replacement) {
+    QTextCursor mutableCursor(cursor);
+    if (mutableCursor.isNull()) {
+        return;
+    }
+
     if (auto *mw = MainWindow::instance()) {
         mw->allowNoteEditing();
     }
@@ -3072,6 +3201,9 @@ void QOwnNotesMarkdownTextEdit::focusInEvent(QFocusEvent *e) {
 #ifdef LANGUAGETOOL_ENABLED
         LanguageToolChecker::instance()->setTextEdit(this);
 #endif
+#ifdef HARPER_ENABLED
+        HarperChecker::instance()->setTextEdit(this);
+#endif
     }
 
     // Call parent implementation
@@ -3112,6 +3244,9 @@ QOwnNotesMarkdownTextEdit::~QOwnNotesMarkdownTextEdit() {
     closeMarkdownLspDocument();
 #ifdef LANGUAGETOOL_ENABLED
     LanguageToolChecker::instance()->clearForTextEdit(this);
+#endif
+#ifdef HARPER_ENABLED
+    HarperChecker::instance()->clearForTextEdit(this);
 #endif
     // Unregister if this was the active editor
     unregisterAsActiveEditor();

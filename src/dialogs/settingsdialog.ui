@@ -190,9 +190,9 @@
               <property name="text">
                <string>Color modes</string>
               </property>
-              <property name="whatsThis">
-               <string notr="true">24</string>
-              </property>
+                <property name="whatsThis">
+                 <string notr="true">26</string>
+                </property>
               <property name="icon">
                <iconset theme="gtk-select-font" resource="../breeze-dark-qownnotes.qrc">
                 <normaloff>:/icons/breeze-dark-qownnotes/16x16/gtk-select-font.svg</normaloff>:/icons/breeze-dark-qownnotes/16x16/gtk-select-font.svg</iconset>
@@ -231,8 +231,20 @@
                <property name="icon">
                 <iconset theme="tools-check-spelling" resource="../breeze-qownnotes.qrc">
                  <normaloff>:/icons/breeze-qownnotes/16x16/tools-check-spelling.svg</normaloff>:/icons/breeze-qownnotes/16x16/tools-check-spelling.svg</iconset>
-               </property>
-              </item>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Harper</string>
+                </property>
+                <property name="whatsThis">
+                 <string notr="true">24</string>
+                </property>
+                <property name="icon">
+                 <iconset theme="tools-check-spelling" resource="../breeze-qownnotes.qrc">
+                  <normaloff>:/icons/breeze-qownnotes/16x16/tools-check-spelling.svg</normaloff>:/icons/breeze-qownnotes/16x16/tools-check-spelling.svg</iconset>
+                </property>
+               </item>
              </item>
             <item>
              <property name="text">
@@ -1075,7 +1087,26 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </item>
             </layout>
            </widget>
-            <widget class="QWidget" name="colorModesPage">
+            <widget class="QWidget" name="harperPage">
+             <layout class="QVBoxLayout" name="harperPageLayout">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="HarperSettingsWidget" name="harperSettingsWidget" native="true"/>
+              </item>
+             </layout>
+            </widget>
+             <widget class="QWidget" name="colorModesPage">
              <layout class="QGridLayout" name="gridLayout_colorModesPage">
               <property name="leftMargin">
                <number>0</number>
@@ -1225,13 +1256,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <header location="global">widgets/settings/previewfontsettingswidget.h</header>
        <container>1</container>
       </customwidget>
-       <customwidget>
-        <class>LanguageToolSettingsWidget</class>
-        <extends>QWidget</extends>
-        <header location="global">widgets/settings/languagetoolsettingswidget.h</header>
-        <container>1</container>
-       </customwidget>
-       <customwidget>
+        <customwidget>
+         <class>LanguageToolSettingsWidget</class>
+         <extends>QWidget</extends>
+         <header location="global">widgets/settings/languagetoolsettingswidget.h</header>
+         <container>1</container>
+        </customwidget>
+        <customwidget>
+         <class>HarperSettingsWidget</class>
+         <extends>QWidget</extends>
+         <header location="global">widgets/settings/harpersettingswidget.h</header>
+         <container>1</container>
+        </customwidget>
+        <customwidget>
         <class>NetworkSettingsWidget</class>
          <extends>QWidget</extends>
          <header location="global">widgets/settings/networksettingswidget.h</header>

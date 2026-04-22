@@ -9,6 +9,7 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 option(QON_QT6_BUILD "Build QOwnNotes with Qt6" OFF)
 option(DEV_MODE "Build QOwnNotes in developer mode" OFF)
 option(LANGUAGETOOL_ENABLED "Build with LanguageTool support" ON)
+option(HARPER_ENABLED "Build with Harper grammar checker support" ON)
 
 option(BUILD_WITH_LIBGIT2 "Build using system installed libgit2 library" OFF)
 option(BUILD_WITH_ASPELL "Build with aspell support" OFF)
@@ -75,6 +76,10 @@ endif()
 
 if(LANGUAGETOOL_ENABLED)
   target_compile_definitions(QOwnNotes PUBLIC LANGUAGETOOL_ENABLED)
+endif()
+
+if(HARPER_ENABLED)
+  target_compile_definitions(QOwnNotes PUBLIC HARPER_ENABLED)
 endif()
 
 if(CMAKE_BUILD_TYPE MATCHES Debug)
@@ -381,6 +386,11 @@ set(SOURCE_FILES
     services/languagetoolchecker.cpp
     services/languagetoolchecker.h
     services/languagetooltypes.h
+    services/harperclient.cpp
+    services/harperclient.h
+    services/harperchecker.cpp
+    services/harperchecker.h
+    services/harpertypes.h
     services/markdownlspclient.cpp
     services/markdownlspclient.h
     services/settingsservice.cpp
@@ -489,6 +499,9 @@ set(SOURCE_FILES
     widgets/settings/languagetoolsettingswidget.cpp
     widgets/settings/languagetoolsettingswidget.h
     widgets/settings/languagetoolsettingswidget.ui
+    widgets/settings/harpersettingswidget.cpp
+    widgets/settings/harpersettingswidget.h
+    widgets/settings/harpersettingswidget.ui
     widgets/settings/networksettingswidget.cpp
     widgets/settings/networksettingswidget.h
     widgets/settings/networksettingswidget.ui

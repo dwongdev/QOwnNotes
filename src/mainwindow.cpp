@@ -2430,6 +2430,13 @@ void MainWindow::readSettings() {
     ui->actionCheck_grammar_with_LanguageTool->setVisible(false);
 #endif
 
+#ifdef HARPER_ENABLED
+    ui->actionCheck_grammar_with_Harper->setChecked(
+        settings.value(QStringLiteral("harperEnabled"), false).toBool());
+#else
+    ui->actionCheck_grammar_with_Harper->setVisible(false);
+#endif
+
     // load backends
 #ifdef ASPELL_ENABLED
     loadSpellingBackends();
@@ -7652,6 +7659,23 @@ void MainWindow::on_actionManage_dictionaries_triggered() {
 void MainWindow::on_actionCheck_grammar_with_LanguageTool_toggled(bool checked) {
     SettingsService settings;
     settings.setValue(QStringLiteral("languageToolEnabled"), checked);
+
+    if (ui->noteTextEdit) {
+        ui->noteTextEdit->updateSettings();
+    }
+
+    if (ui->encryptedNoteTextEdit) {
+        ui->encryptedNoteTextEdit->updateSettings();
+    }
+
+    Q_EMIT settingsChanged();
+}
+#endif
+
+#ifdef HARPER_ENABLED
+void MainWindow::on_actionCheck_grammar_with_Harper_toggled(bool checked) {
+    SettingsService settings;
+    settings.setValue(QStringLiteral("harperEnabled"), checked);
 
     if (ui->noteTextEdit) {
         ui->noteTextEdit->updateSettings();

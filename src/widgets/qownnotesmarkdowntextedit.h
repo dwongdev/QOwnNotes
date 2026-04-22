@@ -182,6 +182,11 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
                                     const QTextCursor &selectedCursor, bool &hasEntries);
     void applyLanguageToolReplacement(const QTextCursor &cursor, const QString &replacement);
 #endif
+#ifdef HARPER_ENABLED
+    void addHarperMenuSection(QMenu *menu, const QTextCursor &cursorAtMouse,
+                              const QTextCursor &selectedCursor, bool &hasEntries);
+    void applyHarperReplacement(const QTextCursor &cursor, const QString &replacement);
+#endif
 
     /**
      * Requests AI autocomplete for the current text

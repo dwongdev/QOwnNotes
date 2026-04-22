@@ -32,6 +32,9 @@
 #ifdef LANGUAGETOOL_ENABLED
 #include "services/languagetoolchecker.h"
 #endif
+#ifdef HARPER_ENABLED
+#include "services/harperchecker.h"
+#endif
 
 constexpr qreal ENCRYPTED_TEXT_FONT_SCALE = 1.5;
 
@@ -106,6 +109,12 @@ void QOwnNotesMarkdownHighlighter::highlightBlock(const QString &text) {
 #ifdef LANGUAGETOOL_ENABLED
         if (!text.isEmpty()) {
             highlightLanguageTool(text);
+        }
+#endif
+
+#ifdef HARPER_ENABLED
+        if (!text.isEmpty()) {
+            highlightHarper(text);
         }
 #endif
 
@@ -460,6 +469,70 @@ void QOwnNotesMarkdownHighlighter::highlightLanguageTool(const QString &text) {
     }
 
     languageCache->setLanguageToolMatches(blockMatches);
+}
+#endif
+
+#ifdef HARPER_ENABLED
+void QOwnNotesMarkdownHighlighter::setHarperUnderline(int start, int count, const QColor &color,
+                                                      const QString &toolTip) {
+    if (MarkdownHighlighter::isPosInACodeSpan(currentBlock().blockNumber(), start)) {
+        return;
+    }
+
+    for (int i = start; i < start + count; ++i) {
+        QTextCharFormat format = QSyntaxHighlighter::format(i);
+        format.setFontUnderline(true);
+        format.setUnderlineStyle(QTextCharFormat::SpellCheckUnderline);
+        format.setUnderlineColor(color);
+        format.setToolTip(toolTip);
+        setFormat(i, 1, format);
+    }
+}
+
+void QOwnNotesMarkdownHighlighter::highlightHarper(const QString &text) {
+    auto *checker = HarperChecker::instance();
+    if ((checker == nullptr) || !checker->isEnabled()) {
+        return;
+    }
+
+    auto *languageCache = dynamic_cast<LanguageCache *>(currentBlockUserData());
+    if (!languageCache) {
+        languageCache = new LanguageCache;
+        setCurrentBlockUserData(languageCache);
+    }
+
+    const auto matches = checker->matchesForBlock(currentBlock().blockNumber(), text);
+    QVector<HarperMatch> blockMatches;
+    blockMatches.reserve(matches.size());
+
+    for (const auto &blockMatch : matches) {
+        if (checker->isRuleIgnored(blockMatch.match.ruleId)) {
+            continue;
+        }
+
+        const QString matchedText = text.mid(blockMatch.match.offset, blockMatch.match.length);
+        if (checker->isWordIgnored(matchedText) || (blockMatch.match.length <= 0)) {
+            continue;
+        }
+
+        QColor color = QColor(QStringLiteral("#2a6fdb"));
+        const QString category = blockMatch.match.ruleCategory;
+        if (category == QStringLiteral("Spelling")) {
+            color = Qt::red;
+        } else if (category == QStringLiteral("Style")) {
+            color = QColor(QStringLiteral("#c99500"));
+        } else if (category == QStringLiteral("Punctuation")) {
+            color = QColor(QStringLiteral("#1c8f47"));
+        } else if (category == QStringLiteral("Typography")) {
+            color = QColor(QStringLiteral("#7a3db8"));
+        }
+
+        setHarperUnderline(blockMatch.match.offset, blockMatch.match.length, color,
+                           blockMatch.match.message);
+        blockMatches.append(blockMatch.match);
+    }
+
+    languageCache->setHarperMatches(blockMatches);
 }
 #endif
 

@@ -77,6 +77,10 @@ class QOwnNotesMarkdownHighlighter : public MarkdownHighlighter {
     void setLanguageToolUnderline(int start, int count, const QColor &color,
                                   const QString &toolTip);
 #endif
+#ifdef HARPER_ENABLED
+    void highlightHarper(const QString &text);
+    void setHarperUnderline(int start, int count, const QColor &color, const QString &toolTip);
+#endif
 
     void updateCachedRegexes(const QString &newExt);
 

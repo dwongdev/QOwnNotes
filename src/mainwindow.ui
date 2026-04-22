@@ -1260,7 +1260,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <addaction name="separator"/>
      <addaction name="actionCheck_spelling"/>
      <addaction name="actionCheck_grammar_with_LanguageTool"/>
-     <addaction name="menuSpelling_backend"/>
+      <addaction name="actionCheck_grammar_with_Harper"/>
+      <addaction name="menuSpelling_backend"/>
      <addaction name="menuLanguages"/>
     <addaction name="actionManage_dictionaries"/>
     <addaction name="separator"/>
@@ -2828,6 +2829,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>Check grammar with LanguageTool</string>
+   </property>
+  </action>
+  <action name="actionCheck_grammar_with_Harper">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Check grammar with Harper</string>
    </property>
   </action>
   <action name="actionEditorWidthCustom">

@@ -70,6 +70,7 @@ class SettingsDialog : public MasterDialog {
         ExperimentalPage,
         AiPage,
         LanguageToolPage,
+        HarperPage,
         ColorModesPage,
         McpServerPage
     };

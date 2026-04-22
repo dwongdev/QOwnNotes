@@ -15,6 +15,7 @@ QT       += quick
 
 CONFIG += with_aspell
 DEFINES += LANGUAGETOOL_ENABLED
+DEFINES += HARPER_ENABLED
 
 # QLiteHtml requires Qt 6+
 greaterThan(QT_MAJOR_VERSION, 5) {
@@ -172,6 +173,8 @@ SOURCES += main.cpp\
     helpers/flowlayout.cpp \
     services/languagetoolclient.cpp \
     services/languagetoolchecker.cpp \
+    services/harperclient.cpp \
+    services/harperchecker.cpp \
     services/databaseservice.cpp \
     threads/scriptthread.cpp \
     widgets/graphicsview.cpp \
@@ -240,6 +243,7 @@ SOURCES += main.cpp\
     widgets/settings/previewfontsettingswidget.cpp \
     widgets/settings/debugsettingswidget.cpp \
     widgets/settings/languagetoolsettingswidget.cpp \
+    widgets/settings/harpersettingswidget.cpp \
      widgets/settings/networksettingswidget.cpp \
      widgets/settings/owncloudsettingswidget.cpp \
      widgets/settings/todosettingswidget.cpp \
@@ -328,6 +332,9 @@ HEADERS  += mainwindow.h \
     services/languagetoolclient.h \
     services/languagetoolchecker.h \
     services/languagetooltypes.h \
+    services/harperclient.h \
+    services/harperchecker.h \
+    services/harpertypes.h \
     helpers/htmlentities.h \
     helpers/clientproxy.h \
     helpers/toolbarcontainer.h \
@@ -403,6 +410,7 @@ HEADERS  += mainwindow.h \
     widgets/settings/previewfontsettingswidget.h \
     widgets/settings/debugsettingswidget.h \
     widgets/settings/languagetoolsettingswidget.h \
+    widgets/settings/harpersettingswidget.h \
      widgets/settings/networksettingswidget.h \
      widgets/settings/owncloudsettingswidget.h \
      widgets/settings/todosettingswidget.h \
@@ -486,6 +494,7 @@ FORMS    += mainwindow.ui \
     widgets/settings/previewfontsettingswidget.ui \
     widgets/settings/debugsettingswidget.ui \
     widgets/settings/languagetoolsettingswidget.ui \
+    widgets/settings/harpersettingswidget.ui \
      widgets/settings/networksettingswidget.ui \
      widgets/settings/owncloudsettingswidget.ui \
      widgets/settings/todosettingswidget.ui \

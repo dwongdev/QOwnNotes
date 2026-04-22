@@ -1,5 +1,11 @@
 # QOwnNotes Changelog
 
+## 26.4.20
+
+- Added support for [Harper](https://github.com/automattic/harper) as an offline,
+  privacy-first grammar checker, available as an alternative to LanguageTool
+  (for [#3576](https://github.com/pbek/QOwnNotes/issues/3576))
+
 ## 26.4.19
 
 - Fixed note folder switching so all modified notes are written to disk before

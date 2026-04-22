@@ -139,6 +139,23 @@ QOwnNotes can use a local or remote [LanguageTool](https://languagetool.org/) se
 Please visit [LanguageTool](../editor/languagetool.md) for more information.
 :::
 
+## Harper service
+
+QOwnNotes can use a local [Harper](https://writewithharper.com/) service for
+**offline grammar and style checking** in the editor.
+
+- It is **optional** and works alongside the existing spell checker support
+- Enable it in `Settings -> Editor -> Harper`, then configure the **transport**,
+  `harper-ls` command or TCP target,
+  **dialect**, and the linters you want to use
+- You can also toggle it quickly from the **Edit** menu with
+  `Check grammar with Harper`
+- Suggestions and ignore actions are available from the editor context menu for detected issues
+
+::: tip
+Please visit [Harper](../editor/harper.md) for more information.
+:::
+
 ## Nextcloud desktop sync client
 
 **Sync your notes** with other devices (desktop & mobile) with your [Nextcloud](https://nextcloud.com/)

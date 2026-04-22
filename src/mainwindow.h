@@ -757,6 +757,9 @@ class MainWindow : public QMainWindow {
 #ifdef LANGUAGETOOL_ENABLED
     void on_actionCheck_grammar_with_LanguageTool_toggled(bool checked);
 #endif
+#ifdef HARPER_ENABLED
+    void on_actionCheck_grammar_with_Harper_toggled(bool checked);
+#endif
 
     void on_noteTextEdit_modificationChanged(bool arg1);
 
