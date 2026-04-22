@@ -2810,6 +2810,19 @@ int Note::storeDirtyNotesToDisk(Note &currentNote, bool *currentNoteChanged, boo
     return count;
 }
 
+bool Note::hasDirtyNotes() {
+    const QSqlDatabase db = QSqlDatabase::database(QStringLiteral("memory"));
+    QSqlQuery query(db);
+
+    query.prepare(QStringLiteral("SELECT COUNT(*) AS cnt FROM note WHERE has_dirty_data = 1"));
+    if (!query.exec()) {
+        qWarning() << __func__ << ": " << query.lastError();
+        return true;
+    }
+
+    return !query.first() || (query.value(QStringLiteral("cnt")).toInt() > 0);
+}
+
 /**
  * Strips trailing whitespaces off the note text
  *

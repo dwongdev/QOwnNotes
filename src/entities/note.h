@@ -138,6 +138,8 @@ class Note {
                                      bool *noteWasRenamed = nullptr,
                                      bool *currentNoteTextChanged = nullptr);
 
+    static bool hasDirtyNotes();
+
     bool updateNoteTextFromDisk();
 
     friend QDebug operator<<(QDebug dbg, const Note &note);

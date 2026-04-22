@@ -2,6 +2,10 @@
 
 ## 26.4.19
 
+- Fixed note folder switching so all modified notes are written to disk before
+  another note folder becomes active, preventing edited notes from being saved
+  into the newly selected folder instead of their original one (for
+  [#3575](https://github.com/pbek/QOwnNotes/issues/3575))
 - Fixed the **Navigation panel** heading parser so lines inside fenced code
   blocks are no longer interpreted as Markdown headings, preventing entries
   like `# ls -l` or `## test` from appearing in the heading tree (for

@@ -2100,29 +2100,41 @@ bool MainWindow::changeNoteFolder(const int noteFolderId, const bool forceChange
 
     QString folderName = noteFolder.getLocalPath();
     const QString oldPath = this->notesPath;
-
-    // Switch the active note folder first so all subsequent refresh steps
-    // (including combo/menu rebuilding) use the correct current folder.
-    noteFolder.setAsCurrent();
-
     const bool notesPathChanged = (oldPath != folderName);
 
     // reload notes if notes folder was changed
     if (notesPathChanged) {
+        // Store everything before changing folder
+        storeUpdatedNotesToDisk();
+
+        if (Note::hasDirtyNotes()) {
+            loadNoteFolderListMenu();
+            QMessageBox::warning(
+                this, tr("Could not switch note folder"),
+                tr("Modified notes could not be written to disk. Please resolve the problem and "
+                   "try switching note folders again."));
+            return false;
+        }
+
         const QSignalBlocker blocker2(this->ui->searchLineEdit);
         {
             Q_UNUSED(blocker2)
             ui->searchLineEdit->clear();
         }
 
-        // store everything before changing folder
-        storeUpdatedNotesToDisk();
-
         // commit the changes in the current note folder to git
         gitCommitCurrentNoteFolder();
 
         // update the recent note folder list
         storeRecentNoteFolder(this->notesPath, folderName);
+
+        // Switch the active note folder only after all pending writes for the
+        // current folder were flushed to disk.
+        noteFolder.setAsCurrent();
+
+        // Rebuild the selector and menu after switching so the newly active
+        // note folder stays selected in the UI.
+        loadNoteFolderListMenu();
 
         // change notes path
         this->notesPath = folderName;
@@ -2139,6 +2151,8 @@ bool MainWindow::changeNoteFolder(const int noteFolderId, const bool forceChange
         // switching to another note folder
         unsetCurrentNote();
     } else {
+        noteFolder.setAsCurrent();
+
         // Keep selector and Note -> Note folders menu in sync when switching
         // between folders that share the same path.
         loadNoteFolderListMenu();
