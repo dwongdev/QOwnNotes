@@ -1,5 +1,6 @@
 #include "test_navigationwidget.h"
 
+#include <QTextBlock>
 #include <QTextDocument>
 #include <QtTest>
 
@@ -45,4 +46,34 @@ void TestNavigationWidget::testParseDocumentSupportsScriptedHeadings() {
     QCOMPARE(nodes.at(3).elementType, int(MarkdownHighlighter::H1));
 
     scriptingService->initComponents();
+}
+
+void TestNavigationWidget::testParseDocumentIgnoresHeadingsInsideFencedCodeBlocks() {
+    QTextDocument document;
+    document.setPlainText(
+        QStringLiteral("# Visible heading\n"
+                       "```\n"
+                       "# ls -l\n"
+                       "## test\n"
+                       "```\n"
+                       "## Still visible\n"));
+
+    for (QTextBlock block = document.begin(); block.isValid(); block = block.next()) {
+        const QString text = block.text();
+
+        if (text == QStringLiteral("```")) {
+            block.setUserState(block.blockNumber() == 1 ? MarkdownHighlighter::CodeBlock
+                                                        : MarkdownHighlighter::CodeBlockEnd);
+        } else if (text == QStringLiteral("# ls -l") || text == QStringLiteral("## test")) {
+            block.setUserState(MarkdownHighlighter::CodeBlock);
+        }
+    }
+
+    const auto nodes = NavigationWidget::parseDocument(&document);
+
+    QCOMPARE(nodes.count(), 2);
+    QCOMPARE(nodes.at(0).text, QStringLiteral("Visible heading"));
+    QCOMPARE(nodes.at(0).elementType, int(MarkdownHighlighter::H1));
+    QCOMPARE(nodes.at(1).text, QStringLiteral("Still visible"));
+    QCOMPARE(nodes.at(1).elementType, int(MarkdownHighlighter::H2));
 }

@@ -1,5 +1,12 @@
 # QOwnNotes Changelog
 
+## 26.4.19
+
+- Fixed the **Navigation panel** heading parser so lines inside fenced code
+  blocks are no longer interpreted as Markdown headings, preventing entries
+  like `# ls -l` or `## test` from appearing in the heading tree (for
+  [#3577](https://github.com/pbek/QOwnNotes/issues/3577))
+
 ## 26.4.18
 
 - Fixed the main menu action **Scripting > Find scripts in script repository**,

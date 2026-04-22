@@ -37,6 +37,11 @@ struct HeadingMatch {
     bool isValid() const { return MarkdownHighlighter::isHeading(elementType) && !text.isEmpty(); }
 };
 
+bool isCodeBlockState(const int state) {
+    return MarkdownHighlighter::isCodeBlock(state) || MarkdownHighlighter::isCodeBlockEnd(state) ||
+           state == MarkdownHighlighter::CodeBlockIndented;
+}
+
 int atxHeadingLevel(const QString &text) {
     int offset = 0;
     while (offset < text.length() && text.at(offset) == QLatin1Char(' ') && offset < 4) {
@@ -147,6 +152,10 @@ HeadingMatch parseHeadingBlock(
     const QTextBlock &block,
     const QVector<QOwnNotesMarkdownHighlighter::ScriptingHighlightingRule> &rules) {
     if (!block.isValid()) {
+        return {};
+    }
+
+    if (isCodeBlockState(block.userState())) {
         return {};
     }
 

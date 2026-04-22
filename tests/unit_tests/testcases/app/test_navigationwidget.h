@@ -8,6 +8,7 @@ class TestNavigationWidget : public QObject {
 
    private Q_SLOTS:
     void testParseDocumentSupportsScriptedHeadings();
+    void testParseDocumentIgnoresHeadingsInsideFencedCodeBlocks();
 };
 
 #endif    // TESTNAVIGATIONWIDGET_H
