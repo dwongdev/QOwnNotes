@@ -84,19 +84,23 @@ You can visit the [QOwnNotes project page](https://www.qownnotes.org) for more *
   (install [QOwnNotesAPI](https://github.com/pbek/qownnotesapi) on your server)
 - **trashed notes** can be restored from your Nextcloud / ownCloud server
   (install [QOwnNotesAPI](https://github.com/pbek/qownnotesapi) on your server)
-  - there also is a local trash
+  - there also are **local trash** and **system trash** modes
 - sub-string searching of notes is possible and search results are highlighted in the notes
 - application can be operated with **customizable keyboard shortcuts**
+  - supports **global keyboard shortcuts on Wayland**
 - external changes of note files are watched (notes or note list are reloaded)
 - differences between current note and externally changed note are shown in a dialog
 - **markdown highlighting** of notes and a markdown **preview**
-- **[spellchecking](https://www.qownnotes.org/editor/spellchecking.html)** support
+  - includes **inline image previews**, **heading folding**, and optional hiding of Markdown formatting syntax
+- optional **wiki-style note links** like `[[Note]]` with auto-completion, heading anchors, aliases, backlinks, and refactoring support
+- **[spellchecking](https://www.qownnotes.org/editor/spellchecking.html)** and optional **[LanguageTool grammar and style checking](https://www.qownnotes.org/editor/languagetool.html)** support
 - **tabbing support** for editing notes
 - scripting support and an online [script repository](https://github.com/qownnotes/scripts)
   where you can install scripts inside the application
-- implementation of the **[OpenAI completion API](https://www.qownnotes.org/blog/2024-05-17-AI-support-was-added-to-QOwnNotes.html)** to be used in scripts
+- built-in **AI support** with script integration for providers like **OpenAI** and **Groq**
+  - includes a built-in **MCP server** so external AI agents can search and fetch notes securely
 - [QOwnNotes Web Companion browser extension](https://github.com/qownnotes/web-companion)
-  to a add notes from the selected text and other features
+  to add notes from the selected text and other features
   - visit the [Chrome Web Store](https://chrome.google.com/webstore/detail/qownnotes-web-companion/pkgkfnampapjbopomdpnkckbjdnpkbkp)
     page to install the app on Google Chrome
   - visit the [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/qownnotes-web-companion)
@@ -105,23 +109,24 @@ You can visit the [QOwnNotes project page](https://www.qownnotes.org) for more *
   in the Nextcloud / ownCloud notes web-application) and the note text files are
   automatically renamed, if the first line changes
   - this feature can also be turned off, and you can use any filename you like
-- manage your Nextcloud / ownCloud todo lists (ownCloud tasks or Tasks Plus / Calendar Plus)
+- manage your Nextcloud / ownCloud todo lists (ownCloud tasks or Tasks Plus / Calendar Plus), or use another **CalDAV** server
 - create [Nextcloud Deck](https://apps.nextcloud.com/apps/deck) cards and link to them in your notes
 - **encryption of notes** (AES-256 is built in, or you can use custom encryption methods like
   **[Keybase.io](https://keybase.io)** ([encryption-keybase.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/encryption-keybase.qml)) or
   **PGP** ([encryption-pgp.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/encryption-pgp.qml)))
-- **dark mode** theme support
+- **dark mode** theme support, live theme switching, and custom **color modes**
 - all **panels can be placed wherever you want**, they can even float or stack (fully dockable)
 - **toolbars** are **fully customizable**
 - support for **freedesktop theme icons**, so you can use QOwnNotes with your
   native desktop icons and with your favorite dark desktop theme
   QOwnNotes supports Freedesktop icon themes
 - support for hierarchical **note tagging** and **note subfolders**
+  - linked files and attachments can be managed from the **Navigation panel**
 - support for **sharing notes** on your Nextcloud / ownCloud server
 - **portable mode** for carrying QOwnNotes around on USB sticks
 - **Vim mode**
 - **distraction free mode**, **full-screen mode**, **typewriter mode**
-- Evernote (now with large files) and Joplin import
+- Evernote (now with large files and optional **YAML front matter** metadata) and Joplin import
 - QOwnNotes is **available in over 60 different languages** like English, German,
   French, Polish, Chinese, Japanese, Russian, Portuguese, Hungarian, Dutch and Spanish
   - [Your help](https://www.qownnotes.org/contributing/translation.html) is
