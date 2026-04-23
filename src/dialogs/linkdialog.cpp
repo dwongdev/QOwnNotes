@@ -1,6 +1,7 @@
 #include "linkdialog.h"
 
 #include <entities/note.h>
+#include <entities/tag.h>
 #include <utils/gui.h>
 #include <utils/misc.h>
 
@@ -35,14 +36,18 @@ enum NoteListDataRoles {
     NoteModifiedRole,
 };
 
+QString noteTagLookupKey(const QString &subFolderPath, const QString &noteName) {
+    return subFolderPath + QStringLiteral("/") + noteName;
+}
+
 class NoteListTreeWidgetItem : public QTreeWidgetItem {
    public:
     using QTreeWidgetItem::QTreeWidgetItem;
 
     bool operator<(const QTreeWidgetItem &other) const override {
-        if (treeWidget() != nullptr && treeWidget()->sortColumn() == 2) {
-            const QDateTime thisModified = data(2, NoteModifiedRole).toDateTime();
-            const QDateTime otherModified = other.data(2, NoteModifiedRole).toDateTime();
+        if (treeWidget() != nullptr && treeWidget()->sortColumn() == 3) {
+            const QDateTime thisModified = data(3, NoteModifiedRole).toDateTime();
+            const QDateTime otherModified = other.data(3, NoteModifiedRole).toDateTime();
 
             return thisModified < otherModified;
         }
@@ -103,28 +108,36 @@ LinkDialog::LinkDialog(int page, const QString &dialogTitle, QWidget *parent)
 
     const bool showSubfolders = NoteFolder::isCurrentShowSubfolders();
     ui->notesListWidget->setColumnHidden(1, !showSubfolders);
-    ui->notesListWidget->setColumnHidden(2, !showSubfolders);
+    ui->notesListWidget->setColumnHidden(3, !showSubfolders);
     ui->notesListWidget->setSortingEnabled(true);
-    ui->notesListWidget->sortByColumn(2, Qt::DescendingOrder);
+    ui->notesListWidget->sortByColumn(3, Qt::DescendingOrder);
     ui->notesListWidget->header()->setSortIndicatorShown(true);
     ui->notesListWidget->header()->setSectionResizeMode(0, QHeaderView::Stretch);
     ui->notesListWidget->header()->setSectionResizeMode(1, QHeaderView::Interactive);
-    ui->notesListWidget->header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    ui->notesListWidget->header()->setSectionResizeMode(2, QHeaderView::Interactive);
+    ui->notesListWidget->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
     ui->notesListWidget->header()->setStretchLastSection(false);
     ui->notesListWidget->setColumnWidth(1, 180);
+    ui->notesListWidget->setColumnWidth(2, 180);
+    const auto tagNamesByNoteFilePath = Tag::fetchAllNamesByNoteFilePath();
 
     Q_FOREACH (Note note, Note::fetchAll()) {
         const QString noteName = note.getName();
         const QString subFolderPath = note.relativeNoteSubFolderPath();
+        const QString tagText =
+            tagNamesByNoteFilePath.value(noteTagLookupKey(subFolderPath, noteName))
+                .join(QStringLiteral(", "));
         const QDateTime modified = note.getFileLastModified();
         const QString modifiedDisplay = QLocale().toString(modified, QLocale::ShortFormat);
         auto *item = new NoteListTreeWidgetItem(ui->notesListWidget);
         item->setText(0, noteName);
         item->setText(1, subFolderPath);
-        item->setText(2, modifiedDisplay);
+        item->setText(2, tagText);
+        item->setText(3, modifiedDisplay);
+        item->setToolTip(2, tagText);
         item->setData(0, NoteIdRole, note.getId());
         item->setData(0, NoteNameRole, noteName);
-        item->setData(2, NoteModifiedRole, modified);
+        item->setData(3, NoteModifiedRole, modified);
     }
 
     if (ui->notesListWidget->topLevelItemCount() > 0) {

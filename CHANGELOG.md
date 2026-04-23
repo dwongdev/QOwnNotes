@@ -2,6 +2,8 @@
 
 ## 26.4.20
 
+- Added the linked note's tags to the **note link dialog** list, so notes can be
+  distinguished more easily before inserting a link (for [#1679](https://github.com/pbek/QOwnNotes/issues/1679))
 - Added cross-platform **system color scheme** detection for Qt 6.5+ builds at
   startup and while the app is running, so QOwnNotes can now also ask on macOS
   and other supported platforms whether it should switch dark mode when the

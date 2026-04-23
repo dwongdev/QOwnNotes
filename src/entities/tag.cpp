@@ -626,6 +626,34 @@ QStringList Tag::fetchAllNamesOfNote(const Note &note) {
     return tagNameList;
 }
 
+QHash<QString, QStringList> Tag::fetchAllNamesByNoteFilePath() {
+    QSqlDatabase db = DatabaseService::getNoteFolderDatabase();
+    QSqlQuery query(db);
+    QHash<QString, QStringList> tagNamesByNoteFilePath;
+
+    query.prepare(
+        QStringLiteral("SELECT l.note_file_name, l.note_sub_folder_path, t.name FROM tag t "
+                       "JOIN noteTagLink l ON t.id = l.tag_id "
+                       "ORDER BY l.note_sub_folder_path ASC, l.note_file_name ASC, "
+                       "t.priority ASC, t.name ASC"));
+
+    if (!query.exec()) {
+        qWarning() << __func__ << ": " << query.lastError();
+    } else {
+        while (query.next()) {
+            const QString noteFileName = query.value(QStringLiteral("note_file_name")).toString();
+            const QString noteSubFolderPath =
+                query.value(QStringLiteral("note_sub_folder_path")).toString();
+            const QString key = noteSubFolderPath + QStringLiteral("/") + noteFileName;
+            tagNamesByNoteFilePath[key] << query.value(QStringLiteral("name")).toString();
+        }
+    }
+
+    DatabaseService::closeDatabaseConnection(db, query);
+
+    return tagNamesByNoteFilePath;
+}
+
 /**
  * Fetches the ids of all linked tags of a note
  */

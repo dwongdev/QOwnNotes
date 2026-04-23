@@ -160,21 +160,26 @@
             <property name="sortingEnabled">
              <bool>true</bool>
             </property>
-            <column>
-             <property name="text">
-              <string>Note</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Folder</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Modified</string>
-             </property>
-            </column>
+             <column>
+              <property name="text">
+               <string>Note</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Folder</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Tags</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Modified</string>
+              </property>
+             </column>
            </widget>
           </item>
          <item>
