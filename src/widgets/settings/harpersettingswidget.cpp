@@ -30,9 +30,26 @@
 HarperSettingsWidget::HarperSettingsWidget(QWidget *parent)
     : QWidget(parent), ui(new Ui::HarperSettingsWidget) {
     ui->setupUi(this);
+    setupLayoutStretch();
 }
 
 HarperSettingsWidget::~HarperSettingsWidget() { delete ui; }
+
+void HarperSettingsWidget::setupLayoutStretch() {
+    ui->gridLayout_harperOptions->setColumnStretch(0, 0);
+    ui->gridLayout_harperOptions->setColumnStretch(1, 1);
+    ui->gridLayout_harperOptions->setColumnStretch(2, 0);
+
+    ui->gridLayout_harperStdio->setColumnStretch(0, 0);
+    ui->gridLayout_harperStdio->setColumnStretch(1, 1);
+    ui->gridLayout_harperStdio->setColumnStretch(2, 0);
+    ui->gridLayout_harperStdio->setColumnStretch(3, 0);
+
+    ui->gridLayout_harperTcp->setColumnStretch(0, 0);
+    ui->gridLayout_harperTcp->setColumnStretch(1, 1);
+    ui->gridLayout_harperTcp->setColumnStretch(2, 0);
+    ui->gridLayout_harperTcp->setColumnStretch(3, 0);
+}
 
 void HarperSettingsWidget::initialize() {
     ui->harperTransportComboBox->clear();

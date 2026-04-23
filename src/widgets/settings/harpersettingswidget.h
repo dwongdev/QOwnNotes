@@ -46,6 +46,7 @@ class HarperSettingsWidget : public QWidget {
     Ui::HarperSettingsWidget *ui;
 
     QStringList enabledLintersFromUi() const;
+    void setupLayoutStretch();
     void setHarperOptionsEnabled(bool enabled);
     void updateTransportUi();
     void updateStatusLabel(const QString &overrideText = QString());
