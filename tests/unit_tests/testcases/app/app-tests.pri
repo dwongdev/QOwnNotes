@@ -9,6 +9,7 @@ HEADERS  += \
     $$PWD/test_network.h \
     $$PWD/test_navigationwidget.h \
     $$PWD/test_notes.h \
+    $$PWD/test_qmarkdowntextedit.h \
     $$PWD/test_settingsservice.h \
     $$PWD/test_utilsmisc.h \
     $$APP_SRC_DIR/version.h \
@@ -53,7 +54,10 @@ HEADERS  += \
     $$APP_SRC_DIR/libraries/botan/botanwrapper.h \
     $$APP_SRC_DIR/libraries/versionnumber/versionnumber.h \
     $$APP_SRC_DIR/libraries/qmarkdowntextedit/markdownhighlighter.h \
+    $$APP_SRC_DIR/libraries/qmarkdowntextedit/linenumberarea.h \
+    $$APP_SRC_DIR/libraries/qmarkdowntextedit/qmarkdowntextedit.h \
     $$APP_SRC_DIR/libraries/qmarkdowntextedit/qownlanguagedata.h \
+    $$APP_SRC_DIR/libraries/qmarkdowntextedit/qplaintexteditsearchwidget.h \
     $$APP_SRC_DIR/threads/scriptthread.h \
 
 # Don't use wildcards here, because nmake under Windows cant't handle them
@@ -63,6 +67,7 @@ SOURCES += \
     $$PWD/test_network.cpp \
     $$PWD/test_navigationwidget.cpp \
     $$PWD/test_notes.cpp \
+    $$PWD/test_qmarkdowntextedit.cpp \
     $$PWD/test_settingsservice.cpp \
     $$PWD/test_utilsmisc.cpp \
     $$APP_SRC_DIR/services/databaseservice.cpp \
@@ -105,8 +110,13 @@ SOURCES += \
     $$APP_SRC_DIR/libraries/botan/botanwrapper.cpp \
     $$APP_SRC_DIR/libraries/versionnumber/versionnumber.cpp \
     $$APP_SRC_DIR/libraries/qmarkdowntextedit/markdownhighlighter.cpp \
+    $$APP_SRC_DIR/libraries/qmarkdowntextedit/qmarkdowntextedit.cpp \
     $$APP_SRC_DIR/libraries/qmarkdowntextedit/qownlanguagedata.cpp \
+    $$APP_SRC_DIR/libraries/qmarkdowntextedit/qplaintexteditsearchwidget.cpp \
     $$APP_SRC_DIR/threads/scriptthread.cpp \
+
+FORMS += \
+    $$APP_SRC_DIR/libraries/qmarkdowntextedit/qplaintexteditsearchwidget.ui
 
 include($$APP_SRC_DIR/libraries/botan/botan.pri)
 
