@@ -12,6 +12,10 @@
 - Added support for **[Harper](https://github.com/automattic/harper)** as an
   offline, privacy-first **grammar checker**, available as an alternative to
   LanguageTool (for [#3576](https://github.com/pbek/QOwnNotes/issues/3576))
+- Added persistence for custom **column order and widths** in multi-column
+  list and tree headers such as the **note link**, **Todo**, **Nextcloud Deck**,
+  **locally trashed notes** and **shortcuts** dialogs, so manual header rearrangements
+  survive reopening the views (for [#3579](https://github.com/pbek/QOwnNotes/issues/3579))
 - Fixed note editor cursor navigation so pressing `Up` at the first
   character of the second line now correctly moves the cursor to the first line
   again (for [#3572](https://github.com/pbek/QOwnNotes/issues/3572))

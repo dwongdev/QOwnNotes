@@ -70,6 +70,8 @@ LocalTrashDialog::LocalTrashDialog(QWidget *parent)
     connect(this->ui->buttonBox, SIGNAL(clicked(QAbstractButton *)),
             SLOT(dialogButtonClicked(QAbstractButton *)));
     connect(this, SIGNAL(finished(int)), this, SLOT(storeSettings()));
+    Utils::Gui::initTreeWidgetHeaderOrderPersistence(
+        ui->trashTreeWidget, QStringLiteral("LocalTrashDialog/trashTreeWidgetHeaderOrder"));
 
     loadTrashedNotes();
 }
@@ -113,7 +115,12 @@ void LocalTrashDialog::loadTrashedNotes() {
     }
 
     ui->trashTreeWidget->sortItems(1, Qt::SortOrder::DescendingOrder);
-    ui->trashTreeWidget->resizeColumnToContents(0);
+
+    if (Utils::Gui::hasTreeWidgetHeaderLayout(ui->trashTreeWidget)) {
+        Utils::Gui::restoreTreeWidgetHeaderLayout(ui->trashTreeWidget);
+    } else {
+        ui->trashTreeWidget->resizeColumnToContents(0);
+    }
 }
 
 void LocalTrashDialog::setupMainSplitter() {

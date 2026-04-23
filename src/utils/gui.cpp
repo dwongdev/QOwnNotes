@@ -27,15 +27,19 @@
 #include <QDebug>
 #include <QDialogButtonBox>
 #include <QDockWidget>
+#include <QHeaderView>
 #include <QLineEdit>
 #include <QListWidget>
 #include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QProcess>
 #include <QPushButton>
+#include <QSet>
+#include <QSignalBlocker>
 #include <QStyleFactory>
 #include <QTextBlock>
 #include <QTextCursor>
+#include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
 #include <QtGui/QGuiApplication>
@@ -104,6 +108,152 @@ bool promptForQtColorSchemeChange(Qt::ColorScheme colorScheme, bool systemChange
     return false;
 }
 #endif
+
+QVariantList currentHeaderOrder(const QHeaderView *header) {
+    QVariantList order;
+
+    if (header == nullptr) {
+        return order;
+    }
+
+    const int count = header->count();
+    order.reserve(count);
+
+    for (int visualIndex = 0; visualIndex < count; ++visualIndex) {
+        order << header->logicalIndex(visualIndex);
+    }
+
+    return order;
+}
+
+QVariantList currentHeaderWidths(const QHeaderView *header) {
+    QVariantList widths;
+
+    if (header == nullptr) {
+        return widths;
+    }
+
+    const int count = header->count();
+    widths.reserve(count);
+
+    for (int logicalIndex = 0; logicalIndex < count; ++logicalIndex) {
+        widths << header->sectionSize(logicalIndex);
+    }
+
+    return widths;
+}
+
+QString headerOrderKey(const QString &settingsKey) {
+    return settingsKey + QStringLiteral("/order");
+}
+
+QString headerWidthsKey(const QString &settingsKey) {
+    return settingsKey + QStringLiteral("/widths");
+}
+
+QString resolvedHeaderLayoutKey(QTreeWidget *treeWidget, const QString &settingsKey) {
+    if (!settingsKey.isEmpty()) {
+        return settingsKey;
+    }
+
+    if (treeWidget == nullptr) {
+        return QString();
+    }
+
+    return treeWidget->property("headerPersistenceSettingsKey").toString();
+}
+
+bool hasStoredHeaderOrder(const QString &settingsKey) {
+    if (settingsKey.isEmpty()) {
+        return false;
+    }
+
+    const SettingsService settings;
+    return settings.contains(headerOrderKey(settingsKey)) || settings.contains(settingsKey);
+}
+
+bool hasStoredHeaderWidths(const QString &settingsKey) {
+    return !settingsKey.isEmpty() && SettingsService().contains(headerWidthsKey(settingsKey));
+}
+
+void storeHeaderLayout(const QHeaderView *header, const QString &settingsKey) {
+    if ((header == nullptr) || settingsKey.isEmpty() || (header->count() <= 1)) {
+        return;
+    }
+
+    SettingsService settings;
+    settings.setValue(headerOrderKey(settingsKey), currentHeaderOrder(header));
+    settings.setValue(headerWidthsKey(settingsKey), currentHeaderWidths(header));
+}
+
+void restoreHeaderOrder(QHeaderView *header, const QString &settingsKey) {
+    if ((header == nullptr) || settingsKey.isEmpty() || (header->count() <= 1)) {
+        return;
+    }
+
+    SettingsService settings;
+    QVariantList storedOrder = settings.value(headerOrderKey(settingsKey)).toList();
+
+    if (storedOrder.isEmpty()) {
+        storedOrder = settings.value(settingsKey).toList();
+    }
+
+    const int count = header->count();
+
+    if (storedOrder.count() != count) {
+        return;
+    }
+
+    QSet<int> seenLogicalIndexes;
+
+    for (const auto &value : storedOrder) {
+        const int logicalIndex = value.toInt();
+
+        if ((logicalIndex < 0) || (logicalIndex >= count) ||
+            seenLogicalIndexes.contains(logicalIndex)) {
+            return;
+        }
+
+        seenLogicalIndexes.insert(logicalIndex);
+    }
+
+    const QSignalBlocker blocker(header);
+
+    for (int visualIndex = 0; visualIndex < count; ++visualIndex) {
+        const int logicalIndex = storedOrder.at(visualIndex).toInt();
+        const int currentVisualIndex = header->visualIndex(logicalIndex);
+
+        if (currentVisualIndex != visualIndex) {
+            header->moveSection(currentVisualIndex, visualIndex);
+        }
+    }
+}
+
+void restoreHeaderWidths(QHeaderView *header, const QString &settingsKey) {
+    if ((header == nullptr) || settingsKey.isEmpty() || (header->count() <= 1)) {
+        return;
+    }
+
+    const QVariantList storedWidths =
+        SettingsService().value(headerWidthsKey(settingsKey)).toList();
+    const int count = header->count();
+
+    if (storedWidths.count() != count) {
+        return;
+    }
+
+    for (int logicalIndex = 0; logicalIndex < count; ++logicalIndex) {
+        const int width = storedWidths.at(logicalIndex).toInt();
+
+        if (width <= 0) {
+            return;
+        }
+    }
+
+    for (int logicalIndex = 0; logicalIndex < count; ++logicalIndex) {
+        header->resizeSection(logicalIndex, storedWidths.at(logicalIndex).toInt());
+    }
+}
 }    // namespace
 
 Qt::SortOrder Utils::Gui::toQtOrder(int order) {
@@ -222,6 +372,70 @@ void Utils::Gui::searchForTextInListWidget(QListWidget *listWidget, const QStrin
             item->setHidden(false);
         }
     }
+}
+
+void Utils::Gui::initTreeWidgetHeaderOrderPersistence(QTreeWidget *treeWidget,
+                                                      const QString &settingsKey) {
+    if ((treeWidget == nullptr) || settingsKey.isEmpty() || (treeWidget->columnCount() <= 1)) {
+        return;
+    }
+
+    auto *header = treeWidget->header();
+
+    if (header == nullptr) {
+        return;
+    }
+
+    treeWidget->setProperty("headerPersistenceSettingsKey", settingsKey);
+    header->setSectionsMovable(true);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+    header->setFirstSectionMovable(true);
+#endif
+    restoreHeaderOrder(header, settingsKey);
+    restoreHeaderWidths(header, settingsKey);
+
+    QObject::connect(
+        header, &QHeaderView::sectionMoved, treeWidget,
+        [header, settingsKey](int logicalIndex, int oldVisualIndex, int newVisualIndex) {
+            Q_UNUSED(logicalIndex)
+            Q_UNUSED(oldVisualIndex)
+            Q_UNUSED(newVisualIndex)
+            storeHeaderLayout(header, settingsKey);
+        });
+    QObject::connect(header, &QHeaderView::sectionResized, treeWidget,
+                     [header, settingsKey](int logicalIndex, int oldSize, int newSize) {
+                         Q_UNUSED(logicalIndex)
+                         Q_UNUSED(oldSize)
+                         Q_UNUSED(newSize)
+                         storeHeaderLayout(header, settingsKey);
+                     });
+}
+
+bool Utils::Gui::hasTreeWidgetHeaderLayout(QTreeWidget *treeWidget, const QString &settingsKey) {
+    const QString resolvedKey = resolvedHeaderLayoutKey(treeWidget, settingsKey);
+    return hasStoredHeaderOrder(resolvedKey) || hasStoredHeaderWidths(resolvedKey);
+}
+
+void Utils::Gui::restoreTreeWidgetHeaderLayout(QTreeWidget *treeWidget,
+                                               const QString &settingsKey) {
+    if ((treeWidget == nullptr) || (treeWidget->columnCount() <= 1)) {
+        return;
+    }
+
+    auto *header = treeWidget->header();
+
+    if (header == nullptr) {
+        return;
+    }
+
+    const QString resolvedKey = resolvedHeaderLayoutKey(treeWidget, settingsKey);
+
+    if (resolvedKey.isEmpty()) {
+        return;
+    }
+
+    restoreHeaderOrder(header, resolvedKey);
+    restoreHeaderWidths(header, resolvedKey);
 }
 
 /**

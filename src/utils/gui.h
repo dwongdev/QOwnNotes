@@ -65,6 +65,9 @@ void searchForTextInTreeWidget(QTreeWidget *treeWidget, const QString &text,
                                TreeWidgetSearchFlags searchFlags = None);
 void searchForTextInListWidget(QListWidget *listWidget, const QString &text,
                                bool searchAddProps = false);
+void initTreeWidgetHeaderOrderPersistence(QTreeWidget *treeWidget, const QString &settingsKey);
+bool hasTreeWidgetHeaderLayout(QTreeWidget *treeWidget, const QString &settingsKey = QString());
+void restoreTreeWidgetHeaderLayout(QTreeWidget *treeWidget, const QString &settingsKey = QString());
 
 QMessageBox::StandardButton showMessageBox(
     QWidget *parent, QMessageBox::Icon icon, const QString &title, const QString &text,

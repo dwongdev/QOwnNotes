@@ -528,6 +528,9 @@ void SettingsDialog::loadShortcutSettings() {
             menuItem->setExpanded(true);
         }
     }
+
+    Utils::Gui::initTreeWidgetHeaderOrderPersistence(
+        ui->shortcutTreeWidget, QStringLiteral("SettingsDialog/shortcutTreeWidgetHeaderOrder"));
 }
 
 /**
@@ -921,9 +924,13 @@ void SettingsDialog::on_settingsTreeWidget_currentItemChanged(QTreeWidgetItem *c
             ui->layoutPresetWidget->resizeLayoutPresetImage();
             break;
         case SettingsPages::ShortcutPage:
-            ui->shortcutTreeWidget->resizeColumnToContents(0);
-            ui->shortcutTreeWidget->resizeColumnToContents(1);
-            ui->shortcutTreeWidget->resizeColumnToContents(2);
+            if (Utils::Gui::hasTreeWidgetHeaderLayout(ui->shortcutTreeWidget)) {
+                Utils::Gui::restoreTreeWidgetHeaderLayout(ui->shortcutTreeWidget);
+            } else {
+                ui->shortcutTreeWidget->resizeColumnToContents(0);
+                ui->shortcutTreeWidget->resizeColumnToContents(1);
+                ui->shortcutTreeWidget->resizeColumnToContents(2);
+            }
             break;
     }
 }

@@ -39,6 +39,9 @@ void NextcloudDeckDialog::setupUi() {
     setupMainSplitter();
     loadBoardStackComboBox();
     refreshUi();
+    Utils::Gui::initTreeWidgetHeaderOrderPersistence(
+        ui->cardItemTreeWidget,
+        QStringLiteral("NextcloudDeckDialog/cardItemTreeWidgetHeaderOrder"));
 
     ui->newItemEdit->installEventFilter(this);
     ui->cardItemTreeWidget->installEventFilter(this);
@@ -389,9 +392,13 @@ void NextcloudDeckDialog::reloadCardList() {
     // Add all items at once - this ensures proper ownership transfer
     ui->cardItemTreeWidget->addTopLevelItems(items);
 
-    // Auto-resize columns to content
-    ui->cardItemTreeWidget->resizeColumnToContents(0);
-    ui->cardItemTreeWidget->resizeColumnToContents(1);
+    if (Utils::Gui::hasTreeWidgetHeaderLayout(ui->cardItemTreeWidget)) {
+        Utils::Gui::restoreTreeWidgetHeaderLayout(ui->cardItemTreeWidget);
+    } else {
+        // Auto-resize columns to content until the user customizes the layout.
+        ui->cardItemTreeWidget->resizeColumnToContents(0);
+        ui->cardItemTreeWidget->resizeColumnToContents(1);
+    }
 }
 
 void NextcloudDeckDialog::selectCardInList(int cardId) {

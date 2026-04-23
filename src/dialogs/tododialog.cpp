@@ -102,6 +102,8 @@ TodoDialog::~TodoDialog() { delete ui; }
 void TodoDialog::setupUi() {
     setupMainSplitter();
     refreshUi();
+    Utils::Gui::initTreeWidgetHeaderOrderPersistence(
+        ui->todoItemTreeWidget, QStringLiteral("TodoDialog/todoItemTreeWidgetHeaderOrder"));
 
     ui->newItemEdit->installEventFilter(this);
     ui->todoItemTreeWidget->installEventFilter(this);
@@ -351,8 +353,12 @@ void TodoDialog::reloadTodoListItems() {
         }
     }
 
-    ui->todoItemTreeWidget->resizeColumnToContents(0);
-    ui->todoItemTreeWidget->resizeColumnToContents(1);
+    if (Utils::Gui::hasTreeWidgetHeaderLayout(ui->todoItemTreeWidget)) {
+        Utils::Gui::restoreTreeWidgetHeaderLayout(ui->todoItemTreeWidget);
+    } else {
+        ui->todoItemTreeWidget->resizeColumnToContents(0);
+        ui->todoItemTreeWidget->resizeColumnToContents(1);
+    }
 
     // set the current row of the task list to the first row
     jumpToTodoListItem();

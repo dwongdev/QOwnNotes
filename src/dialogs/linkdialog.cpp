@@ -119,6 +119,8 @@ LinkDialog::LinkDialog(int page, const QString &dialogTitle, QWidget *parent)
     ui->notesListWidget->header()->setStretchLastSection(false);
     ui->notesListWidget->setColumnWidth(1, 180);
     ui->notesListWidget->setColumnWidth(2, 180);
+    Utils::Gui::initTreeWidgetHeaderOrderPersistence(
+        ui->notesListWidget, QStringLiteral("LinkDialog/notesListWidgetHeaderOrder"));
     const auto tagNamesByNoteFilePath = Tag::fetchAllNamesByNoteFilePath();
 
     Q_FOREACH (Note note, Note::fetchAll()) {
