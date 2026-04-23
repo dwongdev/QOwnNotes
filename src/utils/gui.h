@@ -143,6 +143,7 @@ void setTreeWidgetItemToolTipForNote(QTreeWidgetItem *item, const Note &note,
                                      QDateTime *overrideFileLastModified = nullptr);
 bool doWindowsDarkModeCheck();
 bool doLinuxDarkModeCheck();
+bool doSystemDarkModeCheck(bool systemChangeDetected = false);
 
 QIcon folderIcon();
 QIcon noteIcon();

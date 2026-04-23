@@ -38,6 +38,8 @@
 #include <QTextCursor>
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
+#include <QtGui/QGuiApplication>
+#include <QtGui/QStyleHints>
 
 #include "helpers/nomenuiconstyle.h"
 #ifndef INTEGRATION_TESTS
@@ -47,6 +49,62 @@
 
 #define ORDER_ASCENDING 0     // Qt::AscendingOrder // = 0
 #define ORDER_DESCENDING 1    // Qt::DescendingOrder // = 1
+
+namespace {
+bool promptForColorSchemeChange(const QString &title, const QString &text,
+                                const QString &identifier, bool darkMode) {
+    if (Utils::Gui::questionNoSkipOverride(nullptr, title, text, identifier) != QMessageBox::Yes) {
+        return false;
+    }
+
+    if (darkMode) {
+        Utils::Misc::switchToDarkMode();
+    } else {
+        Utils::Misc::switchToLightMode();
+    }
+
+    Utils::Gui::applyDarkModeSettings();
+    return true;
+}
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+bool promptForQtColorSchemeChange(Qt::ColorScheme colorScheme, bool systemChangeDetected) {
+    const bool appDarkMode = SettingsService().value(QStringLiteral("darkMode")).toBool();
+    const QString darkModeText = systemChangeDetected
+                                     ? QObject::tr(
+                                           "Your system switched to dark mode. "
+                                           "Do you also want to turn on dark mode in "
+                                           "QOwnNotes?\n\n"
+                                           "Updating the interface takes a short while.")
+                                     : QObject::tr(
+                                           "Your system seems to be in dark mode. "
+                                           "Do you also want to turn on dark mode in "
+                                           "QOwnNotes?");
+    const QString lightModeText = systemChangeDetected
+                                      ? QObject::tr(
+                                            "Your system switched to light mode. "
+                                            "Do you also want to turn off dark mode in "
+                                            "QOwnNotes?\n\n"
+                                            "Updating the interface takes a short while.")
+                                      : QObject::tr(
+                                            "Your system seems to be in light mode. "
+                                            "Do you also want to turn off dark mode in "
+                                            "QOwnNotes?");
+
+    if (colorScheme == Qt::ColorScheme::Dark && !appDarkMode) {
+        return promptForColorSchemeChange(QObject::tr("Dark mode detected"), darkModeText,
+                                          QStringLiteral("system-dark-mode"), true);
+    }
+
+    if (colorScheme == Qt::ColorScheme::Light && appDarkMode) {
+        return promptForColorSchemeChange(QObject::tr("Light mode detected"), lightModeText,
+                                          QStringLiteral("system-light-mode"), false);
+    }
+
+    return false;
+}
+#endif
+}    // namespace
 
 Qt::SortOrder Utils::Gui::toQtOrder(int order) {
     return order == ORDER_ASCENDING ? Qt::AscendingOrder : Qt::DescendingOrder;
@@ -1036,30 +1094,20 @@ bool Utils::Gui::doWindowsDarkModeCheck() {
 
     // Check for Windows dark mode and application default mode
     if (windowsDarkMode && !appDarkMode) {
-        if (Utils::Gui::questionNoSkipOverride(
-                nullptr, QObject::tr("Dark mode detected"),
-                QObject::tr("Your Windows system seems to be in dark mode. "
-                            "Do you also want to turn on dark mode in QOwnNotes?"),
-                QStringLiteral("windows-dark-mode")) == QMessageBox::Yes) {
-            Utils::Misc::switchToDarkMode();
-            Utils::Gui::applyDarkModeSettings();
-
-            return true;
-        }
+        return promptForColorSchemeChange(
+            QObject::tr("Dark mode detected"),
+            QObject::tr("Your Windows system seems to be in dark mode. "
+                        "Do you also want to turn on dark mode in QOwnNotes?"),
+            QStringLiteral("windows-dark-mode"), true);
     }
 
     // Check for Windows light mode and application dark mode
     if (!windowsDarkMode && appDarkMode) {
-        if (Utils::Gui::questionNoSkipOverride(
-                nullptr, QObject::tr("Light mode detected"),
-                QObject::tr("Your Windows system seems to be in light mode. "
-                            "Do you also want to turn off dark mode in QOwnNotes?"),
-                QStringLiteral("windows-light-mode")) == QMessageBox::Yes) {
-            Utils::Misc::switchToLightMode();
-            Utils::Gui::applyDarkModeSettings();
-
-            return true;
-        }
+        return promptForColorSchemeChange(
+            QObject::tr("Light mode detected"),
+            QObject::tr("Your Windows system seems to be in light mode. "
+                        "Do you also want to turn off dark mode in QOwnNotes?"),
+            QStringLiteral("windows-light-mode"), false);
     }
 
     return false;
@@ -1124,31 +1172,47 @@ bool Utils::Gui::doLinuxDarkModeCheck() {
 
     // Check for Linux dark mode and application default mode
     if (systemColorSchema == 1 && !appDarkMode) {
-        if (Utils::Gui::questionNoSkipOverride(
-                nullptr, QObject::tr("Dark mode detected"),
-                QObject::tr("Your Linux system seems to use the dark mode. "
-                            "Do you also want to turn on dark mode in QOwnNotes?"),
-                QStringLiteral("linux-dark-mode")) == QMessageBox::Yes) {
-            Utils::Misc::switchToDarkMode();
-            Utils::Gui::applyDarkModeSettings();
-
-            return true;
-        }
+        return promptForColorSchemeChange(
+            QObject::tr("Dark mode detected"),
+            QObject::tr("Your Linux system seems to use the dark mode. "
+                        "Do you also want to turn on dark mode in QOwnNotes?"),
+            QStringLiteral("linux-dark-mode"), true);
     }
 
     // Check for Linux light mode and application dark mode
     if (systemColorSchema == 2 && appDarkMode) {
-        if (Utils::Gui::questionNoSkipOverride(
-                nullptr, QObject::tr("Light mode detected"),
-                QObject::tr("Your Linux system seems to use the light mode. "
-                            "Do you also want to turn off dark mode in QOwnNotes?"),
-                QStringLiteral("linux-light-mode")) == QMessageBox::Yes) {
-            Utils::Misc::switchToLightMode();
-            Utils::Gui::applyDarkModeSettings();
-
-            return true;
-        }
+        return promptForColorSchemeChange(
+            QObject::tr("Light mode detected"),
+            QObject::tr("Your Linux system seems to use the light mode. "
+                        "Do you also want to turn off dark mode in QOwnNotes?"),
+            QStringLiteral("linux-light-mode"), false);
     }
+
+    return false;
+}
+
+bool Utils::Gui::doSystemDarkModeCheck(bool systemChangeDetected) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+    const Qt::ColorScheme colorScheme = QGuiApplication::styleHints()->colorScheme();
+
+    if (colorScheme != Qt::ColorScheme::Unknown) {
+        return promptForQtColorSchemeChange(colorScheme, systemChangeDetected);
+    }
+#else
+    Q_UNUSED(systemChangeDetected)
+#endif
+
+#ifdef Q_OS_WIN32
+    if (doWindowsDarkModeCheck()) {
+        return true;
+    }
+#endif
+
+#ifdef Q_OS_LINUX
+    if (doLinuxDarkModeCheck()) {
+        return true;
+    }
+#endif
 
     return false;
 }

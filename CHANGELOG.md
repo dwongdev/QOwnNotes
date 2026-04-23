@@ -2,6 +2,11 @@
 
 ## 26.4.20
 
+- Added cross-platform **system color scheme** detection for Qt 6.5+ builds at
+  startup and while the app is running, so QOwnNotes can now also ask on macOS
+  and other supported platforms whether it should switch dark mode when the
+  system appearance changes; the live prompt mentions that updating the UI
+  takes a short while (for [#3578](https://github.com/pbek/QOwnNotes/issues/3578))
 - Added support for **[Harper](https://github.com/automattic/harper)** as an
   offline, privacy-first **grammar checker**, available as an alternative to
   LanguageTool (for [#3576](https://github.com/pbek/QOwnNotes/issues/3576))

@@ -11,6 +11,8 @@
 #include <QSettings>
 #include <QStyleFactory>
 #include <QTranslator>
+#include <QtCore/QTimer>
+#include <QtGui/QStyleHints>
 #include <QtGui>
 #include <iostream>
 
@@ -68,6 +70,20 @@ void loadTranslations(QTranslator *translator, const QString &locale) {
     loadTranslation(translator[12],
                     appPath + "/../share/QOwnNotes/translations/QOwnNotes_" + locale);
 }
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+void setupSystemDarkModeChangeCheck(QObject *context) {
+    QObject::connect(QGuiApplication::styleHints(), &QStyleHints::colorSchemeChanged, context,
+                     [context](Qt::ColorScheme colorScheme) {
+                         if (colorScheme == Qt::ColorScheme::Unknown) {
+                             return;
+                         }
+
+                         QTimer::singleShot(0, context,
+                                            [] { Utils::Gui::doSystemDarkModeCheck(true); });
+                     });
+}
+#endif
 
 /**
  * Function for loading the release translations
@@ -196,14 +212,7 @@ int mainStartupMisc(const QStringList &arguments) {
     }
 
     Utils::Gui::applyInterfaceStyle();
-
-#ifdef Q_OS_WIN32
-    Utils::Gui::doWindowsDarkModeCheck();
-#endif
-
-#ifdef Q_OS_LINUX
-    Utils::Gui::doLinuxDarkModeCheck();
-#endif
+    Utils::Gui::doSystemDarkModeCheck();
 
     QSettings settings;
     bool systemIconTheme = settings.value(QStringLiteral("systemIconTheme")).toBool();
@@ -682,6 +691,10 @@ int main(int argc, char *argv[]) {
         MainWindow w;
         w.show();
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+        setupSystemDarkModeChangeCheck(&app);
+#endif
+
         // receive messages from the primary app
         QObject::connect(&app, &SingleApplication::receivedMessage,
                          [&](quint32 instanceId, QByteArray message) {
@@ -740,6 +753,10 @@ int main(int argc, char *argv[]) {
 
         MainWindow w;
         w.show();
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+        setupSystemDarkModeChangeCheck(&app);
+#endif
 
         return app.exec();
     }
