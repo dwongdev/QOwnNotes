@@ -93,7 +93,7 @@ You can visit the [QOwnNotes project page](https://www.qownnotes.org) for more *
 - **markdown highlighting** of notes and a markdown **preview**
   - includes **inline image previews**, **heading folding**, and optional hiding of Markdown formatting syntax
 - optional **wiki-style note links** like `[[Note]]` with auto-completion, heading anchors, aliases, backlinks, and refactoring support
-- **[spellchecking](https://www.qownnotes.org/editor/spellchecking.html)** and optional **[LanguageTool grammar and style checking](https://www.qownnotes.org/editor/languagetool.html)** support
+- **[spellchecking](https://www.qownnotes.org/editor/spellchecking.html)** and optional **[LanguageTool grammar and style checking](https://www.qownnotes.org/editor/languagetool.html)** and **[Harper grammar and style checking](https://www.qownnotes.org/editor/harper.html)** support
 - **tabbing support** for editing notes
 - scripting support and an online [script repository](https://github.com/qownnotes/scripts)
   where you can install scripts inside the application

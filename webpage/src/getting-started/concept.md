@@ -32,6 +32,7 @@ graph TB
     qon-->nc-deck-app
     sync-->ncs
     qon-.->lt("LanguageTool service")
+    qon-.->harper("Harper service")
     qon-.->qon-web-api("api.qownnotes.org")
     qon-web-api-->github("GitHub")
 
@@ -49,6 +50,7 @@ graph TB
     click nc-deck-app "/getting-started/concept.html#nextcloud-deck-server-app" "Nextcloud Deck server app to manage reminders and todo lists in the web"
     click qon-web-app "/getting-started/concept.html#qownnotes-web-app" "QOwnNotes Web App to send photos from your mobile phone"
     click lt "/editor/languagetool.html" "Optional LanguageTool server for grammar and style checking"
+    click harper "/editor/harper.html" "Optional Harper service for offline grammar and style checking"
     click qon-web-api "/getting-started/concept.html#api-qownnotes-org"
 ```
 
