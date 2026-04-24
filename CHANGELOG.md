@@ -2,6 +2,9 @@
 
 ## 26.4.21
 
+- Added a new **Markdown operations** submenu to the **note text edit** context
+  menu with actions to increase or decrease the heading depth of selected ATX
+  and setext Markdown headings (for [#672](https://github.com/pbek/QOwnNotes/issues/672))
 - The **note link dialog** note list now also shows the `Modified` column even
   when note sub-folder support is disabled (for [#1679](https://github.com/pbek/QOwnNotes/issues/1679))
 - Fixed auto-detected links inside italic or bold Markdown text so trailing

@@ -45,6 +45,7 @@
 #include <QVariant>
 #include <QVector>
 #include <QWidgetAction>
+#include <QtGlobal>
 #include <algorithm>
 
 #include "entities/notefolder.h"
@@ -70,6 +71,164 @@ namespace {
 constexpr int kMarkdownLspDiagnosticProperty = QTextFormat::UserProperty + 1;
 constexpr int kFoldIndicatorPadding = 4;
 QHash<QString, QSet<QString>> s_foldedHeadingStateByNoteReference;
+
+struct SetextHeadingUnderline {
+    int level = 0;
+    int leadingSpaces = 0;
+    int markerCount = 0;
+
+    bool isValid() const { return level > 0; }
+};
+
+static int markdownHeadingIndent(const QString &line) {
+    int i = 0;
+    while (i < line.size() && i < 3 && line.at(i) == QLatin1Char(' ')) {
+        ++i;
+    }
+
+    return i;
+}
+
+static int atxHeadingLevel(const QString &line, int *headingMarkerStart = nullptr,
+                           int *headingMarkerEnd = nullptr) {
+    int i = markdownHeadingIndent(line);
+    const int markerStart = i;
+    while (i < line.size() && line.at(i) == QLatin1Char('#')) {
+        ++i;
+    }
+
+    const int headingLevel = i - markerStart;
+    if (headingLevel <= 0 || headingLevel > 6) {
+        return 0;
+    }
+
+    if (i < line.size() && line.at(i) != QLatin1Char(' ') && line.at(i) != QLatin1Char('\t')) {
+        return 0;
+    }
+
+    if (headingMarkerStart) {
+        *headingMarkerStart = markerStart;
+    }
+
+    if (headingMarkerEnd) {
+        *headingMarkerEnd = i;
+    }
+
+    return headingLevel;
+}
+
+static SetextHeadingUnderline parseSetextHeadingUnderline(const QString &line) {
+    SetextHeadingUnderline underline;
+
+    int i = markdownHeadingIndent(line);
+    underline.leadingSpaces = i;
+
+    if (i >= line.size()) {
+        return underline;
+    }
+
+    const QChar marker = line.at(i);
+    if (marker != QLatin1Char('=') && marker != QLatin1Char('-')) {
+        return underline;
+    }
+
+    const int markerStart = i;
+    while (i < line.size() && line.at(i) == marker) {
+        ++i;
+    }
+
+    underline.markerCount = i - markerStart;
+
+    while (i < line.size() && (line.at(i) == QLatin1Char(' ') || line.at(i) == QLatin1Char('\t'))) {
+        ++i;
+    }
+
+    if (i != line.size()) {
+        return {};
+    }
+
+    underline.level = (marker == QLatin1Char('=')) ? 1 : 2;
+    return underline;
+}
+
+static int boundedHeadingLevel(const int headingLevel, const int levelDelta) {
+#if __cplusplus >= 201703L
+    return std::clamp(headingLevel + levelDelta, 1, 6);
+#else
+    return qBound(1, headingLevel + levelDelta, 6);
+#endif
+}
+
+QString changeHeadingDepth(const QString &text, const int levelDelta) {
+    QString normalizedText = text;
+    normalizedText.replace(QChar(0x2029), QLatin1Char('\n'));
+
+    QStringList lines = normalizedText.split(QLatin1Char('\n'),
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                                             QString::KeepEmptyParts
+#else
+                                             Qt::KeepEmptyParts
+#endif
+    );
+    QStringList updatedLines;
+    updatedLines.reserve(lines.size());
+
+    for (int lineIndex = 0; lineIndex < lines.size(); ++lineIndex) {
+        const QString &line = lines.at(lineIndex);
+
+        int headingMarkerStart = 0;
+        int headingMarkerEnd = 0;
+        const int atxLevel = atxHeadingLevel(line, &headingMarkerStart, &headingMarkerEnd);
+        if (atxLevel > 0) {
+            const int newHeadingLevel = boundedHeadingLevel(atxLevel, levelDelta);
+            if (newHeadingLevel == atxLevel) {
+                updatedLines.append(line);
+                continue;
+            }
+
+            updatedLines.append(line.left(headingMarkerStart) +
+                                QString(newHeadingLevel, QLatin1Char('#')) +
+                                line.mid(headingMarkerEnd));
+            continue;
+        }
+
+        if (lineIndex + 1 < lines.size()) {
+            const SetextHeadingUnderline underline =
+                parseSetextHeadingUnderline(lines.at(lineIndex + 1));
+            const int titleIndent = markdownHeadingIndent(line);
+            const QString titleText = line.mid(titleIndent).trimmed();
+
+            if (underline.isValid() && !titleText.isEmpty()) {
+                const int newHeadingLevel = boundedHeadingLevel(underline.level, levelDelta);
+                if (newHeadingLevel <= 2) {
+                    updatedLines.append(line);
+
+                    if (newHeadingLevel == underline.level) {
+                        updatedLines.append(lines.at(lineIndex + 1));
+                    } else {
+                        const int underlineWidth = std::max(
+                            underline.markerCount, std::max(static_cast<int>(titleText.size()), 3));
+                        const QChar marker =
+                            (newHeadingLevel == 1) ? QLatin1Char('=') : QLatin1Char('-');
+                        updatedLines.append(QString(underline.leadingSpaces, QLatin1Char(' ')) +
+                                            QString(underlineWidth, marker));
+                    }
+                } else {
+                    updatedLines.append(line.left(titleIndent) +
+                                        QString(newHeadingLevel, QLatin1Char('#')) +
+                                        QStringLiteral(" ") + titleText);
+                }
+
+                ++lineIndex;
+                continue;
+            }
+        }
+
+        updatedLines.append(line);
+    }
+
+    return updatedLines.join(QLatin1Char('\n'));
+}
 
 struct InnerSelectionCandidate {
     int innerStart = -1;
@@ -1346,6 +1505,15 @@ bool QOwnNotesMarkdownTextEdit::replaceFullLineSelection(const QString &text) {
     return true;
 }
 
+bool QOwnNotesMarkdownTextEdit::changeHeadingDepthOfSelection(const int levelDelta) {
+    QTextCursor cursor = fullLineSelectionCursor();
+    if (!cursor.hasSelection()) {
+        return false;
+    }
+
+    return replaceFullLineSelection(changeHeadingDepth(cursor.selectedText(), levelDelta));
+}
+
 QMargins QOwnNotesMarkdownTextEdit::viewportMargins() {
     return QMarkdownTextEdit::viewportMargins();
 }
@@ -2351,6 +2519,19 @@ void QOwnNotesMarkdownTextEdit::onContextMenu(QPoint pos) {
             replaceFullLineSelection(
                 Utils::ListUtils::orderCheckboxes(fullLineSelectionCursor().selectedText()));
         });
+
+        QMenu *markdownOperationsMenu = menu->addMenu(tr("Markdown operations"));
+        markdownOperationsMenu->setEnabled(isAllowNoteEditing);
+
+        QAction *increaseHeadingDepthAction =
+            markdownOperationsMenu->addAction(tr("Increase heading depth"));
+        connect(increaseHeadingDepthAction, &QAction::triggered, this,
+                [this]() { changeHeadingDepthOfSelection(1); });
+
+        QAction *decreaseHeadingDepthAction =
+            markdownOperationsMenu->addAction(tr("Decrease heading depth"));
+        connect(decreaseHeadingDepthAction, &QAction::triggered, this,
+                [this]() { changeHeadingDepthOfSelection(-1); });
 
         menu->addAction(MainWindow::instance()->searchTextOnWebAction());
         menu->addAction(MainWindow::instance()->findNoteAction());

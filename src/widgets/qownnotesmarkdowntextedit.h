@@ -173,6 +173,7 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     void onContextMenu(QPoint pos);
     QTextCursor fullLineSelectionCursor() const;
     bool replaceFullLineSelection(const QString &text);
+    bool changeHeadingDepthOfSelection(int levelDelta);
 
     void overrideFontSizeStyle(int fontSize);
 
