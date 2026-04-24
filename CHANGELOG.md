@@ -2,6 +2,9 @@
 
 ## 26.4.21
 
+- Fixed auto-detected links inside italic or bold Markdown text so trailing
+  brackets and emphasis markers are no longer treated as part of the URL target
+  or link highlight (for [#3580](https://github.com/pbek/QOwnNotes/issues/3580))
 - Fixed the **Harper** settings status row so the `Status:` label is aligned with
   the status text again and the result text no longer repeats the `Status:`
   prefix in the **Settings dialog** (for [#3576](https://github.com/pbek/QOwnNotes/issues/3576))
