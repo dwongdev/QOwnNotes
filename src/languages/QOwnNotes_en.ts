@@ -2925,7 +2925,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <context>
     <name>HarperChecker</name>
     <message>
-        <location filename="../services/harperchecker.cpp" line="433"/>
+        <location filename="../services/harperchecker.cpp" line="435"/>
         <source>Harper is unavailable: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2933,32 +2933,32 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
 <context>
     <name>HarperClient</name>
     <message>
-        <location filename="../services/harperclient.cpp" line="285"/>
+        <location filename="../services/harperclient.cpp" line="286"/>
         <source>Harper request timed out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/harperclient.cpp" line="403"/>
+        <location filename="../services/harperclient.cpp" line="404"/>
         <source>Harper service stopped unexpectedly</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/harperclient.cpp" line="411"/>
+        <location filename="../services/harperclient.cpp" line="412"/>
         <source>Harper transport is not configured</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/harperclient.cpp" line="424"/>
+        <location filename="../services/harperclient.cpp" line="425"/>
         <source>Waiting before retrying the Harper TCP connection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/harperclient.cpp" line="592"/>
+        <location filename="../services/harperclient.cpp" line="593"/>
         <source>Unsupported Harper request: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../services/harperclient.cpp" line="600"/>
+        <location filename="../services/harperclient.cpp" line="601"/>
         <source>Harper initialization failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2967,16 +2967,16 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     <name>HarperSettingsWidget</name>
     <message>
         <location filename="../widgets/settings/harpersettingswidget.ui" line="17"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="268"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="279"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="302"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="307"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="324"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="328"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="331"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="345"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="349"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="352"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="276"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="287"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="310"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="315"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="332"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="336"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="339"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="353"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="357"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="360"/>
         <source>Harper</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3082,46 +3082,51 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     </message>
     <message>
         <location filename="../widgets/settings/harpersettingswidget.ui" line="86"/>
-        <source>Matcher</source>
+        <source>Quote Spacing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/settings/harpersettingswidget.ui" line="87"/>
-        <source>Wrong Quotes</source>
+        <source>No French Spaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/settings/harpersettingswidget.ui" line="88"/>
-        <source>Spelled Numbers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/settings/harpersettingswidget.ui" line="92"/>
-        <source>Ignored:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/settings/harpersettingswidget.ui" line="93"/>
-        <source>Reset ignored rules</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/settings/harpersettingswidget.ui" line="93"/>
-        <source>Reset ignored words</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/settings/harpersettingswidget.ui" line="94"/>
-        <source>Status:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/settings/harpersettingswidget.ui" line="95"/>
-        <source>Status: Not tested yet.</source>
+        <source>Wrong Apostrophe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/settings/harpersettingswidget.ui" line="96"/>
+        <source>Not tested yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/settings/harpersettingswidget.ui" line="89"/>
+        <source>Spelled Numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/settings/harpersettingswidget.ui" line="93"/>
+        <source>Ignored:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/settings/harpersettingswidget.ui" line="94"/>
+        <source>Reset ignored rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/settings/harpersettingswidget.ui" line="94"/>
+        <source>Reset ignored words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/settings/harpersettingswidget.ui" line="95"/>
+        <source>Status:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/settings/harpersettingswidget.ui" line="97"/>
         <source>Test Connection</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3162,63 +3167,57 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
     </message>
     <message>
         <location filename="../widgets/settings/harpersettingswidget.cpp" line="69"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="279"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="287"/>
         <source>Harper support is not available in this build.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="209"/>
-        <source>Status: harper-ls was not found.</source>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="217"/>
+        <source>harper-ls was not found.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="215"/>
-        <source>Status: Found Harper at %1</source>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="223"/>
+        <source>Found Harper at %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="216"/>
-        <source>Status: Found Harper %1 at %2</source>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="224"/>
+        <source>Found Harper %1 at %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="220"/>
-        <source>Status: TCP target %1:%2</source>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="228"/>
+        <source>TCP target %1:%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="258"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="266"/>
         <source>Select Harper binary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="268"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="276"/>
         <source>Could not find harper-ls in PATH.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="296"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="304"/>
         <source>Harper connection successful.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="301"/>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="306"/>
-        <source>Status: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="307"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="315"/>
         <source>Harper connection failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="324"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="332"/>
         <source>There are no ignored rules to reset.</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="328"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="336"/>
         <source>Reset %n ignored rule(s)?</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -3226,17 +3225,17 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
         </translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="331"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="339"/>
         <source>All ignored rules have been reset.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="345"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="353"/>
         <source>There are no ignored words to reset.</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="349"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="357"/>
         <source>Reset %n ignored word(s)?</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -3244,7 +3243,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
         </translation>
     </message>
     <message>
-        <location filename="../widgets/settings/harpersettingswidget.cpp" line="352"/>
+        <location filename="../widgets/settings/harpersettingswidget.cpp" line="360"/>
         <source>All ignored words have been reset.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4425,32 +4424,32 @@ Just test yourself if you get sync conflicts and set a higher value if so.</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/linkdialog.cpp" line="405"/>
+        <location filename="../dialogs/linkdialog.cpp" line="404"/>
         <source>Select file to link to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/linkdialog.cpp" line="456"/>
+        <location filename="../dialogs/linkdialog.cpp" line="455"/>
         <source>Select directory to link to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/linkdialog.cpp" line="508"/>
+        <location filename="../dialogs/linkdialog.cpp" line="507"/>
         <source>Select file to link to (relative)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/linkdialog.cpp" line="514"/>
+        <location filename="../dialogs/linkdialog.cpp" line="513"/>
         <source>Select file to link to (absolute)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/linkdialog.cpp" line="521"/>
+        <location filename="../dialogs/linkdialog.cpp" line="520"/>
         <source>Select directory to link to (relative)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialogs/linkdialog.cpp" line="529"/>
+        <location filename="../dialogs/linkdialog.cpp" line="528"/>
         <source>Select directory to link to (absolute)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9308,238 +9307,253 @@ Updating the interface takes a short while.</source>
 <context>
     <name>QOwnNotesMarkdownTextEdit</name>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="454"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="613"/>
         <source>Increased font size to %1 pt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="457"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="616"/>
         <source>Decreased font size to %1 pt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="1013"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="1172"/>
         <source>An url was opened at the current cursor position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="1252"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="1411"/>
         <source>No equation was found in front of the cursor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="1273"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="1432"/>
         <source>Result for equation: %1 = %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2292"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2460"/>
         <source>&amp;Link selected text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2292"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2460"/>
         <source>Insert &amp;link</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2299"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2467"/>
         <source>Block &amp;quote selected text</source>
         <comment>Action to apply a block quote formatting to the selected text</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2302"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2470"/>
         <source>Insert block &amp;quote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2309"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2477"/>
         <source>List operations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2312"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2480"/>
         <source>Toggle checkbox(es)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2318"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2486"/>
         <source>1. 2. 3. list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2324"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2492"/>
         <source>a. b. c. list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2330"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2498"/>
         <source>- list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2336"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2504"/>
         <source>Create checkbox list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2343"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2511"/>
         <source>Clear list formatting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2349"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2517"/>
         <source>Order checkboxes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2364"/>
-        <source>Copy code block</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2391"/>
-        <source>Markdown LSP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2392"/>
-        <source>Format document</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2397"/>
-        <source>Format selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2402"/>
-        <source>Code actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2412"/>
-        <source>Add table column left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2417"/>
-        <source>Add table column right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2422"/>
-        <source>Add table row above</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2427"/>
-        <source>Add table row below</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2436"/>
-        <source>Print</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2443"/>
-        <source>Print selected text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2455"/>
-        <source>Print selected text (preview)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2471"/>
-        <source>Export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2481"/>
-        <source>Export selected text as PDF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2493"/>
-        <source>Export selected text as PDF (preview)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2513"/>
-        <source>Select</source>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2523"/>
+        <source>Markdown operations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2527"/>
+        <source>Increase heading depth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2532"/>
+        <source>Decrease heading depth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2545"/>
+        <source>Copy code block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2572"/>
+        <source>Markdown LSP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2573"/>
+        <source>Format document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2578"/>
+        <source>Format selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2583"/>
+        <source>Code actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2593"/>
+        <source>Add table column left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2598"/>
+        <source>Add table column right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2603"/>
+        <source>Add table row above</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2608"/>
+        <source>Add table row below</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2617"/>
+        <source>Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2624"/>
+        <source>Print selected text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2636"/>
+        <source>Print selected text (preview)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2652"/>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2662"/>
+        <source>Export selected text as PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2674"/>
+        <source>Export selected text as PDF (preview)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2694"/>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2708"/>
         <source>Custom actions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2628"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2809"/>
         <source>No suggestions for %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2647"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2828"/>
         <source>Ignore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2649"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2830"/>
         <source>Add to Dictionary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2564"/>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2611"/>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2659"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2745"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2792"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2840"/>
         <source>Spelling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2688"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2869"/>
         <source>LanguageTool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2701"/>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2797"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2882"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2978"/>
         <source>No suggestions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2714"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2895"/>
         <source>More info...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2719"/>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2809"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2900"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2990"/>
         <source>Ignore this rule</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2729"/>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2818"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2910"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2999"/>
         <source>Ignore word &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2785"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="2966"/>
         <source>Harper</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="3331"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="3512"/>
         <source>Markdown LSP server connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="3385"/>
+        <location filename="../widgets/qownnotesmarkdowntextedit.cpp" line="3566"/>
         <source>Filter completions</source>
         <translation type="unfinished"></translation>
     </message>
