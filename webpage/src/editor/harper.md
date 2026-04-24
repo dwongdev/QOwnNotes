@@ -5,6 +5,8 @@ QOwnNotes can use [Harper](https://writewithharper.com/) for optional
 
 It complements the existing [spellchecking](spellchecking.md) support instead of replacing it.
 
+![harper-demo](/img/editor/harper.webp)
+
 ## Features
 
 - Colored underlines for detected grammar, style, punctuation, and wording issues
