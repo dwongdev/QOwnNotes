@@ -206,18 +206,18 @@ void HarperSettingsWidget::updateStatusLabel(const QString &overrideText) {
         const QString binaryPath =
             detectHarperBinary(ui->harperBinaryPathLineEdit->text().trimmed());
         if (binaryPath.isEmpty()) {
-            ui->harperStatusLabel->setText(tr("Status: harper-ls was not found."));
+            ui->harperStatusLabel->setText(tr("harper-ls was not found."));
             return;
         }
 
         const QString version = queryHarperVersion(binaryPath);
-        ui->harperStatusLabel->setText(
-            version.isEmpty() ? tr("Status: Found Harper at %1").arg(binaryPath)
-                              : tr("Status: Found Harper %1 at %2").arg(version, binaryPath));
+        ui->harperStatusLabel->setText(version.isEmpty()
+                                           ? tr("Found Harper at %1").arg(binaryPath)
+                                           : tr("Found Harper %1 at %2").arg(version, binaryPath));
         return;
     }
 
-    ui->harperStatusLabel->setText(tr("Status: TCP target %1:%2")
+    ui->harperStatusLabel->setText(tr("TCP target %1:%2")
                                        .arg(ui->harperTcpAddressLineEdit->text().trimmed(),
                                             QString::number(ui->harperTcpPortSpinBox->value())));
 }
@@ -298,12 +298,12 @@ void HarperSettingsWidget::on_harperTestConnectionButton_clicked() {
                 if (!version.isEmpty()) {
                     status += QLatin1Char(' ') + version;
                 }
-                updateStatusLabel(tr("Status: %1").arg(status));
+                updateStatusLabel(status);
                 QMessageBox::information(this, tr("Harper"), status);
                 client->deleteLater();
             });
     connect(client, &HarperClient::checkError, this, [this, client](int, const QString &message) {
-        updateStatusLabel(tr("Status: %1").arg(message));
+        updateStatusLabel(message);
         QMessageBox::warning(this, tr("Harper"), tr("Harper connection failed: %1").arg(message));
         client->deleteLater();
     });

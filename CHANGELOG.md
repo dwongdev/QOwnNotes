@@ -1,5 +1,11 @@
 # QOwnNotes Changelog
 
+## 26.4.21
+
+- Fixed the **Harper** settings status row so the `Status:` label is aligned with
+  the status text again and the result text no longer repeats the `Status:`
+  prefix in the **Settings dialog** (for [#3576](https://github.com/pbek/QOwnNotes/issues/3576))
+
 ## 26.4.20
 
 - Added the linked note's tags to the **note link dialog** list, so notes can be
