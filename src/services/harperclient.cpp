@@ -258,11 +258,12 @@ QJsonObject buildHarperConfigurationObject(const HarperClient::RequestOptions &o
                                       QStringLiteral("AnA"),
                                       QStringLiteral("SentenceCapitalization"),
                                       QStringLiteral("UnclosedQuotes"),
-                                      QStringLiteral("WrongQuotes"),
+                                      QStringLiteral("WrongApostrophe"),
+                                      QStringLiteral("QuoteSpacing"),
+                                      QStringLiteral("NoFrenchSpaces"),
                                       QStringLiteral("LongSentences"),
                                       QStringLiteral("RepeatedWords"),
                                       QStringLiteral("Spaces"),
-                                      QStringLiteral("Matcher"),
                                       QStringLiteral("CorrectNumberSuffix")};
     for (const QString &linter : knownLinters) {
         linters.insert(linter, options.enabledLinters.contains(linter));
@@ -893,15 +894,16 @@ QString HarperClient::categoryForRuleId(const QString &ruleId) {
         return QStringLiteral("Grammar");
     }
     if ((normalized == QStringLiteral("LongSentences")) ||
-        (normalized == QStringLiteral("Matcher")) ||
         (normalized == QStringLiteral("SpelledNumbers"))) {
         return QStringLiteral("Style");
     }
     if ((normalized == QStringLiteral("Spaces")) ||
-        (normalized == QStringLiteral("UnclosedQuotes"))) {
+        (normalized == QStringLiteral("UnclosedQuotes")) ||
+        (normalized == QStringLiteral("QuoteSpacing")) ||
+        (normalized == QStringLiteral("NoFrenchSpaces"))) {
         return QStringLiteral("Punctuation");
     }
-    if (normalized == QStringLiteral("WrongQuotes")) {
+    if (normalized == QStringLiteral("WrongApostrophe")) {
         return QStringLiteral("Typography");
     }
 

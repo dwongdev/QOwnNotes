@@ -13,6 +13,10 @@
 - Fixed the **Harper** settings status row so the `Status:` label is aligned with
   the status text again and the result text no longer repeats the `Status:`
   prefix in the **Settings dialog** (for [#3576](https://github.com/pbek/QOwnNotes/issues/3576))
+- Updated the **Harper** linter list in the **Settings dialog** to remove the
+  upstream-deleted `Matcher` and `Wrong Quotes` rules and add `Quote Spacing`,
+  `No French Spaces`, and `Wrong Apostrophe` instead (for
+  [#3576](https://github.com/pbek/QOwnNotes/issues/3576))
 
 ## 26.4.20
 

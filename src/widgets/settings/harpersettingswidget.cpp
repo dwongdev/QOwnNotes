@@ -102,7 +102,9 @@ void HarperSettingsWidget::readSettings() {
                                  << QStringLiteral("SentenceCapitalization")
                                  << QStringLiteral("RepeatedWords")
                                  << QStringLiteral("LongSentences") << QStringLiteral("Spaces")
-                                 << QStringLiteral("Matcher")
+                                 << QStringLiteral("QuoteSpacing")
+                                 << QStringLiteral("NoFrenchSpaces")
+                                 << QStringLiteral("WrongApostrophe")
                                  << QStringLiteral("CorrectNumberSuffix")
                                  << QStringLiteral("UnclosedQuotes"))
             .toStringList();
@@ -119,9 +121,12 @@ void HarperSettingsWidget::readSettings() {
     ui->harperCorrectNumberSuffixCheckBox->setChecked(
         enabledLinters.contains(QStringLiteral("CorrectNumberSuffix")));
     ui->harperSpacesCheckBox->setChecked(enabledLinters.contains(QStringLiteral("Spaces")));
-    ui->harperMatcherCheckBox->setChecked(enabledLinters.contains(QStringLiteral("Matcher")));
-    ui->harperWrongQuotesCheckBox->setChecked(
-        enabledLinters.contains(QStringLiteral("WrongQuotes")));
+    ui->harperQuoteSpacingCheckBox->setChecked(
+        enabledLinters.contains(QStringLiteral("QuoteSpacing")));
+    ui->harperNoFrenchSpacesCheckBox->setChecked(
+        enabledLinters.contains(QStringLiteral("NoFrenchSpaces")));
+    ui->harperWrongApostropheCheckBox->setChecked(
+        enabledLinters.contains(QStringLiteral("WrongApostrophe")));
     ui->harperSpelledNumbersCheckBox->setChecked(
         enabledLinters.contains(QStringLiteral("SpelledNumbers")));
 
@@ -173,11 +178,14 @@ QStringList HarperSettingsWidget::enabledLintersFromUi() const {
     if (ui->harperSpacesCheckBox->isChecked()) {
         linters.append(QStringLiteral("Spaces"));
     }
-    if (ui->harperMatcherCheckBox->isChecked()) {
-        linters.append(QStringLiteral("Matcher"));
+    if (ui->harperQuoteSpacingCheckBox->isChecked()) {
+        linters.append(QStringLiteral("QuoteSpacing"));
     }
-    if (ui->harperWrongQuotesCheckBox->isChecked()) {
-        linters.append(QStringLiteral("WrongQuotes"));
+    if (ui->harperNoFrenchSpacesCheckBox->isChecked()) {
+        linters.append(QStringLiteral("NoFrenchSpaces"));
+    }
+    if (ui->harperWrongApostropheCheckBox->isChecked()) {
+        linters.append(QStringLiteral("WrongApostrophe"));
     }
     if (ui->harperSpelledNumbersCheckBox->isChecked()) {
         linters.append(QStringLiteral("SpelledNumbers"));

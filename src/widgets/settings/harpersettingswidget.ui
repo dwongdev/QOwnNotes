@@ -81,11 +81,12 @@
             <item row="1" column="0"><widget class="QCheckBox" name="harperLongSentencesCheckBox"><property name="text"><string>Long Sentences</string></property></widget></item>
             <item row="1" column="1"><widget class="QCheckBox" name="harperAnACheckBox"><property name="text"><string>An vs A</string></property></widget></item>
             <item row="1" column="2"><widget class="QCheckBox" name="harperUnclosedQuotesCheckBox"><property name="text"><string>Unclosed Quotes</string></property></widget></item>
-            <item row="2" column="0"><widget class="QCheckBox" name="harperCorrectNumberSuffixCheckBox"><property name="text"><string>Correct Number Suffix</string></property></widget></item>
-            <item row="2" column="1"><widget class="QCheckBox" name="harperSpacesCheckBox"><property name="text"><string>Spaces</string></property></widget></item>
-            <item row="2" column="2"><widget class="QCheckBox" name="harperMatcherCheckBox"><property name="text"><string>Matcher</string></property></widget></item>
-            <item row="3" column="0"><widget class="QCheckBox" name="harperWrongQuotesCheckBox"><property name="text"><string>Wrong Quotes</string></property></widget></item>
-            <item row="3" column="1"><widget class="QCheckBox" name="harperSpelledNumbersCheckBox"><property name="text"><string>Spelled Numbers</string></property></widget></item>
+             <item row="2" column="0"><widget class="QCheckBox" name="harperCorrectNumberSuffixCheckBox"><property name="text"><string>Correct Number Suffix</string></property></widget></item>
+             <item row="2" column="1"><widget class="QCheckBox" name="harperSpacesCheckBox"><property name="text"><string>Spaces</string></property></widget></item>
+             <item row="2" column="2"><widget class="QCheckBox" name="harperQuoteSpacingCheckBox"><property name="text"><string>Quote Spacing</string></property></widget></item>
+             <item row="3" column="0"><widget class="QCheckBox" name="harperNoFrenchSpacesCheckBox"><property name="text"><string>No French Spaces</string></property></widget></item>
+             <item row="3" column="1"><widget class="QCheckBox" name="harperWrongApostropheCheckBox"><property name="text"><string>Wrong Apostrophe</string></property></widget></item>
+             <item row="3" column="2"><widget class="QCheckBox" name="harperSpelledNumbersCheckBox"><property name="text"><string>Spelled Numbers</string></property></widget></item>
            </layout>
           </widget>
          </item>

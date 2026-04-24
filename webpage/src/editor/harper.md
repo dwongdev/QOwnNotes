@@ -44,8 +44,9 @@ Open `Settings` and select `Editor -> Harper`.
   - `Unclosed Quotes`
   - `Correct Number Suffix`
   - `Spaces`
-  - `Matcher`
-  - `Wrong Quotes`
+  - `Quote Spacing`
+  - `No French Spaces`
+  - `Wrong Apostrophe`
   - `Spelled Numbers`
 
 Use `Test Connection` to verify that QOwnNotes can either start `harper-ls` in `Stdio` mode or

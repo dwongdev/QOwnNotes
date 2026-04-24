@@ -314,7 +314,9 @@ void HarperChecker::readSettings() {
                                  << QStringLiteral("SentenceCapitalization")
                                  << QStringLiteral("RepeatedWords")
                                  << QStringLiteral("LongSentences") << QStringLiteral("Spaces")
-                                 << QStringLiteral("Matcher")
+                                 << QStringLiteral("QuoteSpacing")
+                                 << QStringLiteral("NoFrenchSpaces")
+                                 << QStringLiteral("WrongApostrophe")
                                  << QStringLiteral("CorrectNumberSuffix")
                                  << QStringLiteral("UnclosedQuotes"))
             .toStringList();
