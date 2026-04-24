@@ -2,6 +2,8 @@
 
 ## 26.4.21
 
+- The **note link dialog** note list now also shows the `Modified` column even
+  when note sub-folder support is disabled (for [#1679](https://github.com/pbek/QOwnNotes/issues/1679))
 - Fixed auto-detected links inside italic or bold Markdown text so trailing
   brackets and emphasis markers are no longer treated as part of the URL target
   or link highlight (for [#3580](https://github.com/pbek/QOwnNotes/issues/3580))

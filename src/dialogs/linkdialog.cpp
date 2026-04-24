@@ -108,7 +108,6 @@ LinkDialog::LinkDialog(int page, const QString &dialogTitle, QWidget *parent)
 
     const bool showSubfolders = NoteFolder::isCurrentShowSubfolders();
     ui->notesListWidget->setColumnHidden(1, !showSubfolders);
-    ui->notesListWidget->setColumnHidden(3, !showSubfolders);
     ui->notesListWidget->setSortingEnabled(true);
     ui->notesListWidget->sortByColumn(3, Qt::DescendingOrder);
     ui->notesListWidget->header()->setSortIndicatorShown(true);
