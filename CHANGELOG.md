@@ -1,5 +1,14 @@
 # QOwnNotes Changelog
 
+## 26.4.22
+
+- Added a new **Note text edit** submenu to the **Edit** main menu that exposes
+  all note text edit context menu actions (link, block quote, list operations,
+  Markdown operations, search text on web, find note, copy code block) so they
+  can be reached from the menu bar and have shortcuts assigned in the
+  **Shortcuts** settings; the submenu is only enabled when the note edit panel
+  is visible (for [#3582](https://github.com/pbek/QOwnNotes/issues/3582))
+
 ## 26.4.21
 
 - Added a new **Markdown operations** submenu to the **note text edit** context

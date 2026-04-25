@@ -76,6 +76,10 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
      */
     static QOwnNotesMarkdownTextEdit *getActiveEditorForAutocomplete();
 
+    QTextCursor fullLineSelectionCursor() const;
+    bool replaceFullLineSelection(const QString &text);
+    bool changeHeadingDepthOfSelection(int levelDelta);
+
     /**
      * Inserts an empty code block
      */
@@ -171,9 +175,6 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     void setFormatStyle(MarkdownHighlighter::HighlighterState index);
 
     void onContextMenu(QPoint pos);
-    QTextCursor fullLineSelectionCursor() const;
-    bool replaceFullLineSelection(const QString &text);
-    bool changeHeadingDepthOfSelection(int levelDelta);
 
     void overrideFontSizeStyle(int fontSize);
 

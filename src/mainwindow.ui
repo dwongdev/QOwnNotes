@@ -1233,12 +1233,46 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string>Spelling backend</string>
      </property>
     </widget>
-    <widget class="QMenu" name="menuAI_model">
-     <property name="title">
-      <string>AI model</string>
-     </property>
-    </widget>
-    <addaction name="menuEditNote"/>
+     <widget class="QMenu" name="menuAI_model">
+      <property name="title">
+       <string>AI model</string>
+      </property>
+     </widget>
+     <widget class="QMenu" name="menuNoteTextEditContext">
+      <property name="title">
+       <string>Note text edit</string>
+      </property>
+      <widget class="QMenu" name="menuNoteTextEditListOperations">
+       <property name="title">
+        <string>List operations</string>
+       </property>
+       <addaction name="actionToggle_checkboxes"/>
+       <addaction name="actionCreate_ordered_list"/>
+       <addaction name="actionCreate_alphabetical_list"/>
+       <addaction name="actionCreate_unordered_list"/>
+       <addaction name="actionCreate_checkbox_list"/>
+       <addaction name="actionClear_list_formatting"/>
+       <addaction name="actionOrder_checkboxes"/>
+      </widget>
+      <widget class="QMenu" name="menuNoteTextEditMarkdownOperations">
+       <property name="title">
+        <string>Markdown operations</string>
+       </property>
+       <addaction name="actionIncrease_heading_depth"/>
+       <addaction name="actionDecrease_heading_depth"/>
+      </widget>
+      <addaction name="actionInsert_text_link"/>
+      <addaction name="actionInsert_block_quote"/>
+      <addaction name="separator"/>
+      <addaction name="menuNoteTextEditListOperations"/>
+      <addaction name="menuNoteTextEditMarkdownOperations"/>
+      <addaction name="separator"/>
+      <addaction name="actionSearch_text_on_the_web"/>
+      <addaction name="action_Find_note"/>
+      <addaction name="separator"/>
+      <addaction name="actionCopy_code_block"/>
+     </widget>
+     <addaction name="menuEditNote"/>
     <addaction name="action_Remove_note"/>
     <addaction name="separator"/>
     <addaction name="action_Find_text_in_note"/>
@@ -1256,9 +1290,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <addaction name="actionManage_stored_attachments"/>
     <addaction name="actionSend_clipboard"/>
     <addaction name="actionSend_clipboard_as_text"/>
-    <addaction name="menuExtra"/>
-    <addaction name="separator"/>
-     <addaction name="actionCheck_spelling"/>
+     <addaction name="menuExtra"/>
+     <addaction name="menuNoteTextEditContext"/>
+     <addaction name="separator"/>
+      <addaction name="actionCheck_spelling"/>
      <addaction name="actionCheck_grammar_with_LanguageTool"/>
       <addaction name="actionCheck_grammar_with_Harper"/>
       <addaction name="menuSpelling_backend"/>
@@ -3054,6 +3089,56 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>Send clipboard as text</string>
+   </property>
+  </action>
+  <action name="actionToggle_checkboxes">
+   <property name="text">
+    <string>Toggle checkbox(es)</string>
+   </property>
+  </action>
+  <action name="actionCreate_ordered_list">
+   <property name="text">
+    <string>1. 2. 3. list</string>
+   </property>
+  </action>
+  <action name="actionCreate_alphabetical_list">
+   <property name="text">
+    <string>a. b. c. list</string>
+   </property>
+  </action>
+  <action name="actionCreate_unordered_list">
+   <property name="text">
+    <string>- list</string>
+   </property>
+  </action>
+  <action name="actionCreate_checkbox_list">
+   <property name="text">
+    <string>Create checkbox list</string>
+   </property>
+  </action>
+  <action name="actionClear_list_formatting">
+   <property name="text">
+    <string>Clear list formatting</string>
+   </property>
+  </action>
+  <action name="actionOrder_checkboxes">
+   <property name="text">
+    <string>Order checkboxes</string>
+   </property>
+  </action>
+  <action name="actionIncrease_heading_depth">
+   <property name="text">
+    <string>Increase heading depth</string>
+   </property>
+  </action>
+  <action name="actionDecrease_heading_depth">
+   <property name="text">
+    <string>Decrease heading depth</string>
+   </property>
+  </action>
+  <action name="actionCopy_code_block">
+   <property name="text">
+    <string>Copy code block</string>
    </property>
   </action>
  </widget>

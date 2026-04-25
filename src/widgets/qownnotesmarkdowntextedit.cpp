@@ -2477,61 +2477,19 @@ void QOwnNotesMarkdownTextEdit::onContextMenu(QPoint pos) {
         QMenu *listOperationsMenu = menu->addMenu(tr("List operations"));
         listOperationsMenu->setEnabled(isAllowNoteEditing);
 
-        QAction *toggleCheckboxesAction = listOperationsMenu->addAction(tr("Toggle checkbox(es)"));
-        connect(toggleCheckboxesAction, &QAction::triggered, this, [this]() {
-            replaceFullLineSelection(
-                Utils::ListUtils::toggleCheckboxes(fullLineSelectionCursor().selectedText()));
-        });
-
-        QAction *orderedListAction = listOperationsMenu->addAction(tr("1. 2. 3. list"));
-        connect(orderedListAction, &QAction::triggered, this, [this]() {
-            replaceFullLineSelection(
-                Utils::ListUtils::createOrderedList(fullLineSelectionCursor().selectedText()));
-        });
-
-        QAction *alphabeticalListAction = listOperationsMenu->addAction(tr("a. b. c. list"));
-        connect(alphabeticalListAction, &QAction::triggered, this, [this]() {
-            replaceFullLineSelection(
-                Utils::ListUtils::createAlphabeticalList(fullLineSelectionCursor().selectedText()));
-        });
-
-        QAction *unorderedListAction = listOperationsMenu->addAction(tr("- list"));
-        connect(unorderedListAction, &QAction::triggered, this, [this]() {
-            replaceFullLineSelection(
-                Utils::ListUtils::createUnorderedList(fullLineSelectionCursor().selectedText()));
-        });
-
-        QAction *checkboxListAction = listOperationsMenu->addAction(tr("Create checkbox list"));
-        connect(checkboxListAction, &QAction::triggered, this, [this]() {
-            replaceFullLineSelection(
-                Utils::ListUtils::createCheckboxList(fullLineSelectionCursor().selectedText()));
-        });
-
-        QAction *clearListFormattingAction =
-            listOperationsMenu->addAction(tr("Clear list formatting"));
-        connect(clearListFormattingAction, &QAction::triggered, this, [this]() {
-            replaceFullLineSelection(
-                Utils::ListUtils::clearListFormatting(fullLineSelectionCursor().selectedText()));
-        });
-
-        QAction *orderCheckboxesAction = listOperationsMenu->addAction(tr("Order checkboxes"));
-        connect(orderCheckboxesAction, &QAction::triggered, this, [this]() {
-            replaceFullLineSelection(
-                Utils::ListUtils::orderCheckboxes(fullLineSelectionCursor().selectedText()));
-        });
+        listOperationsMenu->addAction(MainWindow::instance()->toggleCheckboxesAction());
+        listOperationsMenu->addAction(MainWindow::instance()->createOrderedListAction());
+        listOperationsMenu->addAction(MainWindow::instance()->createAlphabeticalListAction());
+        listOperationsMenu->addAction(MainWindow::instance()->createUnorderedListAction());
+        listOperationsMenu->addAction(MainWindow::instance()->createCheckboxListAction());
+        listOperationsMenu->addAction(MainWindow::instance()->clearListFormattingAction());
+        listOperationsMenu->addAction(MainWindow::instance()->orderCheckboxesAction());
 
         QMenu *markdownOperationsMenu = menu->addMenu(tr("Markdown operations"));
         markdownOperationsMenu->setEnabled(isAllowNoteEditing);
 
-        QAction *increaseHeadingDepthAction =
-            markdownOperationsMenu->addAction(tr("Increase heading depth"));
-        connect(increaseHeadingDepthAction, &QAction::triggered, this,
-                [this]() { changeHeadingDepthOfSelection(1); });
-
-        QAction *decreaseHeadingDepthAction =
-            markdownOperationsMenu->addAction(tr("Decrease heading depth"));
-        connect(decreaseHeadingDepthAction, &QAction::triggered, this,
-                [this]() { changeHeadingDepthOfSelection(-1); });
+        markdownOperationsMenu->addAction(MainWindow::instance()->increaseHeadingDepthAction());
+        markdownOperationsMenu->addAction(MainWindow::instance()->decreaseHeadingDepthAction());
 
         menu->addAction(MainWindow::instance()->searchTextOnWebAction());
         menu->addAction(MainWindow::instance()->findNoteAction());

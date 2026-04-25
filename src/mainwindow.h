@@ -390,6 +390,17 @@ class MainWindow : public QMainWindow {
 
     void on_action_DuplicateText_triggered();
 
+    void on_actionToggle_checkboxes_triggered();
+    void on_actionCreate_ordered_list_triggered();
+    void on_actionCreate_alphabetical_list_triggered();
+    void on_actionCreate_unordered_list_triggered();
+    void on_actionCreate_checkbox_list_triggered();
+    void on_actionClear_list_formatting_triggered();
+    void on_actionOrder_checkboxes_triggered();
+    void on_actionIncrease_heading_depth_triggered();
+    void on_actionDecrease_heading_depth_triggered();
+    void on_actionCopy_code_block_triggered();
+
     void on_action_Back_in_note_history_triggered();
 
     void on_action_Forward_in_note_history_triggered();
@@ -889,6 +900,16 @@ class MainWindow : public QMainWindow {
     QAction *splitNoteAtPosAction();
     QAction *selectEnclosedTextAction();
     QAction *findNoteAction();
+    QAction *toggleCheckboxesAction();
+    QAction *createOrderedListAction();
+    QAction *createAlphabeticalListAction();
+    QAction *createUnorderedListAction();
+    QAction *createCheckboxListAction();
+    QAction *clearListFormattingAction();
+    QAction *orderCheckboxesAction();
+    QAction *increaseHeadingDepthAction();
+    QAction *decreaseHeadingDepthAction();
+    QAction *copyCodeBlockAction();
     QList<QAction *> customTextEditActions();
     QString noteFoldingReference(const Note &note) const;
 

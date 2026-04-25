@@ -45,6 +45,7 @@
 #endif
 #include <utils/git.h>
 #include <utils/gui.h>
+#include <utils/listutils.h>
 #include <utils/misc.h>
 #include <utils/schema.h>
 #include <widgets/logwidget.h>
@@ -3285,6 +3286,10 @@ void MainWindow::updateActionUiEnabled() {
     ui->actionReplace_in_current_note->setEnabled(allowEditing);
     ui->actionAutocomplete->setEnabled(allowEditing);
     ui->actionSplit_note_at_cursor_position->setEnabled(allowEditing);
+
+    // The note text edit context menu submenu is only enabled when the note
+    // edit panel is visible
+    setMenuEnabled(ui->menuNoteTextEditContext, isNoteEditPaneEnabled());
 }
 
 /**
@@ -4599,6 +4604,62 @@ void MainWindow::on_actionInsert_note_link_triggered() {
 }
 
 void MainWindow::on_action_DuplicateText_triggered() { activeNoteTextEdit()->duplicateText(); }
+
+void MainWindow::on_actionToggle_checkboxes_triggered() {
+    auto *textEdit = activeNoteTextEdit();
+    textEdit->replaceFullLineSelection(
+        Utils::ListUtils::toggleCheckboxes(textEdit->fullLineSelectionCursor().selectedText()));
+}
+
+void MainWindow::on_actionCreate_ordered_list_triggered() {
+    auto *textEdit = activeNoteTextEdit();
+    textEdit->replaceFullLineSelection(
+        Utils::ListUtils::createOrderedList(textEdit->fullLineSelectionCursor().selectedText()));
+}
+
+void MainWindow::on_actionCreate_alphabetical_list_triggered() {
+    auto *textEdit = activeNoteTextEdit();
+    textEdit->replaceFullLineSelection(Utils::ListUtils::createAlphabeticalList(
+        textEdit->fullLineSelectionCursor().selectedText()));
+}
+
+void MainWindow::on_actionCreate_unordered_list_triggered() {
+    auto *textEdit = activeNoteTextEdit();
+    textEdit->replaceFullLineSelection(
+        Utils::ListUtils::createUnorderedList(textEdit->fullLineSelectionCursor().selectedText()));
+}
+
+void MainWindow::on_actionCreate_checkbox_list_triggered() {
+    auto *textEdit = activeNoteTextEdit();
+    textEdit->replaceFullLineSelection(
+        Utils::ListUtils::createCheckboxList(textEdit->fullLineSelectionCursor().selectedText()));
+}
+
+void MainWindow::on_actionClear_list_formatting_triggered() {
+    auto *textEdit = activeNoteTextEdit();
+    textEdit->replaceFullLineSelection(
+        Utils::ListUtils::clearListFormatting(textEdit->fullLineSelectionCursor().selectedText()));
+}
+
+void MainWindow::on_actionOrder_checkboxes_triggered() {
+    auto *textEdit = activeNoteTextEdit();
+    textEdit->replaceFullLineSelection(
+        Utils::ListUtils::orderCheckboxes(textEdit->fullLineSelectionCursor().selectedText()));
+}
+
+void MainWindow::on_actionIncrease_heading_depth_triggered() {
+    activeNoteTextEdit()->changeHeadingDepthOfSelection(1);
+}
+
+void MainWindow::on_actionDecrease_heading_depth_triggered() {
+    activeNoteTextEdit()->changeHeadingDepthOfSelection(-1);
+}
+
+void MainWindow::on_actionCopy_code_block_triggered() {
+    auto *textEdit = activeNoteTextEdit();
+    const QTextBlock currentTextBlock = textEdit->textCursor().block();
+    Utils::Gui::copyCodeBlockText(currentTextBlock);
+}
 
 void MainWindow::on_actionSelect_enclosed_text_triggered() {
     activeNoteTextEdit()->selectEnclosedText();
@@ -7826,6 +7887,17 @@ QAction *MainWindow::splitNoteAtPosAction() { return ui->actionSplit_note_at_cur
 QAction *MainWindow::selectEnclosedTextAction() { return ui->actionSelect_enclosed_text; }
 
 QAction *MainWindow::findNoteAction() { return ui->action_Find_note; }
+
+QAction *MainWindow::toggleCheckboxesAction() { return ui->actionToggle_checkboxes; }
+QAction *MainWindow::createOrderedListAction() { return ui->actionCreate_ordered_list; }
+QAction *MainWindow::createAlphabeticalListAction() { return ui->actionCreate_alphabetical_list; }
+QAction *MainWindow::createUnorderedListAction() { return ui->actionCreate_unordered_list; }
+QAction *MainWindow::createCheckboxListAction() { return ui->actionCreate_checkbox_list; }
+QAction *MainWindow::clearListFormattingAction() { return ui->actionClear_list_formatting; }
+QAction *MainWindow::orderCheckboxesAction() { return ui->actionOrder_checkboxes; }
+QAction *MainWindow::increaseHeadingDepthAction() { return ui->actionIncrease_heading_depth; }
+QAction *MainWindow::decreaseHeadingDepthAction() { return ui->actionDecrease_heading_depth; }
+QAction *MainWindow::copyCodeBlockAction() { return ui->actionCopy_code_block; }
 
 QList<QAction *> MainWindow::customTextEditActions() { return _noteTextEditContextMenuActions; }
 
