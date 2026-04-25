@@ -29,6 +29,8 @@ class QButtonGroup;
 class QCheckBox;
 class NoteFolder;
 class QSplitter;
+class QMenu;
+class SettingsService;
 
 struct CalDAVCalendarData;
 
@@ -143,6 +145,14 @@ class SettingsDialog : public MasterDialog {
     static QString getSelectedListWidgetValue(QListWidget *listWidget);
 
     void loadShortcutSettings();
+
+    void buildShortcutTreeForMenu(const QMenu *menu, QTreeWidgetItem *parentItem,
+                                  SettingsService &settings,
+                                  const QColor &shortcutButtonActiveColor,
+                                  const QColor &shortcutButtonInactiveColor,
+                                  const QIcon &disableShortcutButtonIcon,
+                                  const QIcon &clearButtonIcon,
+                                  const QStringList &disabledMenuNames);
 
     void storeShortcutSettings();
 

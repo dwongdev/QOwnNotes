@@ -428,8 +428,8 @@ void SettingsDialog::loadShortcutSettings() {
     ui->shortcutTreeWidget->setColumnCount(3);
 
     // shortcuts on toolbars and note folders don't work yet
-    auto disabledMenuNames = QStringList()
-                             << QStringLiteral("menuToolbars") << QStringLiteral("noteFoldersMenu");
+    const QStringList disabledMenuNames = QStringList() << QStringLiteral("menuToolbars")
+                                                        << QStringLiteral("noteFoldersMenu");
 
     const QIcon disableShortcutButtonIcon =
         QIcon::fromTheme(QStringLiteral("dialog-cancel"),
@@ -438,99 +438,147 @@ void SettingsDialog::loadShortcutSettings() {
         QIcon::fromTheme(QStringLiteral("edit-clear"), QIcon(":/icons/breeze-qownnotes/16x16/"
                                                              "edit-clear.svg"));
 
-    // loop through all menus
+    // loop through all top-level menus and build the tree recursively
     for (const QMenu *menu : menus) {
         if (disabledMenuNames.contains(menu->objectName())) {
             continue;
         }
 
-        auto *menuItem = new QTreeWidgetItem();
-        int actionCount = 0;
-
-        // loop through all actions of the menu
-        foreach (QAction *action, menu->actions()) {
-            const QString &actionObjectName = action->objectName();
-
-            // we don't need empty objects
-            if (actionObjectName.isEmpty()) {
-                continue;
-            }
-
-            // create the tree widget item
-            auto *actionItem = new QTreeWidgetItem();
-            actionItem->setText(0, action->text().remove(QStringLiteral("&")));
-            actionItem->setToolTip(0, actionObjectName);
-            actionItem->setData(1, Qt::UserRole, actionObjectName);
-            menuItem->addChild(actionItem);
-
-            // create the key widget for the local shortcut
-            auto *keyWidget = new QKeySequenceWidget();
-            keyWidget->setFixedWidth(240);
-            keyWidget->setClearButtonIcon(clearButtonIcon);
-            keyWidget->setNoneText(tr("Undefined shortcut"));
-            keyWidget->setShortcutButtonActiveColor(shortcutButtonActiveColor);
-            keyWidget->setShortcutButtonInactiveColor(shortcutButtonInactiveColor);
-            keyWidget->setToolTip(tr("Assign a new shortcut"), tr("Reset to default shortcut"));
-            keyWidget->setDefaultKeySequence(action->data().toString());
-
-            const QString &shortcutSettingKey =
-                QStringLiteral("Shortcuts/MainWindow-") + action->objectName();
-            const bool settingFound = settings.contains(shortcutSettingKey);
-
-            // try to load the key sequence from the settings, because
-            // action->shortcut() is empty if menubar was disabled!
-            keyWidget->setKeySequence(settingFound ? settings.value(shortcutSettingKey).toString()
-                                                   : action->data().toString());
-
-            connect(keyWidget, &QKeySequenceWidget::keySequenceAccepted, this,
-                    [this, actionObjectName]() { keySequenceEvent(actionObjectName); });
-
-            auto *disableShortcutButton = new QPushButton();
-            disableShortcutButton->setToolTip(tr("Clear shortcut"));
-            disableShortcutButton->setIcon(disableShortcutButtonIcon);
-
-            connect(disableShortcutButton, &QPushButton::pressed, this,
-                    [keyWidget]() { keyWidget->setKeySequence(QKeySequence("")); });
-
-            // create a frame for the key widget for the local shortcut and
-            // the shortcut disabling button
-            auto *frame = new QFrame();
-            auto *frameLayout = new QHBoxLayout();
-            frameLayout->setContentsMargins({});
-            frameLayout->setSpacing(2);
-            frameLayout->addWidget(keyWidget);
-            frameLayout->addWidget(disableShortcutButton);
-            frame->setLayout(frameLayout);
-            ui->shortcutTreeWidget->setItemWidget(actionItem, 1, frame);
-
-            // create the key widget for the global shortcut
-            auto *globalShortcutKeyWidget = new QKeySequenceWidget();
-            globalShortcutKeyWidget->setFixedWidth(240);
-            globalShortcutKeyWidget->setClearButtonIcon(clearButtonIcon);
-            globalShortcutKeyWidget->setNoneText(tr("Undefined shortcut"));
-            globalShortcutKeyWidget->setShortcutButtonActiveColor(shortcutButtonActiveColor);
-            globalShortcutKeyWidget->setShortcutButtonInactiveColor(shortcutButtonInactiveColor);
-            globalShortcutKeyWidget->setToolTip(tr("Assign a new shortcut"),
-                                                tr("Reset to default shortcut"));
-            globalShortcutKeyWidget->setKeySequence(
-                settings.value(QStringLiteral("GlobalShortcuts/MainWindow-") + actionObjectName)
-                    .toString());
-
-            ui->shortcutTreeWidget->setItemWidget(actionItem, 2, globalShortcutKeyWidget);
-
-            actionCount++;
-        }
-
-        if (actionCount > 0) {
-            menuItem->setText(0, menu->title().remove(QStringLiteral("&")));
-            menuItem->setToolTip(0, menu->objectName());
-            ui->shortcutTreeWidget->addTopLevelItem(menuItem);
-            menuItem->setExpanded(true);
-        }
+        buildShortcutTreeForMenu(menu, nullptr, settings, shortcutButtonActiveColor,
+                                 shortcutButtonInactiveColor, disableShortcutButtonIcon,
+                                 clearButtonIcon, disabledMenuNames);
     }
 
     Utils::Gui::initTreeWidgetHeaderOrderPersistence(
         ui->shortcutTreeWidget, QStringLiteral("SettingsDialog/shortcutTreeWidgetHeaderOrder"));
+}
+
+/**
+ * Recursively builds the shortcut tree for the given menu, handling submenus
+ * to show the full menu hierarchy in the shortcuts settings
+ *
+ * @param menu             The menu to process
+ * @param parentItem       The parent tree widget item, or nullptr for top-level menus
+ * @param settings         The settings service instance
+ * @param shortcutButtonActiveColor   Color for active shortcut buttons
+ * @param shortcutButtonInactiveColor Color for inactive shortcut buttons
+ * @param disableShortcutButtonIcon   Icon for the disable shortcut button
+ * @param clearButtonIcon             Icon for the clear button
+ * @param disabledMenuNames           List of menu object names to skip
+ */
+void SettingsDialog::buildShortcutTreeForMenu(const QMenu *menu, QTreeWidgetItem *parentItem,
+                                              SettingsService &settings,
+                                              const QColor &shortcutButtonActiveColor,
+                                              const QColor &shortcutButtonInactiveColor,
+                                              const QIcon &disableShortcutButtonIcon,
+                                              const QIcon &clearButtonIcon,
+                                              const QStringList &disabledMenuNames) {
+    auto *menuItem = new QTreeWidgetItem();
+    int actionCount = 0;
+
+    // loop through all actions of the menu
+    foreach (QAction *action, menu->actions()) {
+        // Handle submenus recursively so the full menu structure is visible
+        if (action->menu() != nullptr) {
+            const QMenu *subMenu = action->menu();
+
+            if (disabledMenuNames.contains(subMenu->objectName())) {
+                continue;
+            }
+
+            buildShortcutTreeForMenu(subMenu, menuItem, settings, shortcutButtonActiveColor,
+                                     shortcutButtonInactiveColor, disableShortcutButtonIcon,
+                                     clearButtonIcon, disabledMenuNames);
+            actionCount++;
+            continue;
+        }
+
+        const QString &actionObjectName = action->objectName();
+
+        // we don't need empty objects
+        if (actionObjectName.isEmpty()) {
+            continue;
+        }
+
+        // create the tree widget item
+        auto *actionItem = new QTreeWidgetItem();
+        actionItem->setText(0, action->text().remove(QStringLiteral("&")));
+        actionItem->setToolTip(0, actionObjectName);
+        actionItem->setData(1, Qt::UserRole, actionObjectName);
+        menuItem->addChild(actionItem);
+
+        // create the key widget for the local shortcut
+        auto *keyWidget = new QKeySequenceWidget();
+        keyWidget->setFixedWidth(240);
+        keyWidget->setClearButtonIcon(clearButtonIcon);
+        keyWidget->setNoneText(tr("Undefined shortcut"));
+        keyWidget->setShortcutButtonActiveColor(shortcutButtonActiveColor);
+        keyWidget->setShortcutButtonInactiveColor(shortcutButtonInactiveColor);
+        keyWidget->setToolTip(tr("Assign a new shortcut"), tr("Reset to default shortcut"));
+        keyWidget->setDefaultKeySequence(action->data().toString());
+
+        const QString &shortcutSettingKey =
+            QStringLiteral("Shortcuts/MainWindow-") + action->objectName();
+        const bool settingFound = settings.contains(shortcutSettingKey);
+
+        // try to load the key sequence from the settings, because
+        // action->shortcut() is empty if menubar was disabled!
+        keyWidget->setKeySequence(settingFound ? settings.value(shortcutSettingKey).toString()
+                                               : action->data().toString());
+
+        connect(keyWidget, &QKeySequenceWidget::keySequenceAccepted, this,
+                [this, actionObjectName]() { keySequenceEvent(actionObjectName); });
+
+        auto *disableShortcutButton = new QPushButton();
+        disableShortcutButton->setToolTip(tr("Clear shortcut"));
+        disableShortcutButton->setIcon(disableShortcutButtonIcon);
+
+        connect(disableShortcutButton, &QPushButton::pressed, this,
+                [keyWidget]() { keyWidget->setKeySequence(QKeySequence("")); });
+
+        // create a frame for the key widget for the local shortcut and
+        // the shortcut disabling button
+        auto *frame = new QFrame();
+        auto *frameLayout = new QHBoxLayout();
+        frameLayout->setContentsMargins({});
+        frameLayout->setSpacing(2);
+        frameLayout->addWidget(keyWidget);
+        frameLayout->addWidget(disableShortcutButton);
+        frame->setLayout(frameLayout);
+        ui->shortcutTreeWidget->setItemWidget(actionItem, 1, frame);
+
+        // create the key widget for the global shortcut
+        auto *globalShortcutKeyWidget = new QKeySequenceWidget();
+        globalShortcutKeyWidget->setFixedWidth(240);
+        globalShortcutKeyWidget->setClearButtonIcon(clearButtonIcon);
+        globalShortcutKeyWidget->setNoneText(tr("Undefined shortcut"));
+        globalShortcutKeyWidget->setShortcutButtonActiveColor(shortcutButtonActiveColor);
+        globalShortcutKeyWidget->setShortcutButtonInactiveColor(shortcutButtonInactiveColor);
+        globalShortcutKeyWidget->setToolTip(tr("Assign a new shortcut"),
+                                            tr("Reset to default shortcut"));
+        globalShortcutKeyWidget->setKeySequence(
+            settings.value(QStringLiteral("GlobalShortcuts/MainWindow-") + actionObjectName)
+                .toString());
+
+        ui->shortcutTreeWidget->setItemWidget(actionItem, 2, globalShortcutKeyWidget);
+
+        actionCount++;
+    }
+
+    if (actionCount > 0) {
+        menuItem->setText(0, menu->title().remove(QStringLiteral("&")));
+        menuItem->setToolTip(0, menu->objectName());
+
+        if (parentItem == nullptr) {
+            ui->shortcutTreeWidget->addTopLevelItem(menuItem);
+        } else {
+            parentItem->addChild(menuItem);
+        }
+
+        menuItem->setExpanded(true);
+    } else {
+        delete menuItem;
+    }
 }
 
 /**
@@ -632,54 +680,63 @@ QKeySequenceWidget *SettingsDialog::findKeySequenceWidget(const QString &objectN
 void SettingsDialog::storeShortcutSettings() {
     SettingsService settings;
 
-    // loop all top level tree widget items (menus)
-    for (int i = 0; i < ui->shortcutTreeWidget->topLevelItemCount(); i++) {
-        QTreeWidgetItem *menuItem = ui->shortcutTreeWidget->topLevelItem(i);
+    // Collect all tree widget items recursively to find all action shortcut items,
+    // regardless of nesting depth (submenus can be multiple levels deep)
+    QList<QTreeWidgetItem *> allItems =
+        ui->shortcutTreeWidget->findItems(QString(), Qt::MatchContains | Qt::MatchRecursive);
 
-        // loop all tree widget items of the menu (action shortcuts)
-        for (int j = 0; j < menuItem->childCount(); j++) {
-            QTreeWidgetItem *shortcutItem = menuItem->child(j);
-            const auto keySequenceWidgets = ui->shortcutTreeWidget->itemWidget(shortcutItem, 1)
-                                                ->findChildren<QKeySequenceWidget *>();
+    for (QTreeWidgetItem *shortcutItem : allItems) {
+        // Action items store their object name in column 1's UserRole;
+        // menu items do not, so skip those
+        const QString actionObjectName = shortcutItem->data(1, Qt::UserRole).toString();
 
-            if (keySequenceWidgets.count() == 0) {
-                continue;
-            }
+        if (actionObjectName.isEmpty()) {
+            continue;
+        }
 
-            auto *keyWidget = keySequenceWidgets.at(0);
-            auto *globalShortcutKeyWidget = dynamic_cast<QKeySequenceWidget *>(
-                ui->shortcutTreeWidget->itemWidget(shortcutItem, 2));
+        auto *frameWidget = ui->shortcutTreeWidget->itemWidget(shortcutItem, 1);
 
-            if (keyWidget == nullptr || globalShortcutKeyWidget == nullptr) {
-                continue;
-            }
+        if (frameWidget == nullptr) {
+            continue;
+        }
 
-            const QString actionObjectName = shortcutItem->data(1, Qt::UserRole).toString();
+        const auto keySequenceWidgets = frameWidget->findChildren<QKeySequenceWidget *>();
 
-            // handle local shortcut
-            QKeySequence keySequence = keyWidget->keySequence();
-            QKeySequence defaultKeySequence = keyWidget->defaultKeySequence();
-            QString settingsKey = "Shortcuts/MainWindow-" + actionObjectName;
+        if (keySequenceWidgets.count() == 0) {
+            continue;
+        }
 
-            // remove or store the setting for the shortcut if it's not default
-            if (keySequence == defaultKeySequence) {
-                settings.remove(settingsKey);
-            } else {
-                // set new key sequence (can also be empty if no key sequence
-                // should be used)
-                settings.setValue(settingsKey, keySequence);
-            }
+        auto *keyWidget = keySequenceWidgets.at(0);
+        auto *globalShortcutKeyWidget =
+            dynamic_cast<QKeySequenceWidget *>(ui->shortcutTreeWidget->itemWidget(shortcutItem, 2));
 
-            // handle global shortcut
-            keySequence = globalShortcutKeyWidget->keySequence();
-            settingsKey = "GlobalShortcuts/MainWindow-" + actionObjectName;
+        if (keyWidget == nullptr || globalShortcutKeyWidget == nullptr) {
+            continue;
+        }
 
-            // remove or store the setting for the shortcut if it's not empty
-            if (keySequence.isEmpty()) {
-                settings.remove(settingsKey);
-            } else {
-                settings.setValue(settingsKey, keySequence);
-            }
+        // handle local shortcut
+        QKeySequence keySequence = keyWidget->keySequence();
+        QKeySequence defaultKeySequence = keyWidget->defaultKeySequence();
+        QString settingsKey = "Shortcuts/MainWindow-" + actionObjectName;
+
+        // remove or store the setting for the shortcut if it's not default
+        if (keySequence == defaultKeySequence) {
+            settings.remove(settingsKey);
+        } else {
+            // set new key sequence (can also be empty if no key sequence
+            // should be used)
+            settings.setValue(settingsKey, keySequence);
+        }
+
+        // handle global shortcut
+        keySequence = globalShortcutKeyWidget->keySequence();
+        settingsKey = "GlobalShortcuts/MainWindow-" + actionObjectName;
+
+        // remove or store the setting for the shortcut if it's not empty
+        if (keySequence.isEmpty()) {
+            settings.remove(settingsKey);
+        } else {
+            settings.setValue(settingsKey, keySequence);
         }
     }
 }

@@ -2,6 +2,9 @@
 
 ## 26.4.22
 
+- The **Shortcuts** settings action name tree now shows the full menu hierarchy,
+  with submenus rendered as nested tree nodes so all levels of the menu structure
+  are visible (for [#3583](https://github.com/pbek/QOwnNotes/issues/3583))
 - Added a new **Note text edit** submenu to the **Edit** main menu that exposes
   all note text edit context menu actions (link, block quote, list operations,
   Markdown operations, search text on web, find note, copy code block) so they
