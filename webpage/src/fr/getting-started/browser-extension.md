@@ -48,7 +48,7 @@ Si vous souhaitez un contrôle total sur les favoris de votre navigateur et **le
 
 By default, the browser extension will show all **links of the current note** in a popup when you click the QOwnNotes icon in your browser. Ces liens seront étiquettés `current`.
 
-Vous pouvez également **gérer vos favoris dans des notes** avec l'étiquette de note `bookmarks` (personnalisable dans les paramètres). Ces liens peuvent également avoir des étiquettes et une description qui seront affichées dans l'extension de navigateur.
+Vous pouvez également **gérer vos favoris dans des notes** avec le tag de note `bookmarks` (personnalisable dans les préférences). Ces liens peuvent également avoir des étiquettes et une description qui seront affichées dans l'extension de navigateur.
 
 Les nouveaux favoris sont stockés dans une note appelée `Bookmarks` (également personnalisable dans les paramètres).
 

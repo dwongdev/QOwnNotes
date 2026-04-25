@@ -39,7 +39,7 @@ sudo mv /tmp/qc /usr/local/bin/qc && \
 
 ![socket-server-token](/img/socket-server-token.png)
 
-Avant d'utiliser le gestionnaire de snippets de commandes, vous devez activer le _serveur Web socket _ (2) dans la section _Extension de navigateur / Snippets de commandes_ (1) dans les paramètres de QOwnNotes.
+Avant d'utiliser le gestionnaire de snippets de commandes, vous devez activer le _serveur Web socket _ (2) dans la section _Extension de navigateur / Snippets de commandes_ (1) dans les préférences de QOwnNotes.
 
 Vous devez ensuite afficher le jeton de sécurité (3) et le copier (4).
 
@@ -58,7 +58,7 @@ token = "votre_jeton_ici"
 ```
 
 ::: tip
-Dans les paramètres de QOwnNotes vous pouvez également définir quel tag devrait être utilisée pour rechercher des commandes dans les notes. Par défaut le tag `commands` est utilisé.
+Dans les préférences de QOwnNotes vous pouvez également définir quel tag devrait être utilisé pour rechercher des commandes dans les notes. Par défaut le tag `commands` est utilisé.
 :::
 
 ## Syntaxe des snippets

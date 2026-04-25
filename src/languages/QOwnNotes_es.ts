@@ -953,7 +953,7 @@
 </message>
 <message>
 <source>Note that disabling this will also disable the navigation panel!</source>
-<translation>Tenga en cuenta que deshabilitar esto también deshabilitará el panel de navegación.</translation>
+<translation>¡Tenga en cuenta que desactivar esto también desactivará el panel de navegación!</translation>
 </message>
 <message>
 <source>Enable markdown highlighting</source>
@@ -993,7 +993,7 @@
 </message>
 <message>
 <source>Disable cursor blinking</source>
-<translation>Deshabilitar parpadeo del cursor</translation>
+<translation>Desactivar parpadeo del cursor</translation>
 </message>
 <message>
 <source>Note-edit cursor width:</source>
@@ -1117,6 +1117,10 @@
 <message>
 <source>Please select the Evernote enex file you want to import:</source>
 <translation>Por favor, seleccione el archivo enex de Evernote que desea importar:</translation>
+</message>
+<message>
+<source>Import metadata as YAML front matter</source>
+<translation type="unfinished">Import metadata as YAML front matter</translation>
 </message>
 <message>
 <source>Number of imported notes</source>
@@ -1977,7 +1981,7 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 </message>
 <message>
 <source>The shortcut to create a new note asks for a headline</source>
-<translation>El atajo para crear una nueva nota solicita un título</translation>
+<translation>El atajo para crear una nueva nota necesita un título</translation>
 </message>
 <message>
 <source>Do this at your own risk!</source>
@@ -2001,7 +2005,7 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 </message>
 <message>
 <source>Use UNIX newline instead of native newline characters</source>
-<translation>Usar salto de línea UNIX en lugar de caracteres de salto de línea nativos</translation>
+<translation>Usar salto de línea de UNIX en lugar de caracteres de salto de línea nativos</translation>
 </message>
 <message>
 <source>Check this if you want to ignore all external modifications while you are editing the current note.</source>
@@ -2037,7 +2041,7 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 </message>
 <message>
 <source>Disable this if you want to launch the application without opening a note</source>
-<translation>Deshabilite esto si desea iniciar la aplicación sin abrir una nota</translation>
+<translation>Desactive esto si desea iniciar la aplicación sin abrir una nota</translation>
 </message>
 <message>
 <source>Open last accessed note at application startup</source>
@@ -2234,7 +2238,7 @@ Your notes will stay intact!</source>
 </message>
 <message>
 <source>Do you really want to reset the overrides of all message boxes?</source>
-<translation>¿Realmente desea restablecer las anulaciones de todos los cuadros de mensaje?</translation>
+<translation>¿Realmente desea restablecer las sobrescrituras de todos los cuadros de mensaje?</translation>
 </message>
 <message>
 <source>INI files</source>
@@ -2336,6 +2340,261 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <message>
 <source>Please select the path of your git executable</source>
 <translation>Seleccione la ruta de su ejecutable de Git</translation>
+</message>
+</context>
+<context>
+<name>HarperChecker</name>
+<message>
+<source>Harper is unavailable: %1</source>
+<translation type="unfinished">Harper is unavailable: %1</translation>
+</message>
+</context>
+<context>
+<name>HarperClient</name>
+<message>
+<source>Harper request timed out</source>
+<translation type="unfinished">Harper request timed out</translation>
+</message>
+<message>
+<source>Harper service stopped unexpectedly</source>
+<translation type="unfinished">Harper service stopped unexpectedly</translation>
+</message>
+<message>
+<source>Harper transport is not configured</source>
+<translation type="unfinished">Harper transport is not configured</translation>
+</message>
+<message>
+<source>Waiting before retrying the Harper TCP connection</source>
+<translation type="unfinished">Waiting before retrying the Harper TCP connection</translation>
+</message>
+<message>
+<source>Unsupported Harper request: %1</source>
+<translation type="unfinished">Unsupported Harper request: %1</translation>
+</message>
+<message>
+<source>Harper initialization failed</source>
+<translation type="unfinished">Harper initialization failed</translation>
+</message>
+</context>
+<context>
+<name>HarperSettingsWidget</name>
+<message>
+<source>Harper</source>
+<translation type="unfinished">Harper</translation>
+</message>
+<message>
+<source>Enable offline grammar and style checking with Harper</source>
+<translation type="unfinished">Enable offline grammar and style checking with Harper</translation>
+</message>
+<message>
+<source>Transport:</source>
+<translation type="unfinished">Transport:</translation>
+</message>
+<message>
+<source>Connection:</source>
+<translation type="unfinished">Connection:</translation>
+</message>
+<message>
+<source>Command / binary path:</source>
+<translation type="unfinished">Command / binary path:</translation>
+</message>
+<message>
+<source>Browse</source>
+<translation type="unfinished">Browse</translation>
+</message>
+<message>
+<source>Auto-detect</source>
+<translation type="unfinished">Auto-detect</translation>
+</message>
+<message>
+<source>Server address:</source>
+<translation type="unfinished">Server address:</translation>
+</message>
+<message>
+<source>Port:</source>
+<translation type="unfinished">Port:</translation>
+</message>
+<message>
+<source>Dialect:</source>
+<translation type="unfinished">Dialect:</translation>
+</message>
+<message>
+<source>Check delay:</source>
+<translation type="unfinished">Check delay:</translation>
+</message>
+<message>
+<source> ms</source>
+<translation type="unfinished"> ms</translation>
+</message>
+<message>
+<source>Linters:</source>
+<translation type="unfinished">Linters:</translation>
+</message>
+<message>
+<source>Spell Check</source>
+<translation type="unfinished">Spell Check</translation>
+</message>
+<message>
+<source>Sentence Capitalization</source>
+<translation type="unfinished">Sentence Capitalization</translation>
+</message>
+<message>
+<source>Repeated Words</source>
+<translation type="unfinished">Repeated Words</translation>
+</message>
+<message>
+<source>Long Sentences</source>
+<translation type="unfinished">Long Sentences</translation>
+</message>
+<message>
+<source>An vs A</source>
+<translation type="unfinished">An vs A</translation>
+</message>
+<message>
+<source>Unclosed Quotes</source>
+<translation type="unfinished">Unclosed Quotes</translation>
+</message>
+<message>
+<source>Correct Number Suffix</source>
+<translation type="unfinished">Correct Number Suffix</translation>
+</message>
+<message>
+<source>Spaces</source>
+<translation type="unfinished">Spaces</translation>
+</message>
+<message>
+<source>Quote Spacing</source>
+<translation type="unfinished">Quote Spacing</translation>
+</message>
+<message>
+<source>No French Spaces</source>
+<translation type="unfinished">No French Spaces</translation>
+</message>
+<message>
+<source>Wrong Apostrophe</source>
+<translation type="unfinished">Wrong Apostrophe</translation>
+</message>
+<message>
+<source>Not tested yet.</source>
+<translation type="unfinished">Not tested yet.</translation>
+</message>
+<message>
+<source>Spelled Numbers</source>
+<translation type="unfinished">Spelled Numbers</translation>
+</message>
+<message>
+<source>Ignored:</source>
+<translation type="unfinished">Ignored:</translation>
+</message>
+<message>
+<source>Reset ignored rules</source>
+<translation type="unfinished">Reset ignored rules</translation>
+</message>
+<message>
+<source>Reset ignored words</source>
+<translation type="unfinished">Reset ignored words</translation>
+</message>
+<message>
+<source>Status:</source>
+<translation type="unfinished">Status:</translation>
+</message>
+<message>
+<source>Test Connection</source>
+<translation type="unfinished">Test Connection</translation>
+</message>
+<message>
+<source>Stdio (recommended)</source>
+<translation type="unfinished">Stdio (recommended)</translation>
+</message>
+<message>
+<source>TCP</source>
+<translation type="unfinished">TCP</translation>
+</message>
+<message>
+<source>American</source>
+<translation type="unfinished">American</translation>
+</message>
+<message>
+<source>British</source>
+<translation type="unfinished">British</translation>
+</message>
+<message>
+<source>Australian</source>
+<translation type="unfinished">Australian</translation>
+</message>
+<message>
+<source>Canadian</source>
+<translation type="unfinished">Canadian</translation>
+</message>
+<message>
+<source>Indian</source>
+<translation type="unfinished">Indian</translation>
+</message>
+<message>
+<source>Harper support is not available in this build.</source>
+<translation type="unfinished">Harper support is not available in this build.</translation>
+</message>
+<message>
+<source>harper-ls was not found.</source>
+<translation type="unfinished">harper-ls was not found.</translation>
+</message>
+<message>
+<source>Found Harper at %1</source>
+<translation type="unfinished">Found Harper at %1</translation>
+</message>
+<message>
+<source>Found Harper %1 at %2</source>
+<translation type="unfinished">Found Harper %1 at %2</translation>
+</message>
+<message>
+<source>TCP target %1:%2</source>
+<translation type="unfinished">TCP target %1:%2</translation>
+</message>
+<message>
+<source>Select Harper binary</source>
+<translation type="unfinished">Select Harper binary</translation>
+</message>
+<message>
+<source>Could not find harper-ls in PATH.</source>
+<translation type="unfinished">Could not find harper-ls in PATH.</translation>
+</message>
+<message>
+<source>Harper connection successful.</source>
+<translation type="unfinished">Harper connection successful.</translation>
+</message>
+<message>
+<source>Harper connection failed: %1</source>
+<translation type="unfinished">Harper connection failed: %1</translation>
+</message>
+<message>
+<source>There are no ignored rules to reset.</source>
+<translation type="unfinished">There are no ignored rules to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored rule(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored rules have been reset.</source>
+<translation type="unfinished">All ignored rules have been reset.</translation>
+</message>
+<message>
+<source>There are no ignored words to reset.</source>
+<translation type="unfinished">There are no ignored words to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored word(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored word(s)?</numerusform>
+<numerusform>Reset %n ignored word(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored words have been reset.</source>
+<translation type="unfinished">All ignored words have been reset.</translation>
 </message>
 </context>
 <context>
@@ -2773,7 +3032,7 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 </message>
 <message>
 <source>Override interface font size</source>
-<translation>Anular el tamaño de fuente de la interfaz</translation>
+<translation>Sobrescribir tamaño de fuente de interfaz</translation>
 </message>
 <message>
 <source>Interface font size:</source>
@@ -2781,7 +3040,7 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 </message>
 <message>
 <source>Override interface scaling factor</source>
-<translation>Anular el factor de escala de la interfaz</translation>
+<translation>Sobrescribir el factor de escala de la interfaz</translation>
 </message>
 <message>
 <source>Interface scaling factor:</source>
@@ -2793,7 +3052,7 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 </message>
 <message>
 <source>Show note path</source>
-<translation>Mostrar ruta de la nota</translation>
+<translation>Mostrar ruta de nota</translation>
 </message>
 <message>
 <source>Only show relative note path</source>
@@ -2905,7 +3164,7 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <name>LanguageToolClient</name>
 <message>
 <source>Invalid LanguageTool server URL</source>
-<translation>URL del servidor LanguageTool no válida</translation>
+<translation>URL del servidor de LanguageTool no válida</translation>
 </message>
 </context>
 <context>
@@ -2976,7 +3235,7 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 </message>
 <message>
 <source>Reset all ignored LanguageTool rules so they are checked again</source>
-<translation>Restablecer todas las reglas de LanguageTool ignoradas para que se comprueben nuevamente</translation>
+<translation>Restablece todas las reglas de LanguageTool ignoradas para que se comprueben nuevamente</translation>
 </message>
 <message>
 <source>Reset ignored rules</source>
@@ -2984,7 +3243,7 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 </message>
 <message>
 <source>Reset all ignored words so they are checked by LanguageTool again</source>
-<translation>Restablecer todas las palabras ignoradas para que sean comprobadas por LanguageTool nuevamente</translation>
+<translation>Restablece todas las palabras ignoradas para que sean comprobadas por LanguageTool nuevamente</translation>
 </message>
 <message>
 <source>Reset ignored words</source>
@@ -3009,8 +3268,8 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <message numerus="yes">
 <source>Reset %n ignored rule(s)?</source>
 <translation>
-<numerusform>Restablecer %n regla ignorada?</numerusform>
-<numerusform>Restablecer %n reglas ignoradas?</numerusform>
+<numerusform>¿Restablecer %n regla ignorada?</numerusform>
+<numerusform>¿Restablecer %n reglas ignoradas?</numerusform>
 </translation>
 </message>
 <message>
@@ -3024,8 +3283,8 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <message numerus="yes">
 <source>Reset %n ignored word(s)?</source>
 <translation>
-<numerusform>Restablecer %n palabra ignorada?</numerusform>
-<numerusform>Restablecer %n palabras ignoradas?</numerusform>
+<numerusform>¿Restablecer %n palabra ignorada?</numerusform>
+<numerusform>¿Restablecer %n palabras ignoradas?</numerusform>
 </translation>
 </message>
 <message>
@@ -3233,6 +3492,10 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <message>
 <source>Folder</source>
 <translation>Carpeta</translation>
+</message>
+<message>
+<source>Tags</source>
+<translation type="unfinished">Tags</translation>
 </message>
 <message>
 <source>Modified</source>
@@ -3662,6 +3925,10 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <translation>Formato</translation>
 </message>
 <message>
+<source>Select</source>
+<translation type="unfinished">Select</translation>
+</message>
+<message>
 <source>Extra</source>
 <translation>Extra</translation>
 </message>
@@ -3688,6 +3955,18 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <message>
 <source>AI model</source>
 <translation>Modelo de IA</translation>
+</message>
+<message>
+<source>Note text edit</source>
+<translation type="unfinished">Note text edit</translation>
+</message>
+<message>
+<source>List operations</source>
+<translation type="unfinished">List operations</translation>
+</message>
+<message>
+<source>Markdown operations</source>
+<translation type="unfinished">Markdown operations</translation>
 </message>
 <message>
 <source>To&amp;do</source>
@@ -3741,6 +4020,14 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <message>
 <source>Show remote trash</source>
 <translation>Mostrar papelera remota</translation>
+</message>
+<message>
+<source>Select enclosed &amp;text</source>
+<translation type="unfinished">Select enclosed &amp;text</translation>
+</message>
+<message>
+<source>Select the innermost text around the current cursor position</source>
+<translation type="unfinished">Select the innermost text around the current cursor position</translation>
 </message>
 <message>
 <source>Insert text &amp;link</source>
@@ -4128,6 +4415,10 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <translation>Verificar gramática con LanguageTool</translation>
 </message>
 <message>
+<source>Check grammar with Harper</source>
+<translation type="unfinished">Check grammar with Harper</translation>
+</message>
+<message>
 <source>Custom</source>
 <translation>Personalizado</translation>
 </message>
@@ -4230,6 +4521,46 @@ Simplemente compruebe si se producen conflictos de sincronización y, en ese cas
 <message>
 <source>Send clipboard as text</source>
 <translation>Enviar portapapeles como texto</translation>
+</message>
+<message>
+<source>Toggle checkbox(es)</source>
+<translation type="unfinished">Toggle checkbox(es)</translation>
+</message>
+<message>
+<source>1. 2. 3. list</source>
+<translation type="unfinished">1. 2. 3. list</translation>
+</message>
+<message>
+<source>a. b. c. list</source>
+<translation type="unfinished">a. b. c. list</translation>
+</message>
+<message>
+<source>- list</source>
+<translation type="unfinished">- list</translation>
+</message>
+<message>
+<source>Create checkbox list</source>
+<translation type="unfinished">Create checkbox list</translation>
+</message>
+<message>
+<source>Clear list formatting</source>
+<translation type="unfinished">Clear list formatting</translation>
+</message>
+<message>
+<source>Order checkboxes</source>
+<translation type="unfinished">Order checkboxes</translation>
+</message>
+<message>
+<source>Increase heading depth</source>
+<translation type="unfinished">Increase heading depth</translation>
+</message>
+<message>
+<source>Decrease heading depth</source>
+<translation type="unfinished">Decrease heading depth</translation>
+</message>
+<message>
+<source>Copy code block</source>
+<translation type="unfinished">Copy code block</translation>
 </message>
 <message>
 <source>Use &amp;vertical preview layout</source>
@@ -4410,7 +4741,7 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Todo lists disabled!</source>
-<translation>¡Listas de tareas deshabilitadas!</translation>
+<translation>¡Se han desactivado las listas de tareas!</translation>
 </message>
 <message>
 <source>You have disabled the todo lists.&lt;br /&gt;Please check your &lt;strong&gt;Todo&lt;/strong&gt; configuration in the settings!</source>
@@ -4585,11 +4916,11 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>AI toolbar disabled</source>
-<translation>Barra de herramientas de IA deshabilitada</translation>
+<translation>Barra de herramientas de IA desactivada</translation>
 </message>
 <message>
 <source>An AI backend is configured, but the AI toolbar is currently disabled. Do you want to turn it on?</source>
-<translation>Hay un backend de IA configurado, pero la barra de herramientas de IA está actualmente deshabilitada. ¿Desea activarla?</translation>
+<translation>Hay un backend de IA configurado, pero la barra de herramientas de IA está actualmente deactivada. ¿Desea activarla?</translation>
 </message>
 <message numerus="yes">
 <source>Skipped copying of %n note(s) (no Markdown or text file or not readable)</source>
@@ -4783,6 +5114,14 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 <message>
 <source>Switch to note folder</source>
 <translation>Cambiar a carpeta de notas</translation>
+</message>
+<message>
+<source>Could not switch note folder</source>
+<translation type="unfinished">Could not switch note folder</translation>
+</message>
+<message>
+<source>Modified notes could not be written to disk. Please resolve the problem and try switching note folders again.</source>
+<translation type="unfinished">Modified notes could not be written to disk. Please resolve the problem and try switching note folders again.</translation>
 </message>
 <message>
 <source>Toolbar could not be loaded without name</source>
@@ -5067,7 +5406,7 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Disable tracking of usage data</source>
-<translation>Deshabilitar seguimiento de datos de uso</translation>
+<translation>Desactivar seguimiento de datos de uso</translation>
 </message>
 <message>
 <source>This data includes anonymous information about what features of the app are used.</source>
@@ -5087,7 +5426,7 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Disable heartbeat</source>
-<translation>Deshabilitar latido</translation>
+<translation>Desactivar latido</translation>
 </message>
 <message>
 <source>hostname of proxy server</source>
@@ -5111,11 +5450,11 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Disable usage tracking</source>
-<translation>Deshabilitar seguimiento de uso</translation>
+<translation>Desactivar seguimiento de uso</translation>
 </message>
 <message>
 <source>Anonymous usage data helps to decide what parts of QOwnNotes to improve next and to find and fix bugs.&lt;br /&gt;Please disable it only if you really can't live with it.&lt;br /&gt;&lt;br /&gt;Really disable usage tracking?</source>
-<translation>Los datos de uso anónimos ayudan a decidir qué partes de QOwnNotes mejorar a continuación y a encontrar y corregir errores.&lt;br /&gt;Por favor desactívelo solo si realmente no puede vivir con ello.&lt;br /&gt;&lt;br /&gt;¿Realmente deshabilitar el seguimiento de uso?</translation>
+<translation>Los datos de uso anónimos ayudan a decidir qué partes de QOwnNotes mejorar a continuación y a encontrar y corregir errores.&lt;br /&gt;Por favor desactívelo solo si realmente no puede vivir con ello.&lt;br /&gt;&lt;br /&gt;¿Realmente desactivar el seguimiento de uso?</translation>
 </message>
 </context>
 <context>
@@ -5532,7 +5871,7 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Use git to keep a local history of your notes</source>
-<translation>Usar git para mantener un historial local de sus notas</translation>
+<translation>Use Git para mantener un historial local de sus notas</translation>
 </message>
 <message>
 <source>Use as active note folder</source>
@@ -5613,7 +5952,7 @@ Si la papelera está habilitada en su servidor ownCloud debería poder restaurar
 </message>
 <message>
 <source>Loading folders in '%1' from server</source>
-<translation>Cargando carpetas en '%1' desde el servidor</translation>
+<translation>Cargando carpetas en "%1" desde el servidor</translation>
 </message>
 </context>
 <context>
@@ -6370,7 +6709,7 @@ Do you want to delete those files as well?</source>
 </message>
 <message>
 <source>Select a connection to edit</source>
-<translation>Seleccionar una conexión para editar</translation>
+<translation>Seleccione una conexión para editar</translation>
 </message>
 <message>
 <source>Add connection</source>
@@ -6386,7 +6725,7 @@ Do you want to delete those files as well?</source>
 </message>
 <message>
 <source>ownCloud server url:</source>
-<translation>URL del servidor ownCloud:</translation>
+<translation>URL del servidor de ownCloud:</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the URL of your ownCloud server, for example: &lt;span style=" font-style:italic;"&gt;https://cloud.yourserver.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -6446,7 +6785,7 @@ Do you want to delete those files as well?</source>
 </message>
 <message>
 <source>&amp;Connect to ownCloud server</source>
-<translation>&amp;Conectar al servidor ownCloud</translation>
+<translation>&amp;Conectar al servidor de ownCloud</translation>
 </message>
 <message>
 <source>Connection status</source>
@@ -6462,7 +6801,7 @@ Do you want to delete those files as well?</source>
 </message>
 <message>
 <source>ownCloud server detected</source>
-<translation>servidor ownCloud detectado</translation>
+<translation>servidor de ownCloud detectado</translation>
 </message>
 <message>
 <source>username and password correct</source>
@@ -6962,6 +7301,30 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <translation>Se detectó el modo claro</translation>
 </message>
 <message>
+<source>Your system switched to dark mode. Do you also want to turn on dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</source>
+<translation type="unfinished">Your system switched to dark mode. Do you also want to turn on dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</translation>
+</message>
+<message>
+<source>Your system seems to be in dark mode. Do you also want to turn on dark mode in QOwnNotes?</source>
+<translation type="unfinished">Your system seems to be in dark mode. Do you also want to turn on dark mode in QOwnNotes?</translation>
+</message>
+<message>
+<source>Your system switched to light mode. Do you also want to turn off dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</source>
+<translation type="unfinished">Your system switched to light mode. Do you also want to turn off dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</translation>
+</message>
+<message>
+<source>Your system seems to be in light mode. Do you also want to turn off dark mode in QOwnNotes?</source>
+<translation type="unfinished">Your system seems to be in light mode. Do you also want to turn off dark mode in QOwnNotes?</translation>
+</message>
+<message>
 <source>Double-click to unpin note from tab</source>
 <translation>Haga doble clic para desprender la nota de la pestaña</translation>
 </message>
@@ -7131,6 +7494,18 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <source>Dark</source>
 <translation>Oscuro</translation>
 </message>
+<message>
+<source>Harper command is empty</source>
+<translation type="unfinished">Harper command is empty</translation>
+</message>
+<message>
+<source>Failed to start Harper command: %1</source>
+<translation type="unfinished">Failed to start Harper command: %1</translation>
+</message>
+<message>
+<source>Failed to connect to Harper at %1:%2</source>
+<translation type="unfinished">Failed to connect to Harper at %1:%2</translation>
+</message>
 </context>
 <context>
 <name>QOwnNotesMarkdownTextEdit</name>
@@ -7176,32 +7551,8 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <translation>Operaciones de lista</translation>
 </message>
 <message>
-<source>Toggle checkbox(es)</source>
-<translation>Alternar casillas de verificación</translation>
-</message>
-<message>
-<source>1. 2. 3. list</source>
-<translation>Lista 1. 2. 3.</translation>
-</message>
-<message>
-<source>a. b. c. list</source>
-<translation>Lista a. b. c.</translation>
-</message>
-<message>
-<source>- list</source>
-<translation>Lista -</translation>
-</message>
-<message>
-<source>Create checkbox list</source>
-<translation>Crear lista de casillas de verificación</translation>
-</message>
-<message>
-<source>Clear list formatting</source>
-<translation>Borrar formato de lista</translation>
-</message>
-<message>
-<source>Order checkboxes</source>
-<translation>Ordenar casillas de verificación</translation>
+<source>Markdown operations</source>
+<translation type="unfinished">Markdown operations</translation>
 </message>
 <message>
 <source>Copy code block</source>
@@ -7264,6 +7615,10 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <translation>Exportar el texto seleccionado a PDF (vista previa)</translation>
 </message>
 <message>
+<source>Select</source>
+<translation type="unfinished">Select</translation>
+</message>
+<message>
 <source>Custom actions</source>
 <translation>Acciones personalizadas</translation>
 </message>
@@ -7302,6 +7657,10 @@ Haga clic en "Cancelar" para descartar tus cambios y conservar la versión exter
 <message>
 <source>Ignore word "%1"</source>
 <translation>Ignorar palabra "%1"</translation>
+</message>
+<message>
+<source>Harper</source>
+<translation type="unfinished">Harper</translation>
 </message>
 <message>
 <source>Markdown LSP server connected</source>
@@ -7707,7 +8066,7 @@ Do you want to install it anyway?</source>
 </message>
 <message>
 <source>If you need access to a certain functionality in QOwnNotes please open an issue on the &lt;a href="%1"&gt; QOwnNotes issue page&lt;/a&gt;.</source>
-<translation>Si necesita acceso a cierta funcionalidad en QOwnNotes, abra un issue en la &lt;a href="%1"&gt; página de issues de QOwnNotes&lt;/a&gt;.</translation>
+<translation>Si necesita acceso a cierta funcionalidad en QOwnNotes, abra una incidencia en la &lt;a href="%1"&gt; página de incidencias de QOwnNotes&lt;/a&gt;.</translation>
 </message>
 <message>
 <source>Search script repository</source>
@@ -7824,6 +8183,10 @@ Do you want to install it anyway?</source>
 <message>
 <source>Interface</source>
 <translation>Interfaz</translation>
+</message>
+<message>
+<source>Harper</source>
+<translation type="unfinished">Harper</translation>
 </message>
 <message>
 <source>Shortcuts</source>
@@ -8935,7 +9298,7 @@ This cannot be undone!</source>
 </message>
 <message>
 <source>Other CalDAV server</source>
-<translation>Otro servidor CalDAV</translation>
+<translation>Otro servidor de CalDAV</translation>
 </message>
 <message>
 <source>For older versions of ownCloud where the default setting doesn't work</source>
@@ -8943,7 +9306,7 @@ This cannot be undone!</source>
 </message>
 <message>
 <source>Legacy ownCloud calendar</source>
-<translation>Calendario ownCloud heredado</translation>
+<translation>Calendario legado de ownCloud</translation>
 </message>
 <message>
 <source>For most current ownCloud and Nextcloud installations</source>
@@ -8951,11 +9314,11 @@ This cannot be undone!</source>
 </message>
 <message>
 <source>Default ownCloud calendar</source>
-<translation>Calendario ownCloud predeterminado</translation>
+<translation>Calendario predeterminado de ownCloud</translation>
 </message>
 <message>
 <source>CalDAV server settings</source>
-<translation>Configuración del servidor CalDAV</translation>
+<translation>Configuración del servidor de CalDAV</translation>
 </message>
 <message>
 <source>Calendar base url:</source>
@@ -9518,7 +9881,7 @@ This cannot be undone!</source>
 <name>WebCompanionSettingsWidget</name>
 <message>
 <source>Command snippets</source>
-<translation>Fragmentos de comandos</translation>
+<translation>Fragmentos de órdenes</translation>
 </message>
 <message>
 <source>Notes with this tag will be used for fetching bookmarks</source>
@@ -9590,7 +9953,7 @@ This cannot be undone!</source>
 </message>
 <message>
 <source>Bookmark suggestion API</source>
-<translation>API de sugerencia de marcadores</translation>
+<translation>API de sugerencias de marcadores</translation>
 </message>
 <message>
 <source>Enable Homepage-compatible bookmark suggestions API</source>
@@ -9634,7 +9997,7 @@ This cannot be undone!</source>
 </message>
 <message>
 <source>Download the &lt;a href="%1"&gt;Command-line snippet manager&lt;/a&gt; to execute command snippets stored in notes in QOwnNotes from the command line.</source>
-<translation>Descargue el &lt;a href="%1"&gt;Administrador de fragmentos de línea de comandos&lt;/a&gt; para ejecutar fragmentos de comandos almacenados en notas en QOwnNotes desde la línea de comandos.</translation>
+<translation>Descargue el &lt;a href="%1"&gt;Gestor de fragmentos de órdenes de terminal&lt;/a&gt; para ejecutar fragmentos de órdenes almacenadas en notas en QOwnNotes desde la línea de comandos.</translation>
 </message>
 </context>
 <context>

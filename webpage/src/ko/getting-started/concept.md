@@ -13,35 +13,44 @@
 ```mermaid
 graph TB
     subgraph Your computer
-        qon((QOwnNotes))-->md{{"마크다운 파일"}}
-        sync("Nextcloud 동기화")-->md
-        qon-comp("브라우저 확장")-->qon
-        qc("명령줄 스니펫 관리자")-->qon
+        qon((QOwnNotes))-->md{{"Markdown files"}}
+        sync("Nextcloud Sync")-->md
+        qon-comp("Browser extension")-->qon
+        qc("Command-line snippet manager")-->qon
+        homepage("Homepage dashboard")-->qon
     end
     subgraph Your Nextcloud server
-        qon-api("QOwnNotesApi")-->ncs[("Nextcloud 서버")]
-        nc-notes-app("Nextcloud 노트")-->ncs
+        qon-api("QOwnNotesApi")-->ncs[("Nextcloud server")]
+        nc-notes-app("Nextcloud Notes")-->ncs
+        nc-deck-app("Nextcloud Deck")-->ncs
     end
 
-    nc-notes-mob("Nextcloud 노트 모바일 앱")-->nc-notes-app
-    qon-web-app("QOwnNotes 웹 응용 프로그램")-->qon
+    nc-notes-mob("Nextcloud Notes mobile app")-->nc-notes-app
+    qon-web-app("QOwnNotes web application")-->qon
     qon-->qon-api
     qon-->ncs
+    qon-->nc-deck-app
     sync-->ncs
+    qon-.->lt("LanguageTool service")
+    qon-.->harper("Harper service")
     qon-.->qon-web-api("api.qownnotes.org")
     qon-web-api-->github("GitHub")
 
     style qon fill:#d0d0ff,stroke:#333,stroke-width:4px
-    click qon "/getting-started/concept.html#qownnotes" "데스크톱 컴퓨터에서 노트를 관리하기 위한 QOwnNotes 데스크톱 응용 프로그램"
-    click md "/getting-started/concept.html#markdown-note-files" "노트 폴더의 마크다운, 미디어 및 첨부 파일"
-    click qon-comp "/getting-started/concept.html#qownnotes-browser-extension" "마크다운 파일 및 웹 클리퍼로 책갈피를 관리하기 위한 QOwnNotes 브라우저 확장명"
+    click qon "/getting-started/concept.html#qownnotes"데스크톱 컴퓨터에서 노트를 관리하기 위한 QOwnNotes 데스크톱 응용 프로그램"
+    click md "/getting-started/concept.html#markdown-note-files" "노트 폴더에 있는 마크다운, 미디어 및 첨부 파일"
+    click qon-comp "/getting-started/concept.html#qownnotes-browser-extension" "마크다운 파일과 웹 클리퍼에서 북마크를 관리하기 위한 QOwnNotes 브라우저 확장 프로그램"
     click qc "/getting-started/concept.html#qownnotes-command-line-snippet-manager" "QOwnNotes 명령줄 스니펫 관리자"
-    click sync "/getting-started/concept.html#nextcloud-desktop-sync-client" "노트를 서버와 동기화하는 Nextcloud 데스크톱 동기화 클라이언트"
-    click ncs "/getting-started/concept.html#nextcloud-server" "Nextcloud server to host your notes and other files"
-    click qon-api "/getting-started/concept.html#qownnotesapi-nextcloud-app" "서버 측 휴지통 및 노트 버전에 액세스하는 QOwnNotesAPI Nextcloud 앱"
+    click homepage "/getting-started/concept.html#homepage-dashboard" "QOwnNotes 북마크 추천을 사용한 홈페이지 대시보드"
+    click sync "/getting-started/concept.html#nextcloud-desktop-sync-client" "Nextcloud 데스크톱 동기화 클라이언트를 통해 노트를 서버에 동기화하기"
+    click ncs "/getting-started/concept.html#nextcloud-server" "노트 및 기타 파일을 호스팅할 Nextcloud 서버"
+    click qon-api "/getting-started/concept.html#qownnotesapi-nextcloud-app" "서버 측 휴지통 및 메모 버전에 액세스할 수 있는 QOwnNotesAPI Nextcloud 앱"
     click nc-notes-app "/getting-started/concept.html#nextcloud-notes-server-app" "웹에서 노트를 관리하는 Nextcloud 노트 서버 앱"
-    click nc-notes-mob "/getting-started/concept.html#nextcloud-notes-mobile-app" "휴대 전화에서 노트를 관리하는 Nextcloud 노트 모바일 앱"
-    click qon-web-app "/getting-started/concept.html#qownnotes-web-app" "휴대폰에서 사진을 보내는 QOwnNotes 웹 앱"
+    click nc-notes-mob "/getting-started/concept.html#nextcloud-notes-mobile-app" "휴대폰에서 노트를 관리할 수 있는 Nextcloud 노트 모바일 앱"
+    click nc-deck-app "/getting-started/concept.html#nextcloud-deck-server-app" "웹에서 알림 및 할 일 목록을 관리하는 Nextcloud 덱 서버 앱"
+    click qon-web-app "/getting-started/concept.html#qownnotes-web-app" "휴대폰에서 사진을 보낼 수 있는 QOwnNotes 웹 앱"
+    click lt "/editor/languagetool.html" "문법 및 스타일 검사를 위한 선택적 언어 도구 서버"
+    click harper "/editor/harper.html" "오프라인 문법 및 스타일 검사를 위한 선택적 하퍼 서비스"
     click qon-web-api "/getting-started/concept.html#api-qownnotes-org"
 ```
 
@@ -119,6 +128,19 @@ QOwnNotes는 로컬 또는 원격 [언어 도구](https://languagetool.org/) 서
 
 ::: tip
 자세한 내용은 [언어 도구](../editor/languagetool.md)을 참조하시기 바랍니다.
+:::
+
+## 하퍼 서비스
+
+QOwnNotes는 편집기에서 로컬 [하퍼](https://writewithharper.com/) 서비스를 사용하여 **오프라인 문법 및 스타일 확인**을 수행할 수 있습니다.
+
+- **옵션**이며 기존 맟춤법 검사기 지원과 함께 작동합니다
+- `설정 -> 편집기 -> 허퍼`에서 이 기능을 활성화한 다음, **전송 방식**, `harper-ls` 명령 또는 TCP 대상, **방언**, 그리고 사용하려는 린터를 구성하세요
+- **편집** 메뉴에서 `하퍼 문법 확인`으로 빠르게 전환할 수도 있습니다
+- 탐지된 문제에 대한 제안 및 무시 동작은 편집기 컨텍스트 메뉴에서 확인할 수 있습니다
+
+::: tip
+자세한 내용은 [하퍼](../editor/harper.md)을 방문해 주세요.
 :::
 
 ## Nextcloud 데스크톱 동기화 클라이언트

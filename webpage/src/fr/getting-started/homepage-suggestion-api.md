@@ -1,33 +1,31 @@
-# Homepage suggestion API
+# API de suggestion Homepage
 
-QOwnNotes can expose a local HTTP endpoint for [Homepage](https://github.com/gethomepage/homepage) `suggestionUrl` support,
-backed by the same bookmark parsing/indexing used by the Web Companion data source.
+QOwnNotes peut ouvrir un point d’accès local HTTP pour le support du `suggestionUrl` de [Homepage](https://github.com/gethomepage/homepage),
+utilisant le même système d’analyse et d’indexage des signets utilié par le Web Companion.
 
-## Enable in QOwnNotes
+## L’activer dans QOwnNotes
 
-1. Open `Settings -> Browser extension / command snippets`.
-2. Enable `Enable socket server`.
-3. In `Bookmark suggestion API`, enable `Enable Homepage-compatible bookmark suggestions API` and set a port.
+1. Ouvrez `Préférences -> Extension de navigateur / snippets de commandes` ;
+2. Cochez `Activer le serveur de socket` ;
+3. Dans `API de suggestion de signets`, cochez `Activer l’API de suggestion de signets compatible avec Homepage` et choisissez un port.
 
-The service binds to `127.0.0.1` only.
+Le service est lié uniquement à `127.0.0.1`.
 
-## Endpoint
+## Point d’accès
 
 - `GET /suggest?q=home`
-- Optional: `limit` (default `10`, max `50`)
-- Optional: `token` (if you configured a security token in QOwnNotes)
+- Optionnel : `limit` (par défaut : `10`, maximum : `50`)
+- Optionnel : `token` (si vous avez configuré un jeton de sécurité dans QOwnNotes)
 
-If you use the custom Homepage assets from `docs/homepage/custom.js`, set `QON_TOKEN` to the same
-security token you configured in QOwnNotes. The script will then append `&token=...` when requesting
-suggestions.
+Si vous utilisez les ressources personnalisées de Homepage de `docs/homepage/custom.js`, `QON_TOKEN` doit être le même jeton de sécurité que celui que vous avez configuré dans QOwnNotes. Le script ajoutera alors `&token=...` à chaque requête de suggestions.
 
-Example response:
+Exemple de réponse :
 
 ```json
-["home", ["Homepage", "https://example.com/home", "Some Home Link"]]
+["home", ["Homepage", "https://example.com/home", "Un lien de page d’accueil"]]
 ```
 
-## Homepage config example
+## Exemple de configuration Homepage
 
 ```yaml
 search:
@@ -37,33 +35,33 @@ search:
   showSearchSuggestions: true
 ```
 
-If you protect the endpoint with a security token and use `custom.js`, keep `suggestionUrl` unchanged
-and set `QON_TOKEN` inside `custom.js` instead.
+Si vous protégez le point d’accès avec un jeton de sécurité et que vous utilisez `custom.js`, laissez `suggestionUrl` inchangé
+et configurez `QON_TOKEN` dans `custiom.js` à la place.
 
-## Which Homepage file to edit
+## Quel fichier Homepage modifier
 
-In a standard Homepage installation, add the `search` block in one of these files:
+Dans une installation Homepage standard, ajoutez le bloc `search` dans l’un de ces fichiers :
 
-- `settings.yaml` (global Homepage settings)
-- `settings.yml` (same as above, depending on your setup)
-- the file mounted into your container as `/app/config/settings.yaml`
+- `settings.yaml` (préférences Homepage globales)
+- `settings.yml` (idem que le précédent, dépend de votre configuration)
+- le fichier monté dans votre conteneur dans `/app/config/settings.yaml`
 
-If your Homepage deployment splits configuration across multiple files, edit the file that already contains your `search` provider settings.
+Si la configuration de votre installation Homepage est partagée entre plusieurs fichiers, modifiez le fichier qui contient déjà vos préférences `search`.
 
-## Custom Homepage assets
+## Ressources Homepage personalisées
 
-This repository also contains a ready-to-use Homepage customization example in:
+Le dépôt contient également une personnalisation Homepage prête à l’emploi dans :
 
-- [docs/homepage on GitHub](https://github.com/pbek/QOwnNotes/tree/main/docs/homepage)
+- [docs/homepage sur GitHub](https://github.com/pbek/QOwnNotes/tree/main/docs/homepage)
 
-Use these files when your Homepage deployment supports loading `custom.js` and `custom.css`.
+Utilisez ces fichiers lorsque votre installation Homepage supporte de charger `custom.js` et `custom.css`.
 
-If your Homepage runs on an external host (different machine / container than QOwnNotes),
-you need these files on that hosted Homepage instance so it can query your local QOwnNotes
-suggestion API and merge/display those suggestions in Homepage search.
+Si votre Homepage tourne sur un hôte externe (une machine ou un conteneur différent que celle/celui de QOwnNotes),
+il faudra placer ces fichiers sur votre instance hôte de Homepage pour permettre de faire des requêtes à votre API locale de suggestion QOwnNotes
+et de fusionner/afficher ces suggestions dans la recherche Homepage.
 
-When you use that setup with a QOwnNotes security token, make sure the same token is configured in
-`QON_TOKEN` inside `custom.js`.
+Lorsque vous utilisez cette configuration avec un jeton de sécurité QOwnNotes, assurez-vous que le même jeton est configuré dans
+`QON_TOKEN` dans `custom.js`.
 
-If you need network access beyond localhost, place a reverse proxy in front of the endpoint and restrict access
-(for example by firewall rules or allowlist), since bookmark data may contain sensitive URLs.
+Si vous avez besoin d’un accès au-delà de localhost, placez un proxy inversé devant votre point d’accès et restreignez l’accès
+(par exemple par des règles pare-feu ou une liste blanche), étant donné que les données des signets peuvent contenir des URL sensibles.

@@ -1,21 +1,21 @@
-# Paramètres de l'interface de ligne de commande
+# Préférences de l'interface en ligne de commande
 
-Les paramètres suivants peuvent être utilisés dans l'interface en ligne de commande (CLI) pour contrôler le comportement de l'application :
+Les préférences suivantes peuvent être utilisées dans l'interface en ligne de commande (CLI) pour contrôler le comportement de l'application :
 
-| Paramètre                    | La description                                                                                                                                                |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--help`                     | Affiche l'écran d'aide                                                                                                                                        |
-| `--version`                  | Affiche le numéro de version de l'application                                                                                                                 |
-| `--portable`                 | Exécute l'application en mode portable                                                                                                                        |
-| `--clear-settings`           | Efface les paramétrages et exécute l'application                                                                                                              |
-| `--dump-settings`            | Affiche l'ensemble des paramètres ainsi que d'autres informations à propos de l'application et de l'environnement en MarkDown Github puis ferme l'application |
-| `--session <name>`     | Exécute l'application dans un contexte de paramètres et de fichiers internes différent                                                                        |
-| `--allow-multiple-instances` | Autorise l'exécution simultanée de plusieurs instances de QOwnNotes, même si cela est interdit dans les paramètres                                            |
-| `--action <name>`      | Déclenche une action de menu après le démarrage de l'application (voir ci-dessous)                                                                            |
-| `--completion <shell>` | Generate shell completion code. Supports `fish`, `bash`.                                                                                                      |
+| Paramètre                    | La description                                                                                                                                                 |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--help`                     | Affiche l'écran d'aide                                                                                                                                         |
+| `--version`                  | Affiche le numéro de version de l'application                                                                                                                  |
+| `--portable`                 | Exécute l'application en mode portable                                                                                                                         |
+| `--clear-settings`           | Efface les paramétrages et exécute l'application                                                                                                               |
+| `--dump-settings`            | Affiche l'ensemble des préférences ainsi que d'autres informations à propos de l'application et de l'environnement en Markdown GitHub puis ferme l'application |
+| `--session <name>`     | Exécute l’application dans un contexte différent pour les préférences et fichiers internes                                                                     |
+| `--allow-multiple-instances` | Autorise le démarrage de plusieurs instances de QOwnNotes même si l'option est désactivée dans les préférences                                                 |
+| `--action <name>`      | Déclenche une action de menu après le démarrage de l'application (voir ci-dessous)                                                                             |
+| `--completion <shell>` | Generate shell completion code. Supports `fish`, `bash`.                                                                                                       |
 
 ::: tip
-Si vous rencontrez des problèmes avec votre installation de QOwnNotes, vous pouvez démarrer l'application avec de nouveaux paramètres sans perdre vos paramètres actuels en utilisant le paramètre `--session`.
+Si vous rencontrez des problèmes avec votre installation de QOwnNotes, vous pouvez démarrer l'application avec de nouvelles préférences sans perdre vos préférences actuelles en utilisant le paramètre `--session`.
 
 ```bash
 QOwnNotes --session test

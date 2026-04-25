@@ -72,7 +72,7 @@
 </message>
 <message>
 <source>API settings</source>
-<translation>Paramètres d’API</translation>
+<translation>Préférences d’API</translation>
 </message>
 <message>
 <source>Time the application will wait for a response from the server before timing out and returning an error message.</source>
@@ -347,7 +347,7 @@
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can &lt;span style=" font-weight:600;"&gt;copy and paste&lt;/span&gt; this text (or parts of this text) in an &lt;span style=" font-weight:600;"&gt;issue&lt;/span&gt; on the &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;QOwnNotes issues page&lt;/a&gt; if you have &lt;span style=" font-weight:600;"&gt;questions or troubles&lt;/span&gt; with QOwnNotes. Data that is too sensitive is hidden in this information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vous pouvez &lt;span style=" font-weight:600;"&gt;copier et coller&lt;/span&gt; tout ou partie de ce texte dans une &lt;span style=" font-weight:600;"&gt;« issue »&lt;/span&gt; sur la &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;page des problèmes de QOwnNotes&lt;/a&gt; si vous avez des &lt;span style=" font-weight:600;"&gt;questions ou des problèmes&lt;/span&gt; avec QOwnNotes. Les données sensibles sont cachées dans ces information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vous pouvez &lt;span style=" font-weight:600;"&gt;copier et coller&lt;/span&gt; tout ou partie de ce texte dans un &lt;span style=" font-weight:600;"&gt;ticket&lt;/span&gt; sur la &lt;a href="https://github.com/pbek/QOwnNotes/issues"&gt;page des issues de QOwnNotes&lt;/a&gt; si vous avez des &lt;span style=" font-weight:600;"&gt;questions ou des problèmes&lt;/span&gt; avec QOwnNotes. Les données sensibles sont cachées dans ces information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The best way to post issues is to use the issue assistant by pressing the &lt;span style=" font-weight:600;"&gt;Open issue assistant&lt;/span&gt; button on the bottom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1119,6 +1119,10 @@
 <translation>Sélectionner le fichier enex Evernote à importer :</translation>
 </message>
 <message>
+<source>Import metadata as YAML front matter</source>
+<translation>Importer les métadonnées vers un en-tête YAML</translation>
+</message>
+<message>
 <source>Number of imported notes</source>
 <translation>Nombre de notes importées</translation>
 </message>
@@ -1668,9 +1672,9 @@
 </message>
 <message numerus="yes">
 <source>The %1 &lt;strong&gt;%2&lt;/strong&gt; is used in &lt;strong&gt;%n&lt;/strong&gt; note file(s). Would you like to refactor that filename everywhere? This will update &lt;strong&gt;%n&lt;/strong&gt; note file(s).</source>
-<translation type="unfinished">
-<numerusform>The %1 &lt;strong&gt;%2&lt;/strong&gt; is used in &lt;strong&gt;%n&lt;/strong&gt; note file(s). Would you like to refactor that filename everywhere? This will update &lt;strong&gt;%n&lt;/strong&gt; note file(s).</numerusform>
-<numerusform>The %1 &lt;strong&gt;%2&lt;/strong&gt; is used in &lt;strong&gt;%n&lt;/strong&gt; note file(s). Would you like to refactor that filename everywhere? This will update &lt;strong&gt;%n&lt;/strong&gt; note file(s).</numerusform>
+<translation>
+<numerusform>Le fichier &lt;strong&gt;%2&lt;/strong&gt; (%1) est utilisé dans &lt;strong&gt;%n&lt;/strong&gt; fichier de note. Souhaitez-vous mettre à jour ce nom de fichier partout ? Ce faisant, &lt;strong&gt;%n&lt;/strong&gt; note sera mise à jour.</numerusform>
+<numerusform>Le fichier &lt;strong&gt;%2&lt;/strong&gt; (%1) est utilisé dans &lt;strong&gt;%n&lt;/strong&gt; fichiers de notes. Souhaitez-vous mettre à jour ce nom de fichier partout ? Ce faisant, &lt;strong&gt;%n&lt;/strong&gt; notes seront mises à jour.</numerusform>
 </translation>
 </message>
 <message>
@@ -2142,7 +2146,7 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 </message>
 <message>
 <source>This button allows you to clear all settings, remove the local todo database and exit QOwnNotes.</source>
-<translation>Ce bouton permet de supprimer tous les paramètres, supprimer la base de donnée locale et quitter QOwnNotes.</translation>
+<translation>Ce bouton permet de supprimer toutes les préférences, supprimer la base de donnée locale et quitter QOwnNotes.</translation>
 </message>
 <message>
 <source>Clear app data and exit</source>
@@ -2150,15 +2154,15 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 </message>
 <message>
 <source>Settings</source>
-<translation>Paramètres</translation>
+<translation>Préférences</translation>
 </message>
 <message>
 <source>Import settings</source>
-<translation>Importer les paramètres</translation>
+<translation>Importer les préférences</translation>
 </message>
 <message>
 <source>Export settings</source>
-<translation>Exporter les paramètres</translation>
+<translation>Exporter les préférences</translation>
 </message>
 <message>
 <source>Database</source>
@@ -2242,7 +2246,7 @@ Vos notes resteront intactes !</translation>
 </message>
 <message>
 <source>Do you really want to import settings? Your current settings will get removed and not every setting may get restored, like the note folder settings and which scripts you were using. You also will need to adjust some settings, especially across platforms, but your notes will stay intact!</source>
-<translation>Voulez-vous vraiment importer des paramètres ? Vos paramètres actuels seront supprimés et tous les paramètres ne pourront pas forcément être restaurés, comme la configuration du dossier de notes et les scripts que vous utilisez. Vous devrez également ajuster quelques paramètres, particulièrement en cas de changement de plateforme, mais vos notes resteront intactes !</translation>
+<translation>Voulez-vous vraiment importer des préférences ? Vos préférences actuelles seront supprimées et toutes les préférences ne pourront pas forcément être restaurées, comme la configuration du dossier de notes et les scripts que vous utilisez. Vous devrez également ajuster quelques préférences, particulièrement en cas de changement de plateforme, mais vos notes resteront intactes !</translation>
 </message>
 <message>
 <source>The application will be restarted after the import.</source>
@@ -2336,6 +2340,261 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 <message>
 <source>Please select the path of your git executable</source>
 <translation>Veuillez sélectionner le chemin de votre exécutable git</translation>
+</message>
+</context>
+<context>
+<name>HarperChecker</name>
+<message>
+<source>Harper is unavailable: %1</source>
+<translation>Harper est indisponible : %1</translation>
+</message>
+</context>
+<context>
+<name>HarperClient</name>
+<message>
+<source>Harper request timed out</source>
+<translation>Temps d’attente dépassé pour la requête Harper</translation>
+</message>
+<message>
+<source>Harper service stopped unexpectedly</source>
+<translation>Le service Harper s’est arrêté de manière inattendue</translation>
+</message>
+<message>
+<source>Harper transport is not configured</source>
+<translation>Le protocole de transport de Harper n’est pas configuré</translation>
+</message>
+<message>
+<source>Waiting before retrying the Harper TCP connection</source>
+<translation>Attente avant de réessayer la connexion TCP à Harper</translation>
+</message>
+<message>
+<source>Unsupported Harper request: %1</source>
+<translation>Requête Harper non prise en charge : %1</translation>
+</message>
+<message>
+<source>Harper initialization failed</source>
+<translation>Échec de l’initialisation de Harper</translation>
+</message>
+</context>
+<context>
+<name>HarperSettingsWidget</name>
+<message>
+<source>Harper</source>
+<translation>Harper</translation>
+</message>
+<message>
+<source>Enable offline grammar and style checking with Harper</source>
+<translation>Activer les vérifications grammaticale et de style avec Harper (anglais uniquement)</translation>
+</message>
+<message>
+<source>Transport:</source>
+<translation>Protocole de transport :</translation>
+</message>
+<message>
+<source>Connection:</source>
+<translation>Connexion :</translation>
+</message>
+<message>
+<source>Command / binary path:</source>
+<translation>Commande / chemin vers le binaire :</translation>
+</message>
+<message>
+<source>Browse</source>
+<translation>Parcourir</translation>
+</message>
+<message>
+<source>Auto-detect</source>
+<translation>Détecter automatiquement</translation>
+</message>
+<message>
+<source>Server address:</source>
+<translation>Adresse du serveur :</translation>
+</message>
+<message>
+<source>Port:</source>
+<translation>Port :</translation>
+</message>
+<message>
+<source>Dialect:</source>
+<translation>Dialecte :</translation>
+</message>
+<message>
+<source>Check delay:</source>
+<translation>Délai de vérification :</translation>
+</message>
+<message>
+<source> ms</source>
+<translation> ms</translation>
+</message>
+<message>
+<source>Linters:</source>
+<translation type="unfinished">Linters:</translation>
+</message>
+<message>
+<source>Spell Check</source>
+<translation>Orthographe</translation>
+</message>
+<message>
+<source>Sentence Capitalization</source>
+<translation>Capitalisation des phrases</translation>
+</message>
+<message>
+<source>Repeated Words</source>
+<translation>Répétitions de mots</translation>
+</message>
+<message>
+<source>Long Sentences</source>
+<translation>Longues phrases</translation>
+</message>
+<message>
+<source>An vs A</source>
+<translation>An vs A</translation>
+</message>
+<message>
+<source>Unclosed Quotes</source>
+<translation>Guillemets non fermés</translation>
+</message>
+<message>
+<source>Correct Number Suffix</source>
+<translation>Suffixes de nombres corrects</translation>
+</message>
+<message>
+<source>Spaces</source>
+<translation>Espaces</translation>
+</message>
+<message>
+<source>Quote Spacing</source>
+<translation>Espacement des guillemets</translation>
+</message>
+<message>
+<source>No French Spaces</source>
+<translation>Pas d’espaces françaises</translation>
+</message>
+<message>
+<source>Wrong Apostrophe</source>
+<translation>Apostrophes incorrectes</translation>
+</message>
+<message>
+<source>Not tested yet.</source>
+<translation>Pas encore essayé.</translation>
+</message>
+<message>
+<source>Spelled Numbers</source>
+<translation>Nombres en toutes lettres</translation>
+</message>
+<message>
+<source>Ignored:</source>
+<translation>Règles et mots ignorés :</translation>
+</message>
+<message>
+<source>Reset ignored rules</source>
+<translation>Réinitialiser les règles ignorées</translation>
+</message>
+<message>
+<source>Reset ignored words</source>
+<translation>Réinitialiser les mots ignorés</translation>
+</message>
+<message>
+<source>Status:</source>
+<translation>Statut :</translation>
+</message>
+<message>
+<source>Test Connection</source>
+<translation>Tester la connexion</translation>
+</message>
+<message>
+<source>Stdio (recommended)</source>
+<translation>Stdio (recommendé)</translation>
+</message>
+<message>
+<source>TCP</source>
+<translation>TCP</translation>
+</message>
+<message>
+<source>American</source>
+<translation>États-unien</translation>
+</message>
+<message>
+<source>British</source>
+<translation>Britannique</translation>
+</message>
+<message>
+<source>Australian</source>
+<translation>Australien</translation>
+</message>
+<message>
+<source>Canadian</source>
+<translation>Canadien</translation>
+</message>
+<message>
+<source>Indian</source>
+<translation>Indien</translation>
+</message>
+<message>
+<source>Harper support is not available in this build.</source>
+<translation>Harper n’est pas pris en charge dans cette version.</translation>
+</message>
+<message>
+<source>harper-ls was not found.</source>
+<translation>harper-ls n’a pas été trouvé.</translation>
+</message>
+<message>
+<source>Found Harper at %1</source>
+<translation>Harper trouvé à l’emplacement %1</translation>
+</message>
+<message>
+<source>Found Harper %1 at %2</source>
+<translation>Harper %1 trouvé à l’emplacement %2</translation>
+</message>
+<message>
+<source>TCP target %1:%2</source>
+<translation>Cible TCP : %1:%2</translation>
+</message>
+<message>
+<source>Select Harper binary</source>
+<translation>Sélectionnez le binaire Harper</translation>
+</message>
+<message>
+<source>Could not find harper-ls in PATH.</source>
+<translation>Impossible de trouver harper-ls dans PATH.</translation>
+</message>
+<message>
+<source>Harper connection successful.</source>
+<translation>Connexion à Harper réussie.</translation>
+</message>
+<message>
+<source>Harper connection failed: %1</source>
+<translation>Échec de la connexion à Harper : %1</translation>
+</message>
+<message>
+<source>There are no ignored rules to reset.</source>
+<translation>Aucune règle ignorée à réinitialiser.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored rule(s)?</source>
+<translation>
+<numerusform>Réinitialiser %n règle ignorée ?</numerusform>
+<numerusform>Réinitialiser %n règles ignorées ?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored rules have been reset.</source>
+<translation>Toutes les règles ignorées ont été réinitialisées.</translation>
+</message>
+<message>
+<source>There are no ignored words to reset.</source>
+<translation>Aucun mot ignoré à réinitialiser.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored word(s)?</source>
+<translation>
+<numerusform>Réinitialiser %n mot ignoré ?</numerusform>
+<numerusform>Réinitialiser %n mots ignorés ?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored words have been reset.</source>
+<translation>Tous les mots ignorés ont été réinitialisés.</translation>
 </message>
 </context>
 <context>
@@ -3235,6 +3494,10 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 <translation>Dossier</translation>
 </message>
 <message>
+<source>Tags</source>
+<translation>Tags</translation>
+</message>
+<message>
 <source>Modified</source>
 <translation>Modifié</translation>
 </message>
@@ -3311,7 +3574,7 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 </message>
 <message>
 <source>Trashed</source>
-<translation>Supprimé(s)</translation>
+<translation>Supprimée le</translation>
 </message>
 <message>
 <source>Restore</source>
@@ -3331,7 +3594,7 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 </message>
 <message>
 <source>File will be restored to: %1</source>
-<translation>Le fichier sera restauré ici : %1</translation>
+<translation>Le fichier sera restauré vers : %1</translation>
 </message>
 <message>
 <source>File &lt;strong&gt;%1&lt;/strong&gt; isn't readable and can't be restored!</source>
@@ -3378,11 +3641,11 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 <name>LocalTrashSettingsWidget</name>
 <message>
 <source>Trash</source>
-<translation type="unfinished">Trash</translation>
+<translation>Corbeille</translation>
 </message>
 <message>
 <source>Local trash settings</source>
-<translation>Paramètres de la corbeille locale</translation>
+<translation>Préférences de la corbeille locale</translation>
 </message>
 <message>
 <source>You might run into sync troubles with older versions of ownCloud sync when going far below 10 sec.
@@ -3405,15 +3668,15 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 </message>
 <message>
 <source>No trashing</source>
-<translation type="unfinished">No trashing</translation>
+<translation>Pas de corbeille</translation>
 </message>
 <message>
 <source>System trash</source>
-<translation type="unfinished">System trash</translation>
+<translation>Corbeille du système</translation>
 </message>
 <message>
 <source>Local trash</source>
-<translation type="unfinished">Local trash</translation>
+<translation>Corbeille locale</translation>
 </message>
 <message>
 <source>Enable local trash to keep a copy of trashed notes</source>
@@ -3662,6 +3925,10 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 <translation>Format</translation>
 </message>
 <message>
+<source>Select</source>
+<translation>Sélectionner</translation>
+</message>
+<message>
 <source>Extra</source>
 <translation>Plus</translation>
 </message>
@@ -3688,6 +3955,18 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 <message>
 <source>AI model</source>
 <translation>Modèle d’IA</translation>
+</message>
+<message>
+<source>Note text edit</source>
+<translation type="unfinished">Note text edit</translation>
+</message>
+<message>
+<source>List operations</source>
+<translation>Opérations sur les listes</translation>
+</message>
+<message>
+<source>Markdown operations</source>
+<translation>Opérations sur le Markdown</translation>
 </message>
 <message>
 <source>To&amp;do</source>
@@ -3741,6 +4020,14 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 <message>
 <source>Show remote trash</source>
 <translation>Voir la corbeille distante</translation>
+</message>
+<message>
+<source>Select enclosed &amp;text</source>
+<translation>Sélectionner du texte situé entre des délimiteurs (parenthèses, crochets, accolades…)</translation>
+</message>
+<message>
+<source>Select the innermost text around the current cursor position</source>
+<translation>Sélectionne le texte le plus « à l’intérieur » autour de la position courante du curseur</translation>
 </message>
 <message>
 <source>Insert text &amp;link</source>
@@ -4101,7 +4388,7 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 </message>
 <message>
 <source>Import bookmarks from server</source>
-<translation>Importer des marque-pages depuis le serveur</translation>
+<translation>Importer des signets depuis le serveur</translation>
 </message>
 <message>
 <source>Toggle full-screen mode</source>
@@ -4126,6 +4413,10 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 <message>
 <source>Check grammar with LanguageTool</source>
 <translation>Vérifier la grammaire avec LanguageTool</translation>
+</message>
+<message>
+<source>Check grammar with Harper</source>
+<translation>Vérifier la grammaire avec Harper</translation>
 </message>
 <message>
 <source>Custom</source>
@@ -4230,6 +4521,46 @@ Vous pouvez tester vous-même et augmenter la valeur si vous avez des conflits d
 <message>
 <source>Send clipboard as text</source>
 <translation>Envoyer le presse-papiers en tant que texte</translation>
+</message>
+<message>
+<source>Toggle checkbox(es)</source>
+<translation>Cocher/décocher la/les case(s)</translation>
+</message>
+<message>
+<source>1. 2. 3. list</source>
+<translation>Liste 1. 2. 3.</translation>
+</message>
+<message>
+<source>a. b. c. list</source>
+<translation>Liste a. b. c.</translation>
+</message>
+<message>
+<source>- list</source>
+<translation>Liste -</translation>
+</message>
+<message>
+<source>Create checkbox list</source>
+<translation>Créer une liste de cases à cocher</translation>
+</message>
+<message>
+<source>Clear list formatting</source>
+<translation>Effacer le formattage de liste</translation>
+</message>
+<message>
+<source>Order checkboxes</source>
+<translation>Trier les cases à cocher</translation>
+</message>
+<message>
+<source>Increase heading depth</source>
+<translation>Augmenter la profondeur du titre</translation>
+</message>
+<message>
+<source>Decrease heading depth</source>
+<translation>Diminuer la profondeur du titre</translation>
+</message>
+<message>
+<source>Copy code block</source>
+<translation>Copier le bloc de code</translation>
 </message>
 <message>
 <source>Use &amp;vertical preview layout</source>
@@ -4414,7 +4745,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 </message>
 <message>
 <source>You have disabled the todo lists.&lt;br /&gt;Please check your &lt;strong&gt;Todo&lt;/strong&gt; configuration in the settings!</source>
-<translation>Vous avez désactivé les listes de tâches. &lt;br /&gt; Veuillez vérifier votre configuration &lt;strong&gt; Todo &lt;/strong&gt; dans les paramètres!</translation>
+<translation>Vous avez désactivé les listes de tâches.&lt;br /&gt;Veuillez vérifier votre configuration &lt;strong&gt;Tâches&lt;/strong&gt; dans les préférences !</translation>
 </message>
 <message>
 <source>Note versions are currently loaded from your ownCloud server</source>
@@ -4512,7 +4843,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 </message>
 <message>
 <source>Git support is not enabled for the current note folder, do you want to enable it in the settings?</source>
-<translation>Le support git n’est pas activé pour le dossier de notes courant, voulez-vous l’activer dans les paramètres ?</translation>
+<translation>Le support git n’est pas activé pour le dossier de notes courant, voulez-vous l’activer dans les préférences ?</translation>
 </message>
 <message>
 <source>No versions available</source>
@@ -4662,7 +4993,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 </message>
 <message>
 <source>You have not selected any todo lists.&lt;br /&gt;Please check your &lt;strong&gt;Todo&lt;/strong&gt; configuration in the settings!</source>
-<translation>Vous n'avez pas sélectionné de liste de tâches.&lt;br /&gt; Merci de vérifier votre configuration des &lt;strong&gt;Tâches&lt;/strong&gt; dans les paramètres !</translation>
+<translation>Vous n'avez pas sélectionné de liste de tâches.&lt;br /&gt;Merci de vérifier votre configuration des &lt;strong&gt;Tâches&lt;/strong&gt; dans les préférences !</translation>
 </message>
 <message>
 <source>Note folder</source>
@@ -4686,7 +5017,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 </message>
 <message>
 <source>QOwnNotes will track anonymous usage data, that helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. You can disable that behaviour in the settings.</source>
-<translation>QOwnNotes va récupérer des données anonymes sur votre usage. Cela permet aux développeurs de QOwnNotes d'améliorer le logiciel ainsi que réparer certains bogues. Vous pouvez désactiver ceci dans les paramètres.</translation>
+<translation>QOwnNotes récupèrera des données anonymes sur votre usage. Cela permet aux développeurs de QOwnNotes d'améliorer le logiciel ainsi que réparer certains bugs. Vous pouvez désactiver ceci dans les préférences.</translation>
 </message>
 <message>
 <source>&amp;Ok</source>
@@ -4785,6 +5116,14 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 <translation>Passer au dossier de notes</translation>
 </message>
 <message>
+<source>Could not switch note folder</source>
+<translation>Impossible de changer de dossier de notes</translation>
+</message>
+<message>
+<source>Modified notes could not be written to disk. Please resolve the problem and try switching note folders again.</source>
+<translation>Les notes modifiées n’ont pas pu être écrites sur le disque. Merci de résoudre le problème puis de réessayer de changer de dossier de notes.</translation>
+</message>
+<message>
 <source>Toolbar could not be loaded without name</source>
 <translation>La barre d'outils ne peut être chargée sans nom</translation>
 </message>
@@ -4814,7 +5153,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 </message>
 <message>
 <source>Open &amp;settings</source>
-<translation>Ouvrir les &amp;paramètres</translation>
+<translation>Ouvrir les &amp;préférences</translation>
 </message>
 </context>
 <context>
@@ -4951,7 +5290,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 </message>
 <message>
 <source>Saving temporary image</source>
-<translation type="unfinished">Saving temporary image</translation>
+<translation>Enregistrement d'une image temporaire</translation>
 </message>
 <message>
 <source>Paste &amp;HTML as Markdown</source>
@@ -5023,7 +5362,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 <name>NetworkSettingsWidget</name>
 <message>
 <source>Proxy Settings</source>
-<translation>Paramètres du proxy</translation>
+<translation>Préférences du proxy</translation>
 </message>
 <message>
 <source>No Proxy</source>
@@ -5047,7 +5386,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 </message>
 <message>
 <source>SSL Settings</source>
-<translation>Paramètres SSL</translation>
+<translation>Préférences SSL</translation>
 </message>
 <message>
 <source>Ignore SSL errors</source>
@@ -5406,7 +5745,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 </message>
 <message>
 <source>Decrypt note and store it as plain text</source>
-<translation>Déchiffrer et stocker la note en tant que texte brut</translation>
+<translation>Déchiffrer la note et la stocker en tant que texte brut</translation>
 </message>
 <message>
 <source>Your note will be decrypted and stored as plain text again. Keep in mind that the unencrypted note will possibly be synced to your server and sensitive text may be exposed!&lt;br /&gt;Do you want to decrypt your note?</source>
@@ -5512,7 +5851,7 @@ Si la corbeille est activée sur votre serveur ownCloud, vous devriez pouvoir re
 </message>
 <message>
 <source>Subfolder visibility</source>
-<translation type="unfinished">Subfolder visibility</translation>
+<translation>Visibilité des sous-dossiers</translation>
 </message>
 <message>
 <source>If checked, all subfolders will be shown. If unchecked, you can select which subfolders to show.</source>
@@ -6186,7 +6525,7 @@ Souhaitez-vous supprimer également ces fichiers ?</numerusform>
 </message>
 <message>
 <source>Open &amp;settings</source>
-<translation>Ouvrir les &amp;paramètres</translation>
+<translation>Ouvrir les &amp;préférences</translation>
 </message>
 <message>
 <source>&amp;Cancel</source>
@@ -6422,7 +6761,7 @@ Souhaitez-vous supprimer également ces fichiers ?</numerusform>
 </message>
 <message>
 <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please enter the password for your username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Merci d’entrer le mot de passe associé à votre nom d'utilisateur.&lt;br/&gt;Le mot de passe sera stocké chiffré avec les autres paramètres, mais n’est pas très bien sécurisé.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+<translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Merci d’entrer le mot de passe associé à votre nom d'utilisateur.&lt;br/&gt;Le mot de passe sera stocké chiffré avec les autres préférences, mais n’est pas très bien sécurisé.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
 </message>
 <message>
 <source>Your ownCloud password</source>
@@ -6482,7 +6821,7 @@ Souhaitez-vous supprimer également ces fichiers ?</numerusform>
 </message>
 <message>
 <source>You will find this path in the &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt; settings</source>
-<translation>Ce chemin se trouve dans les paramètres &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt;</translation>
+<translation>Ce chemin se trouve dans les préférences &lt;i&gt;Nextcloud / ownCloud&lt;/i&gt;</translation>
 </message>
 <message>
 <source>notes path found on server</source>
@@ -6962,6 +7301,30 @@ Cliquez sur « Annuler » pour ignorer vos changements et garder la version ex
 <translation>Mode clair détecté</translation>
 </message>
 <message>
+<source>Your system switched to dark mode. Do you also want to turn on dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</source>
+<translation>Votre système vient de passer en mode sombre. Voulez-vous également faire passer QOwnNotes en mode sombre ?
+
+La mise à jour de l’interface dure un petit instant.</translation>
+</message>
+<message>
+<source>Your system seems to be in dark mode. Do you also want to turn on dark mode in QOwnNotes?</source>
+<translation>Votre système semble être en mode sombre. Voulez-vous également activer le mode sombre dans QOwnNotes ?</translation>
+</message>
+<message>
+<source>Your system switched to light mode. Do you also want to turn off dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</source>
+<translation>Votre système vient de passer en mode clair. Voulez-vous également faire passer QOwnNotes en mode clair ?
+
+La mise à jour de l’interface dure un petit instant.</translation>
+</message>
+<message>
+<source>Your system seems to be in light mode. Do you also want to turn off dark mode in QOwnNotes?</source>
+<translation>Votre système semble être en mode clair. Voulez-vous également activer le mode clair dans QOwnNotes ?</translation>
+</message>
+<message>
 <source>Double-click to unpin note from tab</source>
 <translation>Double-clic pour désépingler la note de l'onglet</translation>
 </message>
@@ -7031,7 +7394,7 @@ Cliquez sur « Annuler » pour ignorer vos changements et garder la version ex
 </message>
 <message>
 <source>Folder with name &lt;b&gt;%1&lt;/b&gt; can't be created, because it's on the list of ignored subfolders! You can change that in the &lt;i&gt;Panels settings&lt;/i&gt;.</source>
-<translation>Le dossier portant le nom &lt;b&gt;%1&lt;/b&gt; ne peut pas être créé, car il figure dans la liste des sous-dossiers ignorés ! Vous pouvez changer cela dans le &lt;i&gt;Panneau des paramètres&lt;/i&gt;.</translation>
+<translation>Le dossier portant le nom &lt;b&gt;%1&lt;/b&gt; ne peut pas être créé, car il figure dans la liste des sous-dossiers ignorés ! Vous pouvez changer cela dans les &lt;i&gt;Préférences des panneaux&lt;/i&gt;.</translation>
 </message>
 <message>
 <source>File name changed</source>
@@ -7113,7 +7476,7 @@ Cliquez sur « Annuler » pour ignorer vos changements et garder la version ex
 </message>
 <message>
 <source>Nextcloud Deck support is not enabled or the settings are invalid.&lt;br /&gt;Please check your &lt;strong&gt;Nextcloud&lt;/strong&gt; configuration in the settings!</source>
-<translation>Le support de Nextcloud Deck n’est pas activé ou les paramètres sont invalides.&lt;br /&gt;Merci de vérifier votre configuration &lt;strong&gt;Nextcloud&lt;/strong&gt; dans les paramètres !</translation>
+<translation>Le support de Nextcloud Deck n’est pas activé ou les paramètres sont invalides.&lt;br /&gt;Merci de vérifier votre configuration &lt;strong&gt;Nextcloud&lt;/strong&gt; dans les préférences !</translation>
 </message>
 <message>
 <source>media file</source>
@@ -7130,6 +7493,18 @@ Cliquez sur « Annuler » pour ignorer vos changements et garder la version ex
 <message>
 <source>Dark</source>
 <translation>Sombre</translation>
+</message>
+<message>
+<source>Harper command is empty</source>
+<translation>La commande Harper est vide</translation>
+</message>
+<message>
+<source>Failed to start Harper command: %1</source>
+<translation>Échec du démarrage de la commande Harper : %1</translation>
+</message>
+<message>
+<source>Failed to connect to Harper at %1:%2</source>
+<translation>Échec de la connexion à Harper depuis %1:%2</translation>
 </message>
 </context>
 <context>
@@ -7176,32 +7551,8 @@ Cliquez sur « Annuler » pour ignorer vos changements et garder la version ex
 <translation>Opérations sur les listes</translation>
 </message>
 <message>
-<source>Toggle checkbox(es)</source>
-<translation>Cocher/décocher la/les case(s)</translation>
-</message>
-<message>
-<source>1. 2. 3. list</source>
-<translation>Liste 1. 2. 3.</translation>
-</message>
-<message>
-<source>a. b. c. list</source>
-<translation>Liste a. b. c.</translation>
-</message>
-<message>
-<source>- list</source>
-<translation>Liste -</translation>
-</message>
-<message>
-<source>Create checkbox list</source>
-<translation>Créer une liste de cases à cocher</translation>
-</message>
-<message>
-<source>Clear list formatting</source>
-<translation>Effacer le formattage de liste</translation>
-</message>
-<message>
-<source>Order checkboxes</source>
-<translation>Trier les cases à cocher</translation>
+<source>Markdown operations</source>
+<translation>Opérations sur le Markdown</translation>
 </message>
 <message>
 <source>Copy code block</source>
@@ -7264,6 +7615,10 @@ Cliquez sur « Annuler » pour ignorer vos changements et garder la version ex
 <translation>Exporter le texte sélectionné au format PDF (aperçu)</translation>
 </message>
 <message>
+<source>Select</source>
+<translation>Sélectionner</translation>
+</message>
+<message>
 <source>Custom actions</source>
 <translation>Actions personnalisées</translation>
 </message>
@@ -7302,6 +7657,10 @@ Cliquez sur « Annuler » pour ignorer vos changements et garder la version ex
 <message>
 <source>Ignore word "%1"</source>
 <translation>Ignorer le mot « %1 »</translation>
+</message>
+<message>
+<source>Harper</source>
+<translation>Harper</translation>
 </message>
 <message>
 <source>Markdown LSP server connected</source>
@@ -7773,7 +8132,7 @@ Voulez-vous quand même l'installer ?</translation>
 <message numerus="yes">
 <source>Found &lt;strong&gt;%n&lt;/strong&gt; occurrence(s) of any term of &lt;strong&gt;%1&lt;/strong&gt;</source>
 <translation>
-<numerusform>&lt;strong&gt;%n&lt;/strong&gt; occurrence de tout terme de &lt;strong&gt;%1&lt;/strong&gt; trouvées</numerusform>
+<numerusform>&lt;strong&gt;%n&lt;/strong&gt; occurrence de tout terme de &lt;strong&gt;%1&lt;/strong&gt; trouvée</numerusform>
 <numerusform>&lt;strong&gt;%n&lt;/strong&gt; occurrences de tout terme de &lt;strong&gt;%1&lt;/strong&gt; trouvées</numerusform>
 </translation>
 </message>
@@ -7808,7 +8167,7 @@ Voulez-vous quand même l'installer ?</translation>
 <name>SettingsDialog</name>
 <message>
 <source>Settings</source>
-<translation>Paramètres</translation>
+<translation>Préférences</translation>
 </message>
 <message>
 <source>Note folders</source>
@@ -7827,12 +8186,16 @@ Voulez-vous quand même l'installer ?</translation>
 <translation>Interface</translation>
 </message>
 <message>
+<source>Harper</source>
+<translation>Harper</translation>
+</message>
+<message>
 <source>Shortcuts</source>
 <translation>Raccourcis</translation>
 </message>
 <message>
 <source>Trash</source>
-<translation type="unfinished">Trash</translation>
+<translation>Corbeille</translation>
 </message>
 <message>
 <source>Main window shortcuts</source>
@@ -7848,7 +8211,7 @@ Voulez-vous quand même l'installer ?</translation>
 </message>
 <message>
 <source>Find setting</source>
-<translation>Rechercher dans les paramètres</translation>
+<translation>Rechercher dans les préférences</translation>
 </message>
 <message>
 <source>Editor</source>
@@ -8016,11 +8379,11 @@ Voulez-vous quand même l'installer ?</translation>
 </message>
 <message>
 <source>the internal sqlite database and the settings will be stored inside a &lt;code&gt;Data&lt;/code&gt; folder at the binary's location</source>
-<translation>la base de données SQLite interne et les paramètres seront sauvegardés dans un dossier &lt;code&gt;Data&lt;/code&gt; au même endroit que l'exécutable</translation>
+<translation>la base de données SQLite interne et les préférences seront sauvegardées dans un dossier &lt;code&gt;Data&lt;/code&gt; au même endroit que l'exécutable</translation>
 </message>
 <message>
 <source>the settings will be stored in an ini file</source>
-<translation>les paramètres seront enregistrés dans un fichier ini</translation>
+<translation>les préférences seront enregistrés dans un fichier ini</translation>
 </message>
 <message>
 <source>the note folders, script paths and path to an external editor will be automatically stored relative to the &lt;code&gt;Data&lt;/code&gt; folder so that the correct note folders, scripts and external editor will be loaded regardless where your QOwnNotes installation is currently located</source>
@@ -8228,7 +8591,7 @@ Voulez-vous quand même l'installer ?</translation>
 </message>
 <message>
 <source>Only show from current note</source>
-<translation>Montrer uniquement depuis la note courante</translation>
+<translation>Montrer uniquement les pièces jointes de la note courante</translation>
 </message>
 <message>
 <source>Add selected attachments to the current note</source>
@@ -8382,7 +8745,7 @@ Voulez-vous quand même l'installer ?</translation>
 </message>
 <message>
 <source>Only show from current note</source>
-<translation>Montrer uniquement depuis la note courante</translation>
+<translation>Montrer uniquement les images de la note courante</translation>
 </message>
 <message>
 <source>Used in notes:</source>
@@ -8921,7 +9284,7 @@ Cela ne peut être annuler !</translation>
 <name>TodoSettingsWidget</name>
 <message>
 <source>Todo settings</source>
-<translation>Paramètres des tâches</translation>
+<translation>Préférences des tâches</translation>
 </message>
 <message>
 <source>Enable todo calendar support</source>
@@ -8957,7 +9320,7 @@ Cela ne peut être annuler !</translation>
 </message>
 <message>
 <source>CalDAV server settings</source>
-<translation>Paramètres du serveur CalDAV</translation>
+<translation>Préférences du serveur CalDAV</translation>
 </message>
 <message>
 <source>Calendar base url:</source>
@@ -8989,7 +9352,7 @@ Cela ne peut être annuler !</translation>
 </message>
 <message>
 <source>Please enter the password for your CalDAV username.&lt;br/&gt;Currently the password will be stored encrypted with the other settings, but is not very secure.</source>
-<translation>Veuillez entrer le mot de passe associé à votre nom d’utilisateur CalDAV.&lt;br/&gt;Actuellement, le mot de passe est stocké chiffré avec les autres paramètres, mais ce n’est pas très sécurisé.</translation>
+<translation>Veuillez entrer le mot de passe associé à votre nom d’utilisateur CalDAV.&lt;br/&gt;Actuellement, le mot de passe est stocké chiffré avec les autres préférences, mais ce n’est pas très sécurisé.</translation>
 </message>
 <message>
 <source>Your CalDAV password</source>
@@ -9025,7 +9388,7 @@ Cela ne peut être annuler !</translation>
 </message>
 <message>
 <source>Todo list settings</source>
-<translation>Paramètres de la liste de tâches</translation>
+<translation>Préférences de la liste de tâches</translation>
 </message>
 <message>
 <source>Saving an item also closes the Todo list</source>
@@ -9715,7 +10078,7 @@ Cela ne peut être annuler !</translation>
 </message>
 <message>
 <source>To let your QOwnNotes browser extension access your notes please paste this security token in the settings of your browser extension:</source>
-<translation>Pour permettre à votre extension de navigateur QOwnNotes d'accéder à vos notes, veuillez coller ce jeton de sécurité dans les paramètres de votre extension de navigateur:</translation>
+<translation>Pour permettre à votre extension de navigateur QOwnNotes d'accéder à vos notes, veuillez coller ce jeton de sécurité dans les préférences de votre extension de navigateur:</translation>
 </message>
 <message>
 <source>Generate new token</source>
@@ -9766,11 +10129,11 @@ Cela ne peut être annuler !</translation>
 </message>
 <message>
 <source>Open ownCloud settings</source>
-<translation>Ouvrir les paramètres ownCloud</translation>
+<translation>Ouvrir les préférences ownCloud</translation>
 </message>
 <message>
 <source>Open network settings</source>
-<translation>Ouvrir les paramètres réseau</translation>
+<translation>Ouvrir les préférences réseau</translation>
 </message>
 <message>
 <source>Please select where you want to store your notes:</source>
@@ -9798,7 +10161,7 @@ Cela ne peut être annuler !</translation>
 </message>
 <message>
 <source>QOwnNotes will track anonymous usage data, that helps to decide what parts of QOwnNotes to improve next and to find and fix bugs. You can disable that behaviour in the settings.</source>
-<translation>QOwnNotes va récupérer des données anonymes sur votre usage. Cela permet aux développeurs de QOwnNotes d'améliorer le logiciel ainsi que de réparer certains bogues. Vous pouvez désactiver ce comportement dans les paramètres.</translation>
+<translation>QOwnNotes récupèrera des données anonymes sur votre usage. Cela permet aux développeurs de QOwnNotes d'améliorer le logiciel ainsi que de réparer certains bugs. Vous pouvez désactiver ce comportement dans les préférences.</translation>
 </message>
 <message>
 <source>Cannot create note path! You have to create the note folder manually!</source>
@@ -9841,15 +10204,15 @@ Cela ne peut être annuler !</translation>
 </message>
 <message>
 <source>Allows multiple instances of QOwnNotes to be started even if disallowed in the settings.</source>
-<translation>Autorise le démarrage de plusieurs instances de QOwnNotes même si l'option est désactivée dans les réglages.</translation>
+<translation>Autorise le démarrage de plusieurs instances de QOwnNotes même si l'option est désactivée dans les préférences.</translation>
 </message>
 <message>
 <source>Clears the settings and runs the application.</source>
-<translation>Efface les paramètres et exécute l’application.</translation>
+<translation>Efface les préférences et exécute l’application.</translation>
 </message>
 <message>
 <source>Runs the application in a different context for settings and internal files.</source>
-<translation>Exécute l’application dans un contexte différent pour les paramètres et fichiers internes.</translation>
+<translation>Exécute l’application dans un contexte différent pour les préférences et fichiers internes.</translation>
 </message>
 <message>
 <source>Triggers a menu action after the application was started.</source>
@@ -9865,7 +10228,7 @@ Cela ne peut être annuler !</translation>
 </message>
 <message>
 <source>Another instance of QOwnNotes was already started! You can turn off the single instance mode in the settings or use the parameter --allow-multiple-instances.</source>
-<translation>Une autre instance de QOwnNotes a déjà été démarrée ! Vous pouvez désactiver le mode mono-instance dans les réglages ou alors utiliser le paramètre --allow-multiple-instances.</translation>
+<translation>Une autre instance de QOwnNotes a déjà été démarrée ! Vous pouvez désactiver le mode mono-instance dans les préférences ou alors utiliser le paramètre --allow-multiple-instances.</translation>
 </message>
 <message>
 <source>A second instance of QOwnNotes was attempted to be started!</source>

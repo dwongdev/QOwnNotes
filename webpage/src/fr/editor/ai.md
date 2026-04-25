@@ -10,8 +10,8 @@ L’**API de complétion OpenAI** a été implémentée pour être utilisée dan
 De cette façon, vous pouvez faire ce que bon vous semble et expérimenter.
 :::
 
-- Une **barre d’outils IA** et une section dans le **menu principal « Édition »** permettent d’activer le service et de sélectionner un back-end et un modèle d’IA
-- Les nouveaux **paramètres d’IA** permettent d’ajouter des clés d’API [OpenAI](https://openai.com/) et [Groq](https://groq.com/)
+- Une **barre d’outils d’IA** et une section dans le **menu principal « Édition »** permettent d’activer le service et de sélectionner un back-end et un modèle d’IA
+- Les nouvelles **préférences d’IA** permettent d’ajouter des clés d’API [OpenAI](https://openai.com/) et [Groq](https://groq.com/)
   - Le dépôt de scripts contient plus d’**intégrations de back-ends d’IA**, comme _Ollama_ et _llama.cpp_
 - Vous pouvez utiliser la nouvelle commande de scripting `script.aiComplete(prompt)` selon votre imagination
   - Pour plus d’informations, consultez la [documentation sur le scripting](../scripting/methods-and-objects.md#use-a-completion-prompt-on-the-currently-selected-ai-model)
@@ -19,8 +19,8 @@ De cette façon, vous pouvez faire ce que bon vous semble et expérimenter.
   [AI Autocompletion](https://github.com/qownnotes/scripts/tree/master/ai-autocompletion)
   qui utilise le modèle d’IA sélectionné pour **compléter automatiquement la sélection courante** dans la fenêtre d’édition de note,
   ainsi que le scrpt [AI Text Tool](https://github.com/qownnotes/scripts/tree/master/ai-text-tool),
-  qui utilise le modèle d’IA sélectionné pour **traiter la sélection courante** dans la fenêtre d’dition de note,
-  par exemple pour le résumer, le traduire ou pour corriger les fautes d’orthographe, de grammaire ou de typographie
+  qui utilise le modèle d’IA sélectionné pour **traiter la sélection courante** dans la fenêtre d’édition de note,
+  par exemple pour la résumer, la traduire ou pour corriger les fautes d’orthographe, de grammaire ou de typographie
 
 ![ai-settings](/img/editor/ai-settings.webp)
 
@@ -29,7 +29,7 @@ De cette façon, vous pouvez faire ce que bon vous semble et expérimenter.
 QOwnNotes inclut un **serveur MCP (Model Context Protocol)** permettant à des agents IA externes
 d’accéder à vos notes via HTTP avec la technologie Server-Sent Events (SSE).
 
-Il est possible d’activer et de configurer le serveur MCP dans la page **IA / serveur MCP** des paramètres.
+Il est possible d’activer et de configurer le serveur MCP dans la page **IA / serveur MCP** des préférences.
 
 - **Activation et désactivation** du serveur MCP
 - **Configuration du port** (défaut : 22226)

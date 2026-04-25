@@ -44,6 +44,6 @@ En general, los mensajes de confirmación deberían:
 - Ser cortos y descriptivos
 - Usar un ámbito seguido de dos puntos, como `misc:`, `mainwindow:`, `tests:` o `ci:`
 - Usar una descripción imperativa después de los dos puntos, como `fix`, `add`, `allow`, `update` o `refactor`
-- include the issue number at the start when there is one, for example `#3568 mainwindow: allow dragging text file to import as note`
+- Incluir el número de incidencia al principio cuando lo haya, por ejemplo: `#3568 mainwindow: allow dragging text file to import as note`
 
 Por favor, mantén las confirmaciones centradas, de modo que cada confirmación represente un cambio lógico.

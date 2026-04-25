@@ -18,7 +18,7 @@ Les statistiques d'utilisation sont transmises et stockées sur un serveur [Mato
 
 Les statistiques d'utilisation sont **anonymisées** sur le serveur Matomo après réception (l'adresse IP en est, par exemple, ôtée).
 
-Aucune information personnelle – telle que du texte que vous avez entré ou les noms des notes – ne sont collectées ni stockées sur le serveur !
+Aucune information personnelle – telle que du texte que vous avez entré ou les noms des notes – n’est collectée ni stockée sur le serveur !
 
 ## Qu'est-ce qui est collecté ?
 
@@ -28,11 +28,11 @@ De plus des évènements sont, par exemple, envoyés au serveur quand des action
 
 QOwnNotes est un logiciel libre et open-source. Vous pouvez contrôler les statistiques d'utilisation à n'importe quel moment en recherchant par exemple [sendVisitIfEnabled](https://github.com/pbek/QOwnNotes/search?q=sendVisitIfEnabled) et [sendEventIfEnabled](https://github.com/pbek/QOwnNotes/search?q=sendEventIfEnabled) dans le code source pour voir ce qui est envoyé.
 
-**Aucune information personnelle – telle que du texte que vous avez entré ou les noms des notes – ne sont collectées ni stockées sur le serveur !**
+**Aucune information personnelle – telle que du texte que vous avez entré ou les noms des notes – n’est collectée !**
 
 ## Puis-je désactiver la collecte des statistiques d'utilisation ?
 
-Vous pouvez les désactiver au premier démarrage de l'application dans la boîte de dialogue de bienvenue, ou plus tard dans les paramètres.
+Vous pouvez les désactiver au premier démarrage de l'application dans la boîte de dialogue de bienvenue, ou plus tard dans les préférences.
 
 ## Pourquoi les statistiques d’utilisation ne sont-elles pas désactivées par défaut ?
 

@@ -16,13 +16,13 @@ Script {
 }
 ```
 
-Vous pouvez placer ces fichiers QML où vous le souhaitez et **les ajouter dans QOwnNotes** en les ajoutant dans les **Paramètres de script** (il y a un bouton `Ajouter un script` / `Ajouter un script local`).
+Vous pouvez placer ces fichiers QML où vous le souhaitez et **les ajouter dans QOwnNotes** en les ajoutant dans les **Préférences de script** (avec le bouton `Ajouter un script` / `Ajouter un script local`).
 
 ::: tip
 Jetez un œil aux [exemples de scripts](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples) pour démarrer plus rapidement.
 :::
 
-Dans les **paramètres de script**, vous pouvez aussi installer des scripts directement depuis leur [**dépôt**](https://github.com/qownnotes/scripts). Il existe un site hébergé par la communauté sur : [https://beurt.github.io/QOwnNoteScriptsList](https://beurt.github.io/QOwnNoteScriptsList/) pour chercher des scripts.
+Dans les **Préférences de script**, vous pouvez aussi installer des scripts directement depuis leur [**dépôt**](https://github.com/qownnotes/scripts). Il existe un site hébergé par la communauté sur : [https://beurt.github.io/QOwnNoteScriptsList](https://beurt.github.io/QOwnNoteScriptsList/) pour chercher des scripts.
 
 Pour les problèmes, questions ou demandes de fonctionnalités pour les scripts du **dépôt de scripts**, veuillez ouvrir un ticket sur la [page des issues du dépôt de scripts QOwnNotes](https://github.com/qownnotes/scripts/issues).
 

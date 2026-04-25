@@ -28,29 +28,36 @@ Join our [Telegram Group](https://t.me/QOwnNotes) to discuss, learn, and connect
 - دعم **مشاركة الملاحظات** على خادم **ownCloud** أو **Nextcloud** الخاص بك
 - إدارة **قوائم مهامك** على Nextcloud أو ownCloud (تطبيقات **Nextcloud tasks** أو **Tasks Plus** أو **Calendar Plus**)، أو استخدام **خادم CalDAV** آخر لمزامنة مهامك معه
 - **النسخ** الأقدم من ملاحظاتك يمكن **استعادتها** من خادم **Nextcloud أو ownCloud** الخاص بك
-- **الملاحظات المهملة** يمكن **استعادتها** من خادم **Nextcloud أو ownCloud** الخاص بك
+- **Trashed notes** can be **restored** from your **Nextcloud / ownCloud** server
+  - There are also **local trash** and **system trash** modes
 - **التعديلات خارج التطبيق** على ملفات الملاحظات يتم **مراقبتها** (ويتم إعادة تحميل الملاحظة أو قائمة الملاحظات)
 - دعم **الوسوم الهرمية للملاحظات** وكذلك **المجلدات الفرعية للملاحظات**
+  - Includes moving and reorganizing subfolders with link updates and selective subfolder visibility
+- Optional **wiki-style note links** like `[[Note]]` with autocomplete, heading anchors, aliases, backlinks, and refactoring support
 - **تعمية** اختيارية للملاحظات؛ يتضمن التطبيق خوارزمية AES-256، لكن يمكنك استخدم طريقة تعمية مخصصة مثل **[Keybase.io](https://keybase.io/)** (انظر [encryption-keybase.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/encryption-keybase.qml)) أو **PGP** (انظر [encryption-pgp.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/encryption-pgp.qml))
 - **مجلد الملاحظات** يمكن **اختياره بحرية** (يمكن اختيار مجلدات متعددة للملاحظات)
 - إمكانية **البحث بأجزاء الكلمات** في الملاحظات، وتظليل نتائج البحث فيها
 - [**إضافة للمتصفح**](browser-extension.md) حتى يمكنك **إضافة ملاحظات من النص المحدد** أو **أخذ لقطات شاشة** أو **إدارة إشاراتك المرجعية**
-- [**Spellchecking**](../editor/spellchecking.md) and optional [**LanguageTool**](../editor/languagetool.md) support
+- [**Spellchecking**](../editor/spellchecking.md), optional [**LanguageTool**](../editor/languagetool.md), and optional [**Harper**](../editor/harper.md) support
 - **الوضع المحمول** لحمل QOwnNotes على وحدة تخزين USB والتنقل به
 - **قابلية البرمجة** وكذلك [**مستودع بُريمِجات**](https://github.com/qownnotes/scripts) على الإنترنت، حيث يمكنك تثبيت البُريمِجات من داخل التطبيق
-- دعم **[API الإكمال بالذكاء المصطنع من OpenAI](https://www.qownnotes.org/blog/2024-05-17-AI-support-was-added-to-QOwnNotes.html)** لاستعماله في البرمجة
+- Built-in **AI support** with script integration for providers like **OpenAI** and **Groq**
+  - Includes a built-in **MCP server** so external AI agents can search and fetch notes securely
 - **وضع Vim**
 - **[تطبيق ويب](web-app.md)** ليمكنك **إضافة صور من محمولك** إلى الملاحظة الحالية في QOwnNotes على حاسوبك
 
 ## المظهر
 
 - **تلوين ماركداون** للملاحظات **ووضع معاينة لماركداون**
-- **دعم سِمة الوضع المظلم**
+  - Includes **inline image previews**, **Markdown heading folding**, and optional hiding of Markdown formatting syntax
+- **Dark mode theme support** with live switching and custom **color modes**
 - **دعم السمات** في **تلوين ماركداون**
 - جميع **اللوحات تستطيع وضعها أينما شئت**؛ يمكن حتى جعلها **حرة طافية** أو **مرصوصة** (قابلة للتركيب)
 - دعم **أيقونات سمات فري دسكتوب**؛ يمكنك حتى استخدام QOwnNotes مع **أيقونات سطح مكتبك الأصيلة** و**سمة سطح مكتبك المظلمة** المفضلة
 - **الوضع الخالي من المشوشات**، **ووضع ملء الشاشة**، **ووضع الآلة الكاتبة**
 - **ترقيم السطور**
+- **Block selection** and other power-user editor workflows
+- Support for **global keyboard shortcuts on Wayland**
 - **Differences** between current note and externally changed note are **shown** in a dialog
 
 ## اللغات

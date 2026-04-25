@@ -32,6 +32,7 @@ graph TB
     qon-->nc-deck-app
     sync-->ncs
     qon-.->lt("LanguageTool service")
+    qon-.->harper("Harper service")
     qon-.->qon-web-api("api.qownnotes.org")
     qon-web-api-->github("GitHub")
 
@@ -49,6 +50,7 @@ graph TB
     click nc-deck-app "/getting-started/concept.html#nextcloud-deck-server-app" "Nextcloud Deck server app to manage reminders and todo lists in the web"
     click qon-web-app "/getting-started/concept.html#qownnotes-web-app" "QOwnNotes Web App to send photos from your mobile phone"
     click lt "/editor/languagetool.html" "Optional LanguageTool server for grammar and style checking"
+    click harper "/editor/harper.html" "Optional Harper service for offline grammar and style checking"
     click qon-web-api "/getting-started/concept.html#api-qownnotes-org"
 ```
 
@@ -127,6 +129,19 @@ QOwnNotes can use a local or remote [LanguageTool](https://languagetool.org/) se
 
 ::: tip
 Please visit [LanguageTool](../editor/languagetool.md) for more information.
+:::
+
+## Harper service
+
+QOwnNotes can use a local [Harper](https://writewithharper.com/) service for **offline grammar and style checking** in the editor.
+
+- It is **optional** and works alongside the existing spell checker support
+- Enable it in `Settings -> Editor -> Harper`, then configure the **transport**, `harper-ls` command or TCP target, **dialect**, and the linters you want to use
+- You can also toggle it quickly from the **Edit** menu with `Check grammar with Harper`
+- Suggestions and ignore actions are available from the editor context menu for detected issues
+
+::: tip
+Please visit [Harper](../editor/harper.md) for more information.
 :::
 
 ## Client di sincronizzazione desktop Nextcloud

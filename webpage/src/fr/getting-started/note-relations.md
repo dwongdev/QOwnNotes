@@ -2,14 +2,14 @@
 image: /screenshots/screenshot-note-relations.png
 ---
 
-# Note relations panel
+# Panneau des relations entre les notes
 
-The note relations panel shows the **relations between the current note and linked notes** several levels deep.
+Le panneau de relation entre les notes montre les **relations entre la note courante et les notes qui lui sont liées** sur plusieurs niveaux de profondeur.
 
 ![note-relations](/screenshots/screenshot-note-relations.png)
 
-- Relations between notes can be created by **linking to another note**, for example with the _Note link_ dialog
-- The syntax for a note link is for example `[My note](path/to/My%20note.md)`
-- You can turn on the panel in the _Window / Panels_ menu
-- The panel allows zooming with the mouse wheel, and you can double-click on a note to open it
-- Gathering of relations is done in the background, so you can continue working while the relations are being gathered
+- Des relations entre notes peuvent être créées en **créant des liens vers d’autres notes**, par exemple avec la boîte de dialogue _Lier une note_
+- Pour lier une note, la syntaxe est par exemple `[Ma note](chemin/vers/Ma%20note.md)`
+- Le panneau peut être activé dans le menu _Fenêtre / Panneaux_
+- Le panneau permet de zoomer avec la molette, et il est possible de double-cliquer sur une note pour l’ouvrir
+- La récupération des relations est effectuée en arrière-plan, il est donc possible de continuer de travailler pendant que les relations sont récupérées

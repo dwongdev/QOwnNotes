@@ -28,29 +28,36 @@
 - **ownCloud** / **Nextcloud** 서버에서 **노트 공유** 지원
 - Nextcloud / ownCloud **할 일 목록** (**Nextcloud 작업** 또는 **Tasks Plus** / **Calendar Plus**)를 관리하거나 다른 **CalDAV 서버**를 사용하여 작업을 동기화할 수 있습니다
 - 이전 **버전** 의 노트를 **Nextcloud / ownCloud**에서 **복원**할 수 있습니다
-- **폐기된 노트**는 **Nextcloud / ownCloud** 서버에서 **복원**할 수 있습니다
+- **Trashed notes** can be **restored** from your **Nextcloud / ownCloud** server
+  - There are also **local trash** and **system trash** modes
 - 노트 파일의 **외부 변경 사항**이 **감시**됩니다 (노트 또는 노트 목록이 다시 로드됨)
 - **계층적 노트 태깅** 및 **노트 하위 폴더** 지원
+  - Includes moving and reorganizing subfolders with link updates and selective subfolder visibility
+- Optional **wiki-style note links** like `[[Note]]` with autocomplete, heading anchors, aliases, backlinks, and refactoring support
 - 노트의 옵션인 ** 암호화 **가 내장되어 있거나, **[Keybase.io ](https://keybase.io/)**([ encryption-keybase.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/encryption-keybase.qml)) 또는 ** PGP**([ encryption-pgp.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/encryption-pgp.qml))와 같은 사용자 지정 암호화 방법을 사용할 수 있습니다
 - **노트 폴더**는 **자유롭게 선택**할 수 있습니다 (여러 개의 노트 폴더를 사용할 수 있음)
 - 노트에서 **단어의 일부를 검색**할 수 있으며 검색 결과가 노트에서 강조 표시됩니다
 - **선택한 텍스트에서 노트 추가**, **스크린샷 만들기** 또는 **북마크를 관리**하는 [**브라우저 확장**](browser-extension.md)
-- [**맟춤법**](../editor/spellchecking.md) 및 선택 사항[**언어 도구**](../editor/languagetool.md) 지원
+- [**Spellchecking**](../editor/spellchecking.md), optional [**LanguageTool**](../editor/languagetool.md), and optional [**Harper**](../editor/harper.md) support
 - USB 스틱에 QOwnNotes를 휴대하기 위한 **휴대용 모드**
 - **스크립트 지원** 및 응용 프로그램 내부에 스크립트를 설치할 수 있는 온라인 [**스크립트 저장소**](https://github.com/qownnotes/scripts)
-- 스크립트에 사용할 **[OpenAI 완료 API 구현](https://www.qownnotes.org/blog/2024-05-17-AI-support-was-added-to-QOwnNotes.html)**
+- Built-in **AI support** with script integration for providers like **OpenAI** and **Groq**
+  - Includes a built-in **MCP server** so external AI agents can search and fetch notes securely
 - **Vim 모드**
 - 바탕 화면의 QOwnNotes에서 **휴대폰의 사진을 현재 노트에 삽입**하는 **[웹 응용 프로그램](web-app.md)**
 
 ## 외관
 
 - 노트의 **마크다운 강조 표시** 및 **마크다운 미리 보기 모드**
-- **어두운 모드 테마 지원**
+  - Includes **inline image previews**, **Markdown heading folding**, and optional hiding of Markdown formatting syntax
+- **Dark mode theme support** with live switching and custom **color modes**
 - **마크다운 구문 강조**에 대한 **디밍 지원**
 - 모든 **패널은 원하는 위치에 배치**할 수 있으며, **플로팅** 또는 **스택** (완전 도킹 가능) 도 가능합니다
 - **무료 데스크톱 테마 아이콘 **을 지원하므로  **기본 바탕 화면 아이콘 ** 및 즐겨찾는 **어두운 바탕 화면 테마**와 함께 QOnNotes를 사용할 수 있습니다
 - **무장애 모드**, **전체 화면 모드** 및 **타이프라이터 모드**
 - **줄 번호**
+- **Block selection** and other power-user editor workflows
+- Support for **global keyboard shortcuts on Wayland**
 - 현재 노트와 외부에서 변경된 노트 간의 **차이**는 대화 상자에 **표시**됩니다
 
 ## 언어

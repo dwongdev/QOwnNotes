@@ -11,6 +11,8 @@
   can be reached from the menu bar and have shortcuts assigned in the
   **Shortcuts** settings; the submenu is only enabled when the note edit panel
   is visible (for [#3582](https://github.com/pbek/QOwnNotes/issues/3582))
+- Added more French, Spanish, Korean translation (thank you, jd-develop,
+  AlejandroMoc, VenusGirl)
 
 ## 26.4.21
 

@@ -1190,11 +1190,11 @@ var fileName = script.getSaveFileName(
 
 Vous voudrez peut-être jeter un coup d'œil à l'exemple [export-notes-as-one-html.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/export-notes-as-one-html.qml).
 
-## Enregistrement des variables de paramètres de script
+## Enregistrement des variables de préférences de script
 
-Vous devez définir vos variables de paramètres en tant que propriétés dans votre script et les enregistrer dans une propriété nommée `settingsVariables`.
+Vous devez définir vos variables de préférences en tant que propriétés dans votre script et les enregistrer dans une propriété nommée `settingsVariables`.
 
-L'utilisateur peut ensuite définir ces propriétés dans les paramètres du script.
+L’utilisateur peut ensuite définir ces propriétés dans les préférences du script.
 
 ### Exemple
 
@@ -1281,10 +1281,10 @@ In addition, you can override the `settingsVariables` with a special function `r
 
 ```js
 /**
- *Enregistre à nouveau les variables de paramètres
+ * Enregistre à nouveau les variables de préférences
  *
- *Utilisez cette méthode si vous souhaitez utiliser du code pour outrepasser vos variables, telles que le réglage
- *des valeurs par défaut dépendant du système d'exploitation.
+ * Utilisez cette méthode si vous souhaitez utiliser du code pour outrepasser vos variables,
+ * telles que le réglage des valeurs par défaut dépendant du système d'exploitation.
  */
 function registerSettingsVariables() {
   if (script.platformIsWindows()) {
@@ -1343,7 +1343,7 @@ Veuillez vous assurer d'utiliser un préfixe explicite dans votre clé, tel que 
 
 Vous voudrez peut-être également jeter un coup d'œil à l'exemple [persistent-variables.qml](https://github.com/pbek/QOwnNotes/blob/main/docs/scripting/examples/persistent-variables.qml).
 
-## Chargement des variables de paramètres d'application
+## Chargement des variables de préférences d'application
 
 ### Appel de méthode et paramètres
 
@@ -1362,11 +1362,11 @@ QVariant ScriptingService::getApplicationSettingsVariable(const QString &key,
 ### Exemple
 
 ```js
-// charger et enregistrer une variable de paramètres d'application
-script.log (script.getApplicationSettingsVariable ("gitExecutablePath"));
+// charger et enregistrer une variable de préférences d'application
+script.log(script.getApplicationSettingsVariable("gitExecutablePath"));
 ```
 
-Gardez à l'esprit que les paramètres peuvent être vides, vous devez vous en occuper vous-même. `defaultValue` n'est utilisé que si le paramètre n'existe nulle part.
+Gardez à l'esprit que les préférences peuvent être vides, vous devez vous en occuper vous-même. `defaultValue` n'est utilisé que si le paramètre n'existe nulle part.
 
 ## Créer un répertoire cache
 

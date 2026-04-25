@@ -1119,6 +1119,10 @@
 <translation>가져올 Evernote enex 파일을 선택하십시오.</translation>
 </message>
 <message>
+<source>Import metadata as YAML front matter</source>
+<translation type="unfinished">Import metadata as YAML front matter</translation>
+</message>
+<message>
 <source>Number of imported notes</source>
 <translation>Key: EvernoteImportDialog['가져온 노트 수']
 EvernoteImportDialog
@@ -2333,6 +2337,259 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 </message>
 </context>
 <context>
+<name>HarperChecker</name>
+<message>
+<source>Harper is unavailable: %1</source>
+<translation type="unfinished">Harper is unavailable: %1</translation>
+</message>
+</context>
+<context>
+<name>HarperClient</name>
+<message>
+<source>Harper request timed out</source>
+<translation type="unfinished">Harper request timed out</translation>
+</message>
+<message>
+<source>Harper service stopped unexpectedly</source>
+<translation type="unfinished">Harper service stopped unexpectedly</translation>
+</message>
+<message>
+<source>Harper transport is not configured</source>
+<translation type="unfinished">Harper transport is not configured</translation>
+</message>
+<message>
+<source>Waiting before retrying the Harper TCP connection</source>
+<translation type="unfinished">Waiting before retrying the Harper TCP connection</translation>
+</message>
+<message>
+<source>Unsupported Harper request: %1</source>
+<translation type="unfinished">Unsupported Harper request: %1</translation>
+</message>
+<message>
+<source>Harper initialization failed</source>
+<translation type="unfinished">Harper initialization failed</translation>
+</message>
+</context>
+<context>
+<name>HarperSettingsWidget</name>
+<message>
+<source>Harper</source>
+<translation type="unfinished">Harper</translation>
+</message>
+<message>
+<source>Enable offline grammar and style checking with Harper</source>
+<translation type="unfinished">Enable offline grammar and style checking with Harper</translation>
+</message>
+<message>
+<source>Transport:</source>
+<translation type="unfinished">Transport:</translation>
+</message>
+<message>
+<source>Connection:</source>
+<translation type="unfinished">Connection:</translation>
+</message>
+<message>
+<source>Command / binary path:</source>
+<translation type="unfinished">Command / binary path:</translation>
+</message>
+<message>
+<source>Browse</source>
+<translation type="unfinished">Browse</translation>
+</message>
+<message>
+<source>Auto-detect</source>
+<translation type="unfinished">Auto-detect</translation>
+</message>
+<message>
+<source>Server address:</source>
+<translation type="unfinished">Server address:</translation>
+</message>
+<message>
+<source>Port:</source>
+<translation type="unfinished">Port:</translation>
+</message>
+<message>
+<source>Dialect:</source>
+<translation type="unfinished">Dialect:</translation>
+</message>
+<message>
+<source>Check delay:</source>
+<translation type="unfinished">Check delay:</translation>
+</message>
+<message>
+<source> ms</source>
+<translation type="unfinished"> ms</translation>
+</message>
+<message>
+<source>Linters:</source>
+<translation type="unfinished">Linters:</translation>
+</message>
+<message>
+<source>Spell Check</source>
+<translation type="unfinished">Spell Check</translation>
+</message>
+<message>
+<source>Sentence Capitalization</source>
+<translation type="unfinished">Sentence Capitalization</translation>
+</message>
+<message>
+<source>Repeated Words</source>
+<translation type="unfinished">Repeated Words</translation>
+</message>
+<message>
+<source>Long Sentences</source>
+<translation type="unfinished">Long Sentences</translation>
+</message>
+<message>
+<source>An vs A</source>
+<translation type="unfinished">An vs A</translation>
+</message>
+<message>
+<source>Unclosed Quotes</source>
+<translation type="unfinished">Unclosed Quotes</translation>
+</message>
+<message>
+<source>Correct Number Suffix</source>
+<translation type="unfinished">Correct Number Suffix</translation>
+</message>
+<message>
+<source>Spaces</source>
+<translation type="unfinished">Spaces</translation>
+</message>
+<message>
+<source>Quote Spacing</source>
+<translation>인용 간격</translation>
+</message>
+<message>
+<source>No French Spaces</source>
+<translation>프랑스어 공백 없음</translation>
+</message>
+<message>
+<source>Wrong Apostrophe</source>
+<translation>잘못된 아포스트로피</translation>
+</message>
+<message>
+<source>Not tested yet.</source>
+<translation>아직 테스트되지 않았습니다.</translation>
+</message>
+<message>
+<source>Spelled Numbers</source>
+<translation type="unfinished">Spelled Numbers</translation>
+</message>
+<message>
+<source>Ignored:</source>
+<translation type="unfinished">Ignored:</translation>
+</message>
+<message>
+<source>Reset ignored rules</source>
+<translation type="unfinished">Reset ignored rules</translation>
+</message>
+<message>
+<source>Reset ignored words</source>
+<translation type="unfinished">Reset ignored words</translation>
+</message>
+<message>
+<source>Status:</source>
+<translation type="unfinished">Status:</translation>
+</message>
+<message>
+<source>Test Connection</source>
+<translation type="unfinished">Test Connection</translation>
+</message>
+<message>
+<source>Stdio (recommended)</source>
+<translation type="unfinished">Stdio (recommended)</translation>
+</message>
+<message>
+<source>TCP</source>
+<translation type="unfinished">TCP</translation>
+</message>
+<message>
+<source>American</source>
+<translation type="unfinished">American</translation>
+</message>
+<message>
+<source>British</source>
+<translation type="unfinished">British</translation>
+</message>
+<message>
+<source>Australian</source>
+<translation type="unfinished">Australian</translation>
+</message>
+<message>
+<source>Canadian</source>
+<translation type="unfinished">Canadian</translation>
+</message>
+<message>
+<source>Indian</source>
+<translation type="unfinished">Indian</translation>
+</message>
+<message>
+<source>Harper support is not available in this build.</source>
+<translation type="unfinished">Harper support is not available in this build.</translation>
+</message>
+<message>
+<source>harper-ls was not found.</source>
+<translation>harper-ls를 찾을 수 없습니다.</translation>
+</message>
+<message>
+<source>Found Harper at %1</source>
+<translation>%1에서 하퍼 찾기</translation>
+</message>
+<message>
+<source>Found Harper %1 at %2</source>
+<translation>%2에서 하퍼 %1 찾기</translation>
+</message>
+<message>
+<source>TCP target %1:%2</source>
+<translation>TCP 대상 %1: %2</translation>
+</message>
+<message>
+<source>Select Harper binary</source>
+<translation type="unfinished">Select Harper binary</translation>
+</message>
+<message>
+<source>Could not find harper-ls in PATH.</source>
+<translation type="unfinished">Could not find harper-ls in PATH.</translation>
+</message>
+<message>
+<source>Harper connection successful.</source>
+<translation type="unfinished">Harper connection successful.</translation>
+</message>
+<message>
+<source>Harper connection failed: %1</source>
+<translation type="unfinished">Harper connection failed: %1</translation>
+</message>
+<message>
+<source>There are no ignored rules to reset.</source>
+<translation type="unfinished">There are no ignored rules to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored rule(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored rule(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored rules have been reset.</source>
+<translation type="unfinished">All ignored rules have been reset.</translation>
+</message>
+<message>
+<source>There are no ignored words to reset.</source>
+<translation type="unfinished">There are no ignored words to reset.</translation>
+</message>
+<message numerus="yes">
+<source>Reset %n ignored word(s)?</source>
+<translation type="unfinished">
+<numerusform>Reset %n ignored word(s)?</numerusform>
+</translation>
+</message>
+<message>
+<source>All ignored words have been reset.</source>
+<translation type="unfinished">All ignored words have been reset.</translation>
+</message>
+</context>
+<context>
 <name>HtmlPreviewWidgetInternal</name>
 <message>
 <source>Copy</source>
@@ -3227,6 +3484,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <translation>폴더</translation>
 </message>
 <message>
+<source>Tags</source>
+<translation type="unfinished">Tags</translation>
+</message>
+<message>
 <source>Modified</source>
 <translation>수정 날짜</translation>
 </message>
@@ -3366,7 +3627,7 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <name>LocalTrashSettingsWidget</name>
 <message>
 <source>Trash</source>
-<translation type="unfinished">Trash</translation>
+<translation>휴지통</translation>
 </message>
 <message>
 <source>Local trash settings</source>
@@ -3393,15 +3654,15 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 </message>
 <message>
 <source>No trashing</source>
-<translation type="unfinished">No trashing</translation>
+<translation>휴지통 없음</translation>
 </message>
 <message>
 <source>System trash</source>
-<translation type="unfinished">System trash</translation>
+<translation>시스템 휴지통</translation>
 </message>
 <message>
 <source>Local trash</source>
-<translation type="unfinished">Local trash</translation>
+<translation>로컬 휴지통</translation>
 </message>
 <message>
 <source>Enable local trash to keep a copy of trashed notes</source>
@@ -3650,6 +3911,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <translation>형식</translation>
 </message>
 <message>
+<source>Select</source>
+<translation type="unfinished">Select</translation>
+</message>
+<message>
 <source>Extra</source>
 <translation>추가 기능</translation>
 </message>
@@ -3676,6 +3941,18 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <message>
 <source>AI model</source>
 <translation>AI 모델</translation>
+</message>
+<message>
+<source>Note text edit</source>
+<translation type="unfinished">Note text edit</translation>
+</message>
+<message>
+<source>List operations</source>
+<translation type="unfinished">List operations</translation>
+</message>
+<message>
+<source>Markdown operations</source>
+<translation type="unfinished">Markdown operations</translation>
 </message>
 <message>
 <source>To&amp;do</source>
@@ -3729,6 +4006,14 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <message>
 <source>Show remote trash</source>
 <translation>원격 휴지통 표시</translation>
+</message>
+<message>
+<source>Select enclosed &amp;text</source>
+<translation type="unfinished">Select enclosed &amp;text</translation>
+</message>
+<message>
+<source>Select the innermost text around the current cursor position</source>
+<translation type="unfinished">Select the innermost text around the current cursor position</translation>
 </message>
 <message>
 <source>Insert text &amp;link</source>
@@ -4116,6 +4401,10 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <translation>언어 도구로 문법 확인</translation>
 </message>
 <message>
+<source>Check grammar with Harper</source>
+<translation type="unfinished">Check grammar with Harper</translation>
+</message>
+<message>
 <source>Custom</source>
 <translation>사용자 지정</translation>
 </message>
@@ -4218,6 +4507,46 @@ Just test yourself if you get sync conflicts and set a higher value if so.</tran
 <message>
 <source>Send clipboard as text</source>
 <translation>클립보드를 텍스트로 보내기</translation>
+</message>
+<message>
+<source>Toggle checkbox(es)</source>
+<translation type="unfinished">Toggle checkbox(es)</translation>
+</message>
+<message>
+<source>1. 2. 3. list</source>
+<translation type="unfinished">1. 2. 3. list</translation>
+</message>
+<message>
+<source>a. b. c. list</source>
+<translation type="unfinished">a. b. c. list</translation>
+</message>
+<message>
+<source>- list</source>
+<translation type="unfinished">- list</translation>
+</message>
+<message>
+<source>Create checkbox list</source>
+<translation type="unfinished">Create checkbox list</translation>
+</message>
+<message>
+<source>Clear list formatting</source>
+<translation type="unfinished">Clear list formatting</translation>
+</message>
+<message>
+<source>Order checkboxes</source>
+<translation type="unfinished">Order checkboxes</translation>
+</message>
+<message>
+<source>Increase heading depth</source>
+<translation type="unfinished">Increase heading depth</translation>
+</message>
+<message>
+<source>Decrease heading depth</source>
+<translation type="unfinished">Decrease heading depth</translation>
+</message>
+<message>
+<source>Copy code block</source>
+<translation type="unfinished">Copy code block</translation>
 </message>
 <message>
 <source>Use &amp;vertical preview layout</source>
@@ -4758,6 +5087,14 @@ ownCloud 서버에서 휴지통을 사용할 수 있는 경우 휴지통을 복�
 <message>
 <source>Switch to note folder</source>
 <translation>노트 폴더로 전환</translation>
+</message>
+<message>
+<source>Could not switch note folder</source>
+<translation type="unfinished">Could not switch note folder</translation>
+</message>
+<message>
+<source>Modified notes could not be written to disk. Please resolve the problem and try switching note folders again.</source>
+<translation type="unfinished">Modified notes could not be written to disk. Please resolve the problem and try switching note folders again.</translation>
 </message>
 <message>
 <source>Toolbar could not be loaded without name</source>
@@ -6897,6 +7234,30 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <translation>밝은 모드가 감지됨</translation>
 </message>
 <message>
+<source>Your system switched to dark mode. Do you also want to turn on dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</source>
+<translation type="unfinished">Your system switched to dark mode. Do you also want to turn on dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</translation>
+</message>
+<message>
+<source>Your system seems to be in dark mode. Do you also want to turn on dark mode in QOwnNotes?</source>
+<translation type="unfinished">Your system seems to be in dark mode. Do you also want to turn on dark mode in QOwnNotes?</translation>
+</message>
+<message>
+<source>Your system switched to light mode. Do you also want to turn off dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</source>
+<translation type="unfinished">Your system switched to light mode. Do you also want to turn off dark mode in QOwnNotes?
+
+Updating the interface takes a short while.</translation>
+</message>
+<message>
+<source>Your system seems to be in light mode. Do you also want to turn off dark mode in QOwnNotes?</source>
+<translation type="unfinished">Your system seems to be in light mode. Do you also want to turn off dark mode in QOwnNotes?</translation>
+</message>
+<message>
 <source>Double-click to unpin note from tab</source>
 <translation>탭에서 노트를 두 번 클릭하여 고정 해제</translation>
 </message>
@@ -7064,6 +7425,18 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <source>Dark</source>
 <translation>어두운</translation>
 </message>
+<message>
+<source>Harper command is empty</source>
+<translation type="unfinished">Harper command is empty</translation>
+</message>
+<message>
+<source>Failed to start Harper command: %1</source>
+<translation type="unfinished">Failed to start Harper command: %1</translation>
+</message>
+<message>
+<source>Failed to connect to Harper at %1:%2</source>
+<translation type="unfinished">Failed to connect to Harper at %1:%2</translation>
+</message>
 </context>
 <context>
 <name>QOwnNotesMarkdownTextEdit</name>
@@ -7109,32 +7482,8 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <translation>작업 목록</translation>
 </message>
 <message>
-<source>Toggle checkbox(es)</source>
-<translation>체크박스 전환</translation>
-</message>
-<message>
-<source>1. 2. 3. list</source>
-<translation>1. 2. 3. 목록</translation>
-</message>
-<message>
-<source>a. b. c. list</source>
-<translation>a. b. c. 목록</translation>
-</message>
-<message>
-<source>- list</source>
-<translation>- 목록</translation>
-</message>
-<message>
-<source>Create checkbox list</source>
-<translation>체크박스 목록 만들기</translation>
-</message>
-<message>
-<source>Clear list formatting</source>
-<translation>목록 형식 지우기</translation>
-</message>
-<message>
-<source>Order checkboxes</source>
-<translation>체큭 박스 순서</translation>
+<source>Markdown operations</source>
+<translation>마크다운 연산</translation>
 </message>
 <message>
 <source>Copy code block</source>
@@ -7197,6 +7546,10 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <translation>선택한 텍스트를 PDF로 내보내기 (미리보기)</translation>
 </message>
 <message>
+<source>Select</source>
+<translation type="unfinished">Select</translation>
+</message>
+<message>
 <source>Custom actions</source>
 <translation>사용자 지정 작업</translation>
 </message>
@@ -7235,6 +7588,10 @@ Click 'Cancel' to discard your changes and keep the external version.</source>
 <message>
 <source>Ignore word "%1"</source>
 <translation>단어 "%1" 무시</translation>
+</message>
+<message>
+<source>Harper</source>
+<translation type="unfinished">Harper</translation>
 </message>
 <message>
 <source>Markdown LSP server connected</source>
@@ -7757,12 +8114,16 @@ Do you want to install it anyway?</source>
 <translation>인터페이스</translation>
 </message>
 <message>
+<source>Harper</source>
+<translation type="unfinished">Harper</translation>
+</message>
+<message>
 <source>Shortcuts</source>
 <translation>단축키</translation>
 </message>
 <message>
 <source>Trash</source>
-<translation type="unfinished">Trash</translation>
+<translation>휴지통</translation>
 </message>
 <message>
 <source>Main window shortcuts</source>

@@ -109,11 +109,11 @@ Vous voudrez peut-être jeter un coup d'œil aux exemples [example.qml](https://
 ```js
 /**
   * Cette fonction est appelée lorsqu'une note est stockée sur le disque si
-  * "Autoriser le nom du fichier de note à être différent du titre" est activé
-  * dans les paramètres
+  * « Autoriser le nom du fichier de note à être différent du titre » est activé
+  * dans les préférences
   *
   * Il vous permet de modifier le nom du fichier de note
-  * Gardez à l'esprit que vous devez vous soucier des noms en double!
+  * Gardez à l'esprit que vous devez vous soucier des noms en double !
  *
   * Renvoie une chaîne vide si le nom de fichier de la note doit
   * ne pas être modifié

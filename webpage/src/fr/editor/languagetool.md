@@ -37,7 +37,7 @@ Utilisez `Tester la connexion` pour vérifier que le service configuré est joig
 
 ## Comment ça marche
 
-- QOwnNotes ne vérifie que les blocs d’éditeur visible au lieu du document entier
+- QOwnNotes ne vérifie que les blocs d’éditeur visibles au lieu du document entier
 - Les lignes vides, les titres de sections et les blocs de code sont sautés
 - Les requêtes sont délayées afin que le service ne soit pas interrogé à chaque touche frappée
 - Les résultats sont affichés en-ligne dans l’éditeur Markdown
@@ -45,7 +45,7 @@ Utilisez `Tester la connexion` pour vérifier que le service configuré est joig
 ## Notes
 
 - Le support LanguageTool est optionnel et dépend de si la fonctionnalité est activée dans votre version
-- Si le service n’est pas joignable, QOwnNotes affiche un warning et arrête la vérification jusqu’à ce qu’il soit joignable à nouveau
+- Si le service n’est pas joignable, QOwnNotes affiche un avertissement et arrête la vérification jusqu’à ce qu’il soit joignable à nouveau
 - Vous pouvez l’utiliser avec un serveur LanguageTool auto-hébergé local ou un autre endpoint compatible avec LanguageTool
 
 ## Voir aussi

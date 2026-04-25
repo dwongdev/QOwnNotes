@@ -27,7 +27,7 @@
 - <kbd>Ctrl</kbd> + <kbd>P</kbd> imprime la note actuelle sous forme de texte
 - <kbd>Ctrl</kbd> + <kbd>⇧ Maj</kbd> + <kbd>P</kbd> imprime la note courante sous forme de Markdown
 - <kbd>Ctrl</kbd> + <kbd>⇧ Maj</kbd> + <kbd>V</kbd> colle des notes, des images ou du code HTML à partir du presse-papiers
-- <kbd>Ctrl</kbd> + <kbd>,</kbd> ouvre les paramètres
+- <kbd>Ctrl</kbd> + <kbd>,</kbd> ouvre les préférences
 - <kbd>Alt</kbd> + <kbd>⇧ Maj</kbd> + <kbd>A</kbd> ajoute une nouvelle étiquette à une note
 - <kbd>Ctrl</kbd> + <kbd>⇧ Maj</kbd> + <kbd>R</kbd> recharge le dossier de notes courant
 - <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd> lets you select a different note folder
@@ -142,7 +142,7 @@
 - <kbd>⌘ Cmd</kbd> + <kbd>P</kbd> imprime la note courante sous forme de texte
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Maj</kbd> + <kbd>P</kbd> imprime la note courante sous forme de Markdown
 - <kbd>⌘ Cmd</kbd> + <kbd>^ Ctrl</kbd> + <kbd>V</kbd> colle des notes, des images ou du HTML à partir du presse-papiers
-- <kbd>⌘ Cmd</kbd> + <kbd>,</kbd> ouvre les paramètres
+- <kbd>⌘ Cmd</kbd> + <kbd>,</kbd> ouvre les préférences
 - <kbd>^ Ctrl</kbd> + <kbd>⇧ Maj</kbd> + <kbd>A</kbd> ajoute une nouvelle étiquette à une note
 - <kbd>⌘ Cmd</kbd> + <kbd>⇧ Maj</kbd> + <kbd>R</kbd> recharge le dossier de notes courant
 - <kbd>⌘ Cmd</kbd> + <kbd>^ Ctrl</kbd> + <kbd>F</kbd> permet de sélectionner un dossier de notes différent
