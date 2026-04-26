@@ -2,6 +2,15 @@
 
 ## 26.4.23
 
+- Fixed shortcuts not being saved or restored in the **Shortcuts** settings;
+  `storeShortcutSettings` now iterates the actual menu actions (mirroring how
+  `initShortcuts` reads them) and looks up the corresponding widgets in the
+  tree by action name, and shortcut values are stored as strings to match the
+  format expected by `initShortcuts` (for [#3584](https://github.com/pbek/QOwnNotes/issues/3584))
+- Fixed a crash when assigning a shortcut in the **Shortcuts** settings;
+  `keySequenceEvent` and `findKeySequenceWidget` now use recursive tree
+  traversal to handle the multi-level menu hierarchy correctly
+  (for [#3584](https://github.com/pbek/QOwnNotes/issues/3584))
 - Fixed a possible crash that occurred when Qt's internal style machinery was still
   processing a system color scheme change event while `applyDarkModeSettings()`
   was called synchronously, causing a SIGSEGV in QtWidgets; the UI update is now

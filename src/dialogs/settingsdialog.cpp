@@ -29,6 +29,7 @@
 #include <QKeySequence>
 #include <QKeySequenceEdit>
 #include <QMenu>
+#include <QMenuBar>
 #include <QMessageBox>
 #include <QPointer>
 #include <QRadioButton>
@@ -422,7 +423,6 @@ void SettingsDialog::loadShortcutSettings() {
     QColor shortcutButtonActiveColor = darkMode ? Qt::white : palette.color(QPalette::ButtonText);
     QColor shortcutButtonInactiveColor = darkMode ? Qt::darkGray : palette.color(QPalette::Mid);
 
-    const QList<QMenu *> menus = mainWindow->menuList();
     ui->shortcutSearchLineEdit->clear();
     ui->shortcutTreeWidget->clear();
     ui->shortcutTreeWidget->setColumnCount(3);
@@ -437,6 +437,9 @@ void SettingsDialog::loadShortcutSettings() {
     const QIcon clearButtonIcon =
         QIcon::fromTheme(QStringLiteral("edit-clear"), QIcon(":/icons/breeze-qownnotes/16x16/"
                                                              "edit-clear.svg"));
+
+    const QList<QMenu *> menus =
+        mainWindow->menuBar()->findChildren<QMenu *>(QString(), Qt::FindDirectChildrenOnly);
 
     // loop through all top-level menus and build the tree recursively
     for (const QMenu *menu : menus) {
@@ -473,8 +476,36 @@ void SettingsDialog::buildShortcutTreeForMenu(const QMenu *menu, QTreeWidgetItem
                                               const QIcon &disableShortcutButtonIcon,
                                               const QIcon &clearButtonIcon,
                                               const QStringList &disabledMenuNames) {
-    auto *menuItem = new QTreeWidgetItem();
+    // Count eligible actions first to decide whether to add this menu at all
     int actionCount = 0;
+
+    foreach (QAction *action, menu->actions()) {
+        if (action->menu() != nullptr) {
+            if (!disabledMenuNames.contains(action->menu()->objectName())) {
+                actionCount++;
+            }
+        } else if (!action->objectName().isEmpty()) {
+            actionCount++;
+        }
+    }
+
+    if (actionCount == 0) {
+        return;
+    }
+
+    // Add the menu item to the tree before populating children so that
+    // setItemWidget() works correctly (items must be in the tree first)
+    auto *menuItem = new QTreeWidgetItem();
+    menuItem->setText(0, menu->title().remove(QStringLiteral("&")));
+    menuItem->setToolTip(0, menu->objectName());
+
+    if (parentItem == nullptr) {
+        ui->shortcutTreeWidget->addTopLevelItem(menuItem);
+    } else {
+        parentItem->addChild(menuItem);
+    }
+
+    menuItem->setExpanded(true);
 
     // loop through all actions of the menu
     foreach (QAction *action, menu->actions()) {
@@ -489,7 +520,6 @@ void SettingsDialog::buildShortcutTreeForMenu(const QMenu *menu, QTreeWidgetItem
             buildShortcutTreeForMenu(subMenu, menuItem, settings, shortcutButtonActiveColor,
                                      shortcutButtonInactiveColor, disableShortcutButtonIcon,
                                      clearButtonIcon, disabledMenuNames);
-            actionCount++;
             continue;
         }
 
@@ -561,23 +591,6 @@ void SettingsDialog::buildShortcutTreeForMenu(const QMenu *menu, QTreeWidgetItem
                 .toString());
 
         ui->shortcutTreeWidget->setItemWidget(actionItem, 2, globalShortcutKeyWidget);
-
-        actionCount++;
-    }
-
-    if (actionCount > 0) {
-        menuItem->setText(0, menu->title().remove(QStringLiteral("&")));
-        menuItem->setToolTip(0, menu->objectName());
-
-        if (parentItem == nullptr) {
-            ui->shortcutTreeWidget->addTopLevelItem(menuItem);
-        } else {
-            parentItem->addChild(menuItem);
-        }
-
-        menuItem->setExpanded(true);
-    } else {
-        delete menuItem;
     }
 }
 
@@ -600,48 +613,53 @@ void SettingsDialog::keySequenceEvent(const QString &objectName) {
         return;
     }
 
-    // loop all top level tree widget items (menus)
-    for (int i = 0; i < ui->shortcutTreeWidget->topLevelItemCount(); i++) {
-        QTreeWidgetItem *menuItem = ui->shortcutTreeWidget->topLevelItem(i);
+    // Search all action items recursively for a conflicting shortcut
+    std::function<bool(QTreeWidgetItem *)> checkItem = [&](QTreeWidgetItem *item) -> bool {
+        const QString itemObjectName = item->data(1, Qt::UserRole).toString();
 
-        // loop all tree widget items of the menu (action shortcuts)
-        for (int j = 0; j < menuItem->childCount(); j++) {
-            QTreeWidgetItem *shortcutItem = menuItem->child(j);
+        if (!itemObjectName.isEmpty() && itemObjectName != objectName) {
+            auto *frameWidget = ui->shortcutTreeWidget->itemWidget(item, 1);
 
-            // skip the item that threw the event
-            if (shortcutItem->data(1, Qt::UserRole).toString() == objectName) {
-                continue;
-            }
+            if (frameWidget != nullptr) {
+                const auto keySequenceWidgets = frameWidget->findChildren<QKeySequenceWidget *>();
 
-            const auto keySequenceWidgets = ui->shortcutTreeWidget->itemWidget(shortcutItem, 1)
-                                                ->findChildren<QKeySequenceWidget *>();
+                if (keySequenceWidgets.count() > 0) {
+                    QKeySequence keySequence = keySequenceWidgets.at(0)->keySequence();
 
-            if (keySequenceWidgets.count() == 0) {
-                continue;
-            }
+                    // show an information if the shortcut was already used elsewhere
+                    if (keySequence == eventKeySequence) {
+                        if (Utils::Gui::information(
+                                this, tr("Shortcut already assigned"),
+                                tr("The shortcut <strong>%1</strong> is already "
+                                   "assigned to <strong>%2</strong>! Do you want to "
+                                   "jump to the shortcut?")
+                                    .arg(eventKeySequence.toString(), item->text(0)),
+                                QStringLiteral("settings-shortcut-already-assigned"),
+                                QMessageBox::Yes | QMessageBox::Cancel,
+                                QMessageBox::Yes) == QMessageBox::Yes) {
+                            ui->shortcutTreeWidget->scrollToItem(item);
+                            ui->shortcutTreeWidget->clearSelection();
+                            item->setSelected(true);
+                        }
 
-            auto *keyWidget = keySequenceWidgets.at(0);
-            QKeySequence keySequence = keyWidget->keySequence();
-            QKeySequence defaultKeySequence = keyWidget->defaultKeySequence();
-
-            // show an information if the shortcut was already used elsewhere
-            if (keySequence == eventKeySequence) {
-                if (Utils::Gui::information(
-                        this, tr("Shortcut already assigned"),
-                        tr("The shortcut <strong>%1</strong> is already "
-                           "assigned to <strong>%2</strong>! Do you want to "
-                           "jump to the shortcut?")
-                            .arg(eventKeySequence.toString(), shortcutItem->text(0)),
-                        QStringLiteral("settings-shortcut-already-assigned"),
-                        QMessageBox::Yes | QMessageBox::Cancel,
-                        QMessageBox::Yes) == QMessageBox::Yes) {
-                    ui->shortcutTreeWidget->scrollToItem(shortcutItem);
-                    ui->shortcutTreeWidget->clearSelection();
-                    shortcutItem->setSelected(true);
+                        return true;
+                    }
                 }
-
-                return;
             }
+        }
+
+        for (int i = 0; i < item->childCount(); i++) {
+            if (checkItem(item->child(i))) {
+                return true;
+            }
+        }
+
+        return false;
+    };
+
+    for (int i = 0; i < ui->shortcutTreeWidget->topLevelItemCount(); i++) {
+        if (checkItem(ui->shortcutTreeWidget->topLevelItem(i))) {
+            return;
         }
     }
 }
@@ -651,27 +669,69 @@ void SettingsDialog::keySequenceEvent(const QString &objectName) {
  * of the assigned menu action
  */
 QKeySequenceWidget *SettingsDialog::findKeySequenceWidget(const QString &objectName) {
-    // loop all top level tree widget items (menus)
-    for (int i = 0; i < ui->shortcutTreeWidget->topLevelItemCount(); i++) {
-        QTreeWidgetItem *menuItem = ui->shortcutTreeWidget->topLevelItem(i);
+    QKeySequenceWidget *result = nullptr;
 
-        // loop all tree widget items of the menu (action shortcuts)
-        for (int j = 0; j < menuItem->childCount(); j++) {
-            QTreeWidgetItem *shortcutItem = menuItem->child(j);
-            QString name = shortcutItem->data(1, Qt::UserRole).toString();
+    std::function<void(QTreeWidgetItem *)> findItem = [&](QTreeWidgetItem *item) {
+        if (result != nullptr) {
+            return;
+        }
 
-            if (name == objectName) {
-                const auto keySequenceWidgets = ui->shortcutTreeWidget->itemWidget(shortcutItem, 1)
-                                                    ->findChildren<QKeySequenceWidget *>();
+        if (item->data(1, Qt::UserRole).toString() == objectName) {
+            auto *frameWidget = ui->shortcutTreeWidget->itemWidget(item, 1);
+
+            if (frameWidget != nullptr) {
+                const auto keySequenceWidgets = frameWidget->findChildren<QKeySequenceWidget *>();
 
                 if (keySequenceWidgets.count() > 0) {
-                    return keySequenceWidgets.at(0);
+                    result = keySequenceWidgets.at(0);
+                    return;
                 }
             }
         }
+
+        for (int i = 0; i < item->childCount(); i++) {
+            findItem(item->child(i));
+        }
+    };
+
+    for (int i = 0; i < ui->shortcutTreeWidget->topLevelItemCount(); i++) {
+        findItem(ui->shortcutTreeWidget->topLevelItem(i));
     }
 
-    return nullptr;
+    return result;
+}
+
+/**
+ * Finds the global QKeySequenceWidget in the shortcutTreeWidget by the
+ * objectName of the assigned menu action (column 2)
+ */
+QKeySequenceWidget *SettingsDialog::findGlobalKeySequenceWidget(const QString &objectName) {
+    QKeySequenceWidget *result = nullptr;
+
+    std::function<void(QTreeWidgetItem *)> findItem = [&](QTreeWidgetItem *item) {
+        if (result != nullptr) {
+            return;
+        }
+
+        if (item->data(1, Qt::UserRole).toString() == objectName) {
+            result =
+                dynamic_cast<QKeySequenceWidget *>(ui->shortcutTreeWidget->itemWidget(item, 2));
+
+            if (result != nullptr) {
+                return;
+            }
+        }
+
+        for (int i = 0; i < item->childCount(); i++) {
+            findItem(item->child(i));
+        }
+    };
+
+    for (int i = 0; i < ui->shortcutTreeWidget->topLevelItemCount(); i++) {
+        findItem(ui->shortcutTreeWidget->topLevelItem(i));
+    }
+
+    return result;
 }
 
 /**
@@ -679,64 +739,56 @@ QKeySequenceWidget *SettingsDialog::findKeySequenceWidget(const QString &objectN
  */
 void SettingsDialog::storeShortcutSettings() {
     SettingsService settings;
+    MainWindow *mainWindow = MainWindow::instance();
 
-    // Collect all tree widget items recursively to find all action shortcut items,
-    // regardless of nesting depth (submenus can be multiple levels deep)
-    QList<QTreeWidgetItem *> allItems =
-        ui->shortcutTreeWidget->findItems(QString(), Qt::MatchContains | Qt::MatchRecursive);
+    if (mainWindow == nullptr) {
+        return;
+    }
 
-    for (QTreeWidgetItem *shortcutItem : allItems) {
-        // Action items store their object name in column 1's UserRole;
-        // menu items do not, so skip those
-        const QString actionObjectName = shortcutItem->data(1, Qt::UserRole).toString();
+    // Store shortcuts by iterating through the actual menu actions (the same
+    // way initShortcuts reads them) and looking up the corresponding widgets
+    // in the tree. This avoids any issues with tree widget item traversal.
+    const QList<QMenu *> menus = mainWindow->menuList();
 
-        if (actionObjectName.isEmpty()) {
-            continue;
-        }
+    for (QMenu *menu : menus) {
+        for (QAction *action : menu->actions()) {
+            const QString actionObjectName = action->objectName();
 
-        auto *frameWidget = ui->shortcutTreeWidget->itemWidget(shortcutItem, 1);
+            if (actionObjectName.isEmpty()) {
+                continue;
+            }
 
-        if (frameWidget == nullptr) {
-            continue;
-        }
+            // Find the key sequence widget for this action in the tree
+            auto *keyWidget = findKeySequenceWidget(actionObjectName);
 
-        const auto keySequenceWidgets = frameWidget->findChildren<QKeySequenceWidget *>();
+            if (keyWidget != nullptr) {
+                QKeySequence keySequence = keyWidget->keySequence();
+                QKeySequence defaultKeySequence = keyWidget->defaultKeySequence();
+                const QString settingsKey =
+                    QStringLiteral("Shortcuts/MainWindow-") + actionObjectName;
 
-        if (keySequenceWidgets.count() == 0) {
-            continue;
-        }
+                // remove or store the setting for the shortcut if it's not default
+                if (keySequence == defaultKeySequence) {
+                    settings.remove(settingsKey);
+                } else {
+                    settings.setValue(settingsKey, keySequence.toString());
+                }
+            }
 
-        auto *keyWidget = keySequenceWidgets.at(0);
-        auto *globalShortcutKeyWidget =
-            dynamic_cast<QKeySequenceWidget *>(ui->shortcutTreeWidget->itemWidget(shortcutItem, 2));
+            // Find the global shortcut widget for this action in the tree
+            auto *globalWidget = findGlobalKeySequenceWidget(actionObjectName);
 
-        if (keyWidget == nullptr || globalShortcutKeyWidget == nullptr) {
-            continue;
-        }
+            if (globalWidget != nullptr) {
+                QKeySequence keySequence = globalWidget->keySequence();
+                const QString settingsKey =
+                    QStringLiteral("GlobalShortcuts/MainWindow-") + actionObjectName;
 
-        // handle local shortcut
-        QKeySequence keySequence = keyWidget->keySequence();
-        QKeySequence defaultKeySequence = keyWidget->defaultKeySequence();
-        QString settingsKey = "Shortcuts/MainWindow-" + actionObjectName;
-
-        // remove or store the setting for the shortcut if it's not default
-        if (keySequence == defaultKeySequence) {
-            settings.remove(settingsKey);
-        } else {
-            // set new key sequence (can also be empty if no key sequence
-            // should be used)
-            settings.setValue(settingsKey, keySequence);
-        }
-
-        // handle global shortcut
-        keySequence = globalShortcutKeyWidget->keySequence();
-        settingsKey = "GlobalShortcuts/MainWindow-" + actionObjectName;
-
-        // remove or store the setting for the shortcut if it's not empty
-        if (keySequence.isEmpty()) {
-            settings.remove(settingsKey);
-        } else {
-            settings.setValue(settingsKey, keySequence);
+                if (keySequence.isEmpty()) {
+                    settings.remove(settingsKey);
+                } else {
+                    settings.setValue(settingsKey, keySequence.toString());
+                }
+            }
         }
     }
 }

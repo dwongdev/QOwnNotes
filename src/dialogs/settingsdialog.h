@@ -176,6 +176,7 @@ class SettingsDialog : public MasterDialog {
     void replaceOwnCloudText() const;
 
     QKeySequenceWidget *findKeySequenceWidget(const QString &objectName);
+    QKeySequenceWidget *findGlobalKeySequenceWidget(const QString &objectName);
 
     void handleDarkModeCheckBoxToggled(bool updateCheckBoxes = false, bool updateSchema = false);
 
