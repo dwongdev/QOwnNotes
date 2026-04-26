@@ -28,6 +28,8 @@ void MarkdownLspClient::setServerCommand(const QString &command, const QStringLi
     _arguments = arguments;
 }
 
+void MarkdownLspClient::setVerboseLogging(bool enabled) { _verboseLogging = enabled; }
+
 bool MarkdownLspClient::start() {
     if (_command.isEmpty()) {
         emit errorMessage(tr("Markdown LSP server command is empty"));
@@ -427,6 +429,10 @@ void MarkdownLspClient::onReadyReadStandardError() {
             if (trimmed.isEmpty()) {
                 continue;
             }
+            // Log all stderr output as debug if verbose logging is enabled
+            if (_verboseLogging) {
+                qDebug() << "Markdown LSP server:" << trimmed;
+            }
             if (errorPattern.match(trimmed).hasMatch()) {
                 emit errorMessage(trimmed);
             }
@@ -625,6 +631,7 @@ void MarkdownLspClient::handleNotification(const QJsonObject &object) {
         diagnostics.push_back(diagnostic);
     }
 
+    qDebug() << "Markdown LSP diagnostics received for" << uri << "- count:" << diagnostics.size();
     emit diagnosticsReceived(uri, diagnostics);
 }
 

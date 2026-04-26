@@ -45,6 +45,7 @@ class MarkdownLspClient : public QObject {
     ~MarkdownLspClient() override;
 
     void setServerCommand(const QString &command, const QStringList &arguments);
+    void setVerboseLogging(bool enabled);
     bool start();
     void shutdown();
     bool isRunning() const;
@@ -99,6 +100,7 @@ class MarkdownLspClient : public QObject {
     QByteArray _readBuffer;
     QString _command;
     QStringList _arguments;
+    bool _verboseLogging = false;
     int _nextRequestId = 1;
     int _initializeRequestId = -1;
     bool _initialized = false;

@@ -91,6 +91,8 @@ void EditorSettingsWidget::readSettings() {
         settings.value(QStringLiteral("Editor/markdownLspArguments"))
             .toStringList()
             .join(QLatin1Char(' ')));
+    ui->markdownLspVerboseLoggingCheckBox->setChecked(
+        settings.value(QStringLiteral("Editor/markdownLspVerboseLogging"), false).toBool());
     // Initialize dependent widget state for LSP fields
     on_markdownLspEnabledCheckBox_toggled(ui->markdownLspEnabledCheckBox->isChecked());
     ui->cursorWidthSpinBox->setValue(settings.value(QStringLiteral("cursorWidth"), 1).toInt());
@@ -147,6 +149,8 @@ void EditorSettingsWidget::storeSettings() {
 #else
                           QRegularExpression(QStringLiteral("\\s+")), Qt::SkipEmptyParts));
 #endif
+    settings.setValue(QStringLiteral("Editor/markdownLspVerboseLogging"),
+                      ui->markdownLspVerboseLoggingCheckBox->isChecked());
     settings.setValue(QStringLiteral("cursorWidth"), ui->cursorWidthSpinBox->value());
     settings.setValue(QStringLiteral("insertTimeFormat"), ui->timeFormatLineEdit->text());
 }
@@ -173,6 +177,7 @@ void EditorSettingsWidget::on_markdownLspEnabledCheckBox_toggled(bool checked) {
     ui->markdownLspArgumentsLineEdit->setEnabled(checked);
     ui->markdownLspCommandLabel->setEnabled(checked);
     ui->markdownLspArgumentsLabel->setEnabled(checked);
+    ui->markdownLspVerboseLoggingCheckBox->setEnabled(checked);
 }
 
 /**

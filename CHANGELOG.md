@@ -16,6 +16,24 @@
   was called synchronously, causing a SIGSEGV in QtWidgets; the UI update is now
   deferred via `QTimer::singleShot` so it runs after the current event is fully
   processed (for [#3578](https://github.com/pbek/QOwnNotes/issues/3578))
+- Added a **Show all LSP server log output in debug log** checkbox to the
+  **Markdown language server** section in the **Editor** settings; when
+  enabled, every line written to the LSP server's stderr is forwarded to
+  the Qt debug log so the full server output is visible (e.g. via
+  `QT_LOGGING_RULES="*.debug=true"`); the checkbox is disabled when the
+  LSP is not enabled (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+  - All Markdown LSP server stderr output is then forwarded to the debug log
+    (via `qDebug`) so the full server log is visible when running QOwnNotes
+    with debug output enabled; previously only lines containing `ERR`/`ERROR`
+    were forwarded
+  - Added debug logging when `textDocument/publishDiagnostics` notifications
+    are received from the Markdown LSP server and when they are applied to the
+    note text edit, to help diagnose why error markers may not appear; note that
+    `marksman` (the default LSP server) does not publish diagnostics — it
+    focuses on cross-reference and wiki-link completion only; to get real-time
+    wave-underline error markers in the note editor, configure a linting LSP
+    such as `rumdl` (command: `rumdl`, argument: `server`) which provides 71
+    Markdown lint rules and publishes `textDocument/publishDiagnostics`
 
 ## 26.4.22
 

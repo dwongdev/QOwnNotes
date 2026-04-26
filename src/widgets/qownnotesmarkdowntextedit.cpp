@@ -3439,6 +3439,8 @@ void QOwnNotesMarkdownTextEdit::applyMarkdownLspSettings() {
             .toString();
     const QStringList arguments =
         settings.value(QStringLiteral("Editor/markdownLspArguments")).toStringList();
+    const bool verboseLogging =
+        settings.value(QStringLiteral("Editor/markdownLspVerboseLogging"), false).toBool();
 
     if (!enabled) {
         _markdownLspEnabled = false;
@@ -3473,6 +3475,7 @@ void QOwnNotesMarkdownTextEdit::applyMarkdownLspSettings() {
     }
 
     _markdownLspClient->setServerCommand(command, arguments);
+    _markdownLspClient->setVerboseLogging(verboseLogging);
     if (_markdownLspClient->start()) {
         const QString rootPath = NoteFolder::currentLocalPath();
         _markdownLspClient->initialize(rootPath, QStringLiteral("QOwnNotes"),
@@ -3598,9 +3601,12 @@ void QOwnNotesMarkdownTextEdit::showMarkdownLspCompletions(int requestId,
 void QOwnNotesMarkdownTextEdit::showMarkdownLspDiagnostics(
     const QString &uri, const QVector<MarkdownLspClient::Diagnostic> &diagnostics) {
     if (uri != _markdownLspUri) {
+        qDebug() << "Markdown LSP: ignoring diagnostics for" << uri
+                 << "(current:" << _markdownLspUri << ")";
         return;
     }
 
+    qDebug() << "Markdown LSP: applying" << diagnostics.size() << "diagnostics for" << uri;
     _markdownLspDiagnostics = diagnostics;
     _markdownLspDiagnosticsSelections.clear();
     for (const MarkdownLspClient::Diagnostic &diagnostic : diagnostics) {
