@@ -39,6 +39,7 @@
 #include <QStyleFactory>
 #include <QTextBlock>
 #include <QTextCursor>
+#include <QTimer>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
@@ -67,7 +68,12 @@ bool promptForColorSchemeChange(const QString &title, const QString &text,
         Utils::Misc::switchToLightMode();
     }
 
-    Utils::Gui::applyDarkModeSettings();
+    // Defer the UI update so it runs after the current color scheme change event
+    // has been fully processed by Qt's style machinery. Calling applyDarkModeSettings()
+    // synchronously here can cause a crash (SIGSEGV at a near-null address in QtWidgets)
+    // because qApp->setStyleSheet() is invoked while Qt's internal style update is still
+    // on the call stack (see issue #3578).
+    QTimer::singleShot(0, qApp, [] { Utils::Gui::applyDarkModeSettings(); });
     return true;
 }
 

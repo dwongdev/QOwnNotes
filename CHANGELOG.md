@@ -1,5 +1,13 @@
 # QOwnNotes Changelog
 
+## 26.4.23
+
+- Fixed a possible crash that occurred when Qt's internal style machinery was still
+  processing a system color scheme change event while `applyDarkModeSettings()`
+  was called synchronously, causing a SIGSEGV in QtWidgets; the UI update is now
+  deferred via `QTimer::singleShot` so it runs after the current event is fully
+  processed (for [#3578](https://github.com/pbek/QOwnNotes/issues/3578))
+
 ## 26.4.22
 
 - The **Shortcuts** settings action name tree now shows the full menu hierarchy,
