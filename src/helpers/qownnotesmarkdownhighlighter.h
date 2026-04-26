@@ -17,6 +17,7 @@
 
 #include <entities/note.h>
 #include <libraries/qmarkdowntextedit/markdownhighlighter.h>
+#include <services/markdownlspclient.h>
 
 #include <QHash>
 
@@ -40,6 +41,9 @@ class QOwnNotesMarkdownHighlighter : public MarkdownHighlighter {
         HighlightingOptions highlightingOptions = HighlightingOption::None);
 
     void updateCurrentNote(Note *note);
+
+    void setMarkdownLspDiagnostics(const QVector<MarkdownLspClient::Diagnostic> &diagnostics);
+    void clearMarkdownLspDiagnostics();
 
     struct ScriptingHighlightingRule {
         explicit ScriptingHighlightingRule(const HighlighterState state_) : state(state_) {}
@@ -69,6 +73,9 @@ class QOwnNotesMarkdownHighlighter : public MarkdownHighlighter {
     void highlightWikiLinks(const QString &text);
     void clearWikiLinkCache();
 
+    void highlightMarkdownLsp(const QString &text);
+    void setMarkdownLspUnderline(int start, int count, const QColor &color, const QString &toolTip);
+
     // Set the format of a word as misspelled i.e., red wavy underline
     void setMisspelled(const int start, const int count);
     void highlightSpellChecking(const QString &text);
@@ -93,6 +100,16 @@ class QOwnNotesMarkdownHighlighter : public MarkdownHighlighter {
     QRegularExpression _regexTagStyleLink;
     QRegularExpression _regexBracketLink;
     QHash<QString, bool> _wikiLinkCache;
+
+    // Cache of LSP diagnostics keyed by block (line) number.
+    // Each entry holds one or more diagnostics that touch that block.
+    struct LspBlockDiagnostic {
+        int startCharacter = 0;
+        int endCharacter = 0;
+        QColor color;
+        QString toolTip;
+    };
+    QHash<int, QVector<LspBlockDiagnostic>> _lspDiagnosticsCache;
     void highlightScriptingRules(const QVector<ScriptingHighlightingRule> &rules,
                                  const QString &text);
     void highlightScriptingHook(const QString &text);

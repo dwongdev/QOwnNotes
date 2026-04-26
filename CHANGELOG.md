@@ -1,5 +1,22 @@
 # QOwnNotes Changelog
 
+## 26.4.24
+
+- Fixed a URI percent-encoding mismatch that prevented Markdown LSP diagnostics
+  from being applied when a note filename contains spaces; the incoming LSP URI
+  (e.g. `Top%20heading.md`) is now decoded with `QUrl::fromPercentEncoding`
+  before being compared to the stored document URI so wave-underlines appear
+  correctly for notes with spaces in their name
+  (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+- Added an inline **Markdown LSP diagnostic context menu** section that appears
+  when right-clicking on a wave-underlined region in the note editor; it shows
+  the diagnostic message as a header and fetches available LSP code actions
+  (fixes) via a short synchronous wait, then lists each fix as a clickable menu
+  item — matching the same UX pattern used by the LanguageTool and Harper
+  context menus; the old standalone **Code actions** menu item in the
+  **Markdown LSP** submenu has been removed in favour of this inline approach
+  (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+
 ## 26.4.23
 
 - Fixed shortcuts not being saved or restored in the **Shortcuts** settings;

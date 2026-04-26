@@ -157,7 +157,6 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     bool eventFilter(QObject *obj, QEvent *event) override;
     void keyPressEvent(QKeyEvent *e) override;
     void focusInEvent(QFocusEvent *e) override;
-    bool viewportEvent(QEvent *event) override;
     int sidebarAdditionalWidth() const override;
     void paintSidebar(QPainter *painter, const QRect &eventRect) override;
     bool sidebarMousePressEvent(QMouseEvent *event) override;
@@ -179,6 +178,7 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     void overrideFontSizeStyle(int fontSize);
 
     QMenu *spellCheckContextMenu(QPoint pos);
+    void addMarkdownLspMenuSection(QMenu *menu, const QTextCursor &cursorAtMouse, bool &hasEntries);
 #ifdef LANGUAGETOOL_ENABLED
     void addLanguageToolMenuSection(QMenu *menu, const QTextCursor &cursorAtMouse,
                                     const QTextCursor &selectedCursor, bool &hasEntries);
@@ -216,7 +216,6 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     void showMarkdownLspCompletions(int requestId, const QStringList &items);
     void showMarkdownLspDiagnostics(const QString &uri,
                                     const QVector<MarkdownLspClient::Diagnostic> &diagnostics);
-    void applyMarkdownLspDiagnosticsSelections();
     void applyMarkdownLspTextEdits(const QVector<MarkdownLspClient::TextEdit> &edits);
     void applyMarkdownLspFormatting(int requestId,
                                     const QVector<MarkdownLspClient::TextEdit> &edits);
@@ -265,7 +264,6 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     QVector<MarkdownLspClient::Diagnostic> _markdownLspDiagnostics;
     QVector<MarkdownLspClient::CodeAction> _markdownLspLastCodeActions;
     bool _markdownLspEnabled = false;
-    QList<QTextEdit::ExtraSelection> _markdownLspDiagnosticsSelections;
 
     // Static pointer to the currently active editor for AI autocomplete
     static QOwnNotesMarkdownTextEdit *_activeAutocompleteEditor;

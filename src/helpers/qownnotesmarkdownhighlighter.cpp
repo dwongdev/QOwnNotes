@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2014-2026 Patrizio Bekerle -- <patrizio@bekerle.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -123,6 +123,11 @@ void QOwnNotesMarkdownHighlighter::highlightBlock(const QString &text) {
         // Call the per-block highlightingHook in scripts (only invoked if at
         // least one script provides the hook, checked via cached flag)
         highlightScriptingHook(text);
+
+        // Apply LSP diagnostic underlines last so they overlay all other formatting
+        if (!text.isEmpty()) {
+            highlightMarkdownLsp(text);
+        }
     }
 
     // Only check for encryption end marker if we're highlighting encrypted text
@@ -612,5 +617,113 @@ void QOwnNotesMarkdownHighlighter::highlightSpellChecking(const QString &text) {
                 // unsetMisspelled(word.position()+offset, word.length());
             }
         }
+    }
+}
+
+/**
+ * Stores LSP diagnostics in the block-keyed cache and triggers a rehighlight
+ * of every affected block so the underlines appear via QSyntaxHighlighter::setFormat(),
+ * exactly like the LanguageTool and Harper integrations.
+ */
+void QOwnNotesMarkdownHighlighter::setMarkdownLspDiagnostics(
+    const QVector<MarkdownLspClient::Diagnostic> &diagnostics) {
+    _lspDiagnosticsCache.clear();
+
+    for (const MarkdownLspClient::Diagnostic &diag : diagnostics) {
+        if (diag.message.isEmpty()) {
+            continue;
+        }
+
+        // Choose underline color based on LSP severity:
+        // 1 = Error, 2 = Warning, 3 = Information, 4 = Hint
+        QColor color;
+        switch (diag.severity) {
+            case 1:
+                color = QColor(214, 68, 68);    // Red for errors
+                break;
+            case 2:
+                color = QColor(210, 140, 30);    // Orange for warnings
+                break;
+            case 3:
+                color = QColor(80, 140, 210);    // Blue for information
+                break;
+            case 4:
+                color = QColor(100, 170, 100);    // Green for hints
+                break;
+            default:
+                color = QColor(214, 68, 68);
+                break;
+        }
+
+        // A diagnostic may span multiple lines; add an entry for every covered line
+        for (int line = diag.range.startLine; line <= diag.range.endLine; ++line) {
+            LspBlockDiagnostic entry;
+            entry.color = color;
+            entry.toolTip = diag.message;
+
+            if (line == diag.range.startLine && line == diag.range.endLine) {
+                entry.startCharacter = diag.range.startCharacter;
+                entry.endCharacter = diag.range.endCharacter;
+            } else if (line == diag.range.startLine) {
+                entry.startCharacter = diag.range.startCharacter;
+                entry.endCharacter = INT_MAX;    // Highlight to end of line
+            } else if (line == diag.range.endLine) {
+                entry.startCharacter = 0;
+                entry.endCharacter = diag.range.endCharacter;
+            } else {
+                entry.startCharacter = 0;
+                entry.endCharacter = INT_MAX;    // Highlight entire intermediate line
+            }
+
+            _lspDiagnosticsCache[line].append(entry);
+        }
+    }
+}
+
+/**
+ * Clears all cached LSP diagnostics.
+ */
+void QOwnNotesMarkdownHighlighter::clearMarkdownLspDiagnostics() { _lspDiagnosticsCache.clear(); }
+
+/**
+ * Applies wave underlines for LSP diagnostics on the current block via
+ * QSyntaxHighlighter::setFormat(), so they behave identically to spell-check
+ * and grammar-checker underlines (document-level, not view-level).
+ */
+void QOwnNotesMarkdownHighlighter::highlightMarkdownLsp(const QString &text) {
+    const int blockNumber = currentBlock().blockNumber();
+    const auto it = _lspDiagnosticsCache.constFind(blockNumber);
+    if (it == _lspDiagnosticsCache.constEnd()) {
+        return;
+    }
+
+    qDebug() << "LSP highlightMarkdownLsp: block" << blockNumber << "entries:" << it->size()
+             << "text:" << text.left(40);
+    for (const LspBlockDiagnostic &entry : *it) {
+        const int start = entry.startCharacter;
+        const int end = (entry.endCharacter == INT_MAX) ? text.length() : entry.endCharacter;
+        const int count = end - start;
+        if (count <= 0 || start >= text.length()) {
+            continue;
+        }
+        setMarkdownLspUnderline(start, qMin(count, text.length() - start), entry.color,
+                                entry.toolTip);
+    }
+}
+
+/**
+ * Applies a wave underline to a character range in the current block, merging
+ * with the existing per-character format to preserve syntax highlighting colors.
+ */
+void QOwnNotesMarkdownHighlighter::setMarkdownLspUnderline(int start, int count,
+                                                           const QColor &color,
+                                                           const QString &toolTip) {
+    for (int i = start; i < start + count; ++i) {
+        QTextCharFormat format = QSyntaxHighlighter::format(i);
+        format.setFontUnderline(true);
+        format.setUnderlineStyle(QTextCharFormat::SpellCheckUnderline);
+        format.setUnderlineColor(color);
+        format.setToolTip(toolTip);
+        setFormat(i, 1, format);
     }
 }
