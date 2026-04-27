@@ -37,6 +37,10 @@
   editor now restarts the running LSP client and reconnects the current note
   immediately instead of continuing to talk to the previously selected server
   until the application is restarted (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+- Fixed the **AI toolbar disabled** confirmation so choosing **Don't ask again!**
+  together with **No** now actually suppresses the dialog on later runs instead
+  of prompting again every time an AI backend is configured while the toolbar
+  stays hidden (for [#3561](https://github.com/pbek/QOwnNotes/issues/3561))
 
 ## 26.4.23
 

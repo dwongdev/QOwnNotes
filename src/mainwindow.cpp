@@ -3995,7 +3995,7 @@ void MainWindow::checkAiToolbarConfiguration(bool askToShowToolbar) {
                              tr("An AI backend is configured, but the AI toolbar is currently "
                                 "disabled. Do you want to turn it on?"),
                              QStringLiteral("enable-ai-toolbar-question"),
-                             QMessageBox::Yes | QMessageBox::No,
+                             QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes,
                              QMessageBox::Yes) == QMessageBox::Yes) {
         aiToolbar->show();
         storeCurrentLayout();
