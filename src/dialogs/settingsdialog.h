@@ -74,7 +74,8 @@ class SettingsDialog : public MasterDialog {
         LanguageToolPage,
         HarperPage,
         ColorModesPage,
-        McpServerPage
+        McpServerPage,
+        MarkdownLspPage
     };
 
     explicit SettingsDialog(int page = 0, QWidget *parent = 0);

@@ -64,6 +64,7 @@
 #include "widgets/settings/editorsettingswidget.h"
 #include "widgets/settings/harpersettingswidget.h"
 #include "widgets/settings/languagetoolsettingswidget.h"
+#include "widgets/settings/markdownlspsettingswidget.h"
 #include "widgets/settings/networksettingswidget.h"
 #include "widgets/settings/owncloudsettingswidget.h"
 #include "widgets/settings/todosettingswidget.h"
@@ -310,6 +311,7 @@ void SettingsDialog::storeSettings() {
     ui->editorSettingsWidget->storeSettings();
     ui->languageToolSettingsWidget->storeSettings();
     ui->harperSettingsWidget->storeSettings();
+    ui->markdownLspSettingsWidget->storeSettings();
 
     ui->networkSettingsWidget->storeSettings();
 
@@ -374,6 +376,7 @@ void SettingsDialog::readSettings() {
     ui->editorSettingsWidget->readSettings();
     ui->languageToolSettingsWidget->readSettings();
     ui->harperSettingsWidget->readSettings();
+    ui->markdownLspSettingsWidget->readSettings();
     ui->networkSettingsWidget->readSettings();
     ui->editorFontColorSettingsWidget->readSettings();
 
@@ -1128,6 +1131,9 @@ bool SettingsDialog::initializePage(int index) {
         } break;
         case SettingsPages::McpServerPage: {
             ui->mcpServerSettingsWidget->initialize();
+        } break;
+        case SettingsPages::MarkdownLspPage: {
+            ui->markdownLspSettingsWidget->initialize();
         } break;
         default:
             break;

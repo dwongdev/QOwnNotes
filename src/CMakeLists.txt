@@ -502,6 +502,9 @@ set(SOURCE_FILES
     widgets/settings/harpersettingswidget.cpp
     widgets/settings/harpersettingswidget.h
     widgets/settings/harpersettingswidget.ui
+    widgets/settings/markdownlspsettingswidget.cpp
+    widgets/settings/markdownlspsettingswidget.h
+    widgets/settings/markdownlspsettingswidget.ui
     widgets/settings/networksettingswidget.cpp
     widgets/settings/networksettingswidget.h
     widgets/settings/networksettingswidget.ui

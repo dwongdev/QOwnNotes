@@ -6,8 +6,7 @@
   from being applied when a note filename contains spaces; the incoming LSP URI
   (e.g. `Top%20heading.md`) is now decoded with `QUrl::fromPercentEncoding`
   before being compared to the stored document URI so wave-underlines appear
-  correctly for notes with spaces in their name
-  (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+  correctly for notes with spaces in their name (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
 - Added an inline **Markdown LSP diagnostic context menu** section that appears
   when right-clicking on a wave-underlined region in the note editor; it shows
   the diagnostic message as a header and fetches available LSP code actions
@@ -26,6 +25,9 @@
   diagnostics arrive from the server, blocks that previously had diagnostics
   are now also rehighlighted so their old underlines are cleared
   (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+- Moved the Markdown LSP configuration out of the **Editor** settings into its
+  own **Markdown LSP** settings page to make the language-server options easier
+  to find and manage (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
 
 ## 26.4.23
 

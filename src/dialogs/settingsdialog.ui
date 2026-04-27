@@ -242,10 +242,22 @@
                 </property>
                 <property name="icon">
                  <iconset theme="tools-check-spelling" resource="../breeze-qownnotes.qrc">
-                  <normaloff>:/icons/breeze-qownnotes/16x16/tools-check-spelling.svg</normaloff>:/icons/breeze-qownnotes/16x16/tools-check-spelling.svg</iconset>
+                 <normaloff>:/icons/breeze-qownnotes/16x16/tools-check-spelling.svg</normaloff>:/icons/breeze-qownnotes/16x16/tools-check-spelling.svg</iconset>
                 </property>
                </item>
-             </item>
+               <item>
+                <property name="text">
+                 <string>Markdown LSP</string>
+                </property>
+                <property name="whatsThis">
+                 <string notr="true">27</string>
+                </property>
+                <property name="icon">
+                 <iconset theme="text-x-markdown" resource="../breeze-qownnotes.qrc">
+                  <normaloff>:/icons/breeze-qownnotes/16x16/text-x-markdown.svg</normaloff>:/icons/breeze-qownnotes/16x16/text-x-markdown.svg</iconset>
+                </property>
+               </item>
+              </item>
             <item>
              <property name="text">
               <string>Panels</string>
@@ -1144,6 +1156,25 @@ li.checked::marker { content: &quot;\2612&quot;; }
                </item>
               </layout>
              </widget>
+             <widget class="QWidget" name="markdownLspPage">
+              <layout class="QVBoxLayout" name="markdownLspPageLayout">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="MarkdownLspSettingsWidget" name="markdownLspSettingsWidget" native="true"/>
+               </item>
+              </layout>
+             </widget>
             </widget>
           </item>
          </layout>
@@ -1311,8 +1342,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <container>1</container>
            </customwidget>
            <customwidget>
-            <class>NoteFolderSettingsWidget</class>
+            <class>MarkdownLspSettingsWidget</class>
             <extends>QWidget</extends>
+            <header location="global">widgets/settings/markdownlspsettingswidget.h</header>
+            <container>1</container>
+           </customwidget>
+            <customwidget>
+             <class>NoteFolderSettingsWidget</class>
+             <extends>QWidget</extends>
             <header location="global">widgets/settings/notefoldersettingswidget.h</header>
             <container>1</container>
            </customwidget>

@@ -244,6 +244,7 @@ SOURCES += main.cpp\
     widgets/settings/debugsettingswidget.cpp \
     widgets/settings/languagetoolsettingswidget.cpp \
     widgets/settings/harpersettingswidget.cpp \
+    widgets/settings/markdownlspsettingswidget.cpp \
      widgets/settings/networksettingswidget.cpp \
      widgets/settings/owncloudsettingswidget.cpp \
      widgets/settings/todosettingswidget.cpp \
@@ -411,6 +412,7 @@ HEADERS  += mainwindow.h \
     widgets/settings/debugsettingswidget.h \
     widgets/settings/languagetoolsettingswidget.h \
     widgets/settings/harpersettingswidget.h \
+    widgets/settings/markdownlspsettingswidget.h \
      widgets/settings/networksettingswidget.h \
      widgets/settings/owncloudsettingswidget.h \
      widgets/settings/todosettingswidget.h \
@@ -495,6 +497,7 @@ FORMS    += mainwindow.ui \
     widgets/settings/debugsettingswidget.ui \
     widgets/settings/languagetoolsettingswidget.ui \
     widgets/settings/harpersettingswidget.ui \
+    widgets/settings/markdownlspsettingswidget.ui \
      widgets/settings/networksettingswidget.ui \
      widgets/settings/owncloudsettingswidget.ui \
      widgets/settings/todosettingswidget.ui \
