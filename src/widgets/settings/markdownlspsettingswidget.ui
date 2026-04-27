@@ -17,7 +17,7 @@
       <string>Markdown language server</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_markdownLsp">
-      <item row="0" column="0" colspan="2">
+      <item row="0" column="0" colspan="3">
        <widget class="QCheckBox" name="markdownLspEnabledCheckBox">
         <property name="text">
          <string>Enable Markdown language server (LSP)</string>
@@ -42,6 +42,13 @@
         <property name="clearButtonEnabled">
          <bool>true</bool>
         </property>
+        </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="markdownLspAutoDetectButton">
+        <property name="text">
+         <string>Auto-detect</string>
+        </property>
        </widget>
       </item>
       <item row="2" column="0">
@@ -54,7 +61,7 @@
         </property>
       </widget>
       </item>
-      <item row="2" column="1">
+      <item row="2" column="1" colspan="2">
        <widget class="QLineEdit" name="markdownLspArgumentsLineEdit">
         <property name="toolTip">
          <string>Optional arguments separated by spaces.</string>
@@ -67,13 +74,40 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="0" colspan="2">
+      <item row="3" column="0" colspan="3">
        <widget class="QCheckBox" name="markdownLspVerboseLoggingCheckBox">
         <property name="toolTip">
          <string>Log all LSP server output (stderr) to the debug log. Useful for troubleshooting LSP server issues.</string>
         </property>
         <property name="text">
          <string>Show all LSP server log output in debug log</string>
+        </property>
+        </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="markdownLspStatusTextLabel">
+        <property name="text">
+         <string>Status:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="markdownLspStatusLabel">
+        <property name="text">
+         <string>Not tested yet.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="markdownLspTestConnectionButton">
+        <property name="text">
+         <string>Test Connection</string>
         </property>
        </widget>
       </item>

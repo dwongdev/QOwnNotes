@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include <QString>
+#include <QStringList>
 #include <QWidget>
 
 namespace Ui {
@@ -33,7 +35,13 @@ class MarkdownLspSettingsWidget : public QWidget {
 
    private slots:
     void on_markdownLspEnabledCheckBox_toggled(bool checked);
+    void on_markdownLspAutoDetectButton_clicked();
+    void on_markdownLspTestConnectionButton_clicked();
 
    private:
     Ui::MarkdownLspSettingsWidget *ui;
+
+    QStringList argumentsFromUi() const;
+    void updateStatusLabel(const QString &overrideText = QString());
+    static QString resolveCommandPath(const QString &command);
 };

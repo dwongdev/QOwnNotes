@@ -28,6 +28,11 @@
 - Moved the Markdown LSP configuration out of the **Editor** settings into its
   own **Markdown LSP** settings page to make the language-server options easier
   to find and manage (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+- Added **Auto-detect** and **Test Connection** actions to the **Markdown LSP**
+  settings page so QOwnNotes can discover supported servers such as `marksman`
+  and `rumdl`, prefill the correct command-line arguments, and verify that the
+  configured LSP server completes its initialization handshake
+  (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
 
 ## 26.4.23
 
