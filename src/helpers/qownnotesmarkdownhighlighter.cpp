@@ -697,8 +697,6 @@ void QOwnNotesMarkdownHighlighter::highlightMarkdownLsp(const QString &text) {
         return;
     }
 
-    qDebug() << "LSP highlightMarkdownLsp: block" << blockNumber << "entries:" << it->size()
-             << "text:" << text.left(40);
     for (const LspBlockDiagnostic &entry : *it) {
         const int start = entry.startCharacter;
         const int end = (entry.endCharacter == INT_MAX) ? text.length() : entry.endCharacter;

@@ -176,9 +176,8 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     void onContextMenu(QPoint pos);
 
     void overrideFontSizeStyle(int fontSize);
-
     QMenu *spellCheckContextMenu(QPoint pos);
-    void addMarkdownLspMenuSection(QMenu *menu, const QTextCursor &cursorAtMouse, bool &hasEntries);
+    QMenu *markdownLspContextMenu(const QTextCursor &cursorAtMouse);
 #ifdef LANGUAGETOOL_ENABLED
     void addLanguageToolMenuSection(QMenu *menu, const QTextCursor &cursorAtMouse,
                                     const QTextCursor &selectedCursor, bool &hasEntries);
@@ -220,9 +219,6 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     void applyMarkdownLspFormatting(int requestId,
                                     const QVector<MarkdownLspClient::TextEdit> &edits);
     void requestMarkdownLspFormatting(bool useSelection);
-    void requestMarkdownLspCodeActions(const QTextCursor &cursor);
-    void showMarkdownLspCodeActions(int requestId,
-                                    const QVector<MarkdownLspClient::CodeAction> &actions);
     void paintMarkdownImagePreviews();
     void refreshFoldingSidebar();
     static bool isHeadingBlock(const QTextBlock &block, int *level = nullptr);
@@ -262,7 +258,6 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     int _markdownLspCodeActionRequestId = -1;
     bool _markdownLspApplyingEdits = false;
     QVector<MarkdownLspClient::Diagnostic> _markdownLspDiagnostics;
-    QVector<MarkdownLspClient::CodeAction> _markdownLspLastCodeActions;
     bool _markdownLspEnabled = false;
 
     // Static pointer to the currently active editor for AI autocomplete

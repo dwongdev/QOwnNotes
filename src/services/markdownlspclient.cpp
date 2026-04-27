@@ -472,7 +472,20 @@ void MarkdownLspClient::parseMessages() {
         }
 
         const QJsonObject object = doc.object();
-        if (object.contains(QStringLiteral("id"))) {
+        const bool hasId = object.contains(QStringLiteral("id"));
+        const bool hasMethod = object.contains(QStringLiteral("method"));
+
+        if (hasId && hasMethod) {
+            // Server-to-client request (e.g. client/registerCapability,
+            // window/workDoneProgress/create). Acknowledge with an empty
+            // success response so the server doesn't stall waiting for it.
+            const QJsonValue requestId = object.value(QStringLiteral("id"));
+            QJsonObject response;
+            response.insert(QStringLiteral("jsonrpc"), QStringLiteral("2.0"));
+            response.insert(QStringLiteral("id"), requestId);
+            response.insert(QStringLiteral("result"), QJsonValue());
+            sendMessage(response);
+        } else if (hasId) {
             handleResponse(object);
         } else {
             handleNotification(object);
@@ -631,7 +644,6 @@ void MarkdownLspClient::handleNotification(const QJsonObject &object) {
         diagnostics.push_back(diagnostic);
     }
 
-    qDebug() << "Markdown LSP diagnostics received for" << uri << "- count:" << diagnostics.size();
     emit diagnosticsReceived(uri, diagnostics);
 }
 
@@ -692,14 +704,22 @@ QVector<MarkdownLspClient::TextEdit> MarkdownLspClient::parseWorkspaceEdits(
         return edits;
     }
 
+    const QString normalizedUri = QUrl::fromPercentEncoding(uri.toUtf8());
+
     const QJsonValue changesValue = workspaceEdit.value(QStringLiteral("changes"));
     if (changesValue.isObject()) {
         const QJsonObject changesObject = changesValue.toObject();
-        const QJsonValue uriEdits = changesObject.value(uri);
-        if (uriEdits.isArray()) {
-            edits = parseTextEdits(uriEdits);
-            if (!edits.isEmpty()) {
-                return edits;
+        for (auto it = changesObject.constBegin(); it != changesObject.constEnd(); ++it) {
+            const QString changeUri = it.key();
+            if (QUrl::fromPercentEncoding(changeUri.toUtf8()) != normalizedUri) {
+                continue;
+            }
+
+            if (it.value().isArray()) {
+                edits = parseTextEdits(it.value());
+                if (!edits.isEmpty()) {
+                    return edits;
+                }
             }
         }
     }
@@ -716,7 +736,7 @@ QVector<MarkdownLspClient::TextEdit> MarkdownLspClient::parseWorkspaceEdits(
             const QJsonObject textDocument =
                 docChange.value(QStringLiteral("textDocument")).toObject();
             const QString changeUri = textDocument.value(QStringLiteral("uri")).toString();
-            if (changeUri != uri) {
+            if (QUrl::fromPercentEncoding(changeUri.toUtf8()) != normalizedUri) {
                 continue;
             }
 

@@ -16,6 +16,16 @@
   context menus; the old standalone **Code actions** menu item in the
   **Markdown LSP** submenu has been removed in favour of this inline approach
   (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+- Fixed a protocol bug where the Markdown LSP client did not respond to
+  server-initiated requests (e.g. `client/registerCapability`), causing the
+  LSP server to stall after the initial `didOpen`; subsequent `didChange`
+  notifications were silently ignored by the server so diagnostics never
+  refreshed after the first note load (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+- Fixed stale Markdown LSP wave underlines remaining visible after applying
+  a quick-fix or manually editing the text to resolve a diagnostic; when fresh
+  diagnostics arrive from the server, blocks that previously had diagnostics
+  are now also rehighlighted so their old underlines are cleared
+  (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
 
 ## 26.4.23
 
