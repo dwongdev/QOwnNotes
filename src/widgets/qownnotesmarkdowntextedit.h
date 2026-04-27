@@ -250,6 +250,8 @@ class QOwnNotesMarkdownTextEdit : public QMarkdownTextEdit {
     MarkdownLspClient *_markdownLspClient = nullptr;
     QTimer *_markdownLspChangeTimer = nullptr;
     QString _markdownLspUri;
+    QString _markdownLspCommand;
+    QStringList _markdownLspArguments;
     QString _markdownLspPendingText;
     int _markdownLspVersion = 0;
     int _markdownLspCompletionRequestId = -1;

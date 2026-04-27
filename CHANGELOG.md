@@ -33,6 +33,10 @@
   and `rumdl`, prefill the correct command-line arguments, and verify that the
   configured LSP server completes its initialization handshake
   (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
+- Fixed switching the configured Markdown LSP service in the settings so the
+  editor now restarts the running LSP client and reconnects the current note
+  immediately instead of continuing to talk to the previously selected server
+  until the application is restarted (for [#3467](https://github.com/pbek/QOwnNotes/issues/3467))
 
 ## 26.4.23
 

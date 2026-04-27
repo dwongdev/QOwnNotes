@@ -3517,9 +3517,13 @@ void QOwnNotesMarkdownTextEdit::applyMarkdownLspSettings() {
         settings.value(QStringLiteral("Editor/markdownLspArguments")).toStringList();
     const bool verboseLogging =
         settings.value(QStringLiteral("Editor/markdownLspVerboseLogging"), false).toBool();
+    const bool serverConfigurationChanged =
+        (_markdownLspCommand != command) || (_markdownLspArguments != arguments);
 
     if (!enabled) {
         _markdownLspEnabled = false;
+        _markdownLspCommand = command;
+        _markdownLspArguments = arguments;
         if (_markdownLspClient) {
             closeMarkdownLspDocument();
             _markdownLspClient->shutdown();
@@ -3548,9 +3552,26 @@ void QOwnNotesMarkdownTextEdit::applyMarkdownLspSettings() {
         });
     }
 
+    QString reopenUri;
+    QString reopenText;
+    const bool restartClient = serverConfigurationChanged && _markdownLspClient->isRunning();
+    if (restartClient) {
+        reopenUri = _markdownLspUri;
+        reopenText = toPlainText();
+        closeMarkdownLspDocument();
+        _markdownLspClient->shutdown();
+    }
+
+    _markdownLspCommand = command;
+    _markdownLspArguments = arguments;
     _markdownLspClient->setServerCommand(command, arguments);
     _markdownLspClient->setVerboseLogging(verboseLogging);
-    if (_markdownLspClient->start()) {
+    const bool needsStart = !_markdownLspClient->isRunning();
+    if (needsStart) {
+        if (!_markdownLspClient->start()) {
+            return;
+        }
+
         const QString rootPath = NoteFolder::currentLocalPath();
         _markdownLspClient->initialize(rootPath, QStringLiteral("QOwnNotes"),
                                        QStringLiteral(VERSION));
@@ -3558,7 +3579,15 @@ void QOwnNotesMarkdownTextEdit::applyMarkdownLspSettings() {
 
     _markdownLspEnabled = true;
 
-    if (!_markdownLspUri.isEmpty()) {
+    if (!reopenUri.isEmpty()) {
+        _markdownLspUri = reopenUri;
+        _markdownLspVersion = 1;
+        _markdownLspClient->didOpen(_markdownLspUri, QStringLiteral("markdown"), reopenText,
+                                    _markdownLspVersion);
+        return;
+    }
+
+    if (needsStart && !_markdownLspUri.isEmpty()) {
         _markdownLspVersion = 1;
         _markdownLspClient->didOpen(_markdownLspUri, QStringLiteral("markdown"), toPlainText(),
                                     _markdownLspVersion);
